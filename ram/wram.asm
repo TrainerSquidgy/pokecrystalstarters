@@ -3151,8 +3151,12 @@ wWiltonFightCount::  db
 wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
-
-	ds 100
+wElmPokemon1::      db
+wElmPokemon2::      db
+wElmPokemon3::      db
+wIlexForestEncounters:: db
+wRoute34Encounters:: db
+	ds 95
 
 wEventFlags:: flag_array NUM_EVENTS
 

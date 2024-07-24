@@ -340,6 +340,45 @@ ChooseWildEncounter:
 	ld a, b
 	ld [wTempWildMonSpecies], a
 
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	cp LANDMARK_ILEX_FOREST
+	jr z, .ilexforest
+	cp LANDMARK_ROUTE_34
+	jr nz, .startwildbattle
+	ld a, [wRoute34Encounters]
+	and a
+	jr nz, .startwildbattle
+	inc a
+	ld [wRoute34Encounters], a
+	ld a, 10
+	ld [wCurPartyLevel], a
+	ld a, ABRA
+	ld [wTempWildMonSpecies], a
+	jr .startwildbattle
+.ilexforest
+	ld a, [wIlexForestEncounters]
+	cp 1
+	jr nz, .paras
+	inc a
+	ld [wIlexForestEncounters], a
+	ld a, 7
+	ld [wCurPartyLevel], a
+	ld a, PSYDUCK
+	ld [wTempWildMonSpecies], a
+	jr .startwildbattle
+.paras
+	and a
+	jr nz, .startwildbattle
+	inc a
+	ld [wIlexForestEncounters], a
+	ld a, 6
+	ld [wCurPartyLevel], a
+	ld a, PARAS
+	ld [wTempWildMonSpecies], a	
 .startwildbattle
 	xor a
 	ret

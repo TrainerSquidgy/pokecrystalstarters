@@ -187,7 +187,12 @@ _ResetWRAM:
 
 	xor a
 	ld [wMonType], a
-
+	ld [wElmPokemon1], a
+	ld [wElmPokemon2], a
+	ld [wElmPokemon3], a
+	ld [wIlexForestEncounters], a
+	ld [wRoute34Encounters], a
+	
 	ld [wJohtoBadges], a
 	ld [wKantoBadges], a
 

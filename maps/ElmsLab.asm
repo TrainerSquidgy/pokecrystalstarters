@@ -45,6 +45,21 @@ ElmsLabMoveElmCallback:
 .Skip:
 	endcallback
 
+ElmsLabRandomizer:
+	ld a, 250
+	call RandomRange
+	inc a
+	ld [wElmPokemon1], a
+	ld a, 250
+	call RandomRange
+	inc a
+	ld [wElmPokemon2], a
+	ld a, 250
+	call RandomRange
+	inc a
+	ld [wElmPokemon3], a
+	ret
+
 ElmsLabWalkUpToElmScript:
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
@@ -161,6 +176,7 @@ CyndaquilPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	reanchormap
+	getmonname STRING_BUFFER_3, CYNDAQUIL
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
 	waitbutton
@@ -174,7 +190,6 @@ CyndaquilPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, CYNDAQUIL
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -191,6 +206,7 @@ TotodilePokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	reanchormap
+	getmonname STRING_BUFFER_3, TOTODILE
 	pokepic TOTODILE
 	cry TOTODILE
 	waitbutton
@@ -204,7 +220,6 @@ TotodilePokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, TOTODILE
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -219,6 +234,7 @@ ChikoritaPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	reanchormap
+	getmonname STRING_BUFFER_3, CHIKORITA
 	pokepic CHIKORITA
 	cry CHIKORITA
 	waitbutton
@@ -232,7 +248,6 @@ ChikoritaPokeBallScript:
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
-	getmonname STRING_BUFFER_3, CHIKORITA
 	writetext ReceivedStarterText
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -597,6 +612,7 @@ ElmsLabTravelTip4:
 	jumptext ElmsLabTravelTip4Text
 
 ElmsLabTrashcan:
+	callasm ElmsLabRandomizer
 	jumptext ElmsLabTrashcanText
 
 ElmsLabPC:
@@ -858,20 +874,23 @@ LabWhereGoingText:
 
 TakeCyndaquilText:
 	text "ELM: You'll take"
-	line "CYNDAQUIL, the"
-	cont "fire #MON?"
+	line "@"
+	text_ram wStringBuffer3
+	text "?"
 	done
 
 TakeTotodileText:
 	text "ELM: Do you want"
-	line "TOTODILE, the"
-	cont "water #MON?"
+	line "@"
+	text_ram wStringBuffer3
+	text "?"
 	done
 
 TakeChikoritaText:
 	text "ELM: So, you like"
-	line "CHIKORITA, the"
-	cont "grass #MON?"
+	line "@"
+	text_ram wStringBuffer3
+	text "?"
 	done
 
 DidntChooseStarterText:

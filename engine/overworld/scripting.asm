@@ -414,8 +414,32 @@ Script_pokepic:
 	jr nz, .ok
 	ld a, [wScriptVar]
 .ok
+	cp CYNDAQUIL
+	jr nz, .totodile
+	ld a, [wElmPokemon1]
+	and a
+	jr nz, .not_starter
+	ld a, CYNDAQUIL
+.totodile
+	cp TOTODILE
+	jr nz, .chikorita
+	ld a, [wElmPokemon2]
+	and a
+	jr nz, .not_starter
+	ld a, TOTODILE
+.chikorita
+	cp CHIKORITA
+	jr nz, .not_starter
+	ld a, [wElmPokemon3]
+	and a
+	jr nz, .not_starter
+	ld a, CHIKORITA
+.not_starter
 	ld [wCurPartySpecies], a
+	ld [wNamedObjectIndex], a
 	farcall Pokepic
+	call GetPokemonName
+	call CopyName_Buffer1_Buffer3
 	ret
 
 Script_closepokepic:
@@ -783,12 +807,54 @@ Script_warpsound:
 
 Script_cry:
 	call GetScriptByte
+	cp CYNDAQUIL
+	jr nz, .totodile
+	ld a, [wElmPokemon1]
+	and a
+	jr nz, .not_starter
+	ld a, CYNDAQUIL
+.totodile
+	cp TOTODILE
+	jr nz, .chikorita
+	ld a, [wElmPokemon2]
+	and a
+	jr nz, .not_starter
+	ld a, TOTODILE
+.chikorita
+	cp CHIKORITA
+	jr nz, .not_starter
+	ld a, [wElmPokemon3]
+	and a
+	jr nz, .not_starter
+	ld a, CHIKORITA
+.not_starter
 	push af
 	call GetScriptByte
+	ld a, [wScriptVar]
 	pop af
 	and a
+	cp CYNDAQUIL
+	jr nz, .totodile2
+	ld a, [wElmPokemon1]
+	and a
+	jr nz, .not_starter2
+	ld a, CYNDAQUIL
+.totodile2
+	cp TOTODILE
+	jr nz, .chikorita2
+	ld a, [wElmPokemon2]
+	and a
+	jr nz, .not_starter2
+	ld a, TOTODILE
+.chikorita2
+	cp CHIKORITA
+	jr nz, .not_starter2
+	ld a, [wElmPokemon3]
+	and a
+	jr nz, .not_starter2
+	ld a, CHIKORITA
+.not_starter2
 	jr nz, .ok
-	ld a, [wScriptVar]
 .ok
 	call PlayMonCry
 	ret
@@ -1921,6 +1987,27 @@ Script_checkphonecall:
 
 Script_givepoke:
 	call GetScriptByte
+	cp CYNDAQUIL
+	jr nz, .totodile
+	ld a, [wElmPokemon1]
+	and a
+	jr nz, .not_starter
+	ld a, CYNDAQUIL
+.totodile
+	cp TOTODILE
+	jr nz, .chikorita
+	ld a, [wElmPokemon2]
+	and a
+	jr nz, .not_starter
+	ld a, TOTODILE
+.chikorita
+	cp CHIKORITA
+	jr nz, .not_starter
+	ld a, [wElmPokemon3]
+	and a
+	jr nz, .not_starter
+	ld a, CHIKORITA
+.not_starter
 	ld [wCurPartySpecies], a
 	call GetScriptByte
 	ld [wCurPartyLevel], a
@@ -2359,3 +2446,11 @@ Script_checkver_duplicate: ; unreferenced
 
 .gs_version:
 	db GS_VERSION
+
+
+CopyName_Buffer1_Buffer3:
+	ld hl, wStringBuffer1
+	ld de, wStringBuffer3
+	ld bc, MON_NAME_LENGTH
+	jp CopyBytes
+	ret
