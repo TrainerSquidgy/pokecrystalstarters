@@ -380,7 +380,33 @@ ChooseWildEncounter:
 	ld a, PARAS
 	ld [wTempWildMonSpecies], a	
 .startwildbattle
+	call ScaleWildEncounters
+	ld a, [wTempWildMonSpecies]
+	call CheckIfShouldBeEvolved
 	xor a
+	ret
+	
+ScaleWildEncounters:
+	push hl
+    ld hl, wJohtoBadges
+    ld b, 2
+    call CountSetBits
+    ld a, [wNumSetBits]
+    and a
+    jr z, .nobadges
+    ld c, a
+    ld a, 5
+    call SimpleMultiply
+    jr .addrandom
+.nobadges
+    ld a, 5
+.addrandom
+    ld b, a
+    ld a, 6
+    call RandomRange
+    add a, b    
+    pop hl
+    ld [wCurPartyLevel], a
 	ret
 
 INCLUDE "data/wild/probabilities.asm"
@@ -1006,3 +1032,140 @@ INCLUDE "data/wild/kanto_grass.asm"
 INCLUDE "data/wild/kanto_water.asm"
 INCLUDE "data/wild/swarm_grass.asm"
 INCLUDE "data/wild/swarm_water.asm"
+
+CheckIfShouldBeEvolved::
+    ld a, [wTempWildMonSpecies]
+    dec a
+    push hl
+    push bc
+    cp EEVEE - 1
+    jp z, .eevee
+    cp TYROGUE - 1
+    jp z, .tyrogue
+    ld c, a
+    ld b, 0
+    ld hl, EvosAttacksPointers
+    add hl, bc
+    add hl, bc
+    ld a, BANK(EvosAttacksPointers)
+    call GetFarHalf
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte
+    and a
+    jp z, .done
+.has_evolution
+    inc hl
+    cp EVOLVE_LEVEL
+    jp nz, .not_level_up
+    ld a, [wCurPartyLevel]
+    ld b, a
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte ; a = level for evolutions
+    cp b
+    jp nc, .lower
+    inc hl
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte ; a = evolved species
+    pop bc
+    pop hl
+    ld [wTempWildMonSpecies], a
+    ret
+
+.eevee
+    ld hl, .EeveeEvolutions
+    ld a, 5
+    jr .evolve_list
+.tyrogue
+    ld hl, .TyrogueEvolutions
+    ld a, 3
+.evolve_list
+    call RandomRange
+    ld b, 0
+    ld c, a
+    add hl, bc
+    ld a, [hl]
+    ld [wTestingRamSlot1], a
+    pop bc
+    pop hl
+    jp .load_and_end
+
+.not_level_up
+	ld a, [wCurPartyLevel]
+	cp 30
+	jr nc, .dont_evolve
+    pop bc
+	ld a, [wTempWildMonSpecies]
+	ld b, a
+    ld hl, .EvolveList
+.search_list
+    ld a, [hl]
+    cp b
+    jr z, .found_in_list
+    inc hl
+    inc hl
+    inc hl
+    jr .search_list
+
+.found_in_list
+    inc hl     ; Move to the first evolution option
+    call Random
+    cp 50
+    jr c, .first_option
+    inc hl     ; Move to the second evolution option if random >= 50
+.first_option
+    ld a, [hl]
+    ld [wTempCompSpecies], a  ; Store evolved species in wTempWildMonSpecies
+    ld [wTempWildMonSpecies], a  ; Store evolved species in wTempWildMonSpecies
+    pop hl
+    jp .load_and_end
+
+.dont_evolve
+	ld a, [wTempWildMonSpecies]
+	ld b, a
+	jr .done
+
+.lower
+.done
+    ld a, 2
+    ld [wTestingRamSlot1], a
+    xor a
+    pop bc
+    pop hl
+    ret
+    pop hl
+    ret
+.load_and_end
+    ret
+
+.EvolveList:
+    db PIKACHU,    PIKACHU,     RAICHU
+    db NIDORINA,   NIDOQUEEN,  NIDOQUEEN
+    db NIDORINO,   NIDOKING,   NIDOKING
+    db CLEFAIRY,   CLEFAIRY,   CLEFABLE
+    db VULPIX,     NINETALES,  NINETALES
+    db JIGGLYPUFF, JIGGLYPUFF, WIGGLYTUFF
+    db GLOOM,      VILEPLUME,  BELLOSSOM
+    db GROWLITHE,  ARCANINE,   ARCANINE
+    db POLIWHIRL,  POLIWRATH,  POLITOED
+    db WEEPINBELL, VICTREEBEL, VICTREEBEL
+    db SLOWPOKE,   SLOWBRO,    SLOWKING
+    db SHELLDER,   CLOYSTER,   CLOYSTER
+    db EXEGGCUTE,  EXEGGUTOR,  EXEGGUTOR
+    db SEADRA,     KINGDRA,    KINGDRA
+    db STARYU,     STARMIE,    STARMIE
+    db PORYGON,    PORYGON2,   PORYGON2
+    db SUNKERN,    SUNFLORA,   SUNFLORA
+    db GOLBAT,     CROBAT,     CROBAT
+    db CHANSEY,    BLISSEY,    BLISSEY
+    db PICHU,      PIKACHU,    PIKACHU
+    db CLEFFA,     CLEFAIRY,   CLEFAIRY
+    db IGGLYBUFF,  JIGGLYPUFF, JIGGLYPUFF
+    db TOGEPI,     TOGETIC,    TOGETIC
+
+.EeveeEvolutions:
+    db JOLTEON, VAPOREON, FLAREON, ESPEON, UMBREON
+
+.TyrogueEvolutions:
+    db HITMONLEE, HITMONCHAN, HITMONTOP

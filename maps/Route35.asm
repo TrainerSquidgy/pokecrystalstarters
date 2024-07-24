@@ -268,6 +268,7 @@ TrainerOfficerDirk:
 Route35Sign:
 	jumptext Route35SignText
 
+	
 Route35TMRollout:
 	itemball TM_ROLLOUT
 

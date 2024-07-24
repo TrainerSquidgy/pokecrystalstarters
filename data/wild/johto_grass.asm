@@ -1393,13 +1393,13 @@ JohtoGrassWildMons:
 	db 10, DITTO
 	db 10, DITTO
 	; nite
-	db 12, DROWZEE
-	db 11, RATTATA
-	db 12, HOOTHOOT
-	db 10, ABRA
-	db 12, JIGGLYPUFF
-	db 10, DITTO
-	db 10, DITTO
+	db 32, JIGGLYPUFF
+	db 31, RATTATA
+	db 32, HOOTHOOT
+	db 30, ABRA
+	db 32, JIGGLYPUFF
+	db 30, DITTO
+	db 30, DITTO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_35
@@ -1421,9 +1421,9 @@ JohtoGrassWildMons:
 	db 10, DITTO
 	db 12, YANMA
 	; nite
-	db 12, DROWZEE
-	db 14, HOOTHOOT
-	db 13, PSYDUCK
+	db 12, TYROGUE
+	db 14, EEVEE
+	db 13, SLOWPOKE
 	db 10, ABRA
 	db 12, JIGGLYPUFF
 	db 10, DITTO

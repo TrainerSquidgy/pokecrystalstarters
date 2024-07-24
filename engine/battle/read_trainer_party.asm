@@ -88,6 +88,7 @@ TrainerTypes:
 	dw TrainerType4 ; level, species, item, moves
 
 TrainerType1:
+
 ; normal (level, species)
 	ld h, d
 	ld l, e
@@ -95,10 +96,18 @@ TrainerType1:
 	ld a, [hli]
 	cp $ff
 	ret z
-
+	
 	ld [wCurPartyLevel], a
+	
+	call ScaleTrainerEncounters
+	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
+	
+	call CheckForRivalMons
+	
+	call CheckIfTrainerShouldBeEvolved
+	
 	ld a, OTPARTYMON
 	ld [wMonType], a
 	push hl
@@ -108,6 +117,7 @@ TrainerType1:
 
 TrainerType2:
 ; moves
+
 	ld h, d
 	ld l, e
 .loop
@@ -116,14 +126,23 @@ TrainerType2:
 	ret z
 
 	ld [wCurPartyLevel], a
+	
+	call ScaleTrainerEncounters
+	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
+	
+	call CheckIfTrainerShouldBeEvolved
+	
 	ld a, OTPARTYMON
 	ld [wMonType], a
 
 	push hl
 	predef TryAddMonToParty
 	ld a, [wOTPartyCount]
+	
+	
+	
 	dec a
 	ld hl, wOTPartyMon1Moves
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -143,6 +162,9 @@ TrainerType2:
 	push hl
 
 	ld a, [wOTPartyCount]
+	
+	
+	
 	dec a
 	ld hl, wOTPartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -192,13 +214,22 @@ TrainerType3:
 	ret z
 
 	ld [wCurPartyLevel], a
+	
+	call ScaleTrainerEncounters
+	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
+	
+	call CheckIfTrainerShouldBeEvolved
+	
 	ld a, OTPARTYMON
 	ld [wMonType], a
 	push hl
 	predef TryAddMonToParty
 	ld a, [wOTPartyCount]
+	
+	
+	
 	dec a
 	ld hl, wOTPartyMon1Item
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -220,8 +251,13 @@ TrainerType4:
 	ret z
 
 	ld [wCurPartyLevel], a
+	
+	call ScaleTrainerEncounters
+	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
+	
+	call CheckIfTrainerShouldBeEvolved
 
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -229,6 +265,9 @@ TrainerType4:
 	push hl
 	predef TryAddMonToParty
 	ld a, [wOTPartyCount]
+	
+	
+	
 	dec a
 	ld hl, wOTPartyMon1Item
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -242,6 +281,9 @@ TrainerType4:
 
 	push hl
 	ld a, [wOTPartyCount]
+	
+	
+	
 	dec a
 	ld hl, wOTPartyMon1Moves
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -261,6 +303,7 @@ TrainerType4:
 	push hl
 
 	ld a, [wOTPartyCount]
+		
 	dec a
 	ld hl, wOTPartyMon1
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -299,7 +342,7 @@ TrainerType4:
 .copied_pp
 
 	pop hl
-	jr .loop
+	jp .loop
 
 ComputeTrainerReward:
 	ld hl, hProduct
@@ -389,3 +432,192 @@ IncompleteCopyNameFunction: ; unreferenced
 	ret
 
 INCLUDE "data/trainers/parties.asm"
+
+
+
+ScaleTrainerEncounters:
+	push hl
+    ld hl, wJohtoBadges
+    ld b, 2
+    call CountSetBits
+    ld a, [wNumSetBits]
+    and a
+    jr z, .nobadges
+    ld c, a
+    ld a, 5
+    call SimpleMultiply
+    jr .addrandom
+.nobadges
+    ld a, 5
+.addrandom
+    ld b, a
+    ld a, 6
+    call RandomRange
+    add a, b    
+    pop hl
+    ld [wCurPartyLevel], a
+	ret
+
+CheckIfTrainerShouldBeEvolved::
+    ld a, [wCurPartySpecies]
+    dec a
+    push hl
+    push bc
+    cp EEVEE - 1
+    jp z, .eevee
+    cp TYROGUE - 1
+    jp z, .tyrogue
+    ld c, a
+    ld b, 0
+    ld hl, EvosAttacksPointers
+    add hl, bc
+    add hl, bc
+    ld a, BANK(EvosAttacksPointers)
+    call GetFarHalf
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte
+    and a
+    jp z, .done
+.has_evolution
+    inc hl
+    cp EVOLVE_LEVEL
+    jp nz, .not_level_up
+    ld a, [wCurPartyLevel]
+    ld b, a
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte ; a = level for evolutions
+    cp b
+    jp nc, .lower
+    inc hl
+    ld a, BANK("Evolutions and Attacks")
+    call GetFarByte ; a = evolved species
+    pop bc
+    pop hl
+    ld [wCurPartySpecies], a
+	jr CheckIfTrainerShouldBeEvolved
+    ret
+
+.eevee
+    ld hl, .EeveeEvolutions
+    ld a, 5
+    jr .evolve_list
+.tyrogue
+    ld hl, .TyrogueEvolutions
+    ld a, 3
+.evolve_list
+    call RandomRange
+    ld b, 0
+    ld c, a
+    add hl, bc
+    ld a, [hl]
+    ld [wTestingRamSlot1], a
+    pop bc
+    pop hl
+    jp .load_and_end
+
+.not_level_up
+    pop bc
+	ld a, [wCurPartySpecies]
+	ld b, a
+    ld hl, .EvolveList
+.search_list
+    ld a, [hl]
+    cp b
+    jr z, .found_in_list
+    inc hl
+    inc hl
+    inc hl
+    jr .search_list
+
+.found_in_list
+    inc hl     ; Move to the first evolution option
+    call Random
+    cp 50
+    jr c, .first_option
+    inc hl     ; Move to the second evolution option if random >= 50
+.first_option
+    ld a, [hl]
+    ld [wTempCompSpecies], a  ; Store evolved species in wTempWildMonSpecies
+    ld [wCurPartySpecies], a  ; Store evolved species in wTempWildMonSpecies
+    pop hl
+    jp .load_and_end
+
+.lower
+.done
+    ld a, 2
+    ld [wTestingRamSlot1], a
+    xor a
+    pop bc
+    pop hl
+    ret
+    pop hl
+    ret
+.load_and_end
+    ret
+
+.EvolveList:
+    db PIKACHU,    PIKACHU,     RAICHU
+    db NIDORINA,   NIDOQUEEN,  NIDOQUEEN
+    db NIDORINO,   NIDOKING,   NIDOKING
+    db CLEFAIRY,   CLEFAIRY,   CLEFABLE
+    db VULPIX,     NINETALES,  NINETALES
+    db JIGGLYPUFF, JIGGLYPUFF, WIGGLYTUFF
+    db GLOOM,      VILEPLUME,  BELLOSSOM
+    db GROWLITHE,  ARCANINE,   ARCANINE
+    db POLIWHIRL,  POLIWRATH,  POLITOED
+    db WEEPINBELL, VICTREEBEL, VICTREEBEL
+    db SLOWPOKE,   SLOWBRO,    SLOWKING
+    db SHELLDER,   CLOYSTER,   CLOYSTER
+    db EXEGGCUTE,  EXEGGUTOR,  EXEGGUTOR
+    db SEADRA,     KINGDRA,    KINGDRA
+    db STARYU,     STARMIE,    STARMIE
+    db PORYGON,    PORYGON2,   PORYGON2
+    db SUNKERN,    SUNFLORA,   SUNFLORA
+    db GOLBAT,     CROBAT,     CROBAT
+    db CHANSEY,    BLISSEY,    BLISSEY
+    db PICHU,      PIKACHU,    PIKACHU
+    db CLEFFA,     CLEFAIRY,   CLEFAIRY
+    db IGGLYBUFF,  JIGGLYPUFF, JIGGLYPUFF
+    db TOGEPI,     TOGETIC,    TOGETIC
+
+.EeveeEvolutions:
+    db JOLTEON, VAPOREON, FLAREON, ESPEON, UMBREON
+
+.TyrogueEvolutions:
+    db HITMONLEE, HITMONCHAN, HITMONTOP
+	
+CheckForRivalMons:
+	ld a, [wCurPartySpecies]
+	cp CYNDAQUIL
+	jr z, .cyndaquilball
+	cp QUILAVA
+	jr z, .cyndaquilball
+	cp TYPHLOSION
+	jr nz, .checktotodile
+.cyndaquilball
+	ld a, [wElmPokemon1]
+	jr .merge
+.checktotodile
+	cp TOTODILE
+	jr z, .totodileball
+	cp CROCONAW
+	jr z, .totodileball
+	cp FERALIGATR
+	jr nz, .checkchikorita
+.totodileball
+	ld a, [wElmPokemon2]
+	jr .merge
+.checkchikorita
+	cp CHIKORITA
+	jr z, .chikoritaball
+	cp BAYLEEF
+	jr z, .chikoritaball
+	cp MEGANIUM
+	ret nz
+.chikoritaball
+	ld a, [wElmPokemon3]
+.merge
+	ld [wCurPartySpecies], a
+	ret

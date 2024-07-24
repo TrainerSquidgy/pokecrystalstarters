@@ -117,15 +117,21 @@ GetFarWRAMByte::
 	ldh a, [hFarByte]
 	ret
 
-GetFarWRAMWord:: ; unreferenced
+GetFarHalf::
+; retrieve a halfword from a:hl, and return it in hl.
+	; bankswitch to new bank
 	ldh [hTempBank], a
-	ldh a, [rSVBK]
+	ldh a, [hROMBank]
 	push af
 	ldh a, [hTempBank]
-	ldh [rSVBK], a
+	rst Bankswitch
+
+	; get halfword from new bank, put it in hl
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+
+	; bankswitch to previous bank and return
 	pop af
-	ldh [rSVBK], a
+	rst Bankswitch
 	ret

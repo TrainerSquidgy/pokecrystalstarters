@@ -3156,7 +3156,12 @@ wElmPokemon2::      db
 wElmPokemon3::      db
 wIlexForestEncounters:: db
 wRoute34Encounters:: db
-	ds 95
+wTestingRamSlot1:: db	
+wTempCompSpecies:: db
+wTempCompEvoLevel:: db
+wTempOrigSpecies:: db
+wTempOrigLevel:: db
+	ds 90
 
 wEventFlags:: flag_array NUM_EVENTS
 
