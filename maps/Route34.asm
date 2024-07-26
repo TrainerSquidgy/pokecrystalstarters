@@ -474,6 +474,7 @@ Route34IlexForestSign: ; unreferenced
 	jumptext Route34IlexForestSignText
 
 Route34Sign:
+	opentext
 	jumptext Route34SignText
 
 Route34TrainerTips:
