@@ -79,6 +79,13 @@ MeetMomScript:
 .FinishPhone:
 	writetext InstructionsNextText
 	waitbutton
+	
+	writetext MomText_ElmAskedAboutStarters
+	waitbutton
+	callasm SetStarter1
+	callasm SetStarter2
+	callasm SetStarter3
+	callasm HandleStarterOffset
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -98,6 +105,13 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+
+MomText_ElmAskedAboutStarters:
+	text "PROF. ELM told me"
+	line "to ask you which"
+	cont "starters you want"
+	cont "in each ball."
+	done
 
 MeetMomTalkedScript:
 	playmusic MUSIC_MOM

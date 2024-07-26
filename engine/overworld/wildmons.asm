@@ -380,9 +380,9 @@ ChooseWildEncounter:
 	ld a, PARAS
 	ld [wTempWildMonSpecies], a	
 .startwildbattle
-	call ScaleWildEncounters
-	ld a, [wTempWildMonSpecies]
-	call CheckIfShouldBeEvolved
+	;call ScaleWildEncounters
+	;ld a, [wTempWildMonSpecies]
+	;call CheckIfShouldBeEvolved
 	xor a
 	ret
 	

@@ -97,6 +97,7 @@ SECTION "Clock Reset", ROMX
 INCLUDE "engine/rtc/restart_clock.asm"
 
 
+
 SECTION "bank9", ROMX
 
 INCLUDE "data/text_buffers.asm"
@@ -676,6 +677,8 @@ SECTION "Mobile News Data", ROMX
 
 INCLUDE "mobile/news/news.asm"
 
+SECTION "Starter Selection", ROMX
+INCLUDE "engine/events/starterselection.asm"
 
 SECTION "Crystal Events", ROMX
 

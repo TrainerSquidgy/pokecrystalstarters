@@ -438,3 +438,4 @@ CopyDayHourMinToHL:
 	ldh a, [hMinutes]
 	ld [hli], a
 	ret
+

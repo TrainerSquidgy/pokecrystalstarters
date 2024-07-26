@@ -99,14 +99,14 @@ TrainerType1:
 	
 	ld [wCurPartyLevel], a
 	
-	call ScaleTrainerEncounters
+	;call ScaleTrainerEncounters
 	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
 	
 	call CheckForRivalMons
 	
-	call CheckIfTrainerShouldBeEvolved
+	;call CheckIfTrainerShouldBeEvolved
 	
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -127,12 +127,12 @@ TrainerType2:
 
 	ld [wCurPartyLevel], a
 	
-	call ScaleTrainerEncounters
+	;call ScaleTrainerEncounters
 	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
 	
-	call CheckIfTrainerShouldBeEvolved
+	;call CheckIfTrainerShouldBeEvolved
 	
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -215,12 +215,12 @@ TrainerType3:
 
 	ld [wCurPartyLevel], a
 	
-	call ScaleTrainerEncounters
+	;call ScaleTrainerEncounters
 	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
 	
-	call CheckIfTrainerShouldBeEvolved
+;	call CheckIfTrainerShouldBeEvolved
 	
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -252,12 +252,12 @@ TrainerType4:
 
 	ld [wCurPartyLevel], a
 	
-	call ScaleTrainerEncounters
+;	call ScaleTrainerEncounters
 	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
 	
-	call CheckIfTrainerShouldBeEvolved
+	;call CheckIfTrainerShouldBeEvolved
 
 	ld a, OTPARTYMON
 	ld [wMonType], a
@@ -500,10 +500,15 @@ CheckIfTrainerShouldBeEvolved::
     ret
 
 .eevee
-    ld hl, .EeveeEvolutions
+	ld a, [wCurPartyLevel]
+	cp 30
+	jr c, .lower
+	ld hl, .EeveeEvolutions
     ld a, 5
     jr .evolve_list
 .tyrogue
+	cp 30
+	jr c, .lower
     ld hl, .TyrogueEvolutions
     ld a, 3
 .evolve_list
@@ -518,6 +523,9 @@ CheckIfTrainerShouldBeEvolved::
     jp .load_and_end
 
 .not_level_up
+	ld a, [wCurPartyLevel]
+	cp 30
+	jr c, .lower
     pop bc
 	ld a, [wCurPartySpecies]
 	ld b, a
@@ -589,6 +597,12 @@ CheckIfTrainerShouldBeEvolved::
     db HITMONLEE, HITMONCHAN, HITMONTOP
 	
 CheckForRivalMons:
+	ld a, [wTrainerClass]
+	cp RIVAL1
+	jr z, .rival
+	cp RIVAL2
+	ret nz
+.rival
 	ld a, [wCurPartySpecies]
 	cp CYNDAQUIL
 	jr z, .cyndaquilball
@@ -620,4 +634,6 @@ CheckForRivalMons:
 	ld a, [wElmPokemon3]
 .merge
 	ld [wCurPartySpecies], a
+	
+	call CheckIfTrainerShouldBeEvolved
 	ret

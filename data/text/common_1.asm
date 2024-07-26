@@ -1876,3 +1876,22 @@ _PrestoAllDoneText::
 	text "Presto! All done."
 	line "Come again, OK?"
 	done
+
+_WhichPokemonInBall1Text::
+	text "Which #MON to"
+	line "replace CYNDAQUIL?"
+	done
+	
+_WhichPokemonInBall2Text::
+	text "Which #MON to"
+	line "replace TOTODILE?"
+	done
+	
+_WhichPokemonInBall3Text::
+	text "Which #MON to"
+	line "replace CHIKORITA?"
+	done
+
+_AreYouSurePokemonText::
+	text "Are you sure?"
+	done
