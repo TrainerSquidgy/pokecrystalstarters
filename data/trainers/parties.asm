@@ -2923,11 +2923,6 @@ CamperGroup:
 	; CAMPER (2)
 	db "TODD@", TRAINERTYPE_NORMAL
 	db 14, PSYDUCK
-	db 14, CYNDAQUIL
-	db 14, MAGIKARP
-	db 14, CHIKORITA
-	db 14, HOOTHOOT
-	db 14, TOTODILE
 	db -1 ; end
 
 	; CAMPER (3)

@@ -886,6 +886,10 @@ WhichPokemonInBall3Text:
 	text_far _WhichPokemonInBall3Text
 	text_end
 	
+WhatHiddenPowerTypeText:
+	text_far _WhatHiddenPowerTypeText
+	text_end
+	
 
 
 ConfirmPokemonText:
@@ -949,3 +953,181 @@ HandleStarterOffset::
 	inc a
 	ld [wElmPokemon3], a
 	ret
+	
+	
+SetHiddenPower::
+	ld a, 1
+	ld [wIsAStarter], a
+	ldh a, [hInMenu]
+	push af
+	ld a, $1
+	ldh [hInMenu], a
+	ld de, TimeSetUpArrowGFX
+	ld hl, vTiles0 tile TIMESET_UP_ARROW
+	lb bc, BANK(TimeSetUpArrowGFX), 1
+	call Request1bpp
+	ld de, TimeSetDownArrowGFX
+	ld hl, vTiles0 tile TIMESET_DOWN_ARROW
+	lb bc, BANK(TimeSetDownArrowGFX), 1
+	call Request1bpp
+	xor a
+	ld [wStarterDVSelection], a
+.loop
+	hlcoord 0, 12
+	lb bc, 4, 2
+	call Textbox
+	call LoadStandardMenuHeader
+	ld hl, WhatHiddenPowerTypeText
+	call PrintText
+	hlcoord 6, 3
+	ld b, 2
+	ld c, 12
+	call Textbox
+	hlcoord 13, 3
+	ld [hl], TIMESET_UP_ARROW
+	hlcoord 11, 6
+	ld [hl], TIMESET_DOWN_ARROW
+	hlcoord 7, 5
+	call TypeStrings
+	call ApplyTilemap
+	ld c, 10
+	call DelayFrames
+.loop2
+	call JoyTextDelay
+	call .GetJoypadAction
+	jr nc, .loop2
+	call ExitMenu
+	call UpdateSprites
+	ld hl, ConfirmPokemonText
+	call PrintText
+	call YesNoBox
+	jr c, .loop
+	ld a, [wStarterDVSelection]
+	inc a
+	ld [wStringBuffer2], a
+	call LoadStandardFont
+	pop af
+	ldh [hInMenu], a
+	ret
+
+.GetJoypadAction:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr z, .not_A
+	scf
+	ret
+
+.not_A
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_UP
+	jr nz, .d_up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .d_down
+	call DelayFrame
+	and a
+	ret
+
+.d_down
+	ld hl, wStarterDVSelection
+	ld a, [hl]
+	and a
+	jr nz, .decrease
+	ld a, 15
+
+.decrease
+	dec a
+	ld [hl], a
+	jr .finish_dpad
+
+.d_up
+	ld hl, wStarterDVSelection
+	ld a, [hl]
+	cp 15
+	jr c, .increase
+	ld a, 0
+
+.increase
+	inc a
+	ld [hl], a
+
+.finish_dpad
+	xor a
+	ldh [hBGMapMode], a
+	hlcoord 7, 4
+	ld b, 2
+	ld c, 11
+	call ClearBox
+	hlcoord 7, 5
+	call .PlaceTypeStrings
+	call WaitBGMap
+	and a
+	ret
+
+.PlaceTypeStrings
+	push hl
+	ld a, [wStarterDVSelection]
+	ld e, a
+	ld d, 0
+	ld hl, TypeTextStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+	
+TypeStrings:
+	push hl
+	ld a, [wStarterDVSelection]
+	ld e, a
+	ld d, 0
+	ld hl, TypeTextStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+	
+TypeTextStrings:
+; entries correspond to Pokemon constants
+	dw .Dark
+	dw .Dragon
+	dw .Ice
+	dw .Psychic
+	dw .Electric
+	dw .Grass
+	dw .Water
+	dw .Fire
+	dw .Steel
+	dw .Ghost
+	dw .Bug
+	dw .Rock
+	dw .Ground
+	dw .Poison
+	dw .Flying
+	dw .Fighting
+	
+	
+	.Dark     db "DARK@@@@@@@"
+	.Dragon   db "DRAGON@@@@@"
+	.Ice      db "ICE@@@@@@@@"
+	.Psychic  db "PSYCHIC@@@@"
+	.Electric db "ELECTRIC@@@"
+	.Grass    db "GRASS@@@@@@"
+	.Water    db "WATER@@@@@"
+	.Fire     db "FIRE@@@@@@"
+	.Steel    db "STEEL@@@@@"
+	.Ghost    db "GHOST@@@@@"
+	.Bug      db "BUG@@@@@@@"
+	.Rock     db "ROCK@@@@@@"
+	.Ground   db "GROUND@@@"
+	.Poison   db "POISON@@@"
+	.Flying   db "FLYING@@@"
+	.Fighting db "FIGHTING@"

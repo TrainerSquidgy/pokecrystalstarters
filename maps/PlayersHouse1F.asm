@@ -79,13 +79,28 @@ MeetMomScript:
 .FinishPhone:
 	writetext InstructionsNextText
 	waitbutton
-	
+; Check to set Starters	
 	writetext MomText_ElmAskedAboutStarters
+	yesorno
+	iffalse .NoStarter
 	waitbutton
-	callasm SetStarter1
-	callasm SetStarter2
-	callasm SetStarter3
-	callasm HandleStarterOffset
+; Check to set RIVAL's Starter
+	writetext MomText_RivalCarriesStarter
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+.NoRival
+
+	special SetStarter1
+	special SetStarter2
+	special SetStarter3
+	special HandleStarterOffset
+; Check to set Hidden Power
+	writetext MomText_ElmAskedAboutHiddenPower
+	yesorno
+	iffalse .NoStarter
+	special SetHiddenPower
+.NoStarter
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -106,11 +121,28 @@ MeetMomScript:
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
 
+MomText_ElmAskedAboutHiddenPower:
+	text "PROF. ELM also"
+	line "asked if you want"
+	cont "to set your type"
+	cont "for HIDDEN POWER."
+	done
+
+MomText_RivalCarriesStarter:
+	text "Do you want the"
+	line "RIVAL's #MON"
+	cont "to change too?"
+	done
+
 MomText_ElmAskedAboutStarters:
 	text "PROF. ELM told me"
 	line "to ask you which"
 	cont "starters you want"
 	cont "in each ball."
+	
+	para "Do you want to"
+	line "pick custom"
+	cont "starters?"
 	done
 
 MeetMomTalkedScript:

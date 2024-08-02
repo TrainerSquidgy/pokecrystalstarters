@@ -485,6 +485,7 @@ CheckIfTrainerShouldBeEvolved::
     cp EVOLVE_LEVEL
     jp nz, .not_level_up
     ld a, [wCurPartyLevel]
+	inc a
     ld b, a
     ld a, BANK("Evolutions and Attacks")
     call GetFarByte ; a = level for evolutions
@@ -503,24 +504,54 @@ CheckIfTrainerShouldBeEvolved::
 	ld a, [wCurPartyLevel]
 	cp 30
 	jr c, .lower
-	ld hl, .EeveeEvolutions
-    ld a, 5
-    jr .evolve_list
+	ld a, [wRivalEeveelution]
+	and a
+	jr z, .Vaporeon
+	dec a
+	and a
+	jr z, .Flareon
+	dec a
+	and a
+	jr z, .Jolteon
+	dec a
+	and a
+	jr z, .Espeon
+	ld a, UMBREON
+	jr .SpecialDone	
+.Vaporeon
+	ld a, VAPOREON
+	jr .SpecialDone
+.Flareon
+	ld a, FLAREON
+	jr .SpecialDone
+.Jolteon
+	ld a, JOLTEON
+	jr .SpecialDone
+.Espeon
+	ld a, ESPEON		
+	jr .SpecialDone
+	
 .tyrogue
 	cp 30
 	jr c, .lower
-    ld hl, .TyrogueEvolutions
-    ld a, 3
-.evolve_list
-    call RandomRange
-    ld b, 0
-    ld c, a
-    add hl, bc
-    ld a, [hl]
-    ld [wTestingRamSlot1], a
-    pop bc
-    pop hl
-    jp .load_and_end
+    ld a, [wRivalTyrogueEvolution]
+	and a
+	jr z, .hitmonlee
+	dec a
+	and a
+	jr z, .hitmonchan
+	ld a, HITMONTOP
+	jr .SpecialDone
+.hitmonlee
+	ld a, HITMONLEE
+	jr .SpecialDone
+.hitmonchan
+	ld a, HITMONCHAN
+.SpecialDone
+	ld [wCurPartySpecies], a
+	pop bc
+	pop hl
+	ret
 
 .not_level_up
 	ld a, [wCurPartyLevel]
@@ -541,9 +572,9 @@ CheckIfTrainerShouldBeEvolved::
 
 .found_in_list
     inc hl     ; Move to the first evolution option
-    call Random
-    cp 50
-    jr c, .first_option
+    ld a, [wRival5050]
+	and a
+    jr z, .first_option
     inc hl     ; Move to the second evolution option if random >= 50
 .first_option
     ld a, [hl]
@@ -566,12 +597,12 @@ CheckIfTrainerShouldBeEvolved::
     ret
 
 .EvolveList:
-    db PIKACHU,    PIKACHU,     RAICHU
+    db PIKACHU,    RAICHU,     RAICHU
     db NIDORINA,   NIDOQUEEN,  NIDOQUEEN
     db NIDORINO,   NIDOKING,   NIDOKING
-    db CLEFAIRY,   CLEFAIRY,   CLEFABLE
+    db CLEFAIRY,   CLEFABLE,   CLEFABLE
     db VULPIX,     NINETALES,  NINETALES
-    db JIGGLYPUFF, JIGGLYPUFF, WIGGLYTUFF
+    db JIGGLYPUFF, WIGGLYTUFF, WIGGLYTUFF
     db GLOOM,      VILEPLUME,  BELLOSSOM
     db GROWLITHE,  ARCANINE,   ARCANINE
     db POLIWHIRL,  POLIWRATH,  POLITOED
@@ -590,13 +621,13 @@ CheckIfTrainerShouldBeEvolved::
     db IGGLYBUFF,  JIGGLYPUFF, JIGGLYPUFF
     db TOGEPI,     TOGETIC,    TOGETIC
 
-.EeveeEvolutions:
-    db JOLTEON, VAPOREON, FLAREON, ESPEON, UMBREON
-
 .TyrogueEvolutions:
     db HITMONLEE, HITMONCHAN, HITMONTOP
 	
 CheckForRivalMons:
+	ld a, [wRivalCarriesStarter]
+	and a
+	ret z	
 	ld a, [wTrainerClass]
 	cp RIVAL1
 	jr z, .rival

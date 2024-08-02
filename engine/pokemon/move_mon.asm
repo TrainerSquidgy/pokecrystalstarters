@@ -183,7 +183,7 @@ endr
 	push hl
 	farcall GetTrainerDVs
 	pop hl
-	jr .initializeDVs
+	jp .initializeDVs
 
 .registerpokedex
 	ld a, [wCurPartySpecies]
@@ -200,8 +200,111 @@ endr
 	push hl
 	ld a, [wBattleMode]
 	and a
-	jr nz, .copywildmonDVs
+	jp nz, .copywildmonDVs
 
+	ld a, [wIsAStarter]
+	and a
+	jp z, .not_starter
+	ld a, [wStarterDVSelection]
+	and a
+	jr z, .Dark
+	dec a
+	and a
+	jr z, .Dragon
+	dec a
+	and a
+	jr z, .Ice
+	dec a
+	and a
+	jr z, .Psychic
+	dec a
+	and a
+	jr z, .Electric
+	dec a
+	and a
+	jr z, .Grass
+	dec a
+	and a
+	jr z, .Water
+	dec a
+	and a
+	jr z, .Fire
+	dec a
+	and a
+	jr z, .Steel
+	dec a
+	and a
+	jr z, .Ghost
+	dec a
+	and a
+	jr z, .Bug
+	dec a
+	and a
+	jr z, .Rock
+	dec a
+	and a
+	jr z, .Ground
+	dec a
+	and a
+	jr z, .Poison
+	dec a
+	and a
+	jr z, .Flying
+	ld a, $CC
+	jr .second_starter_dv
+.Dark
+	ld a, $FF
+	jr .second_starter_dv
+.Dragon
+	ld a, $FE
+	jr .second_starter_dv
+.Ice
+	ld a, $FD
+	jr .second_starter_dv
+.Psychic
+	ld a, $FC
+	jr .second_starter_dv
+.Electric
+	ld a, $EF
+	jr .second_starter_dv
+.Grass
+	ld a, $EE
+	jr .second_starter_dv
+.Water
+	ld a, $ED
+	jr .second_starter_dv
+.Fire
+	ld a, $EC
+	jr .second_starter_dv
+.Steel
+	ld a, $DF
+	jr .second_starter_dv
+.Ghost
+	ld a, $DE
+	jr .second_starter_dv
+.Bug
+	ld a, $DD
+	jr .second_starter_dv
+.Rock
+	ld a, $DC
+	jr .second_starter_dv
+.Ground
+	ld a, $CF
+	jr .second_starter_dv
+.Poison
+	ld a, $CE
+	jr .second_starter_dv
+.Flying	
+	ld a, $CD
+.second_starter_dv
+	ld b, a
+	ld a, $FF
+	ld c, a
+	xor a
+	ld [wIsAStarter], a
+	jr .initializeDVs
+
+.not_starter
 	call Random
 	ld b, a
 	call Random

@@ -185,6 +185,18 @@ _ResetWRAM:
 	call LoadOrRegenerateLuckyIDNumber
 	call InitializeMagikarpHouse
 
+	ld a, 4
+	call RandomRange
+	ld [wRivalEeveelution], a
+	
+	ld a, 2
+	call RandomRange
+	ld [wRivalTyrogueEvolution], a
+	
+	ld a, 1
+	call RandomRange
+	ld [wRival5050], a
+
 	xor a
 	ld [wMonType], a
 	ld [wElmPokemon1], a
@@ -785,7 +797,7 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "SQUIDGY@@@@"
 .Kris:
 	db "KRIS@@@@@@@"
 

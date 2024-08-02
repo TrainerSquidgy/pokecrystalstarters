@@ -1895,3 +1895,8 @@ _WhichPokemonInBall3Text::
 _AreYouSurePokemonText::
 	text "Are you sure?"
 	done
+
+_WhatHiddenPowerTypeText::
+	text "What HIDDEN POWER"
+	line "type do you want?"
+	done

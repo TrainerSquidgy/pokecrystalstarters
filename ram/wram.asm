@@ -3161,7 +3161,13 @@ wTempCompSpecies:: db
 wTempCompEvoLevel:: db
 wTempOrigSpecies:: db
 wTempOrigLevel:: db
-	ds 90
+wRivalEeveelution:: db
+wRivalTyrogueEvolution:: db
+wRival5050:: db
+wRivalCarriesStarter:: db
+wIsAStarter:: db
+wStarterDVSelection:: db
+	ds 84
 
 wEventFlags:: flag_array NUM_EVENTS
 

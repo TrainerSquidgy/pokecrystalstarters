@@ -179,6 +179,11 @@ SpecialsPointers::
 	add_special AskRememberPassword
 	add_special LoadMapPalettes
 	add_special UnusedFindItemInPCOrBag
+	add_special SetStarter1
+	add_special SetStarter2
+	add_special SetStarter3
+	add_special SetHiddenPower
+	add_special HandleStarterOffset
 
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag

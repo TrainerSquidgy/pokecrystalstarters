@@ -45,6 +45,81 @@ ElmsLabMoveElmCallback:
 .Skip:
 	endcallback
 
+
+ElmsLabStarterChoice:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .End
+	opentext
+; Ask PLAYER if they want to set STARTERS
+	writetext ElmsLabChooseStartersAskText
+	yesorno
+	iffalse .DontChoose
+	special SetStarter1
+	special SetStarter2
+	special SetStarter3
+	special HandleStarterOffset
+; Ask PLAYER if they want to set HIDDEN POWER
+	writetext ElmsLabSetHiddenPowerText
+	yesorno
+	iffalse .NoHiddenPower
+	special SetHiddenPower
+.NoHiddenPower
+	writetext ElmsLabChooseStartersYesText
+	waitbutton
+	writetext ElmsLabAskAboutRivalStarterText
+	yesorno
+	iftrue .RivalYes
+	writetext ElmsLabRivalNoText
+	sjump .Merge
+.RivalYes
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabRivalYesText	
+	sjump .Merge
+.DontChoose
+	writetext ElmsLabChooseStartersNoText
+.Merge
+	waitbutton
+	closetext
+.End
+	end
+	
+ElmsLabRivalNoText:
+	text "RIVAL's #MON"
+	line "will not be"
+	cont "updated."
+	done
+	
+ElmsLabAskAboutRivalStarterText:
+	text "Do you want the"
+	line "RIVAL's STARTER"
+	cont "to be updated?"
+	done
+	
+ElmsLabRivalYesText:
+	text "RIVAL's STARTER"
+	line "updated...."
+	done
+	
+ElmsLabSetHiddenPowerText:
+	text "Want to set"
+	line "HIDDEN POWER?"
+	done
+	
+ElmsLabChooseStartersAskText:
+	text "Want to set your"
+	line "STARTER #MON?"
+	done
+	
+ElmsLabChooseStartersYesText:
+	text "Starters updated."
+	line "Have fun...."
+	done
+	
+ElmsLabChooseStartersNoText:
+	text "Starters remain"
+	line "same as before."
+	done
+
 ElmsLabRandomizer:
 	ld a, 250
 	call RandomRange
@@ -612,7 +687,6 @@ ElmsLabTravelTip4:
 	jumptext ElmsLabTravelTip4Text
 
 ElmsLabTrashcan:
-	callasm ElmsLabRandomizer
 	jumptext ElmsLabTrashcanText
 
 ElmsLabPC:
@@ -1421,6 +1495,7 @@ ElmsLab_MapEvents:
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
+	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
 
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
