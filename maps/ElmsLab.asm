@@ -89,6 +89,17 @@ ElmsLabStarterChoice:
 .NoHiddenPower
 	loadmem wIsAStarter, 0
 .HandledHiddenPower
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	loadmem wRivalCarriesStarter, 1
+	sjump .RivalDone
+.NoRival
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.RivalDone
 	writetext ElmsLabChooseStartersYesText
 	sjump .Merge
 .NoStarter
@@ -98,6 +109,23 @@ ElmsLabStarterChoice:
 	closetext
 .End
 	end
+	
+ElmsLabText_AskRival:
+	text "Do you want the"
+	line "RIVAL's starter"
+	cont "to change too?"
+	done
+	
+ElmsLabText_RivalChanges:
+	text "The RIVAL's"
+	line "#MON will"
+	cont "be updated."
+	done
+
+ElmsLabText_RivalStillSame:
+	text "The RIVAL will"
+	line "stay unchanged."
+	done
 	
 ElmsLabText_AskAboutHiddenPower:
 	text "Want to set type"

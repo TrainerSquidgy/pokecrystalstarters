@@ -111,8 +111,21 @@ MeetMomScript:
 ; Check to set Hidden Power
 	writetext MomText_ElmAskedAboutHiddenPower
 	yesorno
-	iffalse .NoStarter
+	iffalse .NoHiddenPower
 	special SetHiddenPower
+	writetext MomText_HiddenPowerUpdated
+	waitbutton
+.NoHiddenPower
+	writetext MomText_AskRival
+	yesorno
+	iffalse .NoRival
+	writetext MomText_RivalChanges
+	loadmem wRivalCarriesStarter, 1
+	waitbutton
+	sjump .NoStarter
+.NoRival
+	writetext MomText_RivalStillSame
+	waitbutton
 .NoStarter
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -133,6 +146,27 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+
+MomText_RivalChanges:
+	text "The RIVAL's"
+	line "#MON will"
+	cont "be updated."
+	done
+
+MomText_RivalStillSame:
+	text "The RIVAL will"
+	line "stay unchanged."
+	done
+
+MomText_AskRival:
+	text "Do you want the"
+	line "RIVAL's starter"
+	cont "to change too?"
+	done
+MomText_HiddenPowerUpdated:
+	text "HIDDEN POWER type"
+	line "updated...."
+	done
 
 MomText_ElmAskedAboutHiddenPower:
 	text "PROF. ELM also"

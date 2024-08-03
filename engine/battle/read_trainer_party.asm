@@ -104,7 +104,7 @@ TrainerType1:
 	ld a, [hli]
 	ld [wCurPartySpecies], a
 	
-	;call CheckForRivalMons
+	call CheckForRivalMons
 	
 	;call CheckIfTrainerShouldBeEvolved
 	
