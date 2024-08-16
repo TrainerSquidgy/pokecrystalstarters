@@ -111,8 +111,21 @@ MeetMomScript:
 ; Check to set Hidden Power
 	writetext MomText_ElmAskedAboutHiddenPower
 	yesorno
-	iffalse .NoStarter
+	iffalse .CheckEvolutions
 	special SetHiddenPower
+; Check to see if MON should Evolve
+.CheckEvolutions
+	writetext MomText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext MomText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	writetext MomText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
 .NoStarter
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -133,6 +146,22 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+	
+MomText_EvolutionsYes:
+	text "Evolutions are"
+	line "still enabled."
+	done
+	
+MomText_EvolutionsNo:
+	text "Your #MON"
+	line "will not evolve."
+	done
+	
+MomText_EvolutionsAsk:
+	text "Should your"
+	line "#MON evolve?"
+	done
+
 
 MomText_ElmAskedAboutHiddenPower:
 	text "PROF. ELM also"

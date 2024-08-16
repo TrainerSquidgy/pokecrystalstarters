@@ -1130,6 +1130,11 @@ EvoStoneEffect:
 	call UseItem_SelectMon
 
 	jp c, .DecidedNotToUse
+	
+	ld a, [wEvolutionsDisabled]
+	and a
+	jp nz, .NoEffect
+
 
 	ld a, MON_ITEM
 	call GetPartyParamLocation

@@ -85,10 +85,23 @@ ElmsLabStarterChoice:
 	iffalse .NoHiddenPower
 	special SetHiddenPower
 	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
 	sjump .HandledHiddenPower
 .NoHiddenPower
 	loadmem wIsAStarter, 0
 .HandledHiddenPower
+; Check to see if MON should Evolve
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	writetext ElmsLabText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
 	writetext ElmsLabChooseStartersYesText
 	sjump .Merge
 .NoStarter
@@ -98,6 +111,21 @@ ElmsLabStarterChoice:
 	closetext
 .End
 	end
+	
+ElmsLabText_EvolutionsYes:
+	text "Evolutions are"
+	line "still enabled."
+	done
+	
+ElmsLabText_EvolutionsNo:
+	text "Your #MON"
+	line "will not evolve."
+	done
+	
+ElmsLabText_EvolutionsAsk:
+	text "Should your"
+	line "#MON evolve?"
+	done
 	
 ElmsLabText_AskAboutHiddenPower:
 	text "Want to set type"
