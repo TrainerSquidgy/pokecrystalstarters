@@ -65,12 +65,21 @@ EvolveAfterBattle_MasterLoop:
 
 	ld b, a
 
+	ld a, [wEvolutionsDisabled]
+	and a
+	jp nz, .dont_evolve_2
+
+	ld a, b
 	cp EVOLVE_TRADE
 	jr z, .trade
 
 	ld a, [wLinkMode]
 	and a
 	jp nz, .dont_evolve_2
+
+	
+
+
 
 	ld a, b
 	cp EVOLVE_ITEM

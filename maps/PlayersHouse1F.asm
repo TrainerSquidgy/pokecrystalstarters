@@ -127,6 +127,16 @@ MeetMomScript:
 	writetext MomText_RivalStillSame
 	waitbutton
 .NoStarter
+	writetext MomText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	writetext MomText_EvolutionsNo
+	loadmem wEvolutionsDisabled, 1
+	sjump .EvolutionMerge
+.KeepEvolutions
+	writetext MomText_EvolutionsYes
+.EvolutionMerge
+	waitbutton
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -146,6 +156,24 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+
+
+MomText_EvolutionsYes:
+	text "Evolutions are"
+	line "still enabled."
+	done
+	
+MomText_EvolutionsNo:
+	text "Your #MON"
+	line "will not evolve."
+	done
+	
+MomText_EvolutionsAsk:
+	text "Should your"
+	line "#MON evolve?"
+	done
+	
+
 
 MomText_RivalChanges:
 	text "The RIVAL's"
