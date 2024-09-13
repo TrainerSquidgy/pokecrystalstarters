@@ -3365,3 +3365,36 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+CorphishEvosAttacks:
+	db EVOLVE_LEVEL, 30, CRAWDAUNT
+	db 0
+	db 1, BUBBLE
+	db 7, HARDEN
+	db 10, VICEGRIP
+	db 13, LEER
+	db 20, BUBBLEBEAM
+	db 23, PROTECT
+	db 26, THIEF
+	db 32, CRABHAMMER
+	db 35, NIGHT_SLASH
+	db 38, SWORDS_DANCE
+	db 43, CRUNCH
+	db 46, GUILLOTINE
+	db 0
+	
+CrawdauntEvosAttacks:
+	db 0
+	db 1, BUBBLE
+	db 7, HARDEN
+	db 10, VICEGRIP
+	db 13, LEER
+	db 20, BUBBLEBEAM
+	db 23, PROTECT
+	db 26, THIEF
+	db 33, CRABHAMMER
+	db 38, NIGHT_SLASH
+	db 43, SWORDS_DANCE
+	db 51, CRUNCH
+	db 56, GUILLOTINE
+	db 0

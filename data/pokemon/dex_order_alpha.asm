@@ -32,7 +32,9 @@ AlphabeticalPokedexOrder:
 	db CLEFAIRY
 	db CLEFFA
 	db CLOYSTER
+	db CORPHISH
 	db CORSOLA
+	db CRAWDAUNT
 	db CROBAT
 	db CROCONAW
 	db CUBONE
