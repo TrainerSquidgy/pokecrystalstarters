@@ -12,6 +12,7 @@ AlphabeticalPokedexOrder:
 	db ARIADOS
 	db ARTICUNO
 	db AZUMARILL
+	db BARBOACH
 	db BAYLEEF
 	db BEEDRILL
 	db BELLOSSOM
@@ -246,6 +247,7 @@ AlphabeticalPokedexOrder:
 	db WEEDLE
 	db WEEPINBELL
 	db WEEZING
+	db WHISCASH
 	db WIGGLYTUFF
 	db WOBBUFFET
 	db WOOPER

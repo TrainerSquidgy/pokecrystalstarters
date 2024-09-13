@@ -3365,3 +3365,31 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+BarboachEvosAttacks:
+	db EVOLVE_LEVEL, 30, WHISCASH
+	db 0
+	db 1, MUD_SLAP
+	db 7, WATER_GUN
+	db 13, MAGNITUDE
+	db 19, AMNESIA
+	db 25, REST
+	db 25, SNORE
+	db 31, EARTHQUAKE
+	db 37, FUTURE_SIGHT
+	db 43, FISSURE
+	db 0
+
+
+WhiscashEvosAttacks:
+	db 0
+	db 1, MUD_SLAP
+	db 7, WATER_GUN
+	db 13, MAGNITUDE
+	db 19, AMNESIA
+	db 25, REST
+	db 25, SNORE
+	db 36, EARTHQUAKE
+	db 46, FUTURE_SIGHT
+	db 56, FISSURE
+	db 0
