@@ -2077,3 +2077,31 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	calmmind
+	endmove
+
+WaterSpout:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	waterspout
+	damagecalc
+	stab
+	checkhit
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

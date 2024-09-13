@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw WaterSpoutDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,15 +252,14 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw WaterPulseDescription
+	dw CalmMindDescription
+	dw SheerColdDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -314,6 +313,10 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
+
+SheerColdDescription:
+	db   "An ice cold one-"
+	next "hit KO attack.@"
 
 RazorWindDescription:
 	db   "1st turn: Prepare"
@@ -503,6 +506,7 @@ BlizzardDescription:
 	db   "An attack that may"
 	next "freeze the foe.@"
 
+WaterPulseDescription:
 PsybeamDescription:
 	db   "An attack that may"
 	next "confuse the foe.@"
@@ -1270,3 +1274,11 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+CalmMindDescription:
+	db   "Raises SPCL.ATK"
+	next "and SPCL.DEF.@"
+
+WaterSpoutDescription:
+	db   "Does more damage"
+	next "with high HP.@"
