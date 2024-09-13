@@ -83,23 +83,49 @@ MeetMomScript:
 	writetext MomText_ElmAskedAboutStarters
 	yesorno
 	iffalse .NoStarter
-	waitbutton
-; Check to set RIVAL's Starter
-	writetext MomText_RivalCarriesStarter
+	writetext MomText_AskCyndaquil
 	yesorno
-	iffalse .NoRival
-	loadmem wRivalCarriesStarter, 1
-.NoRival
-
+	iffalse .NoCyndaquil
 	special SetStarter1
+	sjump .AskTotodile
+.NoCyndaquil
+	loadmem wElmPokemon1, 154
+.AskTotodile
+	writetext MomText_AskTotodile
+	yesorno
+	iffalse .NoTotodile
 	special SetStarter2
+	sjump .AskChikorita
+.NoTotodile
+	loadmem wElmPokemon2, 157
+.AskChikorita
+	writetext MomText_AskChikorita
+	yesorno
+	iffalse .NoChikorita
 	special SetStarter3
+	sjump .DoneStarters
+.NoChikorita
+	loadmem wElmPokemon3, 151
+.DoneStarters
 	special HandleStarterOffset
 ; Check to set Hidden Power
 	writetext MomText_ElmAskedAboutHiddenPower
 	yesorno
-	iffalse .NoStarter
+	iffalse .CheckEvolutions
 	special SetHiddenPower
+; Check to see if MON should Evolve
+.CheckEvolutions
+	writetext MomText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext MomText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	writetext MomText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
 .NoStarter
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -120,6 +146,22 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+	
+MomText_EvolutionsYes:
+	text "Evolutions are"
+	line "still enabled."
+	done
+	
+MomText_EvolutionsNo:
+	text "Your #MON"
+	line "will not evolve."
+	done
+	
+MomText_EvolutionsAsk:
+	text "Should your"
+	line "#MON evolve?"
+	done
+
 
 MomText_ElmAskedAboutHiddenPower:
 	text "PROF. ELM also"
@@ -128,11 +170,21 @@ MomText_ElmAskedAboutHiddenPower:
 	cont "for HIDDEN POWER."
 	done
 
-MomText_RivalCarriesStarter:
-	text "Do you want the"
-	line "RIVAL's #MON"
-	cont "to change too?"
+MomText_AskChikorita:
+	text "Want to change"
+	line "CHIKORITA?"
 	done
+	
+MomText_AskCyndaquil:
+	text "Want to change"
+	line "CYNDAQUIL?"
+	done
+
+MomText_AskTotodile:
+	text "Want to change"
+	line "TOTODILE?"
+	done
+	
 
 MomText_ElmAskedAboutStarters:
 	text "PROF. ELM told me"

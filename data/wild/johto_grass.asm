@@ -1421,9 +1421,9 @@ JohtoGrassWildMons:
 	db 10, DITTO
 	db 12, YANMA
 	; nite
-	db 12, TYROGUE
-	db 14, EEVEE
-	db 13, SLOWPOKE
+	db 12, DROWZEE
+	db 14, HOOTHOOT
+	db 13, PSYDUCK
 	db 10, ABRA
 	db 12, JIGGLYPUFF
 	db 10, DITTO

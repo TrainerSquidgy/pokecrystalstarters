@@ -8280,8 +8280,12 @@ ExitBattle:
 	ret nz
 	call CheckPayDay
 	xor a
+	ld a, [wEvolutionsDisabled]
+	and a
+	jr nz, .EvolutionsDisabled
 	ld [wForceEvolution], a
 	predef EvolveAfterBattle
+.EvolutionsDisabled
 	farcall GivePokerusAndConvertBerries
 	ret
 

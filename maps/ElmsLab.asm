@@ -53,29 +53,58 @@ ElmsLabStarterChoice:
 ; Ask PLAYER if they want to set STARTERS
 	writetext ElmsLabChooseStartersAskText
 	yesorno
-	iffalse .DontChoose
+	iffalse .NoStarter
+	writetext ElmsLabText_AskCyndaquil
+	yesorno
+	iffalse .NoCyndaquil
 	special SetStarter1
+	sjump .AskTotodile
+.NoCyndaquil
+	loadmem wElmPokemon1, 154
+.AskTotodile
+	writetext ElmsLabText_AskTotodile
+	yesorno
+	iffalse .NoTotodile
 	special SetStarter2
+	sjump .AskChikorita
+.NoTotodile
+	loadmem wElmPokemon2, 157
+.AskChikorita
+	writetext ElmsLabText_AskChikorita
+	yesorno
+	iffalse .NoChikorita
 	special SetStarter3
+	sjump .DoneStarters
+.NoChikorita
+	loadmem wElmPokemon3, 151
+.DoneStarters
 	special HandleStarterOffset
-; Ask PLAYER if they want to set HIDDEN POWER
-	writetext ElmsLabSetHiddenPowerText
+; Check to set Hidden Power
+	writetext ElmsLabText_AskAboutHiddenPower
 	yesorno
 	iffalse .NoHiddenPower
 	special SetHiddenPower
-.NoHiddenPower
-	writetext ElmsLabChooseStartersYesText
+	writetext ElmsLabText_HiddenPowerUpdated
 	waitbutton
-	writetext ElmsLabAskAboutRivalStarterText
+	sjump .HandledHiddenPower
+.NoHiddenPower
+	loadmem wIsAStarter, 0
+.HandledHiddenPower
+; Check to see if MON should Evolve
+	writetext ElmsLabText_EvolutionsAsk
 	yesorno
-	iftrue .RivalYes
-	writetext ElmsLabRivalNoText
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	writetext ElmsLabText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
+	writetext ElmsLabChooseStartersYesText
 	sjump .Merge
-.RivalYes
-	loadmem wRivalCarriesStarter, 1
-	writetext ElmsLabRivalYesText	
-	sjump .Merge
-.DontChoose
+.NoStarter
 	writetext ElmsLabChooseStartersNoText
 .Merge
 	waitbutton
@@ -83,41 +112,59 @@ ElmsLabStarterChoice:
 .End
 	end
 	
-ElmsLabRivalNoText:
-	text "RIVAL's #MON"
-	line "will not be"
-	cont "updated."
+ElmsLabText_EvolutionsYes:
+	text "Evolutions are"
+	line "still enabled."
 	done
 	
-ElmsLabAskAboutRivalStarterText:
-	text "Do you want the"
-	line "RIVAL's STARTER"
-	cont "to be updated?"
+ElmsLabText_EvolutionsNo:
+	text "Your #MON"
+	line "will not evolve."
 	done
 	
-ElmsLabRivalYesText:
-	text "RIVAL's STARTER"
-	line "updated...."
+ElmsLabText_EvolutionsAsk:
+	text "Should your"
+	line "#MON evolve?"
 	done
 	
-ElmsLabSetHiddenPowerText:
-	text "Want to set"
-	line "HIDDEN POWER?"
+ElmsLabText_AskAboutHiddenPower:
+	text "Want to set type"
+	line "for HIDDEN POWER?"
+	done
+	
+ElmsLabText_HiddenPowerUpdated:
+	text "HIDDEN POWER"
+	line "type updated."
 	done
 	
 ElmsLabChooseStartersAskText:
-	text "Want to set your"
-	line "STARTER #MON?"
+	text "Update STARTER"
+	line "#MON?"
 	done
 	
 ElmsLabChooseStartersYesText:
-	text "Starters updated."
+	text "STARTERS updated."
 	line "Have fun...."
 	done
 	
 ElmsLabChooseStartersNoText:
 	text "Starters remain"
 	line "same as before."
+	done
+	
+ElmsLabText_AskChikorita:
+	text "Want to change"
+	line "CHIKORITA?"
+	done
+	
+ElmsLabText_AskCyndaquil:
+	text "Want to change"
+	line "CYNDAQUIL?"
+	done
+
+ElmsLabText_AskTotodile:
+	text "Want to change"
+	line "TOTODILE?"
 	done
 
 ElmsLabRandomizer:
