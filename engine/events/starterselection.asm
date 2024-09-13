@@ -75,7 +75,7 @@ SetStarter1::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CRAWDAUNT
+	ld a, CELEBI 
 
 .decrease
 	dec a
@@ -198,7 +198,7 @@ SetStarter2::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CRAWDAUNT
+	ld a, CELEBI
 
 .decrease
 	dec a
@@ -321,7 +321,7 @@ SetStarter3::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CRAWDAUNT
+	ld a, CELEBI
 
 .decrease
 	dec a
@@ -620,8 +620,6 @@ PokemonStrings:
 	dw .Lugia
 	dw .Hooh
 	dw .Celebi
-	dw .Corphish
-	dw .Crawdaunt
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -874,8 +872,6 @@ PokemonStrings:
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
 .Celebi	db "CELEBI@@@@@"
-.Corphish	db "CORPHISH@@@"
-.Crawdaunt	db "CRAWDAUNT@@"
 
 
 WhichPokemonInBall1Text:

@@ -5,6 +5,5 @@ CriticalHitMoves:
 	db CRABHAMMER
 	db SLASH
 	db AEROBLAST
-	db NIGHT_SLASH
 	db CROSS_CHOP
 	db -1
