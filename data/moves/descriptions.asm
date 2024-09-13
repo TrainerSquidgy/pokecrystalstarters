@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HyperVoiceDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw FeatherDanceDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,20 +252,21 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw ChatterDescription
+	dw RoostDescription
+	dw AirSlashDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
+
+HyperVoiceDescription:
+	db   "Uses sound waves"
+	next "do do damage.@"
 
 PoundDescription:
 	db   "Pounds with fore-"
@@ -355,6 +356,7 @@ VineWhipDescription:
 	db   "Whips the foe with"
 	next "slender vines.@"
 
+AirSlashDescription:
 StompDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
@@ -503,6 +505,7 @@ BlizzardDescription:
 	db   "An attack that may"
 	next "freeze the foe.@"
 
+ChatterDescription:
 PsybeamDescription:
 	db   "An attack that may"
 	next "confuse the foe.@"
@@ -835,10 +838,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 TransformDescription:
 	db   "The user assumes"
 	next "the foe's guise.@"
@@ -1079,6 +1078,7 @@ EndureDescription:
 	db   "Always leaves at"
 	next "least 1HP.@"
 
+FeatherDanceDescription:
 CharmDescription:
 	db   "Sharply lowers the"
 	next "foe's ATTACK.@"
@@ -1270,3 +1270,7 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+RoostDescription:
+	db   "Lose FLYING-type."
+	next "Regain some HP.@"

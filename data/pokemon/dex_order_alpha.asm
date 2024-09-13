@@ -23,6 +23,7 @@ AlphabeticalPokedexOrder:
 	db CATERPIE
 	db CELEBI
 	db CHANSEY
+	db CHATOT
 	db CHARIZARD
 	db CHARMANDER
 	db CHARMELEON
