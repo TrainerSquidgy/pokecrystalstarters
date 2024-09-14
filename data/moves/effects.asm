@@ -2077,3 +2077,17 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+Wish:
+	checkobedience
+	usedmovetext
+	doturn
+	wish
+	endmove
+	
+Refresh:
+	checkobedience
+	usedmovetext
+	doturn
+	refresh
+	endmove

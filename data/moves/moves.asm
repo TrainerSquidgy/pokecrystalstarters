@@ -265,4 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
+	move WISH,         EFFECT_WISH,                0, NORMAL,       100, 10,   0
+	move REFRESH,      EFFECT_REFRESH,             0, NORMAL,       100, 20,   0
+	move MIST_BALL,    EFFECT_SP_ATK_DOWN_HIT,    70, PSYCHIC_TYPE, 100,  5,  50
 	assert_table_length NUM_ATTACKS

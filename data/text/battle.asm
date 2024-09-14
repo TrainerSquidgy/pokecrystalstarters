@@ -1106,3 +1106,13 @@ BattleText_NoTimeLeftToday: ; unreferenced
 	text "There is no time"
 	line "left today!"
 	done
+
+WishCameTrueText:
+	text "<TARGET>'s"
+	line "WISH came true."
+	prompt
+	
+StatusHealText:
+	text "<USER>"
+	line "is healed."
+	prompt

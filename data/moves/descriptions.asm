@@ -252,17 +252,14 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw WishDescription
+	dw RefreshDescription
+	dw MistBallDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -643,6 +640,10 @@ PsychicMDescription:
 	db   "An attack that may"
 	next "lower SPCL.DEF.@"
 
+MistBallDescription:
+	db   "An attack that may"
+	next "lower SPCL.ATK.@"
+
 HypnosisDescription:
 	db   "May put the foe to"
 	next "sleep.@"
@@ -682,6 +683,10 @@ ScreechDescription:
 DoubleTeamDescription:
 	db   "Heightens evasive-"
 	next "ness.@"
+
+WishDescription:
+	db   "Restores 1/2 HP"
+	next "on next turn.@"
 
 RecoverDescription:
 	db   "Restores HP by 1/2"
@@ -1123,6 +1128,10 @@ SleepTalkDescription:
 	db   "Randomly attacks"
 	next "while asleep.@"
 
+RefreshDescription:
+	db   "Eliminates some"
+	next "status problems.@"
+	
 HealBellDescription:
 	db   "Eliminates all"
 	next "status problems.@"

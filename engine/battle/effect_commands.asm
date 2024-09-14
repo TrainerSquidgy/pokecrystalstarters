@@ -6778,3 +6778,57 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+BattleCommand_Wish:
+	ld hl, wPlayerWishCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_wish_count
+	ld hl, wEnemyWishCount
+.got_wish_count
+
+; Don't set Wish if it's already up for the user
+	ld a, [hl]
+	and a
+	jr nz, .already_wished
+
+; Make a wish
+	push hl
+	farcall AnimateCurrentMove
+	pop hl
+
+; Set 2 turn countdown for Wish
+	ld a, 2
+	ld [hl], a
+	ret
+
+.already_wished
+	farcall AnimateFailedMove
+	farcall PrintButItFailed
+	ret
+	
+	
+BattleCommand_Refresh:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	and (1 << PSN) | (1 << BRN) | (1 << PAR)
+	jr z, .fail
+	call AnimateCurrentMove
+	xor a
+	ld [hl], a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	res SUBSTATUS_TOXIC, [hl]
+	call UpdateUserInParty
+	ld hl, StatusHealText
+	call StdBattleTextbox
+
+	ldh a, [hBattleTurn]
+	and a
+	jp z, CalcPlayerStats
+	jp CalcEnemyStats
+
+.fail
+	farcall AnimateFailedMove
+	jp PrintButItFailed

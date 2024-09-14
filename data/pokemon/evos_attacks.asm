@@ -3365,3 +3365,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+LatiasEvosAttacks:
+	db 0
+	db 1, PSYWAVE
+	db 5, WISH
+	db 10, REFLECT
+	db 15, SAFEGUARD
+	db 20, DRAGONBREATH
+	db 25, RAIN_DANCE
+	db 30, REFRESH
+	db 35, MIST_BALL
+	db 40, PSYCHIC_M
+	db 45, RECOVER
+	db 50, CHARM
+	db 0
