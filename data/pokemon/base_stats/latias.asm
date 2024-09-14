@@ -7,7 +7,7 @@
 	db  3 ; catch rate
 	db 211 ; base exp
 	db NO_ITEM, NO_ITEM ; items
-	db GENDER_UNKNOWN ; gender ratio
+	db GENDER_F100 ; gender ratio
 	db 100 ; unknown 1
 	db 120 ; step cycles to hatch
 	db 5 ; unknown 2
