@@ -252,17 +252,26 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw MudShotDescription
+	dw BulkUpDescription
+	dw EruptionDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
+	
+MudShotDescription:
+	db   "An attack that"
+	next "lowers SPEED.@"
+	
+BulkUpDescription:
+	db   "Raises ATTACK"
+	next "and DEFENSE.@"
+	
+EruptionDescription:
+	db   "Does more at"
+	next "higher HP.@"
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"

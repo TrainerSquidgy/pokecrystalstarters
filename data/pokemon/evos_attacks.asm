@@ -3365,3 +3365,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+GroudonEvosAttacks:
+	db 0
+	db 1, MUD_SHOT
+	db 5, SCARY_FACE
+	db 15, ANCIENTPOWER
+	db 20, SLASH
+	db 30, BULK_UP
+	db 35, EARTHQUAKE
+	db 45, FIRE_BLAST
+	db 50, REST
+	db 60, FISSURE
+	db 65, SOLARBEAM
+	db 75, ERUPTION
+	db 0
