@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw LusterPurgeDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,16 +252,27 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw MementoDescription
+	dw RefreshDescription
+	dw DragonDanceDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+MementoDescription:
+	db   "Faints user, cuts"
+	next "enemy atk stats.@" 
+	
+	
+RefreshDescription:
+	db   "Heals some status"
+	next "conditions.@"
+	
+DragonDanceDescription:
+	db   "Ups ATTACK"
+	next "and SPEED.@"
+
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -639,6 +650,7 @@ ConfusionDescription:
 	db   "An attack that may"
 	next "cause confusion.@"
 
+LusterPurgeDescription:
 PsychicMDescription:
 	db   "An attack that may"
 	next "lower SPCL.DEF.@"
@@ -835,9 +847,7 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+
 
 TransformDescription:
 	db   "The user assumes"

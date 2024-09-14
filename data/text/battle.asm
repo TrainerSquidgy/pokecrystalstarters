@@ -1106,3 +1106,8 @@ BattleText_NoTimeLeftToday: ; unreferenced
 	text "There is no time"
 	line "left today!"
 	done
+
+StatusHealText:
+	text "<USER>"
+	line "is healed."
+	prompt

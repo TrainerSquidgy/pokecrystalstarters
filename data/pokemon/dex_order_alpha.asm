@@ -111,6 +111,7 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
+	db LATIOS
 	db LEDIAN
 	db LEDYBA
 	db LICKITUNG

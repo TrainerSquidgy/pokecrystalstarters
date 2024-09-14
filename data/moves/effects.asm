@@ -2077,3 +2077,28 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+Memento:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	memento
+	endmove
+	
+Refresh:
+	checkobedience
+	usedmovetext
+	doturn
+	refresh
+	endmove
+	
+DragonDance:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	dragondance
+	raisesub
+	endmove
