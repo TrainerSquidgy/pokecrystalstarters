@@ -252,16 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw DragonClawDescription
+	dw DragonDanceDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+DragonClawDescription:
+	db   "Attacks with"
+	next "a sharp claw.@"
+	
+DragonDanceDescription:
+	db   "Raises ATTACK"
+	next "and SPEED.@"
+
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:

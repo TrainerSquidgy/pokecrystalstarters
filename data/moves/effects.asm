@@ -2077,3 +2077,13 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+DragonDance:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	dragondance
+	raisesub
+	endmove

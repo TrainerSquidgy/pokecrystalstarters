@@ -75,7 +75,7 @@ SetStarter1::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI 
+	ld a, RAYQUAZA 
 
 .decrease
 	dec a
@@ -85,7 +85,7 @@ SetStarter1::
 .d_up
 	ld hl, wElmPokemon1
 	ld a, [hl]
-	cp 250
+	cp 251
 	jr c, .increase
 	ld a, 0
 
@@ -198,7 +198,7 @@ SetStarter2::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, RAYQUAZA
 
 .decrease
 	dec a
@@ -321,7 +321,7 @@ SetStarter3::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, RAYQUAZA
 
 .decrease
 	dec a
@@ -620,6 +620,7 @@ PokemonStrings:
 	dw .Lugia
 	dw .Hooh
 	dw .Celebi
+	dw .Rayquaza
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -871,7 +872,8 @@ PokemonStrings:
 .Tyranitar	db "TYRANITAR@@"
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
-.Celebi	db "CELEBI@@@@@"
+.Celebi		db "CELEBI@@@@@"
+.Rayquaza	db "RAYQUAZA@@@"
 
 
 WhichPokemonInBall1Text:

@@ -184,6 +184,7 @@ AlphabeticalPokedexOrder:
 	db RAPIDASH
 	db RATICATE
 	db RATTATA
+	db RAYQUAZA
 	db REMORAID
 	db RHYDON
 	db RHYHORN

@@ -6778,3 +6778,12 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+BattleCommand_DragonDance:
+	call ResetMiss
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_SpeedUp
+	jp BattleCommand_StatUpMessage
