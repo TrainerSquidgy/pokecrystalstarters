@@ -129,6 +129,8 @@ AlphabeticalPokedexOrder:
 	db MAREEP
 	db MARILL
 	db MAROWAK
+	db MEDICHAM
+	db MEDITITE
 	db MEGANIUM
 	db MEOWTH
 	db METAPOD

@@ -2077,3 +2077,14 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	calmmind
+	raisesub
+	endmove	

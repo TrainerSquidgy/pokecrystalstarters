@@ -252,15 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw CalmMindDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
 	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+CalmMindDescription:
+	db   "Boosts SPCL.ATK"
+	next "and SPCL.DEF.@"
+	
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:

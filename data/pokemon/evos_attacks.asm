@@ -3365,3 +3365,38 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+MedititeEvosAttacks:
+	db EVOLVE_LEVEL, 37, MEDICHAM
+	db 0
+	db 1, BIDE
+	db 4, MEDITATE
+	db 9, CONFUSION
+	db 12, DETECT
+	db 18, HIDDEN_POWER
+	db 22, MIND_READER
+	db 28, CALM_MIND
+	db 32, HI_JUMP_KICK
+	db 36, PSYCH_UP
+	db 42, REVERSAL
+	db 48, RECOVER
+	db 0
+	
+MedichamEvosAttacks:
+	db 0
+	db 1, FIRE_PUNCH
+	db 1, ICE_PUNCH
+	db 1, THUNDERPUNCH
+	db 1, BIDE
+	db 4, MEDITATE
+	db 9, CONFUSION
+	db 12, DETECT
+	db 18, HIDDEN_POWER
+	db 22, MIND_READER
+	db 28, CALM_MIND
+	db 32, HI_JUMP_KICK
+	db 36, PSYCH_UP
+	db 42, REVERSAL
+	db 48, RECOVER
+	db 0

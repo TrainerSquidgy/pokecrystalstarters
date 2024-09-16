@@ -6778,3 +6778,13 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+BattleCommand_CalmMind:
+; calmmind
+	call ResetMiss
+	call BattleCommand_SpecialAttackUp
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_SpecialDefenseUp
+	jp BattleCommand_StatUpMessage
