@@ -1988,7 +1988,6 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3365,3 +3364,22 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+DrampaEvosAttacks:
+	db  0
+	db  1, PLAY_NICE
+	db  1, ECHOED_VOICE
+	db  5, TWISTER
+	db  9, PROTECT
+	db 13, GLARE
+	db 17, LIGHT_SCREEN
+	db 21, DRAGON_RAGE
+	db 25, NO_MOVE
+	db 29, DRAGONBREATH
+	db 33, SAFEGUARD
+	db 37, EXTRASENSORY
+	db 41, DRAGON_PULSE
+	db 45, FLY
+	db 49, HYPER_VOICE
+	db 53, OUTRAGE
+	db 0

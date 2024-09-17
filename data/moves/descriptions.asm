@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw DragonPulseDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw HyperVoiceDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,17 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw PlayNiceDescription
+	dw EchoedVoiceDescription
+	dw ExtrasensoryDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+PlayNiceDescription:
+	db   "Lowers ATTACK."
+	next "Always hits.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +316,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+DragonPulseDescription:
+	db   "Attacks with a"
+	next "shock wave.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -379,6 +380,7 @@ SandAttackDescription:
 	db   "Reduces accuracy"
 	next "by throwing sand.@"
 
+ExtrasensoryDescription:
 HeadbuttDescription:
 	db   "An attack that may"
 	next "make foe flinch.@"
@@ -835,9 +837,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HyperVoiceDescription:
+	db   "A loud attack."
+	next "Uses sound waves.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -1105,6 +1107,10 @@ SparkDescription:
 
 FuryCutterDescription:
 	db   "Successive hits"
+	next "raise power.@"
+
+EchoedVoiceDescription:
+	db   "Successive uses"
 	next "raise power.@"
 
 SteelWingDescription:

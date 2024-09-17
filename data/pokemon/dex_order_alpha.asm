@@ -46,6 +46,7 @@ AlphabeticalPokedexOrder:
 	db DONPHAN
 	db DRAGONAIR
 	db DRAGONITE
+	db DRAMPA
 	db DRATINI
 	db DROWZEE
 	db DUGTRIO

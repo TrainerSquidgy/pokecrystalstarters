@@ -616,7 +616,7 @@ ParsePlayerAction:
 .not_encored
 	ld a, [wBattlePlayerAction]
 	cp BATTLEPLAYERACTION_SWITCH
-	jr z, .reset_rage
+	jp z, .reset_rage
 	and a
 	jr nz, .reset_bide
 	ld a, [wPlayerSubStatus3]
@@ -652,8 +652,12 @@ ParsePlayerAction:
 	jr z, .continue_fury_cutter
 	xor a
 	ld [wPlayerFuryCutterCount], a
-
 .continue_fury_cutter
+	cp EFFECT_ECHOED_VOICE
+	jr z, .continue_echoed_voice
+	xor a
+	ld [wPlayerEchoedVoiceCount], a
+.continue_echoed_voice
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .continue_rage
@@ -679,6 +683,7 @@ ParsePlayerAction:
 .locked_in
 	xor a
 	ld [wPlayerFuryCutterCount], a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -692,6 +697,7 @@ ParsePlayerAction:
 .reset_rage
 	xor a
 	ld [wPlayerFuryCutterCount], a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -3605,6 +3611,7 @@ endr
 	ld [hl], a
 	ld [wEnemyDisableCount], a
 	ld [wEnemyFuryCutterCount], a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
 	ld [wEnemyDisabledMove], a
@@ -5905,6 +5912,11 @@ ParseEnemyAction:
 	ld [wEnemyFuryCutterCount], a
 
 .fury_cutter
+	cp EFFECT_ECHOED_VOICE
+	jr z, .echoed_voice
+	xor a
+	ld [wEnemyEchoedVoiceCount], a
+.echoed_voice
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .no_rage
@@ -5930,6 +5942,7 @@ ParseEnemyAction:
 ResetVarsForSubstatusRage:
 	xor a
 	ld [wEnemyFuryCutterCount], a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
 	ld hl, wEnemySubStatus4
@@ -8312,6 +8325,8 @@ CleanUpBattleRAM:
 	ld [wKeyItemsPocketScrollPosition], a
 	ld [wItemsPocketScrollPosition], a
 	ld [wBallsPocketScrollPosition], a
+	ld [wEnemyEchoedVoiceCount], a
+	ld [wPlayerEchoedVoiceCount], a
 	ld hl, wPlayerSubStatus1
 	ld b, wEnemyFuryCutterCount - wPlayerSubStatus1
 .loop

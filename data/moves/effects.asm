@@ -2077,3 +2077,24 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+EchoedVoice:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	checkhit
+	echoedvoice
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
