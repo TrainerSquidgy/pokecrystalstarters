@@ -252,17 +252,14 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw ShockWaveDescription
+	dw CalmMindDescription
+	dw DragonHammerDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
-
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -779,6 +776,7 @@ ClampDescription:
 	db   "Traps the foe for"
 	next "2-5 turns.@"
 
+ShockWaveDescription:
 SwiftDescription:
 	db   "An attack that"
 	next "never misses.@"
@@ -1270,3 +1268,11 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+	
+CalmMindDescription:
+	db   "Raises SPECIAL"
+	next "stats.@"
+	
+DragonHammerDescription:
+	db   "It hits its body"
+	next "like a hammer.@"

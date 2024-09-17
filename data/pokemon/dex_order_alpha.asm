@@ -179,6 +179,7 @@ AlphabeticalPokedexOrder:
 	db QUAGSIRE
 	db QUILAVA
 	db QWILFISH
+	db RAGE_BOLT
 	db RAICHU
 	db RAIKOU
 	db RAPIDASH
