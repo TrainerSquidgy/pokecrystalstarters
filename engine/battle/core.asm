@@ -653,6 +653,7 @@ ParsePlayerAction:
 	xor a
 	ld [wPlayerFuryCutterCount], a
 .continue_fury_cutter
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_ECHOED_VOICE
 	jr z, .continue_echoed_voice
 	xor a
