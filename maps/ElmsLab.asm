@@ -108,6 +108,17 @@ ElmsLabStarterChoice:
 	writetext ElmsLabChooseStartersNoText
 .Merge
 	waitbutton
+	writetext ElmsLabText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsYes
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsNo
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+.DoneHMFriends
+	waitbutton
 	closetext
 .End
 	end
@@ -1507,6 +1518,29 @@ ElmsLabPCText:
 	para "…It says on the"
 	line "screen…"
 	done
+
+ElmsLabText_AskAboutHMFriends:
+	text "Do you want"
+	line "the HM Friends"
+	cont "to be guaranteed"
+	cont "first encounters?"
+	done
+	
+ElmsLabText_AskAboutHMFriendsYes:
+	text "The first"
+	line "encounters will"
+	cont "be HM Friends"
+	cont "in ILEX FOREST"
+	cont "and ROUTE 34."
+	done
+	
+ElmsLabText_AskAboutHMFriendsNo:
+	text "The HM Friends"
+	line "will be random"
+	cont "encounters."
+	done
+	
+
 
 ElmsLab_MapEvents:
 	db 0, 0 ; filler

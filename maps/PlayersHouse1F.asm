@@ -127,6 +127,18 @@ MeetMomScript:
 	waitbutton
 .HandledEvolutions
 .NoStarter
+	writetext MomText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	writetext MomText_AskAboutHMFriendsYes
+	waitbutton
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext MomText_AskAboutHMFriendsNo
+	waitbutton
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+.DoneHMFriends
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -146,6 +158,27 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+
+MomText_AskAboutHMFriends:
+	text "Do you want"
+	line "the HM Friends"
+	cont "to be guaranteed"
+	cont "first encounters?"
+	done
+	
+MomText_AskAboutHMFriendsYes:
+	text "The first"
+	line "encounters will"
+	cont "be HM Friends"
+	cont "in ILEX FOREST"
+	cont "and ROUTE 34."
+	done
+	
+MomText_AskAboutHMFriendsNo:
+	text "The HM Friends"
+	line "will be random"
+	cont "encounters."
+	done
 	
 MomText_EvolutionsYes:
 	text "Evolutions are"
