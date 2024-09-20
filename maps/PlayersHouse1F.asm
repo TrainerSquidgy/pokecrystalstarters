@@ -113,6 +113,8 @@ MeetMomScript:
 	yesorno
 	iffalse .CheckEvolutions
 	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
 ; Check to see if MON should Evolve
 .CheckEvolutions
 	writetext MomText_EvolutionsAsk
@@ -126,6 +128,17 @@ MeetMomScript:
 	writetext MomText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
+	writetext MomText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext MomText_RivalChanges
+	waitbutton
+	sjump .NoStarter
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext MomText_RivalStillSame
+	waitbutton
 .NoStarter
 	writetext MomText_AskAboutHMFriends
 	yesorno
@@ -201,6 +214,24 @@ MomText_ElmAskedAboutHiddenPower:
 	line "asked if you want"
 	cont "to set your type"
 	cont "for HIDDEN POWER."
+	done
+
+MomText_AskRival:
+	text "Do you want the"
+	line "RIVAL's starter"
+	cont "to change too?"
+	done
+
+	
+MomText_RivalChanges:
+	text "The RIVAL's"
+	line "#MON will"
+	cont "be updated."
+	done
+
+MomText_RivalStillSame:
+	text "The RIVAL will"
+	line "stay unchanged."
 	done
 
 MomText_AskChikorita:

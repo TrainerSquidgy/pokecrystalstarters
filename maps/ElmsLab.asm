@@ -102,6 +102,18 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	sjump .StartersDone
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.StartersDone
 	writetext ElmsLabChooseStartersYesText
 	sjump .Merge
 .NoStarter
@@ -136,6 +148,23 @@ ElmsLabText_EvolutionsNo:
 ElmsLabText_EvolutionsAsk:
 	text "Should your"
 	line "#MON evolve?"
+	done
+	
+ElmsLabText_AskRival:
+	text "Do you want the"
+	line "RIVAL's starter"
+	cont "to change too?"
+	done
+	
+ElmsLabText_RivalChanges:
+	text "The RIVAL's"
+	line "#MON will"
+	cont "be updated."
+	done
+
+ElmsLabText_RivalStillSame:
+	text "The RIVAL will"
+	line "stay unchanged."
 	done
 	
 ElmsLabText_AskAboutHiddenPower:

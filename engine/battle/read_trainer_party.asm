@@ -459,7 +459,10 @@ ScaleTrainerEncounters:
 	ret
 
 CheckIfTrainerShouldBeEvolved::
-    ld a, [wCurPartySpecies]
+    ld a, [wEvolutionsDisabled]
+	and a
+	ret nz
+	ld a, [wCurPartySpecies]
     dec a
     push hl
     push bc
@@ -665,6 +668,5 @@ CheckForRivalMons:
 	ld a, [wElmPokemon3]
 .merge
 	ld [wCurPartySpecies], a
-	
 	call CheckIfTrainerShouldBeEvolved
 	ret
