@@ -1139,6 +1139,10 @@ EvoStoneEffect:
 	ld a, MON_ITEM
 	call GetPartyParamLocation
 
+	ld a, [wEvolutionsDisabled]
+	and a
+	jp nz, .NoEffect
+
 	ld a, [hl]
 	cp EVERSTONE
 	jr z, .NoEffect

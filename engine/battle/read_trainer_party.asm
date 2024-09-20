@@ -104,7 +104,7 @@ TrainerType1:
 	ld a, [hli]
 	ld [wCurPartySpecies], a
 	
-	;call CheckForRivalMons
+	call CheckForRivalMons
 	
 	;call CheckIfTrainerShouldBeEvolved
 	
@@ -629,9 +629,9 @@ CheckForRivalMons:
 	and a
 	ret z	
 	ld a, [wTrainerClass]
-	cp RIVAL1
+	cp RIVAL1_STARTER
 	jr z, .rival
-	cp RIVAL2
+	cp RIVAL2_STARTER
 	ret nz
 .rival
 	ld a, [wCurPartySpecies]
