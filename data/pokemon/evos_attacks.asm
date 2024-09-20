@@ -1988,7 +1988,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2896,35 +2896,6 @@ SneaselEvosAttacks:
 	db 65, METAL_CLAW
 	db 0 ; no more level-up moves
 
-TeddiursaEvosAttacks:
-	db EVOLVE_LEVEL, 30, URSARING
-	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, LEER
-	db 8, LICK
-	db 15, FURY_SWIPES
-	db 22, FAINT_ATTACK
-	db 29, REST
-	db 36, SLASH
-	db 43, SNORE
-	db 50, THRASH
-	db 0 ; no more level-up moves
-
-UrsaringEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, LEER
-	db 1, LICK
-	db 1, FURY_SWIPES
-	db 8, LICK
-	db 15, FURY_SWIPES
-	db 22, FAINT_ATTACK
-	db 29, REST
-	db 39, SLASH
-	db 49, SNORE
-	db 59, THRASH
-	db 0 ; no more level-up moves
-
 SlugmaEvosAttacks:
 	db EVOLVE_LEVEL, 38, MAGCARGO
 	db 0 ; no more evolutions
@@ -3365,3 +3336,39 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TeddiursaEvosAttacks:
+	db EVOLVE_LEVEL, 30, URSARING
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 6, BABYDOLLEYES
+	db 11, BULLDOZE
+	db 18, SLASH
+	db 25, PLAY_ROUGH
+	db 34, HORSEPOWER
+	db 43, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+UrsaringEvosAttacks:
+	db EVOLVE_URSALUNA, PEAT_BLOCK, URSALUNA
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 6, BABYDOLLEYES
+	db 11, BULLDOZE
+	db 18, SLASH
+	db 25, PLAY_ROUGH
+	db 34, HORSEPOWER
+	db 43, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+	
+UrsalunaEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 6, BABYDOLLEYES
+	db 11, BULLDOZE
+	db 18, SLASH
+	db 25, PLAY_ROUGH
+	db 34, HORSEPOWER
+	db 43, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+	

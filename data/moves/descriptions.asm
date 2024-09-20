@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HeadlongRushDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw HorsepowerDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,16 +252,21 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw BabyDollEyesDescription
+	dw BulldozeDescription
+	dw PlayRoughDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+BabyDollEyesDescription:
+	db   "Moves first."
+	next "Lowers ATTACK.@"
+	
+BulldozeDescription:
+	db   "An attack that"
+	next "lowers SPEED.@"
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -315,9 +320,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HeadlongRushDescription:
+	db   "Lowers users DEF"
+	next "and SPCL.DEF.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -511,6 +516,7 @@ BubblebeamDescription:
 	db   "An attack that may"
 	next "lower SPEED.@"
 
+PlayRoughDescription:
 AuroraBeamDescription:
 	db   "An attack that may"
 	next "lower ATTACK.@"
@@ -835,9 +841,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HorsepowerDescription:
+	db   "Attacks using"
+	next "entire body.@"
 
 TransformDescription:
 	db   "The user assumes"

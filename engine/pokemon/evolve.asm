@@ -88,6 +88,8 @@ EvolveAfterBattle_MasterLoop:
 	ld a, b
 	cp EVOLVE_ITEM
 	jp z, .item
+	cp EVOLVE_URSALUNA
+	jp z, .ursaluna
 
 	ld a, [wForceEvolution]
 	and a
@@ -99,9 +101,6 @@ EvolveAfterBattle_MasterLoop:
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
-	
-	cp EVOLVE_URSALUNA
-	jp z, .ursaluna
 
 ; EVOLVE_STAT
 	ld a, [wTempMonLevel]
@@ -135,10 +134,32 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp nz, .dont_evolve_3
+	
+	push hl
 	call GetWeekday
 	cp MONDAY
+	jr z, .now_item
+.dont_evolve_4
+	pop hl
+	jp .dont_evolve_3
+	
+.now_item
+	pop hl
+	ld a, [hli]
+	ld b, a
+	ld a, [wCurItem]
+	cp b
 	jp nz, .dont_evolve_3
-	jp .item
+
+	ld a, [wForceEvolution]
+	and a
+	jp z, .dont_evolve_3
+	ld a, [wLinkMode]
+	and a
+	jp nz, .dont_evolve_3
+	jr .proceed
+	
+
 
 .happiness
 	ld a, [wTempMonHappiness]

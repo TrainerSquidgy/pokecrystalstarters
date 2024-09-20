@@ -407,7 +407,10 @@ PlacePartyMonEvoStoneCompatibility:
 	inc hl
 	inc hl
 	cp EVOLVE_ITEM
+	jr z, .item
+	cp EVOLVE_URSALUNA
 	jr nz, .loop2
+.item
 	dec hl
 	dec hl
 	ld a, [wCurItem]

@@ -353,6 +353,7 @@ EvasionUp2:
 	statupfailtext
 	endmove
 
+BabyDollEyes:
 AttackDown:
 	checkobedience
 	usedmovetext
@@ -2076,4 +2077,26 @@ DefenseCurl:
 	raisesub
 	statupmessage
 	statupfailtext
+	endmove
+
+HeadlongRush:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	effectchance
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	headlongrush
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove
