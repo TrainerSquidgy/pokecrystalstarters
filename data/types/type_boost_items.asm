@@ -16,4 +16,6 @@ TypeBoostItems:
 	db HELD_DRAGON_BOOST,   DRAGON       ; DRAGON_SCALE
 	db HELD_DARK_BOOST,     DARK         ; BLACKGLASSES
 	db HELD_STEEL_BOOST,    STEEL        ; METAL_COAT
+	db HELD_FAIRY_BOOST,    FAIRY_P      
+	db HELD_FAIRY_BOOST,    FAIRY_S        
 	db -1

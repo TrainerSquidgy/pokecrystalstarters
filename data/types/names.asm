@@ -12,6 +12,7 @@ TypeNames:
 	dw Bug
 	dw Ghost
 	dw Steel
+	dw FairyP
 	assert_table_length UNUSED_TYPES
 
 rept UNUSED_TYPES_END - UNUSED_TYPES - 1 ; discount CURSE_TYPE
@@ -28,6 +29,7 @@ endr
 	dw Ice
 	dw Dragon
 	dw Dark
+	dw FairyS
 	assert_table_length TYPES_END
 
 Normal:    db "NORMAL@"
@@ -49,3 +51,5 @@ Ghost:     db "GHOST@"
 Steel:     db "STEEL@"
 Dragon:    db "DRAGON@"
 Dark:      db "DARK@"
+FairyP:    db "FAIRY@"
+FairyS:    db "FAIRY@"
