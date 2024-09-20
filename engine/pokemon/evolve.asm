@@ -1,4 +1,4 @@
-EvolvePokemon:
+	EvolvePokemon:
 	ld hl, wEvolvableFlags
 	xor a
 	ld [hl], a
@@ -71,7 +71,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, b
 	cp EVOLVE_TRADE
-	jr z, .trade
+	jp z, .trade
 
 	ld a, [wEvolutionsDisabled]
 	and a
@@ -99,6 +99,9 @@ EvolveAfterBattle_MasterLoop:
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
+	
+	cp EVOLVE_URSALUNA
+	jp z, .ursaluna
 
 ; EVOLVE_STAT
 	ld a, [wTempMonLevel]
@@ -126,7 +129,16 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .dont_evolve_2
 
 	inc hl
-	jr .proceed
+	jp .proceed
+	
+.ursaluna
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jp nz, .dont_evolve_3
+	call GetWeekday
+	cp MONDAY
+	jp nz, .dont_evolve_3
+	jp .item
 
 .happiness
 	ld a, [wTempMonHappiness]
