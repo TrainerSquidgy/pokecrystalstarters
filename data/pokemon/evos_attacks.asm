@@ -2780,15 +2780,21 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
+	db EVOLVE_HELD_NITE, RAZOR_FANG, GLISCOR
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 6, SAND_ATTACK
-	db 13, HARDEN
-	db 20, QUICK_ATTACK
-	db 28, FAINT_ATTACK
-	db 36, SLASH
-	db 44, SCREECH
-	db 52, GUILLOTINE
+	db 5, SAND_ATTACK
+	db 9, HARDEN
+	db 12, KNOCK_OFF
+	db 16, QUICK_ATTACK
+	db 20, FURY_CUTTER
+	db 23, FAINT_ATTACK
+	db 27, SCREECH
+	db 31, SLASH
+	db 34, SWORDS_DANCE
+	db 38, U_TURN
+	db 42, X_SCISSOR
+	db 45, GUILLOTINE
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:
@@ -3364,4 +3370,21 @@ CelebiEvosAttacks:
 	db 30, FUTURE_SIGHT
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
+	db 0 ; no more level-up moves
+
+GliscorEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, POISON_STING
+	db 5, SAND_ATTACK
+	db 9, HARDEN
+	db 12, KNOCK_OFF
+	db 16, QUICK_ATTACK
+	db 20, FURY_CUTTER
+	db 23, FAINT_ATTACK
+	db 27, SCREECH
+	db 31, SLASH
+	db 34, SWORDS_DANCE
+	db 38, U_TURN
+	db 42, X_SCISSOR
+	db 45, GUILLOTINE
 	db 0 ; no more level-up moves

@@ -1106,3 +1106,11 @@ BattleText_NoTimeLeftToday: ; unreferenced
 	text "There is no time"
 	line "left today!"
 	done
+
+KnockedOffItemText:
+	text "<USER>"
+	line "knocked off"
+	cont "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt

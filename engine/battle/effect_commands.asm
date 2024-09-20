@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1886,8 +1885,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -5555,10 +5552,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -6777,4 +6770,129 @@ _CheckBattleScene:
 	pop bc
 	pop de
 	pop hl
+	ret
+
+BattleCommand_UTurn:
+; batonpass
+
+	ldh a, [hBattleTurn]
+	and a
+	jp nz, .Enemy
+
+; Need something to switch to
+	call CheckAnyOtherAlivePartyMons
+	jp z, UTurnCantSwitch
+
+	call UpdateBattleMonInParty
+
+	ld c, 50
+	call DelayFrames
+
+; Transition into switchmon menu
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu
+
+	farcall ForcePickSwitchMonInBattle
+
+; Return to battle scene
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+	;call SwitchPlayerMon
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP
+	call BatonPass_LinkPlayerSwitch
+	callfar ResetPlayerStatLevels
+	callfar NewBattleMonStatus
+
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+
+	ld hl, PassedBattleMonEntrance
+	call CallBattleCore
+
+	call ResetBatonPassStatus
+	ret
+
+.Enemy:
+; Wildmons don't have anything to switch to
+	ld a, [wBattleMode]
+	dec a ; WILDMON
+	jp z, UTurnCantSwitch
+
+	call CheckAnyOtherAliveEnemyMons
+	jp z, UTurnCantSwitch
+
+	callfar ResetEnemyStatLevels
+	callfar NewEnemyMonStatus
+	call UpdateEnemyMonInParty
+	call BatonPass_LinkEnemySwitch
+
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+
+; Passed enemy PartyMon entrance
+	xor a
+	ld [wEnemySwitchMonIndex], a
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	call CallBattleCore
+	ld a, TRUE
+	ld [wApplyStatLevelMultipliersToEnemy], a
+	ld hl, ApplyStatLevelMultiplierOnAllStats
+	call CallBattleCore
+
+	ld hl, SpikesDamage
+	call CallBattleCore
+
+	jp ResetBatonPassStatus
+	
+UTurnCantSwitch:
+	call AppearUserRaiseSub
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp TELEPORT ;If we're using teleport then print the failed text if we're here
+	ret nz
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
+BattleCommand_KnockOff:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	; Maybe Substitute prevents the steal
+	call CheckSubstituteOpp
+	ret nz
+
+	; Check if target has an item to knock off
+	call GetOpponentItem
+	ld a, [hl]
+	and a
+	ret z
+
+	; Mail can't be knocked off
+	ld d, a
+	call ItemIsMail
+	ret c
+
+	ld [wNamedObjectIndex], a
+	xor a
+	ld [hl], a
+	call GetItemName
+	ld hl, KnockedOffItemText
+	call StdBattleTextbox
+	ld a, MON_ITEM
+	call OpponentPartyAttr
+	ret z
+	xor a
+	ld [hl], a
 	ret

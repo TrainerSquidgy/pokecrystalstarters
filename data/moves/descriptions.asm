@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw NightSlashDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,16 +252,24 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw UTurnDescription
+	dw KnockOffDescription
+	dw XScissorDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+XScissorDescription:
+	db   "Hits the enemy"
+	next "with its claws.@"
+
+UTurnDescription:
+	db   "Attacks but then"
+	next "switches out.@"
+KnockOffDescription:
+	db   "Knocks off enemy"
+	next "item, stops use.@"
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -314,10 +322,6 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
-
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -915,6 +919,7 @@ SuperFangDescription:
 	db   "Cuts the foe's HP"
 	next "by 1/2.@"
 
+NightSlashDescription:
 SlashDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"

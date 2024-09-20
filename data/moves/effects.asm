@@ -2077,3 +2077,44 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+UTurn:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	uturn
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+KnockOff:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	knockoff
+	buildopponentrage
+	kingsrock
+	endmove

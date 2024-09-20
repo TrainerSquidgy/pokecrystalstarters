@@ -12,7 +12,7 @@ MoveNames::
 	li "SCRATCH"
 	li "VICEGRIP"
 	li "GUILLOTINE"
-	li "RAZOR WIND"
+	li "NIGHT SLASH"
 	li "SWORDS DANCE"
 	li "CUT"
 	li "GUST"
@@ -251,4 +251,7 @@ MoveNames::
 	li "ROCK SMASH"
 	li "WHIRLPOOL"
 	li "BEAT UP"
+	li "U-TURN"
+	li "KNOCK OFF"
+	li "X-SCISSOR"
 	assert_list_length NUM_ATTACKS
