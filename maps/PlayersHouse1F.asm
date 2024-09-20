@@ -111,32 +111,34 @@ MeetMomScript:
 ; Check to set Hidden Power
 	writetext MomText_ElmAskedAboutHiddenPower
 	yesorno
-	iffalse .NoHiddenPower
+	iffalse .CheckEvolutions
 	special SetHiddenPower
-	writetext MomText_HiddenPowerUpdated
-	waitbutton
-.NoHiddenPower
-	writetext MomText_AskRival
-	yesorno
-	iffalse .NoRival
-	writetext MomText_RivalChanges
-	loadmem wRivalCarriesStarter, 1
-	waitbutton
-	sjump .NoStarter
-.NoRival
-	writetext MomText_RivalStillSame
-	waitbutton
-.NoStarter
+; Check to see if MON should Evolve
+.CheckEvolutions
 	writetext MomText_EvolutionsAsk
 	yesorno
 	iftrue .KeepEvolutions
-	writetext MomText_EvolutionsNo
 	loadmem wEvolutionsDisabled, 1
-	sjump .EvolutionMerge
+	writetext MomText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
 .KeepEvolutions
 	writetext MomText_EvolutionsYes
-.EvolutionMerge
 	waitbutton
+.HandledEvolutions
+.NoStarter
+	writetext MomText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	writetext MomText_AskAboutHMFriendsYes
+	waitbutton
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext MomText_AskAboutHMFriendsNo
+	waitbutton
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+.DoneHMFriends
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -157,7 +159,27 @@ MeetMomScript:
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
 
-
+MomText_AskAboutHMFriends:
+	text "Do you want"
+	line "the HM Friends"
+	cont "to be guaranteed"
+	cont "first encounters?"
+	done
+	
+MomText_AskAboutHMFriendsYes:
+	text "The first"
+	line "encounters will"
+	cont "be HM Friends"
+	cont "in ILEX FOREST"
+	cont "and ROUTE 34."
+	done
+	
+MomText_AskAboutHMFriendsNo:
+	text "The HM Friends"
+	line "will be random"
+	cont "encounters."
+	done
+	
 MomText_EvolutionsYes:
 	text "Evolutions are"
 	line "still enabled."
@@ -172,29 +194,7 @@ MomText_EvolutionsAsk:
 	text "Should your"
 	line "#MON evolve?"
 	done
-	
 
-
-MomText_RivalChanges:
-	text "The RIVAL's"
-	line "#MON will"
-	cont "be updated."
-	done
-
-MomText_RivalStillSame:
-	text "The RIVAL will"
-	line "stay unchanged."
-	done
-
-MomText_AskRival:
-	text "Do you want the"
-	line "RIVAL's starter"
-	cont "to change too?"
-	done
-MomText_HiddenPowerUpdated:
-	text "HIDDEN POWER type"
-	line "updated...."
-	done
 
 MomText_ElmAskedAboutHiddenPower:
 	text "PROF. ELM also"

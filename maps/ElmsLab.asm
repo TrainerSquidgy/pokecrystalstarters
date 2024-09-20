@@ -90,37 +90,38 @@ ElmsLabStarterChoice:
 .NoHiddenPower
 	loadmem wIsAStarter, 0
 .HandledHiddenPower
-	writetext ElmsLabText_AskRival
+; Check to see if MON should Evolve
+	writetext ElmsLabText_EvolutionsAsk
 	yesorno
-	iffalse .NoRival
-	writetext ElmsLabText_RivalChanges
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
 	waitbutton
-	loadmem wRivalCarriesStarter, 1
-	sjump .RivalDone
-.NoRival
-	writetext ElmsLabText_RivalStillSame
+	sjump .HandledEvolutions
+.KeepEvolutions
+	writetext ElmsLabText_EvolutionsYes
 	waitbutton
-.RivalDone
+.HandledEvolutions
 	writetext ElmsLabChooseStartersYesText
 	sjump .Merge
 .NoStarter
 	writetext ElmsLabChooseStartersNoText
 .Merge
 	waitbutton
-	writetext ElmsLabText_EvolutionsAsk
+	writetext ElmsLabText_AskAboutHMFriends
 	yesorno
-	iftrue .KeepEvolutions
-	writetext ElmsLabText_EvolutionsNo
-	loadmem wEvolutionsDisabled, 1
-	sjump .EvolutionsMerge
-.KeepEvolutions
-	writetext ElmsLabText_EvolutionsYes
-.EvolutionsMerge
+	iffalse .NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsYes
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsNo
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+.DoneHMFriends
 	waitbutton
 	closetext
 .End
 	end
-	
 	
 ElmsLabText_EvolutionsYes:
 	text "Evolutions are"
@@ -135,23 +136,6 @@ ElmsLabText_EvolutionsNo:
 ElmsLabText_EvolutionsAsk:
 	text "Should your"
 	line "#MON evolve?"
-	done
-	
-ElmsLabText_AskRival:
-	text "Do you want the"
-	line "RIVAL's starter"
-	cont "to change too?"
-	done
-	
-ElmsLabText_RivalChanges:
-	text "The RIVAL's"
-	line "#MON will"
-	cont "be updated."
-	done
-
-ElmsLabText_RivalStillSame:
-	text "The RIVAL will"
-	line "stay unchanged."
 	done
 	
 ElmsLabText_AskAboutHiddenPower:
@@ -1534,6 +1518,29 @@ ElmsLabPCText:
 	para "…It says on the"
 	line "screen…"
 	done
+
+ElmsLabText_AskAboutHMFriends:
+	text "Do you want"
+	line "the HM Friends"
+	cont "to be guaranteed"
+	cont "first encounters?"
+	done
+	
+ElmsLabText_AskAboutHMFriendsYes:
+	text "The first"
+	line "encounters will"
+	cont "be HM Friends"
+	cont "in ILEX FOREST"
+	cont "and ROUTE 34."
+	done
+	
+ElmsLabText_AskAboutHMFriendsNo:
+	text "The HM Friends"
+	line "will be random"
+	cont "encounters."
+	done
+	
+
 
 ElmsLab_MapEvents:
 	db 0, 0 ; filler
