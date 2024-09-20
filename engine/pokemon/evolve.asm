@@ -95,7 +95,7 @@ EvolveAfterBattle_MasterLoop:
 	jp z, .held_nite
 	
 	cp EVOLVE_HELD
-	jp z, .held
+	jp z, .holding
 
 ; EVOLVE_STAT
 	ld a, [wTempMonLevel]
@@ -194,19 +194,18 @@ EvolveAfterBattle_MasterLoop:
 .held_nite
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jp nz, .dont_evolve_2
-.held
-	push hl
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	ld a, [hl]
-	ld b, a
-	pop hl
+	jp .holding
+	cp NITE
+	jp nz, .dont_evolve_3
+	
+.holding
 	ld a, [hli]
+	ld b, a
+	ld a, [wTempMonItem]
 	cp b
-	jp nz, .dont_evolve_2
+	jp nz, .dont_evolve_3
+	xor a
+	ld [wTempMonItem], a
 	jp .proceed
 
 .level
