@@ -8,11 +8,10 @@ TypeNames:
 	dw Poison
 	dw Ground
 	dw Rock
-	dw Bird
+	dw FairyP
 	dw Bug
 	dw Ghost
 	dw Steel
-	dw FairyP
 	assert_table_length UNUSED_TYPES
 
 rept UNUSED_TYPES_END - UNUSED_TYPES - 1 ; discount CURSE_TYPE
@@ -45,7 +44,6 @@ Psychic:   db "PSYCHIC@"
 Ice:       db "ICE@"
 Ground:    db "GROUND@"
 Rock:      db "ROCK@"
-Bird:      db "BIRD@"
 Bug:       db "BUG@"
 Ghost:     db "GHOST@"
 Steel:     db "STEEL@"
