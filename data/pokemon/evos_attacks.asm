@@ -1988,7 +1988,6 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3165,7 +3164,6 @@ HitmontopEvosAttacks:
 	db 31, COUNTER
 	db 37, AGILITY
 	db 43, DETECT
-	db 49, TRIPLE_KICK
 	db 0 ; no more level-up moves
 
 SmoochumEvosAttacks:
@@ -3327,8 +3325,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, AEROBLAST
-	db 11, SAFEGUARD
+	db  1, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
 	db 44, HYDRO_PUMP
@@ -3341,8 +3338,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
-	db 11, SAFEGUARD
+	db  1, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
 	db 44, FIRE_BLAST
@@ -3365,3 +3361,23 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ScreamTailEvosAttacks:
+	db 0
+	db 1,  POUND
+	db 1,  SING
+	db 1,  DISABLE
+	db 7,  HOWL
+	db 14, NOBLE_ROAR
+	db 21, BITE
+	db 28, BODY_SLAM
+	db 35, REST
+	db 42, PLAY_ROUGH
+	db 49, HYPER_VOICE
+	db 56, PSYCHICFANGS
+	db 63, CRUNCH
+	db 70, WISH
+	db 77, GYRO_BALL
+	db 84, PERISH_SONG
+	db 91, BOOMBURST
+	db 0

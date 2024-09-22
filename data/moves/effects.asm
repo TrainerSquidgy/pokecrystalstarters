@@ -2077,3 +2077,65 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+NobleRoar:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	nobleroar
+	lowersub
+	statdownanim
+	raisesub
+	statdownmessage
+	statdownfailtext
+	endmove
+
+PsychicFangs:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	psychicfangs
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+GyroBall:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	gyroball
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+Wish:
+	checkobedience
+	usedmovetext
+	doturn
+	wish
+	endmove

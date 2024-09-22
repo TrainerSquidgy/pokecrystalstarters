@@ -1106,3 +1106,17 @@ BattleText_NoTimeLeftToday: ; unreferenced
 	text "There is no time"
 	line "left today!"
 	done
+BattleText_ReflectBroke:
+	text "The REFLECT"
+	line "SCREEN broke.@"
+	prompt
+
+BattleText_LightScreenBroke:
+	text "The LIGHT"
+	line "SCREEN broke.@"
+	prompt
+	
+
+WishCameTrueText:
+	text "<USER>'s"
+	line "wish came true.@"

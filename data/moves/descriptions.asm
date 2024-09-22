@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HyperVoiceDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw PsychicFangsDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -167,7 +167,7 @@ MoveDescriptions::
 	dw SubstituteDescription
 	dw StruggleDescription
 	dw SketchDescription
-	dw TripleKickDescription
+	dw WishDescription
 	dw ThiefDescription
 	dw SpiderWebDescription
 	dw MindReaderDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw BoomburstDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw GyroBallDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -252,17 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw SharpenDescription
+	dw NobleRoarDescription
+	dw AuroraBeamDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+NobleRoarDescription:
+	db   "Lowers ATTACK"
+	next "and SPCL.ATK.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +316,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HyperVoiceDescription:
+	db   "Attacks with a"
+	next "piercing sound.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -835,9 +836,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+PsychicFangsDescription:
+	db   "Breaks SCREENS,"
+	next "then attacks.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -931,9 +932,9 @@ SketchDescription:
 	db   "Copies the foe's"
 	next "move permanently.@"
 
-TripleKickDescription:
-	db   "Hits three times"
-	next "with rising power.@"
+WishDescription:
+	db   "Makes a wish to"
+	next "heal some HP.@"
 
 ThiefDescription:
 	db   "An attack that may"
@@ -971,9 +972,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+BoomburstDescription:
+	db   "Attacks with a"
+	next "loud sound.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1147,9 +1148,9 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
+GyroBallDescription:
+	db   "Does more when"
+	next "user is slower.@"
 
 MagnitudeDescription:
 	db   "A ground attack"

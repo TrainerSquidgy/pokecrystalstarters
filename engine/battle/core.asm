@@ -285,6 +285,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
+	call HandleWishEffect
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -9151,3 +9152,49 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+
+HandleWishEffect:
+; At the end of the 2nd turn, Wish restores 1/2
+; of the max HP of the user's current Pokemon.
+	call SetPlayerTurn
+	ld hl, wPlayerWishCount
+	call .do_it
+	call SetEnemyTurn
+	ld hl, wEnemyWishCount
+.do_it
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	farcall RestoreHalfMaxHP
+	ld hl, WishCameTrueText
+	jp StdBattleTextbox
+	
+RestoreHalfMaxHP:
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetHalfMaxHP
+	call SwitchTurnCore
+	jp RestoreHP
+	
+	

@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +423,6 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1077,8 +1072,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1886,10 +1879,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -1969,8 +1958,6 @@ BattleCommand_MoveAnimNoSub:
 	jr z, .alternate_anim
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .alternate_anim
-	cp EFFECT_TRIPLE_KICK
-	jr z, .triplekick
 	xor a
 	ld [wBattleAnimParam], a
 
@@ -2407,8 +2394,6 @@ BattleCommand_CheckFaint:
 	cp EFFECT_DOUBLE_HIT
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .multiple_hit_raise_sub
-	cp EFFECT_TRIPLE_KICK
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_BEAT_UP
 	jr nz, .finish
@@ -3540,8 +3525,6 @@ DoSubstituteDamage:
 	cp EFFECT_DOUBLE_HIT
 	jr z, .ok
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .ok
-	cp EFFECT_TRIPLE_KICK
 	jr z, .ok
 	cp EFFECT_BEAT_UP
 	jr z, .ok
@@ -5227,20 +5210,8 @@ BattleCommand_EndLoop:
 	jr z, .double_hit
 	ld a, [hl]
 	cp EFFECT_BEAT_UP
-	jr z, .beat_up
-	cp EFFECT_TRIPLE_KICK
-	jr nz, .not_triple_kick
-.reject_triple_kick_sample
-	call BattleRandom
-	and $3
-	jr z, .reject_triple_kick_sample
-	dec a
-	jr nz, .double_hit
-	ld a, 1
-	ld [bc], a
-	jr .done_loop
-
-.beat_up
+	jr nz, .not_beat_up
+	
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .check_ot_beat_up
@@ -5268,7 +5239,7 @@ BattleCommand_EndLoop:
 	call BattleCommand_BeatUpFailText
 	jp EndMoveEffect
 
-.not_triple_kick
+.not_beat_up
 	call BattleRandom
 	and $3
 	cp 2
@@ -5555,20 +5526,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6777,4 +6741,158 @@ _CheckBattleScene:
 	pop bc
 	pop de
 	pop hl
+	ret
+
+BattleCommand_NobleRoar:
+	call BattleCommand_AttackDown
+	call BattleCommand_StatDownAnim
+	call BattleCommand_StatDownMessage
+	call BattleCommand_StatDownFailText
+	call ResetMiss
+	call BattleCommand_SpecialAttackDown
+	call BattleCommand_StatDownAnim
+	call BattleCommand_StatDownMessage
+	call BattleCommand_StatDownFailText
+	ret
+	
+BattleCommand_PsychicFangs:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wEnemyScreens
+	jr z, .got_screens
+	ld hl, wPlayerScreens
+.got_screens
+	ld a, [hl]
+	and a
+	ret z
+	ld [hl], 0
+	push af
+	and SCREENS_REFLECT
+	jr z, .reflect_done
+	ld hl, BattleText_ReflectBroke
+	call StdBattleTextbox
+.reflect_done
+	pop af
+	and SCREENS_LIGHT_SCREEN
+	ret z
+	ld hl, BattleText_LightScreenBroke
+	jp StdBattleTextbox
+	
+BattleCommand_Wish:
+	ld hl, wPlayerWishCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_wish_count
+	ld hl, wEnemyWishCount
+.got_wish_count
+
+; Don't set Wish if it's already up for the user
+	ld a, [hl]
+	and a
+	jr nz, .already_wished
+
+; Make a wish
+	push hl
+	call AnimateCurrentMove
+	pop hl
+
+; Set 2 turn countdown for Wish
+	ld a, 2
+	ld [hl], a
+	ret
+
+.already_wished
+	call AnimateFailedMove
+	farcall PrintButItFailed
+	ret
+	
+BattleCommand_GyroBall:
+; Deals more damage the slower the user is compared to the target.
+; Speed values take modifiers into account.
+
+	push bc
+	push de
+
+; Get the user's and target's speed stats (with modifiers).
+	ld hl, wBattleMonSpeed
+	ld de, wEnemyMonSpeed
+	ld a, [hBattleTurn]
+	and a
+	jr z, .got_speeds
+	ld hl, wEnemyMonSpeed
+	ld de, wBattleMonSpeed
+
+.got_speeds
+; User's speed in bc
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+
+; Target's speed in de
+	ld h, d
+	ld l, e
+	ld a, [hli]
+	ld d, a
+	ld a, [hli]
+	ld e, a
+
+; Below is Rangi's Gyro Ball code from Polished Crystal.
+
+	; This is counterintuitive (the logical choice is to set speed to 1),
+	; but is how it's done in VII...
+	ld a, b
+	or c
+	ld a, 1
+	jr z, .got_power
+
+	; We can't divide numbers >255, so scale down speed in that case
+.scaledown_loop
+	ld a, b
+	and a
+	jr z, .scaledown_ok
+	srl b
+	rr c
+	srl d
+	rr e
+	jr .scaledown_loop
+.scaledown_ok
+	; Base Power = 25 * (Target Speed / User Speed), capped at 150
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld a, d
+	ldh [hMultiplicand + 1], a
+	ld a, e
+	ldh [hMultiplicand + 2], a
+	ld a, 25
+	ldh [hMultiplier], a
+	call Multiply
+
+	ld a, c
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+	; Cap at min 1, max 150
+	ld hl, hMultiplicand
+	ld a, [hli]
+	or [hl]
+	ld a, 150
+	jr nz, .got_power
+	inc hl
+	ld a, [hl]
+	and a
+	jr nz, .nonzero_power
+	ld a, 1
+	jr .got_power
+
+.nonzero_power
+	cp 151
+	jr c, .got_power
+
+	ld a, 150
+.got_power
+	pop de
+	ld d, a
+	pop bc
 	ret

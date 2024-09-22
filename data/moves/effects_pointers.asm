@@ -158,4 +158,8 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
+	dw NobleRoar
+	dw PsychicFangs
+	dw GyroBall
+	dw Wish
 	assert_table_length NUM_MOVE_EFFECTS

@@ -190,6 +190,7 @@ AlphabeticalPokedexOrder:
 	db SANDSHREW
 	db SANDSLASH
 	db SCIZOR
+	db SCREAMTAIL
 	db SCYTHER
 	db SEADRA
 	db SEAKING
