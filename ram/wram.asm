@@ -3168,7 +3168,9 @@ wRivalCarriesStarter:: db
 wIsAStarter:: db
 wStarterDVSelection:: db
 wEvolutionsDisabled:: db
-	ds 83
+wGen1MovesLeft:: db
+wEggMovesLeft:: db
+	ds 81
 
 wEventFlags:: flag_array NUM_EVENTS
 

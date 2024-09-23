@@ -489,7 +489,6 @@ SECTION "mobile40", ROMX
 
 INCLUDE "mobile/mobile_40.asm"
 
-
 SECTION "bank41", ROMX
 
 INCLUDE "engine/gfx/dma_transfer.asm"
@@ -683,6 +682,12 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
+SECTION "Egg Move and Gen 1 Tutors", ROMX
+
+INCLUDE "data/pokemon/gen1_tmattacks.asm"
+INCLUDE "data/pokemon/relearned_egg_moves.asm"
+INCLUDE "engine/events/egg_move_relearner.asm"
+INCLUDE "engine/events/gen1tm_move_relearner.asm"
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 

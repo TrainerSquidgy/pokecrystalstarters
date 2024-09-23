@@ -187,4 +187,5 @@ SpecialsPointers::
 
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
-	add_special UnusedDummySpecial ; unused
+	add_special EggMoveRelearner
+	add_special Gen1TMRelearner
