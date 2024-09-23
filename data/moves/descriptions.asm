@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw ThunderclapDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -312,9 +312,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+ThunderclapDescription:
+	db   "Goes first. Enemy"
+	next "needs to attack.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"

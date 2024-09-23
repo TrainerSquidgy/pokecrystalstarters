@@ -14,7 +14,7 @@ BattleAnimations::
 	dw BattleAnim_Scratch
 	dw BattleAnim_Vicegrip
 	dw BattleAnim_Guillotine
-	dw BattleAnim_RazorWind
+	dw BattleAnim_Thunder
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
 	dw BattleAnim_Gust

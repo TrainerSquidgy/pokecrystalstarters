@@ -180,4 +180,6 @@ BattleCommandPointers:
 	dw BattleCommand_SuperEffectiveLoopText
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
+	dw BattleCommand_CalmMind
+	dw BattleCommand_Thunderclap
 	assert_table_length NUM_EFFECT_COMMANDS

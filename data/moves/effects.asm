@@ -2082,16 +2082,31 @@ CalmMind:
 	checkobedience
 	usedmovetext
 	doturn
-	specialattackup
 	lowersub
 	statupanim
+	calmmind
 	raisesub
 	statupmessage
 	statupfailtext
-	specialdefenseup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
-	statupfailtext
+	endmove
+	
+Thunderclap:
+	checkobedience
+	usedmovetext
+	doturn
+	thunderclap
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove

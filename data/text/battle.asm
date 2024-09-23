@@ -1106,3 +1106,8 @@ BattleText_NoTimeLeftToday: ; unreferenced
 	text "There is no time"
 	line "left today!"
 	done
+
+BattleText_ThunderclapMissed:
+	text "The THUNDERCLAP"
+	line "missed its foe."
+	prompt

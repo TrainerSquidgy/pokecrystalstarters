@@ -3360,10 +3360,10 @@ RageBoltEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TWISTER
 	db 1, LEER
-	db 11, THUNDERSHOCK
+	db 11, SHOCK_WAVE
 	db 21, ROAR
 	db 31, STOMP
-	db 41, SHOCK_WAVE
+	db 41, THUNDERCLAP
 	db 51, CALM_MIND
 	db 61, DRAGON_HAMR
 	db 71, THUNDER
