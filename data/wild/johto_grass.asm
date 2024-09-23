@@ -1393,14 +1393,15 @@ JohtoGrassWildMons:
 	db 10, DITTO
 	db 10, DITTO
 	; nite
-	db 32, JIGGLYPUFF
-	db 31, RATTATA
-	db 32, HOOTHOOT
-	db 30, ABRA
-	db 32, JIGGLYPUFF
-	db 30, DITTO
-	db 30, DITTO
+	db 12, DROWZEE
+	db 11, RATTATA
+	db 12, HOOTHOOT
+	db 10, ABRA
+	db 12, JIGGLYPUFF
+	db 10, DITTO
+	db 10, DITTO
 	end_grass_wildmons
+
 
 	def_grass_wildmons ROUTE_35
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
