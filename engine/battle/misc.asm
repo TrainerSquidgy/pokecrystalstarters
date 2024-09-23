@@ -50,6 +50,10 @@ GetPlayerBackpicCoords:
 	ret
 
 DoWeatherModifiers:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_HYDRO_STEAM
+	ret z
 	ld de, WeatherTypeModifiers
 	ld a, [wBattleWeather]
 	ld b, a

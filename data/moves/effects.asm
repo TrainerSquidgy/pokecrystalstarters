@@ -2077,3 +2077,34 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+NobleRoar:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	nobleroar
+	raisesub
+	endmove
+	
+HydroSteam:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	hydrosteam
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

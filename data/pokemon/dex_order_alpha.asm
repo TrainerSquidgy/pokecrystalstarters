@@ -243,6 +243,7 @@ AlphabeticalPokedexOrder:
 	db VOLTORB
 	db VULPIX
 	db WARTORTLE
+	db WALK_WAKE
 	db WEEDLE
 	db WEEPINBELL
 	db WEEZING

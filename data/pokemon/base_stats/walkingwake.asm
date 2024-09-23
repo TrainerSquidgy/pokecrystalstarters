@@ -1,9 +1,9 @@
-	db SUICUNE ; 245
+	db WALK_WAKE
 
 	db 99,  83,  91,  109, 125, 83
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER ; type
+	db WATER, DRAGON ; type
 	db 3 ; catch rate
 	db 215 ; base exp
 	db NO_ITEM, NO_ITEM ; items

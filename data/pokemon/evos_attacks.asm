@@ -3365,3 +3365,16 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+WalkingWakeEvosAttacks:
+	db  0
+	db  1, TWISTER
+	db  1, LEER
+	db 11, AQUA_JET
+	db 21, ROAR
+	db 31, BITE
+	db 41, HYDRO_STEAM
+	db 51, NOBLE_ROAR
+	db 61, DRAGON_PULSE
+	db 71, HYDRO_PUMP
+	db 0

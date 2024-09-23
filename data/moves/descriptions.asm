@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HydroSteamDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,17 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw QuickAttackDescription
+	dw NobleRoarDescription
+	dw DragonPulseDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+NobleRoarDescription:
+	db   "Lower ATTACK"
+	next "and SPCL.ATK.@"
+	
+DragonPulseDescription:
+	db   "Attacks with a"
+	next "shock wave.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +320,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HydroSteamDescription:
+	db   "Does more damage"
+	next "in the sun.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
