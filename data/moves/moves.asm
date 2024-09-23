@@ -265,7 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
-	move FIRE_FANG,    EFFECT_FIRE_FANG,          65, FIRE,          95, 15,  30
+	move FIRE_FANG,    EFFECT_FIRE_FANG,          65, FIRE,          95, 15,  10
 	move NOBLE_ROAR,   EFFECT_NOBLE_ROAR,          0, NORMAL,       100, 30,   0 
 	move DRAGON_RUSH,  EFFECT_FLINCH_HIT,        100, DRAGON,       100, 10,  20 
 	assert_table_length NUM_ATTACKS
