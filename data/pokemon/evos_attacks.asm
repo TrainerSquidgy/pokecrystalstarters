@@ -3350,7 +3350,7 @@ TeddiursaEvosAttacks:
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
-	db EVOLVE_URSALUNA, PEAT_BLOCK, URSALUNA
+	db EVOLVE_ITEM, PEAT_BLOCK, URSALUNA
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 6, BABYDOLLEYES

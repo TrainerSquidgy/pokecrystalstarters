@@ -157,7 +157,18 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .dont_evolve_3
-	jr .proceed
+	ld a, [wTempMonSpecies]
+	cp URSARING
+	jp nz, .proceed
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jp nz, .dont_evolve_3
+	push hl
+	call GetWeekday
+	cp MONDAY
+	jp nz, .dont_evolve_4
+	pop hl
+	jp .proceed
 	
 
 
@@ -171,7 +182,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, [hli]
 	cp TR_ANYTIME
-	jr z, .proceed
+	jp z, .proceed
 	cp TR_MORNDAY
 	jr z, .happiness_daylight
 
@@ -213,6 +224,18 @@ EvolveAfterBattle_MasterLoop:
 	jr .proceed
 
 .item
+	ld a, [wTempMonSpecies]
+	cp URSARING
+	jp nz, .got_species
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jp nz, .dont_evolve_3
+	push hl
+	call GetWeekday
+	cp MONDAY
+	jp nz, .dont_evolve_4
+	pop hl
+.got_species
 	ld a, [hli]
 	ld b, a
 	ld a, [wCurItem]
@@ -228,6 +251,9 @@ EvolveAfterBattle_MasterLoop:
 	jr .proceed
 
 .level
+	ld a, [wTempMonSpecies]
+	cp URSARING
+	jp z, .dont_evolve_3
 	ld a, [hli]
 	ld b, a
 	ld a, [wTempMonLevel]
@@ -372,6 +398,7 @@ EvolveAfterBattle_MasterLoop:
 .dont_evolve_3
 	inc hl
 	jp .loop
+	
 
 .UnusedReturnToMap: ; unreferenced
 	pop hl
