@@ -279,6 +279,23 @@ NewBarkTownElmsHouseSignText:
 	text "ELM'S HOUSE"
 	done
 
+EggMoveRelearnerScript:
+	faceplayer
+	opentext
+	special EggMoveRelearner
+	waitbutton
+	closetext
+	end
+
+Gen1TMRelearnerScript:
+	faceplayer
+	opentext
+	special Gen1TMRelearner
+	waitbutton
+	closetext
+	end
+
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -302,3 +319,5 @@ NewBarkTown_MapEvents:
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN
+	object_event  8,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EggMoveRelearnerScript, -1
+	object_event  9,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Gen1TMRelearnerScript, -1
