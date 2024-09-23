@@ -1988,7 +1988,6 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3365,3 +3364,17 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+GougingFireEvosAttacks:
+	db  0
+	db  1, TWISTER
+	db  1, LEER
+	db 11, FIRE_FANG
+	db 21, HOWL
+	db 31, STOMP
+	db 41, BULWARK
+	db 51, NOBLE_ROAR
+	db 61, DRAGON_RUSH
+	db 71, FIRE_BLAST
+	db 0
+	

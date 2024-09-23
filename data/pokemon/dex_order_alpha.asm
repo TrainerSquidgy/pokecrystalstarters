@@ -76,6 +76,7 @@ AlphabeticalPokedexOrder:
 	db GOLDEEN
 	db GOLDUCK
 	db GOLEM
+	db GOUGE_FIRE
 	db GRANBULL
 	db GRAVELER
 	db GRIMER
