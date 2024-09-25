@@ -3353,15 +3353,52 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
+SphealEvosAttacks:
+	db EVOLVE_LEVEL, 32, SEALEO
+	db  0 ; no more evolutions
+	db  1, POWDER_SNOW
+	db  1, GROWL
+	db  1, WATER_GUN
+	db  7, ENCORE
+	db 13, ICE_BALL
+	db 19, BODY_SLAM
+	db 25, AURORA_BEAM
+	db 31, HAIL
+	db 37, REST
+	db 37, SNORE
+	db 43, BLIZZARD
+	db 49, SHEER_COLD
+	db 0 ; no more level-up moves
+
+SealeoEvosAttacks:
+	db EVOLVE_LEVEL, 44, WALREIN
+	db  0 ; no more evolutions
+	db  1, POWDER_SNOW
+	db  1, GROWL
+	db  1, WATER_GUN
+	db  7, ENCORE
+	db 13, ICE_BALL
+	db 19, BODY_SLAM
+	db 25, AURORA_BEAM
+	db 31, HAIL
+	db 39, REST
+	db 39, SNORE
+	db 47, BLIZZARD
+	db 55, SHEER_COLD
+	db 0 ; no more level-up moves
+
+WalreinEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, POWDER_SNOW
+	db  1, GROWL
+	db  1, WATER_GUN
+	db  7, ENCORE
+	db 13, ICE_BALL
+	db 19, BODY_SLAM
+	db 25, AURORA_BEAM
+	db 31, HAIL
+	db 39, REST
+	db 39, SNORE
+	db 50, BLIZZARD
+	db 61, SHEER_COLD
 	db 0 ; no more level-up moves

@@ -1561,6 +1561,9 @@ BattleCommand_CheckHit:
 
 	call .ThunderRain
 	ret z
+	
+	call .BlizzardHail
+	ret z
 
 	call .XAccuracy
 	ret nz
@@ -1748,6 +1751,19 @@ BattleCommand_CheckHit:
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret
+
+.BlizzardHail:
+; Return z if the current move always hits in hail, and it is hailing.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BLIZZARD
+	ret nz
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret
+
+
 
 .XAccuracy:
 	ld a, BATTLE_VARS_SUBSTATUS4
@@ -6778,3 +6794,22 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+
+BattleCommand_StartHail:
+; starthail
+
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .failed
+
+	ld a, WEATHER_HAIL
+	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
+	ld hl, ItStartedToHailText
+	jp StdBattleTextbox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
