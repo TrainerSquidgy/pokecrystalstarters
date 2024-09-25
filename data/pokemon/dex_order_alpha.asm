@@ -9,6 +9,7 @@ AlphabeticalPokedexOrder:
 	db AMPHAROS
 	db ARBOK
 	db ARCANINE
+	db ARCTOVISH
 	db ARIADOS
 	db ARTICUNO
 	db AZUMARILL

@@ -6778,3 +6778,34 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+BattleCommand_FreezeDry:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .checkenemy
+	
+	ld a, [wBattleMonType1]
+	cp WATER
+	jr z, .water
+	ld a, [wBattleMonType2]
+	cp WATER
+	jr z, .water
+	ret
+	
+.checkenemy
+	ld a, [wEnemyMonType1]
+	cp WATER
+	jr z, .water
+	ld a, [wEnemyMonType2]
+	jr z, .water
+	ret
+
+.water
+	call DoubleDamage
+	jp DoubleDamage
+	
+BattleCommand_FishyRend:
+	call CheckOpponentWentFirst
+	and a
+	ret nz
+	jp DoubleDamage

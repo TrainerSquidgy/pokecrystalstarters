@@ -3365,3 +3365,21 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ArctovishEvosAttacks:
+	db 0
+	db 1, POWDER_SNOW
+	db 1, WATER_GUN
+	db 7, PROTECT
+	db 14, ICY_WIND
+	db 21, ANCIENTPOWER
+	db 28, BITE
+	db 35, REFLECT
+	db 35, LIGHT_SCREEN
+	db 42, FREEZE_DRY
+	db 49, SUPER_FANG
+	db 56, CRUNCH
+	db 63, FISHY_REND
+	db 70, ICICLE_CRASH
+	db 77, BLIZZARD
+	db 0

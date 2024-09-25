@@ -252,17 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw FreezeDryDescription
+	dw FishyRendDescription
+	dw HeadbuttDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+FreezeDryDescription:
+	db   "Super Effective"
+	next "against water.@"
+	
+FishyRendDescription:
+	db   "Does more if"
+	next "user goes first.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
