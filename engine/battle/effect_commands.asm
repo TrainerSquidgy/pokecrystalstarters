@@ -6833,10 +6833,19 @@ BattleCommand_RagingBull:
 	jp StdBattleTextbox
 	
 BattleCommand_CloseCombat:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	
+	ld a, DEFENSE
+	call LowerStat
 	call BattleCommand_SwitchTurn
+	call BattleCommand_StatDownMessage
 	call ResetMiss
-    call BattleCommand_SpecialDefenseDown
-    call BattleCommand_StatUpMessage
+	call BattleCommand_SwitchTurn
+	ld a, SP_DEFENSE
+	call LowerStat
+	call BattleCommand_SwitchTurn
+	call BattleCommand_StatDownMessage
 	call ResetMiss
-    call BattleCommand_DefenseDown
-    call BattleCommand_StatUpMessage
+	jp BattleCommand_SwitchTurn
