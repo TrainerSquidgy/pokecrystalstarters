@@ -123,12 +123,16 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskAboutHMFriends
 	yesorno
 	iffalse .NoHMFriends
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
 	writetext ElmsLabText_AskAboutHMFriendsYes
 	sjump .DoneHMFriends
 .NoHMFriends
 	writetext ElmsLabText_AskAboutHMFriendsNo
 	loadmem wIlexForestEncounters, 3
 	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
 	closetext
@@ -1554,7 +1558,9 @@ ElmsLabText_AskAboutHMFriends:
 	text "Do you want"
 	line "the HM Friends"
 	cont "to be guaranteed"
-	cont "first encounters?"
+	cont "first encounters"
+	para "and to be caught"
+	line "first ball?"
 	done
 	
 ElmsLabText_AskAboutHMFriendsYes:

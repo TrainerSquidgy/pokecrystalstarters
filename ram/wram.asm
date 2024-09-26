@@ -3170,7 +3170,8 @@ wStarterDVSelection:: db
 wEvolutionsDisabled:: db
 wGen1MovesLeft:: db
 wEggMovesLeft:: db
-	ds 81
+wGuaranteedHMFriendCatch:: db
+	ds 80
 
 wEventFlags:: flag_array NUM_EVENTS
 
