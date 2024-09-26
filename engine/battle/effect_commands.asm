@@ -5354,24 +5354,7 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
+	farcall ExtraBattleCommand_FakeOut
 	ret
 
 BattleCommand_FlinchTarget:
@@ -5962,6 +5945,8 @@ CheckMoveTypeMatchesTarget:
 	ret
 
 INCLUDE "engine/battle/move_effects/substitute.asm"
+INCLUDE "engine/battle/move_effects/return.asm"
+INCLUDE "engine/battle/move_effects/frustration.asm"
 
 BattleCommand_RechargeNextTurn:
 	ld a, BATTLE_VARS_SUBSTATUS4
@@ -6380,11 +6365,8 @@ INCLUDE "engine/battle/move_effects/fury_cutter.asm"
 
 INCLUDE "engine/battle/move_effects/attract.asm"
 
-INCLUDE "engine/battle/move_effects/return.asm"
-
 INCLUDE "engine/battle/move_effects/present.asm"
 
-INCLUDE "engine/battle/move_effects/frustration.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 
@@ -6862,3 +6844,119 @@ BattleCommand_StartWeather:
 	call AnimateCurrentMove
 	pop hl
 	jp StdBattleTextbox
+
+BattleCommand_FreezeDry:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .checkenemy
+	
+	ld a, [wBattleMonType1]
+	cp WATER
+	jr z, .water
+	ld a, [wBattleMonType2]
+	cp WATER
+	jr z, .water
+	ret
+	
+.checkenemy
+	ld a, [wEnemyMonType1]
+	cp WATER
+	jr z, .water
+	ld a, [wEnemyMonType2]
+	jr z, .water
+	ret
+
+.water
+	call DoubleDamage
+	jp DoubleDamage
+	
+BattleCommand_FlipTurn:
+
+	ldh a, [hBattleTurn]
+	and a
+	jp nz, .Enemy
+
+; Need something to switch to
+	call CheckAnyOtherAlivePartyMons
+	jp z, FlipTurnCantSwitch
+
+	call UpdateBattleMonInParty
+
+	ld c, 50
+	call DelayFrames
+
+; Transition into switchmon menu
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu
+
+	farcall ForcePickSwitchMonInBattle
+
+; Return to battle scene
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+	;call SwitchPlayerMon
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetDefaultBGPAndOBP
+	call BatonPass_LinkPlayerSwitch
+	callfar ResetPlayerStatLevels
+	callfar NewBattleMonStatus
+
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+
+	ld hl, PassedBattleMonEntrance
+	call CallBattleCore
+
+	call ResetBatonPassStatus
+	ret
+
+.Enemy:
+; Wildmons don't have anything to switch to
+	ld a, [wBattleMode]
+	dec a ; WILDMON
+	jp z, FlipTurnCantSwitch
+
+	call CheckAnyOtherAliveEnemyMons
+	jp z, FlipTurnCantSwitch
+
+	callfar ResetEnemyStatLevels
+	callfar NewEnemyMonStatus
+	call UpdateEnemyMonInParty
+	call BatonPass_LinkEnemySwitch
+
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+
+; Passed enemy PartyMon entrance
+	xor a
+	ld [wEnemySwitchMonIndex], a
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	call CallBattleCore
+	ld a, TRUE
+	ld [wApplyStatLevelMultipliersToEnemy], a
+	ld hl, ApplyStatLevelMultiplierOnAllStats
+	call CallBattleCore
+
+	ld hl, SpikesDamage
+	call CallBattleCore
+
+	jp ResetBatonPassStatus
+	
+FlipTurnCantSwitch:
+	call AppearUserRaiseSub
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp TELEPORT ;If we're using teleport then print the failed text if we're here
+	ret nz
+	call AnimateFailedMove
+	jp PrintButItFailed

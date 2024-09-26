@@ -142,6 +142,8 @@ INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 
+SECTION "Extra Effect Commands", ROMX
+INCLUDE "engine/battle/extra_effect_commands.asm"
 
 SECTION "Effect Commands", ROMX
 
