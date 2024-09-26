@@ -222,6 +222,7 @@ AlphabeticalPokedexOrder:
 	db SWINUB
 	db TANGELA
 	db TAUROS
+	db TAUROS_P
 	db TEDDIURSA
 	db TENTACOOL
 	db TENTACRUEL

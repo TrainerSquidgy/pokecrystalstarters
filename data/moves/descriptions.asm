@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw RagingBullDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw CloseCombatDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,16 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw WorkUpDescription
+	dw AssuranceDescription
+	dw HeadbuttDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+WorkUpDescription:
+	db   "Ups ATTACK and"
+	next "SPCL.ATK.@"
+	
+AssuranceDescription:
+	db   "Does more if foe"
+	next "hurt this turn.@"
+
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -315,9 +321,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+RagingBullDescription:
+	db   "Does damage and"
+	next "breaks SCREENS.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -835,9 +841,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+CloseCombatDescription:
+	db   "Lowers own ATTACK"
+	next "and SPCL.ATK.@"
 
 TransformDescription:
 	db   "The user assumes"

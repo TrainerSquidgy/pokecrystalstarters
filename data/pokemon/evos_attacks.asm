@@ -1988,7 +1988,6 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3365,3 +3364,21 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TaurosPEvosAttacks:
+	db 0
+	db  1, TACKLE
+	db  1, TAIL_WHIP
+	db  5, WORK_UP
+	db 10, DOUBLE_KICK
+	db 15, ASSURANCE
+	db 20, HEADBUTT
+	db 25, SCARY_FACE
+	db 30, ZEN_HEADBUTT
+	db 35, RAGING_BULL
+	db 40, REST
+	db 45, SWAGGER
+	db 50, THRASH
+	db 55, DOUBLE_EDGE
+	db 60, CLOSE_COMBAT
+	db 0

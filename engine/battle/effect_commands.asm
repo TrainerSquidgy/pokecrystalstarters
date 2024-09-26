@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1886,10 +1884,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -3374,6 +3368,13 @@ DoEnemyDamage:
 	jp nz, DoSubstituteDamage
 
 .ignore_substitute
+
+; Set Enemy been damaged if we've got this far, because obviously, if we're this far, they've actually dealt some damage... maybe?
+	push hl
+	ld hl, wEnemySubStatus2
+	set SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	pop hl
+	
 	; Subtract wCurDamage from wEnemyMonHP.
 	;  store original HP in little endian wHPBuffer2
 	ld a, [hld]
@@ -3451,6 +3452,13 @@ DoPlayerDamage:
 	jp nz, DoSubstituteDamage
 
 .ignore_substitute
+
+; Set Player been damaged if we've got this far.
+	push hl
+	ld hl, wPlayerSubStatus2
+	set SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	pop hl
+	
 	; Subtract wCurDamage from wBattleMonHP.
 	;  store original HP in little endian wHPBuffer2
 	;  store new HP in little endian wHPBuffer3
@@ -5555,20 +5563,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6778,3 +6779,64 @@ _CheckBattleScene:
 	pop de
 	pop hl
 	ret
+
+
+BattleCommand_WorkUp:
+	call ResetMiss
+    call BattleCommand_AttackUp
+    call BattleCommand_StatUpMessage
+
+    call ResetMiss
+    call BattleCommand_SpecialAttackUp
+    jp BattleCommand_StatUpMessage
+	
+	
+BattleCommand_Assurance:
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	ret z
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVar
+	sla [hl]
+	ret
+
+
+BattleCommand_RagingBull:
+	ld a, [hBattleTurn]
+	and a
+	ld hl, wEnemyScreens
+	ld bc, wEnemyLightScreenCount
+	jr z, .got_screens
+	ld hl, wPlayerScreens
+	ld bc, wPlayerLightScreenCount
+.got_screens
+	bit SCREENS_LIGHT_SCREEN, [hl]
+	jr z, .light_screen_done
+	res SCREENS_LIGHT_SCREEN, [hl]
+	xor a
+	ld [bc], a
+	push hl
+	push bc
+	ld hl, BattleTest_LightScreenBroke
+	call StdBattleTextbox
+	pop bc
+	pop hl
+.light_screen_done
+	inc bc
+	bit SCREENS_REFLECT, [hl]
+	ret z
+	res SCREENS_REFLECT, [hl]
+	xor a
+	ld [bc], a
+	ld hl, BattleTest_ReflectBroke
+	jp StdBattleTextbox
+	
+BattleCommand_CloseCombat:
+	call BattleCommand_SwitchTurn
+	call ResetMiss
+    call BattleCommand_SpecialDefenseDown
+    call BattleCommand_StatUpMessage
+	call ResetMiss
+    call BattleCommand_DefenseDown
+    call BattleCommand_StatUpMessage

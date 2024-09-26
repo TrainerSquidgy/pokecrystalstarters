@@ -158,4 +158,8 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
+	dw WorkUp
+	dw Assurance
+	dw RagingBull
+	dw CloseCombat
 	assert_table_length NUM_MOVE_EFFECTS

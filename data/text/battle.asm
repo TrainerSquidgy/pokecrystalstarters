@@ -1106,3 +1106,13 @@ BattleText_NoTimeLeftToday: ; unreferenced
 	text "There is no time"
 	line "left today!"
 	done
+
+BattleTest_LightScreenBroke:
+	text "The enemy's LIGHT"
+	line "SCREEN broke!"
+	done
+	
+BattleTest_ReflectBroke:
+	text "The enemy's"
+	line "REFLECT broke!"
+	done

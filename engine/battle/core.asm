@@ -201,7 +201,16 @@ BattleTurn:
 
 	call EnemyTriesToFlee
 	jr c, .quit
-
+	
+	
+; Reset whether Player & Enemy have been damaged.
+	push hl
+	ld hl, wPlayerSubStatus2
+	res SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	ld hl, wEnemySubStatus2
+	res SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	pop hl
+	
 	call DetermineMoveOrder
 	jr c, .false
 	call Battle_EnemyFirst
