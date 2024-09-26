@@ -620,6 +620,7 @@ PokemonStrings:
 	dw .Lugia
 	dw .Hooh
 	dw .Celebi
+	dw .Arctovish
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
