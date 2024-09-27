@@ -68,138 +68,114 @@ EndMoveEffect2:
 	ld [hli], a
 	ld [hl], a
 	ret
+	
+ExtraBattleCommand_Thief:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
 
+; The player needs to be able to steal an item.
 
-SkipToBattleCommand2:
-; Skip over commands until reaching command b.
-	ld a, [wBattleScriptBufferAddress + 1]
-	ld h, a
-	ld a, [wBattleScriptBufferAddress]
-	ld l, a
-.loop
-	ld a, [hli]
-	cp b
-	jr nz, .loop
+	call .playeritem
+	ld a, [hl]
+	and a
+	ret nz
 
-	ld a, h
-	ld [wBattleScriptBufferAddress + 1], a
-	ld a, l
-	ld [wBattleScriptBufferAddress], a
-	ret
+; The enemy needs to have an item to steal.
 
-
-ExtraBattleCommand_StoreEnergy:
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVar
-	bit SUBSTATUS_BIDE, a
+	call .enemyitem
+	ld a, [hl]
+	and a
 	ret z
 
-	ld hl, wPlayerRolloutCount
-	ldh a, [hBattleTurn]
+; Can't steal mail.
+
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	ret c
+
+	ld a, [wEffectFailed]
 	and a
-	jr z, .check_still_storing_energy
-	ld hl, wEnemyRolloutCount
-.check_still_storing_energy
-	dec [hl]
-	jr nz, .still_storing
+	ret nz
 
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVarAddr
-	res SUBSTATUS_BIDE, [hl]
+	ld a, [wLinkMode]
+	and a
+	jr z, .stealenemyitem
 
-	ld hl, UnleashedEnergyText
-	call StdBattleTextbox
+	ld a, [wBattleMode]
+	dec a
+	ret z
 
-	ld a, BATTLE_VARS_MOVE_POWER
-	call GetBattleVarAddr
-	ld a, 1
+.stealenemyitem
+	call .enemyitem
+	xor a
 	ld [hl], a
-	ld hl, wPlayerDamageTaken + 1
-	ld de, wPlayerCharging ; player
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .player
-	ld hl, wEnemyDamageTaken + 1
-	ld de, wEnemyCharging ; enemy
-.player
-	ld a, [hld]
-	add a
-	ld b, a
-	ld [wCurDamage + 1], a
+	ld [de], a
+
+	call .playeritem
+	ld a, [wNamedObjectIndex]
+	ld [hl], a
+	ld [de], a
+	jr .stole
+
+.enemy
+
+; The enemy can't already have an item.
+
+	call .enemyitem
 	ld a, [hl]
-	rl a
-	ld [wCurDamage], a
-	jr nc, .not_maxed
-	ld a, $ff
-	ld [wCurDamage], a
-	ld [wCurDamage + 1], a
-.not_maxed
-	or b
-	jr nz, .built_up_something
-	ld a, 1
-	ld [wAttackMissed], a
-.built_up_something
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ld [de], a
-
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVarAddr
-	ld a, BIDE
-	ld [hl], a
-
-	ld b, unleashenergy_command
-	jp SkipToBattleCommand2
-	ret
-
-.still_storing
-	ld hl, StoringEnergyText
-	call StdBattleTextbox
-	jp EndMoveEffect2
-	ret
-	
-ExtraBattleCommand_UnleashEnergy:
-	ld de, wPlayerDamageTaken
-	ld bc, wPlayerRolloutCount
-	ldh a, [hBattleTurn]
 	and a
-	jr z, .got_damage
-	ld de, wEnemyDamageTaken
-	ld bc, wEnemyRolloutCount
-.got_damage
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVarAddr
-	set SUBSTATUS_BIDE, [hl]
+	ret nz
+
+; The player must have an item to steal.
+
+	call .playeritem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal mail!
+
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	ret c
+
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+
+; If the enemy steals your item,
+; it's gone for good if you don't get it back.
+
+	call .playeritem
 	xor a
+	ld [hl], a
 	ld [de], a
-	inc de
+
+	call .enemyitem
+	ld a, [wNamedObjectIndex]
+	ld [hl], a
 	ld [de], a
-	ld [wPlayerMoveStructEffect], a
-	ld [wEnemyMoveStructEffect], a
-	call BattleRandom
-	and 1
-	inc a
-	inc a
-	ld [bc], a
-	ld a, 1
-	ld [wBattleAnimParam], a
-	call AnimateCurrentMove2
-	jp EndMoveEffect2
+
+.stole
+	call GetItemName
+	ld hl, StoleText
+	jp StdBattleTextbox
+
+.playeritem
+	ld a, MON_ITEM
+	call BattlePartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wBattleMonItem
 	ret
-	
-AnimateCurrentMove2:
-	push hl
-	push de
-	push bc
-	ld a, [wBattleAnimParam]
-	push af
-	call BattleCommand_LowerSub
-	pop af
-	ld [wBattleAnimParam], a
-	call LoadMoveAnim
-	call BattleCommand_RaiseSub
-	pop bc
-	pop de
-	pop hl
+
+.enemyitem
+	ld a, MON_ITEM
+	call OTPartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonItem
 	ret
