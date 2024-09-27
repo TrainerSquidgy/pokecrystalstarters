@@ -115,6 +115,7 @@ AlphabeticalPokedexOrder:
 	db LEDYBA
 	db LICKITUNG
 	db LUGIA
+	db LUVDISC
 	db MACHAMP
 	db MACHOKE
 	db MACHOP

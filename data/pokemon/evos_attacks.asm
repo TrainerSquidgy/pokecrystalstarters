@@ -3365,3 +3365,16 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+LuvdiscEvosAttacks:
+	db  0
+	db  1, TACKLE
+	db  4, CHARM
+	db 12, WATER_GUN
+	db 16, AGILITY
+	db 24, TAKE_DOWN
+	db 28, ATTRACT
+	db 36, SWEET_KISS
+	db 40, FLAIL
+	db 48, SAFEGUARD
+	db  0
