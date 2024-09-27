@@ -1,7 +1,6 @@
 BattleCommand_StoreEnergy:
-	farcall ExtraBattleCommand_StoreEnergy
-	ret
-
 BattleCommand_UnleashEnergy:
-	farcall ExtraBattleCommand_UnleashEnergy
+	ld a, 1
+	ld [wAttackMissed], a
 	ret
+	

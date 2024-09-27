@@ -3365,3 +3365,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+IronBundleEvosAttacks:
+	db 0
+	db  1, PRESENT
+	db  7, POWDER_SNOW
+	db 14, WHIRLPOOL
+	db 21, TAKE_DOWN
+	db 28, DRILL_PECK
+	db 35, FREEZE_DRY
+	db 42, FLIP_TURN
+	db 49, ICE_BEAM
+	db 56, AGILITY
+	db 63, SNOWSCAPE
+	db 70, HYDRO_PUMP
+	db 77, AURORA_VEIL
+	db 84, BLIZZARD
+	db 0

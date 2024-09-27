@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1902,8 +1901,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -5558,8 +5555,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
 	jr z, .done
 
 	cp SOLARBEAM
@@ -6958,5 +6953,38 @@ FlipTurnCantSwitch:
 	call GetBattleVar
 	cp TELEPORT ;If we're using teleport then print the failed text if we're here
 	ret nz
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
+BattleCommand_AuroraVeil:
+	ld a, [wBattleWeather]
+	cp WEATHER_SNOW
+	jp nz, .failed
+	ld hl, wPlayerScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_screens
+	ld hl, wEnemyScreens
+	bit SCREENS_LIGHT_SCREEN, [hl]
+	jr nz, .failed
+	bit SCREENS_REFLECT, [hl]
+	jr nz, .failed
+	ld a, 5
+	ld [wEnemyLightScreenCount], a
+	ld [wEnemyReflectCount], a
+	jr .merge	
+.player_screens
+	bit SCREENS_LIGHT_SCREEN, [hl]
+	jr nz, .failed
+	bit SCREENS_REFLECT, [hl]
+	jr nz, .failed
+	ld a, 5
+	ld [wPlayerLightScreenCount], a
+	ld [wPlayerReflectCount], a
+.merge
+	ld hl, BattleText_AuroraVeilStart
+	jp StdBattleTextbox
+	
+.failed
 	call AnimateFailedMove
 	jp PrintButItFailed

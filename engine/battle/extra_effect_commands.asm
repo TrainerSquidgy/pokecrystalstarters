@@ -1,33 +1,7 @@
 ExtraBattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget2
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
 	ret
 	
 FlinchTarget2:
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVarAddr
-	set SUBSTATUS_FLINCHED, [hl]
-	push hl
-	ld a, BATTLE_VARS_SUBSTATUS4_OPP
-	call GetBattleVarAddr
-	res SUBSTATUS_RECHARGE, [hl]
-	pop hl
 	ret
 
 	
@@ -194,11 +168,11 @@ AnimateCurrentMove2:
 	push bc
 	ld a, [wBattleAnimParam]
 	push af
-	call BattleCommand_LowerSub
+	farcall BattleCommand_LowerSub
 	pop af
 	ld [wBattleAnimParam], a
-	call LoadMoveAnim
-	call BattleCommand_RaiseSub
+	farcall LoadMoveAnim
+	farcall BattleCommand_RaiseSub
 	pop bc
 	pop de
 	pop hl

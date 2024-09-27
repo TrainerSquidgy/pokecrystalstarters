@@ -1139,3 +1139,9 @@ ItStartedToSnowText:
 	text "It started"
 	line "to snow!"
 	prompt
+
+BattleText_AuroraVeilStart:
+	text "<USER>'s"
+	line "DEFENSE and"
+	line "SPCL.DEF rose!"
+	prompt

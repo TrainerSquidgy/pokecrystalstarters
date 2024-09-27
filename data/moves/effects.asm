@@ -1017,6 +1017,12 @@ Reflect:
 	screen
 	endmove
 
+AuroraVeil:
+	checkobedience
+	usedmovetext
+	auroraveil
+	endmove
+
 TriAttack:
 	checkobedience
 	usedmovetext
@@ -2091,4 +2097,47 @@ Snow:
 	usedmovetext
 	doturn
 	startweather
+	endmove
+
+FreezeDry:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	freezedry
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	freezetarget
+	endmove
+	
+FlipTurn:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	flipturn
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove
