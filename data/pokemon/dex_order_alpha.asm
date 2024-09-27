@@ -212,6 +212,7 @@ AlphabeticalPokedexOrder:
 	db SPINARAK
 	db SQUIRTLE
 	db STANTLER
+	db RUDOLPH
 	db STARMIE
 	db STARYU
 	db STEELIX
