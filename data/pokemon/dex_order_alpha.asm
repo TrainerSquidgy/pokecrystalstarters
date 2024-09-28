@@ -212,6 +212,7 @@ AlphabeticalPokedexOrder:
 	db SPINARAK
 	db SQUIRTLE
 	db STANTLER
+	db STANTLERH
 	db STARMIE
 	db STARYU
 	db STEELIX
@@ -249,6 +250,7 @@ AlphabeticalPokedexOrder:
 	db WIGGLYTUFF
 	db WOBBUFFET
 	db WOOPER
+	db WYRDEER
 	db XATU
 	db YANMA
 	db ZAPDOS

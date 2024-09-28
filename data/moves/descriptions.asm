@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HeadbuttDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,15 +252,17 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw CalmMindDescription
+	dw PsyshieldDescription
+	dw HeadbuttDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+CalmMindDescription:
+	db   "Raises SPCL.ATK"
+	next "and SPCL.DEF.@"
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -1107,6 +1109,10 @@ FuryCutterDescription:
 	db   "Successive hits"
 	next "raise power.@"
 
+PsyshieldDescription:
+	db   "Shield attack."
+	next "Raises DEFENSE.@"
+
 SteelWingDescription:
 	db   "Stiff wings strike"
 	next "the foe.@"
@@ -1270,3 +1276,4 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+

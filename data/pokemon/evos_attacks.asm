@@ -3365,3 +3365,28 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+StantlerHEvosAttacks:
+	db EVOLVE_MOVE, PSYSHIELD, WYRDEER
+	db 0
+	db 1, TACKLE
+	db 5, CONFUSION
+	db 9, HYPNOSIS
+	db 15, CALM_MIND
+	db 21, PSYSHIELD
+	db 29, EXTRASENSORY
+	db 37, ZEN_HEADBUTT
+	db 47, DOUBLE_EDGE
+	db 0
+	
+WyrdeerEvosAttacks:
+	db 0
+	db 1, TACKLE
+	db 5, CONFUSION
+	db 9, HYPNOSIS
+	db 15, CALM_MIND
+	db 21, PSYSHIELD
+	db 29, EXTRASENSORY
+	db 37, ZEN_HEADBUTT
+	db 47, DOUBLE_EDGE
+	db 0

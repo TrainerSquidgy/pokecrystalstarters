@@ -2092,3 +2092,37 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	calmmind
+	raisesub
+	endmove
+	
+Psyshield:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	psyshield
+	criticaltext
+	supereffectivetext
+; BUG: Moves that do damage and increase your stats do not increase stats after a KO (see docs/bugs_and_glitches.md)
+	checkfaint
+	buildopponentrage
+	defenseup
+	statupmessage
+	endmove
