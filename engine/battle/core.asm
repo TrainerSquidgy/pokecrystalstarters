@@ -5903,9 +5903,29 @@ ParseEnemyAction:
 	inc de
 	dec b
 	jr nz, .loop
-	jr .struggle
+	jp .struggle
 
 .enough_pp
+	
+	ld hl, wBadges
+	ld b, 2
+	call CountSetBits
+	ld a, [wNumSetBits]
+.kaloop
+	and a
+	jr z, .loop2
+	dec a
+	push af	
+	ld a, 49
+	call RandomRange
+	and a
+	jr z, .override1
+	dec a
+	and a
+	jr z, .override2
+	pop af
+	jr .kaloop
+	
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .skip_load
@@ -5975,7 +5995,18 @@ ParseEnemyAction:
 
 .struggle
 	ld a, STRUGGLE
+	jr .loadmovemerge
+.override1
+	pop af
+	ld a, SELFDESTRUCT
 	jr .finish
+.override2
+	pop af
+	ld a, EXPLOSION
+.loadmovemerge
+	jr .finish
+	
+
 
 ResetVarsForSubstatusRage:
 	xor a
