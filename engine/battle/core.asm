@@ -1832,6 +1832,7 @@ HandleWeather:
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
+	dw BattleText_TheHailStopped
 	dw BattleText_TheSnowStopped
 
 SubtractHPFromTarget:
