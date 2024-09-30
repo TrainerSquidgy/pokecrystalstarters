@@ -211,6 +211,76 @@ ElmsLabText_AskTotodile:
 	line "TOTODILE?"
 	done
 
+ElmsLabRandomizerScript:
+	opentext
+	writetext ElmsLabText_RandomizerAsk
+	yesorno
+	iffalse .NoRandom
+	callasm ElmsLabRandomizer
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	sjump .RivalMerge
+.NoRival
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.RivalMerge
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower
+.NoHiddenPower
+	loadmem wIsAStarter, 0
+.HandledHiddenPower
+; Check to see if MON should Evolve
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	writetext ElmsLabText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
+	writetext ElmsLabText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
+	writetext ElmsLabText_AskAboutHMFriendsYes
+	sjump .EndMerge
+.NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsNo
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+.NoRandom
+	writetext ElmsLabText_RandomizerNo
+.EndMerge
+	waitbutton
+	closetext
+	end
+
+
+ElmsLabText_RandomizerNo:
+	text "STARTERS left"
+	line "unchanged."
+	done
+
+ElmsLabText_RandomizerAsk:
+	text "Randomize the"
+	line "STARTERS?"
+	done
+
 ElmsLabRandomizer:
 	ld a, 250
 	call RandomRange
@@ -1614,6 +1684,7 @@ ElmsLab_MapEvents:
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
+	bg_event  2,  5, BGEVENT_READ, ElmsLabRandomizerScript
 
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
