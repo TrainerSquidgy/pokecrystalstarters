@@ -5248,6 +5248,8 @@ BattleCommand_EndLoop:
 	ld a, [hl]
 	cp EFFECT_BEAT_UP
 	jr z, .beat_up
+	cp EFFECT_POPULATION_BOMB
+	jr z, .population_bomb
 	cp EFFECT_TRIPLE_KICK
 	jr nz, .not_triple_kick
 .reject_triple_kick_sample
@@ -5258,7 +5260,7 @@ BattleCommand_EndLoop:
 	jr nz, .double_hit
 	ld a, 1
 	ld [bc], a
-	jr .done_loop
+	jp .done_loop
 
 .beat_up
 	ldh a, [hBattleTurn]
@@ -5307,6 +5309,52 @@ BattleCommand_EndLoop:
 	ld a, 1
 	jr .double_hit
 
+.population_bomb
+	ld a, 9
+	call RandomRange
+	and a
+	jr z, .hit_4
+	ld a, 9
+	call RandomRange
+	and a
+	jr z, .hit_5
+	ld a, 9
+	call RandomRange
+	and a
+	jr z, .hit_6
+	ld a, 9
+	call RandomRange
+	and a
+	jr z, .hit_7
+	ld a, 9
+	call RandomRange
+	and a
+	jr z, .hit_8
+	ld a, 9
+	call RandomRange
+	and a
+	jr z, .hit_9
+	ld a, 9	
+	jr .double_hit
+.hit_9
+	ld a, 8	
+	jr .double_hit
+.hit_8
+	ld a, 7	
+	jr .double_hit
+.hit_7
+	ld a, 6
+	jr .double_hit
+.hit_6
+	ld a, 5
+	jr .double_hit	
+.hit_5
+	ld a, 4
+	jr .double_hit
+.hit_4
+	ld a, 3
+	jr .double_hit	
+	
 .in_loop
 	ld a, [de]
 	dec a
