@@ -3137,12 +3137,12 @@ wLizFightCount::     db
 wAnthonyFightCount:: db
 wToddFightCount::    db
 wGinaFightCount::    db
-wIrwinFightCount::   db ; unreferenced
+wPlayerEchoedVoiceCount::   db ; unreferenced
 wArnieFightCount::   db
 wAlanFightCount::    db
 wDanaFightCount::    db
 wChadFightCount::    db
-wDerekFightCount::   db ; unreferenced
+wEnemyEchoedVoiceCount::   db ; unreferenced
 wTullyFightCount::   db
 wBrentFightCount::   db
 wTiffanyFightCount:: db
@@ -3171,7 +3171,8 @@ wEvolutionsDisabled:: db
 wGen1MovesLeft:: db
 wEggMovesLeft:: db
 wGuaranteedHMFriendCatch:: db
-	ds 80
+wLastCopycatMove:: db
+	ds 79
 
 wEventFlags:: flag_array NUM_EVENTS
 

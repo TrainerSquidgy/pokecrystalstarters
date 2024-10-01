@@ -2092,3 +2092,40 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
+EchoedVoice:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	checkhit
+	echoedvoice
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+Copycat:
+	checkobedience
+	usedmovetext
+	doturn
+	copycat
+	endmove
+	
+TidyUp:
+	checkobedience
+	usedmovetext
+	doturn
+	tidyup
+	clearhazards
+	endmove
+	

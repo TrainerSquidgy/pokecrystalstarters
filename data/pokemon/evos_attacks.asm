@@ -1443,7 +1443,6 @@ HitmonleeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, DOUBLE_KICK
 	db 6, MEDITATE
-	db 11, ROLLING_KICK
 	db 16, JUMP_KICK
 	db 21, FOCUS_ENERGY
 	db 26, HI_JUMP_KICK
@@ -1988,7 +1987,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2709,7 +2708,6 @@ MisdreavusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
-	db 36, PAIN_SPLIT
 	db 46, PERISH_SONG
 	db 0 ; no more level-up moves
 
@@ -3157,7 +3155,7 @@ TyrogueEvosAttacks:
 
 HitmontopEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ROLLING_KICK
+	db 1, TRIPLE_KICK
 	db 7, FOCUS_ENERGY
 	db 13, PURSUIT
 	db 19, QUICK_ATTACK
@@ -3327,7 +3325,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, AEROBLAST
+	db 1, WING_ATTACK
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3341,7 +3339,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
+	db 1, WING_ATTACK
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3365,3 +3363,39 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TandemausEvosAttacks:
+	db EVOLVE_LEVEL, 25, MAUSHOLD
+	db 0
+	db 1, POUND
+	db 1, BABYDOLLEYES
+	db 5, ECHOED_VOICE
+	db 9, SUPER_FANG
+	db 13, DOUBLE_HIT
+	db 17, BULLET_SEED
+	db 21, ENCORE
+	db 25, PLAY_ROUGH
+	db 29, HYPER_VOICE
+	db 33, CHARM
+	db 37, BEAT_UP
+	db 41, COPYCAT
+	db 45, POP_BOMB
+	db 0
+	
+MausholdEvosAttacks:
+	db 0
+	db 1, TIDY_UP
+	db 1, POUND
+	db 1, BABYDOLLEYES
+	db 5, ECHOED_VOICE
+	db 9, SUPER_FANG
+	db 13, DOUBLE_HIT
+	db 17, BULLET_SEED
+	db 21, ENCORE
+	db 25, PLAY_ROUGH
+	db 29, HYPER_VOICE
+	db 33, CHARM
+	db 37, BEAT_UP
+	db 41, COPYCAT
+	db 45, POP_BOMB
+	db 0

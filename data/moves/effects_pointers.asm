@@ -162,4 +162,9 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw MultiHit
+	dw AttackDown
+	dw EchoedVoice
+	dw NormalHit
+	dw Copycat
+	dw TidyUp
 	assert_table_length NUM_MOVE_EFFECTS

@@ -129,6 +129,7 @@ AlphabeticalPokedexOrder:
 	db MAREEP
 	db MARILL
 	db MAROWAK
+	db MAUSHOLD
 	db MEGANIUM
 	db MEOWTH
 	db METAPOD
@@ -220,6 +221,7 @@ AlphabeticalPokedexOrder:
 	db SUNFLORA
 	db SUNKERN
 	db SWINUB
+	db TANDEMAUS
 	db TANGELA
 	db TAUROS
 	db TEDDIURSA

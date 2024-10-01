@@ -15,7 +15,7 @@ BulbasaurRelearnedEggMoves:
 	db 1, LIGHT_SCREEN
 	db 1, SKULL_BASH
 	db 1, SAFEGUARD
-	db 1, RAZOR_WIND
+	
 	db 1, PETAL_DANCE
 	db 0
 
@@ -217,7 +217,7 @@ MachopRelearnedEggMoves:
 	db 0
 	db 1, LIGHT_SCREEN
 	db 1, MEDITATE
-	db 1, ROLLING_KICK
+	
 	db 1, ENCORE
 	db 0
 
@@ -368,7 +368,7 @@ KoffingRelearnedEggMoves:
 	db 1, PSYWAVE
 	db 1, PSYBEAM
 	db 1, DESTINY_BOND
-	db 1, PAIN_SPLIT
+	
 	db 0
 
 RhyhornRelearnedEggMoves:
@@ -436,7 +436,7 @@ ScytherRelearnedEggMoves:
 	db 1, COUNTER
 	db 1, SAFEGUARD
 	db 1, BATON_PASS
-	db 1, RAZOR_WIND
+	
 	db 1, REVERSAL
 	db 1, LIGHT_SCREEN
 	db 0
@@ -523,7 +523,7 @@ TotodileRelearnedEggMoves:
 	db 1, THRASH
 	db 1, HYDRO_PUMP
 	db 1, ANCIENTPOWER
-	db 1, RAZOR_WIND
+	
 	db 1, ROCK_SLIDE
 	db 0
 
@@ -543,7 +543,7 @@ HoothootRelearnedEggMoves:
 	db 1, FAINT_ATTACK
 	db 1, WING_ATTACK
 	db 1, WHIRLWIND
-	db 1, SKY_ATTACK
+	
 	db 0
 
 LedybaRelearnedEggMoves:
@@ -684,7 +684,7 @@ MurkrowRelearnedEggMoves:
 	db 1, QUICK_ATTACK
 	db 1, MIRROR_MOVE
 	db 1, WING_ATTACK
-	db 1, SKY_ATTACK
+	
 	db 0
 
 MisdreavusRelearnedEggMoves:
@@ -723,7 +723,7 @@ GligarRelearnedEggMoves:
 	db 0
 	db 1, METAL_CLAW
 	db 1, WING_ATTACK
-	db 1, RAZOR_WIND
+	
 	db 1, COUNTER
 	db 0
 
@@ -832,7 +832,7 @@ SkarmoryRelearnedEggMoves:
 	db 1, DRILL_PECK
 	db 1, PURSUIT
 	db 1, WHIRLWIND
-	db 1, SKY_ATTACK
+	
 	db 0
 
 HoundourRelearnedEggMoves:
@@ -880,7 +880,7 @@ ElekidRelearnedEggMoves:
 	db 0
 	db 1, KARATE_CHOP
 	db 1, BARRIER
-	db 1, ROLLING_KICK
+	
 	db 1, MEDITATE
 	db 1, CROSS_CHOP
 	db 0

@@ -178,6 +178,9 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command startweather
+	command echoedvoice
+	command copycat
+	command tidyup
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

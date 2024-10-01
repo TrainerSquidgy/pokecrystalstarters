@@ -18,7 +18,7 @@
 	const SCRATCH      ; 0a
 	const VICEGRIP     ; 0b
 	const GUILLOTINE   ; 0c
-	const RAZOR_WIND   ; 0d
+	const DOUBLE_HIT   ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
@@ -32,7 +32,7 @@
 	const DOUBLE_KICK  ; 18
 	const MEGA_KICK    ; 19
 	const JUMP_KICK    ; 1a
-	const ROLLING_KICK ; 1b
+	const COPYCAT ; ROLLING KICK
 	const SAND_ATTACK  ; 1c
 	const HEADBUTT     ; 1d
 	const HORN_ATTACK  ; 1e
@@ -148,7 +148,7 @@
 	const BARRAGE      ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
-	const SKY_ATTACK   ; 8f
+	const BULLET_SEED  ; SKY_ATTACK
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
 	const DIZZY_PUNCH  ; 92
@@ -182,7 +182,7 @@
 	const CURSE        ; ae
 	const FLAIL        ; af
 	const CONVERSION2  ; b0
-	const AEROBLAST    ; b1
+	const PLAY_ROUGH    ; AEROBLAST
 	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
@@ -225,8 +225,8 @@
 	const PRESENT      ; d9
 	const FRUSTRATION  ; da
 	const SAFEGUARD    ; db
-	const PAIN_SPLIT   ; dc
-	const SACRED_FIRE  ; dd
+	const TIDY_UP   ; dc
+	const HYPER_VOICE  ; dd
 	const MAGNITUDE    ; de
 	const DYNAMICPUNCH ; df
 	const MEGAHORN     ; e0
@@ -258,6 +258,8 @@
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
 	const POP_BOMB
+	const BABYDOLLEYES
+	const ECHOED_VOICE
 DEF NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point

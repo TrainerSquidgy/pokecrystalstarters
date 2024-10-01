@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +423,7 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -938,6 +934,9 @@ IgnoreSleepOnly:
 	ret
 
 BattleCommand_UsedMoveText:
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld a, [wLastCopycatMove]
 	farcall DisplayUsedMoveText
 	ret
 
@@ -1077,8 +1076,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1902,10 +1899,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -3466,6 +3459,10 @@ DoPlayerDamage:
 	ld a, c
 	and a
 	jr nz, .ignore_substitute
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVarAddr
+	cp EFFECT_HYPER_VOICE
+	jr z, .ignore_substitute
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	jp nz, DoSubstituteDamage
@@ -5402,24 +5399,6 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
 	ret
 
 BattleCommand_FlinchTarget:
@@ -5623,20 +5602,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6910,3 +6882,86 @@ BattleCommand_StartWeather:
 	call AnimateCurrentMove
 	pop hl
 	jp StdBattleTextbox
+
+
+BattleCommand_EchoedVoice:
+	ld hl, wPlayerEchoedVoiceCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyEchoedVoiceCount
+
+.go
+	inc [hl]
+	ld a, [hl]
+	cp 5
+	jr c, .loop
+	ld a, 5
+.loop
+	dec a
+	and a
+	ret z
+	call AddDamage
+	jr .loop
+	
+	
+AddDamage:
+	push af
+	push hl
+    ld hl, wCurDamage+1  ; Point to the high byte of wCurDamage
+    ld a, [hl]           ; Load the high byte of wCurDamage into A
+    ld d, a              ; Store the high byte in D temporarily
+    dec hl               ; Point to the low byte of wCurDamage
+    ld a, [hl]           ; Load the low byte of wCurDamage into A
+    ld e, a              ; Store the low byte in E temporarily
+
+    ; Perform the addition of wCurDamage to itself
+    ld hl, wCurDamage    ; Point to wCurDamage
+    ld a, [hl]           ; Load the low byte of wCurDamage into A
+    add a, e             ; Add the low byte of wCurDamage to itself
+    ld [hl], a           ; Store the result back to the low byte of wCurDamage
+    inc hl               ; Move to the high byte
+    ld a, [hl]           ; Load the high byte of wCurDamage into A
+    adc a, d             ; Add the high byte with carry (from low byte addition)
+    ld [hl], a           ; Store the result back to the high byte of wCurDamage
+
+    ; If overflow occurred, the carry flag would be set (overflow means too large for 16-bit)
+    jr nc, .done         ; If no overflow, we're done
+
+    ; Overflow handling: set wCurDamage to $FFFF (maximum 16-bit value)
+    ld a, $FF            ; Load $FF into A
+    ld hl, wCurDamage    ; Point back to wCurDamage
+    ld [hl], a           ; Set low byte to $FF
+    ld [hli], a         ; Set high byte to $FF
+
+.done:
+	pop hl
+	pop af
+    ret                  ; Return
+	
+BattleCommand_Copycat:
+	ld a, [wLastCopycatMove]
+	and a
+	jr z, .fail
+
+	call AnimateCurrentMove
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld a, [wLastCopycatMove]
+	ld [hl], a
+	farcall UpdateMoveData
+	jp ResetTurn
+
+.fail
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
+BattleCommand_TidyUp:
+	; calmmind
+	call ResetMiss
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_SpeedUp
+	jp BattleCommand_StatUpMessage

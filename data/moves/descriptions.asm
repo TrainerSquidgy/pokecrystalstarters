@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw DoubleHitDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw BulletSeedDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw AuroraBeamDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -220,8 +220,8 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
-	dw SacredFireDescription
+	dw TidyUpDescription
+	dw HyperVoiceDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -253,9 +253,9 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw PopBombDescription
+	dw BabyDollEyesDescription
+	dw EchoedVoiceDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -264,8 +264,10 @@ PopBombDescription:
 	db   "Hits up to"
 	line "ten times.@"
 	
-MoveFDDescription:
-MoveFEDescription:
+BabyDollEyesDescription:
+	db   "Lowers ATTACK,"
+	next "goes first.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -318,9 +320,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+DoubleHitDescription:
+	db   "Hits twice for"
+	next "every attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -838,9 +840,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+BulletSeedDescription:
+	db   "Hits for damage,"
+	next "2-5 times.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -1106,6 +1108,7 @@ SparkDescription:
 	db   "An attack that may"
 	next "cause paralysis.@"
 
+EchoedVoiceDescription:
 FuryCutterDescription:
 	db   "Successive hits"
 	next "raise power.@"
@@ -1146,13 +1149,13 @@ SafeguardDescription:
 	db   "Prevents all"
 	next "status problems.@"
 
-PainSplitDescription:
-	db   "Adds user & foe's"
-	next "HPs. Shares total.@"
+TidyUpDescription:
+	db   "Clears hazards,"
+	next "raises stats.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
+HyperVoiceDescription:
+	db   "Can hit through"
+	next "a substitute.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
