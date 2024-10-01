@@ -2512,15 +2512,27 @@ DittoMetalPowder:
 
 .got_species
 	cp DITTO
-	ret nz
+	jr z, .ditto_metal_powder
+	cp SHUCKLE
+	jr z, .shuckle_shuckleite
 
+.ditto_metal_powder
 	push bc
 	call GetOpponentItem
 	ld a, [hl]
 	cp METAL_POWDER
 	pop bc
 	ret nz
-
+	jr .got_item
+	
+.shuckle_shuckleite
+	push bc
+	call GetOpponentItem
+	ld a, [hl]
+	cp SHUCKLEITE
+	pop bc
+	ret nz
+.got_item
 ; BUG: Metal Powder can increase damage taken with boosted (Special) Defense (see docs/bugs_and_glitches.md)
 	ld a, c
 	srl a

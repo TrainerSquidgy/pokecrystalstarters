@@ -45,7 +45,7 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw ShuckleiteDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
@@ -434,9 +434,10 @@ DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
 
-TeruSama3Desc:
-	db   "?@"
-
+ShuckleiteDesc:
+	db   "Increases defense"
+	next "for SHUCKLE.@"
+	
 FreshWaterDesc:
 	db   "Restores #MON"
 	next "HP by 50.@"
