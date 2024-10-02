@@ -46,8 +46,20 @@ GetUnownLetter:
 	ldh a, [hQuotient + 3]
 	inc a
 	ld [wUnownLetter], a
+	ld a, [wBattleMonSpecies]
+	cp MAUSHOLD
+	ret nz
+	
+	ld a, [wMausholdForm]
+	and a
+	jr z, .maushold4
+	ld a, 28
+	jr .done_maushold
+.maushold4
+	ld a, 27
+.done_maushold
+	ld [wUnownLetter], a
 	ret
-
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -106,9 +118,21 @@ GetFrontpicPointer:
 	ld a, [wCurPartySpecies]
 	cp UNOWN
 	jr z, .unown
+	cp MAUSHOLD
+	jr z, .maushold
 	ld a, [wCurPartySpecies]
 	ld d, BANK(PokemonPicPointers)
 	jr .ok
+.maushold
+	ld a, [wMausholdForm]
+	and a
+	jr z, .maushold4
+	ld a, [wCurPartySpecies]
+	ld d, BANK(PokemonPicPointers)
+	jr .ok
+.maushold4
+	ld a, 27
+	ld [wUnownLetter], a
 .unown
 	ld a, [wUnownLetter]
 	ld d, BANK(UnownPicPointers)
@@ -213,9 +237,17 @@ GetMonBackpic:
 	ld a, b
 	ld d, BANK(PokemonPicPointers)
 	cp UNOWN
+	jr z, .unown
+	cp MAUSHOLD
 	jr nz, .ok
+.unown
 	ld a, c
 	ld d, BANK(UnownPicPointers)
+	jr .ok
+.no_form
+	pop af
+	ld a, MAUSHOLD
+	ld d, BANK(PokemonPicPointers)
 .ok
 	dec a
 	ld bc, 6

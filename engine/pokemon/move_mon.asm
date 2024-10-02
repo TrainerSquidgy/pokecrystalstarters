@@ -1874,6 +1874,7 @@ GivePoke::
 
 .party
 	farcall SetCaughtData
+	call InitializeMaushold
 .set_caught_data
 	farcall GiveANickname_YesNo
 	pop de
@@ -1922,4 +1923,14 @@ InitNickname:
 	ld a, $4 ; ExitAllMenus is in bank 0; maybe it used to be in bank 4
 	ld hl, ExitAllMenus
 	rst FarCall
+	ret
+
+
+InitializeMaushold:
+	ld hl, wPartyMon1CaughtLevel
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, 63
+	call RandomRange
+	ld [hl], a
 	ret

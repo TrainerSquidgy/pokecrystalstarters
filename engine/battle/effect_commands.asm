@@ -114,6 +114,10 @@ BattleCommand_CheckTurn:
 ; Move $ff immediately ends the turn.
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
+	cp COPYCAT
+	jr z, .copycat
+	ld [wLastCopycatMove], a
+.copycat
 	inc a
 	jp z, EndTurn
 
@@ -934,9 +938,6 @@ IgnoreSleepOnly:
 	ret
 
 BattleCommand_UsedMoveText:
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	ld a, [wLastCopycatMove]
 	farcall DisplayUsedMoveText
 	ret
 
@@ -3459,10 +3460,6 @@ DoPlayerDamage:
 	ld a, c
 	and a
 	jr nz, .ignore_substitute
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVarAddr
-	cp EFFECT_HYPER_VOICE
-	jr z, .ignore_substitute
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_SUBSTITUTE, a
 	jp nz, DoSubstituteDamage
@@ -6957,7 +6954,6 @@ BattleCommand_Copycat:
 	jp PrintButItFailed
 	
 BattleCommand_TidyUp:
-	; calmmind
 	call ResetMiss
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage

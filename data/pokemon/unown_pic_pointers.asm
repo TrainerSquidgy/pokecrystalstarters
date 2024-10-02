@@ -53,4 +53,8 @@ UnownPicPointers::
 	dba_pic UnownYBackpic
 	dba_pic UnownZFrontpic
 	dba_pic UnownZBackpic
-	assert_table_length NUM_UNOWN
+	dba_pic Maushold4Frontpic
+	dba_pic Maushold4Backpic
+	dba_pic Maushold3Frontpic
+	dba_pic Maushold3Backpic
+	assert_table_length NUM_UNOWN + 2

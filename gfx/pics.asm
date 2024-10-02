@@ -36,12 +36,6 @@ TyphlosionFrontpic:  INCBIN "gfx/pokemon/typhlosion/front.animated.2bpp.lz"
 
 SECTION "Pics 2", ROMX
 
-BlastoiseFrontpic:   INCBIN "gfx/pokemon/blastoise/front.animated.2bpp.lz"
-RapidashFrontpic:    INCBIN "gfx/pokemon/rapidash/front.animated.2bpp.lz"
-MeganiumFrontpic:    INCBIN "gfx/pokemon/meganium/front.animated.2bpp.lz"
-NidoqueenFrontpic:   INCBIN "gfx/pokemon/nidoqueen/front.animated.2bpp.lz"
-HitmonleeFrontpic:   INCBIN "gfx/pokemon/hitmonlee/front.animated.2bpp.lz"
-ScizorFrontpic:      INCBIN "gfx/pokemon/scizor/front.animated.2bpp.lz"
 BeedrillFrontpic:    INCBIN "gfx/pokemon/beedrill/front.animated.2bpp.lz"
 ArcanineFrontpic:    INCBIN "gfx/pokemon/arcanine/front.animated.2bpp.lz"
 TyranitarFrontpic:   INCBIN "gfx/pokemon/tyranitar/front.animated.2bpp.lz"
@@ -714,6 +708,10 @@ TandemausFrontpic:      INCBIN "gfx/pokemon/tandemaus/front.animated.2bpp.lz"
 TandemausBackpic:       INCBIN "gfx/pokemon/tandemaus/back.2bpp.lz"
 MausholdFrontpic:      INCBIN "gfx/pokemon/maushold/front.animated.2bpp.lz"
 MausholdBackpic:       INCBIN "gfx/pokemon/maushold/back.2bpp.lz"
+Maushold3Frontpic:      INCBIN "gfx/pokemon/maushold/front.animated.2bpp.lz"
+Maushold3Backpic:       INCBIN "gfx/pokemon/maushold/back.2bpp.lz"
+Maushold4Frontpic:      INCBIN "gfx/pokemon/maushold4/front.animated.2bpp.lz"
+Maushold4Backpic:       INCBIN "gfx/pokemon/maushold4/back.2bpp.lz"
 
 ; Seems to be an accidental copy of the previous bank
 
@@ -724,6 +722,13 @@ MausholdBackpic:       INCBIN "gfx/pokemon/maushold/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
+BlastoiseFrontpic:   INCBIN "gfx/pokemon/blastoise/front.animated.2bpp.lz"
+RapidashFrontpic:    INCBIN "gfx/pokemon/rapidash/front.animated.2bpp.lz"
+MeganiumFrontpic:    INCBIN "gfx/pokemon/meganium/front.animated.2bpp.lz"
+NidoqueenFrontpic:   INCBIN "gfx/pokemon/nidoqueen/front.animated.2bpp.lz"
+HitmonleeFrontpic:   INCBIN "gfx/pokemon/hitmonlee/front.animated.2bpp.lz"
+ScizorFrontpic:      INCBIN "gfx/pokemon/scizor/front.animated.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 
 SECTION "Pics 22", ROMX

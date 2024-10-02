@@ -661,8 +661,15 @@ AideScript_GivePotion:
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
+	callasm MausholdRNG
 	setscene SCENE_ELMSLAB_NOOP
 	end
+
+MausholdRNG:
+	ld a, 1
+	call RandomRange
+	ld [wMausholdForm], a
+	ret
 
 AideScript_WalkBalls1:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight1
