@@ -1019,6 +1019,23 @@ Text_BrokeStadiumRules:
 	line "when you're ready."
 	done
 
+EggMoveRelearnerScript:
+	faceplayer
+	opentext
+	special EggMoveRelearner
+	waitbutton
+	closetext
+	end
+
+Gen1TMRelearnerScript:
+	faceplayer
+	opentext
+	special Gen1TMRelearner
+	waitbutton
+	closetext
+	end
+
+
 Pokecenter2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -1040,3 +1057,5 @@ Pokecenter2F_MapEvents:
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_TimeCapsule, -1
 	object_event  1,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY
+	object_event  1,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EggMoveRelearnerScript, -1
+	object_event  0,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Gen1TMRelearnerScript, -1

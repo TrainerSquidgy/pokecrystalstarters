@@ -314,6 +314,7 @@ INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
+INCLUDE "data/pokemon/dex_numbers.asm"
 
 
 SECTION "Phone Scripts 1", ROMX
@@ -488,7 +489,6 @@ INCLUDE "engine/events/mom_phone.asm"
 SECTION "mobile40", ROMX
 
 INCLUDE "mobile/mobile_40.asm"
-
 
 SECTION "bank41", ROMX
 
@@ -683,6 +683,13 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
+SECTION "Egg Move and Gen 1 Tutors", ROMX
+
+INCLUDE "data/pokemon/gen1_tmattacks.asm"
+INCLUDE "data/pokemon/relearned_egg_moves.asm"
+INCLUDE "engine/events/egg_move_relearner.asm"
+INCLUDE "engine/events/gen1tm_move_relearner.asm"
+INCLUDE "engine/events/move_relearner.asm"
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 

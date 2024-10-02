@@ -102,11 +102,38 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	sjump .StartersDone
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.StartersDone
 	writetext ElmsLabChooseStartersYesText
 	sjump .Merge
 .NoStarter
 	writetext ElmsLabChooseStartersNoText
 .Merge
+	waitbutton
+	writetext ElmsLabText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
+	writetext ElmsLabText_AskAboutHMFriendsYes
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsNo
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+.DoneHMFriends
 	waitbutton
 	closetext
 .End
@@ -125,6 +152,23 @@ ElmsLabText_EvolutionsNo:
 ElmsLabText_EvolutionsAsk:
 	text "Should your"
 	line "#MON evolve?"
+	done
+	
+ElmsLabText_AskRival:
+	text "Do you want the"
+	line "RIVAL's starter"
+	cont "to change too?"
+	done
+	
+ElmsLabText_RivalChanges:
+	text "The RIVAL's"
+	line "#MON will"
+	cont "be updated."
+	done
+
+ElmsLabText_RivalStillSame:
+	text "The RIVAL will"
+	line "stay unchanged."
 	done
 	
 ElmsLabText_AskAboutHiddenPower:
@@ -408,6 +452,8 @@ ElmDirectionsScript:
 	writetext ElmDirectionsText3
 	waitbutton
 	closetext
+	loadmem wEggMovesLeft, 4
+	loadmem wGen1MovesLeft, 4
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
@@ -1507,6 +1553,31 @@ ElmsLabPCText:
 	para "…It says on the"
 	line "screen…"
 	done
+
+ElmsLabText_AskAboutHMFriends:
+	text "Do you want"
+	line "the HM Friends"
+	cont "to be guaranteed"
+	cont "first encounters"
+	para "and to be caught"
+	line "first ball?"
+	done
+	
+ElmsLabText_AskAboutHMFriendsYes:
+	text "The first"
+	line "encounters will"
+	cont "be HM Friends"
+	cont "in ILEX FOREST"
+	cont "and ROUTE 34."
+	done
+	
+ElmsLabText_AskAboutHMFriendsNo:
+	text "The HM Friends"
+	line "will be random"
+	cont "encounters."
+	done
+	
+
 
 ElmsLab_MapEvents:
 	db 0, 0 ; filler

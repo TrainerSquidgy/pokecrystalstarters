@@ -72,7 +72,7 @@ Moves:
 	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         80,  5,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,        100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,          100, 10,  10
-	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, ICE,           70,  5,  10
+	move BLIZZARD,     EFFECT_BLIZZARD,          120, ICE,           70,  5,  10
 	move PSYBEAM,      EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE, 100, 20,  10
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     65, WATER,        100, 20,  10
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,          100, 20,  10
@@ -265,4 +265,5 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
-	assert_table_length NUM_ATTACKS
+	move NIGHT_SLASH,  EFFECT_NORMAL_HIT,         70, DARK,         100, 15,   0
+	assert_table_length NUM_ATTACKS  
