@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HorsepowerDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,15 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw RockTombDescription
+	dw RockBlastDescription
+	dw XScissorDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+RockTombDescription:
+	db   "An attack that"
+	next "lowers speed.@"
+
+XScissorDescription:
+	db   "Hits the foe with"
+	line "claws as scythes.@"
+	
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -277,6 +284,10 @@ KarateChopDescription:
 
 DoubleslapDescription:
 	db   "Repeatedly slaps"
+	next "2-5 times.@"
+
+RockBlastDescription:
+	db   "Repeatedly hits"
 	next "2-5 times.@"
 
 CometPunchDescription:
@@ -315,9 +326,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HorsepowerDescription:
+	db   "Attacks using its"
+	next "entire body.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
