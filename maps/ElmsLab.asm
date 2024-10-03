@@ -115,6 +115,7 @@ ElmsLabStarterChoice:
 	waitbutton
 .StartersDone
 	writetext ElmsLabChooseStartersYesText
+	waitbutton
 	sjump .Merge
 .NoStarter
 	writetext ElmsLabChooseStartersNoText
@@ -181,6 +182,12 @@ ElmsLabText_HiddenPowerUpdated:
 	line "type updated."
 	done
 	
+ReceivedStarterTextNoPreview:
+	text "<PLAYER> received"
+	line "a #MON."
+	done
+
+
 ElmsLabChooseStartersAskText:
 	text "Update STARTER"
 	line "#MON?"
@@ -341,6 +348,8 @@ CyndaquilPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
+	readmem wElmPreview
+	ifequal 1, .DontPreview
 	reanchormap
 	getmonname STRING_BUFFER_3, CYNDAQUIL
 	pokepic CYNDAQUIL
@@ -352,11 +361,18 @@ CyndaquilPokeBallScript:
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL1
+.PreviewMerge
 	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+	readmem wElmPreview
+	ifequal 1, .DontShowName
 	writetext ReceivedStarterText
+	sjump .NameMerge
+.DontShowName
+	writetext ReceivedStarterTextNoPreview
+.NameMerge
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
@@ -366,11 +382,21 @@ CyndaquilPokeBallScript:
 	ifequal RIGHT, ElmDirectionsScript
 	applymovement PLAYER, AfterCyndaquilMovement
 	sjump ElmDirectionsScript
+	
+.DontPreview
+	getmonname STRING_BUFFER_3, CYNDAQUIL
+	opentext
+	writetext ElmText_TakeThisMon
+	yesorno
+	iftrue .PreviewMerge
+	sjump DidntChooseStarterScript
 
 TotodilePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
+	readmem wElmPreview
+	ifequal 1, .DontPreview
 	reanchormap
 	getmonname STRING_BUFFER_3, TOTODILE
 	pokepic TOTODILE
@@ -382,11 +408,18 @@ TotodilePokeBallScript:
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL2
+.PreviewMerge
 	setevent EVENT_GOT_TOTODILE_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+	readmem wElmPreview
+	ifequal 1, .DontShowName
 	writetext ReceivedStarterText
+	sjump .NameMerge
+.DontShowName
+	writetext ReceivedStarterTextNoPreview
+.NameMerge
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
@@ -394,11 +427,21 @@ TotodilePokeBallScript:
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
+	
+.DontPreview
+	getmonname STRING_BUFFER_3, TOTODILE
+	opentext
+	writetext ElmText_TakeThisMon
+	yesorno
+	iftrue .PreviewMerge
+	sjump DidntChooseStarterScript
 
 ChikoritaPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
+	readmem wElmPreview
+	ifequal 1, .DontPreview
 	reanchormap
 	getmonname STRING_BUFFER_3, CHIKORITA
 	pokepic CHIKORITA
@@ -410,11 +453,18 @@ ChikoritaPokeBallScript:
 	yesorno
 	iffalse DidntChooseStarterScript
 	disappear ELMSLAB_POKE_BALL3
+.PreviewMerge
 	setevent EVENT_GOT_CHIKORITA_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+	readmem wElmPreview
+	ifequal 1, .DontShowName
 	writetext ReceivedStarterText
+	sjump .NameMerge
+.DontShowName
+	writetext ReceivedStarterTextNoPreview
+.NameMerge
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
@@ -422,6 +472,20 @@ ChikoritaPokeBallScript:
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
+
+.DontPreview
+	getmonname STRING_BUFFER_3, CHIKORITA
+	opentext
+	writetext ElmText_TakeThisMon
+	yesorno
+	iftrue .PreviewMerge
+	sjump DidntChooseStarterScript
+	
+	
+ElmText_TakeThisMon:
+	text "So you like the"
+	line "look of this one?"
+	done
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText
@@ -784,6 +848,119 @@ ElmsLabTrashcan:
 
 ElmsLabPC:
 	jumptext ElmsLabPCText
+	
+ElmsLabRandomizeStarters:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .End
+	opentext
+	writetext ElmsLab_RandomizeStartersAsk
+	yesorno
+	iffalse .NoRandom
+	callasm ElmsLabRandomizer
+	writetext ElmsLab_RandomizerYes
+	waitbutton
+	writetext ElmsLab_RandomizerHide
+	yesorno
+	iffalse .YesPreview
+	loadmem wElmPreview, 1
+	writetext ElmsLabText_PreviewDisabled
+	sjump .PreviewMerge
+.YesPreview
+	writetext ElmsLabText_PreviewEnabled
+.PreviewMerge
+	waitbutton
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower
+.NoHiddenPower
+	loadmem wIsAStarter, 0
+.HandledHiddenPower
+; Check to see if MON should Evolve
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	writetext ElmsLabText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	sjump .StartersDone
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.StartersDone
+	writetext ElmsLabChooseStartersYesText
+	sjump .Merge	
+.NoRandom
+	writetext ElmsLab_RandomizerNo
+	waitbutton
+.Merge
+	writetext ElmsLabText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
+	writetext ElmsLabText_AskAboutHMFriendsYes
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsNo
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+.DoneHMFriends
+	waitbutton
+	closetext
+.End
+	end
+ElmsLabText_PreviewEnabled:
+	text "You will still"
+	line "see what you"
+	cont "can receive."
+	done
+	
+ElmsLabText_PreviewDisabled:
+	text "You will not"
+	line "be able to see"
+	cont "what you get."
+	done
+	
+ElmsLab_RandomizerHide:
+	text "Do you want to"
+	line "hide what is"
+	cont "in each ball?"
+	done
+	
+ElmsLab_RandomizeStartersAsk:
+	text "Do you want"
+	line "to randomize"
+	cont "your starters?"
+	done
+	
+ElmsLab_RandomizerNo:
+	text "Starters are"
+	line "kept unchanged."
+	done
+	
+ElmsLab_RandomizerYes:
+	text "Starters are"
+	line "now randomized."
+	done
+	
 
 ElmsLabTrashcan2: ; unreferenced
 	jumpstd TrashCanScript
@@ -1613,6 +1790,7 @@ ElmsLab_MapEvents:
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
+	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
 
 	def_object_events
