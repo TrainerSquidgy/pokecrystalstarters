@@ -2097,6 +2097,7 @@ FreezeDry:
 	checkfaint
 	buildopponentrage
 	kingsrock
+	effectchance
 	freezetarget
 	endmove
 
