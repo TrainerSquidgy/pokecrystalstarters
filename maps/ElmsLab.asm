@@ -360,8 +360,8 @@ CyndaquilPokeBallScript:
 	writetext TakeCyndaquilText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL1
 .PreviewMerge
+	disappear ELMSLAB_POKE_BALL1
 	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
@@ -407,8 +407,8 @@ TotodilePokeBallScript:
 	writetext TakeTotodileText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL2
 .PreviewMerge
+	disappear ELMSLAB_POKE_BALL2
 	setevent EVENT_GOT_TOTODILE_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
@@ -452,8 +452,8 @@ ChikoritaPokeBallScript:
 	writetext TakeChikoritaText
 	yesorno
 	iffalse DidntChooseStarterScript
-	disappear ELMSLAB_POKE_BALL3
 .PreviewMerge
+	disappear ELMSLAB_POKE_BALL3
 	setevent EVENT_GOT_CHIKORITA_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
