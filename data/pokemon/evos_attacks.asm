@@ -3365,3 +3365,26 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+AipomsEvosAttacks:
+	db EVOLVE_MOVE, DOUBLE_HIT, AMBIPOM
+	db 0
+	db 1, QUICK_ATTACK
+	db 6, NASTY_PLOT
+	db 11, SWIFT
+	db 18, MUD_BOMB
+	db 25, DOUBLE_HIT
+	db 34, IRON_TAIL
+	db 43, DOUBLE_EDGE
+	db 0
+	
+AmbipomEvosAttacks:
+	db 0
+	db 1, QUICK_ATTACK
+	db 6, NASTY_PLOT
+	db 11, SWIFT
+	db 18, MUD_BOMB
+	db 25, DOUBLE_HIT
+	db 34, IRON_TAIL
+	db 43, DOUBLE_EDGE
+	db 0

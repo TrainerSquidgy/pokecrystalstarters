@@ -252,17 +252,15 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw NastyPlotDescription
+	dw MudBombDescription
+	dw DoubleHitDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -361,6 +359,10 @@ StompDescription:
 
 DoubleKickDescription:
 	db   "A double kicking"
+	next "attack.@"
+
+DoubleHitDescription:
+	db   "A double hitting"
 	next "attack.@"
 
 MegaKickDescription:
@@ -799,6 +801,10 @@ AmnesiaDescription:
 	db   "Sharply raises the"
 	next "user's SPCL.DEF.@"
 
+NastyPlotDescription:
+	db   "Sharply raises the"
+	next "user's SPCL.ATK.@"
+
 KinesisDescription:
 	db   "Reduces the foe's"
 	next "accuracy.@"
@@ -1023,6 +1029,7 @@ MudSlapDescription:
 	db   "Reduces the foe's"
 	next "accuracy.@"
 
+MudBombDescription:
 OctazookaDescription:
 	db   "An attack that may"
 	next "reduce accuracy.@"
