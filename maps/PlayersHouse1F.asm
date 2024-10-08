@@ -113,6 +113,8 @@ MeetMomScript:
 	yesorno
 	iffalse .CheckEvolutions
 	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
 ; Check to see if MON should Evolve
 .CheckEvolutions
 	writetext MomText_EvolutionsAsk
@@ -126,7 +128,34 @@ MeetMomScript:
 	writetext MomText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
+	writetext MomText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext MomText_RivalChanges
+	waitbutton
+	sjump .NoStarter
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext MomText_RivalStillSame
+	waitbutton
 .NoStarter
+	writetext MomText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	writetext MomText_AskAboutHMFriendsYes
+	waitbutton
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext MomText_AskAboutHMFriendsNo
+	waitbutton
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+.DoneHMFriends
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -146,6 +175,30 @@ MeetMomScript:
 	special RestartMapMusic
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
+
+MomText_AskAboutHMFriends:
+	text "Do you want"
+	line "the HM Friends"
+	cont "to be guaranteed"
+	cont "first encounters"
+	
+	para "and to be caught"
+	line "first ball?"
+	done
+	
+MomText_AskAboutHMFriendsYes:
+	text "The first"
+	line "encounters will"
+	cont "be HM Friends"
+	cont "in ILEX FOREST"
+	cont "and ROUTE 34."
+	done
+	
+MomText_AskAboutHMFriendsNo:
+	text "The HM Friends"
+	line "will be random"
+	cont "encounters."
+	done
 	
 MomText_EvolutionsYes:
 	text "Evolutions are"
@@ -168,6 +221,24 @@ MomText_ElmAskedAboutHiddenPower:
 	line "asked if you want"
 	cont "to set your type"
 	cont "for HIDDEN POWER."
+	done
+
+MomText_AskRival:
+	text "Do you want the"
+	line "RIVAL's starter"
+	cont "to change too?"
+	done
+
+	
+MomText_RivalChanges:
+	text "The RIVAL's"
+	line "#MON will"
+	cont "be updated."
+	done
+
+MomText_RivalStillSame:
+	text "The RIVAL will"
+	line "stay unchanged."
 	done
 
 MomText_AskChikorita:
