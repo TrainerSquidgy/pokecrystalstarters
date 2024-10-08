@@ -479,6 +479,7 @@ DisplayHOFMon:
 	ld [hl], "<DOT>"
 	hlcoord 3, 13
 	call GetPokemonNumber
+	call PlaceString
 	hlcoord 4, 8
 	call PlaceString
 	call GetBasePokemonName
