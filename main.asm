@@ -314,6 +314,7 @@ INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
+INCLUDE "data/pokemon/dex_numbers.asm"
 
 
 SECTION "Phone Scripts 1", ROMX
