@@ -140,6 +140,40 @@ ElmsLabStarterChoice:
 .End
 	end
 	
+ElmsLabAlteredHiddenPower:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .End
+	opentext
+	writetext ElmsLabText_AlterHiddenPower
+	yesorno
+	iffalse .NoAltering
+	special SetHiddenPower
+	special AlteredHiddenPower
+	writetext ElmsLabText_AlteredHiddenPower
+	sjump .Merge
+.NoAltering
+	writetext ElmsLabText_NoAlteredHiddenPower
+.Merge
+	waitbutton
+	closetext
+.End
+	end
+	
+ElmsLabText_AlterHiddenPower:
+	text "Want to modify"
+	line "HIDDEN POWER?"
+	done
+
+ElmsLabText_NoAlteredHiddenPower:
+	text "HIDDEN POWER"
+	line "stays the same."
+	done
+
+ElmsLabText_AlteredHiddenPower:
+	text "HIDDEN POWER"
+	line "is modified."
+	done
+	
 ElmsLabText_EvolutionsYes:
 	text "Evolutions are"
 	line "still enabled."
@@ -1792,6 +1826,7 @@ ElmsLab_MapEvents:
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
+	bg_event  1,  2, BGEVENT_READ, ElmsLabAlteredHiddenPower
 
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
