@@ -3171,8 +3171,10 @@ wEvolutionsDisabled:: db
 wGen1MovesLeft:: db
 wEggMovesLeft:: db
 wGuaranteedHMFriendCatch:: db
+wElmPreview:: db
+wAlteredHiddenPowerDVs:: db
 wLastCopycatMove:: db
-	ds 79
+	ds 77
 
 wEventFlags:: flag_array NUM_EVENTS
 
