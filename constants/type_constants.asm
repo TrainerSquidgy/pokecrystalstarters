@@ -13,7 +13,7 @@ DEF PHYSICAL EQU const_value
 	const POISON
 	const GROUND
 	const ROCK
-	const BIRD
+	const FAIRY_P
 	const BUG
 	const GHOST
 	const STEEL
@@ -32,8 +32,9 @@ DEF SPECIAL EQU const_value
 	const ICE
 	const DRAGON
 	const DARK
+	const FAIRY_S
 DEF TYPES_END EQU const_value
 
-DEF NUM_TYPES EQU TYPES_END + UNUSED_TYPES - UNUSED_TYPES_END - 1 ; discount BIRD
+DEF NUM_TYPES EQU TYPES_END + UNUSED_TYPES - UNUSED_TYPES_END
 
 DEF POKEDEX_TYPE_STRING_LENGTH EQU 9

@@ -119,7 +119,13 @@ CherrygroveRivalSceneNorth:
 	iftrue .Chikorita
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
-	loadtrainer RIVAL1, RIVAL1_1_TOTODILE
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter1
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_1_TOTODILE
+	sjump .Rival1Merge
+.NoStarter1
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_1_TOTODILE
+.Rival1Merge
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -130,7 +136,13 @@ CherrygroveRivalSceneNorth:
 .Totodile:
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
-	loadtrainer RIVAL1, RIVAL1_1_CHIKORITA
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter2
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_1_CHIKORITA
+	sjump .RivalMerge2
+.NoStarter2
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_1_CHIKORITA
+.RivalMerge2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -141,7 +153,13 @@ CherrygroveRivalSceneNorth:
 .Chikorita:
 	winlosstext RivalCherrygroveWinText, RivalCherrygroveLossText
 	setlasttalked CHERRYGROVECITY_RIVAL
-	loadtrainer RIVAL1, RIVAL1_1_CYNDAQUIL
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter3
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_1_CYNDAQUIL
+	sjump .RivalMerge3
+.NoStarter3
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_1_CYNDAQUIL
+.RivalMerge3
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
