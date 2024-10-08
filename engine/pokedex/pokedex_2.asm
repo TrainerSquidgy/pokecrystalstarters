@@ -97,8 +97,9 @@ DisplayDexEntry:
 	ld a, $5d ; .
 	ld [hli], a
 	ld de, wTempSpecies
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
+	call GetPokemonNumber
+	hlcoord 4, 8
+	call PlaceString
 ; Check to see if we caught it.  Get out of here if we haven't.
 	ld a, [wTempSpecies]
 	dec a

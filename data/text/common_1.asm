@@ -1900,3 +1900,8 @@ _WhatHiddenPowerTypeText::
 	text "What HIDDEN POWER"
 	line "type do you want?"
 	done
+	
+_ModifyHiddenPowerTypeText::
+	text "Set your modified"
+	line "HIDDEN POWER."
+	done

@@ -1561,6 +1561,9 @@ BattleCommand_CheckHit:
 
 	call .ThunderRain
 	ret z
+	
+	call .BlizzardSnow
+	ret z
 
 	call .XAccuracy
 	ret nz
@@ -1747,6 +1750,19 @@ BattleCommand_CheckHit:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
+	ret
+
+.BlizzardSnow:
+; Return z if the current move always hits in rain, and it is raining.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BLIZZARD
+	ret nz
+
+	ld a, [wBattleWeather]
+	cp WEATHER_SNOW
+	ret z
+	cp WEATHER_HAIL
 	ret
 
 .XAccuracy:
@@ -2549,6 +2565,8 @@ PlayerAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	
+	call SnowDefenseBoost
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
@@ -2793,6 +2811,8 @@ EnemyAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+
+	call SnowDefenseBoost
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
@@ -5334,24 +5354,7 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
+	
 	ret
 
 BattleCommand_FlinchTarget:
@@ -6349,7 +6352,6 @@ INCLUDE "engine/battle/move_effects/foresight.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
-INCLUDE "engine/battle/move_effects/sandstorm.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
 
@@ -6501,10 +6503,6 @@ BattleCommand_TimeBasedHealContinue:
 	dw GetMaxHP
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
-
-INCLUDE "engine/battle/move_effects/rain_dance.asm"
-
-INCLUDE "engine/battle/move_effects/sunny_day.asm"
 
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
 
@@ -6871,3 +6869,45 @@ BattleCommand_Eruption:
 	ldh a, [hMathBuffer]
 	ld d, a
 	ret
+SnowDefenseBoost: 
+	ret
+	
+BattleCommand_StartWeather:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_RAIN_DANCE
+	jr z, .rain
+	cp EFFECT_SUNNY_DAY
+	jr z, .sun
+	cp EFFECT_SANDSTORM
+	jr z, .sandstorm	
+	cp EFFECT_SNOW
+	jr z, .snow
+	ld a, WEATHER_HAIL
+	ld hl, ItStartedToHailText
+	jr .start_weather
+.snow	
+	ld a, WEATHER_SNOW
+	ld hl, ItStartedToSnowText
+	jr .start_weather
+	
+.sandstorm
+	ld a, WEATHER_SANDSTORM
+	ld hl, SandstormBrewedText	
+	jr .start_weather	
+.sun
+	ld a, WEATHER_SUN
+	ld hl, SunGotBrightText
+	jr .start_weather
+
+.rain	
+	ld a, WEATHER_RAIN
+	ld hl, DownpourText
+.start_weather
+	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
+	push hl
+	call AnimateCurrentMove
+	pop hl
+	jp StdBattleTextbox

@@ -160,4 +160,7 @@ MoveEffectsPointers:
 	dw DefenseCurl
 	dw BulkUp
 	dw Eruption
+	dw Blizzard
+	dw Hail
+	dw Snow
 	assert_table_length NUM_MOVE_EFFECTS

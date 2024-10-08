@@ -173,7 +173,13 @@ UndergroundRivalBattleScript:
 	iftrue .Chikorita
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter1
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_4_TOTODILE
+	sjump .Rival1Merge
+.NoStarter1
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_4_TOTODILE
+.Rival1Merge
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -182,7 +188,13 @@ UndergroundRivalBattleScript:
 .Totodile:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter2
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_4_CHIKORITA
+	sjump .RivalMerge2
+.NoStarter2
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_4_CHIKORITA
+.RivalMerge2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -191,7 +203,13 @@ UndergroundRivalBattleScript:
 .Chikorita:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
-	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter3
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_4_CYNDAQUIL
+	sjump .RivalMerge3
+.NoStarter3
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_4_CYNDAQUIL
+.RivalMerge3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
