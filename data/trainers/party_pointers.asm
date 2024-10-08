@@ -11,7 +11,7 @@ TrainerGroups:
 	dw JasmineGroup
 	dw ChuckGroup
 	dw ClairGroup
-	dw Rival1Group
+	dw Rival1StarterGroup
 	dw PokemonProfGroup
 	dw WillGroup
 	dw PKMNTrainerGroup
@@ -44,7 +44,7 @@ TrainerGroups:
 	dw SwimmerFGroup
 	dw SailorGroup
 	dw SuperNerdGroup
-	dw Rival2Group
+	dw Rival2StarterGroup
 	dw GuitaristGroup
 	dw HikerGroup
 	dw BikerGroup
@@ -70,4 +70,6 @@ TrainerGroups:
 	dw OfficerGroup
 	dw GruntFGroup
 	dw MysticalmanGroup
+	dw Rival1NoStarterGroup
+	dw Rival2NoStarterGroup
 	assert_table_length NUM_TRAINER_CLASSES

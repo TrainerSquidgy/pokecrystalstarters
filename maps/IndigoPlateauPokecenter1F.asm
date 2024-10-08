@@ -95,7 +95,13 @@ PlateauRivalBattleCommon:
 	; Cyndaquil
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_TOTODILE
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter1
+	loadtrainer RIVAL2_STARTER, RIVAL2_STARTER_2_TOTODILE
+	sjump .Rival1Merge
+.NoStarter1
+	loadtrainer RIVAL2_NOSTARTER, RIVAL2_NOSTARTER_2_TOTODILE
+.Rival1Merge
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -104,7 +110,13 @@ PlateauRivalBattleCommon:
 .Totodile:
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_CHIKORITA
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter2
+	loadtrainer RIVAL2_STARTER, RIVAL2_STARTER_2_CHIKORITA
+	sjump .RivalMerge2
+.NoStarter2
+	loadtrainer RIVAL2_NOSTARTER, RIVAL2NOSTARTER_2_CHIKORITA
+.RivalMerge2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -113,7 +125,13 @@ PlateauRivalBattleCommon:
 .Chikorita:
 	winlosstext PlateauRivalWinText, PlateauRivalLoseText
 	setlasttalked INDIGOPLATEAUPOKECENTER1F_RIVAL
-	loadtrainer RIVAL2, RIVAL2_2_CYNDAQUIL
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter3
+	loadtrainer RIVAL2_STARTER, RIVAL2_STARTER_2_CYNDAQUIL
+	sjump .RivalMerge3
+.NoStarter3
+	loadtrainer RIVAL2_NOSTARTER, RIVAL2_NOSTARTER_2_CYNDAQUIL
+.RivalMerge3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

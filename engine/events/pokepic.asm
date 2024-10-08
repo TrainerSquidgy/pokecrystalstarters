@@ -8,6 +8,9 @@ Pokepic::
 	call GetSGBLayout
 	xor a
 	ldh [hBGMapMode], a
+	push af
+	predef GetUnownLetter
+	pop af
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
 	call GetBaseData

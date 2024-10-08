@@ -70,4 +70,6 @@ TrainerPicPointers::
 	dba_pic OfficerPic
 	dba_pic GruntfPic
 	dba_pic MysticalmanPic
+	dba_pic Rival1Pic
+	dba_pic Rival2Pic
 	assert_table_length NUM_TRAINER_CLASSES

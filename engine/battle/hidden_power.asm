@@ -80,7 +80,7 @@ HiddenPowerDamage:
 	inc a
 
 ; Skip Bird
-	cp BIRD
+	cp FAIRY_P
 	jr c, .done
 	inc a
 

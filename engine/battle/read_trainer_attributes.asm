@@ -1,9 +1,10 @@
 GetTrainerClassName:
 	ld hl, wRivalName
 	ld a, c
-	cp RIVAL1
+	cp RIVAL1_STARTER
 	jr z, .rival
-
+	cp RIVAL1_NOSTARTER
+	jr z, .rival
 	ld [wCurSpecies], a
 	ld a, TRAINER_NAME
 	ld [wNamedObjectType], a
@@ -27,7 +28,9 @@ GetOTName:
 
 	ld hl, wRivalName
 	ld a, c
-	cp RIVAL1
+	cp RIVAL1_STARTER
+	jr z, .ok
+	cp RIVAL1_NOSTARTER
 	jr z, .ok
 
 	ld [wCurSpecies], a
