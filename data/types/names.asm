@@ -8,7 +8,7 @@ TypeNames:
 	dw Poison
 	dw Ground
 	dw Rock
-	dw Bird
+	dw FairyP
 	dw Bug
 	dw Ghost
 	dw Steel
@@ -28,6 +28,7 @@ endr
 	dw Ice
 	dw Dragon
 	dw Dark
+	dw FairyS
 	assert_table_length TYPES_END
 
 Normal:    db "NORMAL@"
@@ -43,9 +44,10 @@ Psychic:   db "PSYCHIC@"
 Ice:       db "ICE@"
 Ground:    db "GROUND@"
 Rock:      db "ROCK@"
-Bird:      db "BIRD@"
 Bug:       db "BUG@"
 Ghost:     db "GHOST@"
 Steel:     db "STEEL@"
 Dragon:    db "DRAGON@"
 Dark:      db "DARK@"
+FairyP:    db "FAIRY@"
+FairyS:    db "FAIRY@"
