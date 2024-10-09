@@ -3173,7 +3173,18 @@ wEggMovesLeft:: db
 wGuaranteedHMFriendCatch:: db
 wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
-	ds 78
+wRandomizerActive:: db
+wRNGSeed1:: db
+wRNGSeed2:: db
+wRNGSeed3:: db
+wRNGSeed4:: db
+wRNGSeed5:: db
+wRNGSeed6:: db
+wRNGSeed7:: db
+wRNGSeed8:: db
+wRNGSeed9:: db
+wRNGSeed10:: db
+	ds 67
 
 wEventFlags:: flag_array NUM_EVENTS
 
