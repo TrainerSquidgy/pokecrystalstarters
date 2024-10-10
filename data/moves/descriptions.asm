@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw AstonishDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,15 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw NastyPlotDescription
+	dw NightSlashDescription
+	dw DarkPulseDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+NastyPlotDescription:
+	db   "Sharply raises"
+	next "SPCL.ATK.@"
+
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -315,9 +318,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -355,7 +355,9 @@ VineWhipDescription:
 	db   "Whips the foe with"
 	next "slender vines.@"
 
+DarkPulseDescription:
 StompDescription:
+AstonishDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
 
@@ -563,6 +565,7 @@ GrowthDescription:
 	db   "Raises the SPCL."
 	next "ATK rating.@"
 
+NightSlashDescription:
 RazorLeafDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"

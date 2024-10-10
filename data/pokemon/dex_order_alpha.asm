@@ -87,6 +87,7 @@ AlphabeticalPokedexOrder:
 	db HITMONLEE
 	db HITMONTOP
 	db HO_OH
+	db HONCHKROW
 	db HOOTHOOT
 	db HOPPIP
 	db HORSEA
@@ -140,6 +141,7 @@ AlphabeticalPokedexOrder:
 	db MR__MIME
 	db MUK
 	db MURKROW
+	db MURKROWS
 	db NATU
 	db NIDOKING
 	db NIDOQUEEN

@@ -3365,3 +3365,32 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+MurkrowsEvosAttacks:
+	db EVOLVE_ITEM, DUSK_STONE, HONCHKROW
+	db 0
+	db 1, PECK
+	db 1, ASTONISH
+	db 5, PURSUIT
+	db 11, HAZE
+	db 15, WING_ATTACK
+	db 21, NIGHT_SHADE
+	db 25, SWAGGER
+	db 35, NASTY_PLOT
+	db 45, NIGHT_SLASH
+	db 55, DARK_PULSE
+	db 0
+	
+HonchkrowEvosAttacks:
+	db 0
+	db 1, PECK
+	db 1, ASTONISH
+	db 5, PURSUIT
+	db 11, HAZE
+	db 15, WING_ATTACK
+	db 21, NIGHT_SHADE
+	db 25, SWAGGER
+	db 35, NASTY_PLOT
+	db 45, NIGHT_SLASH
+	db 55, DARK_PULSE
+	db 0
