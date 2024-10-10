@@ -3365,3 +3365,29 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+VoltorbHEvosAttacks:
+	db EVOLVE_ITEM, LEAF_STONE, ELECTRODEH
+	db 0
+	db 1, THUNDERSHOCK
+	db 5, TACKLE
+	db 9, THUNDER_WAVE
+	db 15, SPARK
+	db 21, ENERGY_BALL
+	db 29, THUNDERBOLT
+	db 37, THUNDER
+	db 47, SELFDESTRUCT
+	db 0
+	
+ElectrodeHEvosAttacks:
+	db 0
+	db 1, THUNDERSHOCK
+	db 5, TACKLE
+	db 9, THUNDER_WAVE
+	db 15, SPARK
+	db 21, ENERGY_BALL
+	db 29, THUNDERBOLT
+	db 37, THUNDER
+	db 47, CHLOROBLAST
+	db 47, SELFDESTRUCT
+	db 0
