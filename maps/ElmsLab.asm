@@ -99,6 +99,7 @@ ElmsLabStarterChoice:
 	waitbutton
 	sjump .HandledEvolutions
 .KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
@@ -924,6 +925,7 @@ ElmsLabRandomizeStarters:
 	waitbutton
 	sjump .HandledEvolutions
 .KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
