@@ -137,6 +137,7 @@ ElmsLabStarterChoice:
 .DoneHMFriends
 	waitbutton
 	closetext
+	turnobject PLAYER, DOWN
 .End
 	end
 	
@@ -156,6 +157,7 @@ ElmsLabAlteredHiddenPower:
 .Merge
 	waitbutton
 	closetext
+	turnobject PLAYER, RIGHT
 .End
 	end
 	
@@ -959,6 +961,7 @@ ElmsLabRandomizeStarters:
 .DoneHMFriends
 	waitbutton
 	closetext
+	turnobject PLAYER, UP
 .End
 	end
 ElmsLabText_PreviewEnabled:
