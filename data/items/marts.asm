@@ -210,7 +210,7 @@ MartMahogany2:
 	db PARLYZ_HEAL
 	db SUPER_REPEL
 	db REVIVE
-	db FLOWER_MAIL
+	db DUSK_STONE
 	db LINKING_CORD
 	db -1 ; end
 
