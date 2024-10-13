@@ -231,6 +231,7 @@ AlphabeticalPokedexOrder:
 	db TYPHLOSION
 	db TYRANITAR
 	db TYROGUE
+	db UMBREOFF
 	db UMBREON
 	db UNOWN
 	db URSARING

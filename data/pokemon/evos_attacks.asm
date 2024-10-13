@@ -3365,3 +3365,17 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+UmbreoffEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 16, PURSUIT
+	db 23, QUICK_ATTACK
+	db 30, CONFUSE_RAY
+	db 36, CRUNCH
+	db 42, MEAN_LOOK
+	db 47, HOWL
+	db 52, MOONLIGHT
+	db 0 ; no more level-up moves
