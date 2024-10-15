@@ -76,7 +76,7 @@ DoWonderTrade:
 	ld [wPlayerTrademonSpecies], a
 	
 .random_trademon
-	ld a, NUM_POKEMON
+	ld a, NUM_POKEMON - 1
 	call RandomRange
 	inc a
 	ld [wOTTrademonSpecies], a

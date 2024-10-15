@@ -299,8 +299,9 @@ Script_TimeCapsuleClosed:
 	end
 
 LinkReceptionistScript_WonderTrade:
+	faceplayer
 	opentext
-	checkevent EVENT_DUDE_TALKED_TO_YOU
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iffalse .WonderTradeOffline
 	writetext WonderTradeExplanationText
 	waitbutton
@@ -324,14 +325,16 @@ WonderTradeExplanationText:
 	done
 	
 WonderTradeGoodbyeText:
-	text "We hope to see you"
+	text "Enjoy your new"
+	line "#MON!"
+	
+	para "We hope to see you"
 	line "again."
 	done
 
 WonderTradeOfflineText:
 	text "The system is"
-	line "currently under"
-	cont "maintenance."
+	line "currently down!"
 	
 	para "Please try back"
 	line "later."
