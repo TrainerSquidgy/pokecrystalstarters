@@ -26,7 +26,7 @@
 	call PrintText
 
 	call DoWonderTrade
-
+	
 	ld hl, .Text_WonderTradeReady
 	call PrintText
 
@@ -195,17 +195,15 @@ DoWonderTrade:
 	ld [wStringBuffer1], a
 	call Random
 	ld [wStringBuffer1 + 1], a
-	call Random
-	ld [wStringBuffer1 + 2], a
 	ld hl, wStringBuffer1
 	ld de, wOTTrademonDVs
-	call Trade_CopyThreeBytes
+	call Trade_CopyTwoBytes
 
 	ld hl, wPartyMon1DVs
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call Trade_GetAttributeOfLastPartymon
-	ld hl, wOTTrademonDVs
-	call Trade_CopyThreeBytes
+	ld de, wOTTrademonDVs
+	call Trade_CopyTwoBytes
 
 	ld hl, wPartyMon1Item
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -334,3 +332,55 @@ GetWonderTradeHeldItem:
 	ret
 	
 INCLUDE "data/events/wonder_trade/held_items.asm"
+
+
+FillTrademonMovesFromIndicesbuffer: ; unreferenced
+	ld hl, wPartyMon1Moves
+	ld de, wListMoves_MoveIndicesBuffer
+	ld b, NUM_MOVES
+.loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	and a
+	jr z, .clearpp
+
+	push bc
+	push hl
+
+	push hl
+	dec a
+	ld hl, Moves + MOVE_PP
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	pop hl
+
+	ld bc, wPartyMon1PP - (wPartyMon1Moves + 1)
+	add hl, bc
+	ld [hl], a
+
+	pop hl
+	pop bc
+
+	dec b
+	jr nz, .loop
+	ret
+
+.clear
+	xor a
+	ld [hli], a
+
+.clearpp
+	push bc
+	push hl
+	ld bc, wPartyMon1PP - (wPartyMon1Moves + 1)
+	add hl, bc
+	xor a
+	ld [hl], a
+	pop hl
+	pop bc
+	dec b
+	jr nz, .clear
+	ret
