@@ -3353,15 +3353,54 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
+MagbysEvosAttacks:
+	db EVOLVE_LEVEL, 30, MAGMARS
 	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
+	db 1, LEER
+	db 1, SMOG
+	db 7, EMBER
+	db 10, SMOKESCREEN
+	db 16, FAINT_ATTACK
+	db 19, FIRE_SPIN
+	db 25, CONFUSE_RAY
+	db 28, FIRE_PUNCH
+	db 34, LAVA_PLUME
+	db 37, FLAMETHROWER
+	db 43, SUNNY_DAY
+	db 46, FIRE_BLAST
+	db 0 ; no more level-up moves
+
+MagmarsEvosAttacks:
+	db EVOLVE_ITEM, MAGMARIZER, MAGMORTAR
+	db EVOLVE_TRADE, MAGMARIZER, MAGMORTAR
+	db 0 ; no more evolutions
+	db 1, LEER
+	db 1, SMOG
+	db 7, EMBER
+	db 10, SMOKESCREEN
+	db 16, FAINT_ATTACK
+	db 19, FIRE_SPIN
+	db 25, CONFUSE_RAY
+	db 28, FIRE_PUNCH
+	db 34, LAVA_PLUME
+	db 37, FLAMETHROWER
+	db 43, SUNNY_DAY
+	db 46, FIRE_BLAST
+	db 0 ; no more level-up moves
+
+MagmortarEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, THUNDERPUNCH
+	db 1, LEER
+	db 1, SMOG
+	db 7, EMBER
+	db 10, SMOKESCREEN
+	db 16, FAINT_ATTACK
+	db 19, FIRE_SPIN
+	db 25, CONFUSE_RAY
+	db 28, FIRE_PUNCH
+	db 34, LAVA_PLUME
+	db 37, FLAMETHROWER
+	db 43, SUNNY_DAY
+	db 46, FIRE_BLAST
 	db 0 ; no more level-up moves

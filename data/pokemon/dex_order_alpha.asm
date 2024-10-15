@@ -21,7 +21,6 @@ AlphabeticalPokedexOrder:
 	db BULBASAUR
 	db BUTTERFREE
 	db CATERPIE
-	db CELEBI
 	db CHANSEY
 	db CHARIZARD
 	db CHARMANDER
@@ -119,9 +118,12 @@ AlphabeticalPokedexOrder:
 	db MACHOKE
 	db MACHOP
 	db MAGBY
+	db MAGBYS
 	db MAGCARGO
 	db MAGIKARP
 	db MAGMAR
+	db MAGMARS
+	db MAGMORTAR
 	db MAGNEMITE
 	db MAGNETON
 	db MANKEY

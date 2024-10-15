@@ -270,10 +270,11 @@ DEF JOHTO_POKEMON EQU const_value
 	const TYRANITAR  ; f8
 	const LUGIA      ; f9
 	const HO_OH      ; fa
-	const CELEBI     ; fb
+	const MAGBYS     ; fb
+	const MAGMARS    ; fc
+	const MAGMORTAR  ; fd
 DEF NUM_POKEMON EQU const_value - 1
-	const_skip       ; fc
-	const EGG        ; fd
+	const EGG       
 
 ; Unown forms
 ; indexes for:

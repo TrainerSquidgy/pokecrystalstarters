@@ -75,7 +75,7 @@ SetStarter1::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI 
+	ld a, MAGMORTAR 
 
 .decrease
 	dec a
@@ -85,7 +85,7 @@ SetStarter1::
 .d_up
 	ld hl, wElmPokemon1
 	ld a, [hl]
-	cp 250
+	cp 252
 	jr c, .increase
 	ld a, 0
 
@@ -198,7 +198,7 @@ SetStarter2::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, MAGMORTAR
 
 .decrease
 	dec a
@@ -208,7 +208,7 @@ SetStarter2::
 .d_up
 	ld hl, wElmPokemon2
 	ld a, [hl]
-	cp 250
+	cp 252
 	jr c, .increase
 	ld a, 0
 
@@ -321,7 +321,7 @@ SetStarter3::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, MAGMORTAR
 
 .decrease
 	dec a
@@ -331,7 +331,7 @@ SetStarter3::
 .d_up
 	ld hl, wElmPokemon3
 	ld a, [hl]
-	cp 250
+	cp 252
 	jr c, .increase
 	ld a, 0
 
@@ -619,7 +619,9 @@ PokemonStrings:
 	dw .Tyranitar
 	dw .Lugia
 	dw .Hooh
-	dw .Celebi
+	dw .Magbys
+	dw .MagmarS
+	dw .Magmortar
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -871,7 +873,9 @@ PokemonStrings:
 .Tyranitar	db "TYRANITAR@@"
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
-.Celebi	db "CELEBI@@@@@"
+.Magbys	db "MAGBY@@@@@@"
+.MagmarS	db "MAGMAR@@@@@"
+.Magmortar	db "MAGMORTAR@@"
 
 
 WhichPokemonInBall1Text:
