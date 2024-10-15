@@ -298,48 +298,44 @@ Script_TimeCapsuleClosed:
 	closetext
 	end
 
-LinkReceptionistScript_TimeCapsule:
-	checkevent EVENT_MET_BILL
-	iftrue Script_TimeCapsuleClosed
-	checkflag ENGINE_TIME_CAPSULE
-	iftrue Script_TimeCapsuleClosed
-	special SetBitsForTimeCapsuleRequest
-	faceplayer
+LinkReceptionistScript_WonderTrade:
 	opentext
-	writetext Text_TimeCapsuleReceptionistIntro
-	yesorno
-	iffalse .Cancel
-	special CheckTimeCapsuleCompatibility
-	ifequal $1, .MonTooNew
-	ifequal $2, .MonMoveTooNew
-	ifequal $3, .MonHasMail
-	writetext Text_PleaseWait
-	special WaitForLinkedFriend
-	iffalse .FriendNotReady
-	writetext Text_MustSaveGame
-	yesorno
-	iffalse .DidNotSave
-	special TryQuickSave
-	iffalse .DidNotSave
-	writetext Text_PleaseWait
-	special CheckLinkTimeout_Receptionist
-	iffalse .LinkTimedOut
-	readmem wOtherPlayerLinkMode
-	iffalse .OK
-	special CheckBothSelectedSameRoom
-	writetext Text_IncompatibleRooms
-	special CloseLink
+	checkevent EVENT_DUDE_TALKED_TO_YOU
+	iffalse .WonderTradeOffline
+	writetext WonderTradeExplanationText
+	waitbutton
+	special WonderTrade
+	writetext WonderTradeGoodbyeText
+	waitbutton
 	closetext
 	end
 
-.OK:
-	special EnterTimeCapsule
-	writetext Text_PleaseComeIn
+.WonderTradeOffline:
+	writetext WonderTradeOfflineText
 	waitbutton
 	closetext
-	scall TimeCapsuleScript_CheckPlayerGender
-	warpcheck
 	end
+	
+WonderTradeExplanationText:
+	text "You can trade"
+	line "your #MON"
+	cont "for a random"
+	cont "#MON!"
+	done
+	
+WonderTradeGoodbyeText:
+	text "We hope to see you"
+	line "again."
+	done
+
+WonderTradeOfflineText:
+	text "The system is"
+	line "currently under"
+	cont "maintenance."
+	
+	para "Please try back"
+	line "later."
+	done
 
 .FriendNotReady:
 	special WaitForOtherPlayerToExit
@@ -1152,7 +1148,7 @@ Pokecenter2F_MapEvents:
 	def_object_events
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
-	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_TimeCapsule, -1
+	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_WonderTrade, -1
 	object_event  6,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY
 	object_event  1,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EggMoveRelearnerScript, -1
 	object_event  0,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Gen1TMRelearnerScript, -1
