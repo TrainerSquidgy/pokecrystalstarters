@@ -21,7 +21,6 @@ AlphabeticalPokedexOrder:
 	db BULBASAUR
 	db BUTTERFREE
 	db CATERPIE
-	db CELEBI
 	db CHANSEY
 	db CHARIZARD
 	db CHARMANDER
@@ -115,6 +114,8 @@ AlphabeticalPokedexOrder:
 	db LEDYBA
 	db LICKITUNG
 	db LUGIA
+	db LUXIO
+	db LUXRAY
 	db MACHAMP
 	db MACHOKE
 	db MACHOP
@@ -196,6 +197,7 @@ AlphabeticalPokedexOrder:
 	db SEEL
 	db SENTRET
 	db SHELLDER
+	db SHINX
 	db SHUCKLE
 	db SKARMORY
 	db SKIPLOOM

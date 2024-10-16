@@ -2092,3 +2092,39 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
+ThunderFang:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	effectchance
+	flinchtarget
+	effectchance
+	paralyzetarget
+	endmove
+	
+ChargeMove:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	chargemove
+	specialdefenseup
+	statupanim
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove

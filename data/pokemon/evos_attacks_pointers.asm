@@ -252,5 +252,7 @@ EvosAttacksPointers::
 	dw TyranitarEvosAttacks
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
-	dw CelebiEvosAttacks
+	dw ShinxEvosAttacks	
+	dw LuxioEvosAttacks	
+	dw LuxrayEvosAttacks	
 	assert_table_length NUM_POKEMON

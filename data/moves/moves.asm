@@ -265,4 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
+	move THUNDER_FANG, EFFECT_THUNDER_FANG,       65, ELECTRIC,      95, 15,  10
+	move CHARGE,       EFFECT_CHARGE_MOVE,         0, ELECTRIC,     100, 20,   0 
+	move DISCHARGE,    EFFECT_PARALYZE_HIT,       80, ELECTRIC,     100, 15,  30
 	assert_table_length NUM_ATTACKS

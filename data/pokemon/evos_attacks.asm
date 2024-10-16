@@ -3353,15 +3353,50 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
+ShinxEvosAttacks:
+	db EVOLVE_LEVEL, 15, LUXIO
 	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
+	db 1, TACKLE
+	db 5, LEER
+	db 9, CHARGE
+	db 13, SPARK
+	db 17, BITE
+	db 21, ROAR
+	db 25, SWAGGER
+	db 29, THUNDER_FANG
+	db 33, CRUNCH
+	db 37, SCARY_FACE
+	db 41, DISCHARGE	
 	db 0 ; no more level-up moves
+
+LuxioEvosAttacks:
+	db EVOLVE_LEVEL, 30, LUXRAY
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 5, LEER
+	db 9, CHARGE
+	db 13, SPARK
+	db 18, BITE
+	db 23, ROAR
+	db 28, SWAGGER
+	db 33, THUNDER_FANG
+	db 38, CRUNCH
+	db 43, SCARY_FACE
+	db 48, DISCHARGE	
+	db 0 ; no more level-up moves
+
+LuxrayEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 5, LEER
+	db 9, CHARGE
+	db 13, SPARK
+	db 18, BITE
+	db 23, ROAR
+	db 28, SWAGGER
+	db 35, THUNDER_FANG
+	db 42, CRUNCH
+	db 49, SCARY_FACE
+	db 56, DISCHARGE	
+	db 0 ; no more level-up moves
+
