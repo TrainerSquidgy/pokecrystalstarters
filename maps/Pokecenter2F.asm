@@ -303,9 +303,13 @@ LinkReceptionistScript_WonderTrade:
 	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iffalse .WonderTradeOffline
+	writetext WonderTradeInBetaText
+	yesorno
+	iffalse .Goodbye
 	writetext WonderTradeExplanationText
 	waitbutton
 	special WonderTrade
+.Goodbye
 	writetext WonderTradeGoodbyeText
 	waitbutton
 	closetext
@@ -322,6 +326,18 @@ WonderTradeExplanationText:
 	line "your #MON"
 	cont "for a random"
 	cont "#MON!"
+	done
+	
+WonderTradeInBetaText:
+	text "WONDER TRADE is"
+	line "still in its"
+	cont "experiment phase."
+	
+	para "You may encounter"
+	line "unexpected bugs."
+	
+	para "Do you wish to"
+	line "proceed?"
 	done
 	
 WonderTradeGoodbyeText:
