@@ -2092,3 +2092,16 @@ Snow:
 	doturn
 	startweather
 	endmove
+
+ChargeMove:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	chargemove
+	specialdefenseup
+	statupanim
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
