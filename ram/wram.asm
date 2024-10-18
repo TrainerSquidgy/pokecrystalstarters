@@ -3170,7 +3170,12 @@ wStarterDVSelection:: db
 wEvolutionsDisabled:: db
 wPlayerEchoedVoiceCount:: db	
 wEnemyEchoedVoiceCount:: db	
-	ds 81
+wGen1MovesLeft:: db
+wEggMovesLeft:: db
+wGuaranteedHMFriendCatch:: db
+wElmPreview:: db
+wAlteredHiddenPowerDVs:: db
+	ds 76
 
 wEventFlags:: flag_array NUM_EVENTS
 
