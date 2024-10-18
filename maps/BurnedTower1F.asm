@@ -66,7 +66,13 @@ BurnedTowerRivalBattleScript:
 	iftrue .chikorita
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter1
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_3_TOTODILE
+	sjump .Rival1Merge
+.NoStarter1
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_3_TOTODILE
+.Rival1Merge
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -75,7 +81,13 @@ BurnedTowerRivalBattleScript:
 .totodile
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter2
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_3_CHIKORITA
+	sjump .RivalMerge2
+.NoStarter2
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_3_CHIKORITA
+.RivalMerge2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -84,7 +96,13 @@ BurnedTowerRivalBattleScript:
 .chikorita
 	winlosstext BurnedTowerRival_WinText, BurnedTowerRival_LossText
 	setlasttalked BURNEDTOWER1F_RIVAL
-	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter3
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_3_CYNDAQUIL
+	sjump .RivalMerge3
+.NoStarter3
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_3_CYNDAQUIL
+.RivalMerge3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

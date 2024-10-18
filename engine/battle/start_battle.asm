@@ -112,16 +112,14 @@ PlayBattleMusic:
 
 	ld de, MUSIC_RIVAL_BATTLE
 	ld a, [wOtherTrainerClass]
-	cp RIVAL1
+	cp RIVAL1_STARTER
 	jr z, .done
-	cp RIVAL2
-	jr nz, .othertrainer
-
-	ld a, [wOtherTrainerID]
-	cp RIVAL2_2_CHIKORITA ; Rival in Indigo Plateau
-	jr c, .done
-	ld de, MUSIC_CHAMPION_BATTLE
-	jr .done
+	cp RIVAL2_STARTER
+	jr z, .done
+	cp RIVAL1_NOSTARTER
+	jr z, .done
+	cp RIVAL2_NOSTARTER
+	jr z, .done
 
 .othertrainer
 	ld a, [wLinkMode]

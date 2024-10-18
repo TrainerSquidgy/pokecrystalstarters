@@ -353,11 +353,15 @@ PlaceEnemysName::
 	jr nz, .linkbattle
 
 	ld a, [wTrainerClass]
-	cp RIVAL1
+	cp RIVAL1_STARTER
 	jr z, .rival
-	cp RIVAL2
+	cp RIVAL2_STARTER
 	jr z, .rival
-
+	cp RIVAL1_NOSTARTER
+	jr z, .rival
+	cp RIVAL2_NOSTARTER
+	jr z, .rival
+	
 	ld de, wOTClassName
 	call PlaceString
 	ld h, b

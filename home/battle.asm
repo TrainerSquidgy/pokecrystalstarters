@@ -278,3 +278,20 @@ PushLYOverrides::
 	ld a, (wLYOverridesEnd - wLYOverrides) / LEN_2BPP_TILE
 	ld [wRequested2bppSize], a
 	ret
+
+CheckIfTargetIsSomeType::
+	ldh a, [hBattleTurn]
+	ld c, a
+	ld de, wEnemyMonType1
+	ld a, c
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp b
+	ret z
+	ld a, [de]
+	cp b
+	ret
