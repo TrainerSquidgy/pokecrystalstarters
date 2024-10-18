@@ -99,6 +99,7 @@ ElmsLabStarterChoice:
 	waitbutton
 	sjump .HandledEvolutions
 .KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
@@ -137,6 +138,7 @@ ElmsLabStarterChoice:
 .DoneHMFriends
 	waitbutton
 	closetext
+	turnobject PLAYER, DOWN
 .End
 	end
 	
@@ -156,6 +158,7 @@ ElmsLabAlteredHiddenPower:
 .Merge
 	waitbutton
 	closetext
+	turnobject PLAYER, RIGHT
 .End
 	end
 	
@@ -922,6 +925,7 @@ ElmsLabRandomizeStarters:
 	waitbutton
 	sjump .HandledEvolutions
 .KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
@@ -959,6 +963,7 @@ ElmsLabRandomizeStarters:
 .DoneHMFriends
 	waitbutton
 	closetext
+	turnobject PLAYER, UP
 .End
 	end
 ElmsLabText_PreviewEnabled:
