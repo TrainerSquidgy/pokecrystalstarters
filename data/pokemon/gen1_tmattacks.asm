@@ -85,7 +85,6 @@ ClefairyGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -183,7 +182,6 @@ IvysaurGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -196,7 +194,6 @@ ExeggutorGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -347,7 +344,6 @@ LaprasGen1TMAttacks:
 	db 1, BUBBLEBEAM
 	db 1, WATER_GUN
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, DRAGON_RAGE
 	db 1, MIMIC
 	db 1, REFLECT
@@ -391,7 +387,6 @@ MewGen1TMAttacks:
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, DRAGON_RAGE
 	db 1, FISSURE
 	db 1, TELEPORT
@@ -546,7 +541,6 @@ TangelaGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, SKULL_BASH
@@ -687,7 +681,6 @@ ChanseyGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -733,7 +726,6 @@ MrMimeGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -804,7 +796,6 @@ ParasectGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -1026,7 +1017,6 @@ VenonatGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -1423,7 +1413,6 @@ JigglypuffGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -1448,7 +1437,6 @@ WigglytuffGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -1571,7 +1559,6 @@ ParasGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -1702,7 +1689,6 @@ VenomothGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -1743,7 +1729,6 @@ ButterfreeGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -1841,7 +1826,6 @@ MewtwoGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -1869,7 +1853,6 @@ SnorlaxGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, REFLECT
@@ -1957,7 +1940,6 @@ ClefableGen1TMAttacks:
 	db 1, COUNTER
 	db 1, SEISMIC_TOSS
 	db 1, RAGE
-	db 1, SOLARBEAM
 	db 1, TELEPORT
 	db 1, MIMIC
 	db 1, REFLECT
@@ -2127,7 +2109,6 @@ BulbasaurGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -2142,7 +2123,6 @@ VenusaurGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -2453,7 +2433,6 @@ OddishGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -2467,7 +2446,6 @@ GloomGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -2482,7 +2460,6 @@ VileplumeGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -2496,7 +2473,6 @@ BellsproutGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -2510,7 +2486,6 @@ WeepinbellGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
@@ -2525,7 +2500,6 @@ VictreebelGen1TMAttacks:
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MEGA_DRAIN
-	db 1, SOLARBEAM
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE

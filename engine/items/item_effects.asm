@@ -247,6 +247,17 @@ PokeBallEffect:
 	ld a, [wCurItem]
 	cp MASTER_BALL
 	jp z, .catch_without_fail
+	ld a, [wGuaranteedHMFriendCatch]
+	and a
+	jr z, .no_guarantee
+	ld a, [wEnemyMonSpecies]
+	cp ABRA
+	jp z, .catch_without_fail
+	cp PSYDUCK
+	jp z, .catch_without_fail
+	cp PARAS
+	jp z, .catch_without_fail	
+.no_guarantee
 	ld a, [wCurItem]
 	ld c, a
 	ld hl, BallMultiplierFunctionTable

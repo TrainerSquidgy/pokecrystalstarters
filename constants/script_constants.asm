@@ -326,3 +326,9 @@ DEF NUM_UNOWN_PUZZLES EQU const_value
 	const MOVETUTOR_FLAMETHROWER ; 1
 	const MOVETUTOR_THUNDERBOLT  ; 2
 	const MOVETUTOR_ICE_BEAM     ; 3
+
+; Time setval arguments
+	const_def 1
+	const SET_MORN  ; 1
+	const SET_DAY  ; 2
+	const SET_NITE ; 3

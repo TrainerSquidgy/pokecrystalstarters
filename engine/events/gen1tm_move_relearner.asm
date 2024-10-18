@@ -49,6 +49,8 @@ Gen1TMRelearner:
 	call CopyBytes
 	ld b, 0
 	predef LearnMove
+	xor a
+	ld [wEggMovesLeft], a
 	ld a, [wGen1MovesLeft]
 	dec a
 	ld [wGen1MovesLeft], a
@@ -378,9 +380,14 @@ PrintGen1TMRelearnerText:
 
 	para "I can share that"
 	line "knowledge just"
-
-	para "four times."
-	line "How about it?"
+	cont "four times."
+	
+	para "If you get my"
+	line "help, you can't"
+	cont "get help from"
+	cont "my brother."
+	
+	para "How about it?"
 	done
 	
 .WhichMon
