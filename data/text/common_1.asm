@@ -1900,3 +1900,48 @@ _WhatHiddenPowerTypeText::
 	text "What HIDDEN POWER"
 	line "type do you want?"
 	done
+	
+_ModifyHiddenPowerTypeText::
+	text "Set your modified"
+	line "HIDDEN POWER."
+	done
+	
+WonderTradeQuestionText::
+	text "Would you like"
+	line "to WONDER TRADE?"
+	done
+	
+WonderTradePromptText::
+	text "Which #MON do"
+	line "you want to trade?"
+	done
+	
+WonderTradeConfirmText::
+	text "Offer to trade"
+	line "@"
+	text_ram wStringBuffer1
+	text "?"
+	done
+	
+WonderTradeSetupText::
+	text "Searching for a"
+	line "trade partner…"
+	prompt
+
+WonderTradeReadyText::
+	text "A trade partner"
+	line "has been found."
+	prompt
+
+WonderTradeCompleteText::
+	text "You received a"
+	line "new #MON!"
+
+	para "Please take care"
+	line "of it well!"
+	prompt
+	
+WonderTradeDoneFanfare::
+	sound_dex_fanfare_80_109
+	text_promptbutton
+	text_end

@@ -62,7 +62,13 @@ VictoryRoadRivalNext:
 	iftrue .GotChikorita
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter1
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_5_TOTODILE
+	sjump .Rival1Merge
+.NoStarter1
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_5_TOTODILE
+.Rival1Merge
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -71,7 +77,13 @@ VictoryRoadRivalNext:
 .GotTotodile:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter2
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_5_CHIKORITA
+	sjump .RivalMerge2
+.NoStarter2
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_5_CHIKORITA
+.RivalMerge2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -80,7 +92,13 @@ VictoryRoadRivalNext:
 .GotChikorita:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
-	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter3
+	loadtrainer RIVAL1_STARTER, RIVAL1_STARTER_5_CYNDAQUIL
+	sjump .RivalMerge3
+.NoStarter3
+	loadtrainer RIVAL1_NOSTARTER, RIVAL1_NOSTARTER_5_CYNDAQUIL
+.RivalMerge3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

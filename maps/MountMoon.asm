@@ -32,7 +32,13 @@ MountMoonRivalBattleScript:
 	iftrue .Chikorita
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_TOTODILE
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter1
+	loadtrainer RIVAL2_STARTER, RIVAL2_STARTER_1_TOTODILE
+	sjump .Rival1Merge
+.NoStarter1
+	loadtrainer RIVAL2_NOSTARTER, RIVAL2_NO_STARTER_1_TOTODILE
+.Rival1Merge
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -41,7 +47,13 @@ MountMoonRivalBattleScript:
 .Totodile:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_CHIKORITA
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter2
+	loadtrainer RIVAL2_STARTER, RIVAL2_STARTER_1_CHIKORITA
+	sjump .RivalMerge2
+.NoStarter2
+	loadtrainer RIVAL2_NOSTARTER, RIVAL2NO_STARTER_1_CHIKORITA
+.RivalMerge2
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -50,7 +62,13 @@ MountMoonRivalBattleScript:
 .Chikorita:
 	winlosstext MountMoonRivalTextWin, MountMoonRivalTextLoss
 	setlasttalked MOUNTMOON_RIVAL
-	loadtrainer RIVAL2, RIVAL2_1_CYNDAQUIL
+	readmem wRivalCarriesStarter
+	ifequal 0, .NoStarter3
+	loadtrainer RIVAL2_STARTER, RIVAL2_STARTER_1_CYNDAQUIL
+	sjump .RivalMerge3
+.NoStarter3
+	loadtrainer RIVAL2_NOSTARTER, RIVAL2_NO_STARTER_1_CYNDAQUIL
+.RivalMerge3
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

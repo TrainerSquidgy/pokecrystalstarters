@@ -104,7 +104,7 @@ TrainerType1:
 	ld a, [hli]
 	ld [wCurPartySpecies], a
 	
-	;call CheckForRivalMons
+	call CheckForRivalMons
 	
 	;call CheckIfTrainerShouldBeEvolved
 	
@@ -459,7 +459,10 @@ ScaleTrainerEncounters:
 	ret
 
 CheckIfTrainerShouldBeEvolved::
-    ld a, [wCurPartySpecies]
+    ld a, [wEvolutionsDisabled]
+	and a
+	ret nz
+	ld a, [wCurPartySpecies]
     dec a
     push hl
     push bc
@@ -629,9 +632,9 @@ CheckForRivalMons:
 	and a
 	ret z	
 	ld a, [wTrainerClass]
-	cp RIVAL1
+	cp RIVAL1_STARTER
 	jr z, .rival
-	cp RIVAL2
+	cp RIVAL2_STARTER
 	ret nz
 .rival
 	ld a, [wCurPartySpecies]
@@ -665,6 +668,5 @@ CheckForRivalMons:
 	ld a, [wElmPokemon3]
 .merge
 	ld [wCurPartySpecies], a
-	
 	call CheckIfTrainerShouldBeEvolved
 	ret
