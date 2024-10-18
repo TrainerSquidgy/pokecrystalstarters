@@ -3168,7 +3168,12 @@ wRivalCarriesStarter:: db
 wIsAStarter:: db
 wStarterDVSelection:: db
 wEvolutionsDisabled:: db
-	ds 83
+wGen1MovesLeft:: db
+wEggMovesLeft:: db
+wGuaranteedHMFriendCatch:: db
+wElmPreview:: db
+wAlteredHiddenPowerDVs:: db
+	ds 78
 
 wEventFlags:: flag_array NUM_EVENTS
 

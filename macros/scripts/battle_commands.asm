@@ -93,7 +93,6 @@ ENDM
 	command spikes                  ; 56
 	command foresight               ; 57
 	command perishsong              ; 58
-	command startsandstorm          ; 59
 	command endure                  ; 5a
 	command checkcurl               ; 5b
 	command rolloutpower            ; 5c
@@ -114,8 +113,6 @@ ENDM
 	command healday                 ; 6b
 	command healnite                ; 6c
 	command hiddenpower             ; 6d
-	command startrain               ; 6e
-	command startsun                ; 6f
 	command attackup                ; 70
 	command defenseup               ; 71
 	command speedup                 ; 72
@@ -184,6 +181,7 @@ ENDM
 	command psychicfangs
 	command gyroball
 	command wish
+	command startweather
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

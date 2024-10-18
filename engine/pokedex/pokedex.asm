@@ -1536,8 +1536,10 @@ Pokedex_PrintNumberIfOldMode:
 	ld de, -SCREEN_WIDTH
 	add hl, de
 	ld de, wTempSpecies
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
+	push hl
+	call GetPokemonNumber
+	pop hl
+	call PlaceString
 	pop hl
 	ret
 

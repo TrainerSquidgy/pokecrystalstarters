@@ -1106,6 +1106,7 @@ BattleText_NoTimeLeftToday: ; unreferenced
 	text "There is no time"
 	line "left today!"
 	done
+
 BattleText_ReflectBroke:
 	text "The REFLECT"
 	line "SCREEN broke.@"
@@ -1120,3 +1121,36 @@ BattleText_LightScreenBroke:
 WishCameTrueText:
 	text "<USER>'s"
 	line "wish came true.@"
+
+BattleText_HailContinuesToFall:
+	text "Hail continues to"
+	line "fall."
+	prompt
+	
+BattleText_TheHailStopped:
+	text "The hail stopped."
+	prompt
+
+ItStartedToHailText:
+	text "It started"
+	line "to hail!"
+	prompt
+
+PeltedByHailText:
+	text "<USER>"
+	line "is pelted by HAIL!"
+	prompt
+
+BattleText_SnowContinuesToFall:
+	text "Snow continues to"
+	line "fall."
+	prompt
+	
+BattleText_TheSnowStopped:
+	text "The snow stopped."
+	prompt
+
+ItStartedToSnowText:
+	text "It started"
+	line "to snow!"
+	prompt

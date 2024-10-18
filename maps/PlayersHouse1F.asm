@@ -125,6 +125,7 @@ MeetMomScript:
 	waitbutton
 	sjump .HandledEvolutions
 .KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
 	writetext MomText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
@@ -145,12 +146,16 @@ MeetMomScript:
 	iffalse .NoHMFriends
 	writetext MomText_AskAboutHMFriendsYes
 	waitbutton
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
 	sjump .DoneHMFriends
 .NoHMFriends
 	writetext MomText_AskAboutHMFriendsNo
 	waitbutton
 	loadmem wIlexForestEncounters, 3
 	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -176,7 +181,10 @@ MomText_AskAboutHMFriends:
 	text "Do you want"
 	line "the HM Friends"
 	cont "to be guaranteed"
-	cont "first encounters?"
+	cont "first encounters"
+	
+	para "and to be caught"
+	line "first ball?"
 	done
 	
 MomText_AskAboutHMFriendsYes:
