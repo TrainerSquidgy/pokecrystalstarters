@@ -3365,3 +3365,33 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+PlusleEvosAttacks:
+	db 0
+	db 1, GROWL
+	db 4, THUNDER_WAVE
+	db 10, QUICK_ATTACK
+	db 13, TAIL_WHIP
+	db 19, SPARK
+	db 22, ENCORE
+	db 28, FAKE_TEARS
+	db 31, CHARGE
+	db 37, THUNDER
+	db 40, BATON_PASS
+	db 47, AGILITY
+	db 0
+	
+MinunEvosAttacks:
+db 0
+	db 1, GROWL
+	db 4, THUNDER_WAVE
+	db 10, QUICK_ATTACK
+	db 13, TAIL_WHIP
+	db 19, SPARK
+	db 22, ENCORE
+	db 28, CHARM
+	db 31, CHARGE
+	db 37, THUNDER
+	db 40, BATON_PASS
+	db 47, AGILITY
+	db 0

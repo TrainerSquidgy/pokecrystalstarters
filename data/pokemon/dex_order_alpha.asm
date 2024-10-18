@@ -135,6 +135,7 @@ AlphabeticalPokedexOrder:
 	db MEW
 	db MEWTWO
 	db MILTANK
+	db MINUN
 	db MISDREAVUS
 	db MOLTRES
 	db MR__MIME
@@ -166,6 +167,7 @@ AlphabeticalPokedexOrder:
 	db PILOSWINE
 	db PINECO
 	db PINSIR
+	db PLUSLE
 	db POLITOED
 	db POLIWAG
 	db POLIWHIRL

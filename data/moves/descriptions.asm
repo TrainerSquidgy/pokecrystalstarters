@@ -253,8 +253,9 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw ChargeDescription
-	dw BodySlamDescription
+	dw FakeTearsDescription
 	assert_table_length NUM_ATTACKS
+	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -263,6 +264,9 @@ ChargeDescription:
 	db   "Doubles ELECTRIC"
 	next "on next turn.@"
 	
+FakeTearsDescription:
+	db   "Harshly lowers"
+	next "foe's SPCL.DEF.@"
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:

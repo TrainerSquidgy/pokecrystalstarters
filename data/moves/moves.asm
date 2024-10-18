@@ -266,5 +266,5 @@ Moves:
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
 	move CHARGE,       EFFECT_CHARGE_MOVE,         0, ELECTRIC,     100, 20,   0 
-	move DISCHARGE,    EFFECT_PARALYZE_HIT,       80, ELECTRIC,     100, 15,  30
+	move FAKE_TEARS,   EFFECT_SP_DEF_DOWN_2,       0, DARK,           0, 20,   0
 	assert_table_length NUM_ATTACKS

@@ -252,5 +252,5 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "CHARGE"
-	li "DISCHARGE"
+	li "FAKE TEARS"
 	assert_list_length NUM_ATTACKS
