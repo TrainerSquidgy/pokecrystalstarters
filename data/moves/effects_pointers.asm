@@ -159,4 +159,7 @@ MoveEffectsPointers:
 	dw Fly
 	dw DefenseCurl
 	dw Roost
+	dw Blizzard
+	dw Hail
+	dw Snow
 	assert_table_length NUM_MOVE_EFFECTS

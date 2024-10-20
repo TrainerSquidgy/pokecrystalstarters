@@ -18,9 +18,11 @@ PnP_HiddenPeople_BeatE4:
 	db BLUE
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
-	db RIVAL1
+	db RIVAL1_NOSTARTER
+	db RIVAL1_STARTER
 	db POKEMON_PROF
 	db CAL
-	db RIVAL2
+	db RIVAL2_STARTER
+	db RIVAL2_NOSTARTER
 	db RED
 	db -1
