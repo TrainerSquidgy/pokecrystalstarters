@@ -3365,3 +3365,22 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+RoseliaEvosAttacks:
+	db 0
+	db 1, ABSORB
+	db 5, GROWTH
+	db 9, POISON_STING
+	db 13, STUN_SPORE
+	db 17, MEGA_DRAIN
+	db 21, LEECH_SEED
+	db 25, MAGICAL_LEAF
+	db 29, GRASSWHISTLE
+	db 33, GIGA_DRAIN
+	db 37, SWEET_SCENT
+	db 41, INGRAIN
+	db 45, TOXIC
+	db 49, PETAL_DANCE
+	db 53, AROMATHERAPY
+	db 57, SYNTHESIS
+	db 0

@@ -1139,3 +1139,13 @@ ItStartedToSnowText:
 	text "It started"
 	line "to snow!"
 	prompt
+
+PlantedRootsText:
+	text "<USER>"
+	line "planted roots."
+	prompt
+	
+AbsorbedNutrientsText:
+	text "<TARGET>"
+	line "absorbed nutrients"
+	cont "with its roots!"

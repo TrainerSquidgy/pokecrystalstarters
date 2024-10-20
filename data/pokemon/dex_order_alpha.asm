@@ -187,6 +187,7 @@ AlphabeticalPokedexOrder:
 	db REMORAID
 	db RHYDON
 	db RHYHORN
+	db ROSELIA
 	db SANDSHREW
 	db SANDSLASH
 	db SCIZOR
