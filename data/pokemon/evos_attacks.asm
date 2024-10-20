@@ -3353,15 +3353,50 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
-	db 0 ; no more level-up moves
+BagonEvosAttacks:
+	db EVOLVE_LEVEL, 30, SHELGON
+	db 0
+	db 1, RAGE
+	db 5, BITE
+	db 9, LEER
+	db 17, HEADBUTT
+	db 21, FOCUS_ENERGY
+	db 25, EMBER
+	db 33, DRAGONBREATH
+	db 37, SCARY_FACE
+	db 41, CRUNCH
+	db 49, DRAGON_CLAW
+	db 53, DOUBLE_EDGE
+	db 0
+	
+ShelgonEvosAttacks:
+	db EVOLVE_LEVEL, 30, SALAMENCE
+	db 0
+	db 1, RAGE
+	db 5, BITE
+	db 9, LEER
+	db 17, HEADBUTT
+	db 21, FOCUS_ENERGY
+	db 25, EMBER
+	db 38, DRAGONBREATH
+	db 47, SCARY_FACE
+	db 56, CRUNCH
+	db 69, DRAGON_CLAW
+	db 78, DOUBLE_EDGE
+	db 0
+	
+SalamenceEvosAttacks:
+	db 0
+	db 1, RAGE
+	db 5, BITE
+	db 9, LEER
+	db 17, HEADBUTT
+	db 21, FOCUS_ENERGY
+	db 25, EMBER
+	db 38, DRAGONBREATH
+	db 47, SCARY_FACE
+	db 50, FLY
+	db 61, CRUNCH
+	db 79, DRAGON_CLAW
+	db 93, DOUBLE_EDGE
+	db 0
