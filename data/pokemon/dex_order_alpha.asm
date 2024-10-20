@@ -154,6 +154,7 @@ AlphabeticalPokedexOrder:
 	db OMANYTE
 	db OMASTAR
 	db ONIX
+	db PACHIRISU
 	db PARAS
 	db PARASECT
 	db PERSIAN

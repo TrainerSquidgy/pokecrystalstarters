@@ -3365,3 +3365,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+PachirisuEvosAttacks:
+	db 0
+	db 1, GROWL
+	db 1, BIDE
+	db 5, QUICK_ATTACK
+	db 9, CHARM
+	db 13, SPARK
+	db 17, ENDURE
+	db 21, SWIFT
+	db 25, SWEET_KISS
+	db 29, DISCHARGE
+	db 33, SUPER_FANG
+	db 37, THUNDER_WAVE
+	db 41, HYPER_FANG
+	db 0
