@@ -196,7 +196,6 @@ ROMX $48
 	"Pics 1"
 ROMX $49
 	org $4000
-	"Unown Pic Pointers"
 	"Pics 2"
 ROMX $4a
 	"Trainer Pic Pointers"
@@ -232,6 +231,7 @@ ROMX $58
 ROMX $59
 	"Pics 18"
 ROMX $5a
+	"Unown Pic Pointers"
 	"Pics 19"
 ROMX $5b
 	"bank5B"

@@ -2092,3 +2092,18 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
+Endeavor:
+	checkobedience
+	usedmovetext
+	doturn
+	endeavor
+	checkhit
+	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
