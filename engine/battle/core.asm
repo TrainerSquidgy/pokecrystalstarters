@@ -4127,6 +4127,34 @@ SendOutPlayerMon:
 	ret
 
 NewBattleMonStatus:
+	ld a, [wBattleMonMoves]
+	and a
+	jr z, .move2
+	ld a, NUM_ATTACKS
+	call RandomRange
+	ld [wBattleMonMoves], a
+.move2
+	ld a, [wBattleMonMoves + 1]
+	and a
+	jr z, .move3
+	ld a, NUM_ATTACKS
+	call RandomRange
+	ld [wBattleMonMoves + 1], a
+.move3
+	ld a, [wBattleMonMoves + 2]
+	and a
+	jr z, .move4
+	ld a, NUM_ATTACKS
+	call RandomRange
+	ld [wBattleMonMoves + 2], a
+.move4
+	ld a, [wBattleMonMoves + 3]
+	and a
+	jr z, .movesdone
+	ld a, NUM_ATTACKS
+	call RandomRange
+	ld [wBattleMonMoves + 3], a
+.movesdone
 	xor a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
