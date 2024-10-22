@@ -57,3 +57,8 @@ used_space.png
 .DS_STORE
 Pokémon Crystal - Challenge Run Patch (v1.4).ips
 *.ips
+data/pokemon/EggMovePuller.py
+data/pokemon/gen1_tmattacks.md
+data/pokemon/Gen1MovePuller.py
+data/pokemon/relearned_egg_moves.md
+data/pokemon/relearned_egg_moves.txt
