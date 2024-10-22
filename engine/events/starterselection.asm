@@ -75,7 +75,7 @@ SetStarter1::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI 
+	ld a, GOLDUCKH 
 
 .decrease
 	dec a
@@ -198,7 +198,7 @@ SetStarter2::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, GOLDUCKH
 
 .decrease
 	dec a
@@ -321,7 +321,7 @@ SetStarter3::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, GOLDUCKH
 
 .decrease
 	dec a
@@ -620,6 +620,8 @@ PokemonStrings:
 	dw .Lugia
 	dw .Hooh
 	dw .Celebi
+	dw .PsyduckH
+	dw .GolduckH
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -872,6 +874,9 @@ PokemonStrings:
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
 .Celebi	db "CELEBI@@@@@"
+.PsyduckH	db "PSYDUCK@@@@"
+.GolduckH	db "GOLDUCK@@@@"
+
 
 
 WhichPokemonInBall1Text:

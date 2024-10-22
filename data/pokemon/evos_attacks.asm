@@ -3365,3 +3365,26 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+PsyduckHEvosAttacks:
+	db EVOLVE_LEVEL, 33, GOLDUCK
+	db 0
+	db 1, BUBBLE
+	db 6, CONFUSION
+	db 11, WATER_PULSE
+	db 18, HYPNOSIS
+	db 25, ZEN_HEADBUTT
+	db 34, AQUA_TAIL
+	db 43, HYDRO_PUMP
+	db 0
+	
+GolduckHEvosAttacks:
+	db 0
+	db 1, BUBBLE
+	db 6, CONFUSION
+	db 11, WATER_PULSE
+	db 18, HYPNOSIS
+	db 25, ZEN_HEADBUTT
+	db 34, AQUA_TAIL
+	db 43, HYDRO_PUMP
+	db 0

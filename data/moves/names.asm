@@ -251,4 +251,7 @@ MoveNames::
 	li "ROCK SMASH"
 	li "WHIRLPOOL"
 	li "BEAT UP"
+	li "WATER PULSE"
+	li "ZEN HEADBUTT"
+	li "AQUA TAIL"
 	assert_list_length NUM_ATTACKS

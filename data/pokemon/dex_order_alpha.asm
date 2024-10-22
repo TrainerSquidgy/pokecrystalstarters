@@ -75,6 +75,7 @@ AlphabeticalPokedexOrder:
 	db GOLBAT
 	db GOLDEEN
 	db GOLDUCK
+	db GOLDUCKH
 	db GOLEM
 	db GRANBULL
 	db GRAVELER
@@ -175,6 +176,7 @@ AlphabeticalPokedexOrder:
 	db PORYGON2
 	db PRIMEAPE
 	db PSYDUCK
+	db PSYDUCKH
 	db PUPITAR
 	db QUAGSIRE
 	db QUILAVA

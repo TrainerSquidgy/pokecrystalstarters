@@ -253,4 +253,6 @@ MonMenuIcons:
 	db ICON_LUGIA       ; LUGIA
 	db ICON_HO_OH       ; HO_OH
 	db ICON_HUMANSHAPE  ; CELEBI
+	db ICON_MONSTER     ; PSYDUCK
+	db ICON_MONSTER     ; GOLDUCK
 	assert_table_length NUM_POKEMON
