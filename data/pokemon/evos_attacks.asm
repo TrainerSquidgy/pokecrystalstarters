@@ -3365,3 +3365,30 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+BidoofEvosAttacks:
+	db EVOLVE_LEVEL, 15, BIBAREL
+	db 0 
+	db 1, ROLLOUT
+	db 5, TACKLE
+	db 10, BITE
+	db 16, HYPER_FANG
+	db 23, CRUNCH
+	db 31, SWORDS_DANCE
+	db 39, DOUBLE_EDGE
+	db 47, SUPER_FANG
+	db 0
+	
+BibarelEvosAttacks:
+	db 0 
+	db 1, ROLLOUT
+	db 5, TACKLE
+	db 10, BITE
+	db 15, WATER_PULSE
+	db 23, HYPER_FANG
+	db 31, CRUNCH
+	db 39, AQUA_TAIL
+	db 47, SWORDS_DANCE
+	db 55, DOUBLE_EDGE
+	db 63, SUPER_FANG
+	db 0
