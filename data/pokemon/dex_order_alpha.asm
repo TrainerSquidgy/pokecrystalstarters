@@ -63,6 +63,7 @@ AlphabeticalPokedexOrder:
 	db FEAROW
 	db FERALIGATR
 	db FLAAFFY
+	db FLAMIGO
 	db FLAREON
 	db FORRETRESS
 	db FURRET

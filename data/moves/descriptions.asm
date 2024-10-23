@@ -252,15 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw RoostDescription
+	dw StringShotDescription
+	dw HeadbuttDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+RoostDescription:
+	db   "Heals HP but"
+	next "lose FLYING-type.@"
+	
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:

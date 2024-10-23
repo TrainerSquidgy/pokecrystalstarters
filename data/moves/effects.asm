@@ -2079,6 +2079,14 @@ DefenseCurl:
 	statupfailtext
 	endmove
 
+Roost:
+	checkobedience
+	usedmovetext
+	doturn
+	roost
+	heal
+	endmove
+
 Hail:
 	checkobedience
 	usedmovetext

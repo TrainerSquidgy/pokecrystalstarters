@@ -3365,3 +3365,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+FlamigoEvosAttacks:
+	db 0
+	db 1, PECK
+	db 1, DETECT
+	db 6, DOUBLE_KICK
+	db 11, FOCUS_ENERGY
+	db 16, LOW_KICK
+	db 21, ENCORE
+	db 27, WING_ATTACK
+	db 33, ROOST
+	db 39, LOW_SWEEP
+	db 45, REVERSAL
+	db 51, AIR_SLASH
+	db 57, SWORDS_DANCE
+	db 0
+	
