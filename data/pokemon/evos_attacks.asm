@@ -3365,3 +3365,39 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+GreavardEvosAttacks:
+	db EVOLVE_NITE, 30, HOUNDSTONE
+	db 0
+	db 1, TACKLE
+	db 1, GROWL
+	db 3, LICK
+	db 6, TAIL_WHIP
+	db 9, ROAR
+	db 12, HEADBUTT
+	db 16, DIG
+	db 24, REST
+	db 28, CRUNCH
+	db 32, PLAY_ROUGH
+	db 37, PHANTOMFORCE
+	db 41, CHARM
+	db 46, DOUBLE_EDGE
+	db 0
+	
+HoundstoneEvosAttacks:
+	db 0
+	db 1, TACKLE
+	db 1, GROWL
+	db 3, LICK
+	db 6, TAIL_WHIP
+	db 9, ROAR
+	db 12, HEADBUTT
+	db 16, DIG
+	db 24, REST
+	db 28, CRUNCH
+	db 30, LAST_RESPECT
+	db 36, PLAY_ROUGH
+	db 41, PHANTOMFORCE
+	db 46, CHARM
+	db 51, DOUBLE_EDGE
+	db 0

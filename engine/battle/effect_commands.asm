@@ -5597,9 +5597,17 @@ BattleCommand_Charge:
 
 	cp DIG
 	ld hl, .BattleDugText
+	jr z, .done
+	
+	cp PHANTOMFORCE
+	ld hl, .BattleVanishedText
 
 .done
 	ret
+	
+.BattleVanishedText:
+	text_far _BattleVanishedText
+	text_end
 
 .BattleMadeWhirlwindText:
 	text_far _BattleMadeWhirlwindText

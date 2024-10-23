@@ -265,4 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
+	move PLAY_ROUGH,   EFFECT_ATTACK_DOWN_HIT,    90, FAIRY_P,       90, 10,   0
+	move PHANTOMFORCE, EFFECT_FLY,                90, GHOST,        100, 10,   0
+	move LAST_RESPECT, EFFECT_NORMAL_HIT,         50, GHOST,        100, 10,   0
 	assert_table_length NUM_ATTACKS

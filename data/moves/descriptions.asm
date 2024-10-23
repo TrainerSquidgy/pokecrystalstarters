@@ -252,15 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw AuroraBeamDescription
+	dw PhantomForceDescription
+	dw LastRespectDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+LastRespectDescription:
+	db   "Normal hit as"
+	next "I am lazy.@"
+	
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -341,6 +344,9 @@ WhirlwindDescription:
 
 FlyDescription:
 	db   "1st turn: Fly"
+	next "2nd turn: Attack@"
+PhantomForceDescription:
+	db   "1st turn: Vanish"
 	next "2nd turn: Attack@"
 
 BindDescription:

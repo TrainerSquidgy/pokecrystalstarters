@@ -78,6 +78,7 @@ AlphabeticalPokedexOrder:
 	db GOLEM
 	db GRANBULL
 	db GRAVELER
+	db GREAVARD
 	db GRIMER
 	db GROWLITHE
 	db GYARADOS
@@ -92,6 +93,7 @@ AlphabeticalPokedexOrder:
 	db HORSEA
 	db HOUNDOOM
 	db HOUNDOUR
+	db HOUNDSTONE
 	db HYPNO
 	db IGGLYBUFF
 	db IVYSAUR
