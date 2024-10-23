@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1902,10 +1900,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5575,20 +5569,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6796,31 +6783,6 @@ _CheckBattleScene:
 
 
 SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-
-; First, check if Snow is active.
-	ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
 	ret
 	
 BattleCommand_StartWeather:
@@ -6862,3 +6824,46 @@ BattleCommand_StartWeather:
 	call AnimateCurrentMove
 	pop hl
 	jp StdBattleTextbox
+
+BattleCommand_Hex:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and a
+	ret z
+	jp DoubleDamage
+	
+BattleCommand_Memento:
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+	farcall CheckSubstituteOpp
+	jr nz, .failed
+
+	farcall AnimateCurrentMove
+
+	; Faint user.
+	farcall GetMaxHP
+	farcall SubtractHPFromUser
+
+	; Don't play the move anim again.
+	ld a, 1
+	ld [wAlreadyPerformed], a
+
+	; (Try to) lower opponent stats
+	call BattleCommand_AttackDown2
+	call BattleCommand_StatDownAnim
+	call BattleCommand_StatDownMessage
+	call BattleCommand_StatDownFailText
+	call ResetMiss
+	call BattleCommand_SpecialAttackDown2
+	call BattleCommand_StatDownAnim
+	call BattleCommand_StatDownMessage
+	call BattleCommand_StatDownFailText
+	ret
+
+.failed
+	farcall AnimateFailedMove
+	farcall TryPrintButItFailed
+	farcall EndMoveEffect
+	ret

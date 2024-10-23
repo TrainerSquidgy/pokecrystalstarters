@@ -210,6 +210,7 @@ AlphabeticalPokedexOrder:
 	db SNUBBULL
 	db SPEAROW
 	db SPINARAK
+	db SPIRITOMB
 	db SQUIRTLE
 	db STANTLER
 	db STARMIE

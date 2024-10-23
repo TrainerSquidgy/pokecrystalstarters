@@ -1988,7 +1988,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2661,7 +2661,7 @@ EspeonEvosAttacks:
 	db 36, PSYBEAM
 	db 42, PSYCH_UP
 	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
+	db 52, RECOVER
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -3365,3 +3365,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SpiritombEvosAttacks:
+	db 0
+	db 1, CURSE
+	db 1, PURSUIT
+	db 1, CONFUSE_RAY
+	db 1, SPITE
+	db 1, SHADOW_SNEAK
+	db 7, FAINT_ATTACK
+	db 13, HYPNOSIS
+	db 19, DREAM_EATER
+	db 25, OMINOUS_WIND
+	db 31, HEX
+	db 37, NASTY_PLOT
+	db 43, MEMENTO
+	db 49, DARK_PULSE
+	db 0
