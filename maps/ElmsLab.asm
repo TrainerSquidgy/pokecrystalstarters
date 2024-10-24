@@ -156,7 +156,7 @@ ElmsLabInverseBattles:
 	loadmem wInverseActivated, 1
 	writetext ElmsLabtext_InverseYes
 .Merge
-	waitbutton
+	promptbutton
 	closetext
 .End
 	end
