@@ -49,6 +49,7 @@ AlphabeticalPokedexOrder:
 	db DRATINI
 	db DROWZEE
 	db DUGTRIO
+	db DURANT
 	db DUNSPARCE
 	db EEVEE
 	db EKANS
