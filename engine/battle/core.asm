@@ -3653,6 +3653,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
@@ -4136,6 +4137,7 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
