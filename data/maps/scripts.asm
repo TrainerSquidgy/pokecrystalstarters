@@ -158,11 +158,11 @@ INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
 INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 INCLUDE "maps/Route27SandstormHouse.asm"
-INCLUDE "maps/Route29Route46Gate.asm"
 
 
 SECTION "Map Scripts 10", ROMX
 
+INCLUDE "maps/Route29Route46Gate.asm"
 INCLUDE "maps/Route22.asm"
 INCLUDE "maps/GoldenrodUnderground.asm"
 INCLUDE "maps/GoldenrodUndergroundSwitchRoomEntrances.asm"

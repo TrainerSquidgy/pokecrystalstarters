@@ -147,6 +147,10 @@ SECTION "Effect Commands", ROMX
 
 INCLUDE "engine/battle/effect_commands.asm"
 
+SECTION "Type Matchups", ROMX
+
+INCLUDE "data/types/type_matchups.asm"
+
 
 SECTION "Enemy Trainers", ROMX
 

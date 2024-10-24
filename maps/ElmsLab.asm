@@ -142,6 +142,41 @@ ElmsLabStarterChoice:
 .End
 	end
 	
+ElmsLabInverseBattles:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .End
+	opentext
+	writetext ElmsLabText_InverseAsk
+	yesorno
+	iftrue .InverseYes
+	loadmem wInverseActivated, 0
+	writetext ElmsLabtext_InverseNo
+	sjump .Merge
+.InverseYes
+	loadmem wInverseActivated, 1
+	writetext ElmsLabtext_InverseYes
+.Merge
+	waitbutton
+	closetext
+.End
+	end
+	
+ElmsLabtext_InverseNo:
+	text "All type matchups"
+	line "remain normal."
+	done
+
+ElmsLabText_InverseAsk:
+	text "Do you want to"
+	line "use INVERSE"
+	cont "type matchups?"
+	done
+
+ElmsLabtext_InverseYes:
+	text "All matchups"
+	line "are INVERTED."
+	done
+
 ElmsLabAlteredHiddenPower:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
@@ -1832,6 +1867,7 @@ ElmsLab_MapEvents:
 	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
 	bg_event  1,  2, BGEVENT_READ, ElmsLabAlteredHiddenPower
+	bg_event  0,  2, BGEVENT_READ, ElmsLabInverseBattles
 
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
