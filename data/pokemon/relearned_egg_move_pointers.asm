@@ -251,4 +251,6 @@ RelearnedEggMovePointers::
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
+	dw SnoverRelearnedEggMoves
+	dw SnoverRelearnedEggMoves
 	assert_table_length NUM_POKEMON

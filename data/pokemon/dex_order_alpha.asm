@@ -2,6 +2,7 @@
 
 AlphabeticalPokedexOrder:
 	table_width 1, AlphabeticalPokedexOrder
+	db ABOMASNOW
 	db ABRA
 	db AERODACTYL
 	db AIPOM
@@ -207,6 +208,7 @@ AlphabeticalPokedexOrder:
 	db SMOOCHUM
 	db SNEASEL
 	db SNORLAX
+	db SNOVER
 	db SNUBBULL
 	db SPEAROW
 	db SPINARAK

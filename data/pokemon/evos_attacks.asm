@@ -3365,3 +3365,12 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SnoverEvosAttacks:
+	db EVOLVE_LEVEL, 40, ABOMASNOW
+	db 0
+	db 0
+	
+AbomasnowEvosAttacks:
+	db 0
+	db 0
