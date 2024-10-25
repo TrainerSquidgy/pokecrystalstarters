@@ -6895,3 +6895,45 @@ BattleCommand_Ingrain:
 	farcall AnimateFailedMove
 	farcall PrintButItFailed
 	ret
+	
+BattleCommand_DoubleWeatherDamage:
+	ld a, [wWeatherBallBonus]
+	and a
+	ret z
+	jp DoubleDamage
+
+BattleCommand_WeatherBall:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .Sun
+	cp WEATHER_RAIN
+	jr z, .Rain
+	cp WEATHER_HAIL
+	jr z, .Hail
+	cp WEATHER_SANDSTORM
+	jr z, .Sandstorm
+	xor a
+	ld [wWeatherBallBonus], a
+	ret
+
+.Sandstorm
+	ld a, ROCK
+	jr .Finish
+	
+.Sun
+	ld a, FIRE
+	jr .Finish
+.Rain
+	ld a, WATER
+	jr .Finish
+.Hail
+	ld a, ICE
+.Finish
+	push af
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	pop af
+	ld [hl], a
+	ld a, 1
+	ld [wWeatherBallBonus], a
+	ret

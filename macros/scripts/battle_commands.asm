@@ -179,6 +179,8 @@ ENDM
 	command curl                    ; af
 	command startweather
 	command ingrain
+	command weatherball
+	command doubleweatherballdamage
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

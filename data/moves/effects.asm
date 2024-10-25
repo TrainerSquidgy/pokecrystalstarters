@@ -2099,3 +2099,26 @@ Ingrain:
 	doturn
 	ingrain
 	endmove
+	
+WeatherBall:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	weatherball
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	doubleweatherballdamage
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+

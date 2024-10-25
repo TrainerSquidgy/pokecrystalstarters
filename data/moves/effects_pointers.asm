@@ -162,4 +162,5 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw Ingrain
+	dw WeatherBall
 	assert_table_length NUM_MOVE_EFFECTS
