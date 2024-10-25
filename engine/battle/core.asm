@@ -2866,7 +2866,11 @@ PlayerPartyMonEntrance:
 	jp SpikesDamage
 	
 SetSnowWarning:
-	
+	ld a, [wBattleMonSpecies]
+	cp SNOVER
+	jr z, .right_species
+	cp ABOMASNOW
+	ret nz	
 .right_species
 	ld a, WEATHER_SNOW
 	ld hl, SnowWarningText
