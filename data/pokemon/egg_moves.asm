@@ -814,6 +814,4 @@ SnoverEggMoves:
 	db LEECH_SEED
 	db STOMP
     db WEATHER_BALL
-	db SKULL_BASH
-	db MIST
 	db 0
