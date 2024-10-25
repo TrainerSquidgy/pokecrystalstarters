@@ -1149,6 +1149,7 @@ AbsorbedNutrientsText:
 	text "<TARGET>"
 	line "absorbed nutrients"
 	cont "with its roots!"
+	prompt
 
 
 AuroraVeilEffectText:
