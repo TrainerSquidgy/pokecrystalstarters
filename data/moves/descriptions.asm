@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw WoodHammerDescription
+	dw SubmissionDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
