@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw SeedBombDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw SwiftDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -1275,3 +1275,7 @@ BeatUpDescription:
 SheerColdDescription:
 	db   "A ground-type,"
 	next "one-hit KO attack.@"
+
+SeedBombDescription:
+	db   "Attacks with"
+	next "SEEDS.@"

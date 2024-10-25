@@ -919,5 +919,7 @@ SnoverRelearnedEggMoves:
 	db 1, GROWTH
 	db 1, LEECH_SEED
 	db 1, STOMP
+	db 1, MAGICAL_LEAF
+	db 1, SEED_BOMB
 ;   db 1, WEATHER_BALL
 	db 0

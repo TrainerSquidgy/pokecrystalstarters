@@ -178,7 +178,7 @@ BattleAnimations::
 	dw BattleAnim_Curse
 	dw BattleAnim_Flail
 	dw BattleAnim_Conversion2
-	dw BattleAnim_Aeroblast
+	dw BattleAnim_EggBomb
 	dw BattleAnim_CottonSpore
 	dw BattleAnim_Reversal
 	dw BattleAnim_Spite
@@ -222,7 +222,7 @@ BattleAnimations::
 	dw BattleAnim_Frustration
 	dw BattleAnim_Safeguard
 	dw BattleAnim_PainSplit
-	dw BattleAnim_SacredFire
+	dw BattleAnim_RazorLeaf
 	dw BattleAnim_Magnitude
 	dw BattleAnim_Dynamicpunch
 	dw BattleAnim_Megahorn
@@ -3278,26 +3278,6 @@ BattleAnim_Conversion:
 	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $30
 	anim_obj BATTLE_ANIM_OBJ_CONVERSION, 48, 88, $38
 	anim_wait 128
-	anim_ret
-
-BattleAnim_Aeroblast:
-	anim_2gfx BATTLE_ANIM_GFX_BEAM, BATTLE_ANIM_GFX_AEROBLAST
-	anim_bgp $1b
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $50, $4, $10
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_sound 0, 0, SFX_AEROBLAST
-	anim_obj BATTLE_ANIM_OBJ_AEROBLAST, 72, 88, $0
-	anim_wait 32
-	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj BATTLE_ANIM_OBJ_BEAM, 80, 84, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj BATTLE_ANIM_OBJ_BEAM, 96, 76, $0
-	anim_wait 2
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_obj BATTLE_ANIM_OBJ_BEAM, 112, 68, $0
-	anim_obj BATTLE_ANIM_OBJ_BEAM_TIP, 126, 62, $0
-	anim_wait 48
 	anim_ret
 
 BattleAnim_CottonSpore:
