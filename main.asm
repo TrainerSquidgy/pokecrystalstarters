@@ -687,6 +687,12 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
+SECTION "Normal Experience", ROMX
+INCLUDE "engine/battle/experience_nonscaling.asm"
+
+SECTION "BW Experience", ROMX
+INCLUDE "engine/battle/experience_scaling.asm"
+
 SECTION "Egg Move and Gen 1 Tutors", ROMX
 
 INCLUDE "data/pokemon/gen1_tmattacks.asm"

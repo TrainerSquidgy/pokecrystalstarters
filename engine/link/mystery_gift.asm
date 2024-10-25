@@ -1,4 +1,4 @@
-; hMGRole values
+; hPrintNumBuffer + 8 values
 DEF IR_RECEIVER EQU 1
 DEF IR_SENDER   EQU 2
 
@@ -304,11 +304,11 @@ endc
 	cp MG_OKAY
 	jr nz, .restart
 
-	ldh a, [hMGRole]
+	ldh a, [hPrintNumBuffer + 8]
 	cp IR_SENDER
 	jr z, SenderExchangeMysteryGiftDataPayloads
 
-	ld hl, hMGExchangedByte
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TryReceivingIRDataBlock
 	jr nz, .failed
@@ -401,7 +401,7 @@ SenderExchangeMysteryGiftDataPayloads:
 
 ReceiveMysteryGiftDataPayload:
 	; Receive the region prefix
-	ld hl, hMGExchangedByte
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TryReceivingIRDataBlock
 	ret nz
@@ -413,16 +413,16 @@ ReceiveMysteryGiftDataPayload_GotRegionPrefix:
 	cp MG_OKAY
 	ret nz
 	; Verify the received region prefix
-	ldh a, [hMGExchangedByte]
+	ldh a, [hMGStatusFlags]
 	cp REGION_PREFIX
 	jp nz, WrongMysteryGiftRegion
 	ld a, REGION_CODE
-	ldh [hMGExchangedByte], a
+	ldh [hMGStatusFlags], a
 	; Switch roles
 	call BeginSendingIRCommunication
 	ret nz
 	; Send the region code
-	ld hl, hMGExchangedByte
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TrySendingIRDataBlock
 	ret nz
@@ -449,8 +449,8 @@ ReceiveMysteryGiftDataPayload_GotRegionPrefix:
 SendMysteryGiftDataPayload:
 	; Send the region prefix
 	ld a, REGION_PREFIX
-	ldh [hMGExchangedByte], a
-	ld hl, hMGExchangedByte
+	ldh [hMGStatusFlags], a
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TrySendingIRDataBlock
 	ret nz
@@ -463,7 +463,7 @@ SendMysteryGiftDataPayload:
 	call BeginReceivingIRCommunication
 	ret nz
 	; Receive the region code
-	ld hl, hMGExchangedByte
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TryReceivingIRDataBlock
 	ret nz
@@ -473,7 +473,7 @@ SendMysteryGiftDataPayload:
 	cp MG_OKAY
 	ret nz
 	; Verify the received region code
-	ldh a, [hMGExchangedByte]
+	ldh a, [hMGStatusFlags]
 	cp REGION_CODE
 	jp nz, WrongMysteryGiftRegion
 	; Switch roles
@@ -519,7 +519,7 @@ EndOrContinueMysteryGiftIRCommunication:
 	ld a, wMysteryGiftTrainerEnd - wMysteryGiftTrainer
 	ld [wMysteryGiftStagedDataLength], a
 
-	ldh a, [hMGRole]
+	ldh a, [hPrintNumBuffer + 8]
 	cp IR_SENDER
 	jr z, .sender
 
@@ -560,7 +560,7 @@ ExchangeNameCardData:
 	cp MG_OKAY
 	jr nz, .restart
 
-	ldh a, [hMGRole]
+	ldh a, [hPrintNumBuffer + 8]
 	cp IR_SENDER
 	jr z, .sender
 
@@ -599,7 +599,7 @@ ExchangeNameCardData:
 
 ReceiveNameCardDataPayload:
 	; Receive the Name Card prefix
-	ld hl, hMGExchangedByte
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TryReceivingIRDataBlock
 	ret nz
@@ -609,16 +609,16 @@ ReceiveNameCardDataPayload:
 	cp MG_OKAY
 	ret nz
 	; Verify the received Name Card prefix
-	ldh a, [hMGExchangedByte]
+	ldh a, [hMGStatusFlags]
 	cp NAME_CARD_PREFIX
 	jp nz, WrongMysteryGiftRegion
 	swap a
-	ldh [hMGExchangedByte], a
+	ldh [hMGStatusFlags], a
 	; Switch roles
 	call BeginSendingIRCommunication
 	ret nz
 	; Send the swapped Name Card prefix
-	ld hl, hMGExchangedByte
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TrySendingIRDataBlock
 	ret nz
@@ -645,8 +645,8 @@ ReceiveNameCardDataPayload:
 SendNameCardDataPayload:
 	; Send the Name Card prefix
 	ld a, NAME_CARD_PREFIX
-	ldh [hMGExchangedByte], a
-	ld hl, hMGExchangedByte
+	ldh [hMGStatusFlags], a
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TrySendingIRDataBlock
 	ret nz
@@ -659,7 +659,7 @@ SendNameCardDataPayload:
 	call BeginReceivingIRCommunication
 	ret nz
 	; Receive the swapped Name Card prefix
-	ld hl, hMGExchangedByte
+	ld hl, hMGStatusFlags
 	ld b, 1
 	call TryReceivingIRDataBlock
 	ret nz
@@ -669,7 +669,7 @@ SendNameCardDataPayload:
 	cp MG_OKAY
 	ret nz
 	; Verify the received swapped Name Card prefix
-	ldh a, [hMGExchangedByte]
+	ldh a, [hMGStatusFlags]
 	swap a
 	cp NAME_CARD_PREFIX
 	jp nz, WrongMysteryGiftRegion
@@ -781,7 +781,7 @@ BeginIRCommunication:
 	ld a, rRP_ENABLE_READ_MASK
 	call ToggleIRCommunication
 	ld a, IR_RECEIVER
-	ldh [hMGRole], a
+	ldh [hPrintNumBuffer + 8], a
 	ret
 
 EndIRCommunication:
@@ -852,7 +852,7 @@ InitializeIRCommunicationRoles:
 	ld e, d
 
 	ld a, IR_RECEIVER
-	ldh [hMGRole], a
+	ldh [hPrintNumBuffer + 8], a
 .loop
 	call MysteryGift_UpdateJoypad
 	ld b, 1 << rRP_RECEIVING
@@ -920,7 +920,7 @@ SendIRHelloMessageAfterDelay:
 
 SendIRHelloMessage:
 	ld a, IR_SENDER
-	ldh [hMGRole], a
+	ldh [hPrintNumBuffer + 8], a
 
 	ld c, LOW(rRP)
 	ld d, 0
@@ -968,14 +968,14 @@ SendIRDataBlock:
 ; 3. two bytes: a little-endian checksum
 ; Then receive a one-byte acknowledgement message: the status.
 	xor a
-	ldh [hMGChecksum + 0], a
-	ldh [hMGChecksum + 1], a
+	ldh [hPrintNumBuffer + 4], a
+	ldh [hPrintNumBuffer + 5], a
 	push hl
 	push bc
 	ld c, LOW(rRP)
 	ld d, 61
 	call SendInfraredLEDOff
-	ld hl, hMGExchangedWord
+	ld hl, hPrintNumBuffer + 1
 	ld a, MESSAGE_PREFIX
 	ld [hli], a
 	ld [hl], b
@@ -985,21 +985,21 @@ SendIRDataBlock:
 	pop bc
 	pop hl
 	call SendIRDataMessage
-	ldh a, [hMGChecksum + 0]
-	ldh [hMGExchangedWord + 0], a
-	ldh a, [hMGChecksum + 1]
-	ldh [hMGExchangedWord + 1], a
+	ldh a, [hPrintNumBuffer + 4]
+	ldh [hPrintNumBuffer + 1 + 0], a
+	ldh a, [hPrintNumBuffer + 5]
+	ldh [hPrintNumBuffer + 1 + 1], a
 	push hl
-	ld hl, hMGExchangedWord
+	ld hl, hPrintNumBuffer + 1
 	ld b, 2
 	call SendIRDataMessage
 	ld hl, hMGStatusFlags
 	ld b, 1
 	call ReceiveIRDataMessage
-	ldh a, [hMGExchangedWord + 0]
-	ldh [hMGChecksum + 0], a
-	ldh a, [hMGExchangedWord + 1]
-	ldh [hMGChecksum + 1], a
+	ldh a, [hPrintNumBuffer + 1 + 0]
+	ldh [hPrintNumBuffer + 4], a
+	ldh a, [hPrintNumBuffer + 1 + 1]
+	ldh [hPrintNumBuffer + 5], a
 	pop hl
 	ret
 
@@ -1025,17 +1025,17 @@ SendIRDataMessage:
 	inc b
 	jr z, .done
 	ld a, 8
-	ldh [hMGNumBits], a
+	ldh [hPrintNumBuffer + 3], a
 	; Get the next data byte
 	ld a, [hli]
 	ld e, a
 	; Add the next data byte to the checksum
-	ldh a, [hMGChecksum + 0]
+	ldh a, [hPrintNumBuffer + 4]
 	add e
-	ldh [hMGChecksum + 0], a
-	ldh a, [hMGChecksum + 1]
+	ldh [hPrintNumBuffer + 4], a
+	ldh a, [hPrintNumBuffer + 5]
 	adc 0
-	ldh [hMGChecksum + 1], a
+	ldh [hPrintNumBuffer + 5], a
 	; Send each bit of the byte
 .bit_loop
 	xor a
@@ -1064,10 +1064,10 @@ SendIRDataMessage:
 	halt
 	nop
 .no_halt
-	ldh a, [hMGNumBits]
+	ldh a, [hPrintNumBuffer + 3]
 	dec a
 	jr z, .byte_loop
-	ldh [hMGNumBits], a
+	ldh [hPrintNumBuffer + 3], a
 	jr .bit_loop
 
 .done
@@ -1109,35 +1109,35 @@ ReceiveIRDataBlock:
 ; 3. two bytes: a little-endian checksum
 ; Then send a one-byte acknowledgement message: the status.
 	xor a
-	ldh [hMGChecksum + 0], a
-	ldh [hMGChecksum + 1], a
+	ldh [hPrintNumBuffer + 4], a
+	ldh [hPrintNumBuffer + 5], a
 	push bc
 	push hl
-	ld hl, hMGExchangedWord
+	ld hl, hPrintNumBuffer + 1
 	ld b, 2
 	call ReceiveIRDataMessage
-	ldh a, [hMGExchangedWord + 1]
-	ldh [hMGUnusedMsgLength], a
+	ldh a, [hPrintNumBuffer + 1 + 1]
+	ldh [hPrintNumBuffer + 2], a
 	ld b, a
 	pop hl
 	pop af
 	cp b
 	jp c, ReceivedWrongIRMessagePrefix
-	ldh a, [hMGExchangedWord + 0]
+	ldh a, [hPrintNumBuffer + 1 + 0]
 	cp MESSAGE_PREFIX
 	jp nz, ReceivedWrongIRMessagePrefix
 	call ReceiveIRDataMessage
-	ldh a, [hMGChecksum + 0]
+	ldh a, [hPrintNumBuffer + 4]
 	ld d, a
-	ldh a, [hMGChecksum + 1]
+	ldh a, [hPrintNumBuffer + 5]
 	ld e, a
 	push hl
 	push de
-	ld hl, hMGExchangedWord
+	ld hl, hPrintNumBuffer + 1
 	ld b, 2
 	call ReceiveIRDataMessage
 	pop de
-	ld hl, hMGExchangedWord
+	ld hl, hPrintNumBuffer + 1
 	ld a, [hli]
 	xor d
 	ld b, a
@@ -1157,9 +1157,9 @@ ReceiveIRDataBlock:
 	pop de
 	pop hl
 	ld a, d
-	ldh [hMGChecksum + 0], a
+	ldh [hPrintNumBuffer + 4], a
 	ld a, e
-	ldh [hMGChecksum + 1], a
+	ldh [hPrintNumBuffer + 5], a
 	ret
 
 ReceiveIRDataMessage:
@@ -1186,7 +1186,7 @@ ReceiveIRDataMessage:
 	inc b
 	jr z, .done
 	ld a, 8
-	ldh [hMGNumBits], a
+	ldh [hPrintNumBuffer + 3], a
 .inner_loop
 	ld d, 0
 .recv_loop
@@ -1216,9 +1216,9 @@ ReceiveIRDataMessage:
 .zero
 	res 0, e
 .ok
-	ldh a, [hMGNumBits]
+	ldh a, [hPrintNumBuffer + 3]
 	dec a
-	ldh [hMGNumBits], a
+	ldh [hPrintNumBuffer + 3], a
 	jr z, .continue
 	ld a, e
 	rlca
@@ -1228,12 +1228,12 @@ ReceiveIRDataMessage:
 .continue
 	ld a, e
 	ld [hli], a
-	ldh a, [hMGChecksum + 0]
+	ldh a, [hPrintNumBuffer + 4]
 	add e
-	ldh [hMGChecksum + 0], a
-	ldh a, [hMGChecksum + 1]
+	ldh [hPrintNumBuffer + 4], a
+	ldh a, [hPrintNumBuffer + 5]
 	adc 0
-	ldh [hMGChecksum + 1], a
+	ldh [hPrintNumBuffer + 5], a
 	jr .main_loop
 
 .done

@@ -115,6 +115,32 @@ _ExpPointsText::
 	text_decimal wStringBuffer2, 2, 4
 	text " EXP. Points!"
 	prompt
+	
+_BoostedExpPointsLongText::
+	text_start
+	line "a boosted"
+	cont "@"
+	text_decimal wStringBuffer2, 3, 8
+	text " EXP!"
+	prompt
+
+_ExpPointsLongText::
+	text_start
+	line "@"
+	text_decimal wStringBuffer2, 3, 8
+	text " EXP!"
+	prompt
+
+_PartyGainedWithExpShareText::
+	text "Party #MON"
+	line "gained EXP"
+	cont "with EXP SHARE!"
+	prompt
+
+_PartyGainedText::
+	text "Party #MON"
+	line "gained EXP!"
+	prompt
 
 _GoMonText::
 	text "Go! @"

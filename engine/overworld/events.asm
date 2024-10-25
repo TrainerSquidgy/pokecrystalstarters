@@ -814,7 +814,7 @@ PlayerMovementPointers:
 CheckMenuOW:
 	xor a
 	ldh [hMenuReturn], a
-	ldh [hUnusedByte], a
+	ldh [hUnusedFFA1], a
 	ldh a, [hJoyPressed]
 
 	bit SELECT_F, a

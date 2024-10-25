@@ -2410,7 +2410,19 @@ wUsedSprites:: ds SPRITE_GFX_LIST_CAPACITY * 2
 wUsedSpritesEnd::
 
 NEXTU
-	ds 31
+wParticipantCount::
+	ds 1
+wParticipantEXPDivisors::
+	ds PARTY_LENGTH
+wSharedEXPDivisors::
+	ds PARTY_LENGTH
+wCurrentDivisor::
+	ds 1
+wPrintedShareText::
+	ds 1
+wEXPCalcsEnd::
+	ds (19 - 3 - PARTY_LENGTH*2)
+	ds 12
 wd173:: db ; related to command queue type 3
 ENDU
 
@@ -3174,7 +3186,9 @@ wGuaranteedHMFriendCatch:: db
 wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
-	ds 77
+wExperienceType:: db
+wExperienceSplitting:: db
+	ds 74
 
 wEventFlags:: flag_array NUM_EVENTS
 
