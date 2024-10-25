@@ -257,7 +257,7 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
-	const LEAFAGE
+	const GRASSWHISTLE
 	const ICE_SHARD
 	const INGRAIN
 DEF NUM_ATTACKS EQU const_value - 1

@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw WoodHammerDescription
+	dw SubmissionDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,7 +252,7 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw LeafageDescription
+	dw SingDescription
 	dw QuickAttackDescription
 	dw IngrainDescription
 	assert_table_length NUM_ATTACKS
