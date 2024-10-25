@@ -616,7 +616,7 @@ ParsePlayerAction:
 .not_encored
 	ld a, [wBattlePlayerAction]
 	cp BATTLEPLAYERACTION_SWITCH
-	jr z, .reset_rage
+	jp z, .reset_rage
 	and a
 	jr nz, .reset_bide
 	ld a, [wPlayerSubStatus3]
@@ -652,8 +652,13 @@ ParsePlayerAction:
 	jr z, .continue_fury_cutter
 	xor a
 	ld [wPlayerFuryCutterCount], a
-
 .continue_fury_cutter
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_ECHOED_VOICE
+	jr z, .continue_echoed_voice
+	xor a
+	ld [wPlayerEchoedVoiceCount], a
+.continue_echoed_voice
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .continue_rage
@@ -679,6 +684,7 @@ ParsePlayerAction:
 .locked_in
 	xor a
 	ld [wPlayerFuryCutterCount], a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -693,6 +699,7 @@ ParsePlayerAction:
 	xor a
 	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
 	res SUBSTATUS_RAGE, [hl]
@@ -1221,6 +1228,30 @@ HandleWrap:
 	call SetPlayerTurn
 
 .do_it
+	; yawn?
+	ld hl, wPlayerYawning
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .continue_yawn
+	ld hl, wEnemyYawning
+.continue_yawn
+	ld a, [hl]
+	and a
+	jr z, .check_wrap ; counter is 0 (no yawn)
+	dec a
+	ld [hl], a
+	jr nz, .check_wrap
+
+	; yawn: fall asleep
+	xor a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_SleepTarget
+	farcall BattleCommand_SwitchTurn
+
+
+.check_wrap
 	ld hl, wPlayerWrapCount
 	ld de, wPlayerTrappingMove
 	ldh a, [hBattleTurn]
@@ -3646,6 +3677,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
@@ -3656,6 +3688,8 @@ endr
 	ld [hl], a
 	ld [wEnemyDisableCount], a
 	ld [wEnemyFuryCutterCount], a
+	ld [wEnemyAteABerry], a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
 	ld [wEnemyDisabledMove], a
@@ -4128,6 +4162,8 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
+	ld [wPlayerAteABerry], a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
@@ -5956,6 +5992,11 @@ ParseEnemyAction:
 	ld [wEnemyFuryCutterCount], a
 
 .fury_cutter
+	cp EFFECT_ECHOED_VOICE
+	jr z, .echoed_voice
+	xor a
+	ld [wEnemyEchoedVoiceCount], a
+.echoed_voice
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .no_rage
@@ -5981,6 +6022,7 @@ ParseEnemyAction:
 ResetVarsForSubstatusRage:
 	xor a
 	ld [wEnemyFuryCutterCount], a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
 	ld hl, wEnemySubStatus4

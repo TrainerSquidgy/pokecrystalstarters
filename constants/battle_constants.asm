@@ -204,7 +204,7 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 	const_def
 	const SUBSTATUS_TOXIC
 	const_skip
-	const_skip
+	const SUBSTATUS_UPROAR
 	const SUBSTATUS_TRANSFORMED
 	const SUBSTATUS_ENCORED
 	const SUBSTATUS_LOCK_ON

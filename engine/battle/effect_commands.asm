@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -335,6 +333,10 @@ CantMove:
 	call GetBattleVarAddr
 	res SUBSTATUS_ROLLOUT, [hl]
 
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	res SUBSTATUS_UPROAR, [hl]
+
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	ld a, [hl]
@@ -425,9 +427,6 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -991,7 +990,11 @@ BattleCommand_DoTurn:
 	; SubStatus5
 	inc de
 	inc de
-
+	
+	ld a, [de]
+	bit SUBSTATUS_UPROAR, a
+	ret nz
+	
 	ld a, [de]
 	bit SUBSTATUS_TRANSFORMED, a
 	ret nz
@@ -1077,8 +1080,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1916,10 +1917,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -3629,6 +3626,13 @@ BattleCommand_SleepTarget:
 	jr .fail
 
 .not_protected_by_item
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_UPROAR, a
+	jr nz, .fail
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_UPROAR, a
+	jr nz, .fail
+
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h
@@ -5603,20 +5607,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6895,3 +6892,176 @@ GetNextTypeMatchupsByte:
    ld a, BANK(TypeMatchups)
    call GetFarByte
    ret
+
+BattleCommand_EchoedVoice:
+	ld hl, wPlayerEchoedVoiceCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyEchoedVoiceCount
+
+.go
+	inc [hl]
+	ld a, [hl]
+	cp 5
+	jr c, .loop
+	ld a, 5
+.loop
+	dec a
+	and a
+	ret z
+	call AddDamage
+	jr .loop
+	
+	
+AddDamage:
+	push af
+	push hl
+    ld hl, wCurDamage+1  ; Point to the high byte of wCurDamage
+    ld a, [hl]           ; Load the high byte of wCurDamage into A
+    ld d, a              ; Store the high byte in D temporarily
+    dec hl               ; Point to the low byte of wCurDamage
+    ld a, [hl]           ; Load the low byte of wCurDamage into A
+    ld e, a              ; Store the low byte in E temporarily
+
+    ; Perform the addition of wCurDamage to itself
+    ld hl, wCurDamage    ; Point to wCurDamage
+    ld a, [hl]           ; Load the low byte of wCurDamage into A
+    add a, e             ; Add the low byte of wCurDamage to itself
+    ld [hl], a           ; Store the result back to the low byte of wCurDamage
+    inc hl               ; Move to the high byte
+    ld a, [hl]           ; Load the high byte of wCurDamage into A
+    adc a, d             ; Add the high byte with carry (from low byte addition)
+    ld [hl], a           ; Store the result back to the high byte of wCurDamage
+
+    ; If overflow occurred, the carry flag would be set (overflow means too large for 16-bit)
+    jr nc, .done         ; If no overflow, we're done
+
+    ; Overflow handling: set wCurDamage to $FFFF (maximum 16-bit value)
+    ld a, $FF            ; Load $FF into A
+    ld hl, wCurDamage    ; Point back to wCurDamage
+    ld [hl], a           ; Set low byte to $FF
+    ld [hli], a         ; Set high byte to $FF
+
+.done:
+	pop hl
+	pop af
+    ret                  ; Return
+	
+BattleCommand_CheckUproar:
+	ld de, wPlayerRolloutCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	ld de, wEnemyRolloutCount
+.player
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	ret z
+	ld a, [de]
+	dec a
+	ld [de], a
+	ld b, doturn_command
+	jp SkipToBattleCommand
+
+BattleCommand_Uproar:
+	ld de, wPlayerRolloutCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wEnemyRolloutCount
+.ok
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	ret nz
+	set SUBSTATUS_UPROAR, [hl]
+; Rampage for 1 - 4 more turns
+	call BattleRandom
+	and %00000011
+	inc a
+	ld [de], a
+	ld a, 1
+	ld [wSomeoneIsRampaging], a
+	ld hl, CausedAnUproarText
+	call StdBattleTextbox
+	ld hl, wBattleMonStatus
+	ld a, [hl]
+	and SLP_MASK
+	jr z, .player_not_asleep
+	xor a
+	ld [wBattleMonStatus], a
+.player_not_asleep
+	ld hl, wEnemyMonStatus
+	ld a, [hl]
+	and SLP_MASK
+	jr z, .no_asleep
+	xor a
+	ld [wEnemyMonStatus], a
+	ld hl, UproarWokeUpText
+	call StdBattleTextbox
+.no_asleep
+	jp EndTurn
+	
+BattleCommand_Belch:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	ld a, [wEnemyAteABerry]
+	jr .merge
+.player
+	ld a, [wPlayerAteABerry]
+.merge
+	and a
+	ret nz	
+.failed
+	ld a, 1
+	ld [wFailedMessage], a
+	ld [wAttackMissed], a
+	ret
+	
+BattleCommand_Yawn:
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    ld d, h
+    ld e, l
+    ld a, [de]
+    and SLP_MASK
+    ld hl, AlreadyAsleepText
+    jr nz, .fail
+
+    ldh a, [hBattleTurn]
+    and a
+    ld hl, wPlayerYawning
+    jr nz, .next
+    ld hl, wEnemyYawning
+
+.next
+    ; is the opponent already under the effects of yawn?
+    ld a, [hl]
+    and a
+    jp nz, PrintButItFailed
+
+    ; apply it!
+    ld a, 2
+    ld [hl], a
+
+    ld hl, MadeTargetDrowzy
+    jp StdBattleTextbox
+
+.fail
+    push hl
+    call AnimateFailedMove
+    pop hl
+    jp StdBattleTextbox
+
+
+BattleCommand_WorkUp:
+    call ResetMiss
+    call BattleCommand_AttackUp
+    call BattleCommand_StatUpMessage
+
+    call ResetMiss
+    call BattleCommand_SpecialAttackUp
+    jp BattleCommand_StatUpMessage

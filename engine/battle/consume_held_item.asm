@@ -6,10 +6,14 @@ ConsumeHeldItem:
 	and a
 	ld hl, wOTPartyMon1Item
 	ld de, wEnemyMonItem
+	ld a, 1
+	ld [wEnemyAteABerry], a
 	ld a, [wCurOTMon]
 	jr z, .theirturn
 	ld hl, wPartyMon1Item
 	ld de, wBattleMonItem
+	ld a, 1
+	ld [wPlayerAteABerry], a
 	ld a, [wCurBattleMon]
 
 .theirturn

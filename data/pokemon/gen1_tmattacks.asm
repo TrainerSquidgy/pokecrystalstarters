@@ -31,7 +31,7 @@ NidoranMGen1TMAttacks:
 RhydonGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, HORN_DRILL
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
@@ -54,7 +54,7 @@ RhydonGen1TMAttacks:
 KangaskhanGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -75,7 +75,7 @@ KangaskhanGen1TMAttacks:
 ClefairyGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -99,14 +99,14 @@ ClefairyGen1TMAttacks:
 
 SpearowGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -127,7 +127,7 @@ VoltorbGen1TMAttacks:
 NidokingGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, HORN_DRILL
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
@@ -151,7 +151,7 @@ NidokingGen1TMAttacks:
 SlowbroGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -209,7 +209,7 @@ LickitungGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
 	db 1, SWORDS_DANCE
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -257,7 +257,7 @@ GrimerGen1TMAttacks:
 GengarGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -279,7 +279,7 @@ GengarGen1TMAttacks:
 NidoqueenGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, HORN_DRILL
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
@@ -303,7 +303,7 @@ NidoqueenGen1TMAttacks:
 CuboneGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -371,10 +371,10 @@ ArcanineGen1TMAttacks:
 MewGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, RAZOR_WIND
+	
 	db 1, SWORDS_DANCE
 	db 1, WHIRLWIND
-	db 1, MEGA_KICK
+	
 	db 1, HORN_DRILL
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
@@ -398,7 +398,7 @@ MewGen1TMAttacks:
 	db 1, EGG_BOMB
 	db 1, SKULL_BASH
 	db 1, SOFTBOILED
-	db 1, SKY_ATTACK
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, EXPLOSION
@@ -501,7 +501,7 @@ StaryuGen1TMAttacks:
 BlastoiseGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -579,20 +579,20 @@ OnixGen1TMAttacks:
 
 FearowGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 PidgeyGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -600,7 +600,7 @@ PidgeyGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -628,7 +628,7 @@ SlowpokeGen1TMAttacks:
 KadabraGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -671,7 +671,7 @@ GravelerGen1TMAttacks:
 ChanseyGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -698,7 +698,7 @@ ChanseyGen1TMAttacks:
 MachokeGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -718,7 +718,7 @@ MachokeGen1TMAttacks:
 MrMimeGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -740,7 +740,7 @@ MrMimeGen1TMAttacks:
 HitmonleeGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -758,7 +758,7 @@ HitmonleeGen1TMAttacks:
 HitmonchanGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -806,7 +806,7 @@ ParasectGen1TMAttacks:
 PsyduckGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -826,7 +826,7 @@ PsyduckGen1TMAttacks:
 DrowzeeGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -849,7 +849,7 @@ DrowzeeGen1TMAttacks:
 GolemGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -870,7 +870,7 @@ GolemGen1TMAttacks:
 MagmarGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -890,7 +890,7 @@ MagmarGen1TMAttacks:
 ElectabuzzGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -935,7 +935,7 @@ KoffingGen1TMAttacks:
 MankeyGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -997,7 +997,7 @@ TaurosGen1TMAttacks:
 
 FarfetchDGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, SWORDS_DANCE
 	db 1, WHIRLWIND
 	db 1, BODY_SLAM
@@ -1026,7 +1026,7 @@ VenonatGen1TMAttacks:
 
 DragoniteGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, HORN_DRILL
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
@@ -1054,7 +1054,7 @@ DoduoGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, SKULL_BASH
-	db 1, SKY_ATTACK
+	
 	db 1, TRI_ATTACK
 	db 1, SUBSTITUTE
 	db 0
@@ -1077,7 +1077,7 @@ PoliwagGen1TMAttacks:
 JynxGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1099,7 +1099,7 @@ JynxGen1TMAttacks:
 
 MoltresGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1107,13 +1107,13 @@ MoltresGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 ArticunoGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1123,13 +1123,13 @@ ArticunoGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 ZapdosGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1137,7 +1137,7 @@ ZapdosGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1204,7 +1204,7 @@ NinetalesGen1TMAttacks:
 PikachuGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1223,7 +1223,7 @@ PikachuGen1TMAttacks:
 RaichuGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1290,9 +1290,9 @@ KabutoGen1TMAttacks:
 
 KabutopsGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, SWORDS_DANCE
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1403,7 +1403,7 @@ OmastarGen1TMAttacks:
 JigglypuffGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1427,7 +1427,7 @@ JigglypuffGen1TMAttacks:
 WigglytuffGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1506,7 +1506,7 @@ VaporeonGen1TMAttacks:
 MachopGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1525,7 +1525,7 @@ MachopGen1TMAttacks:
 
 ZubatGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1569,7 +1569,7 @@ ParasGen1TMAttacks:
 PoliwhirlGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1591,7 +1591,7 @@ PoliwhirlGen1TMAttacks:
 PoliwrathGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1643,7 +1643,7 @@ DodrioGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, SKULL_BASH
-	db 1, SKY_ATTACK
+	
 	db 1, TRI_ATTACK
 	db 1, SUBSTITUTE
 	db 0
@@ -1651,7 +1651,7 @@ DodrioGen1TMAttacks:
 PrimeapeGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1683,7 +1683,7 @@ DugtrioGen1TMAttacks:
 
 VenomothGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1723,7 +1723,7 @@ MetapodGen1TMAttacks:
 
 ButterfreeGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1740,7 +1740,7 @@ ButterfreeGen1TMAttacks:
 MachampGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1760,7 +1760,7 @@ MachampGen1TMAttacks:
 GolduckGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1780,7 +1780,7 @@ GolduckGen1TMAttacks:
 HypnoGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1802,7 +1802,7 @@ HypnoGen1TMAttacks:
 
 GolbatGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1816,7 +1816,7 @@ GolbatGen1TMAttacks:
 MewtwoGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1842,7 +1842,7 @@ MewtwoGen1TMAttacks:
 SnorlaxGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1930,7 +1930,7 @@ ElectrodeGen1TMAttacks:
 ClefableGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1980,7 +1980,7 @@ PersianGen1TMAttacks:
 MarowakGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2012,7 +2012,7 @@ HaunterGen1TMAttacks:
 AbraGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2035,7 +2035,7 @@ AbraGen1TMAttacks:
 AlakazamGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2057,7 +2057,7 @@ AlakazamGen1TMAttacks:
 
 PidgeottoGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2065,13 +2065,13 @@ PidgeottoGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 PidgeotGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2079,7 +2079,7 @@ PidgeotGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2299,7 +2299,7 @@ PorygonGen1TMAttacks:
 
 AerodactylGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2308,7 +2308,7 @@ AerodactylGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2329,7 +2329,7 @@ CharmanderGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
 	db 1, SWORDS_DANCE
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2348,7 +2348,7 @@ CharmanderGen1TMAttacks:
 SquirtleGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2369,7 +2369,7 @@ CharmeleonGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
 	db 1, SWORDS_DANCE
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2388,7 +2388,7 @@ CharmeleonGen1TMAttacks:
 WartortleGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2409,7 +2409,7 @@ CharizardGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
 	db 1, SWORDS_DANCE
-	db 1, MEGA_KICK
+	
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE

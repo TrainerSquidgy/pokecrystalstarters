@@ -161,4 +161,9 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw EchoedVoice
+	dw Uproar
+	dw Belch
+	dw Yawn
+	dw WorkUp
 	assert_table_length NUM_MOVE_EFFECTS

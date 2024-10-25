@@ -178,4 +178,10 @@ BattleCommandPointers:
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
 	dw BattleCommand_StartWeather
+	dw BattleCommand_EchoedVoice
+	dw BattleCommand_CheckUproar
+	dw BattleCommand_Uproar
+	dw BattleCommand_Belch
+	dw BattleCommand_Yawn
+	dw BattleCommand_WorkUp
 	assert_table_length NUM_EFFECT_COMMANDS

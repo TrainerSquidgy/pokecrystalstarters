@@ -1450,7 +1450,7 @@ HitmonleeEvosAttacks:
 	db 31, MIND_READER
 	db 36, FORESIGHT
 	db 41, ENDURE
-	db 46, MEGA_KICK
+	db 46, HI_JUMP_KICK
 	db 51, REVERSAL
 	db 0 ; no more level-up moves
 
@@ -1988,7 +1988,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2661,7 +2661,7 @@ EspeonEvosAttacks:
 	db 36, PSYBEAM
 	db 42, PSYCH_UP
 	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
+	db 52, RECOVER
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -3327,7 +3327,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, AEROBLAST
+	db 1, PECK
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3341,7 +3341,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
+	db 1, EMBER
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER

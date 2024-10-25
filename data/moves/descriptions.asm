@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw SwiftDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -25,7 +25,7 @@ MoveDescriptions::
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
-	dw MegaKickDescription
+	dw IronTailDescription
 	dw JumpKickDescription
 	dw RollingKickDescription
 	dw SandAttackDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw BubblebeamDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw WorkUpDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw SporeDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -234,7 +234,7 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
-	dw MorningSunDescription
+	dw ThiefDescription
 	dw SynthesisDescription
 	dw MoonlightDescription
 	dw HiddenPowerDescription
@@ -252,16 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw FuryCutterDescription
+	dw UproarDescription
+	dw BelchDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+
+BelchDescription:
+	db   "Only works after"
+	next "eating a BERRY.@"
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -315,10 +317,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 SwordsDanceDescription:
 	db   "A dance that in-"
 	next "creases ATTACK.@"
@@ -363,9 +361,7 @@ DoubleKickDescription:
 	db   "A double kicking"
 	next "attack.@"
 
-MegaKickDescription:
-	db   "A powerful kicking"
-	next "attack.@"
+
 
 JumpKickDescription:
 	db   "May miss, damaging"
@@ -971,9 +967,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+WorkUpDescription:
+	db   "Raises ATTACK and"
+	next "SPCL.ATK rating.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1147,10 +1143,6 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
-
 MagnitudeDescription:
 	db   "A ground attack"
 	next "with random power.@"
@@ -1199,9 +1191,6 @@ VitalThrowDescription:
 	db   "A 2nd-strike move"
 	next "that never misses.@"
 
-MorningSunDescription:
-	db   "Restores HP"
-	next "(varies by time).@"
 
 SynthesisDescription:
 	db   "Restores HP"
@@ -1270,3 +1259,7 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+UproarDescription:
+	db   "Uproars 2-5 turns."
+	next "Prevents SLP.@"
