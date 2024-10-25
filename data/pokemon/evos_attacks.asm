@@ -3327,7 +3327,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, AEROBLAST
+	db 1, PECK
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3341,7 +3341,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
+	db 1, EMBER
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
