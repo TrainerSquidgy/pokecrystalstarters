@@ -265,7 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
-	move GRASSWHISTLE, EFFECT_SLEEP,               0, GRASS,         55, 15,   0
+	move LEAFAGE,      EFFECT_NORMAL_HIT,         40, GRASS,        100, 40,   0
 	move ICE_SHARD,    EFFECT_PRIORITY_HIT,       40, ICE,          100, 30,   0
 	move INGRAIN,      EFFECT_INGRAIN,             0, GRASS,        100, 20,   0
 	assert_table_length NUM_ATTACKS

@@ -252,7 +252,7 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw SingDescription
+	dw LeafageDescription
 	dw QuickAttackDescription
 	dw IngrainDescription
 	assert_table_length NUM_ATTACKS
