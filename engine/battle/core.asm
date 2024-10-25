@@ -4134,7 +4134,24 @@ SendOutPlayerMon:
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
+	call SetSnowWarning
 	ret
+
+SetSnowWarning:
+	ld a, [wBattleMonSpecies]
+	cp SNOVER
+	jr z, .right_species
+	cp ABOMASNOW
+	ret nz	
+.right_species
+	ld a, WEATHER_HAIL
+	ld hl, SnowWarningText
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+	call StdBattleTextbox
+	ret
+
 
 NewBattleMonStatus:
 	xor a

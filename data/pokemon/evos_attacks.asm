@@ -3369,8 +3369,32 @@ CelebiEvosAttacks:
 SnoverEvosAttacks:
 	db EVOLVE_LEVEL, 40, ABOMASNOW
 	db 0
+	db 1, POWDER_SNOW
+	db 1, LEER
+	db 5, RAZOR_LEAF
+	db 9, ICY_WIND
+	db 13, GRASSWHISTLE
+	db 17, SWAGGER
+	db 21, MIST
+	db 26, ICE_SHARD
+	db 31, INGRAIN
+	db 36, WOOD_HAMMER
+	db 41, BLIZZARD
+	db 46, SHEER_COLD
 	db 0
 	
 AbomasnowEvosAttacks:
 	db 0
+	db 1, POWDER_SNOW
+	db 1, LEER
+	db 5, RAZOR_LEAF
+	db 9, ICY_WIND
+	db 13, GRASSWHISTLE
+	db 17, SWAGGER
+	db 21, MIST
+	db 26, ICE_SHARD
+	db 31, INGRAIN
+	db 36, WOOD_HAMMER
+	db 47, BLIZZARD
+	db 58, SHEER_COLD	
 	db 0
