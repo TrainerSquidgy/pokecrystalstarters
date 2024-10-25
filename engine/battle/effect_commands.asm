@@ -2588,7 +2588,10 @@ PlayerAttackDamage:
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
+	jr nz, .physicalscreen
+	bit SCREENS_AURORA_VEIL, a
 	jr z, .physicalcrit
+.physicalscreen	
 	sla c
 	rl b
 
@@ -2612,7 +2615,10 @@ PlayerAttackDamage:
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
+	jr nz, .specialscreen
+	bit SCREENS_AURORA_VEIL, a
 	jr z, .specialcrit
+.specialscreen
 	sla c
 	rl b
 
@@ -2834,7 +2840,10 @@ EnemyAttackDamage:
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
+	jr nz, .physicalscreen
+	bit SCREENS_AURORA_VEIL, a
 	jr z, .physicalcrit
+.physicalscreen
 	sla c
 	rl b
 
@@ -2858,7 +2867,10 @@ EnemyAttackDamage:
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_LIGHT_SCREEN, a
+	jr nz, .specialscreen
+	bit SCREENS_AURORA_VEIL, a
 	jr z, .specialcrit
+.specialscreen
 	sla c
 	rl b
 
@@ -2918,8 +2930,10 @@ HitSelfInConfusion:
 	ld c, [hl]
 	ld a, [de]
 	bit SCREENS_REFLECT, a
+	jr nz, .found_screen
+	bit SCREENS_AURORA_VEIL, a
 	jr z, .mimic_screen
-
+.found_screen
 	sla c
 	rl b
 .mimic_screen
@@ -6193,7 +6207,15 @@ BattleCommand_Screen:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	jr nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
+	push bc
+	call GetUserItem
+	ld a, b
+	cp HELD_LIGHT_CLAY
+	pop bc
+	ld a, 8
+	jr z, .done
 	ld a, 5
+.done
 	ld [bc], a
 	ld hl, LightScreenEffectText
 	jr .good
@@ -6205,8 +6227,15 @@ BattleCommand_Screen:
 
 	; LightScreenCount -> ReflectCount
 	inc bc
-
+	push bc
+	call GetUserItem
+	ld a, b
+	cp HELD_LIGHT_CLAY
+	pop bc
+	ld a, 8
+	jr z, .done2
 	ld a, 5
+.done2
 	ld [bc], a
 	ld hl, ReflectEffectText
 
@@ -6910,6 +6939,8 @@ BattleCommand_WeatherBall:
 	jr z, .Rain
 	cp WEATHER_HAIL
 	jr z, .Hail
+	cp WEATHER_SNOW
+	jr z, .Hail
 	cp WEATHER_SANDSTORM
 	jr z, .Sandstorm
 	xor a
@@ -6936,4 +6967,48 @@ BattleCommand_WeatherBall:
 	ld [hl], a
 	ld a, 1
 	ld [wWeatherBallBonus], a
+	ret
+	
+BattleCommand_AuroraVeil:
+	ld hl, wPlayerScreens
+	ld bc, wPlayerAuroraVeilCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens_pointer
+	ld hl, wEnemyScreens
+	ld bc, wPlayerAuroraVeilCount
+.got_screens_pointer
+; Only works in hail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .success
+	cp WEATHER_SNOW
+	jr nz, .failed
+
+.success
+	bit SCREENS_AURORA_VEIL, [hl]
+	jr nz, .failed
+	set SCREENS_AURORA_VEIL, [hl]
+	
+
+; If the user is holding Light Clay, its screen lasts for 8 turns.
+; Otherwise, the screen lasts for 5 turns.
+	push bc
+	call GetUserItem
+	ld a, b
+	cp HELD_LIGHT_CLAY
+	pop bc
+	ld a, 8
+	jr z, .done
+
+	ld a, 5
+.done
+	ld [bc], a
+	farcall AnimateCurrentMove
+	ld hl, AuroraVeilEffectText
+	jp StdBattleTextbox
+
+.failed
+	farcall AnimateFailedMove
+	farcall PrintButItFailed
 	ret

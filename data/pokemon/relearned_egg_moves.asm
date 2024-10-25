@@ -915,9 +915,10 @@ NoRelearnedEggMoves:
 	db 0
 
 SnoverRelearnedEggMoves:
+	db 0
 	db 1, DOUBLE_EDGE
 	db 1, GROWTH
 	db 1, LEECH_SEED
 	db 1, STOMP
-;   db 1, WEATHER_BALL
+    db 1, WEATHER_BALL
 	db 0

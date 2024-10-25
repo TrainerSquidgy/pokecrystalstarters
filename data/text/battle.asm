@@ -1149,3 +1149,24 @@ AbsorbedNutrientsText:
 	text "<TARGET>"
 	line "absorbed nutrients"
 	cont "with its roots!"
+
+
+AuroraVeilEffectText:
+	text "AURORA VEIL made"
+	line "the team stronger"
+
+	para "against PHYSICAL"
+	line "and SPECIAL moves!"
+	prompt
+	
+BattleText_MonsAuroraVeilFaded:
+	text_ram wStringBuffer1
+	text " #MON's"
+	line "AURORA VEIL faded!"
+	prompt
+
+SnowWarningText:
+	text "<USER>'s"
+	line "SNOW WARNING"
+	cont "made it SNOW."
+	prompt

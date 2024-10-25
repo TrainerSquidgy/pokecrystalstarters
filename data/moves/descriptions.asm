@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw AuroraVeilDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -1275,3 +1275,11 @@ BeatUpDescription:
 SheerColdDescription:
 	db   "A ground-type,"
 	next "one-hit KO attack.@"
+
+AuroraVeilDescription:
+	db  "Sets up SCREENS"
+	next "only in snow.@"
+	
+WeatherBallDescription:
+	db  "Type changes"
+	next "with the weather.@"

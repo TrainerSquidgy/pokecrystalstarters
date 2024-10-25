@@ -1652,6 +1652,8 @@ HandleScreens:
 	call nz, .LightScreenTick
 	bit SCREENS_REFLECT, [hl]
 	call nz, .ReflectTick
+	bit SCREENS_AURORA_VEIL, [hl]
+	call nz, .AuroraVeilTick
 	ret
 
 .Copy:
@@ -1685,6 +1687,17 @@ HandleScreens:
 	ret nz
 	res SCREENS_REFLECT, [hl]
 	ld hl, BattleText_MonsReflectFaded
+	jp StdBattleTextbox
+
+.AuroraVeilTick:
+	inc de
+	inc de
+	ld a, [de]
+	dec a
+	ld [de], a
+	ret nz
+	res SCREENS_AURORA_VEIL, [hl]
+	ld hl, BattleText_MonsAuroraVeilFaded
 	jp StdBattleTextbox
 
 HandleWeather:
@@ -2851,6 +2864,17 @@ PlayerPartyMonEntrance:
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
 	jp SpikesDamage
+	
+SetSnowWarning:
+	
+.right_species
+	ld a, WEATHER_SNOW
+	ld hl, SnowWarningText
+	ld [wBattleWeather], a
+	ld a, 255
+	ld [wWeatherCount], a
+	call StdBattleTextbox
+	ret
 
 CheckMobileBattleError:
 	ld a, [wLinkMode]
@@ -4134,6 +4158,7 @@ SendOutPlayerMon:
 	call UpdatePlayerHUD
 	ld a, $1
 	ldh [hBGMapMode], a
+	call SetSnowWarning
 	ret
 
 NewBattleMonStatus:

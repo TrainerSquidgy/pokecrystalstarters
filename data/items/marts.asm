@@ -82,12 +82,13 @@ MartAzalea:
 	db -1 ; end
 
 MartCianwood:
-	db 5 ; # items
+	db 6 ; # items
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
 	db REVIVE
+	db LIGHT_CLAY
 	db -1 ; end
 
 MartGoldenrod2F1:

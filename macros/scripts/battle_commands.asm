@@ -181,6 +181,7 @@ ENDM
 	command ingrain
 	command weatherball
 	command doubleweatherballdamage
+	command auroraveil
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

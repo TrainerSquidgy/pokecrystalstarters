@@ -181,4 +181,5 @@ BattleCommandPointers:
 	dw BattleCommand_Ingrain
 	dw BattleCommand_WeatherBall
 	dw BattleCommand_DoubleWeatherDamage
+	dw BattleCommand_AuroraVeil
 	assert_table_length NUM_EFFECT_COMMANDS

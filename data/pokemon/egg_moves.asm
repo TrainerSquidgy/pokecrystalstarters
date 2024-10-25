@@ -813,5 +813,5 @@ SnoverEggMoves:
 	db GROWTH
 	db LEECH_SEED
 	db STOMP
-;   db WEATHER_BALL
+    db WEATHER_BALL
 	db 0

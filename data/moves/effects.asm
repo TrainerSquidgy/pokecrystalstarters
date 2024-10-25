@@ -2122,3 +2122,9 @@ WeatherBall:
 	kingsrock
 	endmove
 
+AuroraVeil:
+	checkobedience
+	usedmovetext
+	doturn
+	auroraveil
+	endmove
