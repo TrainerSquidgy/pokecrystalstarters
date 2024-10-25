@@ -285,6 +285,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
+	call HandleIngrain
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -759,6 +760,10 @@ HandleEncore:
 TryEnemyFlee:
 	ld a, [wBattleMode]
 	dec a
+	jr nz, .Stay
+
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_INGRAINED, a
 	jr nz, .Stay
 
 	ld a, [wPlayerSubStatus5]
@@ -3747,6 +3752,11 @@ TryToRunAwayFromBattle:
 	ld a, [wBattleMode]
 	dec a
 	jp nz, .cant_run_from_trainer
+
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_INGRAINED, a
+	jp nz, .cant_escape
+
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
@@ -9202,3 +9212,45 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+
+HandleIngrain:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+.DoEnemyFirst:
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+.do_it
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_INGRAINED, a
+	ret z
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+.restore
+	call GetSixteenthMaxHP
+	call SwitchTurnCore
+	call RestoreHP
+	ld hl, AbsorbedNutrientsText
+	jp StdBattleTextbox

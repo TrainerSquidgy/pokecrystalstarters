@@ -2092,3 +2092,10 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
+Ingrain:
+	checkobedience
+	usedmovetext
+	doturn
+	ingrain
+	endmove
