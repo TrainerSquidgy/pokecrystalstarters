@@ -2,8 +2,6 @@
 
 DoBattle:
 	xor a
-	ld [wPlayerLastRespectsCount], a
-	ld [wEnemyLastRespectsCount], a
 	ld [wBattleParticipantsNotFainted], a
 	ld [wBattleParticipantsIncludingFainted], a
 	ld [wBattlePlayerAction], a
@@ -3057,17 +3055,17 @@ LostBattle:
 	ret
 
 EnemyMonFaintedAnimation:
+	push af
+	call IncreaseLastRespectsEnemy
+	pop af
 	hlcoord 12, 5
 	decoord 12, 6
 	jp MonFaintedAnimation
 
 PlayerMonFaintedAnimation:
-	ld a, [wPlayerLastRespectsCount]
-	inc a
-	and a
-	jr z, .done_fainted
-	ld [wPlayerLastRespectsCount], a
-.done_fainted
+	push af
+	call IncreaseLastRespectsPlayer
+	pop af
 	hlcoord 1, 10
 	decoord 1, 11
 	jp MonFaintedAnimation
@@ -4216,7 +4214,7 @@ PursuitSwitch:
 	call GetMoveEffect
 	ld a, b
 	cp EFFECT_PURSUIT
-	jp nz, .done
+	jr nz, .done
 
 	ld a, [wCurBattleMon]
 	push af
@@ -4279,11 +4277,7 @@ PursuitSwitch:
 	call WaitSFX
 	call EnemyMonFaintedAnimation
 	ld hl, BattleText_EnemyMonFainted
-	ld a, [wEnemyLastRespectsCount]
-	inc a
-	and a
-	jr z, .done_fainted
-	ld [wEnemyLastRespectsCount], a
+
 .done_fainted
 	call StdBattleTextbox
 	scf
@@ -8357,6 +8351,8 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wEnemyLastRespectsCount], a
+	ld [wPlayerLastRespectsCount], a
 	ld [wLowHealthAlarm], a
 	ld [wBattleMode], a
 	ld [wBattleType], a
@@ -9213,4 +9209,20 @@ BattleStartMessage:
 	ld c, $2 ; start
 	farcall Mobile_PrintOpponentBattleMessage
 
+	ret
+	
+IncreaseLastRespectsEnemy:
+	ld a, [wEnemyLastRespectsCount]
+	inc a
+	and a
+	ret z
+	ld [wEnemyLastRespectsCount], a
+	ret
+	
+IncreaseLastRespectsPlayer:
+	ld a, [wPlayerLastRespectsCount]
+	inc a
+	and a
+	ret z
+	ld [wPlayerLastRespectsCount], a
 	ret
