@@ -3174,13 +3174,15 @@ wGuaranteedHMFriendCatch:: db
 wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
+wAbilitiesActivated:: db
+wTutorsLimited:: db
 wPlayerEchoedVoiceCount:: db
 wEnemyEchoedVoiceCount:: db
 wPlayerAteABerry:: db
 wEnemyAteABerry:: db
 wPlayerYawning:: db
 wEnemyYawning:: db
-	ds 71
+	ds 69
 
 wEventFlags:: flag_array NUM_EVENTS
 
