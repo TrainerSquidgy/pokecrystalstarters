@@ -3385,6 +3385,7 @@ SnoverEvosAttacks:
 	
 AbomasnowEvosAttacks:
 	db 0
+	db 1, AURORA_VEIL
 	db 1, POWDER_SNOW
 	db 1, LEER
 	db 6, LEAFAGE
@@ -3394,6 +3395,7 @@ AbomasnowEvosAttacks:
 	db 26, ICY_WIND
 	db 31, SWAGGER
 	db 36, INGRAIN
+	db 40, ICE_PUNCH
 	db 41, WOOD_HAMMER
 	db 46, BLIZZARD
 	db 51, SHEER_COLD
