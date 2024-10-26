@@ -515,29 +515,20 @@ INCBIN "gfx/pokemon/lugia/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/lugia/shiny.pal"
 INCBIN "gfx/pokemon/ho_oh/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ho_oh/shiny.pal"
-INCBIN "gfx/pokemon/celebi/front.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/celebi/shiny.pal"
+INCBIN "gfx/pokemon/lechonk/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/lechonk/shiny.pal"
+INCBIN "gfx/pokemon/oinkolognem/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/oinkolognem/shiny.pal"
+INCBIN "gfx/pokemon/oinkolognef/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/oinkolognef/shiny.pal"
 
 	assert_table_length NUM_POKEMON + 1
-
-; 252
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-; 252 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
 
 INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/egg/shiny.pal"
 
 	assert_table_length EGG + 1
 
-; 254
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-; 254 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
 
 ; 255
 	RGB 23, 23, 23

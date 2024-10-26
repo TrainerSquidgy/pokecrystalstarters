@@ -21,7 +21,6 @@ AlphabeticalPokedexOrder:
 	db BULBASAUR
 	db BUTTERFREE
 	db CATERPIE
-	db CELEBI
 	db CHANSEY
 	db CHARIZARD
 	db CHARMANDER
@@ -111,6 +110,7 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
+	db LECHONK
 	db LEDIAN
 	db LEDYBA
 	db LICKITUNG
@@ -151,6 +151,8 @@ AlphabeticalPokedexOrder:
 	db NOCTOWL
 	db OCTILLERY
 	db ODDISH
+	db OINKOLOGNEM
+	db OINKOLOGNEF
 	db OMANYTE
 	db OMASTAR
 	db ONIX

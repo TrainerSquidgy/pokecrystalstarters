@@ -3353,15 +3353,60 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
+LechonkEvosAttacks:
+	db EVOLVE_LEVEL_MALE, 18, OINKOLOGNEM
+	db EVOLVE_LEVEL_FEMALE, 18, OINKOLOGNEF
 	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, DISARM_VOICE
+	db 8, ECHOED_VOICE
+	db 12, MUD_SHOT
+	db 15, COVET
+	db 17, DIG
+	db 21, HEADBUTT
+	db 24, YAWN
+	db 27, TAKE_DOWN
+	db 30, WORK_UP
+	db 32, UPROAR
+	db 35, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+
+OinkologneMEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 5, DISARM_VOICE
+	db 8, ECHOED_VOICE
+	db 12, MUD_SHOT
+	db 15, COVET
+	db 17, DIG
+	db 23, HEADBUTT
+	db 26, TAKE_DOWN
+	db 27, YAWN
+	db 34, WORK_UP
+	db 38, UPROAR
+	db 42, DOUBLE_EDGE
+	db 48, EARTH_POWER
+	db 54, BELCH
+	db 0 ; no more level-up moves
+
+OinkologneFEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 3, DISARM_VOICE
+	db 6, ECHOED_VOICE
+	db 9, MUD_SHOT
+	db 12, COVET
+	db 15, DIG
+	db 17, HEADBUTT
+	db 23, YAWN
+	db 28, TAKE_DOWN
+	db 30, WORK_UP
+	db 34, UPROAR
+	db 39, DOUBLE_EDGE
+	db 45, EARTH_POWER
+	db 54, BELCH
 	db 0 ; no more level-up moves
