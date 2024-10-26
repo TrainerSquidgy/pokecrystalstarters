@@ -6921,3 +6921,31 @@ GetNextTypeMatchupsByte:
    ld a, BANK(TypeMatchups)
    call GetFarByte
    ret
+
+
+BattleCommand_AddDamage:
+	push af
+	push hl
+    ld hl, wCurDamage + 1
+    ld a, [hl]           
+    ld d, a              
+    dec hl               
+    ld a, [hl]           
+    ld e, a              
+    ld hl, wCurDamage    
+    ld a, [hl]           
+    add a, e             
+    ld [hl], a           
+    inc hl               
+    ld a, [hl]           
+    adc a, d             
+    ld [hl], a           
+    jr nc, .done         
+    ld a, $FF            
+    ld hl, wCurDamage    
+    ld [hl], a           
+    ld [hli], a         
+.done:
+	pop hl
+	pop af
+    ret
