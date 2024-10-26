@@ -142,10 +142,33 @@ ElmsLabStarterChoice:
 .End
 	end
 	
-ElmsLabAlteredHiddenPower:
+
+	
+ElmsLabtext_InverseNo:
+	text "All type matchups"
+	line "remain normal."
+	done
+
+ElmsLabText_InverseAsk:
+	text "Do you want to"
+	line "use INVERSE"
+	cont "type matchups?"
+	done
+
+ElmsLabtext_InverseYes:
+	text "All matchups"
+	line "are INVERTED."
+	done
+
+ElmsLabExtraOptions:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
 	opentext
+	writetext ElmsLabText_AskExtraOptions
+	yesorno
+	iftrue .ExtraOptions
+	writetext ElmsLabText_NoExtraOptions
+.ExtraOptions
 	writetext ElmsLabText_AlterHiddenPower
 	yesorno
 	iffalse .NoAltering
@@ -156,12 +179,64 @@ ElmsLabAlteredHiddenPower:
 .NoAltering
 	writetext ElmsLabText_NoAlteredHiddenPower
 .Merge
-	waitbutton
+	promptbutton
+	writetext ElmsLabText_InverseAsk
+	yesorno
+	iftrue .InverseYes
+	loadmem wInverseActivated, 0
+	writetext ElmsLabtext_InverseNo
+	sjump .Merge2
+.InverseYes
+	loadmem wInverseActivated, 1
+	writetext ElmsLabtext_InverseYes
+.Merge2
+	promptbutton
+	writetext ElmsLabText_AbilitiesAsk
+	yesorno
+	iftrue .AbilitiesYes
+	loadmem wAbilitiesActivated, 0
+	writetext ElmsLabText_AbilitiesNo
+	sjump .Merge3
+.AbilitiesYes
+	loadmem wAbilitiesActivated, 1
+	writetext ElmsLabText_AbilitiesYes
+.Merge3
+	promptbutton
 	closetext
 	turnobject PLAYER, RIGHT
 .End
 	end
-	
+
+ElmsLabText_AskExtraOptions:
+	text "Set EXTRA OPTIONS"
+	line "for your game?"
+	done
+
+ElmsLabText_NoExtraOptions:
+	text "No extra changes"
+	line "have been made."
+	done
+
+ElmsLabText_AbilitiesAsk:
+	text "Do you want your"
+	line "#MON to have"
+	cont "an ABILITY if one"
+	cont "is coded for it?"
+	done
+
+ElmsLabText_AbilitiesNo:
+	text "Your #MON will"
+	line "not have any"
+	cont "extra ABILITY."
+	done
+
+ElmsLabText_AbilitiesYes:
+	text "If your #MON"
+	line "has an ability"
+	cont "coded in, it will"
+	cont "be activated."
+	done 
+
 ElmsLabText_AlterHiddenPower:
 	text "Want to modify"
 	line "HIDDEN POWER?"
@@ -1831,8 +1906,8 @@ ElmsLab_MapEvents:
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
-	bg_event  1,  2, BGEVENT_READ, ElmsLabAlteredHiddenPower
-
+	bg_event  1,  2, BGEVENT_READ, ElmsLabExtraOptions
+	
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB

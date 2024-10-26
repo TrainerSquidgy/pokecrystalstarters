@@ -1289,10 +1289,17 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
+	ld a, [wInverseActivated]
+	and a
+	jr nz, .inverse
 	ld hl, TypeMatchups
+	jr .TypesLoop
+.inverse
+	ld hl, InverseTypeMatchups
 
 .TypesLoop:
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+    inc hl
 
 	cp -1
 	jr z, .end
@@ -1310,7 +1317,7 @@ BattleCommand_Stab:
 .SkipForesightCheck:
 	cp b
 	jr nz, .SkipType
-	ld a, [hl]
+	call GetNextTypeMatchupsByte
 	cp d
 	jr z, .GotMatchup
 	cp e
@@ -1325,7 +1332,7 @@ BattleCommand_Stab:
 	and %10000000
 	ld b, a
 ; If the target is immune to the move, treat it as a miss and calculate the damage as 0
-	ld a, [hl]
+	call GetNextTypeMatchupsByte
 	and a
 	jr nz, .NotImmune
 	inc a
@@ -1413,9 +1420,15 @@ CheckTypeMatchup:
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
+	ld a, [wInverseActivated]
+	jr nz, .inverse
 	ld hl, TypeMatchups
+	jr .TypesLoop
+.inverse
+	ld hl, InverseTypeMatchups
 .TypesLoop:
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+    inc hl
 	cp -1
 	jr z, .End
 	cp -2
@@ -1429,7 +1442,8 @@ CheckTypeMatchup:
 .Next:
 	cp d
 	jr nz, .Nope
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	cp b
 	jr z, .Yup
 	cp c
@@ -1447,7 +1461,8 @@ CheckTypeMatchup:
 	ldh [hDividend + 0], a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	ldh [hMultiplicand + 2], a
 	ld a, [wTypeMatchup]
 	ldh [hMultiplier], a
@@ -1489,7 +1504,6 @@ BattleCommand_ResetTypeMatchup:
 
 INCLUDE "engine/battle/ai/switch.asm"
 
-INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
 ; Modify the damage spread between 85% and 100%.
@@ -2332,6 +2346,12 @@ BattleCommand_SuperEffectiveLoopText:
 	; fallthrough
 
 BattleCommand_SuperEffectiveText:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_super_effective
+	ld a, [wInverseActivated]
+	and a
+	jr z, .InverseText
 	ld a, [wTypeModifier]
 	and $7f
 	cp EFFECTIVE
@@ -2339,9 +2359,43 @@ BattleCommand_SuperEffectiveText:
 	ld hl, SuperEffectiveText
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
+	jr .print
+.InverseText:
+	ld a, [wTypeModifier]
+	and $7f
+	cp EFFECTIVE
+	ret z
+	ld hl, NotVeryEffectiveText
+	jr nc, .print
+	ld hl, SuperEffectiveText
+	jr .print
+
+.player_super_effective
+	ld a, [wInverseActivated]
+	and a
+	jr nz, .PlayerInverseText
+	ld a, [wTypeModifier]
+	and $7f
+	cp EFFECTIVE
+	ret z
+	ld hl, SuperEffectiveText
+	jr nc, .print
+	ld hl, NotVeryEffectiveText
+	jr .print
+.PlayerInverseText:
+	ld a, [wTypeModifier]
+	and $7f
+	cp EFFECTIVE
+	ret z
+	ld hl, NotVeryEffectiveText
+	jr nc, .print
+	ld hl, SuperEffectiveText
+	jr .print
+
+
 .print
 	jp StdBattleTextbox
-
+	
 BattleCommand_CheckFaint:
 ; Faint the opponent if its HP reached zero
 ;  and faint the user along with it if it used Destiny Bond.
@@ -6867,3 +6921,8 @@ BattleCommand_Memento:
 	farcall TryPrintButItFailed
 	farcall EndMoveEffect
 	ret
+
+GetNextTypeMatchupsByte:
+   ld a, BANK(TypeMatchups)
+   call GetFarByte
+   ret
