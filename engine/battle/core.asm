@@ -2,6 +2,8 @@
 
 DoBattle:
 	xor a
+	ld [wPlayerLastRespectsCount], a
+	ld [wEnemyLastRespectsCount], a
 	ld [wBattleParticipantsNotFainted], a
 	ld [wBattleParticipantsIncludingFainted], a
 	ld [wBattlePlayerAction], a
@@ -3060,6 +3062,12 @@ EnemyMonFaintedAnimation:
 	jp MonFaintedAnimation
 
 PlayerMonFaintedAnimation:
+	ld a, [wPlayerLastRespectsCount]
+	inc a
+	and a
+	jr z, .done_fainted
+	ld [wPlayerLastRespectsCount], a
+.done_fainted
 	hlcoord 1, 10
 	decoord 1, 11
 	jp MonFaintedAnimation
@@ -4208,7 +4216,7 @@ PursuitSwitch:
 	call GetMoveEffect
 	ld a, b
 	cp EFFECT_PURSUIT
-	jr nz, .done
+	jp nz, .done
 
 	ld a, [wCurBattleMon]
 	push af
@@ -4271,7 +4279,11 @@ PursuitSwitch:
 	call WaitSFX
 	call EnemyMonFaintedAnimation
 	ld hl, BattleText_EnemyMonFainted
-
+	ld a, [wEnemyLastRespectsCount]
+	inc a
+	and a
+	jr z, .done_fainted
+	ld [wEnemyLastRespectsCount], a
 .done_fainted
 	call StdBattleTextbox
 	scf

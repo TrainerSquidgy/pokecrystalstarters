@@ -261,8 +261,8 @@ MoveDescriptions::
 	assert_table_length $100
 
 LastRespectDescription:
-	db   "Normal hit as"
-	next "I am lazy.@"
+	db   "Increases power"
+	next "with faints.@"
 	
 MoveFDDescription:
 MoveFEDescription:

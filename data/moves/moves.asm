@@ -267,5 +267,5 @@ Moves:
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
 	move PLAY_ROUGH,   EFFECT_ATTACK_DOWN_HIT,    90, FAIRY_P,       90, 10,   0
 	move PHANTOMFORCE, EFFECT_FLY,                90, GHOST,        100, 10,   0
-	move LAST_RESPECT, EFFECT_NORMAL_HIT,         50, GHOST,        100, 10,   0
+	move LAST_RESPECT, EFFECT_LAST_RESPECTS,      50, GHOST,        100, 10,   0
 	assert_table_length NUM_ATTACKS

@@ -3175,7 +3175,9 @@ wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
 wAbilitiesActivated:: db
-	ds 76
+wPlayerLastRespectsCount:: db
+wEnemyLastRespectsCount:: db
+	ds 74
 
 wEventFlags:: flag_array NUM_EVENTS
 

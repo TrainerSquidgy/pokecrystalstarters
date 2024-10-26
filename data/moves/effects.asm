@@ -2092,3 +2092,24 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
+LastRespects:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	checkhit
+	lastrespects
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
