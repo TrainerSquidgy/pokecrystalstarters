@@ -201,11 +201,44 @@ ElmsLabExtraOptions:
 	loadmem wAbilitiesActivated, 1
 	writetext ElmsLabText_AbilitiesYes
 .Merge3
+	writetext ElmsLabText_AskLimitTutors
+	yesorno
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	sjump .Merge4
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+.Merge4
 	promptbutton
 	closetext
 	turnobject PLAYER, RIGHT
 .End
 	end
+
+ElmsLabText_AskLimitTutors:
+	text "Do you want a"
+	line "limit on the"
+	cont "amount of times"
+	cont "you can use the"
+	cont "new TUTORS?"
+	done
+	
+ElmsLabText_LimitTutorsYes:
+	text "You can only use"
+	line "one new TUTOR a"
+	cont "maximum of four"
+	cont "times and you"
+	cont "can only pick"
+	cont "one TUTOR."
+	done
+
+ElmsLabText_LimitTutorsNo:
+	text "You may use both"
+	line "TUTORS unlimited"
+	cont "times."
+	done
 
 ElmsLabText_AskExtraOptions:
 	text "Set EXTRA OPTIONS"
