@@ -3175,7 +3175,8 @@ wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
 wAbilitiesActivated:: db
-	ds 76
+wTutorsLimited:: db
+	ds 75
 
 wEventFlags:: flag_array NUM_EVENTS
 
