@@ -874,8 +874,8 @@ PokemonStrings:
 .Lugia	db "LUGIA@@@@@@"
 .Hooh		db "HO-OH@@@@@@"
 .Lechonk	db "LECHONK@@@@"
-.OinkologneM db "OINKOLOGNEM"
-.OinkologneF	db "OINKOLOGNEF"
+.OinkologneM db "OINKOLOGNEM@"
+.OinkologneF	db "OINKOLOGNEF@"
 
 
 WhichPokemonInBall1Text:
