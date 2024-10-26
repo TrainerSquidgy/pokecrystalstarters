@@ -3174,8 +3174,9 @@ wGuaranteedHMFriendCatch:: db
 wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
+wAbilitiesActivated :: db
 wWeatherBallBonus :: db
-	ds 76
+	ds 75
 
 wEventFlags:: flag_array NUM_EVENTS
 
