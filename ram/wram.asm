@@ -3175,8 +3175,9 @@ wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
 wAbilitiesActivated :: db
+wTutorsLimited:: db
 wWeatherBallBonus :: db
-	ds 75
+	ds 74
 
 wEventFlags:: flag_array NUM_EVENTS
 
