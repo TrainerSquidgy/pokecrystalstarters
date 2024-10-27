@@ -253,4 +253,5 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw RelicanthGen1TMAttacks
 	assert_table_length NUM_POKEMON

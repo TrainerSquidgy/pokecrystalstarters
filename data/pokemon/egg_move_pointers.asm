@@ -251,4 +251,5 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw RelicanthEggMoves
 	assert_table_length NUM_POKEMON

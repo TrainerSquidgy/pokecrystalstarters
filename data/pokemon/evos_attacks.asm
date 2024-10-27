@@ -3352,7 +3352,7 @@ HoOhEvosAttacks:
 	db 88, ANCIENTPOWER
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
-
+RelicanthEvosAttacks:
 CelebiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEECH_SEED

@@ -165,13 +165,13 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
             append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}EggMoves\n')
 
         elif file_path == "data/pokemon/egg_moves.asm":
-            append_line_above(file_path, 'NoEggMoves:', f'	dw {pokemon_name}EggMoves:\n')
+            append_line_above(file_path, 'NoEggMoves:', f'{pokemon_name}EggMoves:\n')
 
         elif file_path == "data/pokemon/relearned_egg_moves.asm":
-            append_line_above(file_path, 'NoRelearnedEggMoves:', f'	dw {pokemon_name}RelearnedEggMoves:\n')
+            append_line_above(file_path, 'NoRelearnedEggMoves:', f'{pokemon_name}RelearnedEggMoves:\n')
 
         elif file_path == "data/pokemon/gen1_tmattacks.asm":
-            append_line_above(file_path, 'NoGen1TMAttacks:', f'	dw {pokemon_name}Gen1TMAttacks:\n')
+            append_line_above(file_path, 'NoGen1TMAttacks:', f'{pokemon_name}Gen1TMAttacks:\n')
 
         
 # Get the Pokémon name from the input file
@@ -197,7 +197,6 @@ file_paths = [
     "data/pokemon/gen1_tmattacks.asm",
     "data/pokemon/relearned_egg_move_pointers.asm",
     "data/pokemon/relearned_egg_moves.asm",
-    "data/pokemon/gen1_tmattacks.asm",
     "data/pokemon/egg_move_pointers.asm",
     "gfx/pokemon/anim_pointers.asm",
     "gfx/pokemon/anims.asm",
