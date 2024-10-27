@@ -3168,8 +3168,6 @@ wRivalCarriesStarter:: db
 wIsAStarter:: db
 wStarterDVSelection:: db
 wEvolutionsDisabled:: db
-wPlayerEchoedVoiceCount:: db	
-wEnemyEchoedVoiceCount:: db	
 wGen1MovesLeft:: db
 wEggMovesLeft:: db
 wGuaranteedHMFriendCatch:: db
@@ -3178,7 +3176,9 @@ wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
 wAbilitiesActivated:: db
 wTutorsLimited:: db
-	db 73
+wPlayerEchoedVoiceCount:: db	
+wEnemyEchoedVoiceCount:: db	
+	ds 73
 
 wEventFlags:: flag_array NUM_EVENTS
 
