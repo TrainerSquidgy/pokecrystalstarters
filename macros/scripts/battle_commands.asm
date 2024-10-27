@@ -178,6 +178,8 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command startweather
+	command fakeoutv2
+	command knockoff
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

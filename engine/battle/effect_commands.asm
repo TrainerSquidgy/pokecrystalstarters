@@ -6949,3 +6949,62 @@ BattleCommand_AddDamage:
 	pop hl
 	pop af
     ret
+	
+BattleCommand_FakeOutV2:
+	ld hl, wPlayerTurnsTaken
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyTurnsTaken
+.go
+	ld a, [hl]
+	dec a
+	and a
+	jr nz, .failed
+	
+	call CheckSubstituteOpp
+	jr nz, .failed
+
+	call CheckOpponentWentFirst
+	jp z, FlinchTarget
+
+.failed
+	ld a, 1
+	ld [wAttackMissed], a
+	jp PrintButItFailed
+	
+	
+BattleCommand_KnockOff:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wOTPartyMon1Item
+	ld de, wEnemyMonItem
+	ld a, [wCurOTMon]
+	jr z, .go
+; fail if wild mon uses it
+	ld a, [wBattleMode]
+	cp WILD_BATTLE
+	ret z
+	ld hl, wPartyMon1Item
+	ld de, wBattleMonItem
+	ld a, [wCurBattleMon]
+.go
+	ld b, a
+	ld a, [de]
+	and a
+	ret z
+
+	farcall ItemIsMail
+	ret c
+	
+	ld [wNamedObjectIndex], a
+	ld a, b
+	call GetPartyLocation
+	xor a
+	ld [hl], a
+	ld [de], a
+	call GetItemName
+	ld hl, KnockOffText
+	jp StdBattleTextbox
+
+	

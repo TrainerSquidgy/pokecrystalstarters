@@ -913,3 +913,10 @@ LarvitarRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0
+
+SableyeRelearnedEggMoves:
+	db 0
+	db 1, MOONLIGHT
+	db 1, PSYCH_UP
+	db 1, RECOVER
+	db 0

@@ -1139,3 +1139,11 @@ ItStartedToSnowText:
 	text "It started"
 	line "to snow!"
 	prompt
+
+KnockOffText:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "knocked off!"
+	prompt

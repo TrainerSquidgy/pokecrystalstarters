@@ -3365,3 +3365,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SableyeEvosAttacks:
+	db 0
+	db 1, SCRATCH
+	db 1, LEER
+	db 5, FORESIGHT
+	db 9, NIGHT_SHADE
+	db 13, ASTONISH
+	db 17, FURY_SWIPES
+	db 21, FAKE_OUT
+	db 25, DETECT
+	db 29, FAINT_ATTACK
+	db 33, KNOCK_OFF
+	db 37, CONFUSE_RAY
+	db 41, SHADOW_BALL
+	db 45, MEAN_LOOK
+	db 0

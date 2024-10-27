@@ -807,3 +807,9 @@ LarvitarEggMoves:
 
 NoEggMoves:
 	db -1 ; end
+
+SableyeEggMoves:
+	db MOONLIGHT
+	db PSYCH_UP
+	db RECOVER
+	db -1

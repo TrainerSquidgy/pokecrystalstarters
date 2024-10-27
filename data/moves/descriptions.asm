@@ -252,16 +252,20 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw HeadbuttDescription
+	dw FakeOutDescription
+	dw KnockOffDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+FakeOutDescription:
+	db   "First turn only."
+	next "Always flinches.@"
+KnockOffDescription:
+	db   "Knocks off the"
+	next "foe's ITEM.@"
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
