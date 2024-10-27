@@ -1,5 +1,5 @@
 def get_pokemon_name():
-    with open("inputpokemon.txt", "r") as file:
+    with open("mon252.txt", "r") as file:
         name = file.readline().strip()  # Read the first line and remove any surrounding whitespace
     return name
 

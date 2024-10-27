@@ -1,5 +1,5 @@
 def get_pokemon_name():
-    with open("inputpokemon.txt", "r") as file:
+    with open("mon253.txt", "r") as file:
         name = file.readline().strip()  # Read the first line and remove any surrounding whitespace
     return name
 
@@ -32,6 +32,9 @@ def append_line_below(file_path, target_line, new_line):
             if target_line in line:  # Check if the current line is the target line
                 file.write(new_line)  # Append the new line below the target line
 
+def append_line_to_bottom(file_path, new_line):
+    with open(file_path, 'a') as file:  # Open the file in append mode
+        file.write(new_line)  # Write the new line at the bottom of the file
 
 def delete_line_below(file_path, target_line):
     with open(file_path, "r") as file:
@@ -79,13 +82,12 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
     for file_path in file_paths:
         if file_path == "constants/pokemon_constants.asm":
             append_line_above(file_path, 'DEF NUM_POKEMON EQU const_value - 1', f'	const {pokemon_name.upper()}\n')
-            delete_line_below(file_path, 'DEF NUM_POKEMON EQU const_value - 1')
-    
+            
 
         
         elif file_path == "data/pokemon/names.asm":
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db "{padded_name.upper()}"\n')
-            delete_line_below(file_path, 'assert_table_length NUM_POKEMON')
+            delete_line_below(file_path, 'assert_table_length EGG')
 
         elif file_path == "data/pokemon/base_stats.asm":
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'INCLUDE "data/pokemon/base_stats/{pokemon_name.lower()}.asm"\n')
@@ -104,7 +106,7 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dw {pokemon_name}PokedexEntry\n')
         
         elif file_path == "data/pokemon/dex_entries.asm":
-            append_line_below(file_path, 'CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"', f'{pokemon_name}PokedexEntry::     INCLUDE "data/pokemon/dex_entries/{pokemon_name.lower()}.asm"\n')
+            append_line_to_bottom(file_path, f'{pokemon_name}PokedexEntry::     INCLUDE "data/pokemon/dex_entries/{pokemon_name.lower()}.asm"')
         
         elif file_path == "data/pokemon/dex_order_new.asm":
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db {pokemon_name.upper()}\n')
@@ -115,19 +117,15 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
         elif file_path == "data/pokemon/pic_pointers.asm":
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dba_pic {pokemon_name}Frontpic\n')
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dba_pic {pokemon_name}Backpic\n')
-            delete_line_below(file_path, 'assert_table_length NUM_POKEMON')
-            delete_line_below(file_path, 'assert_table_length NUM_POKEMON')
 
         elif file_path == "gfx/pics.asm":
-            delete_lines_between(file_path, 'SECTION "Pics 19", ROMX', 'SECTION "Pics 20", ROMX')
-            append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Backpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/back.2bpp.lz"\n')
-            append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n')
+            append_line_above(file_path, 'SECTION "Pics 20", ROMX', f'{pokemon_name}Backpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/back.2bpp.lz"\n')
+            append_line_above(file_path, 'SECTION "Pics 20", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n\n')
 
         elif file_path == "data/pokemon/palettes.asm":
-            delete_lines_between(file_path, '	assert_table_length NUM_POKEMON + 1', 'INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors')
+            delete_lines_between(file_path, '	assert_table_length EGG + 1', '; 255')
             append_line_above(file_path, '	assert_table_length NUM_POKEMON + 1', f'INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.gbcpal", middle_colors\nINCLUDE "gfx/pokemon/{pokemon_name.lower()}/shiny.pal"\n')
-            append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n')
-
+        
         elif file_path == "gfx/pokemon/anim_pointers.asm":
             append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}Animation\n')
 
