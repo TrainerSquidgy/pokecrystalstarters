@@ -125,7 +125,7 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
 
         elif file_path == "data/pokemon/palettes.asm":
             delete_lines_between(file_path, '	assert_table_length NUM_POKEMON + 1', 'INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors')
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON + 1', f'INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.gbcpal"\nINCLUDE "gfx/pokemon/{pokemon_name.lower()}/shiny.pal"\n')
+            append_line_above(file_path, '	assert_table_length NUM_POKEMON + 1', f'INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.gbcpal", middle_colors\nINCLUDE "gfx/pokemon/{pokemon_name.lower()}/shiny.pal"\n')
             append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n')
 
         elif file_path == "gfx/pokemon/anim_pointers.asm":
@@ -164,6 +164,15 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
         elif file_path == "data/pokemon/egg_move_pointers.asm":
             append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}EggMoves\n')
 
+        elif file_path == "data/pokemon/egg_moves.asm":
+            append_line_above(file_path, 'NoEggMoves:', f'	dw {pokemon_name}EggMoves:\n')
+
+        elif file_path == "data/pokemon/relearned_egg_moves.asm":
+            append_line_above(file_path, 'NoRelearnedEggMoves:', f'	dw {pokemon_name}RelearnedEggMoves:\n')
+
+        elif file_path == "data/pokemon/gen1_tmattacks.asm":
+            append_line_above(file_path, 'NoGen1TMAttacks:', f'	dw {pokemon_name}Gen1TMAttacks:\n')
+
         
 # Get the Pokémon name from the input file
 pokemon_name = get_pokemon_name()
@@ -182,9 +191,13 @@ file_paths = [
     "data/pokemon/dex_order_alpha.asm",
     "data/pokemon/pic_pointers.asm",
     "data/pokemon/palettes.asm",
+    "data/pokemon/egg_moves.asm",
     "data/pokemon/gen1_order.asm",
     "data/pokemon/gen1_tmattacks_pointers.asm",
+    "data/pokemon/gen1_tmattacks.asm",
     "data/pokemon/relearned_egg_move_pointers.asm",
+    "data/pokemon/relearned_egg_moves.asm",
+    "data/pokemon/gen1_tmattacks.asm",
     "data/pokemon/egg_move_pointers.asm",
     "gfx/pokemon/anim_pointers.asm",
     "gfx/pokemon/anims.asm",
