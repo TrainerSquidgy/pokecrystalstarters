@@ -1,5 +1,5 @@
 def get_pokemon_name():
-    with open("inputpokemon.txt", "r") as file:
+    with open("mon251.txt", "r") as file:
         name = file.readline().strip()  # Read the first line and remove any surrounding whitespace
     return name
 
@@ -47,7 +47,14 @@ def delete_line_below(file_path, target_line):
             if target_line in line:
                 skip_next = True  # Set the flag to skip the next line
 
+def delete_line(file_path, target_line):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()  # Read all lines from the file
 
+    with open(file_path, 'w') as file:
+        for line in lines:
+            if target_line not in line:  # Write back only lines that don't match the target line
+                file.write(line)
 
 def delete_lines_between(file_path, start_line, end_line):
     with open(file_path, 'r') as file:
@@ -78,92 +85,117 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
 
     for file_path in file_paths:
         if file_path == "constants/pokemon_constants.asm":
-            append_line_above(file_path, 'DEF NUM_POKEMON EQU const_value - 1', f'	const {pokemon_name.upper()}\n')
-            delete_line_below(file_path, 'DEF NUM_POKEMON EQU const_value - 1')
+            append_line_above(file_path, 'const CELEBI     ; fb', f'	const {pokemon_name.upper()}\n')
+            delete_line(file_path, 'const CELEBI     ; fb')
     
 
         
         elif file_path == "data/pokemon/names.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db "{padded_name.upper()}"\n')
-            delete_line_below(file_path, 'assert_table_length NUM_POKEMON')
+            append_line_above(file_path, 'db "CELEBI@@@@"', f'	db "{padded_name.upper()}"\n')
+            delete_line(file_path, 'db "CELEBI@@@@"')
 
         elif file_path == "data/pokemon/base_stats.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'INCLUDE "data/pokemon/base_stats/{pokemon_name.lower()}.asm"\n')
+            append_line_above(file_path, 'INCLUDE "data/pokemon/base_stats/celebi.asm"', f'INCLUDE "data/pokemon/base_stats/{pokemon_name.lower()}.asm"\n')
+            delete_line(file_path, 'INCLUDE "data/pokemon/base_stats/celebi.asm"')
 
         elif file_path == "data/pokemon/evos_attacks_pointers.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dw {pokemon_name}EvosAttacks\n')
+            append_line_above(file_path, '	dw CelebiEvosAttacks', f'	dw {pokemon_name}EvosAttacks\n')
+            delete_line(file_path, '	dw CelebiEvosAttacks')
 
         elif file_path == "data/pokemon/cries.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	mon_cry CRY_NIDORAN_M,     0,    0\n')
-            delete_line_below(file_path, 'assert_table_length NUM_POKEMON')
+            append_line_above(file_path, '	mon_cry CRY_ENTEI,       330,  273 ; CELEBI', f'	mon_cry CRY_NIDORAN_M,     0,    0\n')
+            delete_line(file_path, '	mon_cry CRY_ENTEI,       330,  273 ; CELEBI')
 
         elif file_path == "data/pokemon/menu_icons.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db ICON_MONSTER\n')
+            append_line_above(file_path, '	db ICON_HUMANSHAPE  ; CELEBI', f'	db ICON_MONSTER\n')
+            delete_line(file_path, '	db ICON_HUMANSHAPE  ; CELEBI')
 
         elif file_path == "data/pokemon/dex_entry_pointers.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dw {pokemon_name}PokedexEntry\n')
-        
+            append_line_above(file_path, '	dw CelebiPokedexEntry', f'	dw {pokemon_name}PokedexEntry\n')
+            delete_line(file_path, '	dw CelebiPokedexEntry')
         elif file_path == "data/pokemon/dex_entries.asm":
             append_line_below(file_path, 'CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"', f'{pokemon_name}PokedexEntry::     INCLUDE "data/pokemon/dex_entries/{pokemon_name.lower()}.asm"\n')
+            delete_line(file_path, 'CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"')
         
         elif file_path == "data/pokemon/dex_order_new.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db {pokemon_name.upper()}\n')
+            append_line_above(file_path, '	db CELEBI', f'	db {pokemon_name.upper()}\n')
+            delete_line(file_path, '	db CELEBI')
         
         elif file_path == "data/pokemon/dex_order_alpha.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db {pokemon_name.upper()}\n')
-
+            append_line_below(file_path, '	db ZUBAT', f'	db {pokemon_name.upper()}\n')
+            delete_line(file_path, '	db CELEBI')
+            
         elif file_path == "data/pokemon/pic_pointers.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dba_pic {pokemon_name}Frontpic\n')
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dba_pic {pokemon_name}Backpic\n')
-            delete_line_below(file_path, 'assert_table_length NUM_POKEMON')
-            delete_line_below(file_path, 'assert_table_length NUM_POKEMON')
+            append_line_above(file_path, '	dba_pic CelebiFrontpic', f'	dba_pic {pokemon_name}Frontpic\n')
+            append_line_above(file_path, '	dba_pic CelebiFrontpic', f'	dba_pic {pokemon_name}Backpic\n')
+            delete_line(file_path, '	dba_pic CelebiFrontpic')
+            delete_line(file_path, '	dba_pic CelebiBackpic')
 
         elif file_path == "gfx/pics.asm":
-            delete_lines_between(file_path, 'SECTION "Pics 19", ROMX', 'SECTION "Pics 20", ROMX')
             append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Backpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/back.2bpp.lz"\n')
             append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n')
 
         elif file_path == "data/pokemon/palettes.asm":
-            delete_lines_between(file_path, '	assert_table_length NUM_POKEMON + 1', 'INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors')
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON + 1', f'INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.gbcpal", middle_colors\nINCLUDE "gfx/pokemon/{pokemon_name.lower()}/shiny.pal"\n')
-            append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n')
-
+            append_line_above(file_path, 'INCBIN "gfx/pokemon/celebi/front.gbcpal", middle_colors', f'INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.gbcpal", middle_colors\nINCLUDE "gfx/pokemon/{pokemon_name.lower()}/shiny.pal"\n')
+            delete_line(file_path, 'INCBIN "gfx/pokemon/celebi/front.gbcpal", middle_colors')
+            delete_line(file_path, 'INCLUDE "gfx/pokemon/celebi/shiny.pal"')
+            
         elif file_path == "gfx/pokemon/anim_pointers.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}Animation\n')
-
+            append_line_above(file_path, '	dw CelebiAnimation', f'	dw {pokemon_name}Animation\n')
+            delete_line(file_path, '	dw CelebiAnimation')
+            
         elif file_path == "gfx/pokemon/anims.asm":
-            append_line_above(file_path, 'EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"', f'{pokemon_name}Animation:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/anim.asm"\n')
-
+            append_line_above(file_path, 'CelebiAnimation:     INCLUDE "gfx/pokemon/celebi/anim.asm"', f'{pokemon_name}Animation:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/anim.asm"\n')
+            delete_line(file_path, 'CelebiAnimation:     INCLUDE "gfx/pokemon/celebi/anim.asm"')
+            
         elif file_path == "gfx/pokemon/idle_pointers.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}AnimationIdle\n')
+            append_line_above(file_path, '	dw CelebiAnimationIdle', f'	dw {pokemon_name}AnimationIdle\n')
+            delete_line(file_path, '	dw CelebiAnimationIdle')
 
         elif file_path == "gfx/pokemon/idles.asm":
-            append_line_above(file_path, 'EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"', f'{pokemon_name}AnimationIdle:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/anim_idle.asm"\n')
+            append_line_above(file_path, 'CelebiAnimationIdle:     INCLUDE "gfx/pokemon/celebi/anim_idle.asm"', f'{pokemon_name}AnimationIdle:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/anim_idle.asm"\n')
+            delete_line(file_path, 'CelebiAnimationIdle:     INCLUDE "gfx/pokemon/celebi/anim_idle.asm"')
 
         elif file_path == "gfx/pokemon/bitmask_pointers.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}Bitmasks\n')
+            append_line_above(file_path, '	dw CelebiBitmasks', f'	dw {pokemon_name}Bitmasks\n')
+            delete_line(file_path, '	dw CelebiBitmasks')
 
         elif file_path == "gfx/pokemon/bitmasks.asm":
-            append_line_above(file_path, 'EggBitmasks:        INCLUDE "gfx/pokemon/egg/bitmask.asm"', f'{pokemon_name}Bitmasks:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/bitmask.asm"\n')
+            append_line_above(file_path, 'CelebiBitmasks:     INCLUDE "gfx/pokemon/celebi/bitmask.asm"', f'{pokemon_name}Bitmasks:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/bitmask.asm"\n')
+            delete_line(file_path, 'CelebiBitmasks:     INCLUDE "gfx/pokemon/celebi/bitmask.asm"')
            
         elif file_path == "gfx/pokemon/frame_pointers.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}Frames\n')
+            append_line_above(file_path, '	dw CelebiFrames', f'	dw {pokemon_name}Frames\n')
+            delete_line(file_path, '	dw CelebiFrames')
 
         elif file_path == "gfx/pokemon/johto_frames.asm":
-            append_line_above(file_path, 'EggFrames:        INCLUDE "gfx/pokemon/egg/frames.asm"', f'{pokemon_name}Frames:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/frames.asm"\n')
-
+            append_line_above(file_path, 'CelebiFrames:     INCLUDE "gfx/pokemon/celebi/frames.asm"', f'{pokemon_name}Frames:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/frames.asm"\n')
+            delete_line(file_path, 'CelebiFrames:     INCLUDE "gfx/pokemon/celebi/frames.asm"')
+            
         elif file_path == "data/pokemon/gen1_order.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON + 1', f'	db {pokemon_name.upper()}\n')
+            append_line_above(file_path, 'db QWILFISH', f'	db {pokemon_name.upper()}\n')
+            delete_line(file_path, 'db QWILFISH')
 
         elif file_path == "data/pokemon/gen1_tmattacks_pointers.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}Gen1TMAttacks\n')
+            append_line_above(file_path, '	dw NoGen1TMAttacks ; Celebi', f'	dw {pokemon_name}Gen1TMAttacks\n')
+            delete_line(file_path, '	dw NoGen1TMAttacks ; Celebi')
 
         elif file_path == "data/pokemon/relearned_egg_move_pointers.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}RelearnedEggMoves\n')
-
+            append_line_above(file_path, 'dw NoRelearnedEggMoves ; Celebi', f'	dw {pokemon_name}Gen1TMAttacks\n')
+            delete_line(file_path, 'dw NoRelearnedEggMoves ; Celebi')
+            
         elif file_path == "data/pokemon/egg_move_pointers.asm":
-            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}EggMoves\n')
+            append_line_above(file_path, 'dw NoEggMoves ; Celebi', f'	dw {pokemon_name}Gen1TMAttacks\n')
+            delete_line(file_path, 'dw NoEggMoves ; Celebi')
 
+        elif file_path == "maps/IlexForest.asm":
+            append_line_above(file_path, '	loadwildmon CELEBI, 30', f'	loadwildmon MEW, 30\n')
+            delete_line(file_path, '	loadwildmon CELEBI, 30')
+
+        elif file_path == "data/pokemon/ezchat_order.asm":
+            append_line_above(file_path, '.se_ze:    db SQUIRTLE, CELEBI, -1', f'.se_ze:    db SQUIRTLE, {pokemon_name.upper()}, -1\n')
+            delete_line(file_path, '.se_ze:    db SQUIRTLE, CELEBI, -1')
+            
         elif file_path == "data/pokemon/egg_moves.asm":
             append_line_above(file_path, 'NoEggMoves:', f'{pokemon_name}EggMoves:\n')
 
@@ -198,6 +230,7 @@ file_paths = [
     "data/pokemon/relearned_egg_move_pointers.asm",
     "data/pokemon/relearned_egg_moves.asm",
     "data/pokemon/egg_move_pointers.asm",
+    "data/pokemon/ezchat_order.asm",
     "gfx/pokemon/anim_pointers.asm",
     "gfx/pokemon/anims.asm",
     "gfx/pokemon/idle_pointers.asm",
@@ -207,6 +240,7 @@ file_paths = [
     "gfx/pokemon/frame_pointers.asm",
     "gfx/pokemon/johto_frames.asm",
     "gfx/pics.asm",
+    "maps/IlexForest.asm",
     ]
 
 # Call the function to modify files with the Pokémon name
