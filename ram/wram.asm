@@ -3175,7 +3175,10 @@ wEggMovesLeft:: db
 wGuaranteedHMFriendCatch:: db
 wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
-	ds 76
+wInverseActivated:: db
+wAbilitiesActivated:: db
+wTutorsLimited:: db
+	db 73
 
 wEventFlags:: flag_array NUM_EVENTS
 
