@@ -91,7 +91,7 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'INCLUDE "data/pokemon/base_stats/{pokemon_name.lower()}.asm"\n')
 
         elif file_path == "data/pokemon/evos_attacks_pointers.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db {pokemon_name}EvosAttacks\n')
+            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dw {pokemon_name}EvosAttacks\n')
 
         elif file_path == "data/pokemon/cries.asm":
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	mon_cry CRY_NIDORAN_M,     0,    0\n')
@@ -101,7 +101,7 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db ICON_MONSTER\n')
 
         elif file_path == "data/pokemon/dex_entry_pointers.asm":
-            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db {pokemon_name}PokedexEntry\n')
+            append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dw {pokemon_name}PokedexEntry\n')
         
         elif file_path == "data/pokemon/dex_entries.asm":
             append_line_below(file_path, 'CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"', f'{pokemon_name}PokedexEntry::     INCLUDE "data/pokemon/dex_entries/{pokemon_name.lower()}.asm"\n')
@@ -133,6 +133,12 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
 
         elif file_path == "gfx/pokemon/anims.asm":
             append_line_above(file_path, 'EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"', f'{pokemon_name}Animation:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/anim.asm"\n')
+
+        elif file_path == "gfx/pokemon/idle_pointers.asm":
+            append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}AnimationIdle\n')
+
+        elif file_path == "gfx/pokemon/idles.asm":
+            append_line_above(file_path, 'EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"', f'{pokemon_name}AnimationIdle:     INCLUDE "gfx/pokemon/{pokemon_name.lower()}/anim_idle.asm"\n')
 
         elif file_path == "gfx/pokemon/bitmask_pointers.asm":
             append_line_above(file_path, '	assert_table_length NUM_POKEMON', f'	dw {pokemon_name}Bitmasks\n')
