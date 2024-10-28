@@ -2,7 +2,7 @@ BattleCommand_PLAHiddenPower:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, HiddenPowerCheckTypeMatchup
+	jr nz, HiddenPowerCheckTypeMatchup
 	ld hl, wBattleMonType1
 	; fallthrough
 HiddenPowerCheckTypeMatchup:
@@ -83,7 +83,7 @@ HiddenPowerCheckTypeMatchup:
 	ld b, a
 	ld a, [wTempHiddenPowerPower]
 	cp b
-	jr nc, .skipsaving
+	jr c, .skipsaving
 	ld a, b
 	ld [wTempHiddenPowerPower], a
 	ld a, [wTempHiddenPowerType]
@@ -95,6 +95,10 @@ HiddenPowerCheckTypeMatchup:
 	jp nz, HiddenPowerCheckTypeMatchup
 	ld a, [wHiddenPowerType]
 	push af
+	xor a
+	ld [wHiddenPowerLoop], a
+	ld [wTempHiddenPowerPower], a
+	ld [wTempHiddenPowerType], a
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
 	pop af

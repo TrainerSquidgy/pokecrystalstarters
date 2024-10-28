@@ -251,5 +251,5 @@ MoveNames::
 	li "ROCK SMASH"
 	li "WHIRLPOOL"
 	li "BEAT UP"
-	li "PLA HIDDEN POWER"
+	li "HIDDEN POWER"
 	assert_list_length NUM_ATTACKS
