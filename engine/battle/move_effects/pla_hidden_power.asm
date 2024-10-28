@@ -2,7 +2,7 @@ BattleCommand_PLAHiddenPower:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr nz, HiddenPowerCheckTypeMatchup
+	jr z, HiddenPowerCheckTypeMatchup
 	ld hl, wBattleMonType1
 	; fallthrough
 HiddenPowerCheckTypeMatchup:
@@ -83,7 +83,7 @@ HiddenPowerCheckTypeMatchup:
 	ld b, a
 	ld a, [wTempHiddenPowerPower]
 	cp b
-	jr c, .skipsaving
+	jr nc, .skipsaving
 	ld a, b
 	ld [wTempHiddenPowerPower], a
 	ld a, [wTempHiddenPowerType]
@@ -91,7 +91,7 @@ HiddenPowerCheckTypeMatchup:
 .skipsaving
 	pop bc
 	ld a, [wHiddenPowerLoop]
-	cp 17
+	cp 19
 	jp nz, HiddenPowerCheckTypeMatchup
 	ld a, [wHiddenPowerType]
 	push af
@@ -126,21 +126,23 @@ HiddenPowerTypesLoop:
 	cp 8
 	jr z, .Fire
 	cp 9
-	jr z, .Steel
+	jp z, .Steel
 	cp 10
-	jr z, .Ghost
+	jp z, .Ghost
 	cp 11
-	jr z, .Bug
+	jp z, .Bug
 	cp 12
-	jr z, .Rock
+	jp z, .Rock
 	cp 13
-	jr z, .Ground
+	jp z, .Ground
 	cp 14
-	jr z, .Poison
+	jp z, .Poison
 	cp 15
-	jr z, .Flying
-	ld a, FIGHTING
-	ld [wTempHiddenPowerType], a
+	jp z, .Flying
+	cp 16
+	jp z, .Fighting
+	cp 17
+	jp z, .Fairy
 	ret
 .Dark
 	ld a, DARK
@@ -204,5 +206,9 @@ HiddenPowerTypesLoop:
 	ret
 .Fighting
 	ld a, FIGHTING
+	ld [wTempHiddenPowerType], a
+	ret
+.Fairy
+	ld a, FAIRY_S
 	ld [wTempHiddenPowerType], a
 	ret
