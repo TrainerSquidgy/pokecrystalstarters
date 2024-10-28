@@ -1,217 +1,247 @@
-Focus Punch
-Water Pulse
 Calm Mind
 Toxic
 Hidden Power
-Sunny Day
-Taunt
+Ice Beam
+Hyper Beam
+Light Screen
 Protect
 Rain Dance
+Safeguard
 Frustration
+Earthquake
 Return
-Dig
 Psychic
 Shadow Ball
-Brick Break
 Double Team
-Shock Wave
+Reflect
+Sandstorm
 Rock Tomb
-Aerial Ace
-Torment
 Facade
 Secret Power
 Rest
-Attract
-Thief
-Snatch
-Cut
+Skill Swap
 Flash
-Rock Smash
-Moonlight
-Psych Up
-Recover
 Body Slam
-Counter
+Defense Curl
 Double-Edge
 Dream Eater
-DynamicPunch
 Endure
-Fire Punch
-Fury Cutter
-Ice Punch
-Mega Kick
-Mega Punch
-Metronome
+Explosion
 Mimic
-Mud-Slap
-Nightmare
 Psych Up
-Seismic Toss
+Rock Slide
+Rollout
+Selfdestruct
 Sleep Talk
 Snore
 Substitute
 Swagger
-ThunderPunch
-Leer
-Scratch
-Astonish
-Confuse Ray
-Shadow Sneak
-Fake Out
-Disable
-Detect
-Night Shade
-Fury Swipes
-Knock Off
-Quash
-Shadow Claw
-Mean Look
-Power Gem
+Swift
+AncientPower
+Earth Power
+Gravity
+Helping Hand
+Iron Head
+Magic Coat
+Pain Split
+Rollout
+Signal Beam
+Snore
+Swift
 Zen Headbutt
+Calm Mind
+Toxic
+Hidden Power
+Ice Beam
+Blizzard
+Hyper Beam
+Light Screen
+Protect
+Rain Dance
+Safeguard
+Frustration
+Earthquake
+Return
+Psychic
 Shadow Ball
-Foul Play
-Mega Punch
-Mega Kick
-Fire Punch
-Ice Punch
-Thunder Punch
-Dig
+Double Team
+Reflect
+Sandstorm
+Rock Tomb
+Facade
+Secret Power
 Rest
-Thief
+Skill Swap
+Charge Beam
+Endure
+Embargo
+Explosion
+Recycle
+Giga Impact
+Rock Polish
+Flash
+Stone Edge
+Gyro Ball
+Stealth Rock
+Psych Up
+Rock Slide
+Sleep Talk
+Natural Gift
+Dream Eater
+Grass Knot
+Swagger
+Substitute
+Trick Room
+Tackle
+Harden
+Confusion
+Rock Throw
+Hypnosis
+Rock Polish
+Psywave
+Embargo
+Cosmic Power
+Heal Block
+Psychic
+Future Sight
+Explosion
+Moonblast
+Moonlight
+Tackle
+Harden
+Confusion
+Rock Throw
+Hypnosis
+Rock Polish
+Rock Slide
+Psyshock
+Cosmic Power
+Psychic
+Stone Edge
+Future Sight
+Magic Room
+Explosion
+Hyper Beam
+Giga Impact
+Light Screen
+Reflect
+Safeguard
+Self-Destruct
+Rest
+Rock Slide
 Snore
 Protect
 Icy Wind
-Attract
+Sandstorm
 Rain Dance
-Sunny Day
-Will-O-Wisp
+Hail
 Facade
+Swift
 Helping Hand
-Brick Break
-Imprison
+Weather Ball
 Rock Tomb
-Payback
-Fling
-Drain Punch
-Shadow Claw
-Wonder Room
-Low Sweep
+Sand Tomb
+Rock Blast
+Power Swap
+Trick Room
+Magic Room
 Round
-Hex
-Retaliate
-Snarl
+Acrobatics
+Bulldoze
+Psychic Terrain
+Stomping Tantrum
 Body Slam
-Low Kick
+Ice Beam
+Blizzard
+Earthquake
 Psychic
-Metronome
 Substitute
+Psyshock
 Endure
 Sleep Talk
-Encore
+Baton Pass
 Shadow Ball
-Taunt
-Trick
+Future Sight
+Skill Swap
+Cosmic Power
 Calm Mind
 Gyro Ball
-Poison Jab
-Dark Pulse
 Power Gem
+Earth Power
 Nasty Plot
 Zen Headbutt
-Foul Play
+Iron Head
+Stone Edge
+Stealth Rock
+Grass Knot
+Stored Power
 Ally Switch
-Dazzling Gleam
-Focus Punch
-Water Pulse
 Calm Mind
-Sunny Day
-Taunt
+Hail
+Ice Beam
+Blizzard
+Hyper Beam
+Light Screen
 Protect
 Rain Dance
-Dazzling Gleam
-Low Sweep
-Dig
+Safeguard
+Earthquake
 Psychic
 Shadow Ball
-Brick Break
 Double Team
-Shock Wave
+Reflect
+Sandstorm
 Rock Tomb
-Aerial Ace
-Torment
 Facade
 Rest
-Attract
-Thief
-Fling
+Skill Swap
+Charge Beam
 Endure
-Drain Punch
-Will-O-Wisp
 Nasty Plot
-Shadow Claw
-Payback
+Explosion
+Recycle
+Giga Impact
+Rock Polish
 Flash
+Stone Edge
 Gyro Ball
+Stealth Rock
 Psych Up
-Snarl
-Dark Pulse
+Rock Slide
 Sleep Talk
-Poison Jab
+Bulldoze
 Dream Eater
+Grass Knot
 Swagger
 Substitute
-Cut
-Rock Smash
-Feint
-Flatter
-Metal Burst
-Recover
-Sucker Punch
-Torment
-Aerial Ace
-Captivate
+Trick Room
+Ancient Power
+Baton Pass
+Charge Beam
 Confide
-Counter
-Cut
+Defense Curl
 Double Team
 Double-Edge
 Dream Eater
-Dynamic Punch
-Embargo
-Feint Attack
-Flash
-Focus Punch
-Foresight
-Frustration
-Fury Cutter
+Embargo 
+Flash 
+Frustration 
 Gravity
-Headbutt
-Hidden Power
-Hone Claws
-Incinerate
+Heal Block 
+Hidden Power 
+Laser Focus
 Magic Coat
 Mimic
-Moonlight
-Mud-Slap
-Natural Gift
-Nightmare
-Octazooka
-Ominous Wind
+Natural Gift 
 Pain Split
-Power-Up Punch
 Psych Up
-Punishment
-Return
-Rock Smash
-Role Play
-Secret Power
-Seismic Toss
-Shock Wave
-Signal Beam
-Snatch
-Spite
+Psywave 
+Recycle
+Return 
+Rollout
+Secret Power 
+Signal Beam 
+Smack Down
 Swagger
-Telekinesis
-Tickle
+Telekinesis 
 Toxic
-Water Pulse
