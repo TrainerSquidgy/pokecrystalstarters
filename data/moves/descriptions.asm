@@ -252,17 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw AncientpowerDescription
+	dw SingDescription
+	dw NastyPlotDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+NastyPlotDescription:
+	db   "Sharply raises"
+	next "SPCL. ATK.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"

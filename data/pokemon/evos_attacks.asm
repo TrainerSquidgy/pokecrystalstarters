@@ -3365,3 +3365,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+DarkraiEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, DISABLE
+	db 1, OMINOUS_WIND
+	db 11, QUICK_ATTACK
+	db 20, HYPNOSIS
+	db 29, FAINT_ATTACK
+	db 38, NIGHTMARE
+	db 47, DOUBLE_TEAM
+	db 57, HAZE
+	db 66, DARK_VOID
+	db 75, NASTY_PLOT
+	db 84, DREAM_EATER
+	db 0
