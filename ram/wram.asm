@@ -3180,7 +3180,8 @@ wHiddenPowerLoop:: db
 wHiddenPowerType:: db
 wTempHiddenPowerType:: db
 wTempHiddenPowerPower:: db
-	ds 71
+wWhichHiddenPower:: db
+	ds 70
 
 wEventFlags:: flag_array NUM_EVENTS
 

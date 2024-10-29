@@ -83,7 +83,9 @@ HiddenPowerCheckTypeMatchup:
 	ld b, a
 	ld a, [wTempHiddenPowerPower]
 	cp b
+	jr z, .randomcheck
 	jr nc, .skipsaving
+.randompass
 	ld a, b
 	ld [wTempHiddenPowerPower], a
 	ld a, [wTempHiddenPowerType]
@@ -104,6 +106,12 @@ HiddenPowerCheckTypeMatchup:
 	pop af
 	ld [hl], a
 	ret
+
+.randomcheck
+	call Random
+	cp 50 percent + 1
+	jr c, .randompass
+	jr .skipsaving
 	
 HiddenPowerTypesLoop:
 	ld a, [wHiddenPowerLoop]
