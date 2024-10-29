@@ -37,6 +37,28 @@ def append_line_below(file_path, target_line, new_line):
             if target_line in line:  # Check if the current line is the target line
                 file.write(new_line)  # Append the new line below the target line
 
+def delete_line_above(file_path, target_line):
+    with open(file_path, "r") as file:
+        lines = file.readlines()
+
+    with open(file_path, "w") as file:
+        skip_previous = False  # Flag to indicate if we should skip writing the previous line
+        previous_line = ""  # Store the previous line temporarily
+        for line in lines:
+            if skip_previous:
+                skip_previous = False  # Reset the flag and skip writing the previous line
+                previous_line = line  # Update previous_line to the current line for the next iteration
+                continue
+            if target_line in line:
+                skip_previous = True  # Set the flag to skip the previous line
+            else:
+                file.write(previous_line)  # Write the previous line if it wasn't skipped
+            previous_line = line  # Update previous_line to the current line for the next iteration
+
+        # Write the last line if it wasn't flagged for skipping
+        if not skip_previous:
+            file.write(previous_line)
+
 
 def delete_line_below(file_path, target_line):
     with open(file_path, "r") as file:
