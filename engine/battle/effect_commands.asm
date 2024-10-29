@@ -2887,6 +2887,7 @@ EnemyAttackDamage:
 	ret
 
 INCLUDE "engine/battle/move_effects/beat_up.asm"
+INCLUDE "engine/battle/move_effects/pla_hidden_power.asm"
 
 BattleCommand_ClearMissDamage:
 	ld a, [wAttackMissed]
@@ -6814,27 +6815,6 @@ SnowDefenseBoost:
 ; is Ice-type.
 
 ; First, check if Snow is active.
-	ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
 	ret
 	
 BattleCommand_StartWeather:
@@ -6884,28 +6864,5 @@ GetNextTypeMatchupsByte:
 
 
 BattleCommand_AddDamage:
-	push af
-	push hl
-    ld hl, wCurDamage + 1
-    ld a, [hl]           
-    ld d, a              
-    dec hl               
-    ld a, [hl]           
-    ld e, a              
-    ld hl, wCurDamage    
-    ld a, [hl]           
-    add a, e             
-    ld [hl], a           
-    inc hl               
-    ld a, [hl]           
-    adc a, d             
-    ld [hl], a           
-    jr nc, .done         
-    ld a, $FF            
-    ld hl, wCurDamage    
-    ld [hl], a           
-    ld [hli], a         
-.done:
-	pop hl
-	pop af
+	
     ret

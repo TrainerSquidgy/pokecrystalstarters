@@ -169,6 +169,15 @@ ElmsLabExtraOptions:
 	iftrue .ExtraOptions
 	writetext ElmsLabText_NoExtraOptions
 .ExtraOptions
+	writetext ElmsLabText_PLAHiddenPowerAsk
+	yesorno
+	iffalse .NoPLA
+	loadmem wWhichHiddenPower, 1
+	writetext ElmsLabText_PLAHiddenPowerYes
+	waitbutton
+	writetext ElmsLabText_PLAHiddenPowerWarning
+	promptbutton
+.NoPLA
 	writetext ElmsLabText_AlterHiddenPower
 	yesorno
 	iffalse .NoAltering
@@ -201,6 +210,7 @@ ElmsLabExtraOptions:
 	loadmem wAbilitiesActivated, 1
 	writetext ElmsLabText_AbilitiesYes
 .Merge3
+	promptbutton
 	writetext ElmsLabText_AskLimitTutors
 	yesorno
 	iffalse .NoLimit
@@ -216,6 +226,28 @@ ElmsLabExtraOptions:
 	turnobject PLAYER, RIGHT
 .End
 	end
+
+ElmsLabText_PLAHiddenPowerAsk:
+	text "Want to play with"
+	line "LEGENDS ARCEUS"
+	cont "HIDDEN POWER?"
+	done
+	
+ElmsLabText_PLAHiddenPowerYes:
+	text "HIDDEN POWER will"
+	line "be 50 power and"
+	cont "always choose"
+	cont "the best matchup."
+	done
+
+ElmsLabText_PLAHiddenPowerWarning:
+	text "You will now be"
+	line "asked about in-"
+	cont "depth altering."
+	
+	para "This will only"
+	line "affect your DVs."
+	done
 
 ElmsLabText_AskLimitTutors:
 	text "Do you want a"

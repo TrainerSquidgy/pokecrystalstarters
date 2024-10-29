@@ -3176,7 +3176,12 @@ wAlteredHiddenPowerDVs:: db
 wInverseActivated:: db
 wAbilitiesActivated:: db
 wTutorsLimited:: db
-	ds 75
+wHiddenPowerLoop:: db
+wHiddenPowerType:: db
+wTempHiddenPowerType:: db
+wTempHiddenPowerPower:: db
+wWhichHiddenPower:: db
+	ds 70
 
 wEventFlags:: flag_array NUM_EVENTS
 
