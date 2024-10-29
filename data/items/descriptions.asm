@@ -45,7 +45,7 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw SunStoneDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc

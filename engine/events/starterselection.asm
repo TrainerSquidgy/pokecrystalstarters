@@ -75,7 +75,7 @@ SetStarter1::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI 
+	ld a, ELECTIVIRE 
 
 .decrease
 	dec a
@@ -198,7 +198,7 @@ SetStarter2::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, ELECTIVIRE
 
 .decrease
 	dec a
@@ -321,7 +321,7 @@ SetStarter3::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
+	ld a, ELECTIVIRE
 
 .decrease
 	dec a
@@ -619,7 +619,9 @@ PokemonStrings:
 	dw .Tyranitar
 	dw .Lugia
 	dw .Hooh
-	dw .Celebi
+	dw .ElekidS
+	dw .ElectabuzzS
+	dw .Electivire
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -871,7 +873,9 @@ PokemonStrings:
 .Tyranitar	db "TYRANITAR@@"
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
-.Celebi	db "CELEBI@@@@@"
+.ElekidS	db "ELEKID@@@@@"
+.ElectabuzzS	db "ELECTABUZZ@"
+.Electivire		db "ELECTIVIRE@"
 
 
 WhichPokemonInBall1Text:

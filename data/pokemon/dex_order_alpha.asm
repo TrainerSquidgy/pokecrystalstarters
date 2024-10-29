@@ -21,7 +21,6 @@ AlphabeticalPokedexOrder:
 	db BULBASAUR
 	db BUTTERFREE
 	db CATERPIE
-	db CELEBI
 	db CHANSEY
 	db CHARIZARD
 	db CHARMANDER
@@ -253,4 +252,7 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db ELEKIDS
+	db ELECTABUZZS
+	db ELECTIVIRE
 	assert_table_length NUM_POKEMON

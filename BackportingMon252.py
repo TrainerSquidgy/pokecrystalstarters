@@ -12,6 +12,11 @@ def pad_name(name):
     
     return padded_name
 
+def append_line_to_bottom(file_path, new_line):
+    with open(file_path, 'a') as file:  # Open the file in append mode
+        file.write(new_line)  # Write the new line at the bottom of the file
+
+
 def append_line_above(file_path, target_line, new_line):
     with open(file_path, "r") as file:
         lines = file.readlines()
@@ -104,7 +109,7 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	dw {pokemon_name}PokedexEntry\n')
         
         elif file_path == "data/pokemon/dex_entries.asm":
-            append_line_below(file_path, 'CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"', f'{pokemon_name}PokedexEntry::     INCLUDE "data/pokemon/dex_entries/{pokemon_name.lower()}.asm"\n')
+            append_line_to_bottom(file_path, f'{pokemon_name}PokedexEntry::     INCLUDE "data/pokemon/dex_entries/{pokemon_name.lower()}.asm"')
         
         elif file_path == "data/pokemon/dex_order_new.asm":
             append_line_above(file_path, 'assert_table_length NUM_POKEMON', f'	db {pokemon_name.upper()}\n')

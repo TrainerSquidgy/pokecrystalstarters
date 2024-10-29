@@ -910,6 +910,19 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+ElekidSRelearnedEggMoves:
+ElectabuzzSRelearnedEggMoves:
+ElectivireRelearnedEggMoves:
+	db 0
+	db 1, BARRIER
+	db 1, CROSS_CHOP
+	db 1, DYNAMICPUNCH
+	db 1, FIRE_PUNCH
+	db 1, ICE_PUNCH
+	db 1, KARATE_CHOP
+	db 1, MEDITATE
+	db 1, ROLLING_KICK
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0
