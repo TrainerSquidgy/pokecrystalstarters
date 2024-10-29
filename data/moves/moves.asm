@@ -265,5 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
-	move PLA_HIDDEN_POWER, EFFECT_PLA_HIDDEN_POWER, 60, NORMAL, 100, 15, 0
+	move SHOCK_WAVE,   EFFECT_ALWAYS_HIT,         60, ELECTRIC,     100, 20,   0
+	move DISCHARGE,    EFFECT_PARALYZE_HIT,       80, ELECTRIC,     100, 15,  30
+	move GIGA_IMPACT,  EFFECT_HYPER_BEAM,        150, NORMAL,        90,  5,   0
 	assert_table_length NUM_ATTACKS

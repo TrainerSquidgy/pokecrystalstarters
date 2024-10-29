@@ -251,5 +251,7 @@ MoveNames::
 	li "ROCK SMASH"
 	li "WHIRLPOOL"
 	li "BEAT UP"
-	li "HIDDEN POWER"
+	li "SHOCK WAVE"
+	li "DISCHARGE"
+	li "GIGA IMPACT"
 	assert_list_length NUM_ATTACKS
