@@ -623,6 +623,7 @@ PokemonStrings:
 	dw .Lugia
 	dw .Hooh
 	dw .Celebi
+;PYTHONBUFFER3
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -875,6 +876,7 @@ PokemonStrings:
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
 .Celebi	db "CELEBI@@@@@"
+;PYTHONBUFFER4
 
 
 WhichPokemonInBall1Text:
