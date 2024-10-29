@@ -3916,6 +3916,7 @@ TryToRunAwayFromBattle:
 InitBattleMon:
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
+	
 	ld de, wBattleMonSpecies
 	ld bc, MON_OT_ID
 	call CopyBytes
@@ -8345,6 +8346,7 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
 	ld [wHiddenPowerLoop], a
 	ld [wBattleMode], a

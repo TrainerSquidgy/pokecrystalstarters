@@ -3181,7 +3181,9 @@ wHiddenPowerType:: db
 wTempHiddenPowerType:: db
 wTempHiddenPowerPower:: db
 wWhichHiddenPower:: db
-	ds 70
+wMegaEvolutionActive:: db
+wAlreadyMegaEvolved:: db
+	ds 68
 
 wEventFlags:: flag_array NUM_EVENTS
 

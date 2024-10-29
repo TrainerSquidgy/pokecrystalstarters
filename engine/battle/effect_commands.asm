@@ -1,6 +1,46 @@
 DoPlayerTurn:
 	call SetPlayerTurn
-
+	
+	ld a, [wMegaEvolutionActive]
+	and a
+	jr z, .skip_send_out
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr nz, .skip_send_out
+	ld a, [wBattleMonItem]
+	cp MEGA_STONE
+	jr nz, .skip_send_out
+	
+	ld a, [wBattleMonSpecies]
+	inc a
+	ld [wBattleMonSpecies], a
+	ld [wCurPartySpecies], a
+	ld [wCurSpecies] ,a
+	call GetBaseData
+	ld a, [wBattleMonLevel]
+	ld [wCurPartyLevel], a
+	
+	ld hl, wPartyMon1StatExp
+	ld de, wBattleMonMaxHP
+	ld b, TRUE
+	predef CalcMonStats
+	push hl
+	push de
+	push bc
+	ld hl, wBattleMonAttack
+	ld de, wPlayerStats
+	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
+	call CopyBytes
+	farcall ApplyStatusEffectOnPlayerStats
+	farcall BadgeStatBoosts
+	pop hl
+	pop de
+	pop bc
+	
+	farcall SendOutPlayerMon
+	ld a, 1
+	ld [wAlreadyMegaEvolved], a
+.skip_send_out
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	ret nz
@@ -6866,3 +6906,6 @@ GetNextTypeMatchupsByte:
 BattleCommand_AddDamage:
 	
     ret
+	
+	
+
