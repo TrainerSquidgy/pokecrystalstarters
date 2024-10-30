@@ -147,6 +147,11 @@ SECTION "Effect Commands", ROMX
 
 INCLUDE "engine/battle/effect_commands.asm"
 
+SECTION "Mega Pokemon", ROMX
+
+INCLUDE "data/pokemon/mega_pokemon.asm"
+
+
 SECTION "Type Matchups", ROMX
 
 INCLUDE "data/types/type_matchups.asm"

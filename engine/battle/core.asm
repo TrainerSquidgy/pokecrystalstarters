@@ -5004,6 +5004,35 @@ LoadBattleMenu2:
 	ret
 
 BattleMenu_Pack:
+	
+	ld a, [wBattleMonSpecies]
+	farcall CheckIfMonIsInMegaList
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wMegaEvolutionActive]
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr nz, .skip_checking_mega
+	ld a, [wBattleMonItem]
+	cp MEGA_STONE
+	jr nz, .skip_checking_mega
+	
+	ld hl, BattleText_MegaEvolveAsk
+	call StdBattleTextbox
+	lb bc, 1, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	jr c, .skip_checking_mega
+	ld a, [wMenuCursorY]
+	cp $1 ; YES
+	jr nz, .skip_checking_mega
+	farcall MegaEvolvePokemon
+	jp BattleMenu
+	
+	
+.skip_checking_mega
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
