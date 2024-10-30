@@ -1,4 +1,7 @@
 LoadBattleMenu:
+	ld a, [wMegaEvolutionEnabled]
+	and a
+	jr z, .skip_checking_mega	
 	ld a, [wBattleMonSpecies]
 	farcall CheckIfMonIsInMegaList
 	and a

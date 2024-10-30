@@ -133,6 +133,13 @@ NewBarkTownSign:
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
+	opentext
+	givepoke BLASTOISE, 5
+	givepoke VENUSAUR, 5
+	givepoke CHARIZARD, 5
+	givepoke BEEDRILL, 5
+	givepoke ALAKAZAM, 5
+	closetext
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:

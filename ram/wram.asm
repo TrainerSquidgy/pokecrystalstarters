@@ -3186,7 +3186,8 @@ wAlreadyMegaEvolved:: db
 wBackupMaxHP:: ds 2
 wMegaPicture:: db
 wSetMegaEvolutionPicture:: db
-	ds 64
+wMegaEvolutionEnabled:: db
+	ds 63
 
 wEventFlags:: flag_array NUM_EVENTS
 
