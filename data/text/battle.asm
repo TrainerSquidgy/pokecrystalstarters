@@ -130,6 +130,11 @@ BattleText_MonsReflectFaded:
 	line "REFLECT faded!"
 	prompt
 
+BattleText_FunkyRainContinues:
+	text "The FUNKY RAIN"
+	line "continues."
+	prompt
+
 BattleText_RainContinuesToFall:
 	text "Rain continues to"
 	line "fall."
@@ -1121,6 +1126,16 @@ ItStartedToHailText:
 	line "to hail!"
 	prompt
 
+TheRainGotFunkyText:
+	text "The RAIN got"
+	line "a bit funky!"
+	prompt
+
+BattleText_TheFunkyRainSubsidedText:
+	text "The FUNKY RAIN"
+	line "subsided."
+	prompt
+
 PeltedByHailText:
 	text "<USER>"
 	line "is pelted by HAIL!"
@@ -1138,4 +1153,14 @@ BattleText_TheSnowStopped:
 ItStartedToSnowText:
 	text "It started"
 	line "to snow!"
+	prompt
+
+TypingsGotFunkyText:
+	text "The #MON"
+	line "types got funky."
+	prompt
+	
+BattleText_TypesReturnedToNormal:
+	text "Types returned"
+	line "to normal."
 	prompt

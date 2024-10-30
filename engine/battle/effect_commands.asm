@@ -6828,6 +6828,8 @@ BattleCommand_StartWeather:
 	jr z, .sandstorm	
 	cp EFFECT_SNOW
 	jr z, .snow
+	cp EFFECT_FUNKY_RAIN
+	jr z, .funky_rain
 	ld a, WEATHER_HAIL
 	ld hl, ItStartedToHailText
 	jr .start_weather
@@ -6843,6 +6845,11 @@ BattleCommand_StartWeather:
 .sun
 	ld a, WEATHER_SUN
 	ld hl, SunGotBrightText
+	jr .start_weather
+
+.funky_rain
+	ld a, WEATHER_FUNKY_RAIN
+	ld hl, TheRainGotFunkyText
 	jr .start_weather
 
 .rain	

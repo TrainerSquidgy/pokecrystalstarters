@@ -3181,7 +3181,11 @@ wHiddenPowerType:: db
 wTempHiddenPowerType:: db
 wTempHiddenPowerPower:: db
 wWhichHiddenPower:: db
-	ds 70
+wBackupPlayerMonType1:: db
+wBackupPlayerMonType2:: db
+wBackupEnemyMonType1:: db
+wBackupEnemyMonType2:: db
+	ds 66
 
 wEventFlags:: flag_array NUM_EVENTS
 

@@ -1816,6 +1816,13 @@ RainDance:
 	startweather
 	endmove
 
+FunkyRain:
+	checkobedience
+	usedmovetext
+	doturn
+	startweather
+	endmove
+
 SunnyDay:
 	checkobedience
 	usedmovetext

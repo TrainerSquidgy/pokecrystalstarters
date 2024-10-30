@@ -252,8 +252,8 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw FunkyRainDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
 	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
@@ -1227,6 +1227,10 @@ RainDanceDescription:
 	db   "Boosts water-type"
 	next "moves for 5 turns.@"
 
+FunkyRainDescription:
+	db   "Weird weather"
+	next "for 5 turns.@"
+
 SunnyDayDescription:
 	db   "Boosts fire-type"
 	next "moves for 5 turns.@"
@@ -1270,3 +1274,4 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+

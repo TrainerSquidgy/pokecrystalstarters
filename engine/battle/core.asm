@@ -1696,6 +1696,14 @@ HandleWeather:
 	call .PrintWeatherMessage
 	xor a
 	ld [wBattleWeather], a
+	ld a, [wBackupPlayerMonType1]
+	ld [wBattleMonType1], a
+	ld a, [wBackupPlayerMonType2]
+	ld [wBattleMonType2], a
+	ld a, [wBackupEnemyMonType1]
+	ld [wEnemyMonType1], a
+	ld a, [wBackupEnemyMonType2]
+	ld [wEnemyMonType2], a
 	ret
 
 .continues
@@ -1703,6 +1711,9 @@ HandleWeather:
 	call .PrintWeatherMessage
 
 	ld a, [wBattleWeather]
+	cp WEATHER_FUNKY_RAIN
+	jp z, .FunkyRain
+	
 	cp WEATHER_SANDSTORM
 	jr nz, .check_hail
 
@@ -1826,6 +1837,7 @@ HandleWeather:
 	dw BattleText_TheSandstormRages
 	dw BattleText_HailContinuesToFall
 	dw BattleText_SnowContinuesToFall
+	dw BattleText_FunkyRainContinues
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants
@@ -1834,6 +1846,20 @@ HandleWeather:
 	dw BattleText_TheSandstormSubsided
 	dw BattleText_TheHailStopped
 	dw BattleText_TheSnowStopped
+	dw BattleText_TheFunkyRainSubsidedText
+
+.FunkyRain:
+	call FunkyRainRandomType
+	ld [wBattleMonType1], a
+	call FunkyRainRandomType
+	ld [wBattleMonType2], a
+	call FunkyRainRandomType
+	ld [wEnemyMonType1], a
+	call FunkyRainRandomType
+	ld [wEnemyMonType2], a
+	ld hl, TypingsGotFunkyText
+	jp StdBattleTextbox
+	
 
 SubtractHPFromTarget:
 	call SubtractHP
@@ -4050,6 +4076,10 @@ InitEnemyMon:
 	jr nz, .loop
 	ld a, [wCurPartyMon]
 	ld [wCurOTMon], a
+	ld a, [wEnemyMonType1]
+	ld [wBackupEnemyMonType1], a
+	ld a, [wEnemyMonType2]
+	ld [wBackupEnemyMonType2], a
 	ret
 
 SwitchPlayerMon:
@@ -4096,6 +4126,10 @@ SendOutPlayerMon:
 	xor a
 	ld [wEnemyWrapCount], a
 	call SetPlayerTurn
+	ld a, [wBattleMonType1]
+	ld [wBackupPlayerMonType1], a
+	ld a, [wBattleMonType2]
+	ld [wBackupPlayerMonType2], a
 	xor a
 	ld [wNumHits], a
 	ld [wBattleAnimParam], a
@@ -9203,3 +9237,38 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+FunkyRainRandomType:
+	ld a, 17
+	call RandomRange
+	
+	ld c, a
+	ld b, 0
+	
+	ld hl, FunkyRainTypeArray
+	add hl, bc
+	ld a, [hl]
+	ld [wTestingRamSlot1], a
+	ret
+
+FunkyRainTypeArray:
+	db NORMAL
+	db FIGHTING
+	db FLYING
+	db POISON
+	db GROUND
+	db ROCK
+	db FAIRY_P
+	db BUG
+	db GHOST
+	db STEEL
+	db FIRE
+	db WATER
+	db GRASS
+	db ELECTRIC
+	db PSYCHIC_TYPE
+	db ICE
+	db DRAGON
+	db DARK
+	db -1 
+
