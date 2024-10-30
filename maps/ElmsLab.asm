@@ -144,6 +144,7 @@ ElmsLabExtraOptions:
 	yesorno
 	iftrue .ExtraOptions
 	writetext ElmsLabText_NoExtraOptions
+	sjump .StartersDone
 .ExtraOptions
 	writetext ElmsLabText_PLAHiddenPowerAsk
 	yesorno
