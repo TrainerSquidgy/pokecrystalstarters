@@ -1266,6 +1266,7 @@ HaunterEvosAttacks:
 	db 48, DESTINY_BOND
 	db 0 ; no more level-up moves
 
+MegaGengarEvosAttacks:
 GengarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
@@ -1736,6 +1737,7 @@ MagmarEvosAttacks:
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:
+PinsirMegaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, VICEGRIP
 	db 7, FOCUS_ENERGY

@@ -1139,3 +1139,14 @@ ItStartedToSnowText:
 	text "It started"
 	line "to snow!"
 	prompt
+
+ReactingToMegaRingText:
+	text "<USER>"
+	line "reacts to your"
+	line "MEGA RING."
+	prompt
+	
+MegaEvolvedText:
+	text "<USER>"
+	line "MEGA EVOLVED!"
+	prompt

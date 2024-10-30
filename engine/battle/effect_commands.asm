@@ -1,6 +1,10 @@
 DoPlayerTurn:
 	call SetPlayerTurn
 	
+	ld a, [wBattleMonSpecies]
+	cp GENGAR
+	jr nz, .skip_send_out
+	
 	ld a, [wMegaEvolutionActive]
 	and a
 	jr z, .skip_send_out
@@ -11,12 +15,18 @@ DoPlayerTurn:
 	cp MEGA_STONE
 	jr nz, .skip_send_out
 	
-	ld a, [wBattleMonSpecies]
-	inc a
+	ld a, MEGAGENGAR
+	
 	ld [wBattleMonSpecies], a
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies] ,a
 	call GetBaseData
+	ld a, [wBaseType1]
+	ld [wBattleMonType1], a
+	
+	ld a, [wBaseType2]
+	ld [wBattleMonType2], a
+	
 	ld a, [wBattleMonLevel]
 	ld [wCurPartyLevel], a
 	
@@ -38,6 +48,11 @@ DoPlayerTurn:
 	pop bc
 	
 	farcall SendOutPlayerMon
+	ld c, 40
+	call DelayFrames
+	ld hl, MegaEvolvedText
+	call StdBattleTextbox
+	
 	ld a, 1
 	ld [wAlreadyMegaEvolved], a
 .skip_send_out
