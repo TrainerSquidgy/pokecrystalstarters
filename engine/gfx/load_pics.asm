@@ -56,6 +56,18 @@ GetUnownLetter:
 	jr z, .Gengar
 	cp PINSIR
 	jr z, .Pinsir
+	cp CHARIZARD
+	jr z, .Charizard
+	cp BLASTOISE
+	jr z, .Blastoise
+	ret
+.Blastoise
+	ld a, 31
+	ld [wMegaPicture], a
+	ret
+.Charizard
+	ld a, 30
+	ld [wMegaPicture], a
 	ret
 .Venusaur
 	ld a, 27
