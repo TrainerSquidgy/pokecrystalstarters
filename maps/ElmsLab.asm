@@ -197,6 +197,7 @@ ElmsLabExtraOptions:
 	loadmem wTutorsLimited, 1
 	writetext ElmsLabText_LimitTutorsNo
 .Merge4
+	promptbutton
 	writetext ElmsLabText_EvolutionsAsk
 	yesorno
 	iftrue .KeepEvolutions
@@ -209,6 +210,17 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
+	writetext ElmsLabText_AskMegas
+	yesorno
+	iftrue .YesMegas
+	loadmem wMegaEvolutionEnabled, 0
+	writetext ElmsLabText_MegasNo
+	sjump .HandledMegas
+.YesMegas
+	loadmem wMegaEvolutionEnabled, 1
+	writetext ElmsLabText_MegasYes
+.HandledMegas
+	waitbutton
 	writetext ElmsLabText_AskRival
 	yesorno
 	iffalse .NoRival
@@ -226,6 +238,27 @@ ElmsLabExtraOptions:
 	turnobject PLAYER, RIGHT
 .End
 	end
+
+ElmsLabText_AskMegas:
+	text "Do you want to"
+	line "be able to"
+	cont "MEGA EVOLVE?"
+	done
+	
+ElmsLabText_MegasNo:
+	text "No #MON will"
+	line "MEGA EVOLVE."
+	done
+	
+ElmsLabText_MegasYes:
+	text "If your #MON"
+	line "can MEGA EVOLVE,"
+	
+	para "it will be able"
+	line "to as the story"
+	cont "progresses."
+	done
+
 
 ElmsLabText_PLAHiddenPowerAsk:
 	text "Want to play with"
