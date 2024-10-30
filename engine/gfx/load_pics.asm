@@ -62,6 +62,18 @@ GetUnownLetter:
 	jr z, .Blastoise
 	cp BEEDRILL
 	jr z, .Beedrill
+	cp ALAKAZAM
+	jr z, .Alakazam
+	cp HERACROSS
+	jr z, .Heracross
+	ret
+.Alakazam
+	ld a, 33
+	ld [wMegaPicture], a
+	ret
+.Heracross
+	ld a, 34
+	ld [wMegaPicture], a
 	ret
 .Beedrill
 	ld a, 32
