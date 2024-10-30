@@ -126,6 +126,10 @@ NewBarkTownRivalScript:
 	end
 
 NewBarkTownSign:
+	opentext
+	verbosegiveitem MEGA_RING
+	verbosegiveitem MEGA_STONE
+	closetext
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
