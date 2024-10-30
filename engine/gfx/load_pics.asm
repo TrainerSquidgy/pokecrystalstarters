@@ -60,6 +60,12 @@ GetUnownLetter:
 	jr z, .Charizard
 	cp BLASTOISE
 	jr z, .Blastoise
+	cp BEEDRILL
+	jr z, .Beedrill
+	ret
+.Beedrill
+	ld a, 32
+	ld [wMegaPicture], a
 	ret
 .Blastoise
 	ld a, 31

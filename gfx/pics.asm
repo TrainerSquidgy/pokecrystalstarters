@@ -720,6 +720,8 @@ MegaCharizardFrontpic:      INCBIN "gfx/pokemon/megacharizard/front.animated.2bp
 MegaCharizardBackpic:       INCBIN "gfx/pokemon/megacharizard/back.2bpp.lz"
 MegaBlastoiseFrontpic:      INCBIN "gfx/pokemon/megablastoise/front.animated.2bpp.lz"
 MegaBlastoiseBackpic:       INCBIN "gfx/pokemon/megablastoise/back.2bpp.lz"
+MegaBeedrillFrontpic:      INCBIN "gfx/pokemon/megabeedrill/front.animated.2bpp.lz"
+MegaBeedrillBackpic:       INCBIN "gfx/pokemon/megabeedrill/back.2bpp.lz"
 
 ; Seems to be an accidental copy of the previous bank
 

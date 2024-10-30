@@ -91,30 +91,6 @@ ElmsLabStarterChoice:
 	loadmem wIsAStarter, 0
 .HandledHiddenPower
 ; Check to see if MON should Evolve
-	writetext ElmsLabText_EvolutionsAsk
-	yesorno
-	iftrue .KeepEvolutions
-	loadmem wEvolutionsDisabled, 1
-	writetext ElmsLabText_EvolutionsNo
-	waitbutton
-	sjump .HandledEvolutions
-.KeepEvolutions
-	loadmem wEvolutionsDisabled, 0
-	writetext ElmsLabText_EvolutionsYes
-	waitbutton
-.HandledEvolutions
-	writetext ElmsLabText_AskRival
-	yesorno
-	iffalse .NoRival
-	loadmem wRivalCarriesStarter, 1
-	writetext ElmsLabText_RivalChanges
-	waitbutton
-	sjump .StartersDone
-.NoRival
-	loadmem wRivalCarriesStarter, 0
-	writetext ElmsLabText_RivalStillSame
-	waitbutton
-.StartersDone
 	writetext ElmsLabChooseStartersYesText
 	waitbutton
 	sjump .Merge
@@ -221,6 +197,30 @@ ElmsLabExtraOptions:
 	loadmem wTutorsLimited, 1
 	writetext ElmsLabText_LimitTutorsNo
 .Merge4
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
+	writetext ElmsLabText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	sjump .StartersDone
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.StartersDone
 	promptbutton
 	closetext
 	turnobject PLAYER, RIGHT
