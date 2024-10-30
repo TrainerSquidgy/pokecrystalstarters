@@ -3183,7 +3183,8 @@ wTempHiddenPowerPower:: db
 wWhichHiddenPower:: db
 wMegaEvolutionActive:: db
 wAlreadyMegaEvolved:: db
-	ds 68
+wBackupMaxHP:: ds 2
+	ds 66
 
 wEventFlags:: flag_array NUM_EVENTS
 

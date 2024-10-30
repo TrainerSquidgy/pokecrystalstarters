@@ -7353,6 +7353,11 @@ GiveExperiencePoints:
 	call ApplyStatLevelMultiplierOnAllStats
 	callfar ApplyStatusEffectOnPlayerStats
 	callfar BadgeStatBoosts
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr z, .not_mega
+	farcall MegaEvolvePokemon
+.not_mega
 	callfar UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap

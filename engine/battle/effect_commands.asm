@@ -1,66 +1,6 @@
 DoPlayerTurn:
 	call SetPlayerTurn
 	
-	ld a, [wBattleMonSpecies]
-	farcall CheckIfMonIsInMegaList
-	and a
-	jr z, .skip_send_out
-	
-	ld a, [wMegaEvolutionActive]
-	and a
-	jr z, .skip_send_out
-	ld a, [wAlreadyMegaEvolved]
-	and a
-	jr nz, .skip_send_out
-
-;	ld a, [wBattleMonItem]
-;	cp MEGA_STONE
-;	jr nz, .skip_send_out
-	
-	;farcall LoadMegaPokemonStats
-
-	
-;	ld a, SCIZOR
-;	
-;	ld [wBattleMonSpecies], a
-;	ld [wCurPartySpecies], a
-;	ld [wCurSpecies] ,a
-;	call GetBaseData
-	ld a, [wBaseType1]
-	ld [wBattleMonType1], a
-	
-	ld a, [wBaseType2]
-	ld [wBattleMonType2], a
-	
-	ld a, [wBattleMonLevel]
-	ld [wCurPartyLevel], a
-	
-	ld hl, wPartyMon1StatExp
-	ld de, wBattleMonMaxHP
-	ld b, TRUE
-	predef CalcMonStats
-	push hl
-	push de
-	push bc
-	ld hl, wBattleMonAttack
-	ld de, wPlayerStats
-	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
-	call CopyBytes
-	farcall ApplyStatusEffectOnPlayerStats
-	farcall BadgeStatBoosts
-	pop hl
-	pop de
-	pop bc
-	
-	farcall SendOutPlayerMon
-	ld c, 40
-	call DelayFrames
-	ld hl, MegaEvolvedText
-	call StdBattleTextbox
-	
-	ld a, 1
-	ld [wAlreadyMegaEvolved], a
-.skip_send_out
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	ret nz

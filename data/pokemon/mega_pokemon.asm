@@ -1,4 +1,11 @@
 MegaEvolvePokemon:
+		
+	ld hl, wBattleMonMaxHP     ; Load address of wBattleMonMaxHP
+    ld a, [hl]                 ; Load low byte
+    ld [wBackupMaxHP], a         ; Store low byte in temporary location
+    inc hl                     ; Move to high byte
+    ld a, [hl]                 ; Load high byte
+    ld [wBackupMaxHP + 1], a     ; Store high byte in temporary location
 	
 	call GetMegaEvolutionStats
 
@@ -28,12 +35,23 @@ MegaEvolvePokemon:
 	pop de
 	pop bc
 	
+	ld hl, wBackupMaxHP     ; Load address of wBattleMonMaxHP
+    ld a, [hl]                 ; Load low byte
+    ld [wBattleMonMaxHP], a         ; Store low byte in temporary location
+    inc hl                     ; Move to high byte
+    ld a, [hl]                 ; Load high byte
+    ld [wBattleMonMaxHP + 1], a     ; Store high byte in temporary location
+	
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr nz, .already_evolved
+	
 	farcall SendOutPlayerMon
 	ld c, 40
 	call DelayFrames
 	ld hl, MegaEvolvedText
 	call StdBattleTextbox
-	
+.already_evolved	
 	ld a, 1
 	ld [wAlreadyMegaEvolved], a
 	ret
