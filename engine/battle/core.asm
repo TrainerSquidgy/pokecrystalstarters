@@ -8380,6 +8380,7 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
 	ld [wHiddenPowerLoop], a

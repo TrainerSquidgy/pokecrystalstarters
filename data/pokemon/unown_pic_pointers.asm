@@ -53,4 +53,10 @@ UnownPicPointers::
 	dba_pic UnownYBackpic
 	dba_pic UnownZFrontpic
 	dba_pic UnownZBackpic
-	assert_table_length NUM_UNOWN
+	dba_pic MegaVenusaurFrontpic
+	dba_pic MegaVenusaurBackpic
+	dba_pic MegaGengarFrontpic
+	dba_pic MegaGengarBackpic
+	dba_pic MegaPinsirFrontpic
+	dba_pic MegaPinsirBackpic
+	assert_table_length NUM_UNOWN + 3

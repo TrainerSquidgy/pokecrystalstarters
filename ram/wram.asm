@@ -3184,7 +3184,9 @@ wWhichHiddenPower:: db
 wMegaEvolutionActive:: db
 wAlreadyMegaEvolved:: db
 wBackupMaxHP:: ds 2
-	ds 66
+wMegaPicture:: db
+wSetMegaEvolutionPicture:: db
+	ds 64
 
 wEventFlags:: flag_array NUM_EVENTS
 

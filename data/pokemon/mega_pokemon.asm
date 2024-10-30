@@ -1,5 +1,6 @@
 MegaEvolvePokemon:
-		
+	ld a, 1
+	ld [wSetMegaEvolutionPicture], a
 	ld hl, wBattleMonMaxHP     ; Load address of wBattleMonMaxHP
     ld a, [hl]                 ; Load low byte
     ld [wBackupMaxHP], a         ; Store low byte in temporary location
@@ -44,16 +45,15 @@ MegaEvolvePokemon:
 	
 	ld a, [wAlreadyMegaEvolved]
 	and a
-	jr nz, .already_evolved
+	ret nz
 	
+	ld a, 1
+	ld [wAlreadyMegaEvolved], a
 	farcall SendOutPlayerMon
 	ld c, 40
 	call DelayFrames
 	ld hl, MegaEvolvedText
 	call StdBattleTextbox
-.already_evolved	
-	ld a, 1
-	ld [wAlreadyMegaEvolved], a
 	ret
 
 

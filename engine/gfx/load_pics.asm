@@ -46,8 +46,30 @@ GetUnownLetter:
 	ldh a, [hQuotient + 3]
 	inc a
 	ld [wUnownLetter], a
+	ld a, [wSetMegaEvolutionPicture]
+	and a
+	ret nz
+	ld a, [wBattleMonSpecies]
+	cp VENUSAUR
+	jr z, .Venusaur
+	cp GENGAR
+	jr z, .Gengar
+	cp PINSIR
+	jr z, .Pinsir
 	ret
-
+.Venusaur
+	ld a, 27
+	ld [wMegaPicture], a
+	ret
+.Gengar
+	ld a, 28
+	ld [wMegaPicture], a
+	ret
+.Pinsir
+	ld a, 29
+	ld [wMegaPicture], a
+	ret
+	
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -193,6 +215,10 @@ LoadFrontpicTiles:
 	ret
 
 GetMonBackpic:
+	ld a, [wSetMegaEvolutionPicture]
+	and a
+	jr nz, MegaPicture
+	
 	ld a, [wCurPartySpecies]
 	call IsAPokemon
 	ret c
@@ -217,6 +243,51 @@ GetMonBackpic:
 	ld a, c
 	ld d, BANK(UnownPicPointers)
 .ok
+	dec a
+	ld bc, 6
+	call AddNTimes
+	ld bc, 3
+	add hl, bc
+	ld a, d
+	call GetFarByte
+	call FixPicBank
+	push af
+	inc hl
+	ld a, d
+	call GetFarWord
+	ld de, wDecompressScratch
+	pop af
+	call FarDecompress
+	ld hl, wDecompressScratch
+	ld c, 6 * 6
+	call FixBackpicAlignment
+	pop hl
+	ld de, wDecompressScratch
+	ldh a, [hROMBank]
+	ld b, a
+	call Get2bpp
+	pop af
+	ldh [rSVBK], a
+	ret
+	
+MegaPicture:
+	ld a, [wCurPartySpecies]
+	call IsAPokemon
+	ret c
+
+	ld a, [wMegaPicture]
+	ld c, a
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
+	push de
+
+	; These are assumed to be at the same address in their respective banks.
+	assert PokemonPicPointers == UnownPicPointers
+	ld hl, PokemonPicPointers
+	ld a, c
+	ld d, BANK(UnownPicPointers)
 	dec a
 	ld bc, 6
 	call AddNTimes
