@@ -2352,6 +2352,12 @@ BattleCommand_SuperEffectiveLoopText:
 	; fallthrough
 
 BattleCommand_SuperEffectiveText:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_super_effective
+	ld a, [wInverseActivated]
+	and a
+	jr z, .InverseText
 	ld a, [wTypeModifier]
 	and $7f
 	cp EFFECTIVE
@@ -2359,6 +2365,39 @@ BattleCommand_SuperEffectiveText:
 	ld hl, SuperEffectiveText
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
+	jr .print
+.InverseText:
+	ld a, [wTypeModifier]
+	and $7f
+	cp EFFECTIVE
+	ret z
+	ld hl, NotVeryEffectiveText
+	jr nc, .print
+	ld hl, SuperEffectiveText
+	jr .print
+
+.player_super_effective
+	ld a, [wInverseActivated]
+	and a
+	jr nz, .PlayerInverseText
+	ld a, [wTypeModifier]
+	and $7f
+	cp EFFECTIVE
+	ld hl, SuperEffectiveText
+	jr nc, .print
+	ld hl, NotVeryEffectiveText
+	jr .print
+.PlayerInverseText:
+	ld a, [wTypeModifier]
+	and $7f
+	cp EFFECTIVE
+	ret z
+	ld hl, NotVeryEffectiveText
+	jr nc, .print
+	ld hl, SuperEffectiveText
+	jr .print
+
+
 .print
 	jp StdBattleTextbox
 	
