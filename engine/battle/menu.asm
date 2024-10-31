@@ -1,5 +1,25 @@
 LoadBattleMenu:
+	ld a, [wMegaEvolutionEnabled]
+	and a
+	jr z, .skip_checking_mega	
+	ld a, [wBattleMonSpecies]
+	farcall CheckIfMonIsInMegaList
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wMegaEvolutionActive]
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr nz, .skip_checking_mega
+	ld a, [wBattleMonItem]
+	cp MEGA_STONE
+	jr nz, .skip_checking_mega
+	ld hl, MegaMenuHeader
+	jr .MenuMerge
+.skip_checking_mega
 	ld hl, BattleMenuHeader
+.MenuMerge
 	call LoadMenuHeader
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
@@ -45,6 +65,25 @@ BattleMenuHeader:
 	db "FIGHT@"
 	db "<PKMN>@"
 	db "PACK@"
+	db "RUN@"
+	
+MegaMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 8, 12, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	dn 2, 2 ; rows, columns
+	db 6 ; spacing
+	dba .Text
+	dbw BANK(@), NULL
+
+.Text:
+	db "FIGHT@"
+	db "<PKMN>@"
+	db "MEGA@"
 	db "RUN@"
 
 SafariBattleMenuHeader:

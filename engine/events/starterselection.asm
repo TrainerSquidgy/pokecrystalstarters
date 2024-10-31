@@ -322,7 +322,7 @@ SetStarter3::
 	and a
 	jr nz, .decrease
 	ld a, WALK_WAKE
-
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
