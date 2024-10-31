@@ -1988,7 +1988,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3373,8 +3373,13 @@ FalinksEvosAttacks:
 	db 5, ROCK_SMASH
 	db 10, FOCUS_ENERGY
 	db 15, HEADBUTT
+	db 20, BULK_UP
 	db 25, ENDURE
 	db 30, REVERSAL
+	db 35, IMPRESSION
+	db 40, NO_RETREAT
+	db 45, IRON_DEFENSE
+	db 50, CLOSE_COMBAT
 	db 55, MEGAHORN
 	db 60, COUNTER
 	db 0 ; no more level-up moves

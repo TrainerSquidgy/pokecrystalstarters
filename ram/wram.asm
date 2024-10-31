@@ -3187,7 +3187,9 @@ wBackupMaxHP:: ds 2
 wMegaPicture:: db
 wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
-	ds 63
+wPlayerNoRetreat:: db
+wEnemyNoRetreat:: db	
+	ds 61
 
 wEventFlags:: flag_array NUM_EVENTS
 

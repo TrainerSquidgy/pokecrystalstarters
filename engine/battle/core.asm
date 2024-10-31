@@ -3646,6 +3646,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
+	ld [wEnemyNoRetreat], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
@@ -4129,6 +4130,7 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
+	ld [wPlayerNoRetreat], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
@@ -8383,6 +8385,7 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wSetMegaEvolutionPicture], a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a

@@ -2113,3 +2113,59 @@ PLAHiddenPower:
 	buildopponentrage
 	kingsrock
 	endmove
+	
+BulkUp:
+	checkobedience
+	usedmovetext
+	doturn
+	bulkup
+	endmove
+	
+FirstImpression:
+	checkobedience
+	usedmovetext
+	doturn
+	firstimpression
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+NoRetreat:
+	checkobedience
+	usedmovetext
+	doturn
+	noretreat
+	endmove
+	
+CloseCombat:
+		checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	closecombat
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

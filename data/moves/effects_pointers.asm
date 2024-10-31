@@ -162,4 +162,8 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw PLAHiddenPower
+	dw BulkUp
+	dw FirstImpression
+	dw NoRetreat
+	dw CloseCombat
 	assert_table_length NUM_MOVE_EFFECTS

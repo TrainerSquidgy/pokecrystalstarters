@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
+Pokémon: Falinks
+1: Tackle
+1: Protect
+5: Rock Smash
+10: Focus Energy
+15: Headbutt
+20: Bulk Up
+25: Endure
+30: Reversal
+35: First Imprss
+40: No Retreat
+45: Iron Defense
+50: Close Combat
+55: Megahorn
+60: Counter
  

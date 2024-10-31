@@ -179,4 +179,8 @@ BattleCommandPointers:
 	dw BattleCommand_Curl
 	dw BattleCommand_StartWeather
 	dw BattleCommand_PLAHiddenPower
+	dw BattleCommand_BulkUp
+	dw BattleCommand_FirstImpression
+	dw BattleCommand_NoRetreat
+	dw BattleCommand_CloseCombat
 	assert_table_length NUM_EFFECT_COMMANDS

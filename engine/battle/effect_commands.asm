@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1916,10 +1914,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5590,10 +5584,7 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -5602,10 +5593,7 @@ BattleCommand_Charge:
 	ld hl, .BattleLoweredHeadText
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6869,3 +6857,77 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_BulkUp:
+    call ResetMiss
+    call BattleCommand_AttackUp
+    call BattleCommand_StatUpMessage
+    call ResetMiss
+    call BattleCommand_DefenseUp
+    jp BattleCommand_StatUpMessage
+	
+BattleCommand_FirstImpression:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	ld a, [wEnemyTurnsTaken]
+	dec a
+	and a
+	jr nz, .failed
+	ret
+.player
+	ld a, [wPlayerTurnsTaken]
+	dec a
+	and a
+	ret z
+.failed
+	ld a, 1
+	ld [wAttackMissed], a
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
+BattleCommand_NoRetreat:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	ld a, [wEnemyNoRetreat]
+	and a
+	jr nz, .failed
+	ld hl, wPlayerSubStatus5
+	bit SUBSTATUS_CANT_RUN, [hl]
+	jr nz, .skip_limit_enemy
+	set SUBSTATUS_CANT_RUN, [hl]
+	ld a, 1
+	ld [wEnemyNoRetreat], a
+.skip_limit_enemy
+	call BattleCommand_AllStatsUp
+	ret
+	
+.player
+	ld a, [wPlayerNoRetreat]
+	and a
+	jr nz, .failed
+	ld hl, wEnemySubStatus5
+	bit SUBSTATUS_CANT_RUN, [hl]
+	jr nz, .skip_limit_player
+	set SUBSTATUS_CANT_RUN, [hl]
+	ld a, 1
+	ld [wPlayerNoRetreat], a
+.skip_limit_player
+	call BattleCommand_AllStatsUp
+	ret
+	
+	
+.failed
+	ld a, 1
+	ld [wAttackMissed], a
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
+BattleCommand_CloseCombat:
+	call BattleCommand_SwitchTurn
+    call ResetMiss
+    call BattleCommand_DefenseDown2
+    call BattleCommand_StatDownMessage
+    call ResetMiss
+    call BattleCommand_SpecialDefenseDown2
+    jp BattleCommand_StatDownMessage

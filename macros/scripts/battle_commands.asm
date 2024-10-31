@@ -179,6 +179,10 @@ ENDM
 	command curl                    ; af
 	command startweather
 	command plahiddenpower
+	command bulkup
+	command firstimpression
+	command noretreat
+	command closecombat
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
