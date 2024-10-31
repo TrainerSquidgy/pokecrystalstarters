@@ -2383,6 +2383,7 @@ BattleCommand_SuperEffectiveText:
 	ld a, [wTypeModifier]
 	and $7f
 	cp EFFECTIVE
+	ret z
 	ld hl, SuperEffectiveText
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
