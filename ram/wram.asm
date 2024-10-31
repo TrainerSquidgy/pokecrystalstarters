@@ -3176,7 +3176,19 @@ wAlteredHiddenPowerDVs:: db
 wAlreadyPerformed:: db
 wInverseActivated:: db
 wAbilitiesActivated:: db
-	ds 75
+wTutorsLimited:: db
+wHiddenPowerLoop:: db
+wHiddenPowerType:: db
+wTempHiddenPowerType:: db
+wTempHiddenPowerPower:: db
+wWhichHiddenPower:: db
+wMegaEvolutionActive:: db
+wAlreadyMegaEvolved:: db
+wBackupMaxHP:: ds 2
+wMegaPicture:: db
+wSetMegaEvolutionPicture:: db
+wMegaEvolutionEnabled:: db
+	ds 62
 
 wEventFlags:: flag_array NUM_EVENTS
 

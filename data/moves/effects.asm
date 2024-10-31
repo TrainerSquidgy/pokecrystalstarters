@@ -2093,16 +2093,16 @@ Snow:
 	startweather
 	endmove
 
-Hex:
+PLAHiddenPower:
 	checkobedience
 	usedmovetext
 	doturn
 	critical
+	plahiddenpower
 	damagestats
 	damagecalc
 	stab
 	damagevariation
-	hex
 	checkhit
 	moveanim
 	failuretext
@@ -2113,6 +2113,27 @@ Hex:
 	buildopponentrage
 	kingsrock
 	endmove
+
+Hex:
+ 	checkobedience
+ 	usedmovetext
+ 	doturn
+ 	critical
+ 	damagestats
+ 	damagecalc
+ 	stab
+ 	damagevariation
+ 	hex
+ 	checkhit
+ 	moveanim
+ 	failuretext
+ 	applydamage
+ 	criticaltext
+ 	supereffectivetext
+ 	checkfaint
+ 	buildopponentrage
+ 	kingsrock
+ 	endmove	
 	
 Memento:
 	checkobedience

@@ -163,4 +163,5 @@ MoveEffectsPointers:
 	dw Snow
 	dw Hex
 	dw Memento
+	dw PLAHiddenPower
 	assert_table_length NUM_MOVE_EFFECTS

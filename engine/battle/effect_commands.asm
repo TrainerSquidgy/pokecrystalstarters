@@ -1,6 +1,6 @@
 DoPlayerTurn:
 	call SetPlayerTurn
-
+	
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	ret nz
@@ -2377,7 +2377,6 @@ BattleCommand_SuperEffectiveText:
 	ld a, [wTypeModifier]
 	and $7f
 	cp EFFECTIVE
-	ret z
 	ld hl, SuperEffectiveText
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
@@ -2921,6 +2920,7 @@ EnemyAttackDamage:
 	ret
 
 INCLUDE "engine/battle/move_effects/beat_up.asm"
+INCLUDE "engine/battle/move_effects/pla_hidden_power.asm"
 
 BattleCommand_ClearMissDamage:
 	ld a, [wAttackMissed]
@@ -6926,3 +6926,34 @@ GetNextTypeMatchupsByte:
    ld a, BANK(TypeMatchups)
    call GetFarByte
    ret
+
+
+BattleCommand_AddDamage:
+	push af
+	push hl
+    ld hl, wCurDamage + 1
+    ld a, [hl]           
+    ld d, a              
+    dec hl               
+    ld a, [hl]           
+    ld e, a              
+    ld hl, wCurDamage    
+    ld a, [hl]           
+    add a, e             
+    ld [hl], a           
+    inc hl               
+    ld a, [hl]           
+    adc a, d             
+    ld [hl], a           
+    jr nc, .done         
+    ld a, $FF            
+    ld hl, wCurDamage    
+    ld [hl], a           
+    ld [hli], a         
+.done:
+	pop hl
+	pop af
+    ret
+	
+	
+

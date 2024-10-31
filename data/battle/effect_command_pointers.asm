@@ -180,4 +180,5 @@ BattleCommandPointers:
 	dw BattleCommand_StartWeather
 	dw BattleCommand_Hex
 	dw BattleCommand_Memento
+	dw BattleCommand_PLAHiddenPower
 	assert_table_length NUM_EFFECT_COMMANDS

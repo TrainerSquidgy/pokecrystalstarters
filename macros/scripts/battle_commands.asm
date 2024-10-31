@@ -180,6 +180,7 @@ ENDM
 	command startweather
 	command hex
 	command memento
+	command plahiddenpower
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
