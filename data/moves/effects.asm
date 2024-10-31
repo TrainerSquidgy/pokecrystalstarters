@@ -2125,3 +2125,24 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
+PLAHiddenPower:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	plahiddenpower
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

@@ -91,30 +91,6 @@ ElmsLabStarterChoice:
 	loadmem wIsAStarter, 0
 .HandledHiddenPower
 ; Check to see if MON should Evolve
-	writetext ElmsLabText_EvolutionsAsk
-	yesorno
-	iftrue .KeepEvolutions
-	loadmem wEvolutionsDisabled, 1
-	writetext ElmsLabText_EvolutionsNo
-	waitbutton
-	sjump .HandledEvolutions
-.KeepEvolutions
-	loadmem wEvolutionsDisabled, 0
-	writetext ElmsLabText_EvolutionsYes
-	waitbutton
-.HandledEvolutions
-	writetext ElmsLabText_AskRival
-	yesorno
-	iffalse .NoRival
-	loadmem wRivalCarriesStarter, 1
-	writetext ElmsLabText_RivalChanges
-	waitbutton
-	sjump .StartersDone
-.NoRival
-	loadmem wRivalCarriesStarter, 0
-	writetext ElmsLabText_RivalStillSame
-	waitbutton
-.StartersDone
 	writetext ElmsLabChooseStartersYesText
 	waitbutton
 	sjump .Merge
@@ -142,10 +118,43 @@ ElmsLabStarterChoice:
 .End
 	end
 	
-ElmsLabAlteredHiddenPower:
+
+	
+ElmsLabtext_InverseNo:
+	text "All type matchups"
+	line "remain normal."
+	done
+
+ElmsLabText_InverseAsk:
+	text "Do you want to"
+	line "use INVERSE"
+	cont "type matchups?"
+	done
+
+ElmsLabtext_InverseYes:
+	text "All matchups"
+	line "are INVERTED."
+	done
+
+ElmsLabExtraOptions:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
 	opentext
+	writetext ElmsLabText_AskExtraOptions
+	yesorno
+	iftrue .ExtraOptions
+	writetext ElmsLabText_NoExtraOptions
+	sjump .StartersDone
+.ExtraOptions
+	writetext ElmsLabText_PLAHiddenPowerAsk
+	yesorno
+	iffalse .NoPLA
+	loadmem wWhichHiddenPower, 1
+	writetext ElmsLabText_PLAHiddenPowerYes
+	waitbutton
+	writetext ElmsLabText_PLAHiddenPowerWarning
+	promptbutton
+.NoPLA
 	writetext ElmsLabText_AlterHiddenPower
 	yesorno
 	iffalse .NoAltering
@@ -156,12 +165,177 @@ ElmsLabAlteredHiddenPower:
 .NoAltering
 	writetext ElmsLabText_NoAlteredHiddenPower
 .Merge
+	promptbutton
+	writetext ElmsLabText_InverseAsk
+	yesorno
+	iftrue .InverseYes
+	loadmem wInverseActivated, 0
+	writetext ElmsLabtext_InverseNo
+	sjump .Merge2
+.InverseYes
+	loadmem wInverseActivated, 1
+	writetext ElmsLabtext_InverseYes
+.Merge2
+	promptbutton
+	writetext ElmsLabText_AbilitiesAsk
+	yesorno
+	iftrue .AbilitiesYes
+	loadmem wAbilitiesActivated, 0
+	writetext ElmsLabText_AbilitiesNo
+	sjump .Merge3
+.AbilitiesYes
+	loadmem wAbilitiesActivated, 1
+	writetext ElmsLabText_AbilitiesYes
+.Merge3
+	promptbutton
+	writetext ElmsLabText_AskLimitTutors
+	yesorno
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	sjump .Merge4
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+.Merge4
+	promptbutton
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
 	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
+	writetext ElmsLabText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
+	writetext ElmsLabText_AskMegas
+	yesorno
+	iftrue .YesMegas
+	loadmem wMegaEvolutionEnabled, 0
+	writetext ElmsLabText_MegasNo
+	sjump .HandledMegas
+.YesMegas
+	loadmem wMegaEvolutionEnabled, 1
+	writetext ElmsLabText_MegasYes
+.HandledMegas
+	waitbutton
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	sjump .StartersDone
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.StartersDone
+	promptbutton
 	closetext
 	turnobject PLAYER, RIGHT
 .End
 	end
+
+ElmsLabText_AskMegas:
+	text "Do you want to"
+	line "be able to"
+	cont "MEGA EVOLVE?"
+	done
 	
+ElmsLabText_MegasNo:
+	text "No #MON will"
+	line "MEGA EVOLVE."
+	done
+	
+ElmsLabText_MegasYes:
+	text "If your #MON"
+	line "can MEGA EVOLVE,"
+	
+	para "it will be able"
+	line "to as the story"
+	cont "progresses."
+	done
+
+
+ElmsLabText_PLAHiddenPowerAsk:
+	text "Want to play with"
+	line "LEGENDS ARCEUS"
+	cont "HIDDEN POWER?"
+	done
+	
+ElmsLabText_PLAHiddenPowerYes:
+	text "HIDDEN POWER will"
+	line "be 50 power and"
+	cont "always choose"
+	cont "the best matchup."
+	done
+
+ElmsLabText_PLAHiddenPowerWarning:
+	text "You will now be"
+	line "asked about in-"
+	cont "depth altering."
+	
+	para "This will only"
+	line "affect your DVs."
+	done
+
+ElmsLabText_AskLimitTutors:
+	text "Do you want a"
+	line "limit on the"
+	cont "amount of times"
+	cont "you can use the"
+	cont "new TUTORS?"
+	done
+	
+ElmsLabText_LimitTutorsYes:
+	text "You can only use"
+	line "one new TUTOR a"
+	cont "maximum of four"
+	cont "times and you"
+	cont "can only pick"
+	cont "one TUTOR."
+	done
+
+ElmsLabText_LimitTutorsNo:
+	text "You may use both"
+	line "TUTORS unlimited"
+	cont "times."
+	done
+
+ElmsLabText_AskExtraOptions:
+	text "Set EXTRA OPTIONS"
+	line "for your game?"
+	done
+
+ElmsLabText_NoExtraOptions:
+	text "No extra changes"
+	line "have been made."
+	done
+
+ElmsLabText_AbilitiesAsk:
+	text "Do you want your"
+	line "#MON to have"
+	cont "an ABILITY if one"
+	cont "is coded for it?"
+	done
+
+ElmsLabText_AbilitiesNo:
+	text "Your #MON will"
+	line "not have any"
+	cont "extra ABILITY."
+	done
+
+ElmsLabText_AbilitiesYes:
+	text "If your #MON"
+	line "has an ability"
+	cont "coded in, it will"
+	cont "be activated."
+	done 
+
 ElmsLabText_AlterHiddenPower:
 	text "Want to modify"
 	line "HIDDEN POWER?"
@@ -1831,8 +2005,8 @@ ElmsLab_MapEvents:
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
-	bg_event  1,  2, BGEVENT_READ, ElmsLabAlteredHiddenPower
-
+	bg_event  1,  2, BGEVENT_READ, ElmsLabExtraOptions
+	
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
