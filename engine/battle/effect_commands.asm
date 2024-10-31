@@ -6860,29 +6860,6 @@ BattleCommand_Bulwark:
 	ret
 
 SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-	ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
 	ret
 	
 BattleCommand_StartWeather:
