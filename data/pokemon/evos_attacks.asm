@@ -3365,3 +3365,16 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+	
+FalinksEvosAttacks:
+	db 0; no more Evolutions
+	db 1, PROTECT
+	db 1, TACKLE
+	db 5, ROCK_SMASH
+	db 10, FOCUS_ENERGY
+	db 15, HEADBUTT
+	db 25, ENDURE
+	db 30, REVERSAL
+	db 55, MEGAHORN
+	db 60, COUNTER
+	db 0 ; no more level-up moves
