@@ -76,7 +76,6 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, GOUGE_FIRE
-
 .decrease
 	dec a
 	ld [hl], a
@@ -85,7 +84,8 @@ SetStarter1::
 .d_up
 	ld hl, wElmPokemon1
 	ld a, [hl]
-	cp 250
+	cp 251
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -198,8 +198,8 @@ SetStarter2::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
-
+	ld a, GOUGE_FIRE
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -208,7 +208,8 @@ SetStarter2::
 .d_up
 	ld hl, wElmPokemon2
 	ld a, [hl]
-	cp 250
+	cp 251
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -321,8 +322,8 @@ SetStarter3::
 	ld a, [hl]
 	and a
 	jr nz, .decrease
-	ld a, CELEBI
-
+	ld a, GOUGE_FIRE
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -331,7 +332,8 @@ SetStarter3::
 .d_up
 	ld hl, wElmPokemon3
 	ld a, [hl]
-	cp 250
+	cp 251
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -621,6 +623,7 @@ PokemonStrings:
 	dw .Hooh
 	dw .Celebi
 	dw .GougingFire
+;PYTHONBUFFER3
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -874,6 +877,7 @@ PokemonStrings:
 .Hooh	db "HO-OH@@@@@@"
 .Celebi	db "CELEBI@@@@@"
 .GougingFire db "GOUGE FIRE@"
+;PYTHONBUFFER4
 
 
 WhichPokemonInBall1Text:
