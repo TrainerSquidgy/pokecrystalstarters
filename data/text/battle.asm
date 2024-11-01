@@ -214,6 +214,11 @@ BattleText_MonFainted:
 BattleText_UseNextMon:
 	text "Use next #MON?"
 	done
+	
+BattleText_MegaEvolveAsk:
+	text "MEGA EVOLVE"
+	line "your #MON?"
+	done
 
 UnusedRivalWinText: ; unreferenced
 	text "<RIVAL>: Yes!"
@@ -1167,4 +1172,9 @@ MadeTargetDrowzy:
 	line "made"
 	cont "<TARGET>"
 	cont "drowzy!"
+	prompt
+
+MegaEvolvedText:
+	text "<USER>"
+	line "MEGA EVOLVED!"
 	prompt

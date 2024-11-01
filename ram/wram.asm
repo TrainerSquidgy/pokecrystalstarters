@@ -3182,7 +3182,18 @@ wPlayerAteABerry:: db
 wEnemyAteABerry:: db
 wPlayerYawning:: db
 wEnemyYawning:: db
-	ds 69
+wHiddenPowerLoop:: db
+wHiddenPowerType:: db
+wTempHiddenPowerType:: db
+wTempHiddenPowerPower:: db
+wWhichHiddenPower:: db
+wMegaEvolutionActive:: db
+wAlreadyMegaEvolved:: db
+wBackupMaxHP:: ds 2
+wMegaPicture:: db
+wSetMegaEvolutionPicture:: db
+wMegaEvolutionEnabled:: db
+	ds 59
 
 wEventFlags:: flag_array NUM_EVENTS
 

@@ -76,7 +76,6 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, OINKOLOGNEF 
-
 .decrease
 	dec a
 	ld [hl], a
@@ -199,7 +198,6 @@ SetStarter2::
 	and a
 	jr nz, .decrease
 	ld a, OINKOLOGNEF
-
 .decrease
 	dec a
 	ld [hl], a
@@ -322,7 +320,6 @@ SetStarter3::
 	and a
 	jr nz, .decrease
 	ld a, OINKOLOGNEF
-
 .decrease
 	dec a
 	ld [hl], a
@@ -331,6 +328,7 @@ SetStarter3::
 .d_up
 	ld hl, wElmPokemon3
 	ld a, [hl]
+
 	cp 252
 	jr c, .increase
 	ld a, 0
