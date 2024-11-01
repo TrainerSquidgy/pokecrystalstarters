@@ -1291,7 +1291,14 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
+	push af
 	ld hl, TypeMatchups
+	ld a, [wInverseActivated]
+	and a
+	jr z, .got_inverted
+	ld hl, InverseTypeMatchups
+.got_inverted
+	pop af
 .TypesLoop:
 	call GetNextTypeMatchupsByte
     inc hl
@@ -1414,7 +1421,14 @@ CheckTypeMatchup:
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
+	push af
 	ld hl, TypeMatchups
+	ld a, [wInverseActivated]
+	and a
+	jr z, .got_inverted
+	ld hl, InverseTypeMatchups
+.got_inverted
+	pop af
 .TypesLoop:
 	call GetNextTypeMatchupsByte
 	inc hl
