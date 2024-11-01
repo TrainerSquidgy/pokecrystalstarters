@@ -2869,7 +2869,6 @@ EnemyAttackDamage:
 	ret
 
 INCLUDE "engine/battle/move_effects/beat_up.asm"
-INCLUDE "engine/battle/move_effects/pla_hidden_power.asm"
 
 BattleCommand_ClearMissDamage:
 	ld a, [wAttackMissed]
