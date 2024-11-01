@@ -1789,6 +1789,7 @@ Moonlight:
 	healnite
 	endmove
 
+PLAHiddenPower:
 HiddenPower:
 	checkobedience
 	usedmovetext
