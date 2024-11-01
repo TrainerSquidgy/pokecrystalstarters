@@ -8,7 +8,7 @@ BattleCommand_HiddenPower:
 	farcall HiddenPowerDamage
 	ret
 .PLAHiddenPower
-	call BattleCommand_PLAHiddenPower
+	farcall BattleCommand_PLAHiddenPower
 	ld a, 50
 	push af
 	ld a, BATTLE_VARS_MOVE_POWER

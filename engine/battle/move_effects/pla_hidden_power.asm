@@ -24,7 +24,7 @@ HiddenPowerCheckTypeMatchup:
 .inverse
 	ld hl, InverseTypeMatchups
 .TypesLoop:
-	call GetNextTypeMatchupsByte
+	call GetNextTypeMatchupsByte2
     inc hl
 	cp -1
 	jr z, .End
@@ -39,7 +39,7 @@ HiddenPowerCheckTypeMatchup:
 .Next:
 	cp d
 	jr nz, .Nope
-	call GetNextTypeMatchupsByte
+	call GetNextTypeMatchupsByte2
 	inc hl
 	cp b
 	jr z, .Yup
@@ -58,7 +58,7 @@ HiddenPowerCheckTypeMatchup:
 	ldh [hDividend + 0], a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
-	call GetNextTypeMatchupsByte
+	call GetNextTypeMatchupsByte2
 	inc hl
 	ldh [hMultiplicand + 2], a
 	ld a, [wTypeMatchup]
@@ -220,3 +220,8 @@ HiddenPowerTypesLoop:
 	ld a, FAIRY_S
 	ld [wTempHiddenPowerType], a
 	ret
+	
+GetNextTypeMatchupsByte2:
+   ld a, BANK(TypeMatchups)
+   call GetFarByte
+   ret
