@@ -166,17 +166,6 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_NoAlteredHiddenPower
 .Merge
 	promptbutton
-	writetext ElmsLabText_InverseAsk
-	yesorno
-	iftrue .InverseYes
-	loadmem wInverseActivated, 0
-	writetext ElmsLabtext_InverseNo
-	sjump .Merge2
-.InverseYes
-	loadmem wInverseActivated, 1
-	writetext ElmsLabtext_InverseYes
-.Merge2
-	promptbutton
 	writetext ElmsLabText_AbilitiesAsk
 	yesorno
 	iftrue .AbilitiesYes
