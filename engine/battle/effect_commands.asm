@@ -633,7 +633,6 @@ BattleCommand_CheckObedience:
 	ldh a, [hBattleTurn]
 	and a
 	ret nz
-
 	call CheckUserIsCharging
 	ret nz
 
@@ -939,6 +938,31 @@ IgnoreSleepOnly:
 
 BattleCommand_UsedMoveText:
 	farcall DisplayUsedMoveText
+	
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_taunt
+	ld a, [wEnemyTauntCount]
+	and a
+	ret z
+	farcall CheckEnemyTaunt
+	ret nc
+	jr .taunted
+	
+.player_taunt
+	ld a, [wPlayerTauntCount]
+	and a
+	ret z
+	farcall CheckPlayerTaunt
+	ret nc
+.taunted
+	ld a, 1
+	ld [wEffectFailed], a
+	ld [wAttackMissed], a 
+	ld hl, BattleText_YouAreTaunted
+	jp StdBattleTextbox
+
+.not_taunted
 	ret
 
 CheckUserIsCharging:
@@ -954,7 +978,6 @@ CheckUserIsCharging:
 BattleCommand_DoTurn:
 	call CheckUserIsCharging
 	ret nz
-
 	ld hl, wBattleMonPP
 	ld de, wPlayerSubStatus3
 	ld bc, wPlayerTurnsTaken
@@ -6898,3 +6921,26 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_Taunt:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+	ld a, [wPlayerTauntCount]
+	and a
+	jr nz, .failed
+	ld a, 2
+	ld [wPlayerTauntCount], a
+	jr .taunttext
+.player
+	ld a, [wEnemyTauntCount]
+	and a
+	jr nz, .failed
+	ld a, 2
+	ld [wEnemyTauntCount], a
+.taunttext
+	ld hl, BattleText_FoeTaunted
+	jp StdBattleTextbox
+	
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed

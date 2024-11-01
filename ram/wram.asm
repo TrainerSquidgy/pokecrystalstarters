@@ -3187,7 +3187,9 @@ wBackupMaxHP:: ds 2
 wMegaPicture:: db
 wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
-	ds 63
+wPlayerTauntCount:: db
+wEnemyTauntCount:: db
+	ds 61
 
 wEventFlags:: flag_array NUM_EVENTS
 

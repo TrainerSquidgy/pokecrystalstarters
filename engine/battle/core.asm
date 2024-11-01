@@ -292,8 +292,24 @@ HandleBetweenTurnEffects:
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
+	call HandleTaunt
 	call LoadTilemapToTempTilemap
 	jp HandleEncore
+
+HandleTaunt:
+	call SetPlayerTurn
+	ld hl, wPlayerTauntCount
+	call .handle
+	call SetEnemyTurn
+	ld hl, wEnemyTauntCount
+.handle
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	ld hl, NoLongerTauntedText
+	jp StdBattleTextbox
 
 CheckFaint_PlayerThenEnemy:
 ; BUG: Perish Song and Spikes can leave a Pokemon with 0 HP and not faint (see docs/bugs_and_glitches.md)
@@ -3646,6 +3662,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
+	ld [wEnemyTauntCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
@@ -4129,6 +4146,7 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
+	ld [wPlayerTauntCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
@@ -5583,6 +5601,21 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
+	
+	ld a, [wPlayerTauntCount]
+	and a
+	jr z, .not_taunted
+	ld a, [wMenuCursorY]
+	ld hl, wBattleMonMoves
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	ld hl, IsStatusMove
+	call IsInByteArray
+	jr c, .taunted
+
+.not_taunted
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -5600,6 +5633,10 @@ MoveSelectionScreen:
 
 .move_disabled
 	ld hl, BattleText_TheMoveIsDisabled
+	jr .place_textbox_start_over
+	
+.taunted
+	ld hl, BattleText_TheMoveCantBeSelected
 	jr .place_textbox_start_over
 
 .no_pp_left
@@ -5816,13 +5853,17 @@ MoveInfoBox:
 	ret
 
 CheckPlayerHasUsableMoves:
+	
+	
 	ld a, STRUGGLE
 	ld [wCurPlayerMove], a
+	ld a, [wPlayerTauntCount]
+	and a
+	jr nz, .check_taunt
 	ld a, [wPlayerDisableCount]
 	and a
 	ld hl, wBattleMonPP
 	jr nz, .disabled
-
 	ld a, [hli]
 	or [hl]
 	inc hl
@@ -5850,8 +5891,7 @@ CheckPlayerHasUsableMoves:
 	jr .loop
 
 .done
-; BUG: A Disabled but PP Up–enhanced move may not trigger Struggle (see docs/bugs_and_glitches.md)
-	and a
+	and PP_MASK
 	ret nz
 
 .force_struggle
@@ -5861,6 +5901,31 @@ CheckPlayerHasUsableMoves:
 	call DelayFrames
 	xor a
 	ret
+	
+.check_taunt
+	ld a, [wBattleMonMoves]
+	ld hl, IsStatusMove
+	call IsInByteArray
+	ret nc
+	ld a, [wBattleMonMoves + 1]
+	and a
+	jr z, .force_struggle
+	ld hl, IsStatusMove
+	call IsInByteArray
+	ret nc
+	ld a, [wBattleMonMoves + 2]
+	and a
+	jr z, .force_struggle
+	ld hl, IsStatusMove
+	call IsInByteArray
+	ret nc
+	ld a, [wBattleMonMoves + 3]
+	and a
+	jr z, .force_struggle
+	ld hl, IsStatusMove
+	call IsInByteArray
+	ret nc
+	jr .force_struggle
 
 ParseEnemyAction:
 	ld a, [wEnemyIsSwitching]
@@ -5928,10 +5993,19 @@ ParseEnemyAction:
 	ld a, [wEnemyDisabledMove]
 	cp [hl]
 	jr z, .disabled
+	ld a, [hl]
+	ld hl, IsStatusMove
+	call IsInByteArray
+	jr nc, .not_status
+	ld a, [wEnemyTauntCount]
+	and a
+	jr nz, .taunt
+.not_status
 	ld a, [de]
 	and PP_MASK
 	jr nz, .enough_pp
 
+.taunt
 .disabled
 	inc hl
 	inc de
@@ -8383,6 +8457,8 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wPlayerTauntCount], a
+	ld [wEnemyTauntCount], a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
@@ -9243,3 +9319,118 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+IsStatusMove:
+	db BIDE
+	db LEER
+	db ROAR
+	db REST
+	db MIST
+	db HAZE
+	db SING
+	db FLASH
+	db GROWL
+	db CHARM
+	db CURSE
+	db MIMIC
+	db GLARE
+	db SPORE
+	db SPITE
+	db TAUNT
+	db TOXIC
+	db HARDEN
+	db ENCORE
+	db ENDURE
+	db DETECT
+	db SKETCH
+	db GROWTH
+	db SPIKES
+	db SPLASH
+	db KINESIS
+	db SHARPEN
+	db ATTRACT
+	db SCREECH
+	db BARRIER
+	db DISABLE
+	db RECOVER
+	db LOCK_ON
+	db PROTECT
+	db REFLECT
+	db AMNESIA
+	db AGILITY
+	db SWAGGER
+	db MEDITATE
+	db WITHDRAW
+	db MINIMIZE
+	db PSYCH_UP
+	db HYPNOSIS
+	db TELEPORT
+	db TAIL_WHIP
+	db WHIRLWIND
+	db FORESIGHT
+	db HEAL_BELL
+	db MEAN_LOOK
+	db METRONOME
+	db MOONLIGHT
+	db NIGHTMARE
+	db SAFEGUARD
+	db SANDSTORM
+	db SUNNY_DAY
+	db SYNTHESIS
+	db TRANSFORM
+	db BATON_PASS
+	db BELLY_DRUM
+	db SUPERSONIC
+	db SWEET_KISS
+	db CONVERSION
+	db ACID_ARMOR
+	db SOFTBOILED
+	db MILK_DRINK
+	db LEECH_SEED
+	db SPIDER_WEB
+	db PAIN_SPLIT
+	db STUN_SPORE
+	db POISON_GAS
+	db RAIN_DANCE
+	db SLEEP_TALK
+	db SCARY_FACE
+	db SUBSTITUTE
+	db SAND_ATTACK
+	db SMOKESCREEN
+	db CONFUSE_RAY
+	db CONVERSION2
+	db SWEET_SCENT
+	db DOUBLE_TEAM
+	db MIND_READER
+	db MIRROR_MOVE  
+	db MORNING_SUN
+	db PERISH_SONG
+	db LOVELY_KISS
+	db STRING_SHOT
+	db SWORDS_DANCE
+	db DEFENSE_CURL
+	db DESTINY_BOND
+	db FOCUS_ENERGY
+	db LIGHT_SCREEN
+	db THUNDER_WAVE
+	db POISONPOWDER
+	db SLEEP_POWDER
+	db COTTON_SPORE
+	db -1
+	
+CheckEnemyTaunt:
+	ld a, [wCurEnemyMove]
+	ld hl, IsStatusMove
+	call IsInByteArray
+	ret nc
+	scf
+	ret
+CheckPlayerTaunt:
+	ld a, [wCurPlayerMove]
+	ld hl, IsStatusMove
+	call IsInByteArray
+	ret nc
+	scf
+	ret
+	
+		

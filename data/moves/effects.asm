@@ -2093,3 +2093,9 @@ Snow:
 	startweather
 	endmove
 	
+Taunt:
+	checkobedience
+	usedmovetext
+	doturn
+	taunt
+	endmove
