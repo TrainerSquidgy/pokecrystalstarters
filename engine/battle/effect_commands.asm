@@ -1291,14 +1291,7 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
-	ld a, [wInverseActivated]
-	and a
-	jr nz, .inverse
 	ld hl, TypeMatchups
-	jr .TypesLoop
-.inverse
-	ld hl, InverseTypeMatchups
-
 .TypesLoop:
 	call GetNextTypeMatchupsByte
     inc hl
@@ -1406,9 +1399,11 @@ BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, CheckTypeMatchup
-	ld hl, wBattleMonType1
-	; fallthrough
+	jr z, .get_type
+ 	ld hl, wBattleMonType1
+.get_type
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar ; preserves hl, de, and bc
 CheckTypeMatchup:
 	push hl
 	push de
@@ -1419,13 +1414,7 @@ CheckTypeMatchup:
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
-	ld a, [wInverseActivated]
-	dec a
-	jr z, .inverse
 	ld hl, TypeMatchups
-	jr .TypesLoop
-.inverse
-	ld hl, InverseTypeMatchups
 .TypesLoop:
 	call GetNextTypeMatchupsByte
 	inc hl
@@ -1482,6 +1471,7 @@ CheckTypeMatchup:
 	pop de
 	pop hl
 	ret
+
 
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
