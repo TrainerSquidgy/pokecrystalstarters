@@ -76,7 +76,6 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, ELECTIVIRE 
-
 .decrease
 	dec a
 	ld [hl], a
@@ -85,7 +84,8 @@ SetStarter1::
 .d_up
 	ld hl, wElmPokemon1
 	ld a, [hl]
-	cp 250
+	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -199,7 +199,6 @@ SetStarter2::
 	and a
 	jr nz, .decrease
 	ld a, ELECTIVIRE
-
 .decrease
 	dec a
 	ld [hl], a
@@ -208,7 +207,8 @@ SetStarter2::
 .d_up
 	ld hl, wElmPokemon2
 	ld a, [hl]
-	cp 250
+	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -322,7 +322,6 @@ SetStarter3::
 	and a
 	jr nz, .decrease
 	ld a, ELECTIVIRE
-
 .decrease
 	dec a
 	ld [hl], a
@@ -331,7 +330,8 @@ SetStarter3::
 .d_up
 	ld hl, wElmPokemon3
 	ld a, [hl]
-	cp 250
+	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -622,6 +622,8 @@ PokemonStrings:
 	dw .ElekidS
 	dw .ElectabuzzS
 	dw .Electivire
+	dw .Celebi
+;PYTHONBUFFER3
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"

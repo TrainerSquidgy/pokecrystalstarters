@@ -11,7 +11,6 @@ def pad_name(name):
     padded_name = name.ljust(10, '@')
     
     return padded_name
-
 def append_line_above(file_path, target_line, new_line):
     with open(file_path, "r") as file:
         lines = file.readlines()
@@ -46,6 +45,28 @@ def delete_line_below(file_path, target_line):
             file.write(line)  # Write the current line
             if target_line in line:
                 skip_next = True  # Set the flag to skip the next line
+
+def delete_line_above(file_path, target_line):
+    with open(file_path, "r") as file:
+        lines = file.readlines()
+
+    with open(file_path, "w") as file:
+        previous_line = ""  # Store the previous line
+        for line in lines:
+            if target_line in line:
+                # Skip writing the previous line if the current line contains the target
+                previous_line = ""  # Reset previous_line to skip it
+            else:
+                # Write the previous line if it's not to be skipped
+                if previous_line:
+                    file.write(previous_line)
+            # Update previous_line to the current line
+            previous_line = line
+
+        # Write the last line if it wasn't flagged for skipping
+        if previous_line and target_line not in previous_line:
+            file.write(previous_line)
+
 
 def delete_line(file_path, target_line):
     with open(file_path, 'r') as file:
@@ -113,6 +134,7 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
         elif file_path == "data/pokemon/dex_entry_pointers.asm":
             append_line_above(file_path, '	dw CelebiPokedexEntry', f'	dw {pokemon_name}PokedexEntry\n')
             delete_line(file_path, '	dw CelebiPokedexEntry')
+        
         elif file_path == "data/pokemon/dex_entries.asm":
             append_line_below(file_path, 'CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"', f'{pokemon_name}PokedexEntry::     INCLUDE "data/pokemon/dex_entries/{pokemon_name.lower()}.asm"\n')
             delete_line(file_path, 'CelebiPokedexEntry::     INCLUDE "data/pokemon/dex_entries/celebi.asm"')
@@ -209,6 +231,14 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
         elif file_path == "data/pokemon/gen1_tmattacks.asm":
             append_line_above(file_path, 'NoGen1TMAttacks:', f'{pokemon_name}Gen1TMAttacks:\n')
 
+        elif file_path == "engine/events/starterselection.asm":
+            append_line_above(file_path, '	dw .Celebi', f'	dw .{pokemon_name}\n')
+            delete_line(file_path, '	dw .Celebi')
+            append_line_above(file_path, '.Celebi	db "CELEBI@@@@@"', f'.{pokemon_name}	db "{padded_name.upper()}@"\n')
+            delete_line(file_path, '.Celebi	db "CELEBI@@@@@"')
+            delete_line_above(file_path, ';PYTHONBUFFER1')
+            append_line_above(file_path, ';PYTHONBUFFER1', f'	ld a, {pokemon_name.upper()}"\n')
+            
         
 # Get the Pokémon name from the input file
 pokemon_name = get_pokemon_name()
@@ -216,6 +246,7 @@ pokemon_name = get_pokemon_name()
 # List of files to modify
 file_paths = [
     "engine/link/link.asm",
+    "engine/events/starterselection.asm",
     "constants/pokemon_constants.asm",
     "data/pokemon/names.asm",
     "data/pokemon/base_stats.asm",
