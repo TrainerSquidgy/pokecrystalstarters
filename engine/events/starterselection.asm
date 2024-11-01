@@ -324,6 +324,7 @@ SetStarter3::
 	jr nz, .decrease
 	ld a, BIBAREL
 
+.decrease
 	dec a
 	ld [hl], a
 	jr .finish_dpad
