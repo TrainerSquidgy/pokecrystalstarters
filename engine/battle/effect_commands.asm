@@ -1,6 +1,6 @@
 DoPlayerTurn:
 	call SetPlayerTurn
-
+	
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	ret nz
@@ -1410,12 +1410,9 @@ BattleCheckTypeMatchup:
 	ld hl, wBattleMonType1
 	; fallthrough
 CheckTypeMatchup:
-; BUG: AI makes a false assumption about CheckTypeMatchup (see docs/bugs_and_glitches.md)
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -1423,14 +1420,15 @@ CheckTypeMatchup:
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
 	ld a, [wInverseActivated]
-	jr nz, .inverse
+	dec a
+	jr z, .inverse
 	ld hl, TypeMatchups
 	jr .TypesLoop
 .inverse
 	ld hl, InverseTypeMatchups
 .TypesLoop:
 	call GetNextTypeMatchupsByte
-    inc hl
+	inc hl
 	cp -1
 	jr z, .End
 	cp -2
@@ -6852,9 +6850,7 @@ _CheckBattleScene:
 SnowDefenseBoost: 
 ; Raise Defense by 50% if there's Snow and the opponent
 ; is Ice-type.
-
-; First, check if Snow is active.
-	ld a, [wBattleWeather]
+		ld a, [wBattleWeather]
 	cp WEATHER_SNOW
 	ret nz
 
@@ -6921,3 +6917,34 @@ GetNextTypeMatchupsByte:
    ld a, BANK(TypeMatchups)
    call GetFarByte
    ret
+
+
+BattleCommand_AddDamage:
+	push af
+	push hl
+    ld hl, wCurDamage + 1
+    ld a, [hl]           
+    ld d, a              
+    dec hl               
+    ld a, [hl]           
+    ld e, a              
+    ld hl, wCurDamage    
+    ld a, [hl]           
+    add a, e             
+    ld [hl], a           
+    inc hl               
+    ld a, [hl]           
+    adc a, d             
+    ld [hl], a           
+    jr nc, .done         
+    ld a, $FF            
+    ld hl, wCurDamage    
+    ld [hl], a           
+    ld [hli], a         
+.done:
+	pop hl
+	pop af
+    ret
+	
+	
+

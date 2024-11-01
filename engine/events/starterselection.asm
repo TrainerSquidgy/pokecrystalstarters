@@ -76,7 +76,6 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, BIBAREL 
-
 .decrease
 	dec a
 	ld [hl], a
@@ -85,7 +84,8 @@ SetStarter1::
 .d_up
 	ld hl, wElmPokemon1
 	ld a, [hl]
-	cp 250
+	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -208,7 +208,8 @@ SetStarter2::
 .d_up
 	ld hl, wElmPokemon2
 	ld a, [hl]
-	cp 250
+	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -323,7 +324,6 @@ SetStarter3::
 	jr nz, .decrease
 	ld a, BIBAREL
 
-.decrease
 	dec a
 	ld [hl], a
 	jr .finish_dpad
@@ -331,7 +331,8 @@ SetStarter3::
 .d_up
 	ld hl, wElmPokemon3
 	ld a, [hl]
-	cp 250
+	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 

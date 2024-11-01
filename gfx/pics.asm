@@ -715,6 +715,7 @@ BidoofBackpic:       INCBIN "gfx/pokemon/bidoof/back.2bpp.lz"
 BibarelFrontpic:      INCBIN "gfx/pokemon/bibarel/front.animated.2bpp.lz"
 BibarelBackpic:       INCBIN "gfx/pokemon/bibarel/back.2bpp.lz"
 
+
 ; Seems to be an accidental copy of the previous bank
 
 
@@ -722,8 +723,26 @@ BibarelBackpic:       INCBIN "gfx/pokemon/bibarel/back.2bpp.lz"
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
 SECTION "Pics 20", ROMX
+
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
+MegaVenusaurFrontpic:      INCBIN "gfx/pokemon/megavenusaur/front.animated.2bpp.lz"
+MegaVenusaurBackpic:       INCBIN "gfx/pokemon/megavenusaur/back.2bpp.lz"
+MegaPinsirFrontpic:      INCBIN "gfx/pokemon/megapinsir/front.animated.2bpp.lz"
+MegaPinsirBackpic:       INCBIN "gfx/pokemon/megapinsir/back.2bpp.lz"
+MegaGengarFrontpic:      INCBIN "gfx/pokemon/megagengar/front.animated.2bpp.lz"
+MegaGengarBackpic:       INCBIN "gfx/pokemon/megagengar/back.2bpp.lz"
+MegaCharizardFrontpic:      INCBIN "gfx/pokemon/megacharizard/front.animated.2bpp.lz"
+MegaCharizardBackpic:       INCBIN "gfx/pokemon/megacharizard/back.2bpp.lz"
+MegaBlastoiseFrontpic:      INCBIN "gfx/pokemon/megablastoise/front.animated.2bpp.lz"
+MegaBlastoiseBackpic:       INCBIN "gfx/pokemon/megablastoise/back.2bpp.lz"
+MegaBeedrillFrontpic:      INCBIN "gfx/pokemon/megabeedrill/front.animated.2bpp.lz"
+MegaBeedrillBackpic:       INCBIN "gfx/pokemon/megabeedrill/back.2bpp.lz"
+MegaAlakazamFrontpic:      INCBIN "gfx/pokemon/megaalakazam/front.animated.2bpp.lz"
+MegaAlakazamBackpic:       INCBIN "gfx/pokemon/megaalakazam/back.2bpp.lz"
+MegaHeracrossFrontpic:      INCBIN "gfx/pokemon/megaheracross/front.animated.2bpp.lz"
+MegaHeracrossBackpic:       INCBIN "gfx/pokemon/megaheracross/back.2bpp.lz"
 SECTION "Pics 21", ROMX
+
 
 SECTION "Pics 22", ROMX
 
