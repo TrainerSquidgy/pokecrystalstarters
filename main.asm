@@ -237,12 +237,12 @@ INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/battle/check_battle_scene.asm"
 INCLUDE "engine/movie/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
+INCLUDE "engine/events/poisonstep.asm"
 
 
 SECTION "bank14", ROMX
 
 INCLUDE "engine/pokemon/party_menu.asm"
-INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"
 INCLUDE "engine/events/squirtbottle.asm"
 INCLUDE "engine/events/card_key.asm"
