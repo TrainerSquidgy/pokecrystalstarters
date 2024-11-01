@@ -6937,6 +6937,7 @@ BattleCommand_Taunt:
 	jr nz, .failed
 	ld a, 2
 	ld [wEnemyTauntCount], a
+	
 .taunttext
 	ld hl, BattleText_FoeTaunted
 	jp StdBattleTextbox

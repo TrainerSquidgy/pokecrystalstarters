@@ -6005,13 +6005,19 @@ ParseEnemyAction:
 	and PP_MASK
 	jr nz, .enough_pp
 
-.taunt
+
 .disabled
 	inc hl
 	inc de
 	dec b
 	jr nz, .loop
 	jr .struggle
+
+.taunt
+	ld a, [wEnemyMonMoves + 1]
+	and a
+	jr z, .struggle
+	jr .disabled
 
 .enough_pp
 	ld a, [wBattleMode]
