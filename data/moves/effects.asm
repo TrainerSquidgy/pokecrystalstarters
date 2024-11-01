@@ -2150,7 +2150,7 @@ NoRetreat:
 	endmove
 	
 CloseCombat:
-		checkobedience
+	checkobedience
 	usedmovetext
 	doturn
 	critical
