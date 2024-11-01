@@ -1,6 +1,6 @@
 	db DURANT ; 128
 
-	db  58, 109, 112, 109,  48,  78
+	db  58, 109, 112, 109,  48,  48
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, STEEL ; type
