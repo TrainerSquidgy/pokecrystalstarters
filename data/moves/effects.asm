@@ -2093,7 +2093,7 @@ Snow:
 	doturn
 	startweather
 	endmove
-	
+ 	
 FakeOutV2:
 	checkobedience
 	usedmovetext
