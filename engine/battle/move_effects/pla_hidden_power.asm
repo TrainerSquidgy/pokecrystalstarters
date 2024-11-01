@@ -17,12 +17,7 @@ HiddenPowerCheckTypeMatchup:
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
-	ld a, [wInverseActivated]
-	jr nz, .inverse
 	ld hl, TypeMatchups
-	jr .TypesLoop
-.inverse
-	ld hl, InverseTypeMatchups
 .TypesLoop:
 	call GetNextTypeMatchupsByte2
     inc hl
