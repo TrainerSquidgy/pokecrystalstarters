@@ -163,4 +163,5 @@ MoveEffectsPointers:
 	dw Snow
 	dw FakeOutV2
 	dw KnockOff
+	dw PLAHiddenPower
 	assert_table_length NUM_MOVE_EFFECTS

@@ -214,6 +214,11 @@ BattleText_MonFainted:
 BattleText_UseNextMon:
 	text "Use next #MON?"
 	done
+	
+BattleText_MegaEvolveAsk:
+	text "MEGA EVOLVE"
+	line "your #MON?"
+	done
 
 UnusedRivalWinText: ; unreferenced
 	text "<RIVAL>: Yes!"
@@ -1146,4 +1151,8 @@ KnockOffText:
 	text_ram wStringBuffer1
 	text " was"
 	cont "knocked off!"
+
+MegaEvolvedText:
+	text "<USER>"
+	line "MEGA EVOLVED!"
 	prompt

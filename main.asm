@@ -142,10 +142,17 @@ INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 
+SECTION "PLA Hidden Power", ROMX
+INCLUDE "engine/battle/move_effects/pla_hidden_power.asm"
 
 SECTION "Effect Commands", ROMX
 
 INCLUDE "engine/battle/effect_commands.asm"
+
+SECTION "Mega Pokemon", ROMX
+
+INCLUDE "data/pokemon/mega_pokemon.asm"
+
 
 SECTION "Type Matchups", ROMX
 

@@ -621,6 +621,7 @@ PokemonStrings:
 	dw .Hooh
 	dw .Celebi
 	dw .Sableye
+
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
