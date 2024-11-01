@@ -179,4 +179,5 @@ BattleCommandPointers:
 	dw BattleCommand_Curl
 	dw BattleCommand_Roost
 	dw BattleCommand_StartWeather
+	dw BattleCommand_PLAHiddenPower
 	assert_table_length NUM_EFFECT_COMMANDS

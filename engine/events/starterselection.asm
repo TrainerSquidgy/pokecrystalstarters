@@ -85,7 +85,8 @@ SetStarter1::
 .d_up
 	ld hl, wElmPokemon1
 	ld a, [hl]
-	cp 250
+	cp 251
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -208,7 +209,8 @@ SetStarter2::
 .d_up
 	ld hl, wElmPokemon2
 	ld a, [hl]
-	cp 250
+	cp 251
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -331,7 +333,8 @@ SetStarter3::
 .d_up
 	ld hl, wElmPokemon3
 	ld a, [hl]
-	cp 250
+	cp 251
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
