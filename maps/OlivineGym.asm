@@ -34,6 +34,14 @@ OlivineGymJasmineScript:
 	promptbutton
 	verbosegiveitem TM_IRON_TAIL
 	iffalse .NoRoomForIronTail
+	readmem wMegaEvolutionEnabled
+	ifequal 0, .SkipMega
+	writetext JasmineSeesMegaRing
+	waitbutton
+	verbosegiveitem MEGA_STONE
+	writetext JasmineExplainsMegaStone
+	waitbutton
+.SkipMega
 	setevent EVENT_GOT_TM23_IRON_TAIL
 	writetext Jasmine_IronTailSpeech
 	waitbutton
@@ -181,6 +189,38 @@ OlivineGymGuideWinText:
 	line "encounter of an"
 	cont "unknown kind!"
 	done
+
+JasmineSeesMegaRing:
+	text "I see you are"
+	line "wearing a MEGA"
+	cont "RING."
+	
+	para "I have something"
+	line "which may assist"
+	cont "you on your"
+	cont "adventure."
+	
+	para "Here, take it as"
+	line "my thanks to you."
+	done
+
+JasmineExplainsMegaStone:
+	text "This is a MEGA"
+	line "STONE."
+	
+	para "I found it on"
+	line "a trip to HOENN"
+	cont "many years ago."
+	
+	para "If your #MON"
+	line "holds it, it'll"
+	cont "draw the energy"
+	cont "from your MEGA"
+	cont "RING to allow"
+	cont "your #MON to"
+	cont "MEGA EVOLVE."
+	done
+
 
 OlivineGymGuidePreText:
 	text "JASMINE, the GYM"

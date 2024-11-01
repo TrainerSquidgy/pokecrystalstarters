@@ -1,0 +1,65 @@
+1 - Dynamic Punch
+1 - DynamicPunch
+2 - Headbutt
+3 - Curse
+4 - Rollout
+5 - Roar
+6 - Toxic
+7 - Zap Cannon
+8 - Rock Smash
+9 - Psych Up
+10 - Hidden Power
+11 - Sunny Day
+12 - Sweet Scent
+13 - Snore
+14 - Blizzard
+15 - Hyper Beam
+16 - Icy Wind
+17 - Protect
+18 - Rain Dance
+19 - Giga Drain
+20 - Endure
+21 - Frustration
+22 - Solar Beam
+22 - Solarbeam
+23 - Iron Tail
+24 - Dragon Breath
+24 - DragonBreath
+25 - Thunder
+26 - Earthquake
+27 - Return
+28 - Dig
+29 - Psychic_M
+30 - Shadow Ball
+31 - Mud-Slap
+31 - Mud Slap
+32 - Double Team
+33 - Ice Punch
+34 - Swagger
+35 - Sleep Talk
+36 - Sludge Bomb
+37 - Sandstorm
+38 - Fire Blast
+39 - Swift
+40 - Defense Curl
+41 - Thunder Punch
+41 - ThunderPunch
+42 - Dream Eater
+43 - Detect
+44 - Rest
+45 - Attract
+46 - Thief
+47 - Steel Wing
+48 - Fire Punch
+49 - Fury Cutter
+50 - Nightmare
+51 - Cut
+52 - Fly
+53 - Surf
+54 - Strength
+55 - Flash
+56 - Whirlpool
+57 - Waterfall
+58 - Flamethrower
+59 - Ice Beam
+60 - Thunderbolt

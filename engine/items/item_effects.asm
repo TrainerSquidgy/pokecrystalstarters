@@ -58,7 +58,7 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ; ITEM_2D
+	dw MegaStoneEffect
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
@@ -2724,6 +2724,14 @@ BallBoxFullText:
 ItemUsedText:
 	text_far _ItemUsedText
 	text_end
+	
+MegaRingTurnedOnText:
+	text_far _MegaRingTurnedOnText
+	text_end
+
+MegaRingTurnedOffText:
+	text_far _MegaRingTurnedOffText
+	text_end
 
 ItemGotOnText: ; unreferenced
 	text_far _ItemGotOnText
@@ -2939,4 +2947,20 @@ GetMthMoveOfCurrentMon:
 	ld c, a
 	ld b, 0
 	add hl, bc
+	ret
+
+MegaStoneEffect:
+	ld a, [wMegaEvolutionActive]
+	and a
+	jr z, .turn_on
+	dec a
+	ld [wMegaEvolutionActive], a
+	ld hl, MegaRingTurnedOffText
+	call PrintText
+	ret
+.turn_on
+	inc a
+	ld [wMegaEvolutionActive], a
+	ld hl, MegaRingTurnedOnText
+	call PrintText
 	ret
