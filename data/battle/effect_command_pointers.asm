@@ -180,5 +180,4 @@ BattleCommandPointers:
 	dw BattleCommand_NobleRoar
 	dw BattleCommand_Bulwark
 	dw BattleCommand_StartWeather
-	dw BattleCommand_PLAHiddenPower
 	assert_table_length NUM_EFFECT_COMMANDS
