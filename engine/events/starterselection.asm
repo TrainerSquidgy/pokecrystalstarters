@@ -622,8 +622,7 @@ PokemonStrings:
 	dw .ElekidS
 	dw .ElectabuzzS
 	dw .Electivire
-	dw .Celebi
-;PYTHONBUFFER3
+	
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
