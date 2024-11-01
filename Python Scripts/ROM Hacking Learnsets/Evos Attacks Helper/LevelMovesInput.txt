@@ -1,14 +1,12 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Absol
+1: Scratch
+5: Leer
+9: Taunt
+13: Quick Attack
+17: Razor Wind
+21: Bite
+26: Swords Dance
+31: Double Team
+36: Slash
+41: Future Sight
+46: Perish Song

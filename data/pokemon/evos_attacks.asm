@@ -3365,3 +3365,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+AbsolEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 5, LEER
+	db 9, TAUNT
+	db 13, QUICK_ATTACK
+	db 17, RAZOR_WIND
+	db 21, BITE
+	db 26, SWORDS_DANCE
+	db 31, DOUBLE_TEAM
+	db 36, SLASH
+	db 41, FUTURE_SIGHT
+	db 46, PERISH_SONG
+	db 0

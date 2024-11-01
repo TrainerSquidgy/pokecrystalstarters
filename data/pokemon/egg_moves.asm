@@ -805,5 +805,12 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+AbsolEggMoves:
+	db BATON_PASS
+	db CURSE
+	db COUNTER
+	db FAINT_ATTACK
+	db SUBSTITUTE
+	db -1
 NoEggMoves:
 	db -1 ; end
