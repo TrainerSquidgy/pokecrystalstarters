@@ -1290,8 +1290,8 @@ BattleCommand_Stab:
 	call GetBattleVar
 	ld b, a
 	ld a, [wInverseActivated]
-	and a
-	jr nz, .inverse
+	dec a
+	jr z, .inverse
 	ld hl, TypeMatchups
 	jr .TypesLoop
 .inverse
@@ -1408,12 +1408,9 @@ BattleCheckTypeMatchup:
 	ld hl, wBattleMonType1
 	; fallthrough
 CheckTypeMatchup:
-; BUG: AI makes a false assumption about CheckTypeMatchup (see docs/bugs_and_glitches.md)
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -1421,14 +1418,15 @@ CheckTypeMatchup:
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
 	ld a, [wInverseActivated]
-	jr nz, .inverse
+	dec a
+	jr z, .inverse
 	ld hl, TypeMatchups
 	jr .TypesLoop
 .inverse
 	ld hl, InverseTypeMatchups
 .TypesLoop:
 	call GetNextTypeMatchupsByte
-    inc hl
+	inc hl
 	cp -1
 	jr z, .End
 	cp -2
