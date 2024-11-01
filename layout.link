@@ -77,8 +77,8 @@ ROMX $13
 	"bank13_2"
 ROMX $14
 	"bank14"
-	"Unused Egg Pic"
 ROMX $15
+	"Unused Egg Pic"
 	"Map Scripts 1"
 ROMX $16
 	"Map Scripts 2"
@@ -196,7 +196,6 @@ ROMX $48
 	"Pics 1"
 ROMX $49
 	org $4000
-	"Unown Pic Pointers"
 	"Pics 2"
 ROMX $4a
 	"Trainer Pic Pointers"
@@ -232,6 +231,7 @@ ROMX $58
 ROMX $59
 	"Pics 18"
 ROMX $5a
+	"Unown Pic Pointers"
 	"Pics 19"
 ROMX $5b
 	"bank5B"
