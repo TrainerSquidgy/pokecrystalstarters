@@ -1580,3 +1580,12 @@ _BattleVanishedText::
 	text_start
 	line "vanished!"
 	prompt
+_MegaRingTurnedOnText::
+	text "MEGA RING's"
+	line "powers enabled."
+	prompt
+	
+_MegaRingTurnedOffText::
+	text "MEGA RING's"
+	line "powers disabled."
+	prompt

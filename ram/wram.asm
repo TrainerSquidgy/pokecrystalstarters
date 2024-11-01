@@ -3177,7 +3177,19 @@ wInverseActivated:: db
 wAbilitiesActivated:: db
 wPlayerLastRespectsCount:: db
 wEnemyLastRespectsCount:: db
-	ds 74
+wTutorsLimited:: db
+wHiddenPowerLoop:: db
+wHiddenPowerType:: db
+wTempHiddenPowerType:: db
+wTempHiddenPowerPower:: db
+wWhichHiddenPower:: db
+wMegaEvolutionActive:: db
+wAlreadyMegaEvolved:: db
+wBackupMaxHP:: ds 2
+wMegaPicture:: db
+wSetMegaEvolutionPicture:: db
+wMegaEvolutionEnabled:: db
+	ds 61
 
 wEventFlags:: flag_array NUM_EVENTS
 

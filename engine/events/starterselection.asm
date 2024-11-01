@@ -76,7 +76,6 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, HOUNDSTONE 
-
 .decrease
 	dec a
 	ld [hl], a
