@@ -162,4 +162,5 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw Ingrain
+	dw PLAHiddenPower
 	assert_table_length NUM_MOVE_EFFECTS
