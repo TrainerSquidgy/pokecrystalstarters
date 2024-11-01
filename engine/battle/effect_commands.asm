@@ -1289,14 +1289,7 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
-	ld a, [wInverseActivated]
-	dec a
-	jr z, .inverse
 	ld hl, TypeMatchups
-	jr .TypesLoop
-.inverse
-	ld hl, InverseTypeMatchups
-
 .TypesLoop:
 	call GetNextTypeMatchupsByte
     inc hl
@@ -1404,9 +1397,11 @@ BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, CheckTypeMatchup
-	ld hl, wBattleMonType1
-	; fallthrough
+	jr z, .get_type
+ 	ld hl, wBattleMonType1
+.get_type
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar ; preserves hl, de, and bc
 CheckTypeMatchup:
 	push hl
 	push de
@@ -1417,13 +1412,7 @@ CheckTypeMatchup:
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
-	ld a, [wInverseActivated]
-	dec a
-	jr z, .inverse
 	ld hl, TypeMatchups
-	jr .TypesLoop
-.inverse
-	ld hl, InverseTypeMatchups
 .TypesLoop:
 	call GetNextTypeMatchupsByte
 	inc hl
@@ -1480,6 +1469,7 @@ CheckTypeMatchup:
 	pop de
 	pop hl
 	ret
+
 
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
@@ -2344,12 +2334,6 @@ BattleCommand_SuperEffectiveLoopText:
 	; fallthrough
 
 BattleCommand_SuperEffectiveText:
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .player_super_effective
-	ld a, [wInverseActivated]
-	and a
-	jr z, .InverseText
 	ld a, [wTypeModifier]
 	and $7f
 	cp EFFECTIVE
@@ -2357,40 +2341,6 @@ BattleCommand_SuperEffectiveText:
 	ld hl, SuperEffectiveText
 	jr nc, .print
 	ld hl, NotVeryEffectiveText
-	jr .print
-.InverseText:
-	ld a, [wTypeModifier]
-	and $7f
-	cp EFFECTIVE
-	ret z
-	ld hl, NotVeryEffectiveText
-	jr nc, .print
-	ld hl, SuperEffectiveText
-	jr .print
-
-.player_super_effective
-	ld a, [wInverseActivated]
-	and a
-	jr nz, .PlayerInverseText
-	ld a, [wTypeModifier]
-	and $7f
-	cp EFFECTIVE
-	ret z
-	ld hl, SuperEffectiveText
-	jr nc, .print
-	ld hl, NotVeryEffectiveText
-	jr .print
-.PlayerInverseText:
-	ld a, [wTypeModifier]
-	and $7f
-	cp EFFECTIVE
-	ret z
-	ld hl, NotVeryEffectiveText
-	jr nc, .print
-	ld hl, SuperEffectiveText
-	jr .print
-
-
 .print
 	jp StdBattleTextbox
 	
