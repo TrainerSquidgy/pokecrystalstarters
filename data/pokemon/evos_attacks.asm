@@ -1707,6 +1707,7 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
+	db EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -3367,7 +3368,7 @@ CelebiEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElekidSEvosAttacks:
-	db EVOLVE_LEVEL, 30, ELECTABUZZ
+	db EVOLVE_LEVEL, 30, ELECTABUZZS
 	db 0 ; No More Evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
