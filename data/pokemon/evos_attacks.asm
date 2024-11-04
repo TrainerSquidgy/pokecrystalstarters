@@ -3365,3 +3365,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+NosepassEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 7, HARDEN
+	db 13, ROCK_THROW
+	db 16, BLOCK
+	db 22, THUNDER_WAVE
+	db 28, ROCK_SLIDE
+	db 31, SANDSTORM
+	db 37, REST
+	db 43, ZAP_CANNON
+	db 46, LOCK_ON
+	db 0

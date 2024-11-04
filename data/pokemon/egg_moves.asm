@@ -805,5 +805,10 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+NosepassEggMoves:
+	db EXPLOSION
+	db MAGNITUDE
+	db ROLLOUT
+	db -1
 NoEggMoves:
 	db -1 ; end

@@ -910,6 +910,12 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+NosepassRelearnedEggMoves:
+	db 0
+	db 1, EXPLOSION
+	db 1, MAGNITUDE
+	db 1, ROLLOUT
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0

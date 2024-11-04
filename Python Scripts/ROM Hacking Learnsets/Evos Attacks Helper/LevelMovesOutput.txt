@@ -1,16 +1,13 @@
-LechonkEvosAttacks:
+NosepassEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 7, HARDEN
+	db 13, ROCK_THROW
+	db 16, BLOCK
+	db 22, THUNDER_WAVE
+	db 28, ROCK_SLIDE
+	db 31, SANDSTORM
+	db 37, REST
+	db 43, ZAP_CANNON
+	db 46, LOCK-ON
 	db 0
