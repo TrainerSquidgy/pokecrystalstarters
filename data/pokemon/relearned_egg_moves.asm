@@ -910,6 +910,14 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+ZangooseRelearnedEggMoves:
+	db 0
+	db 1, COUNTER
+	db 1, DOUBLE_KICK
+	db 1, FLAIL
+	db 1, RAZOR_WIND
+	db 1, ROAR
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0

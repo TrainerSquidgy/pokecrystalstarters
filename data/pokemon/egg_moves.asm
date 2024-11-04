@@ -805,5 +805,12 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+ZangooseEggMoves:
+	db COUNTER
+	db DOUBLE_KICK
+	db FLAIL
+	db RAZOR_WIND
+	db ROAR
+	db -1
 NoEggMoves:
 	db -1 ; end

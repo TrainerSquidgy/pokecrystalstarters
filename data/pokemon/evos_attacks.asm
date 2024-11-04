@@ -3365,3 +3365,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ZangooseEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 4, LEER
+	db 7, QUICK_ATTACK
+	db 10, SWORDS_DANCE
+	db 13, FURY_CUTTER
+	db 19, SLASH
+	db 25, PURSUIT
+	db 31, CRUSH_CLAW
+	db 37, TAUNT
+	db 46, DETECT
+	db 55, FALSE_SWIPE
+	db 0
