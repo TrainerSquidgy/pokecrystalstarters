@@ -910,6 +910,14 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+TropiusRelearnedEggMoves:
+	db 0
+	db 1, HEADBUTT
+	db 1, LEECH_SEED
+	db 1, RAZOR_WIND
+	db 1, SLAM
+	db 0
+
 NoRelearnedEggMoves:
 	db 0
 	db 0

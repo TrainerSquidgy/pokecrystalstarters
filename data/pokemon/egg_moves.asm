@@ -805,5 +805,11 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+TropiusEggMoves:
+	db HEADBUTT
+	db LEECH_SEED
+	db RAZOR_WIND
+	db SLAM
+	db -1
 NoEggMoves:
 	db -1 ; end

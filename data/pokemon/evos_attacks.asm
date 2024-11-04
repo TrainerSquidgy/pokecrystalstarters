@@ -3365,3 +3365,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TropiusEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, LEER
+	db 1, GUST
+	db 7, GROWTH
+	db 11, RAZOR_LEAF
+	db 17, STOMP
+	db 21, SWEET_SCENT
+	db 27, WHIRLWIND
+	db 31, MAGICAL_LEAF
+	db 37, BODY_SLAM
+	db 41, SOLARBEAM
+	db 47, SYNTHESIS
+	db 0
