@@ -252,9 +252,9 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw PoisonStingDescription
+	dw PoisonFangDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
@@ -426,6 +426,10 @@ TailWhipDescription:
 PoisonStingDescription:
 	db   "An attack that may"
 	next "poison the target.@"
+
+PoisonFangDescription:
+	db   "May badly poison"
+	next "the target.@"
 
 TwineedleDescription:
 	db   "Jabs the foe twice"

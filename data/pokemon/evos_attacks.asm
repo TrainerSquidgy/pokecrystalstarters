@@ -3365,3 +3365,17 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SeviperEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, WRAP
+	db 7, LICK
+	db 10, BITE
+	db 16, POISON_TAIL
+	db 19, SCREECH
+	db 25, GLARE
+	db 28, CRUNCH
+	db 34, POISON_FANG
+	db 37, SWAGGER
+	db 43, HAZE
+	db 0

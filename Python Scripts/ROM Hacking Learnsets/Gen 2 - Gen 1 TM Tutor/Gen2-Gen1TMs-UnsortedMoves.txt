@@ -1,247 +1,64 @@
-Calm Mind
-Toxic
-Hidden Power
-Ice Beam
-Hyper Beam
-Light Screen
-Protect
-Rain Dance
-Safeguard
-Frustration
-Earthquake
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Sandstorm
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Flash
-Body Slam
-Defense Curl
-Double-Edge
-Dream Eater
-Endure
-Explosion
-Mimic
-Psych Up
-Rock Slide
-Rollout
-Selfdestruct
-Sleep Talk
-Snore
-Substitute
+Wrap
+Lick
+Bite
+Poison Tail
+Screech
+Glare
+Crunch
+Poison Fang
 Swagger
-Swift
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
-Snore
-Swift
-Zen Headbutt
-Calm Mind
+Haze
+Night Slash
+Poison Jab
+Wring Out
 Toxic
 Hidden Power
-Ice Beam
-Blizzard
-Hyper Beam
-Light Screen
+Sunny Day
+Taunt
 Protect
 Rain Dance
-Safeguard
+Giga Drain
 Frustration
+Iron Tail
 Earthquake
 Return
-Psychic
-Shadow Ball
+Dig
 Double Team
-Reflect
-Sandstorm
-Rock Tomb
+Flamethrower
+Sludge Bomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Charge Beam
+Attract
+Thief
+Snatch
 Endure
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
+Payback
+Captivate
+Dark Pulse
+X-Scissor
 Sleep Talk
 Natural Gift
-Dream Eater
-Grass Knot
+Poison Jab
 Swagger
 Substitute
-Trick Room
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Psychic
-Future Sight
-Explosion
-Moonblast
-Moonlight
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Rock Slide
-Psyshock
-Cosmic Power
-Psychic
-Stone Edge
-Future Sight
-Magic Room
-Explosion
-Hyper Beam
-Giga Impact
-Light Screen
-Reflect
-Safeguard
-Self-Destruct
-Rest
-Rock Slide
-Snore
-Protect
-Icy Wind
-Sandstorm
-Rain Dance
-Hail
-Facade
-Swift
-Helping Hand
-Weather Ball
-Rock Tomb
-Sand Tomb
-Rock Blast
-Power Swap
-Trick Room
-Magic Room
-Round
-Acrobatics
-Bulldoze
-Psychic Terrain
-Stomping Tantrum
+Strength
+Rock Smash
+Assurance
 Body Slam
-Ice Beam
-Blizzard
-Earthquake
-Psychic
-Substitute
-Psyshock
-Endure
-Sleep Talk
-Baton Pass
-Shadow Ball
-Future Sight
-Skill Swap
-Cosmic Power
-Calm Mind
-Gyro Ball
-Power Gem
-Earth Power
-Nasty Plot
-Zen Headbutt
-Iron Head
-Stone Edge
-Stealth Rock
-Grass Knot
-Stored Power
-Ally Switch
-Calm Mind
-Hail
-Ice Beam
-Blizzard
-Hyper Beam
-Light Screen
-Protect
-Rain Dance
-Safeguard
-Earthquake
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Sandstorm
-Rock Tomb
-Facade
-Rest
-Skill Swap
-Charge Beam
-Endure
-Nasty Plot
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Bulldoze
-Dream Eater
-Grass Knot
-Swagger
-Substitute
-Trick Room
-Ancient Power
-Baton Pass
-Charge Beam
-Confide
-Defense Curl
-Double Team
+Night Slash
+Scary Face
+Spit Up
+Stockpile
+Swallow
+SwitcherooHGSS
+Aqua Tail
+Fury Cutter
+Headbutt
+Knock Off
+Mud-Slap
+Snore
+Sucker Punch
+Swift
 Double-Edge
-Dream Eater
-Embargo 
-Flash 
-Frustration 
-Gravity
-Heal Block 
-Hidden Power 
-Laser Focus
-Magic Coat
 Mimic
-Natural Gift 
-Pain Split
-Psych Up
-Psywave 
-Recycle
-Return 
-Rollout
-Secret Power 
-Signal Beam 
-Smack Down
-Swagger
-Telekinesis 
-Toxic

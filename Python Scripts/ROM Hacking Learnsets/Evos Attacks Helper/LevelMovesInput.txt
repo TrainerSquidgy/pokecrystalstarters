@@ -1,14 +1,11 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Seviper
+1: Wrap
+7: Lick
+10: Bite
+16: Poison Tail
+19: Screech
+25: Glare
+28: Crunch
+34: Poison Fang
+37: Swagger
+43: Haze

@@ -1,78 +1,64 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Wrap
+Lick
+Bite
+Poison Tail
+Screech
+Glare
+Crunch
+Poison Fang
+Swagger
+Haze
+Night Slash
+Poison Jab
+Wring Out
 Toxic
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
+Taunt
 Protect
-Safeguard
+Rain Dance
+Giga Drain
 Frustration
-SolarBeam
+Iron Tail
 Earthquake
 Return
-Psychic
-Shadow Ball
+Dig
 Double Team
-Reflect
 Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
+Sludge Bomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
+Thief
+Snatch
 Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
+Payback
+Captivate
+Dark Pulse
+X-Scissor
 Sleep Talk
 Natural Gift
-Dream Eater
-Grass Knot
+Poison Jab
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
-Snore
-Swift
-Zen Headbutt
-Baton Pass
+Strength
+Rock Smash
+Assurance
 Body Slam
-Defense Curl
+Night Slash
+Scary Face
+Spit Up
+Stockpile
+Swallow
+SwitcherooHGSS
+Aqua Tail
+Fury Cutter
+Headbutt
+Knock Off
+Mud-Slap
+Snore
+Sucker Punch
+Swift
 Double-Edge
 Mimic
-Selfdestruct

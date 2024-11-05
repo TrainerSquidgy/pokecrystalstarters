@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+SeviperEggMoves:
+	db BODY_SLAM
+	db -1
 NoEggMoves:
 	db -1 ; end

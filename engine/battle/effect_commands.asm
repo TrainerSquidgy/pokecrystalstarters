@@ -3722,7 +3722,9 @@ BattleCommand_PoisonTarget:
 	ret nz
 	call SafeCheckSafeguard
 	ret nz
-
+	call .check_toxic
+	jr z, .ToxicOpponent
+	
 	call PoisonOpponent
 	ld de, ANIM_PSN
 	call PlayOpponentBattleAnim
@@ -3732,6 +3734,35 @@ BattleCommand_PoisonTarget:
 	call StdBattleTextbox
 
 	farcall UseHeldStatusHealingItem
+	ret
+
+.ToxicOpponent
+	set SUBSTATUS_TOXIC, [hl]
+	xor a
+	ld [de], a
+	
+	call PoisonOpponent
+	ld de, ANIM_PSN
+	call PlayOpponentBattleAnim
+	call RefreshBattleHuds
+	ld hl, BadlyPoisonedText
+	call StdBattleTextbox
+
+	farcall UseHeldStatusHealingItem
+	ret
+
+.check_toxic
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVarAddr
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wEnemyToxicCount
+	jr z, .ok
+	ld de, wPlayerToxicCount
+.ok
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_TOXIC_HIT
 	ret
 
 BattleCommand_Poison:
