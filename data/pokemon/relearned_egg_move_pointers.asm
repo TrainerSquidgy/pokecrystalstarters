@@ -251,4 +251,6 @@ RelearnedEggMovePointers::
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves ; Celebi
+	dw CarvanhaRelearnedEggMoves
+	dw SharpedoRelearnedEggMoves
 	assert_table_length NUM_POKEMON

@@ -1,14 +1,15 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Sharpedo
+1: Bite
+1: Leer
+1: Rage
+1: Focus Energy
+7: Rage
+13: Focus Energy
+16: Scary Face
+22: Crunch
+28: Screech
+33: Slash
+38: Taunt
+43: Swagger
+48: Skull Bash
+53: Agility

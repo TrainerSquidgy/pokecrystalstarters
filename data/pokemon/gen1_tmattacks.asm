@@ -2506,6 +2506,16 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+CarvanhaGen1TMAttacks:
+SharpedoGen1TMAttacks:
+	db 0
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, MIMIC
+	db 1, SUBSTITUTE
+	db 0
+
 NoGen1TMAttacks:
 	db 0
 	db 0

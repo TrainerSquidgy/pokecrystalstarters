@@ -805,5 +805,10 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+CarvanhaEggMoves:
+SharpedoEggMoves:
+	db DOUBLE_EDGE
+	db HYDRO_PUMP
+	db THRASH
 NoEggMoves:
 	db -1 ; end

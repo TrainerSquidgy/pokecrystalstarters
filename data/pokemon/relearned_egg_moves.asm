@@ -910,6 +910,13 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+CarvanhaRelearnedEggMoves:
+SharpedoRelearnedEggMoves:
+	db 0
+	db 1, DOUBLE_EDGE
+	db 1, HYDRO_PUMP
+	db 1, THRASH
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0

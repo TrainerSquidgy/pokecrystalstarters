@@ -3365,3 +3365,36 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+CarvanhaEvosAttacks:
+	db EVOLVE_LEVEL, 30, SHARPEDO
+	db 0 ; No More Evolutions
+	db 1, BITE
+	db 1, LEER
+	db 7, RAGE
+	db 13, FOCUS_ENERGY
+	db 16, SCARY_FACE
+	db 22, CRUNCH
+	db 28, SCREECH
+	db 31, TAKE_DOWN
+	db 37, SWAGGER
+	db 43, AGILITY
+	db 0
+	
+SharpedoEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, BITE
+	db 1, LEER
+	db 1, RAGE
+	db 1, FOCUS_ENERGY
+	db 7, RAGE
+	db 13, FOCUS_ENERGY
+	db 16, SCARY_FACE
+	db 22, CRUNCH
+	db 28, SCREECH
+	db 33, SLASH
+	db 38, TAUNT
+	db 43, SWAGGER
+	db 48, SKULL_BASH
+	db 53, AGILITY
+	db 0
