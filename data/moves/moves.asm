@@ -266,4 +266,6 @@ Moves:
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
 	move TAUNT,        EFFECT_TAUNT,               0, DARK,         100, 20,   0
+	move HOWL,         EFFECT_ATTACK_UP,           0, NORMAL,       100, 40,   0
+	move ODOR_SLEUTH,  EFFECT_FORESIGHT,           0, NORMAL,       100, 40,   0
 	assert_table_length NUM_ATTACKS
