@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+MightyenaEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, HOWL
+	db 1, SAND-ATTACK
+	db 1, BITE
+	db 5, HOWL
+	db 9, SAND-ATTACK
+	db 13, BITE
+	db 17, ODOR_SLEUTH
+	db 22, ROAR
+	db 27, SWAGGER
+	db 32, SCARY_FACE
+	db 37, TAKE_DOWN
+	db 42, TAUNT
+	db 47, CRUNCH
+	db 52, THIEF
 	db 0

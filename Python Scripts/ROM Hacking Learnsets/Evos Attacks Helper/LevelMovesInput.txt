@@ -1,14 +1,16 @@
-Pokémon: Lechonk
+Pokémon: Mightyena
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Howl
+1: Sand-Attack
+1: Bite
+5: Howl
+9: Sand-Attack
+13: Bite
+17: Odor Sleuth
+22: Roar
+27: Swagger
+32: Scary Face
+37: Take Down
+42: Taunt
+47: Crunch
+52: Thief

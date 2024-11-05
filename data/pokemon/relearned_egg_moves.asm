@@ -910,6 +910,11 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+PoochyenaRelearnedEggMoves:
+MightyenaRelearnedEggMoves:
+	db 0
+	db 1, LEER
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0

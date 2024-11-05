@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Mightyena
+1: Tackle
+1: Howl
+1: Sand-Attack
+1: Bite
+5: Howl
+9: Sand-Attack
+13: Bite
+17: Odor Sleuth
+22: Roar
+27: Swagger
+32: Scary Face
+37: Take Down
+42: Taunt
+47: Crunch
+52: Thief

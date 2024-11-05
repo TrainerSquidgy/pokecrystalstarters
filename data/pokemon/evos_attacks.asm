@@ -3365,3 +3365,39 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+PoochyenaEvosAttacks:
+	db EVOLVE_LEVEL, 18, MIGHTYENA
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 5, HOWL
+	db 9, SAND_ATTACK
+	db 13, BITE
+	db 17, ODOR_SLEUTH
+	db 21, ROAR
+	db 25, SWAGGER
+	db 29, SCARY_FACE
+	db 33, TAKE_DOWN
+	db 37, TAUNT
+	db 41, CRUNCH
+	db 45, THIEF
+	db 0
+
+MightyenaEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, HOWL
+	db 1, SAND_ATTACK
+	db 1, BITE
+	db 5, HOWL
+	db 9, SAND_ATTACK
+	db 13, BITE
+	db 17, ODOR_SLEUTH
+	db 22, ROAR
+	db 27, SWAGGER
+	db 32, SCARY_FACE
+	db 37, TAKE_DOWN
+	db 42, TAUNT
+	db 47, CRUNCH
+	db 52, THIEF
+	db 0

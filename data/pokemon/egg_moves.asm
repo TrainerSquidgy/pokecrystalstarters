@@ -805,5 +805,9 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+PoochyenaEggMoves:
+MightyenaEggMoves:
+	db LEER
+	db -1
 NoEggMoves:
 	db -1 ; end
