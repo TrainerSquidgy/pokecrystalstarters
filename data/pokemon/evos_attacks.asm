@@ -3365,3 +3365,36 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ZigzagoonEvosAttacks:
+	db EVOLVE_LEVEL, 20, LINOONE
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 5, TAIL_WHIP
+	db 9, HEADBUTT
+	db 13, SAND_ATTACK
+	db 17, ODOR_SLEUTH
+	db 21, MUD_SPORT
+	db 25, PIN_MISSILE
+	db 29, COVET
+	db 33, FLAIL
+	db 37, REST
+	db 41, BELLY_DRUM
+	db 0
+	
+LinooneEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 5, TAIL_WHIP
+	db 9, HEADBUTT
+	db 13, SAND_ATTACK
+	db 17, ODOR_SLEUTH
+	db 23, MUD_SPORT
+	db 29, FURY_SWIPES
+	db 35, COVET
+	db 41, SLASH
+	db 47, REST
+	db 53, BELLY_DRUM
+	db 0

@@ -1,16 +1,13 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Zigzagoon
+1: Tackle
+1: Growl
+5: Tail Whip
+9: Headbutt
+13: Sand-Attack
+17: Odor Sleuth
+21: Mud Sport
+25: Pin Missile
+29: Covet
+33: Flail
+37: Rest
+41: Belly Drum

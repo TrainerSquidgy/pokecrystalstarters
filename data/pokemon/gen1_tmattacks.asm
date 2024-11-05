@@ -2506,6 +2506,16 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+ZigzagoonGen1TMAttacks:
+LinooneGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, DOUBLE_EDGE
+	db 1, MIMIC
+	db 1, THUNDER_WAVE
+	db 1, SUBSTITUTE
+	db 0
+
 NoGen1TMAttacks:
 	db 0
 	db 0

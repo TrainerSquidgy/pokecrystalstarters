@@ -1,14 +1,13 @@
-Pokémon: Lechonk
+Pokémon: Linoone
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Growl
+5: Tail Whip
+9: Headbutt
+13: Sand-Attack
+17: Odor Sleuth
+23: Mud Sport
+29: Fury Swipes
+35: Covet
+41: Slash
+47: Rest
+53: Belly Drum

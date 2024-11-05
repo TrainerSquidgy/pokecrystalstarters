@@ -253,4 +253,6 @@ Pokered_MonIndices:
 	db QWILFISH
 	db WOBBUFFET
 	db WOBBUFFET
+	db ZIGZAGOON
+	db LINOONE
 	assert_table_length NUM_POKEMON + 1

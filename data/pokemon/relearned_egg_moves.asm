@@ -910,6 +910,13 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+ZigzagoonRelearnedEggMoves:
+LinooneRelearnedEggMoves:
+	db 0
+	db 1, CHARM
+	db 1, PURSUIT
+	db 1, SUBSTITUTE
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0

@@ -805,5 +805,11 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+ZigzagoonEggMoves:
+LinooneEggMoves:
+	db CHARM
+	db PURSUIT
+	db SUBSTITUTE
+	db -1
 NoEggMoves:
 	db -1 ; end
