@@ -1259,6 +1259,20 @@ BattleCommand_Stab:
 	pop bc
 	pop de
 
+.color_change
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .enemy_color_change
+	ld a, [wCurType]
+	ld [wPlayerLastHitType], a
+	jp .color_change_done
+.enemy_color_change
+	ld a, [wCurType]
+	ld [wEnemyLastHitType], a
+.color_change_done
+
+
 	ld a, [wCurType]
 	cp b
 	jr z, .stab
@@ -3477,7 +3491,7 @@ DoPlayerDamage:
 	ld b, a
 	ld a, [hl]
 	or b
-	jr z, .did_no_damage
+	jp z, .did_no_damage
 
 	ld a, c
 	and a
@@ -3528,6 +3542,29 @@ DoPlayerDamage:
 	ld a, 1
 	ld [wWhichHPBar], a
 	predef AnimateHPBar
+
+.color_change_start:
+	ld a, [wBattleMonSpecies]
+	cp KECLEON
+	jr nz, .color_change_done
+	ld a, [wAbilitiesActivated]
+	cp 1
+	jr nz, .color_change_done
+	ld hl, wPlayerLastHitType
+	ld a, [hl]
+	ld hl, wBattleMonType1
+	cp [hl]
+	jr z, .color_change_done
+	ld a, [wPlayerLastHitType]
+	ld [wBattleMonType1], a
+	ld [wBattleMonType2], a
+	farcall GetColorChangeTypePlayer
+	ld hl, BattleText_ColorChange
+	call StdBattleTextbox
+.color_change_done
+
+
+
 .did_no_damage
 	jp RefreshBattleHuds
 
@@ -6911,4 +6948,3 @@ BattleCommand_AddDamage:
     ret
 	
 	
-

@@ -1149,3 +1149,26 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+
+BattleText_Protean:
+	text "<USER>'s"
+	line "PROTEAN"
+	
+	para "made it the"
+	line "@"
+	text_ram wStringBuffer1
+	text " type!"
+	prompt
+	
+
+BattleText_ColorChange:
+	text "<TARGET>'s"
+	line "COLOR CHANGE"
+	
+	para "made it the"
+	line "@"
+	text_ram wStringBuffer1
+	text " type!"
+	prompt
+	

@@ -960,6 +960,53 @@ Battle_PlayerFirst:
 
 PlayerTurn_EndOpponentProtectEndureDestinyBond:
 	call SetPlayerTurn
+	
+.protean	
+	ld a, [wBattleMonSpecies]
+	cp KECLEON
+	jr nz, .no_protean
+	ld a, [wAbilitiesActivated]
+	and a
+	jr z, .no_protean
+	dec a
+	and a
+	jr z, .no_protean	
+	ld a, [wCurPlayerMove]
+	cp STRUGGLE
+	jr z, .no_protean
+	cp CURSE
+	jr nz, .protean_type_check
+	ld a, $8
+	ld [wBattleMonType1], a
+	ld [wBattleMonType2], a
+	ld [wCurType], a
+	jp .curse_protean
+	
+.protean_type_check	
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	ld [wCurType], a
+	ld hl, wBattleMonType1
+	cp [hl]
+	jp nz, .do_protean
+	ld hl, wBattleMonType2
+	cp [hl]
+	jp nz, .do_protean
+	jp .no_protean
+	
+	
+.do_protean	
+	ld [wBattleMonType1], a
+	ld [wBattleMonType2], a 
+.curse_protean
+	farcall GetProteanTypePlayer
+    ld hl, BattleText_Protean
+    call StdBattleTextbox
+	
+.no_protean	
+	
+
+	
 	call EndUserDestinyBond
 	callfar DoPlayerTurn
 	jp EndOpponentProtectEndureDestinyBond
@@ -9243,3 +9290,6 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+
+

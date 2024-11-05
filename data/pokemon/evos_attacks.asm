@@ -3365,3 +3365,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+KecleonEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, THIEF
+	db 1, SCRATCH
+	db 1, TAIL_WHIP
+	db 1, ASTONISH
+	db 1, LICK
+	db 4, BIND
+	db 7, FAINT_ATTACK
+	db 12, FURY_SWIPES
+	db 17, PSYBEAM
+	db 24, SCREECH
+	db 31, SLASH
+	db 40, SUBSTITUTE
+	db 49, ANCIENTPOWER
+	db 0

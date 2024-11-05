@@ -805,5 +805,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+KecleonEggMoves:
+	db DISABLE
 NoEggMoves:
 	db -1 ; end

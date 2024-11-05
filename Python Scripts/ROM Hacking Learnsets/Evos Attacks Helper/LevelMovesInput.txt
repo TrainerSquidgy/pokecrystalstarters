@@ -1,14 +1,14 @@
-Pokémon: Lechonk
-1: Tackle
+Pokémon: Kecleon
+1: Thief
+1: Scratch
 1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Astonish
+1: Lick
+4: Bind
+7: Faint Attack
+12: Fury Swipes
+17: Psybeam
+24: Screech
+31: Slash
+40: Substitute
+49: AncientPower

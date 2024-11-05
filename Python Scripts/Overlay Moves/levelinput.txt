@@ -1,16 +1,14 @@
-Pokémon: Sableye
+Pokémon: Kecleon
+1: Thief
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Tail Whip
+1: Astonish
+1: Lick
+4: Bind
+7: Faint Attack
+12: Fury Swipes
+17: Psybeam
+24: Screech
+31: Slash
+40: Substitute
+49: AncientPower

@@ -169,12 +169,23 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_AbilitiesAsk
 	yesorno
 	iftrue .AbilitiesYes
+.AbilitiesNo
 	loadmem wAbilitiesActivated, 0
 	writetext ElmsLabText_AbilitiesNo
 	sjump .Merge3
 .AbilitiesYes
+	writetext ElmsLab_AbilityColorChange
+	yesorno
+	iffalse .AskProtean
 	loadmem wAbilitiesActivated, 1
-	writetext ElmsLabText_AbilitiesYes
+	writetext ElmsLab_AbilityColorChangeYes
+	sjump .Merge3
+.AskProtean
+	writetext ElmsLab_AbilityProtean
+	yesorno
+	iffalse .AbilitiesNo
+	loadmem wAbilitiesActivated, 2
+	writetext ElmsLab_AbilityProteanYes	
 .Merge3
 	promptbutton
 	writetext ElmsLabText_AskLimitTutors
@@ -228,6 +239,31 @@ ElmsLabExtraOptions:
 	turnobject PLAYER, RIGHT
 .End
 	end
+
+ElmsLab_AbilityColorChange:
+	text "Do you want"
+	line "KECLEON to have"
+	cont "COLOR CHANGE?"
+	done
+
+ElmsLab_AbilityColorChangeYes:
+	text "KECLEON's type"
+	line "will be affected"
+	cont "by COLOR CHANGE."
+	done
+
+ElmsLab_AbilityProtean:
+	text "Do you want"
+	line "KECLEON to have"
+	cont "PROTEAN?"
+	done
+
+ElmsLab_AbilityProteanYes:
+	text "KECLEON's type"
+	line "will be affected"
+	cont "by PROTEAN."
+	done
+	
 
 ElmsLabText_AskMegas:
 	text "Do you want to"
