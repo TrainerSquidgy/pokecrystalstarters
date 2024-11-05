@@ -2638,8 +2638,9 @@ PlayerAttackDamage:
 	call TruncateHL_BC
 
 	ld a, [wBattleMonLevel]
-	ld e, a
 	call DittoMetalPowder
+
+	call CheckMudSport
 
 	ld a, 1
 	and a
@@ -2883,6 +2884,8 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonLevel]
 	ld e, a
 	call DittoMetalPowder
+
+	call CheckMudSport			
 
 	ld a, 1
 	and a
@@ -6910,5 +6913,30 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
+BattleCommand_MudSport:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_MUD_SPORT, [hl]
+	jp nz, .failed
+	set SUBSTATUS_MUD_SPORT, [hl]
+	call AnimateCurrentMove
+	ld hl, MudSportText
+	jp StdBattleTextbox	
 	
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
 
+CheckMudSport:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerMoveStructType + MOVE_TYPE]
+	and a
+	jr z, .go
+	ld a, [wEnemyMoveStructType + MOVE_TYPE]
+.go
+	cp ELECTRIC
+	ret z
+	rrc d
+	ret
+	
