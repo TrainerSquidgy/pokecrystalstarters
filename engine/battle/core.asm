@@ -6197,7 +6197,16 @@ LoadEnemyMon:
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_FORCESHINY
 	jr nz, .GenerateDVs
-
+	
+	ld a, 31
+	call RandomRange
+	and a
+	jr nz, .ShinyDVs
+	call Random
+	and a
+	jr z, .GenerateDVs
+	
+.ShinyDVs
 	ld b, ATKDEFDV_SHINY ; $ea
 	ld c, SPDSPCDV_SHINY ; $aa
 	jr .UpdateDVs
