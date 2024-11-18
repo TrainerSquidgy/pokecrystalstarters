@@ -347,6 +347,8 @@ ChooseWildEncounter:
 	call GetWorldMapLocation
 	cp LANDMARK_ILEX_FOREST
 	jr z, .ilexforest
+	cp LANDMARK_DARK_CAVE
+	jr z, .darkcave
 	cp LANDMARK_ROUTE_34
 	jr nz, .startwildbattle
 	ld a, [wRoute34Encounters]
@@ -358,6 +360,21 @@ ChooseWildEncounter:
 	ld [wCurPartyLevel], a
 	ld a, ABRA
 	ld [wTempWildMonSpecies], a
+	jr .startwildbattle
+.darkcave
+	ld a, [wPartyMon1Species]
+	cp SMEARGLE
+	jr nz, .startwildbattle
+	ld a, [wDarkCaveEncounters]
+	cp 11
+	jr nz, .notready
+	ld a, 4
+	ld [wCurPartyLevel], a
+	ld a, DUNSPARCE
+	ld [wTempWildMonSpecies], a
+.notready
+	inc a
+	ld [wDarkCaveEncounters], a
 	jr .startwildbattle
 .ilexforest
 	ld a, [wIlexForestEncounters]
