@@ -3916,6 +3916,7 @@ TryToRunAwayFromBattle:
 InitBattleMon:
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
+	
 	ld de, wBattleMonSpecies
 	ld bc, MON_OT_ID
 	call CopyBytes
@@ -5003,6 +5004,38 @@ LoadBattleMenu2:
 	ret
 
 BattleMenu_Pack:
+	ld a, [wMegaEvolutionEnabled]
+	and a
+	jr z, .skip_checking_mega
+	
+	ld a, [wBattleMonSpecies]
+	farcall CheckIfMonIsInMegaList
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wMegaEvolutionActive]
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr nz, .skip_checking_mega
+	ld a, [wBattleMonItem]
+	cp MEGA_STONE
+	jr nz, .skip_checking_mega
+	
+	ld hl, BattleText_MegaEvolveAsk
+	call StdBattleTextbox
+	lb bc, 1, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	jr c, .skip_checking_mega
+	ld a, [wMenuCursorY]
+	cp $1 ; YES
+	jr nz, .skip_checking_mega
+	farcall MegaEvolvePokemon
+	jp BattleMenu
+	
+	
+.skip_checking_mega
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
@@ -6164,7 +6197,16 @@ LoadEnemyMon:
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_FORCESHINY
 	jr nz, .GenerateDVs
-
+	
+	ld a, 31
+	call RandomRange
+	and a
+	jr nz, .ShinyDVs
+	call Random
+	and a
+	jr z, .GenerateDVs
+	
+.ShinyDVs
 	ld b, ATKDEFDV_SHINY ; $ea
 	ld c, SPDSPCDV_SHINY ; $aa
 	jr .UpdateDVs
@@ -7323,6 +7365,11 @@ GiveExperiencePoints:
 	call ApplyStatLevelMultiplierOnAllStats
 	callfar ApplyStatusEffectOnPlayerStats
 	callfar BadgeStatBoosts
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr z, .not_mega
+	farcall MegaEvolvePokemon
+.not_mega
 	callfar UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
@@ -8345,7 +8392,10 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wSetMegaEvolutionPicture], a
+	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
+	ld [wHiddenPowerLoop], a
 	ld [wBattleMode], a
 	ld [wBattleType], a
 	ld [wAttackMissed], a
