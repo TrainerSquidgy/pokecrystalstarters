@@ -6888,8 +6888,6 @@ BattleCommand_Eruption:
 	ldh a, [hMathBuffer]
 	ld d, a
 	ret
-SnowDefenseBoost: 
-	ret
 	
 BattleCommand_StartWeather:
 	ld a, BATTLE_VARS_MOVE_EFFECT
