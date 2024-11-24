@@ -77,7 +77,6 @@ SetStarter1::
 	jr nz, .decrease
 	ld a, RAYQUAZA 
 
-.decrease
 	dec a
 	ld [hl], a
 	jr .finish_dpad
@@ -209,6 +208,7 @@ SetStarter2::
 	ld hl, wElmPokemon2
 	ld a, [hl]
 	cp 250
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -332,6 +332,7 @@ SetStarter3::
 	ld hl, wElmPokemon3
 	ld a, [hl]
 	cp 250
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
