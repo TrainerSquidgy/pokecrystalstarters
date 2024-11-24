@@ -76,7 +76,7 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, RAYQUAZA 
-
+.decrease
 	dec a
 	ld [hl], a
 	jr .finish_dpad
@@ -198,7 +198,6 @@ SetStarter2::
 	and a
 	jr nz, .decrease
 	ld a, RAYQUAZA
-
 .decrease
 	dec a
 	ld [hl], a
@@ -322,7 +321,6 @@ SetStarter3::
 	and a
 	jr nz, .decrease
 	ld a, RAYQUAZA
-
 .decrease
 	dec a
 	ld [hl], a
