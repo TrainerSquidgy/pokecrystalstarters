@@ -125,6 +125,7 @@ MeetMomScript:
 	waitbutton
 	sjump .HandledEvolutions
 .KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
 	writetext MomText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
