@@ -113,6 +113,17 @@ ElmsLabStarterChoice:
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
+	writetext ElmsLabText_InverseAsk
+	yesorno
+	iftrue .YesInverse
+	loadmem wInverseActivated, 0
+	writetext ElmsLabText_InverseNo
+	sjump .InverseDone
+.YesInverse
+	loadmem wInverseActivated, 1
+	writetext ElmsLabtext_InverseYes
+.InverseDone
+	waitbutton
 	closetext
 	turnobject PLAYER, DOWN
 .End
@@ -120,7 +131,7 @@ ElmsLabStarterChoice:
 	
 
 	
-ElmsLabtext_InverseNo:
+ElmsLabText_InverseNo:
 	text "All type matchups"
 	line "remain normal."
 	done
