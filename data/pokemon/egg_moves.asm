@@ -798,5 +798,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+GirafarigPEggMoves:
+FarigirafEggMoves:
 NoEggMoves:
 	db -1 ; end

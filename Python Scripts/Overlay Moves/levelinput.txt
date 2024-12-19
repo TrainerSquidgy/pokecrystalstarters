@@ -1,16 +1,15 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Farigiraf
+1: Astonish
+1: Tackle
+1: Growl
+5: Confusion
+10: Assurance
+14: Stomp
+19: Psybeam
+23: Agility
+28: Double Hit
+32: Twin Beam
+37: Crunch
+41: Baton Pass
+46: Nasty Plot
+50: Psychic

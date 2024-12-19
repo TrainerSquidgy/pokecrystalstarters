@@ -3365,3 +3365,23 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+GirafarigPEvosAttacks:
+	db EVOLVE_MOVE, TWIN_BEAM, FARIGIRAF
+FarigirafEvosAttacks:
+	db 0
+	db 1, ASTONISH
+	db 1, TACKLE
+	db 1, GROWL
+	db 5, CONFUSION
+	db 10, ASSURANCE
+	db 14, STOMP
+	db 23, AGILITY
+	db 28, DOUBLE_HIT
+	db 32, TWIN_BEAM
+	db 37, CRUNCH
+	db 41, BATON_PASS
+	db 46, NASTY_PLOT
+	db 50, PSYCHIC_M
+	db 0

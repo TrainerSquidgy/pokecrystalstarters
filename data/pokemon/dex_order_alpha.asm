@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db GIRAFARIGP
+	db FARIGIRAF
 	assert_table_length NUM_POKEMON
