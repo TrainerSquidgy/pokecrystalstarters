@@ -198,9 +198,16 @@ BattleTurn:
 .skip_iteration
 	call ParsePlayerAction
 	jr nz, .loop1
+	
 
 	call EnemyTriesToFlee
 	jr c, .quit
+	
+	ld hl, wPlayerSubStatus2
+	res SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	ld hl, wEnemySubStatus2
+	res SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+
 
 	call DetermineMoveOrder
 	jr c, .false
@@ -1845,6 +1852,10 @@ SubtractHPFromUser:
 	jp UpdateHPBarBattleHuds
 
 SubtractHP:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a

@@ -2093,3 +2093,23 @@ Snow:
 	startweather
 	endmove
 	
+Assurance:
+	checkobedience
+	usedmovetext
+	doturn
+	assurance
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
