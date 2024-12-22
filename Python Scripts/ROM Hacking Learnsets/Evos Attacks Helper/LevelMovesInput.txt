@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Salazzle
+1: Scratch
+1: Poison Gas
+5: Ember
+8: Sweet Scent
+13: Dragon Rage
+16: Smog
+21: DoubleSlap
+24: Flame Burst
+29: Toxic
+32: Nasty Plot
+33: Captivate
+39: Venoshock
+44: Flamethrower
+51: Venom Drench
+56: Dragon Pulse

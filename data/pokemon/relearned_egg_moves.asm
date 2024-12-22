@@ -903,6 +903,13 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+SalanditRelearnedEggMoves:
+SalazzleRelearnedEggMoves:
+	db 0
+	db 1, MUD_SLAP
+	db 1, SAND_ATTACK
+	db 0
+
 NoRelearnedEggMoves:
 	db 0
 	db 0

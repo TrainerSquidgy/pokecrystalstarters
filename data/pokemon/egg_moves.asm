@@ -800,3 +800,9 @@ LarvitarEggMoves:
 
 NoEggMoves:
 	db -1 ; end
+
+SalanditEggMoves:
+SalazzleEggMoves:
+	db MUD_SLAP
+	db SAND_ATTACK
+	db -1

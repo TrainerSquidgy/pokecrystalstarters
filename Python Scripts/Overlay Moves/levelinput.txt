@@ -1,16 +1,16 @@
-Pokémon: Sableye
+Pokémon: Salazzle
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Poison Gas
+5: Ember
+8: Sweet Scent
+13: Dragon Rage
+16: Smog
+21: DoubleSlap
+24: Flame Burst
+29: Toxic
+32: Nasty Plot
+33: Captivate
+39: Venoshock
+44: Flamethrower
+51: Venom Drench
+56: Dragon Pulse

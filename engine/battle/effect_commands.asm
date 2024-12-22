@@ -6909,8 +6909,9 @@ BattleCommand_Captivate:
 	jr nz, .failed
 	ret
 .failed
-	jp FailMove
-
+	ld a, 1
+	ld [wAttackMissed], a
+	
 BattleCommand_Venoshock:
 ; venoshock
 ; get the opponent's status condition

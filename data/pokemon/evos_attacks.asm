@@ -3365,3 +3365,41 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SalanditEvosAttacks:
+	db EVOLVE_LEVEL_FEMALE, 33, SALAZZLE
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, POISON_GAS
+	db 5, EMBER
+	db 8, SWEET_SCENT
+	db 13, DRAGON_RAGE
+	db 16, SMOG
+	db 21, DOUBLESLAP
+	db 24, FLAME_BURST
+	db 29, TOXIC
+	db 32, NASTY_PLOT
+	db 37, VENOSHOCK
+	db 40, FLAMETHROWER
+	db 45, VENOM_DRENCH
+	db 48, DRAGON_PULSE
+	db 0
+
+SalazzleEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, POISON_GAS
+	db 5, EMBER
+	db 8, SWEET_SCENT
+	db 13, DRAGON_RAGE
+	db 16, SMOG
+	db 21, DOUBLESLAP
+	db 24, FLAME_BURST
+	db 29, TOXIC
+	db 32, NASTY_PLOT
+	db 33, CAPTIVATE
+	db 39, VENOSHOCK
+	db 44, FLAMETHROWER
+	db 51, VENOM_DRENCH
+	db 56, DRAGON_PULSE
+	db 0

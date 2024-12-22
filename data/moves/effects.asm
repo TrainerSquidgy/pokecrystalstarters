@@ -2099,7 +2099,7 @@ Captivate:
 	doturn
 	checkhit
 	captivate
-	attackdown2
+	specialattackdown2
 	lowersub
 	statdownanim
 	raisesub

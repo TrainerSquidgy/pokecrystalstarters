@@ -2477,6 +2477,23 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+SalanditGen1TMAttacks:
+	db 0
+	db 1, TAKE_DOWN
+	db 1, DRAGON_RAGE
+	db 1, THUNDER_WAVE
+	db 1, SUBSTITUTE
+	db 0
+SalazzleGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DRAGON_RAGE
+	db 1, THUNDER_WAVE
+	db 1, SUBSTITUTE
+	db 0
+
 NoGen1TMAttacks:
 	db 0
 	db 0
+
