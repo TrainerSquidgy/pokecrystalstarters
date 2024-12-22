@@ -1,247 +1,337 @@
-Calm Mind
+Scratch
+Poison Gas
+Ember
+Sweet Scent
+Dragon Rage
+Smog
+Double Slap
+Flame Burst
 Toxic
-Hidden Power
-Ice Beam
-Hyper Beam
-Light Screen
-Protect
-Rain Dance
-Safeguard
-Frustration
-Earthquake
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Sandstorm
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Flash
-Body Slam
-Defense Curl
-Double-Edge
-Dream Eater
-Endure
-Explosion
-Mimic
-Psych Up
-Rock Slide
-Rollout
-Selfdestruct
-Sleep Talk
-Snore
-Substitute
-Swagger
-Swift
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
-Snore
-Swift
-Zen Headbutt
-Calm Mind
+Nasty Plot
+Venoshock
+Flamethrower
+Venom Drench
+Dragon Pulse
+Dragon Claw
 Toxic
+Venoshock
 Hidden Power
-Ice Beam
-Blizzard
-Hyper Beam
-Light Screen
+Taunt
 Protect
-Rain Dance
-Safeguard
 Frustration
-Earthquake
 Return
-Psychic
-Shadow Ball
+Leech Life
 Double Team
-Reflect
-Sandstorm
-Rock Tomb
+Sludge Wave
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
 Facade
-Secret Power
+Flame Charge
 Rest
-Skill Swap
-Charge Beam
-Endure
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
+Attract
+Thief
+Round
+Overheat
+Fling
+Will-O-Wisp
+Shadow Claw
+Payback
+Poison Jab
 Swagger
+Sleep Talk
 Substitute
-Trick Room
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Psychic
-Future Sight
-Explosion
-Moonblast
-Moonlight
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Rock Slide
-Psyshock
-Cosmic Power
-Psychic
-Stone Edge
-Future Sight
-Magic Room
-Explosion
-Hyper Beam
-Giga Impact
-Light Screen
-Reflect
-Safeguard
-Self-Destruct
+Confide
+Belch
+Fake Out*
+Knock Off
+Sand Attack
+Snatch*
+Covet
+Dragon Pulse
+Foul Play
+Gunk Shot
+Heat Wave
+Helping Hand
+Iron Tail
+Knock Off
+Snatch
+Snore
+Confide
+Covet
+Double Slap
+Double Team
+Dragon Rage
+Flame Burst
+Flame Charge
+Frustration
+Hidden Power
+Knock Off
+Return
+Snatch
+Swagger
+Torment
+Take Down
+Agility
+Mud-Slap
+Scary Face
+Protect
+Fire Fang
+Acid Spray
+Thief
+Trailblaze
+Facade
+Poison Tail
+Swift
+Flame Charge
+Fling
+Venoshock
+Endure
+Sunny Day
+Shadow Claw
+Foul Play
+Sleep Talk
+Dragon Claw
+Thunder Wave
+Poison Jab
 Rest
-Rock Slide
+Taunt
+Toxic Spikes
+Leech Life
+Gunk Shot
+Substitute
+Will-O-Wisp
+Dragon Pulse
+Heat Wave
+Flamethrower
+Helping Hand
+Nasty Plot
+Fire Blast
+Sludge Bomb
+Overheat
+Flare Blitz
+Tera Blast
+Toxic
+Knock Off
+Burning Jealousy
+Scale Shot
+Endeavor
+Temper Flare
+Sludge Wave
+Skitter Smack
+Scratch
+Poison Gas
+Smog
+Ember
+Poison Fang
+Sweet Scent
+Nasty Plot
+Incinerate
+Venoshock
+Dragon Pulse
+Flamethrower
+Toxic
+Endeavor
+Captivate
+Disable
+Encore
+Torment
+Swagger
+Pound
+Poison Gas
+Ember
+Sweet Scent
+Captivate
+Ember
+Sweet Scent
+Dragon Rage
+Smog
+Double Slap
+Flame Burst
+Toxic
+Nasty Plot
+Venoshock
+Flamethrower
+Venom Drench
+Dragon Pulse
+Dragon Claw
+Toxic
+Venoshock
+Hidden Power
+Taunt
+Protect
+Frustration
+Return
+Leech Life
+Double Team
+Sludge Wave
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
+Facade
+Flame Charge
+Rest
+Attract
+Thief
+Round
+Overheat
+Fling
+Will-O-Wisp
+Acrobatics
+Shadow Claw
+Payback
+Dragon Tail
+Poison Jab
+Swagger
+Sleep Talk
+Substitute
+Confide
+Belch
+Fake Out*
+Knock Off
+Sand Attack
+Snatch*
+Covet
+Dragon Pulse
+Foul Play
+Gunk Shot
+Heat Wave
+Helping Hand
+Iron Tail
+Knock Off
+Laser Focus
+Snatch
+Snore
+Fire Lash
+Knock Off
+Encore
+Torment
+Swagger
+Disable
+Scratch
+Endeavor
+Pound
+Poison Gas
+Smog
+Ember
+Fire Lash
+Poison Fang
+Sweet Scent
+Nasty Plot
+Incinerate
+Venoshock
+Dragon Pulse
+Venom Drench
+Flamethrower
+Toxic
+Thunder Wave
+Rest
+Thief
 Snore
 Protect
-Icy Wind
-Sandstorm
-Rain Dance
-Hail
+Attract
+Beat Up
+Will-O-Wisp
 Facade
 Swift
 Helping Hand
-Weather Ball
-Rock Tomb
-Sand Tomb
-Rock Blast
-Power Swap
-Trick Room
-Magic Room
+Fake Tears
+Payback
+Fling
+Shadow Claw
+Cross Poison
+Venoshock
 Round
 Acrobatics
-Bulldoze
-Psychic Terrain
-Stomping Tantrum
-Body Slam
-Ice Beam
-Blizzard
-Earthquake
-Psychic
+Breaking Swipe
+Flamethrower
+Fire Blast
+Leech Life
 Substitute
-Psyshock
+Sludge Bomb
 Endure
 Sleep Talk
-Baton Pass
-Shadow Ball
-Future Sight
-Skill Swap
-Cosmic Power
-Calm Mind
-Gyro Ball
-Power Gem
-Earth Power
+Encore
+Iron Tail
+Heat Wave
+Taunt
+Overheat
+Dragon Claw
+Dragon Dance
+Flare Blitz
+Poison Jab
+Dragon Pulse
 Nasty Plot
-Zen Headbutt
-Iron Head
-Stone Edge
-Stealth Rock
-Grass Knot
-Stored Power
-Ally Switch
-Calm Mind
-Hail
-Ice Beam
-Blizzard
-Hyper Beam
-Light Screen
+Gunk Shot
+Sludge Wave
+Foul Play
+Venom Drench
+Belch
+Fake Out*
+Mud-Slap
+Sand Attack
+Take Down
+Fake Tears
+Agility
+Mud-Slap
+Scary Face
 Protect
-Rain Dance
-Safeguard
-Earthquake
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Sandstorm
-Rock Tomb
+Fire Fang
+Acid Spray
+Acrobatics
+Thief
+Trailblaze
 Facade
-Rest
-Skill Swap
-Charge Beam
+Poison Tail
+Swift
+Flame Charge
+Fling
+Dragon Tail
+Venoshock
 Endure
-Nasty Plot
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
+Sunny Day
+Shadow Claw
+Foul Play
+Body Slam
 Sleep Talk
-Bulldoze
-Dream Eater
-Grass Knot
-Swagger
+Dragon Claw
+Thunder Wave
+Poison Jab
+Rest
+Taunt
+Toxic Spikes
+Leech Life
+Dragon Dance
+Gunk Shot
 Substitute
-Trick Room
-Ancient Power
-Baton Pass
-Charge Beam
-Confide
-Defense Curl
-Double Team
-Double-Edge
-Dream Eater
-Embargo 
-Flash 
-Frustration 
-Gravity
-Heal Block 
-Hidden Power 
-Laser Focus
-Magic Coat
-Mimic
-Natural Gift 
-Pain Split
-Psych Up
-Psywave 
-Recycle
-Return 
-Rollout
-Secret Power 
-Signal Beam 
-Smack Down
-Swagger
-Telekinesis 
+Will-O-Wisp
+Dragon Pulse
+Hyper Voice
+Heat Wave
+Encore
+Flamethrower
+Helping Hand
+Nasty Plot
+Fire Blast
+Sludge Bomb
+Giga Impact
+Overheat
+Hyper Beam
+Flare Blitz
+Tera Blast
 Toxic
+Knock Off
+Burning Jealousy
+Scale Shot
+Endeavor
+Temper Flare
+Sludge Wave
+Skitter Smack
+Breaking Swipe
+Dragon Cheer
+Belch
+Fake Out
+Mud-Slap
+Sand Attack

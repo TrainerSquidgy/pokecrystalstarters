@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1918,10 +1916,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5591,10 +5585,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -5603,10 +5593,7 @@ BattleCommand_Charge:
 	ld hl, .BattleLoweredHeadText
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6912,3 +6899,48 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_Captivate:
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	call CheckOppositeGender
+	jr c, .failed
+	call CheckHiddenOpponent
+	jr nz, .failed
+	ret
+.failed
+	jp FailMove
+
+BattleCommand_Venoshock:
+; venoshock
+; get the opponent's status condition
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+; return if it's 0 (no condition)
+	and $8
+	and a
+	ret z
+; it's (1 << PSN), so double damage
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	sla [hl]
+	ret
+	
+BattleCommand_VenomDrench:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+; return if it's not PSN
+	and 1 << PSN
+	jr z, .failed
+	call ResetMiss
+	call BattleCommand_SpecialAttackDown
+	call BattleCommand_StatDownMessage
+	call ResetMiss
+	call BattleCommand_SpecialDefenseDown
+	call BattleCommand_StatDownMessage
+	call ResetMiss
+	call BattleCommand_SpeedDown
+	jp BattleCommand_StatDownMessage
+	
+.failed
+	jp FailMove

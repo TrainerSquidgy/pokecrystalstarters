@@ -2093,3 +2093,47 @@ Snow:
 	startweather
 	endmove
 	
+Captivate:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	captivate
+	attackdown2
+	lowersub
+	statdownanim
+	raisesub
+	statdownmessage
+	statdownfailtext
+	endmove
+
+Venoshock:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	venoshock
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+VenomDrench:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statdownanim
+	venomdrench
+	raisesub
+	endmove

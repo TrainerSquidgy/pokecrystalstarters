@@ -178,6 +178,9 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command startweather
+	command captivate
+	command venoshock
+	command venomdrench
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1
