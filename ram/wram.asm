@@ -3187,7 +3187,8 @@ wBackupMaxHP:: ds 2
 wMegaPicture:: db
 wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
-	ds 63
+wCorrosionActive:: db	
+	ds 62
 
 wEventFlags:: flag_array NUM_EVENTS
 

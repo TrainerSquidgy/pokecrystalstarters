@@ -1215,7 +1215,22 @@ BattleCommand_Stab:
 	call GetBattleVar
 	cp STRUGGLE
 	ret z
-
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_POISON
+	jr z, .checkCorrosion
+	cp EFFECT_TOXIC
+	jr nz, .skipCorrosion
+.checkCorrosion
+	ld a, [wCorrosionActive]
+	and a
+	jr z, .skipCorrosion
+	ld a, [wBattleMonSpecies]
+	cp SALANDIT
+	ret z
+	cp SALAZZLE
+	ret z
+.skipCorrosion
 	ld hl, wBattleMonType1
 	ld a, [hli]
 	ld b, a
@@ -1302,7 +1317,7 @@ BattleCommand_Stab:
     inc hl
 
 	cp -1
-	jr z, .end
+	jp z, .end
 
 	; foresight
 	cp -2
@@ -1310,7 +1325,7 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_IDENTIFIED, a
-	jr nz, .end
+	jp nz, .end
 
 	jr .TypesLoop
 
@@ -1323,7 +1338,6 @@ BattleCommand_Stab:
 	cp e
 	jr z, .GotMatchup
 	jr .SkipType
-
 .GotMatchup:
 	push hl
 	push bc
@@ -1337,7 +1351,6 @@ BattleCommand_Stab:
 	jr nz, .NotImmune
 	inc a
 	ld [wAttackMissed], a
-	xor a
 .NotImmune:
 	ldh [hMultiplier], a
 	add b
@@ -1388,7 +1401,7 @@ BattleCommand_Stab:
 .SkipType:
 	inc hl
 	inc hl
-	jr .TypesLoop
+	jp .TypesLoop
 
 .end
 	call BattleCheckTypeMatchup
@@ -3729,6 +3742,15 @@ BattleCommand_PoisonTarget:
 	ret
 
 BattleCommand_Poison:
+	ld a, [wCorrosionActive]
+	and a
+	jr z, .skipCorrosion
+	ld a, [wBattleMonSpecies]
+	cp SALANDIT
+	jr z, .skipMatchup
+	cp SALAZZLE
+	jr z, .skipMatchup
+.skipCorrosion
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
 	and $7f
@@ -3736,7 +3758,7 @@ BattleCommand_Poison:
 
 	call CheckIfTargetIsPoisonType
 	jp z, .failed
-
+.skipMatchup
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	ld b, a
@@ -6945,3 +6967,4 @@ BattleCommand_VenomDrench:
 	
 .failed
 	jp FailMove
+	
