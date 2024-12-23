@@ -578,6 +578,9 @@ MovementFunction_RandomWalkXY:
 	jp _RandomWalkContinue
 
 MovementFunction_RandomSpinSlow:
+	ld a, [wSpinnersOff]
+	and a
+	jp nz, MovementFunction_SpinClockwise
 	call Random
 	ldh a, [hRandomAdd]
 	and %00001100
@@ -587,6 +590,10 @@ MovementFunction_RandomSpinSlow:
 	jp RandomStepDuration_Slow
 
 MovementFunction_RandomSpinFast:
+	ld a, [wSpinnersOff]
+	and a
+	jp nz, MovementFunction_SpinClockwise
+
 	ld hl, OBJECT_DIRECTION
 	add hl, bc
 	ld a, [hl]
