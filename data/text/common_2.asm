@@ -1585,3 +1585,15 @@ _MegaRingTurnedOffText::
 	text "MEGA RING's"
 	line "powers disabled."
 	prompt
+
+_WildEncountersOffText::
+	text "Wild #MON"
+	line "will not appear."
+	prompt
+	
+_WildEncountersOnText::
+	text "Wild #MON"
+	line "will reappear."
+	prompt
+	
+	

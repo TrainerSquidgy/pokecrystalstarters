@@ -58,12 +58,12 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw MegaStoneEffect
+	dw MegaStoneEffect     ; MEGA_RING
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
+	dw NoEffect            ; MEGA_STONE
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
@@ -103,7 +103,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLU_APRICORN
-	dw NoEffect            ; ITEM_5A
+	dw ProfsRepelEffect    ; PROFS_REPEL
 	dw NoEffect            ; AMULET_COIN
 	dw NoEffect            ; YLW_APRICORN
 	dw NoEffect            ; GRN_APRICORN
@@ -1071,6 +1071,14 @@ LevelBallMultiplier:
 
 BallDodgedText: ; unreferenced
 	text_far _BallDodgedText
+	text_end
+
+WildEncountersOnText: ; 
+	text_far _WildEncountersOnText
+	text_end
+	
+WildEncountersOffText: ; 
+	text_far _WildEncountersOffText
 	text_end
 
 BallMissedText: ; unreferenced
@@ -2964,3 +2972,16 @@ MegaStoneEffect:
 	ld hl, MegaRingTurnedOnText
 	call PrintText
 	ret
+	
+ProfsRepelEffect:
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	jr z, .TurnWildOff
+	res STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	ld hl, WildEncountersOnText
+	jp PrintText
+	
+.TurnWildOff
+	set STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	ld hl, WildEncountersOffText
+	jp PrintText

@@ -580,7 +580,7 @@ MovementFunction_RandomWalkXY:
 MovementFunction_RandomSpinSlow:
 	ld a, [wSpinnersOff]
 	and a
-	jp nz, MovementFunction_SpinClockwise
+	jp nz, MovementFunction_SpinCounterclockwise
 	call Random
 	ldh a, [hRandomAdd]
 	and %00001100
@@ -3049,3 +3049,6 @@ InitSprites:
 	dw wObject10Struct
 	dw wObject11Struct
 	dw wObject12Struct
+
+
+
