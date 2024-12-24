@@ -1222,7 +1222,7 @@ BattleCommand_Stab:
 	cp EFFECT_TOXIC
 	jr nz, .skipCorrosion
 .checkCorrosion
-	ld a, [wCorrosionActive]
+	ld a, [wAbilitiesActivated]
 	and a
 	jr z, .skipCorrosion
 	ld a, [wBattleMonSpecies]
@@ -3742,7 +3742,7 @@ BattleCommand_PoisonTarget:
 	ret
 
 BattleCommand_Poison:
-	ld a, [wCorrosionActive]
+	ld a, [wAbilitiesActivated]
 	and a
 	jr z, .skipCorrosion
 	ld a, [wBattleMonSpecies]
