@@ -1,6 +1,6 @@
 	db FARIGIRAF ; 203
 
-	db 120,  90,  70,  60, 110,  10
+	db 120,  90,  70,  60, 110,  70
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, PSYCHIC_TYPE ; type
