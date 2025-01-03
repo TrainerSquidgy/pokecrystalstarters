@@ -2093,3 +2093,9 @@ Snow:
 	startweather
 	endmove
 	
+MeFirst:
+	checkobedience
+	usedmovetext
+	doturn
+	mefirst
+	endmove

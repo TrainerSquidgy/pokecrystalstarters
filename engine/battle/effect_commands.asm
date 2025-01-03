@@ -1077,9 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
-	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
@@ -1562,10 +1559,14 @@ BattleCommand_DamageVariation:
 BattleCommand_CheckHit:
 	call .DreamEater
 	jp z, .Miss
+	
+	call .Feint
+	jr z, .skip_protect
 
 	call .Protect
 	jp nz, .Miss
 
+.skip_protect
 	call .DrainSub
 	jp z, .Miss
 
@@ -1653,6 +1654,25 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	and SLP_MASK
 	ret
+
+.Feint:
+; Return z if using Feint and opponent is protected.
+; Fail move if using Feint and opponent isn't protected.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FEINT
+	ret nz
+	call .Protect
+	jr z, .Feint_Fail
+	xor a
+	ret
+
+.Feint_Fail
+	push hl
+	call AnimateFailedMove
+	pop hl
+	call StdBattleTextbox
+	jp EndMoveEffect
 
 .Protect:
 ; Return nz if the opponent is protected.
@@ -1918,12 +1938,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
-	cp EFFECT_SKULL_BASH
-	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
@@ -5579,11 +5593,6 @@ BattleCommand_Charge:
 	ld hl, .UsedText
 	call BattleTextbox
 
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_SKULL_BASH
-	ld b, endturn_command
-	jp z, SkipToBattleCommand
 	jp EndMoveEffect
 
 .UsedText:
@@ -5591,22 +5600,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
-	cp SKULL_BASH
-	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6912,3 +6911,15 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_MeFirst:
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVar
+	and a
+	jr z, .fail
+	
+.fail
+	push hl
+	call AnimateFailedMove
+	pop hl
+	jp StdBattleTextbox
