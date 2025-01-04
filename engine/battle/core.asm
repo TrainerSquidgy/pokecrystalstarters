@@ -8394,6 +8394,20 @@ CleanUpBattleRAM:
 	xor a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
+	ld [wPlayerRageFist1], a
+	ld [wPlayerRageFist2], a
+	ld [wPlayerRageFist3], a
+	ld [wPlayerRageFist4], a
+	ld [wPlayerRageFist5], a
+	ld [wPlayerRageFist6], a
+	ld [wOpponentRageFist1], a
+	ld [wOpponentRageFist2], a
+	ld [wOpponentRageFist3], a
+	ld [wOpponentRageFist4], a
+	ld [wOpponentRageFist5], a
+	ld [wOpponentRageFist6], a
+	ld [wPlayerRageFistCounter], a
+	ld [wOpponentRageFistCounter], a
 	ld [wLowHealthAlarm], a
 	ld [wHiddenPowerLoop], a
 	ld [wBattleMode], a

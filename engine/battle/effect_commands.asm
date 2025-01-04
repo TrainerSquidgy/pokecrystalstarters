@@ -3402,6 +3402,8 @@ DoEnemyDamage:
 	or b
 	jr z, .did_no_damage
 
+	call IncreaseOpponentRageFistCounter
+
 	ld a, c
 	and a
 	jr nz, .ignore_substitute
@@ -3478,7 +3480,9 @@ DoPlayerDamage:
 	ld a, [hl]
 	or b
 	jr z, .did_no_damage
-
+	
+	call IncreasePlayerRageFistCounter
+	
 	ld a, c
 	and a
 	jr nz, .ignore_substitute
@@ -3530,6 +3534,123 @@ DoPlayerDamage:
 	predef AnimateHPBar
 .did_no_damage
 	jp RefreshBattleHuds
+
+IncreaseOpponentRageFistCounter:
+	ld a, [wCurOTMon]
+	and a
+	jr z, .enemy1
+	dec a
+	and a
+	jr z, .enemy2
+	dec a
+	and a
+	jr z, .enemy3
+	dec a
+	and a
+	jr z, .enemy4
+	dec a
+	and a
+	jr z, .enemy5
+	ld a, [wOpponentRageFist6]
+	inc a
+	cp 7
+	ret z
+	ld [wOpponentRageFist6], a
+	ret
+.enemy1
+	ld a, [wOpponentRageFist1]
+	inc a
+	cp 7
+	ret z
+	ld [wOpponentRageFist1], a
+	ret
+.enemy2
+	ld a, [wOpponentRageFist2]
+	inc a
+	cp 7
+	ret z
+	ld [wOpponentRageFist2], a
+	ret
+.enemy3
+	ld a, [wOpponentRageFist3]
+	inc a
+	cp 7
+	ret z
+	ld [wOpponentRageFist3], a
+	ret
+.enemy4
+	ld a, [wOpponentRageFist4]
+	inc a
+	cp 7
+	ret z
+	ld [wOpponentRageFist4], a
+	ret
+.enemy5
+	ld a, [wOpponentRageFist5]
+	inc a
+	cp 7
+	ret z
+	ld [wOpponentRageFist5], a
+	ret
+
+IncreasePlayerRageFistCounter:
+	ld a, [wCurBattleMon]
+	and a
+	jr z, .player1
+	dec a
+	and a
+	jr z, .player2
+	dec a
+	and a
+	jr z, .player3
+	dec a
+	and a
+	jr z, .player4
+	dec a
+	and a
+	jr z, .player5
+	ld a, [wPlayerRageFist6]
+	inc a
+	cp 7
+	ret z
+	ld [wPlayerRageFist6], a
+	ret
+.player1
+	ld a, [wPlayerRageFist1]
+	inc a
+	cp 7
+	ret z
+	ld [wPlayerRageFist1], a
+	ret
+.player2
+	ld a, [wPlayerRageFist2]
+	inc a
+	cp 7
+	ret z
+	ld [wPlayerRageFist2], a
+	ret
+.player3
+	ld a, [wPlayerRageFist3]
+	inc a
+	cp 7
+	ret z
+	ld [wPlayerRageFist3], a
+	ret
+.player4
+	ld a, [wPlayerRageFist4]
+	inc a
+	cp 7
+	ret z
+	ld [wPlayerRageFist4], a
+	ret
+.player5
+	ld a, [wPlayerRageFist5]
+	inc a
+	cp 7
+	ret z
+	ld [wPlayerRageFist5], a
+	ret
+
 
 DoSubstituteDamage:
 	ld hl, SubTookDamageText
@@ -6910,5 +7031,92 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
+BattleCommand_RageFist:
+	call BattleCommand_GetRageFistPointer
+	ld hl, wPlayerRageFistCounter
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wOpponentRageFistCounter
+.go
+	ld a, [hl]
+.loop
+	and a
+	ret z
+	dec a
+	call BattleCommand_AddDamage
+	jr .loop
 	
-
+BattleCommand_GetRageFistPointer:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_rage_fist
+	ld a, [wCurOTMon]
+	and a
+	jr z, .enemy1
+	dec a
+	and a
+	jr z, .enemy2
+	dec a
+	and a
+	jr z, .enemy3
+	dec a
+	and a
+	jr z, .enemy4
+	dec a
+	and a
+	jr z, .enemy5
+	ld a, [wOpponentRageFist6]
+	jr .enemy_merge
+.enemy1
+	ld a, [wOpponentRageFist1]
+	jr .enemy_merge
+.enemy2
+	ld a, [wOpponentRageFist2]
+	jr .enemy_merge
+.enemy3
+	ld a, [wOpponentRageFist3]
+	jr .enemy_merge
+.enemy4
+	ld a, [wOpponentRageFist4]
+	jr .enemy_merge
+.enemy5
+	ld a, [wOpponentRageFist5]
+.enemy_merge
+	ld [wOpponentRageFistCounter], a
+	ret
+.player_rage_fist
+	ld a, [wCurOTMon]
+	and a
+	jr z, .player1
+	dec a
+	and a
+	jr z, .player2
+	dec a
+	and a
+	jr z, .player3
+	dec a
+	and a
+	jr z, .player4
+	dec a
+	and a
+	jr z, .player5
+	ld a, [wPlayerRageFist6]
+	jr .player_merge
+.player1
+	ld a, [wPlayerRageFist1]
+	jr .player_merge
+.player2
+	ld a, [wPlayerRageFist2]
+	jr .player_merge
+.player3
+	ld a, [wPlayerRageFist3]
+	jr .player_merge
+.player4
+	ld a, [wPlayerRageFist4]
+	jr .player_merge
+.player5
+	ld a, [wPlayerRageFist5]
+.player_merge
+	ld [wPlayerRageFistCounter], a
+	ret
