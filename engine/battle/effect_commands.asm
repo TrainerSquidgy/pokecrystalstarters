@@ -2128,6 +2128,19 @@ BattleCommand_FailureText:
 	jp EndMoveEffect
 
 BattleCommand_ApplyDamage:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .skip_counter
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVarAddr
+	cp RAGE_FIST
+	jr nz, .skip_counter
+	ld a, [wPlayerUsedRageFist]
+	cp 20
+	jr z, .skip_counter
+	inc a
+	ld [wPlayerUsedRageFist], a
+.skip_counter
 	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	res SUBSTATUS_LAST_MOVE_MISSED, [hl]
@@ -7050,15 +7063,6 @@ BattleCommand_AddDamage:
     ret
 	
 BattleCommand_RageFist:
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .skip_counter
-	ld a, [wPlayerUsedRageFist]
-	cp 20
-	jr z, .skip_counter
-	inc a
-	ld [wPlayerUsedRageFist], a
-.skip_counter
 	call BattleCommand_GetRageFistPointer
 	ld hl, wPlayerRageFistCounter
 	ldh a, [hBattleTurn]
