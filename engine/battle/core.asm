@@ -8398,6 +8398,7 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wLastCopycatMove], a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a

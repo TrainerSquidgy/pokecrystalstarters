@@ -1674,11 +1674,9 @@ BattleCommand_CheckHit:
 	ret
 
 .Feint_Fail
-	push hl
-	call AnimateFailedMove
-	pop hl
-	call StdBattleTextbox
-	jp EndMoveEffect
+	ld a, 1
+	ld [wAttackMissed], a
+	jp PrintButItFailed
 
 .Protect:
 ; Return nz if the opponent is protected.
