@@ -58,6 +58,10 @@ Option:
 	farcall _Option
 	ret
 
+ExtraOption:
+	farcall _ExtraOption
+	ret
+
 NewGame:
 	xor a
 	ld [wDebugFlags], a

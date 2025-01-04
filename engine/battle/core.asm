@@ -1689,14 +1689,22 @@ HandleWeather:
 
 	ld hl, wWeatherCount
 	dec [hl]
-	jr z, .ended
+	jr nz, .continues
+	
+; ended
+	ld hl, .WeatherEndedMessages
+	call .PrintWeatherMessage
+	xor a
+	ld [wBattleWeather], a
+	ret
 
+.continues
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	ret nz
+	jr nz, .check_hail
 
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -1753,12 +1761,51 @@ HandleWeather:
 	ld hl, SandstormHitsText
 	jp StdBattleTextbox
 
-.ended
-	ld hl, .WeatherEndedMessages
-	call .PrintWeatherMessage
-	xor a
-	ld [wBattleWeather], a
-	ret
+.check_hail
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	ret nz
+
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .enemy_first_hail
+
+; player first
+	call SetPlayerTurn
+	call .HailDamage
+	call SetEnemyTurn
+	jr .HailDamage
+
+.enemy_first_hail
+	call SetEnemyTurn
+	call .HailDamage
+	call SetPlayerTurn
+
+.HailDamage:
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	bit SUBSTATUS_UNDERGROUND, a
+	ret nz
+
+	ld hl, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok1
+	ld hl, wEnemyMonType1
+.ok1
+	ld a, [hli]
+	cp ICE
+	ret z
+
+	ld a, [hl]
+	cp ICE
+	ret z
+
+	call GetSixteenthMaxHP
+	call SubtractHPFromUser
+
+	ld hl, PeltedByHailText
+	jp StdBattleTextbox
 
 .PrintWeatherMessage:
 	ld a, [wBattleWeather]
@@ -1777,12 +1824,16 @@ HandleWeather:
 	dw BattleText_RainContinuesToFall
 	dw BattleText_TheSunlightIsStrong
 	dw BattleText_TheSandstormRages
+	dw BattleText_HailContinuesToFall
+	dw BattleText_SnowContinuesToFall
 
 .WeatherEndedMessages:
 ; entries correspond to WEATHER_* constants
 	dw BattleText_TheRainStopped
 	dw BattleText_TheSunlightFaded
 	dw BattleText_TheSandstormSubsided
+	dw BattleText_TheHailStopped
+	dw BattleText_TheSnowStopped
 
 SubtractHPFromTarget:
 	call SubtractHP
@@ -3865,6 +3916,7 @@ TryToRunAwayFromBattle:
 InitBattleMon:
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
+	
 	ld de, wBattleMonSpecies
 	ld bc, MON_OT_ID
 	call CopyBytes
@@ -4952,6 +5004,38 @@ LoadBattleMenu2:
 	ret
 
 BattleMenu_Pack:
+	ld a, [wMegaEvolutionEnabled]
+	and a
+	jr z, .skip_checking_mega
+	
+	ld a, [wBattleMonSpecies]
+	farcall CheckIfMonIsInMegaList
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wMegaEvolutionActive]
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr nz, .skip_checking_mega
+	ld a, [wBattleMonItem]
+	cp MEGA_STONE
+	jr nz, .skip_checking_mega
+	
+	ld hl, BattleText_MegaEvolveAsk
+	call StdBattleTextbox
+	lb bc, 1, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	jr c, .skip_checking_mega
+	ld a, [wMenuCursorY]
+	cp $1 ; YES
+	jr nz, .skip_checking_mega
+	farcall MegaEvolvePokemon
+	jp BattleMenu
+	
+	
+.skip_checking_mega
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
@@ -6113,7 +6197,16 @@ LoadEnemyMon:
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_FORCESHINY
 	jr nz, .GenerateDVs
-
+	
+	ld a, 31
+	call RandomRange
+	and a
+	jr nz, .ShinyDVs
+	call Random
+	and a
+	jr z, .GenerateDVs
+	
+.ShinyDVs
 	ld b, ATKDEFDV_SHINY ; $ea
 	ld c, SPDSPCDV_SHINY ; $aa
 	jr .UpdateDVs
@@ -7272,6 +7365,11 @@ GiveExperiencePoints:
 	call ApplyStatLevelMultiplierOnAllStats
 	callfar ApplyStatusEffectOnPlayerStats
 	callfar BadgeStatBoosts
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr z, .not_mega
+	farcall MegaEvolvePokemon
+.not_mega
 	callfar UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
@@ -8294,7 +8392,10 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wSetMegaEvolutionPicture], a
+	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
+	ld [wHiddenPowerLoop], a
 	ld [wBattleMode], a
 	ld [wBattleType], a
 	ld [wAttackMissed], a

@@ -91,6 +91,103 @@ ElmsLabStarterChoice:
 	loadmem wIsAStarter, 0
 .HandledHiddenPower
 ; Check to see if MON should Evolve
+	writetext ElmsLabChooseStartersYesText
+	waitbutton
+	sjump .Merge
+.NoStarter
+	writetext ElmsLabChooseStartersNoText
+.Merge
+	waitbutton
+	writetext ElmsLabText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
+	writetext ElmsLabText_AskAboutHMFriendsYes
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsNo
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+.DoneHMFriends
+	waitbutton
+	closetext
+	turnobject PLAYER, DOWN
+.End
+	end
+	
+
+	
+ElmsLabText_InverseNo:
+	text "All type matchups"
+	line "remain normal."
+	done
+
+ElmsLabText_InverseAsk:
+	text "Do you want to"
+	line "use INVERSE"
+	cont "type matchups?"
+	done
+
+ElmsLabtext_InverseYes:
+	text "All matchups"
+	line "are INVERTED."
+	done
+
+ElmsLabExtraOptions:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .End
+	opentext
+	writetext ElmsLabText_AskExtraOptions
+	yesorno
+	iftrue .ExtraOptions
+	writetext ElmsLabText_NoExtraOptions
+	sjump .StartersDone
+.ExtraOptions
+	writetext ElmsLabText_PLAHiddenPowerAsk
+	yesorno
+	iffalse .NoPLA
+	loadmem wWhichHiddenPower, 1
+	writetext ElmsLabText_PLAHiddenPowerYes
+	waitbutton
+	writetext ElmsLabText_PLAHiddenPowerWarning
+	promptbutton
+.NoPLA
+	writetext ElmsLabText_AlterHiddenPower
+	yesorno
+	iffalse .NoAltering
+	special SetHiddenPower
+	special AlteredHiddenPower
+	writetext ElmsLabText_AlteredHiddenPower
+	sjump .Merge
+.NoAltering
+	writetext ElmsLabText_NoAlteredHiddenPower
+.Merge
+	promptbutton
+	writetext ElmsLabText_AbilitiesAsk
+	yesorno
+	iftrue .AbilitiesYes
+	loadmem wAbilitiesActivated, 0
+	writetext ElmsLabText_AbilitiesNo
+	sjump .Merge3
+.AbilitiesYes
+	loadmem wAbilitiesActivated, 1
+	writetext ElmsLabText_AbilitiesYes
+.Merge3
+	promptbutton
+	writetext ElmsLabText_AskLimitTutors
+	yesorno
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	sjump .Merge4
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+.Merge4
+	promptbutton
 	writetext ElmsLabText_EvolutionsAsk
 	yesorno
 	iftrue .KeepEvolutions
@@ -99,9 +196,21 @@ ElmsLabStarterChoice:
 	waitbutton
 	sjump .HandledEvolutions
 .KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
 	writetext ElmsLabText_EvolutionsYes
 	waitbutton
 .HandledEvolutions
+	writetext ElmsLabText_AskMegas
+	yesorno
+	iftrue .YesMegas
+	loadmem wMegaEvolutionEnabled, 0
+	writetext ElmsLabText_MegasNo
+	sjump .HandledMegas
+.YesMegas
+	loadmem wMegaEvolutionEnabled, 1
+	writetext ElmsLabText_MegasYes
+.HandledMegas
+	waitbutton
 	writetext ElmsLabText_AskRival
 	yesorno
 	iffalse .NoRival
@@ -114,26 +223,192 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_RivalStillSame
 	waitbutton
 .StartersDone
-	writetext ElmsLabChooseStartersYesText
-	sjump .Merge
-.NoStarter
-	writetext ElmsLabChooseStartersNoText
-.Merge
-	waitbutton
-	writetext ElmsLabText_AskAboutHMFriends
+	writetext ElmsLabText_InverseAsk
 	yesorno
-	iffalse .NoHMFriends
-	writetext ElmsLabText_AskAboutHMFriendsYes
-	sjump .DoneHMFriends
-.NoHMFriends
-	writetext ElmsLabText_AskAboutHMFriendsNo
-	loadmem wIlexForestEncounters, 3
-	loadmem wRoute34Encounters, 3
-.DoneHMFriends
+	iftrue .YesInverse
+	loadmem wInverseActivated, 0
+	writetext ElmsLabText_InverseNo
+	sjump .InverseDone
+.YesInverse
+	loadmem wInverseActivated, 1
+	writetext ElmsLabtext_InverseYes
+.InverseDone
+	waitbutton
+	writetext ElmsLabText_SpinnersAsk
+	yesorno
+	iftrue .YesSpinners
+	loadmem wSpinnersOff, 0
+	writetext ElmsLabText_SpinnersNo
+	sjump .SpinnersDone
+.YesSpinners
+	loadmem wSpinnersOff, 1
+	writetext ElmsLabText_SpinnersYes
+.SpinnersDone
+	waitbutton
+	writetext ElmsLabText_ProfessorsRepelAsk
+	yesorno
+	iftrue .YesProfsRepel
+	writetext ElmsLabText_ProfessorsRepelNo
+	sjump .ProfsRepelDone
+.YesProfsRepel
+	verbosegiveitem PROFS_REPEL
+	writetext ElmsLabText_ProfessorsRepelYes
+.ProfsRepelDone
 	waitbutton
 	closetext
+	turnobject PLAYER, RIGHT
 .End
 	end
+
+ElmsLabText_ProfessorsRepelAsk:
+	text "Borrow the"
+	line "PROF'S REPEL?"
+	done
+	
+ElmsLabText_ProfessorsRepelYes:
+	text "Turn it on in"
+	line "the KEY ITEMS"
+	
+	para "and WILD #MON"
+	line "will not appear."
+	done
+	
+ElmsLabText_ProfessorsRepelNo:
+	text "We'll keep hold"
+	line "of this then!"
+	done
+
+ElmsLabText_SpinnersAsk:
+	text "Turn all SPINNERS"
+	line "into ROTATORS?"
+	done
+	
+ElmsLabText_SpinnersYes:
+	text "All map objects"
+	line "with random spin,"
+	
+	para "now rotate in a"
+	line "predictable way."
+	done
+	
+ElmsLabText_SpinnersNo:
+	text "All map objects"
+	line "with random spin,"
+	
+	para "will continue"
+	line "to spin randomly."
+	done 
+	
+ElmsLabText_AskMegas:
+	text "Do you want to"
+	line "be able to"
+	cont "MEGA EVOLVE?"
+	done
+	
+ElmsLabText_MegasNo:
+	text "No #MON will"
+	line "MEGA EVOLVE."
+	done
+	
+ElmsLabText_MegasYes:
+	text "If your #MON"
+	line "can MEGA EVOLVE,"
+	
+	para "it will be able"
+	line "to as the story"
+	cont "progresses."
+	done
+
+
+ElmsLabText_PLAHiddenPowerAsk:
+	text "Want to play with"
+	line "LEGENDS ARCEUS"
+	cont "HIDDEN POWER?"
+	done
+	
+ElmsLabText_PLAHiddenPowerYes:
+	text "HIDDEN POWER will"
+	line "be 50 power and"
+	cont "always choose"
+	cont "the best matchup."
+	done
+
+ElmsLabText_PLAHiddenPowerWarning:
+	text "You will now be"
+	line "asked about in-"
+	cont "depth altering."
+	
+	para "This will only"
+	line "affect your DVs."
+	done
+
+ElmsLabText_AskLimitTutors:
+	text "Do you want a"
+	line "limit on the"
+	cont "amount of times"
+	cont "you can use the"
+	cont "new TUTORS?"
+	done
+	
+ElmsLabText_LimitTutorsYes:
+	text "You can only use"
+	line "one new TUTOR a"
+	cont "maximum of four"
+	cont "times and you"
+	cont "can only pick"
+	cont "one TUTOR."
+	done
+
+ElmsLabText_LimitTutorsNo:
+	text "You may use both"
+	line "TUTORS unlimited"
+	cont "times."
+	done
+
+ElmsLabText_AskExtraOptions:
+	text "Set EXTRA OPTIONS"
+	line "for your game?"
+	done
+
+ElmsLabText_NoExtraOptions:
+	text "No extra changes"
+	line "have been made."
+	done
+
+ElmsLabText_AbilitiesAsk:
+	text "Do you want your"
+	line "#MON to have"
+	cont "an ABILITY if one"
+	cont "is coded for it?"
+	done
+
+ElmsLabText_AbilitiesNo:
+	text "Your #MON will"
+	line "not have any"
+	cont "extra ABILITY."
+	done
+
+ElmsLabText_AbilitiesYes:
+	text "If your #MON"
+	line "has an ability"
+	cont "coded in, it will"
+	cont "be activated."
+	done 
+
+ElmsLabText_AlterHiddenPower:
+	text "Want to modify"
+	line "HIDDEN POWER?"
+	done
+
+ElmsLabText_NoAlteredHiddenPower:
+	text "HIDDEN POWER"
+	line "stays the same."
+	done
+
+ElmsLabText_AlteredHiddenPower:
+	text "HIDDEN POWER"
+	line "is modified."
+	done
 	
 ElmsLabText_EvolutionsYes:
 	text "Evolutions are"
@@ -177,6 +452,12 @@ ElmsLabText_HiddenPowerUpdated:
 	line "type updated."
 	done
 	
+ReceivedStarterTextNoPreview:
+	text "<PLAYER> received"
+	line "a #MON."
+	done
+
+
 ElmsLabChooseStartersAskText:
 	text "Update STARTER"
 	line "#MON?"
@@ -337,6 +618,8 @@ CyndaquilPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
+	readmem wElmPreview
+	ifequal 1, .DontPreview
 	reanchormap
 	getmonname STRING_BUFFER_3, CYNDAQUIL
 	pokepic CYNDAQUIL
@@ -347,12 +630,19 @@ CyndaquilPokeBallScript:
 	writetext TakeCyndaquilText
 	yesorno
 	iffalse DidntChooseStarterScript
+.PreviewMerge
 	disappear ELMSLAB_POKE_BALL1
 	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+	readmem wElmPreview
+	ifequal 1, .DontShowName
 	writetext ReceivedStarterText
+	sjump .NameMerge
+.DontShowName
+	writetext ReceivedStarterTextNoPreview
+.NameMerge
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
@@ -362,11 +652,21 @@ CyndaquilPokeBallScript:
 	ifequal RIGHT, ElmDirectionsScript
 	applymovement PLAYER, AfterCyndaquilMovement
 	sjump ElmDirectionsScript
+	
+.DontPreview
+	getmonname STRING_BUFFER_3, CYNDAQUIL
+	opentext
+	writetext ElmText_TakeThisMon
+	yesorno
+	iftrue .PreviewMerge
+	sjump DidntChooseStarterScript
 
 TotodilePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
+	readmem wElmPreview
+	ifequal 1, .DontPreview
 	reanchormap
 	getmonname STRING_BUFFER_3, TOTODILE
 	pokepic TOTODILE
@@ -377,12 +677,19 @@ TotodilePokeBallScript:
 	writetext TakeTotodileText
 	yesorno
 	iffalse DidntChooseStarterScript
+.PreviewMerge
 	disappear ELMSLAB_POKE_BALL2
 	setevent EVENT_GOT_TOTODILE_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+	readmem wElmPreview
+	ifequal 1, .DontShowName
 	writetext ReceivedStarterText
+	sjump .NameMerge
+.DontShowName
+	writetext ReceivedStarterTextNoPreview
+.NameMerge
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
@@ -390,11 +697,21 @@ TotodilePokeBallScript:
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
+	
+.DontPreview
+	getmonname STRING_BUFFER_3, TOTODILE
+	opentext
+	writetext ElmText_TakeThisMon
+	yesorno
+	iftrue .PreviewMerge
+	sjump DidntChooseStarterScript
 
 ChikoritaPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
+	readmem wElmPreview
+	ifequal 1, .DontPreview
 	reanchormap
 	getmonname STRING_BUFFER_3, CHIKORITA
 	pokepic CHIKORITA
@@ -405,12 +722,19 @@ ChikoritaPokeBallScript:
 	writetext TakeChikoritaText
 	yesorno
 	iffalse DidntChooseStarterScript
+.PreviewMerge
 	disappear ELMSLAB_POKE_BALL3
 	setevent EVENT_GOT_CHIKORITA_FROM_ELM
 	writetext ChoseStarterText
 	promptbutton
 	waitsfx
+	readmem wElmPreview
+	ifequal 1, .DontShowName
 	writetext ReceivedStarterText
+	sjump .NameMerge
+.DontShowName
+	writetext ReceivedStarterTextNoPreview
+.NameMerge
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
@@ -418,6 +742,20 @@ ChikoritaPokeBallScript:
 	closetext
 	applymovement PLAYER, AfterChikoritaMovement
 	sjump ElmDirectionsScript
+
+.DontPreview
+	getmonname STRING_BUFFER_3, CHIKORITA
+	opentext
+	writetext ElmText_TakeThisMon
+	yesorno
+	iftrue .PreviewMerge
+	sjump DidntChooseStarterScript
+	
+	
+ElmText_TakeThisMon:
+	text "So you like the"
+	line "look of this one?"
+	done
 
 DidntChooseStarterScript:
 	writetext DidntChooseStarterText
@@ -780,6 +1118,121 @@ ElmsLabTrashcan:
 
 ElmsLabPC:
 	jumptext ElmsLabPCText
+	
+ElmsLabRandomizeStarters:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .End
+	opentext
+	writetext ElmsLab_RandomizeStartersAsk
+	yesorno
+	iffalse .NoRandom
+	callasm ElmsLabRandomizer
+	writetext ElmsLab_RandomizerYes
+	waitbutton
+	writetext ElmsLab_RandomizerHide
+	yesorno
+	iffalse .YesPreview
+	loadmem wElmPreview, 1
+	writetext ElmsLabText_PreviewDisabled
+	sjump .PreviewMerge
+.YesPreview
+	writetext ElmsLabText_PreviewEnabled
+.PreviewMerge
+	waitbutton
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower
+.NoHiddenPower
+	loadmem wIsAStarter, 0
+.HandledHiddenPower
+; Check to see if MON should Evolve
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	waitbutton
+	sjump .HandledEvolutions
+.KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
+	writetext ElmsLabText_EvolutionsYes
+	waitbutton
+.HandledEvolutions
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	waitbutton
+	sjump .StartersDone
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext ElmsLabText_RivalStillSame
+	waitbutton
+.StartersDone
+	writetext ElmsLabChooseStartersYesText
+	sjump .Merge	
+.NoRandom
+	writetext ElmsLab_RandomizerNo
+	waitbutton
+.Merge
+	writetext ElmsLabText_AskAboutHMFriends
+	yesorno
+	iffalse .NoHMFriends
+	loadmem wIlexForestEncounters, 0
+	loadmem wRoute34Encounters, 0
+	loadmem wGuaranteedHMFriendCatch, 1
+	writetext ElmsLabText_AskAboutHMFriendsYes
+	sjump .DoneHMFriends
+.NoHMFriends
+	writetext ElmsLabText_AskAboutHMFriendsNo
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+.DoneHMFriends
+	waitbutton
+	closetext
+	turnobject PLAYER, UP
+.End
+	end
+ElmsLabText_PreviewEnabled:
+	text "You will still"
+	line "see what you"
+	cont "can receive."
+	done
+	
+ElmsLabText_PreviewDisabled:
+	text "You will not"
+	line "be able to see"
+	cont "what you get."
+	done
+	
+ElmsLab_RandomizerHide:
+	text "Do you want to"
+	line "hide what is"
+	cont "in each ball?"
+	done
+	
+ElmsLab_RandomizeStartersAsk:
+	text "Do you want"
+	line "to randomize"
+	cont "your starters?"
+	done
+	
+ElmsLab_RandomizerNo:
+	text "Starters are"
+	line "kept unchanged."
+	done
+	
+ElmsLab_RandomizerYes:
+	text "Starters are"
+	line "now randomized."
+	done
+	
 
 ElmsLabTrashcan2: ; unreferenced
 	jumpstd TrashCanScript
@@ -1554,7 +2007,9 @@ ElmsLabText_AskAboutHMFriends:
 	text "Do you want"
 	line "the HM Friends"
 	cont "to be guaranteed"
-	cont "first encounters?"
+	cont "first encounters"
+	para "and to be caught"
+	line "first ball?"
 	done
 	
 ElmsLabText_AskAboutHMFriendsYes:
@@ -1607,8 +2062,10 @@ ElmsLab_MapEvents:
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
+	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
-
+	bg_event  1,  2, BGEVENT_READ, ElmsLabExtraOptions
+	
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB

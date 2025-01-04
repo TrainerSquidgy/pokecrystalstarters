@@ -3170,7 +3170,25 @@ wStarterDVSelection:: db
 wEvolutionsDisabled:: db
 wGen1MovesLeft:: db
 wEggMovesLeft:: db
-	ds 81
+wGuaranteedHMFriendCatch:: db
+wElmPreview:: db
+wAlteredHiddenPowerDVs:: db
+wInverseActivated:: db
+wAbilitiesActivated:: db
+wTutorsLimited:: db
+wHiddenPowerLoop:: db
+wHiddenPowerType:: db
+wTempHiddenPowerType:: db
+wTempHiddenPowerPower:: db
+wWhichHiddenPower:: db
+wMegaEvolutionActive:: db
+wAlreadyMegaEvolved:: db
+wBackupMaxHP:: ds 2
+wMegaPicture:: db
+wSetMegaEvolutionPicture:: db
+wMegaEvolutionEnabled:: db
+wSpinnersOff:: db
+	ds 62
 
 wEventFlags:: flag_array NUM_EVENTS
 

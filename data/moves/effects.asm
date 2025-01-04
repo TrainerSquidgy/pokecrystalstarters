@@ -94,6 +94,7 @@ BurnHit:
 	burntarget
 	endmove
 
+Blizzard:
 FreezeHit:
 	checkobedience
 	usedmovetext
@@ -1525,7 +1526,7 @@ Sandstorm:
 	checkobedience
 	usedmovetext
 	doturn
-	startsandstorm
+	startweather
 	endmove
 
 Endure:
@@ -1812,14 +1813,14 @@ RainDance:
 	checkobedience
 	usedmovetext
 	doturn
-	startrain
+	startweather
 	endmove
 
 SunnyDay:
 	checkobedience
 	usedmovetext
 	doturn
-	startsun
+	startweather
 	endmove
 
 FakeOut:
@@ -2077,3 +2078,18 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+Hail:
+	checkobedience
+	usedmovetext
+	doturn
+	startweather
+	endmove
+	
+Snow:
+	checkobedience
+	usedmovetext
+	doturn
+	startweather
+	endmove
+	

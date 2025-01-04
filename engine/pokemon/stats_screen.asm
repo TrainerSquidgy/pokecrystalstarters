@@ -426,9 +426,10 @@ StatsScreen_InitUpperHalf:
 	ld [hl], "."
 	inc hl
 	hlcoord 10, 0
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	ld de, wTextDecimalByte
-	call PrintNum
+	call GetPokemonNumber
+	call PlaceString
+	hlcoord 4, 8
+	call PlaceString
 	hlcoord 14, 0
 	call PrintLevel
 	ld hl, .NicknamePointers

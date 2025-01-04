@@ -76,7 +76,7 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, CELEBI 
-
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -86,6 +86,7 @@ SetStarter1::
 	ld hl, wElmPokemon1
 	ld a, [hl]
 	cp 250
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -199,7 +200,7 @@ SetStarter2::
 	and a
 	jr nz, .decrease
 	ld a, CELEBI
-
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -209,6 +210,7 @@ SetStarter2::
 	ld hl, wElmPokemon2
 	ld a, [hl]
 	cp 250
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -322,7 +324,7 @@ SetStarter3::
 	and a
 	jr nz, .decrease
 	ld a, CELEBI
-
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -332,6 +334,7 @@ SetStarter3::
 	ld hl, wElmPokemon3
 	ld a, [hl]
 	cp 250
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -620,6 +623,7 @@ PokemonStrings:
 	dw .Lugia
 	dw .Hooh
 	dw .Celebi
+;PYTHONBUFFER3
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -872,6 +876,7 @@ PokemonStrings:
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
 .Celebi	db "CELEBI@@@@@"
+;PYTHONBUFFER4
 
 
 WhichPokemonInBall1Text:
@@ -888,6 +893,10 @@ WhichPokemonInBall3Text:
 	
 WhatHiddenPowerTypeText:
 	text_far _WhatHiddenPowerTypeText
+	text_end
+
+ModifyHiddenPowerTypeText:
+	text_far _ModifyHiddenPowerTypeText
 	text_end
 	
 
@@ -1131,3 +1140,156 @@ TypeTextStrings:
 	.Poison   db "POISON@@@"
 	.Flying   db "FLYING@@@"
 	.Fighting db "FIGHTING@"
+	
+AlteredHiddenPower::
+	ld a, 1
+	ld [wIsAStarter], a
+	ldh a, [hInMenu]
+	push af
+	ld a, $1
+	ldh [hInMenu], a
+	ld de, TimeSetUpArrowGFX
+	ld hl, vTiles0 tile TIMESET_UP_ARROW
+	lb bc, BANK(TimeSetUpArrowGFX), 1
+	call Request1bpp
+	ld de, TimeSetDownArrowGFX
+	ld hl, vTiles0 tile TIMESET_DOWN_ARROW
+	lb bc, BANK(TimeSetDownArrowGFX), 1
+	call Request1bpp
+	xor a
+	ld [wAlteredHiddenPowerDVs], a
+.loop
+	hlcoord 0, 12
+	lb bc, 4, 2
+	call Textbox
+	call LoadStandardMenuHeader
+	ld hl, ModifyHiddenPowerTypeText
+	call PrintText
+	hlcoord 6, 3
+	ld b, 2
+	ld c, 12
+	call Textbox
+	hlcoord 13, 3
+	ld [hl], TIMESET_UP_ARROW
+	hlcoord 11, 6
+	ld [hl], TIMESET_DOWN_ARROW
+	hlcoord 7, 5
+	call AlteredHiddenPowerStrings
+	call ApplyTilemap
+	ld c, 10
+	call DelayFrames
+.loop2
+	call JoyTextDelay
+	call .GetJoypadAction
+	jr nc, .loop2
+	call ExitMenu
+	call UpdateSprites
+	ld hl, ConfirmPokemonText
+	call PrintText
+	call YesNoBox
+	jr c, .loop
+	ld a, [wAlteredHiddenPowerDVs]
+	inc a
+	ld [wStringBuffer2], a
+	call LoadStandardFont
+	pop af
+	ldh [hInMenu], a
+	ret
+
+.GetJoypadAction:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr z, .not_A
+	scf
+	ret
+
+.not_A
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_UP
+	jr nz, .d_up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .d_down
+	call DelayFrame
+	and a
+	ret
+
+.d_down
+	ld hl, wAlteredHiddenPowerDVs
+	ld a, [hl]
+	and a
+	jr nz, .decrease
+	ld a, 3 + 1
+
+.decrease
+	dec a
+	ld [hl], a
+	jr .finish_dpad
+
+.d_up
+	ld hl, wAlteredHiddenPowerDVs
+	ld a, [hl]
+	cp 3
+	jr c, .increase
+	ld a, 0 - 1
+
+.increase
+	inc a
+	ld [hl], a
+
+.finish_dpad
+	xor a
+	ldh [hBGMapMode], a
+	hlcoord 7, 4
+	ld b, 2
+	ld c, 11
+	call ClearBox
+	hlcoord 7, 5
+	call .PlaceTypeStrings
+	call WaitBGMap
+	and a
+	ret
+
+.PlaceTypeStrings
+	push hl
+	ld a, [wAlteredHiddenPowerDVs]
+	ld e, a
+	ld d, 0
+	ld hl, AlteredHiddenPowerTextStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+
+
+AlteredHiddenPowerStrings:
+	push hl
+	ld a, [wAlteredHiddenPowerDVs]
+	ld e, a
+	ld d, 0
+	ld hl, AlteredHiddenPowerTextStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+	
+AlteredHiddenPowerTextStrings:
+; entries correspond to Pokemon constants
+	dw .Max
+	dw .SeventyFive
+	dw .Fifty
+	dw .TwentyFive
+		
+	.Max     		db "TOP@@@@@@@@"
+	.SeventyFive	db "HI-MIDDLE@@"
+	.Fifty     		db "LO-MIDDLE@@"
+	.TwentyFive		db "BOTTOM@@@@@"
