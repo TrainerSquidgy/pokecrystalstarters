@@ -114,6 +114,10 @@ BattleCommand_CheckTurn:
 ; Move $ff immediately ends the turn.
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVar
+	cp COPYCAT
+	jr z, .copycat
+	ld [wLastCopycatMove], a
+.copycat
 	inc a
 	jp z, EndTurn
 
@@ -198,9 +202,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +427,7 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1241,6 +1241,12 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
 	ld [wCurType], a
+	
+	push hl
+	push de
+	farcall MeFirstBoost
+	pop de
+	pop hl
 
 	push hl
 	push de
@@ -2596,8 +2602,7 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	
-	call SnowDefenseBoost
-
+	
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -2842,8 +2847,7 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
-	call SnowDefenseBoost
-
+	
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -6810,32 +6814,6 @@ _CheckBattleScene:
 	ret
 
 
-SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-		ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-	ret
-	
 BattleCommand_StartWeather:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -6912,14 +6890,152 @@ BattleCommand_AddDamage:
 	
 
 BattleCommand_MeFirst:
+	push bc
+	ld a, [wEnemyGoesFirst] ; 0 if player went first
+	ld b, a
+	ldh a, [hBattleTurn] ; 0 if it's the player's turn
+	xor b ; 1 if opponent went first
+	pop bc
+	jr nz, .fail
+	
+	call ClearLastMove
+	
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	push af
+	farcall BattleCommand_SwitchTurn
+	pop af
+	ld hl, .cant_steal_moves
+	call IsInByteArray
+	jr c, .fail
+
 	call BattleCommand_SwitchTurn
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
+	push af
+	call BattleCommand_SwitchTurn
+	pop af
 	and a
 	jr z, .fail
-	
+	call CheckUserMove
+	jr nz, .SetMeFirstSubstatus	
 .fail
 	push hl
 	call AnimateFailedMove
 	pop hl
 	jp StdBattleTextbox
+
+.SetMeFirstSubstatus
+	push af
+	push hl
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_ME_FIRST, [hl]
+	pop hl
+	pop af
+; Use the move.
+	call AnimateCurrentMove
+	jp UseOpponentMove
+
+.cant_steal_moves
+	dw FEINT
+	dw COUNTER
+	dw MIRROR_COAT
+	dw STRUGGLE
+	dw THIEF
+	dw -1
+	
+MeFirstBoost:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_ME_FIRST, [hl]
+	ret z
+	ld de, .MeFirstBoost
+	jr ApplyBoostModifier
+.MeFirstBoost
+	db 0, MORE_EFFECTIVE	
+ApplyBoostModifier:
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld hl, wCurDamage
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hl]
+	ldh [hMultiplicand + 2], a
+
+	inc de
+	ld a, [de]
+	ldh [hMultiplier], a
+
+	call Multiply
+
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
+	ldh a, [hQuotient + 1]
+	and a
+	ld bc, -1
+	jr nz, .Update
+
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	ld c, a
+	or b
+	jr nz, .Update
+
+	ld bc, 1
+
+.Update:
+	ld a, b
+	ld [wCurDamage], a
+	ld a, c
+	ld [wCurDamage + 1], a
+
+.done
+	ret
+	
+BattleCommand_CloseCombat:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	lb bc, DEFENSE, SP_DEFENSE
+	push bc
+	call BattleCommand_SelfStatDownHit
+	pop bc
+	ld b, c
+BattleCommand_SelfStatDownHit:
+	ld a, b
+	and a
+	ret z
+	push bc
+	call ResetMiss
+	pop bc
+	ld a, b
+	call LowerStat
+	call BattleCommand_SwitchTurn
+	ld a, [wLoweredStat]
+	or $80
+	ld [wLoweredStat], a
+	call BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn
+	
+BattleCommand_Copycat:
+	ld a, [wLastCopycatMove]
+	and a
+	jr z, .fail
+
+	call AnimateCurrentMove
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld a, [wLastCopycatMove]
+	ld [hl], a
+	farcall UpdateMoveData
+	jp ResetTurn
+
+.fail
+	call AnimateFailedMove
+	jp PrintButItFailed

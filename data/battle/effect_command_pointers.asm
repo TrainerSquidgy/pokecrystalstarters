@@ -179,4 +179,6 @@ BattleCommandPointers:
 	dw BattleCommand_Curl
 	dw BattleCommand_StartWeather
 	dw BattleCommand_MeFirst
+	dw BattleCommand_CloseCombat
+	dw BattleCommand_Copycat
 	assert_table_length NUM_EFFECT_COMMANDS

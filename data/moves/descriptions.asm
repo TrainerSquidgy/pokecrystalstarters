@@ -130,7 +130,7 @@ MoveDescriptions::
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
-	dw SkullBashDescription
+	dw CloseCombatDescription
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw DragonPulseDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw CopycatDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -234,7 +234,7 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
-	dw MorningSunDescription
+	dw SwiftDescription
 	dw SynthesisDescription
 	dw MoonlightDescription
 	dw HiddenPowerDescription
@@ -780,9 +780,9 @@ SwiftDescription:
 	db   "An attack that"
 	next "never misses.@"
 
-SkullBashDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+CloseCombatDescription:
+	db   "Lowers user's"
+	next "defensive stats.@"
 
 SpikeCannonDescription:
 	db   "Fires spikes to"
@@ -968,9 +968,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+DragonPulseDescription:
+	db   "Hits with DRAGON"
+	next "type energy.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1144,9 +1144,9 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
+CopycatDescription:
+	db   "Copies the last"
+	next "move used.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
@@ -1195,10 +1195,6 @@ MetalClawDescription:
 VitalThrowDescription:
 	db   "A 2nd-strike move"
 	next "that never misses.@"
-
-MorningSunDescription:
-	db   "Restores HP"
-	next "(varies by time).@"
 
 SynthesisDescription:
 	db   "Restores HP"

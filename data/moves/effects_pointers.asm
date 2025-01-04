@@ -163,4 +163,6 @@ MoveEffectsPointers:
 	dw Snow
 	dw NormalHit
 	dw MeFirst
+	dw CloseCombat
+	dw Copycat
 	assert_table_length NUM_MOVE_EFFECTS

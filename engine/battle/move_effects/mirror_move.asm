@@ -10,7 +10,7 @@ BattleCommand_MirrorMove:
 	jr z, .failed
 
 	call CheckUserMove
-	jr nz, .use
+	jr nz, UseOpponentMove
 
 .failed
 	call AnimateFailedMove
@@ -19,7 +19,7 @@ BattleCommand_MirrorMove:
 	call StdBattleTextbox
 	jp EndMoveEffect
 
-.use
+UseOpponentMove:
 	ld a, b
 	ld [hl], a
 	ld [wNamedObjectIndex], a
