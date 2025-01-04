@@ -12,9 +12,7 @@ INCLUDE "data/pokemon/egg_move_pointers.asm"
 
 BulbasaurEggMoves:
 	db LIGHT_SCREEN
-	db SKULL_BASH
 	db SAFEGUARD
-	db RAZOR_WIND
 	db PETAL_DANCE
 	db -1 ; end
 
@@ -311,7 +309,6 @@ CuboneEggMoves:
 	db ANCIENTPOWER
 	db BELLY_DRUM
 	db SCREECH
-	db SKULL_BASH
 	db PERISH_SONG
 	db SWORDS_DANCE
 	db -1 ; end
@@ -387,7 +384,6 @@ ScytherEggMoves:
 	db COUNTER
 	db SAFEGUARD
 	db BATON_PASS
-	db RAZOR_WIND
 	db REVERSAL
 	db LIGHT_SCREEN
 	db -1 ; end
@@ -463,7 +459,6 @@ TotodileEggMoves:
 	db THRASH
 	db HYDRO_PUMP
 	db ANCIENTPOWER
-	db RAZOR_WIND
 	db ROCK_SLIDE
 	db -1 ; end
 
@@ -481,7 +476,6 @@ HoothootEggMoves:
 	db FAINT_ATTACK
 	db WING_ATTACK
 	db WHIRLWIND
-	db SKY_ATTACK
 	db -1 ; end
 
 LedybaEggMoves:
@@ -606,7 +600,6 @@ MurkrowEggMoves:
 	db QUICK_ATTACK
 	db MIRROR_MOVE
 	db WING_ATTACK
-	db SKY_ATTACK
 	db -1 ; end
 
 MisdreavusEggMoves:
@@ -640,7 +633,6 @@ DunsparceEggMoves:
 GligarEggMoves:
 	db METAL_CLAW
 	db WING_ATTACK
-	db RAZOR_WIND
 	db COUNTER
 	db -1 ; end
 
@@ -736,7 +728,6 @@ SkarmoryEggMoves:
 	db DRILL_PECK
 	db PURSUIT
 	db WHIRLWIND
-	db SKY_ATTACK
 	db -1 ; end
 
 HoundourEggMoves:

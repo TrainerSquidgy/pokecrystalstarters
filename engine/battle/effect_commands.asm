@@ -1077,9 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
-	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
@@ -1918,12 +1915,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
-	cp EFFECT_SKULL_BASH
-	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
@@ -2137,6 +2128,9 @@ BattleCommand_FailureText:
 	jp EndMoveEffect
 
 BattleCommand_ApplyDamage:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	res SUBSTATUS_LAST_MOVE_MISSED, [hl]
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
@@ -2227,6 +2221,9 @@ BattleCommand_ApplyDamage:
 	ret
 
 GetFailureResultText:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_LAST_MOVE_MISSED, [hl]
 	ld hl, DoesntAffectText
 	ld de, DoesntAffectText
 	ld a, [wTypeModifier]
@@ -3185,6 +3182,9 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	cp EFFECT_PSYWAVE
 	jr z, .psywave
+	
+	cp EFFECT_FINAL_GAMBIT
+	jr z, .final_gambit
 
 	cp EFFECT_SUPER_FANG
 	jr z, .super_fang
@@ -3196,6 +3196,28 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	ld b, a
 	ld a, $0
+	jr .got_power
+	
+.final_gambit
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_user_hp
+	ld hl, wEnemyMonHP
+.got_user_hp
+	ld a, [hli]
+	ld b, a
+	ld a, [hl]
+.get_power
+	push af
+	ld a, b
+	pop bc
+	and a
+	jr nz, .got_power
+	or b
+	ld a, 0
+	jr nz, .got_power
+	ld b, 1
 	jr .got_power
 
 .psywave
@@ -3412,6 +3434,10 @@ DoEnemyDamage:
 	jp nz, DoSubstituteDamage
 
 .ignore_substitute
+	push hl
+	ld hl, wEnemySubStatus2
+	set SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	pop hl
 	; Subtract wCurDamage from wEnemyMonHP.
 	;  store original HP in little endian wHPBuffer2
 	ld a, [hld]
@@ -3491,6 +3517,10 @@ DoPlayerDamage:
 	jp nz, DoSubstituteDamage
 
 .ignore_substitute
+	push hl
+	ld hl, wPlayerSubStatus2
+	set SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	pop hl
 	; Subtract wCurDamage from wBattleMonHP.
 	;  store original HP in little endian wHPBuffer2
 	;  store new HP in little endian wHPBuffer3
@@ -5702,9 +5732,6 @@ BattleCommand_Charge:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_SKULL_BASH
-	ld b, endturn_command
-	jp z, SkipToBattleCommand
 	jp EndMoveEffect
 
 .UsedText:
@@ -5712,22 +5739,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
-	cp SKULL_BASH
-	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6360,6 +6377,7 @@ TryPrintButItFailed:
 	; fallthrough
 
 PrintButItFailed:
+	
 	ld hl, ButItFailedText
 	jp StdBattleTextbox
 
@@ -7032,6 +7050,15 @@ BattleCommand_AddDamage:
     ret
 	
 BattleCommand_RageFist:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .skip_counter
+	ld a, [wPlayerUsedRageFist]
+	cp 20
+	jr z, .skip_counter
+	inc a
+	ld [wPlayerUsedRageFist], a
+.skip_counter
 	call BattleCommand_GetRageFistPointer
 	ld hl, wPlayerRageFistCounter
 	ldh a, [hBattleTurn]
@@ -7119,4 +7146,55 @@ BattleCommand_GetRageFistPointer:
 	ld a, [wPlayerRageFist5]
 .player_merge
 	ld [wPlayerRageFistCounter], a
+	ret
+
+BattleCommand_Assurance:
+; Doubles damage if opponent was damaged before this turn.
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_DAMAGED_THIS_TURN, a
+	ret z
+
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	sla [hl]
+	ret
+	
+BattleCommand_CloseCombat:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	lb bc, DEFENSE, SP_DEFENSE
+BattleCommand_SelfStatDownHitTwice:
+; input: 1-2 stats to decrease in b and c respectively
+	push bc
+	call BattleCommand_SelfStatDownHit
+	pop bc
+	ld b, c
+BattleCommand_SelfStatDownHit:
+	ld a, b
+	and a
+	ret z
+	push bc
+	call ResetMiss
+	pop bc
+	ld a, b
+	call LowerStat
+	call BattleCommand_SwitchTurn
+	ld a, [wLoweredStat]
+	or $80
+	ld [wLoweredStat], a
+	call BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn
+	
+BattleCommand_StompingTantrum:
+; Doubles damage if opponent was damaged before this turn.
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVar
+	bit SUBSTATUS_LAST_MOVE_MISSED, a
+	ret z
+
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	sla [hl]
 	ret

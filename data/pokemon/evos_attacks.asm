@@ -12,6 +12,7 @@ SECTION "Evolutions and Attacks", ROMX
 ;    * db level, move
 ; - db 0 ; no more level-up moves
 
+INCLUDE "data/pokemon/evolution_moves.asm"
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 EvosAttacks::
 BulbasaurEvosAttacks:
@@ -126,7 +127,6 @@ SquirtleEvosAttacks:
 	db 23, RAPID_SPIN
 	db 28, PROTECT
 	db 33, RAIN_DANCE
-	db 40, SKULL_BASH
 	db 47, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -144,7 +144,6 @@ WartortleEvosAttacks:
 	db 25, RAPID_SPIN
 	db 31, PROTECT
 	db 37, RAIN_DANCE
-	db 45, SKULL_BASH
 	db 53, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -162,7 +161,6 @@ BlastoiseEvosAttacks:
 	db 25, RAPID_SPIN
 	db 31, PROTECT
 	db 42, RAIN_DANCE
-	db 55, SKULL_BASH
 	db 68, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1988,7 +1986,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3327,7 +3325,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, AEROBLAST
+	db 1, WING_ATTACK
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER

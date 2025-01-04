@@ -179,6 +179,9 @@ ENDM
 	command curl                    ; af
 	command startweather
 	command ragefist
+	command assurance
+	command closecombat
+	command stompingtantrum
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

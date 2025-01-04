@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw CloseCombatDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -130,7 +130,7 @@ MoveDescriptions::
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
-	dw SkullBashDescription
+	dw FinalGambitDescription
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw StompingTantrumDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw SwiftDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -253,16 +253,13 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw RageDescription
+	dw ThiefDescription
+	dw AssuranceDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +312,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+CloseCombatDescription:
+	db   "Lowers user's"
+	next "DEFENSE stats.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -783,10 +780,10 @@ SwiftDescription:
 	db   "An attack that"
 	next "never misses.@"
 
-SkullBashDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
+FinalGambitDescription:
+	db   "Expends all HP to"
+	next "deal equal damage.@"
+	
 SpikeCannonDescription:
 	db   "Fires spikes to"
 	next "hit 2-5 times.@"
@@ -835,9 +832,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+StompingTantrumDescription:
+	db   "Does more if"
+	next "last move missed.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -970,10 +967,6 @@ FlailDescription:
 Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
-
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1270,3 +1263,7 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+AssuranceDescription:
+	db   "Does more if"
+	next "foe already hit.@"

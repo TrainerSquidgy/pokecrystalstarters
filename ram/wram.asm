@@ -3202,7 +3202,8 @@ wOpponentRageFist3:: db
 wOpponentRageFist4:: db
 wOpponentRageFist5:: db
 wOpponentRageFist6:: db
-	ds 48
+wPlayerUsedRageFist:: db
+	ds 47
 
 wEventFlags:: flag_array NUM_EVENTS
 

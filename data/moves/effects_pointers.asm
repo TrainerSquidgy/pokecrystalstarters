@@ -162,4 +162,8 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw RageFist
+	dw Assurance
+	dw CloseCombat
+	dw StompingTantrum
+	dw FinalGambit
 	assert_table_length NUM_MOVE_EFFECTS

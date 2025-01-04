@@ -26,7 +26,7 @@ Moves:
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,       100, 35,   0
 	move VICEGRIP,     EFFECT_NORMAL_HIT,         55, NORMAL,       100, 30,   0
 	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,        30,  5,   0
-	move RAZOR_WIND,   EFFECT_RAZOR_WIND,         80, NORMAL,        75, 10,   0
+	move CLOSE_COMBAT, EFFECT_CLOSE_COMBAT,      120, FIGHTING,     100,  5,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,       100, 30,   0
 	move CUT,          EFFECT_NORMAL_HIT,         50, NORMAL,        95, 30,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,       100, 35,   0
@@ -143,7 +143,7 @@ Moves:
 	move WATERFALL,    EFFECT_NORMAL_HIT,         80, WATER,        100, 15,   0
 	move CLAMP,        EFFECT_TRAP_TARGET,        35, WATER,         75, 10,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       100, 20,   0
-	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,       100, 15,   0
+	move FINAL_GAMBIT, EFFECT_FINAL_GAMBIT,        1, FIGHTING,     100,  5,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, NORMAL,       100, 15,   0
 	move CONSTRICT,    EFFECT_SPEED_DOWN_HIT,     10, NORMAL,       100, 35,  10
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC_TYPE, 100, 20,   0
@@ -156,7 +156,7 @@ Moves:
 	move BARRAGE,      EFFECT_MULTI_HIT,          15, NORMAL,        85, 20,   0
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          20, BUG,          100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,        75, 10,   0
-	move SKY_ATTACK,   EFFECT_SKY_ATTACK,        140, FLYING,        90,  5,   0
+	move STOMPING_TANTRUM,   EFFECT_STOMPING_TANTRUM,        75, GROUND, 100, 10,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,       100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     20, WATER,        100, 30,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,       100, 10,  20
@@ -190,7 +190,7 @@ Moves:
 	move CURSE,        EFFECT_CURSE,               0, CURSE_TYPE,   100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,       100, 15,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,       100, 30,   0
-	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,        95,  5,   0
+	move SHADOW_PUNCH, EFFECT_ALWAYS_HIT,         60, GHOST,        100, 20,   0
 	move COTTON_SPORE, EFFECT_SPEED_DOWN_2,        0, GRASS,         85, 40,   0
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING,     100, 15,   0
 	move SPITE,        EFFECT_SPITE,               0, GHOST,        100, 10,   0
@@ -266,4 +266,6 @@ Moves:
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
 	move RAGE_FIST,    EFFECT_RAGE_FIST,          50, GHOST,        100, 10,   0
+	move COVET,        EFFECT_THIEF,              40, NORMAL,       100, 10, 100
+	move ASSURANCE,    EFFECT_ASSURANCE,          60, DARK,         100, 10,   0
 	assert_table_length NUM_ATTACKS

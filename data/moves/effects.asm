@@ -2113,3 +2113,84 @@ RageFist:
 	buildopponentrage
 	kingsrock
 	endmove
+
+Assurance:
+	checkobedience
+	usedmovetext
+	doturn
+	assurance
+	critical
+	damagestats
+	damagecalc
+	stab
+	checkhit
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+CloseCombat:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	closecombat
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+StompingTantrum:
+	checkobedience
+	usedmovetext
+	doturn
+	stompingtantrum
+	critical
+	damagestats
+	damagecalc
+	stab
+	checkhit
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+FinalGambit:
+	checkobedience
+	usedmovetext
+	doturn
+	constantdamage
+	checkhit
+	selfdestruct
+	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+	
