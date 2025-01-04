@@ -1,78 +1,165 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Quick Attack
+Foresight
+Endure
+Counter
+Force Palm
+Feint
+Reversal
+Screech
+Copycat
+Focus Punch
+Roar
 Toxic
+Bulk Up
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
 Protect
-Safeguard
+Rain Dance
 Frustration
-SolarBeam
+Iron Tail
 Earthquake
 Return
-Psychic
-Shadow Ball
+Dig
+Brick Break
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
 Rock Tomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
+Focus Blast
+Fling
 Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
+Drain Punch
+Shadow Claw
+Payback
+Swords Dance
+Captivate
 Rock Slide
 Sleep Talk
 Natural Gift
-Dream Eater
-Grass Knot
+Poison Jab
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
+Strength
+Rock Smash
+ Move 
+Agility
+Bite
+Blaze Kick
+Bullet Punch
+Cross Chop
+Crunch
+Detect
+Follow MeHGSS
+Hi Jump Kick
 Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Low Kick
+Mind Reader
+Sky Uppercut
+Vacuum Wave
+Fury Cutter
+Headbutt
+Helping Hand
+Ice Punch
+Iron Defense
+Low Kick
+Magnet Rise
+Mud-Slap
+Role Play
 Snore
 Swift
+ThunderPunch
+Vacuum Wave
 Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+Dark Pulse
+Quick Attack
+Foresight
+Detect
+Metal Claw
+Counter
+Force Palm
+Feint
+Bone Rush
+Metal Sound
+Me First
+Swords Dance
+Aura Sphere
+Close Combat
+Dragon Pulse
+ExtremeSpeed
+Focus Punch
+Water Pulse
+Calm Mind
+Roar
+Toxic
+Bulk Up
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Rain Dance
+Frustration
+Iron Tail
+Earthquake
+Return
+Dig
+Psychic
+Shadow Ball
+Brick Break
+Double Team
+Rock Tomb
+Facade
+Secret Power
+Rest
+Attract
+Focus Blast
+Fling
+Endure
+Dragon Pulse
+Drain Punch
+Shadow Claw
+Payback
+Giga Impact
+Stone Edge
+Swords Dance
+Captivate
+Dark Pulse
+Rock Slide
+Sleep Talk
+Natural Gift
+Poison Jab
+Swagger
+Substitute
+Flash Cannon
+Strength
+Rock Smash
+Rock Climb
+Agility
+Bite
+Blaze Kick
+Bullet Punch
+Cross Chop
+Crunch
+Detect
+Follow MeHGSS
+Hi Jump Kick
+Iron Defense
+Low Kick
+Mind Reader
+Sky Uppercut
+Vacuum Wave
+Fury Cutter
+Headbutt
+Helping Hand
+Ice Punch
+Iron Defense
+Low Kick
+Magnet Rise
+Mud-Slap
+Role Play
+Snore
+Swift
+ThunderPunch
+Vacuum Wave
+Zen Headbutt
