@@ -1,16 +1,20 @@
-Pokémon: Sableye
+Pokémon: Annihilape
+1: Counter
+1: Covet
 1: Scratch
 1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Focus Energy
+Evo.: Shadow Punch
+5: Fury Swipes
+8: Low Kick
+12: Seismic Toss
+17: Swagger
+22: Cross Chop
+26: Assurance
+30: Thrash
+35: Rage Fist
+39: Close Combat
+44: Screech
+48: Stomping Tantrum
+53: Outrage
+57: Final Gambit

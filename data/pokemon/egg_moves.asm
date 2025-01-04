@@ -796,5 +796,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+PrimeapePEggMoves:
+AnnihilapeEggMoves:
+MankeyPEggMoves:
 NoEggMoves:
 	db -1 ; end

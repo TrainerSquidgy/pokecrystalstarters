@@ -251,6 +251,9 @@ endr
 	jp .dont_evolve_3
 .pop_proceed
 	pop hl
+	ld a, [wPlayerUsedRageFist]
+	cp 20
+	jp nz, .dont_evolve_3
 	jp .proceed
 
 

@@ -3363,3 +3363,68 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+MankeyPEvosAttacks:
+	db EVOLVE_LEVEL, 28, PRIMEAPEP
+	db 0 ; No More Evolutions
+	db 1, COVET
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, FOCUS_ENERGY
+	db 5, FURY_SWIPES
+	db 8, LOW_KICK
+	db 12, SEISMIC_TOSS
+	db 17, SWAGGER
+	db 22, CROSS_CHOP
+	db 26, ASSURANCE
+	db 29, THRASH
+	db 33, CLOSE_COMBAT
+	db 36, SCREECH
+	db 40, STOMPING_TANTRUM
+	db 44, OUTRAGE
+	db 48, FINAL_GAMBIT
+	db 0
+	
+PrimeapePEvosAttacks:
+	db EVOLVE_MOVE, RAGE_FIST, ANNIHILAPE
+	db 0 ; No More Evolutions
+	db 1, COVET
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, FOCUS_ENERGY
+	db 5, FURY_SWIPES
+	db 8, LOW_KICK
+	db 15, SEISMIC_TOSS
+	db 17, SWAGGER
+	db 22, CROSS_CHOP
+	db 26, ASSURANCE
+	db 30, THRASH
+	db 35, RAGE_FIST
+	db 39, CLOSE_COMBAT
+	db 44, SCREECH
+	db 48, STOMPING_TANTRUM
+	db 53, OUTRAGE
+	db 57, FINAL_GAMBIT
+	db 0
+	
+AnnihilapeEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, COUNTER
+	db 1, COVET
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, FOCUS_ENERGY
+	db 5, FURY_SWIPES
+	db 8, LOW_KICK
+	db 12, SEISMIC_TOSS
+	db 17, SWAGGER
+	db 22, CROSS_CHOP
+	db 26, ASSURANCE
+	db 30, THRASH
+	db 35, RAGE_FIST
+	db 39, CLOSE_COMBAT
+	db 44, SCREECH
+	db 48, STOMPING_TANTRUM
+	db 53, OUTRAGE
+	db 57, FINAL_GAMBIT
+	db 0

@@ -1,14 +1,19 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Annihilape
+1: Counter
+1: Fling
+1: Scratch
+1: Leer
+1: Focus Energy
+5: Fury Swipes
+8: Low Kick
+12: Seismic Toss
+17: Swagger
+22: Cross Chop
+26: Assurance
+30: Thrash
+35: Rage Fist
+39: Close Combat
+44: Screech
+48: Stomping Tantrum
+53: Outrage
+57: Final Gambit

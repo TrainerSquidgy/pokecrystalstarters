@@ -1,16 +1,21 @@
-LechonkEvosAttacks:
+AnnihilapeEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, COUNTER
+	db 1, FLING
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, FOCUS_ENERGY
+	db 5, FURY_SWIPES
+	db 8, LOW_KICK
+	db 12, SEISMIC_TOSS
+	db 17, SWAGGER
+	db 22, CROSS_CHOP
+	db 26, ASSURANCE
+	db 30, THRASH
+	db 35, RAGE_FIST
+	db 39, CLOSE_COMBAT
+	db 44, SCREECH
+	db 48, STOMPING_TANTRUM
+	db 53, OUTRAGE
+	db 57, FINAL_GAMBIT
 	db 0

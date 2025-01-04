@@ -710,17 +710,14 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+PrimeapePFrontpic: INCBIN "gfx/pokemon/primeapep/front.animated.2bpp.lz"
+PrimeapePBackpic: INCBIN "gfx/pokemon/primeapep/back.2bpp.lz"
+AnnihilapeBackpic: INCBIN "gfx/pokemon/annihilape/back.2bpp.lz"
+AnnihilapeFrontpic: INCBIN "gfx/pokemon/annihilape/front.animated.2bpp.lz"
+MankeyPFrontpic: INCBIN "gfx/pokemon/mankeyp/front.animated.2bpp.lz"
+MankeyPBackpic: INCBIN "gfx/pokemon/mankeyp/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
-
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 MegaVenusaurFrontpic:      INCBIN "gfx/pokemon/megavenusaur/front.animated.2bpp.lz"
 MegaVenusaurBackpic:       INCBIN "gfx/pokemon/megavenusaur/back.2bpp.lz"

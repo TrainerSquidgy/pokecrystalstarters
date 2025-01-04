@@ -901,6 +901,9 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+PrimeapePRelearnedEggMoves:
+AnnihilapeRelearnedEggMoves:
+MankeyPRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

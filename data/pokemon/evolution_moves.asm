@@ -251,4 +251,6 @@ EvolutionMoves::
 	db NO_MOVE
 	db NO_MOVE
 	db NO_MOVE
+	db NO_MOVE
+	db SHADOW_PUNCH
 	assert_table_length NUM_POKEMON
