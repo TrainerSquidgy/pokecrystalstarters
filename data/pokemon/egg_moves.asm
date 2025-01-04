@@ -796,5 +796,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+RioluEggMoves:
+LucarioEggMoves:
 NoEggMoves:
 	db -1 ; end

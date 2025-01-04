@@ -1,16 +1,19 @@
-LechonkEvosAttacks:
+LucarioEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, DARK_PULSE
+	db 1, QUICK_ATTACK
+	db 1, FORESIGHT
+	db 1, DETECT
+	db 1, METAL_CLAW
+	db 6, COUNTER
+	db 11, FORCE_PALM
+	db 15, FEINT
+	db 19, BONE_RUSH
+	db 24, METAL_SOUND
+	db 29, ME_FIRST
+	db 33, SWORDS_DANCE
+	db 37, AURA_SPHERE
+	db 42, CLOSE_COMBAT
+	db 47, DRAGON_PULSE
+	db 51, EXTREMESPEED
 	db 0

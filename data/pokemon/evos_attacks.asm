@@ -3362,3 +3362,37 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+RioluEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_MORNDAY, LUCARIO
+	db 0 ; No More Evolutions
+	db 1, QUICK_ATTACK
+	db 1, FORESIGHT
+	db 1, ENDURE
+	db 6, COUNTER
+	db 11, FORCE_PALM
+	db 15, FEINT
+	db 19, REVERSAL
+	db 24, SCREECH
+	db 29, COPYCAT
+	db 0
+	
+LucarioEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, DARK_PULSE
+	db 1, QUICK_ATTACK
+	db 1, FORESIGHT
+	db 1, DETECT
+	db 1, METAL_CLAW
+	db 6, COUNTER
+	db 11, FORCE_PALM
+	db 15, FEINT
+	db 19, BONE_RUSH
+	db 24, METAL_SOUND
+	db 29, ME_FIRST
+	db 33, SWORDS_DANCE
+	db 37, AURA_SPHERE
+	db 42, CLOSE_COMBAT
+	db 47, DRAGON_PULSE
+	db 51, EXTREMESPEED
+	db 0

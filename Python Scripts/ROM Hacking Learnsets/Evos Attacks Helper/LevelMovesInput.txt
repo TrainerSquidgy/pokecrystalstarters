@@ -1,14 +1,17 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Lucario
+1: Dark Pulse
+1: Quick Attack
+1: Foresight
+1: Detect
+1: Metal Claw
+6: Counter
+11: Force Palm
+15: Feint
+19: Bone Rush
+24: Metal Sound
+29: Me First
+33: Swords Dance
+37: Aura Sphere
+42: Close Combat
+47: Dragon Pulse
+51: ExtremeSpeed

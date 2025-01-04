@@ -1244,7 +1244,7 @@ BattleCommand_Stab:
 	
 	push hl
 	push de
-	farcall MeFirstBoost
+	call MeFirstBoost
 	pop de
 	pop hl
 
@@ -6890,61 +6890,145 @@ BattleCommand_AddDamage:
 	
 
 BattleCommand_MeFirst:
-	push bc
-	ld a, [wEnemyGoesFirst] ; 0 if player went first
-	ld b, a
-	ldh a, [hBattleTurn] ; 0 if it's the player's turn
-	xor b ; 1 if opponent went first
-	pop bc
+	call CheckOpponentWentFirst
 	jr nz, .fail
-	
-	call ClearLastMove
-	
-	call BattleCommand_SwitchTurn
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	push af
-	farcall BattleCommand_SwitchTurn
-	pop af
-	ld hl, .cant_steal_moves
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wCurPlayerMove
+	jr nz, .go
+	ld de, wCurEnemyMove
+.go
+	ld a, [de]
+	ld hl, CantStealMoves
 	call IsInByteArray
 	jr c, .fail
-
-	call BattleCommand_SwitchTurn
-	ld a, BATTLE_VARS_MOVE_POWER
-	call GetBattleVar
-	push af
-	call BattleCommand_SwitchTurn
-	pop af
+	ldh a, [hBattleTurn]
 	and a
-	jr z, .fail
-	call CheckUserMove
-	jr nz, .SetMeFirstSubstatus	
-.fail
-	push hl
-	call AnimateFailedMove
-	pop hl
-	jp StdBattleTextbox
-
-.SetMeFirstSubstatus
-	push af
-	push hl
-	ld a, BATTLE_VARS_SUBSTATUS2
-	call GetBattleVarAddr
+	jr z, .PlayerMeFirst
+	ld hl, wEnemySubStatus2
+	set SUBSTATUS_ME_FIRST, [hl]	
+	jr .MeFirstMerge
+.PlayerMeFirst
+	ld hl, wPlayerSubStatus2
 	set SUBSTATUS_ME_FIRST, [hl]
-	pop hl
-	pop af
-; Use the move.
+.MeFirstMerge
 	call AnimateCurrentMove
-	jp UseOpponentMove
 
-.cant_steal_moves
-	dw FEINT
-	dw COUNTER
-	dw MIRROR_COAT
-	dw STRUGGLE
-	dw THIEF
-	dw -1
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ldh a, [hBattleTurn]
+	and a
+	ld de, wCurPlayerMove
+	jr nz, .go2
+	ld de, wCurEnemyMove
+.go2
+	ld a, [de]
+	ld [hl], a
+	call UpdateMoveData
+	jp ResetTurn
+
+.fail
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+CantStealMoves:
+	db METAL_SOUND
+	db SWORDS_DANCE
+	db WHIRLWIND
+	db SAND_ATTACK
+	db TAIL_WHIP
+	db LEER
+	db GROWL
+	db ROAR
+	db SING
+	db SUPERSONIC
+	db DISABLE
+	db MIST
+	db LEECH_SEED
+	db GROWTH
+	db POISONPOWDER
+	db STUN_SPORE
+	db SLEEP_POWDER
+	db STRING_SHOT
+	db THUNDER_WAVE
+	db TOXIC
+	db HYPNOSIS
+	db MEDITATE
+	db AGILITY
+	db TELEPORT
+	db MIMIC
+	db SCREECH
+	db DOUBLE_TEAM
+	db RECOVER
+	db HARDEN
+	db MINIMIZE
+	db SMOKESCREEN
+	db CONFUSE_RAY
+	db WITHDRAW
+	db DEFENSE_CURL
+	db BARRIER
+	db LIGHT_SCREEN
+	db HAZE
+	db REFLECT
+	db FOCUS_ENERGY
+	db BIDE
+	db METRONOME
+	db MIRROR_MOVE
+	db AMNESIA
+	db KINESIS
+	db SOFTBOILED
+	db GLARE
+	db POISON_GAS
+	db LOVELY_KISS
+	db ME_FIRST
+	db TRANSFORM
+	db SPORE
+	db FLASH
+	db SPLASH
+	db ACID_ARMOR
+	db REST
+	db SHARPEN
+	db CONVERSION
+	db SUBSTITUTE
+	db SKETCH
+	db SPIDER_WEB
+	db MIND_READER
+	db NIGHTMARE
+	db CURSE
+	db CONVERSION2
+	db COTTON_SPORE
+	db SPITE
+	db PROTECT
+	db SCARY_FACE
+	db SWEET_KISS
+	db BELLY_DRUM
+	db SPIKES
+	db FORESIGHT
+	db DESTINY_BOND
+	db PERISH_SONG
+	db DETECT
+	db LOCK_ON
+	db SANDSTORM
+	db ENDURE
+	db CHARM
+	db SWAGGER
+	db MILK_DRINK
+	db MEAN_LOOK
+	db ATTRACT
+	db SLEEP_TALK
+	db HEAL_BELL
+	db SAFEGUARD
+	db PAIN_SPLIT
+	db COPYCAT
+	db BATON_PASS
+	db ENCORE
+	db SWEET_SCENT
+	db SYNTHESIS
+	db MOONLIGHT
+	db RAIN_DANCE
+	db SUNNY_DAY
+	db PSYCH_UP
+	db -1
 	
 MeFirstBoost:
 	ld a, BATTLE_VARS_SUBSTATUS2
@@ -7033,7 +7117,7 @@ BattleCommand_Copycat:
 	call GetBattleVarAddr
 	ld a, [wLastCopycatMove]
 	ld [hl], a
-	farcall UpdateMoveData
+	call UpdateMoveData
 	jp ResetTurn
 
 .fail
