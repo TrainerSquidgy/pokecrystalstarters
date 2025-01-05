@@ -739,6 +739,8 @@ MegaAlakazamBackpic:       INCBIN "gfx/pokemon/megaalakazam/back.2bpp.lz"
 MegaHeracrossFrontpic:      INCBIN "gfx/pokemon/megaheracross/front.animated.2bpp.lz"
 MegaHeracrossBackpic:       INCBIN "gfx/pokemon/megaheracross/back.2bpp.lz"
 SECTION "Pics 21", ROMX
+MegaAmpharosFrontpic:      INCBIN "gfx/pokemon/megaampharos/front.animated.2bpp.lz"
+MegaAmpharosBackpic:       INCBIN "gfx/pokemon/megaampharos/back.2bpp.lz"
 
 
 SECTION "Pics 22", ROMX

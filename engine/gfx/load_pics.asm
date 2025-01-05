@@ -66,6 +66,12 @@ GetUnownLetter:
 	jr z, .Alakazam
 	cp HERACROSS
 	jr z, .Heracross
+	cp AMPHAROS
+	jr z, .Ampharos
+	ret
+.Ampharos
+	ld a, 35
+	ld [wMegaPicture], a
 	ret
 .Alakazam
 	ld a, 33
