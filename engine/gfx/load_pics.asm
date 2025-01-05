@@ -68,17 +68,23 @@ GetUnownLetter:
 	jr z, .Heracross
 	cp AMPHAROS
 	jr z, .Ampharos
+	cp HOUNDOOM
+	jr z, .Houndoom
+	ret
+.Houndoom
+	ld a, 36
+	ld [wMegaPicture], a
 	ret
 .Ampharos
 	ld a, 35
 	ld [wMegaPicture], a
 	ret
-.Alakazam
-	ld a, 33
-	ld [wMegaPicture], a
-	ret
 .Heracross
 	ld a, 34
+	ld [wMegaPicture], a
+	ret
+.Alakazam
+	ld a, 33
 	ld [wMegaPicture], a
 	ret
 .Beedrill
@@ -97,12 +103,12 @@ GetUnownLetter:
 	ld a, 27
 	ld [wMegaPicture], a
 	ret
-.Gengar
-	ld a, 28
-	ld [wMegaPicture], a
-	ret
 .Pinsir
 	ld a, 29
+	ld [wMegaPicture], a
+	ret
+.Gengar
+	ld a, 28
 	ld [wMegaPicture], a
 	ret
 	
