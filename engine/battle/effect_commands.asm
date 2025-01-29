@@ -2554,6 +2554,8 @@ DittoMetalPowder:
 	rr c
 	ret
 
+INCLUDE "engine/battle/move_effects/damage_category.asm"
+
 BattleCommand_DamageStats:
 	ldh a, [hBattleTurn]
 	and a
@@ -2572,9 +2574,8 @@ PlayerAttackDamage:
 	ld d, a
 	ret z
 
-	ld a, [hl]
-	cp SPECIAL
-	jr nc, .special
+	call GetDamageCategoryOfMove
+	jr nz, .special
 
 ; physical
 	ld hl, wEnemyMonDefense
@@ -2818,9 +2819,8 @@ EnemyAttackDamage:
 	and a
 	ret z
 
-	ld a, [hl]
-	cp SPECIAL
-	jr nc, .special
+	call GetDamageCategoryOfMove
+	jr nz, .special
 
 ; physical
 	ld hl, wBattleMonDefense
