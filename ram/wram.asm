@@ -3151,6 +3151,8 @@ wWiltonFightCount::  db
 wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
+
+; Settings
 wElmPokemon1::      db
 wElmPokemon2::      db
 wElmPokemon3::      db
@@ -3188,7 +3190,8 @@ wMegaPicture:: db
 wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
 wSpinnersOff:: db
-	ds 62
+wPhysicalSpecialSplit:: db
+	ds 61
 
 wEventFlags:: flag_array NUM_EVENTS
 
