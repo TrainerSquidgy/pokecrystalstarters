@@ -248,6 +248,7 @@ Route31YoungsterScript:
 	jumptextfaceplayer Route31YoungsterText
 
 Route31Sign:
+	givepoke AERODACTYL, 10
 	jumptext Route31SignText
 
 DarkCaveSign:

@@ -70,6 +70,12 @@ GetUnownLetter:
 	jr z, .Ampharos
 	cp HOUNDOOM
 	jr z, .Houndoom
+	cp AERODACTYL
+	jr z, .Aerodactyl
+	ret
+.Aerodactyl
+	ld a, 37
+	ld [wMegaPicture], a
 	ret
 .Houndoom
 	ld a, 36

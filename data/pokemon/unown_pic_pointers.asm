@@ -73,4 +73,6 @@ UnownPicPointers::
 	dba_pic MegaAmpharosBackpic
 	dba_pic MegaHoundoomFrontpic
 	dba_pic MegaHoundoomBackpic
-	assert_table_length NUM_UNOWN + 10
+	dba_pic MegaAerodactylFrontpic
+	dba_pic MegaAerodactylBackpic
+	assert_table_length NUM_UNOWN + 11
