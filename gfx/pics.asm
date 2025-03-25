@@ -745,6 +745,8 @@ MegaHoundoomFrontpic:      INCBIN "gfx/pokemon/megahoundoom/front.animated.2bpp.
 MegaHoundoomBackpic:       INCBIN "gfx/pokemon/megahoundoom/back.2bpp.lz"
 MegaAerodactylFrontpic:      INCBIN "gfx/pokemon/megaaerodactyl/front.animated.2bpp.lz"
 MegaAerodactylBackpic:       INCBIN "gfx/pokemon/megaaerodactyl/back.2bpp.lz"
+MegaPidgeotFrontpic:      INCBIN "gfx/pokemon/megapidgeot/front.animated.2bpp.lz"
+MegaPidgeotBackpic:       INCBIN "gfx/pokemon/megapidgeot/back.2bpp.lz"
 
 
 SECTION "Pics 22", ROMX
