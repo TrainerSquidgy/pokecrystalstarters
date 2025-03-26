@@ -3189,7 +3189,8 @@ wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
 wSpinnersOff:: db
 wLastCopycatMove:: db	
-	ds 61
+wMegaXorY:: db
+	ds 60
 
 wEventFlags:: flag_array NUM_EVENTS
 
