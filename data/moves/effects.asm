@@ -2092,4 +2092,23 @@ Snow:
 	doturn
 	startweather
 	endmove
-	
+
+TeraBlast:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	terablast
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

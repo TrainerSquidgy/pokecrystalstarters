@@ -6910,5 +6910,44 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
-	
+BattleCommand_TeraBlast:
+	ld hl, wBattleMonDVs
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_dvs
+	ld hl, wEnemyMonDVs
+.got_dvs
+	ld a, [hl]
+	and %0011
+	ld b, a
+
+	; + (Atk & 3) << 2
+	ld a, [hl]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or b
+
+; Skip Normal
+	inc a
+
+; Skip Bird
+	cp FAIRY_P
+	jr c, .done
+	inc a
+
+; Skip unused types
+	cp UNUSED_TYPES
+	jr c, .done
+	add UNUSED_TYPES_END - UNUSED_TYPES
+
+.done
+
+; Overwrite the current move type.
+	push af
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	pop af
+	ret
 

@@ -3189,7 +3189,12 @@ wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
 wSpinnersOff:: db
 wMegaXorY:: db
-	ds 61
+wTeraActive:: db
+wTeraOverride:: db
+wTeraCharge:: db
+wOriginalType1:: db
+wOriginalType2:: db
+	ds 56
 
 wEventFlags:: flag_array NUM_EVENTS
 
