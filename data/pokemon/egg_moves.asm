@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+MarshtompEggMoves:
+SwampertEggMoves:
+MudkipEggMoves:
 NoEggMoves:
 	db -1 ; end

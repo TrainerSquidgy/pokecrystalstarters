@@ -89,6 +89,7 @@ MegaPokemonList:
 	db HERACROSS
 	db HOUNDOOM
 	db TYRANITAR
+	db SWAMPERT
 	db -1
 
 GetMegaEvolutionStats:
@@ -131,6 +132,8 @@ GetMegaEvolutionStats:
 	jp z, .Houndoom
 	cp TYRANITAR
 	jp z, .Tyranitar
+	cp SWAMPERT
+	jp z, .Swampert
 	ret
 
 .Venusaur
@@ -518,5 +521,24 @@ GetMegaEvolutionStats:
 	ld a, ROCK
 	ld [wBaseType1], a
 	ld a, DARK
+	ld [wBaseType2], a
+	ret
+
+.Swampert
+	ld a, 100
+	ld [wBaseHP], a
+	ld a, 150
+	ld [wBaseAttack], a
+	ld a, 110
+	ld [wBaseDefense], a
+	ld a, 70
+	ld [wBaseSpeed], a
+	ld a, 95
+	ld [wBaseSpecialAttack], a
+	ld a, 110
+	ld [wBaseSpecialDefense], a
+	ld a, WATER
+	ld [wBaseType1], a
+	ld a, GROUND
 	ld [wBaseType2], a
 	ret

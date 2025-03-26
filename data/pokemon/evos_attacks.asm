@@ -3353,15 +3353,54 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
+MudkipEvosAttacks:
+	db EVOLVE_LEVEL, 16, MARSHTOMP
 	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
+	db 1, TACKLE
+	db 1, GROWL
+	db 6, MUD_SLAP
+	db 10, WATER_GUN
+	db 15, BIDE
+	db 19, FORESIGHT
+	db 24, BITE
+	db 28, TAKE_DOWN
+	db 33, WHIRLPOOL
+	db 37, PROTECT
+	db 42, HYDRO_PUMP
+	db 46, ENDEAVOR
+	db 0 ; no more level-up moves
+
+MarshtompEvosAttacks:
+	db EVOLVE_LEVEL, 36, SWAMPERT
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 6, MUD_SLAP
+	db 10, WATER_GUN
+	db 15, BIDE
+	db 16, MUD_SHOT
+	db 20, FORESIGHT
+	db 25, BITE
+	db 31, TAKE_DOWN
+	db 37, MUDDY_WATER
+	db 42, PROTECT
+	db 46, EARTHQUAKE
+	db 53, ENDEAVOR
+	db 0 ; no more level-up moves
+
+SwampertEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 6, MUD_SLAP
+	db 10, WATER_GUN
+	db 15, BIDE
+	db 16, MUD_SHOT
+	db 20, FORESIGHT
+	db 25, BITE
+	db 31, TAKE_DOWN
+	db 39, MUDDY_WATER
+	db 46, PROTECT
+	db 52, EARTHQUAKE
+	db 61, ENDEAVOR
 	db 0 ; no more level-up moves

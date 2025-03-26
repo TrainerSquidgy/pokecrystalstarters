@@ -710,17 +710,14 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+MarshtompFrontpic: INCBIN "gfx/pokemon/marshtomp/front.animated.2bpp.lz"
+MarshtompBackpic: INCBIN "gfx/pokemon/marshtomp/back.2bpp.lz"
+SwampertBackpic: INCBIN "gfx/pokemon/swampert/back.2bpp.lz"
+SwampertFrontpic: INCBIN "gfx/pokemon/swampert/front.animated.2bpp.lz"
+MudkipFrontpic: INCBIN "gfx/pokemon/mudkip/front.animated.2bpp.lz"
+MudkipBackpic: INCBIN "gfx/pokemon/mudkip/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
-
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 MegaVenusaurFrontpic:      INCBIN "gfx/pokemon/megavenusaur/front.animated.2bpp.lz"
 MegaVenusaurBackpic:       INCBIN "gfx/pokemon/megavenusaur/back.2bpp.lz"
@@ -738,6 +735,7 @@ MegaAlakazamFrontpic:      INCBIN "gfx/pokemon/megaalakazam/front.animated.2bpp.
 MegaAlakazamBackpic:       INCBIN "gfx/pokemon/megaalakazam/back.2bpp.lz"
 MegaHeracrossFrontpic:      INCBIN "gfx/pokemon/megaheracross/front.animated.2bpp.lz"
 MegaHeracrossBackpic:       INCBIN "gfx/pokemon/megaheracross/back.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 MegaAmpharosFrontpic:      INCBIN "gfx/pokemon/megaampharos/front.animated.2bpp.lz"
 MegaAmpharosBackpic:       INCBIN "gfx/pokemon/megaampharos/back.2bpp.lz"
@@ -747,6 +745,8 @@ MegaAerodactylFrontpic:      INCBIN "gfx/pokemon/megaaerodactyl/front.animated.2
 MegaAerodactylBackpic:       INCBIN "gfx/pokemon/megaaerodactyl/back.2bpp.lz"
 MegaPidgeotFrontpic:      INCBIN "gfx/pokemon/megapidgeot/front.animated.2bpp.lz"
 MegaPidgeotBackpic:       INCBIN "gfx/pokemon/megapidgeot/back.2bpp.lz"
+MegaSwampertFrontpic:      INCBIN "gfx/pokemon/megaswampert/front.animated.2bpp.lz"
+MegaSwampertBackpic:       INCBIN "gfx/pokemon/megaswampert/back.2bpp.lz"
 
 
 SECTION "Pics 22", ROMX
