@@ -89,6 +89,7 @@ MegaPokemonList:
 	db HERACROSS
 	db HOUNDOOM
 	db TYRANITAR
+	db LUCARIO
 	db -1
 
 GetMegaEvolutionStats:
@@ -131,6 +132,8 @@ GetMegaEvolutionStats:
 	jp z, .Houndoom
 	cp TYRANITAR
 	jp z, .Tyranitar
+	cp LUCARIO
+	jp z, .Lucario
 	ret
 
 .Venusaur
@@ -500,6 +503,24 @@ GetMegaEvolutionStats:
 	ld a, DARK
 	ld [wBaseType1], a
 	ld a, FIRE
+	ld [wBaseType2], a
+	ret
+.Lucario
+	ld a, 70
+	ld [wBaseHP], a
+	ld a, 145
+	ld [wBaseAttack], a
+	ld a, 88
+	ld [wBaseDefense], a
+	ld a, 112
+	ld [wBaseSpeed], a
+	ld a, 140
+	ld [wBaseSpecialAttack], a
+	ld a, 70
+	ld [wBaseSpecialDefense], a
+	ld a, FIGHTING
+	ld [wBaseType1], a
+	ld a, STEEL
 	ld [wBaseType2], a
 	ret
 .Tyranitar
