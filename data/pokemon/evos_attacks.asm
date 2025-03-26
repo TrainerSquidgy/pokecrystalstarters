@@ -1988,7 +1988,6 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3365,3 +3364,55 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TorchicEvosAttacks:
+	db EVOLVE_LEVEL, 16, COMBUSKEN
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, GROWL
+	db 7, FOCUS_ENERGY
+	db 10, EMBER
+	db 16, PECK
+	db 19, SAND_ATTACK
+	db 25, FIRE_SPIN
+	db 28, QUICK_ATTACK
+	db 34, SLASH
+	db 37, MIRROR_MOVE
+	db 43, FLAMETHROWER
+	db 0
+
+CombuskenEvosAttacks:
+	db EVOLVE_LEVEL, 36, BLAZIKEN
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, GROWL
+	db 7, FOCUS_ENERGY
+	db 13, EMBER
+	db 16, DOUBLE_KICK
+	db 17, PECK
+	db 21, SAND_ATTACK
+	db 28, BULK_UP
+	db 32, QUICK_ATTACK
+	db 39, SLASH
+	db 43, MIRROR_MOVE
+	db 50, SKY_UPPERCUT
+	db 54, FLARE_BLITZ
+	db 0
+	
+BlazikenEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, FIRE_PUNCH
+	db 1, SCRATCH
+	db 1, GROWL
+	db 7, FOCUS_ENERGY
+	db 13, EMBER
+	db 16, DOUBLE_KICK
+	db 17, PECK
+	db 21, SAND_ATTACK
+	db 28, BULK_UP
+	db 32, QUICK_ATTACK
+	db 36, BLAZE_KICK
+	db 42, SLASH
+	db 49, MIRROR_MOVE
+	db 59, SKY_UPPERCUT
+	db 0

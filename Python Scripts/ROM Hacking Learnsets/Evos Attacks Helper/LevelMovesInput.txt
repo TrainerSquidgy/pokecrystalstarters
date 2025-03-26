@@ -1,14 +1,15 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Blaziken
+1: Fire Punch
+1: Scratch
+1: Growl
+7: Focus Energy
+13: Ember
+16: Double Kick
+17: Peck
+21: Sand-Attack
+28: Bulk Up
+32: Quick Attack
+36: Blaze Kick
+42: Slash
+49: Mirror Move
+59: Sky Uppercut

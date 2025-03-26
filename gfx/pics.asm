@@ -710,14 +710,12 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+CombuskenFrontpic: INCBIN "gfx/pokemon/combusken/front.animated.2bpp.lz"
+CombuskenBackpic: INCBIN "gfx/pokemon/combusken/back.2bpp.lz"
+BlazikenBackpic: INCBIN "gfx/pokemon/blaziken/back.2bpp.lz"
+BlazikenFrontpic: INCBIN "gfx/pokemon/blaziken/front.animated.2bpp.lz"
+TorchicFrontpic: INCBIN "gfx/pokemon/torchic/front.animated.2bpp.lz"
+TorchicBackpic: INCBIN "gfx/pokemon/torchic/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
@@ -747,6 +745,8 @@ MegaAerodactylFrontpic:      INCBIN "gfx/pokemon/megaaerodactyl/front.animated.2
 MegaAerodactylBackpic:       INCBIN "gfx/pokemon/megaaerodactyl/back.2bpp.lz"
 MegaPidgeotFrontpic:      INCBIN "gfx/pokemon/megapidgeot/front.animated.2bpp.lz"
 MegaPidgeotBackpic:       INCBIN "gfx/pokemon/megapidgeot/back.2bpp.lz"
+MegaBlazikenFrontpic:      INCBIN "gfx/pokemon/megablaziken/front.animated.2bpp.lz"
+MegaBlazikenBackpic:       INCBIN "gfx/pokemon/megablaziken/back.2bpp.lz"
 
 
 SECTION "Pics 22", ROMX

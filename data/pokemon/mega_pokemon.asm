@@ -89,6 +89,7 @@ MegaPokemonList:
 	db HERACROSS
 	db HOUNDOOM
 	db TYRANITAR
+	db BLAZIKEN
 	db -1
 
 GetMegaEvolutionStats:
@@ -131,6 +132,8 @@ GetMegaEvolutionStats:
 	jp z, .Houndoom
 	cp TYRANITAR
 	jp z, .Tyranitar
+	cp BLAZIKEN
+	jp z, .Blaziken
 	ret
 
 .Venusaur
@@ -518,5 +521,23 @@ GetMegaEvolutionStats:
 	ld a, ROCK
 	ld [wBaseType1], a
 	ld a, DARK
+	ld [wBaseType2], a
+	ret
+.Blaziken
+	ld a, 80
+	ld [wBaseHP], a
+	ld a, 160
+	ld [wBaseAttack], a
+	ld a, 80
+	ld [wBaseDefense], a
+	ld a, 100
+	ld [wBaseSpeed], a
+	ld a, 130
+	ld [wBaseSpecialAttack], a
+	ld a, 80
+	ld [wBaseSpecialDefense], a
+	ld a, FIRE
+	ld [wBaseType1], a
+	ld a, FIGHTING
 	ld [wBaseType2], a
 	ret

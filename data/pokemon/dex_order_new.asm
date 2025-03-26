@@ -252,5 +252,7 @@ NewPokedexOrder:
 	db HO_OH
 	db MEWTWO
 	db MEW
-	db CELEBI
+	db TORCHIC
+	db COMBUSKEN
+	db BLAZIKEN
 	assert_table_length NUM_POKEMON

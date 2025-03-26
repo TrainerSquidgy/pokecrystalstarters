@@ -250,5 +250,7 @@ AnimationPointers:
 	dw TyranitarAnimation
 	dw LugiaAnimation
 	dw HoOhAnimation
-	dw CelebiAnimation
+	dw TorchicAnimation
+	dw CombuskenAnimation
+	dw BlazikenAnimation
 	assert_table_length NUM_POKEMON

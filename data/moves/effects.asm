@@ -2,6 +2,7 @@ INCLUDE "data/moves/effects_pointers.asm"
 
 MoveEffects: ; used only for BANK(MoveEffects)
 
+SkyUppercut:
 NormalHit:
 	checkobedience
 	usedmovetext
@@ -2092,4 +2093,13 @@ Snow:
 	doturn
 	startweather
 	endmove
-	
+
+BulkUp:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	bulkup
+	raisesub
+	endmove

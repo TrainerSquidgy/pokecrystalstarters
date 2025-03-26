@@ -1,16 +1,15 @@
-Pokémon: Sableye
+Pokémon: Blaziken
+1: Fire Punch
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Growl
+7: Focus Energy
+13: Ember
+16: Double Kick
+17: Peck
+21: Sand-Attack
+28: Bulk Up
+32: Quick Attack
+36: Blaze Kick
+42: Slash
+49: Mirror Move
+59: Sky Uppercut
