@@ -1,78 +1,326 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Pound
+Leer
+Absorb
+Quick Attack
+Pursuit
+Screech
+Mega Drain
+Agility
+Slam
+Detect
+Giga Drain
+Focus Punch
 Toxic
+Bullet Seed
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
 Protect
+Giga Drain
 Safeguard
 Frustration
 SolarBeam
-Earthquake
+Iron Tail
 Return
-Psychic
-Shadow Ball
+Dig
+Brick Break
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
 Rock Tomb
+Aerial Ace
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
+Attract
+Cut
+Strength
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
+Rock Smash
+Body Slam
+Counter
+Double-Edge
+DynamicPunch
+Endure
+Fury Cutter
+Mega Kick
+Mega Punch
+Mimic
+Mud-Slap
+Seismic Toss
+Sleep Talk
+Snore
+Substitute
+Swagger
+Swift
+Swords Dance
+ThunderPunch
+Endeavor
+Fury Cutter
+Headbutt
+Low Kick
+Mud-Slap
+Seed Bomb
+Snore
+Swift
+Synthesis
+ThunderPunch
+Worry Seed
+Focus Punch
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Protect
+Giga Drain
+Safeguard
+Frustration
+SolarBeam
+Iron Tail
+Return
+Dig
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Energy Ball
+Fling
+Endure
+Drain Punch
+Flash
+Swords Dance
+Captivate
 Rock Slide
 Sleep Talk
 Natural Gift
-Dream Eater
 Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Cut
+Strength
+Rock Smash
+Pound
+Leer
+Absorb
+Quick Attack
+Fury Cutter
+Pursuit
+Screech
+Leaf Blade
+Agility
+Slam
+Detect
+False Swipe
+Focus Punch
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Protect
+Giga Drain
+Safeguard
+Frustration
+SolarBeam
+Iron Tail
+Return
+Dig
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Cut
+Strength
+Flash
+Rock Smash
+Body Slam
+Counter
+Double-Edge
+DynamicPunch
+Endure
+Fury Cutter
+Mega Kick
+Mega Punch
+Mimic
+Mud-Slap
+Seismic Toss
+Sleep Talk
+Snore
+Substitute
+Swagger
+Swift
+Swords Dance
+ThunderPunch
+Focus Punch
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Protect
+Giga Drain
+Safeguard
+Frustration
+SolarBeam
+Iron Tail
+Return
+Dig
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Energy Ball
+False Swipe
+Fling
+Endure
+Drain Punch
+Flash
+Swords Dance
+Captivate
+Rock Slide
+X-Scissor
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Substitute
+Cut
+Strength
+Rock Smash
+Endeavor
+Fury Cutter
+Headbutt
+Low Kick
+Mud-Slap
+Seed Bomb
 Snore
 Swift
-Zen Headbutt
-Baton Pass
+Synthesis
+ThunderPunch
+Worry Seed
+Pound
+Leer
+Absorb
+Quick Attack
+Fury Cutter
+Pursuit
+Screech
+Leaf Blade
+Agility
+Slam
+Detect
+False Swipe
+Focus Punch
+Dragon Claw
+Roar
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Giga Drain
+Safeguard
+Frustration
+SolarBeam
+Iron Tail
+Earthquake
+Return
+Dig
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Cut
+Strength
+Flash
+Rock Smash
 Body Slam
-Defense Curl
+Counter
 Double-Edge
+DynamicPunch
+Endure
+Fury Cutter
+Mega Kick
+Mega Punch
 Mimic
-Selfdestruct
+Mud-Slap
+Seismic Toss
+Sleep Talk
+Snore
+Substitute
+Swagger
+Swift
+Swords Dance
+ThunderPunch
+Focus Punch
+Dragon Claw
+Roar
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Giga Drain
+Safeguard
+Frustration
+SolarBeam
+Iron Tail
+Earthquake
+Return
+Dig
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Focus Blast
+Energy Ball
+False Swipe
+Fling
+Endure
+Dragon Pulse
+Drain Punch
+Giga Impact
+Flash
+Swords Dance
+Captivate
+Rock Slide
+X-Scissor
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Substitute
+Cut
+Strength
+Rock Smash
+Rock Climb
+Endeavor
+Frenzy Plant
+Fury Cutter
+Headbutt
+Low Kick
+Mud-Slap
+Outrage
+Seed Bomb
+Snore
+Swift
+Synthesis
+ThunderPunch
+Worry Seed

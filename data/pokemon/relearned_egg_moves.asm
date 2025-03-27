@@ -910,6 +910,9 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+GrovyleRelearnedEggMoves:
+SceptileRelearnedEggMoves:
+TreeckoRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

@@ -270,9 +270,10 @@ DEF JOHTO_POKEMON EQU const_value
 	const TYRANITAR  ; f8
 	const LUGIA      ; f9
 	const HO_OH      ; fa
-	const CELEBI     ; fb
+	const TREECKO
+	const GROVYLE
+	const SCEPTILE
 DEF NUM_POKEMON EQU const_value - 1
-	const_skip       ; fc
 	const EGG        ; fd
 
 ; Unown forms

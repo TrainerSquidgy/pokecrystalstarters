@@ -89,6 +89,7 @@ MegaPokemonList:
 	db HERACROSS
 	db HOUNDOOM
 	db TYRANITAR
+	db SCEPTILE
 	db -1
 
 GetMegaEvolutionStats:
@@ -131,6 +132,8 @@ GetMegaEvolutionStats:
 	jp z, .Houndoom
 	cp TYRANITAR
 	jp z, .Tyranitar
+	cp SCEPTILE
+	jp z, .Sceptile
 	ret
 
 .Venusaur
@@ -518,5 +521,23 @@ GetMegaEvolutionStats:
 	ld a, ROCK
 	ld [wBaseType1], a
 	ld a, DARK
+	ld [wBaseType2], a
+	ret
+.Sceptile
+	ld a, 70
+	ld [wBaseHP], a
+	ld a, 110
+	ld [wBaseAttack], a
+	ld a, 75
+	ld [wBaseDefense], a
+	ld a, 145
+	ld [wBaseSpeed], a
+	ld a, 145
+	ld [wBaseSpecialAttack], a
+	ld a, 85
+	ld [wBaseSpecialDefense], a
+	ld a, GRASS
+	ld [wBaseType1], a
+	ld a, DRAGON
 	ld [wBaseType2], a
 	ret

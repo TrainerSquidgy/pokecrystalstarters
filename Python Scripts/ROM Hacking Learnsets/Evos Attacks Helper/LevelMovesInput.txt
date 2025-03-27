@@ -1,14 +1,13 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Sceptile
+1: Pound
+1: Leer
+6: Absorb
+11: Quick Attack
+16: Fury Cutter
+17: Pursuit
+23: Screech
+29: Leaf Blade
+35: Agility
+43: Slam
+51: Detect
+59: False Swipe

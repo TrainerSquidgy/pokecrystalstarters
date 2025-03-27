@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+GrovyleEggMoves:
+SceptileEggMoves:
+TreeckoEggMoves:
 NoEggMoves:
 	db -1 ; end

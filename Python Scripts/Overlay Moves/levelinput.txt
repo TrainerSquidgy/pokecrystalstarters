@@ -1,16 +1,13 @@
-Pokémon: Sableye
-1: Scratch
+Pokémon: Sceptile
+1: Pound
 1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+6: Absorb
+11: Quick Attack
+16: Fury Cutter
+17: Pursuit
+23: Screech
+29: Leaf Blade
+35: Agility
+43: Slam
+51: Detect
+59: False Swipe

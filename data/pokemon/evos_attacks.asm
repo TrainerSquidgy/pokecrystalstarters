@@ -3365,3 +3365,52 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TreeckoEvosAttacks:
+	db EVOLVE_LEVEL, 16, GROVYLE
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 1, LEER
+	db 6, ABSORB
+	db 11, QUICK_ATTACK
+	db 16, PURSUIT
+	db 21, SCREECH
+	db 26, MEGA_DRAIN
+	db 31, AGILITY
+	db 36, SLAM
+	db 41, DETECT
+	db 46, GIGA_DRAIN
+	db 0
+	
+GrovyleEvosAttacks:
+	db EVOLVE_LEVEL, 36, SCEPTILE
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 1, LEER
+	db 6, ABSORB
+	db 11, QUICK_ATTACK
+	db 16, FURY_CUTTER
+	db 17, PURSUIT
+	db 23, SCREECH
+	db 29, LEAF_BLADE
+	db 35, AGILITY
+	db 41, SLAM
+	db 47, DETECT
+	db 53, FALSE_SWIPE
+	db 0
+	
+SceptileEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 1, LEER
+	db 6, ABSORB
+	db 11, QUICK_ATTACK
+	db 16, FURY_CUTTER
+	db 17, PURSUIT
+	db 23, SCREECH
+	db 29, LEAF_BLADE
+	db 35, AGILITY
+	db 43, SLAM
+	db 51, DETECT
+	db 59, FALSE_SWIPE
+	db 0
