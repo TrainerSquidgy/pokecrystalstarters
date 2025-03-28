@@ -6910,5 +6910,37 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
-	
+BattleCommand_Refresh:
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVarAddr
+	ld a, [hl]
+	and (1 << PSN) | (1 << BRN) | (1 << PAR)
+	jr z, .fail
+	call AnimateCurrentMove
+	xor a
+	ld [hl], a
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVarAddr
+	res SUBSTATUS_TOXIC, [hl]
+	call UpdateUserInParty
+	ld hl, StatusHealText
+	call StdBattleTextbox
+
+	ldh a, [hBattleTurn]
+	and a
+	jp z, CalcPlayerStats
+	jp CalcEnemyStats
+
+.fail
+	farcall AnimateFailedMove
+	jp PrintButItFailed
+
+BattleCommand_DragonDance:
+	call ResetMiss
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_SpeedUp
+	jp BattleCommand_StatUpMessage
 

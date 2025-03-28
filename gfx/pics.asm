@@ -710,14 +710,10 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+SwabluFrontpic: INCBIN "gfx/pokemon/swablu/front.animated.2bpp.lz"
+SwabluBackpic: INCBIN "gfx/pokemon/swablu/back.2bpp.lz"
+AltariaBackpic: INCBIN "gfx/pokemon/altaria/back.2bpp.lz"
+AltariaFrontpic: INCBIN "gfx/pokemon/altaria/front.animated.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
@@ -747,6 +743,8 @@ MegaAerodactylFrontpic:      INCBIN "gfx/pokemon/megaaerodactyl/front.animated.2
 MegaAerodactylBackpic:       INCBIN "gfx/pokemon/megaaerodactyl/back.2bpp.lz"
 MegaPidgeotFrontpic:      INCBIN "gfx/pokemon/megapidgeot/front.animated.2bpp.lz"
 MegaPidgeotBackpic:       INCBIN "gfx/pokemon/megapidgeot/back.2bpp.lz"
+MegaAltariaFrontpic:      INCBIN "gfx/pokemon/megaaltaria/front.animated.2bpp.lz"
+MegaAltariaBackpic:       INCBIN "gfx/pokemon/megaaltaria/back.2bpp.lz"
 
 
 SECTION "Pics 22", ROMX

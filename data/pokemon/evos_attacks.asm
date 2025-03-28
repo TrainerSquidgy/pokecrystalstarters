@@ -3365,3 +3365,36 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SwabluEvosAttacks:
+	db EVOLVE_LEVEL, 35, ALTARIA
+	db 0 ; no more evolutions
+	db 1, PECK
+	db 1, GROWL
+	db 8, ASTONISH
+	db 11, SING
+	db 18, FURY_ATTACK
+	db 21, SAFEGUARD
+	db 28, MIST
+	db 31, TAKE_DOWN
+	db 38, MIRROR_MOVE
+	db 41, REFRESH
+	db 48, PERISH_SONG
+	db 0 ; no more level-up moves
+
+AltariaEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, PECK
+	db 1, GROWL
+	db 8, ASTONISH
+	db 11, SING
+	db 18, FURY_ATTACK
+	db 21, SAFEGUARD
+	db 28, MIST
+	db 31, TAKE_DOWN
+	db 35, DRAGONBREATH
+	db 40, DRAGON_DANCE
+	db 45, REFRESH
+	db 54, PERISH_SONG
+	db 59, SKY_ATTACK
+	db 0 ; no more level-up moves

@@ -89,6 +89,7 @@ MegaPokemonList:
 	db HERACROSS
 	db HOUNDOOM
 	db TYRANITAR
+	db ALTARIA
 	db -1
 
 GetMegaEvolutionStats:
@@ -131,6 +132,8 @@ GetMegaEvolutionStats:
 	jp z, .Houndoom
 	cp TYRANITAR
 	jp z, .Tyranitar
+	cp ALTARIA
+	jp z, .Altaria
 	ret
 
 .Venusaur
@@ -518,5 +521,23 @@ GetMegaEvolutionStats:
 	ld a, ROCK
 	ld [wBaseType1], a
 	ld a, DARK
+	ld [wBaseType2], a
+	ret
+.Altaria
+	ld a, 75
+	ld [wBaseHP], a
+	ld a, 110
+	ld [wBaseAttack], a
+	ld a, 110
+	ld [wBaseDefense], a
+	ld a, 80
+	ld [wBaseSpeed], a
+	ld a, 110
+	ld [wBaseSpecialAttack], a
+	ld a, 110
+	ld [wBaseSpecialDefense], a
+	ld a, DRAGON
+	ld [wBaseType1], a
+	ld a, FAIRY_S
 	ld [wBaseType2], a
 	ret

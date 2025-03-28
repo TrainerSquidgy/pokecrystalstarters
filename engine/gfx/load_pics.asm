@@ -74,6 +74,12 @@ GetUnownLetter:
 	jr z, .Aerodactyl
 	cp PIDGEOT
 	jr z, .Pidgeot
+	cp ALTARIA
+	jr z, .Altaria
+	ret
+.Altaria
+	ld a, 39
+	ld [wMegaPicture], a
 	ret
 .Pidgeot
 	ld a, 38

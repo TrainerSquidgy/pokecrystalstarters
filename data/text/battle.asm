@@ -1149,3 +1149,9 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+StatusHealText:
+	text "<USER>'s"
+	line "status returned"
+	cont "to normal!"
+	prompt

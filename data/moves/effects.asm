@@ -2092,4 +2092,19 @@ Snow:
 	doturn
 	startweather
 	endmove
-	
+
+DragonDance:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	dragondance
+	raisesub
+	endmove
+
+Refresh:
+	checkobedience
+	usedmovetext
+	doturn
+	refresh
+	endmove
