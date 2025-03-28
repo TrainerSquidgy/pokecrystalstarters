@@ -120,7 +120,7 @@ ElmsLabStarterChoice:
 	
 
 	
-ElmsLabtext_InverseNo:
+ElmsLabText_InverseNo:
 	text "All type matchups"
 	line "remain normal."
 	done
@@ -223,12 +223,82 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_RivalStillSame
 	waitbutton
 .StartersDone
-	promptbutton
+	writetext ElmsLabText_InverseAsk
+	yesorno
+	iftrue .YesInverse
+	loadmem wInverseActivated, 0
+	writetext ElmsLabText_InverseNo
+	sjump .InverseDone
+.YesInverse
+	loadmem wInverseActivated, 1
+	writetext ElmsLabtext_InverseYes
+.InverseDone
+	waitbutton
+	writetext ElmsLabText_SpinnersAsk
+	yesorno
+	iftrue .YesSpinners
+	loadmem wSpinnersOff, 0
+	writetext ElmsLabText_SpinnersNo
+	sjump .SpinnersDone
+.YesSpinners
+	loadmem wSpinnersOff, 1
+	writetext ElmsLabText_SpinnersYes
+.SpinnersDone
+	waitbutton
+	writetext ElmsLabText_ProfessorsRepelAsk
+	yesorno
+	iftrue .YesProfsRepel
+	writetext ElmsLabText_ProfessorsRepelNo
+	sjump .ProfsRepelDone
+.YesProfsRepel
+	verbosegiveitem PROFS_REPEL
+	writetext ElmsLabText_ProfessorsRepelYes
+.ProfsRepelDone
+	waitbutton
 	closetext
 	turnobject PLAYER, RIGHT
 .End
 	end
 
+ElmsLabText_ProfessorsRepelAsk:
+	text "Borrow the"
+	line "PROF'S REPEL?"
+	done
+	
+ElmsLabText_ProfessorsRepelYes:
+	text "Turn it on in"
+	line "the KEY ITEMS"
+	
+	para "and WILD #MON"
+	line "will not appear."
+	done
+	
+ElmsLabText_ProfessorsRepelNo:
+	text "We'll keep hold"
+	line "of this then!"
+	done
+
+ElmsLabText_SpinnersAsk:
+	text "Turn all SPINNERS"
+	line "into ROTATORS?"
+	done
+	
+ElmsLabText_SpinnersYes:
+	text "All map objects"
+	line "with random spin,"
+	
+	para "now rotate in a"
+	line "predictable way."
+	done
+	
+ElmsLabText_SpinnersNo:
+	text "All map objects"
+	line "with random spin,"
+	
+	para "will continue"
+	line "to spin randomly."
+	done 
+	
 ElmsLabText_AskMegas:
 	text "Do you want to"
 	line "be able to"

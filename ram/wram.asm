@@ -3189,7 +3189,9 @@ wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
 wPlayerTauntCount:: db
 wEnemyTauntCount:: db
-	ds 61
+wSpinnersOff:: db
+wMegaXorY:: db
+	ds 59
 
 wEventFlags:: flag_array NUM_EVENTS
 

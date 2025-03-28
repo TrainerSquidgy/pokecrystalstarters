@@ -66,13 +66,37 @@ GetUnownLetter:
 	jr z, .Alakazam
 	cp HERACROSS
 	jr z, .Heracross
+	cp AMPHAROS
+	jr z, .Ampharos
+	cp HOUNDOOM
+	jr z, .Houndoom
+	cp AERODACTYL
+	jr z, .Aerodactyl
+	cp PIDGEOT
+	jr z, .Pidgeot
 	ret
-.Alakazam
-	ld a, 33
+.Pidgeot
+	ld a, 38
+	ld [wMegaPicture], a
+	ret
+.Aerodactyl
+	ld a, 37
+	ld [wMegaPicture], a
+	ret
+.Houndoom
+	ld a, 36
+	ld [wMegaPicture], a
+	ret
+.Ampharos
+	ld a, 35
 	ld [wMegaPicture], a
 	ret
 .Heracross
 	ld a, 34
+	ld [wMegaPicture], a
+	ret
+.Alakazam
+	ld a, 33
 	ld [wMegaPicture], a
 	ret
 .Beedrill
@@ -91,12 +115,12 @@ GetUnownLetter:
 	ld a, 27
 	ld [wMegaPicture], a
 	ret
-.Gengar
-	ld a, 28
-	ld [wMegaPicture], a
-	ret
 .Pinsir
 	ld a, 29
+	ld [wMegaPicture], a
+	ret
+.Gengar
+	ld a, 28
 	ld [wMegaPicture], a
 	ret
 	
