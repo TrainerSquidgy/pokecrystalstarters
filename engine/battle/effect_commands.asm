@@ -3468,7 +3468,32 @@ endc
 	xor a
 	ld [wWhichHPBar], a
 	predef AnimateHPBar
-.did_no_damage
+.did_no_damage	
+	ld a, [wBattleMonSpecies]
+	cp KANGASKHAN
+	jr nz, .no_double_damage
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr z, .no_double_damage
+	ld a, [wDoneDoubleDamage]
+	and a
+	jr nz, .no_double_damage
+	inc a
+	ld [wDoneDoubleDamage], a
+	call RefreshBattleHuds
+	ld hl, wCurDamage  ; Load the address of wCurDamage into HL
+	ld a, [hl]        ; Load the low byte of wCurDamage into A
+	srl a             ; Shift right logical A (divide by 2)
+	ld [hl], a        ; Store the result back into the low byte of wCurDamage
+	inc hl            ; Increment HL to point to the high byte
+	ld a, [hl]        ; Load the high byte of wCurDamage into A
+	srl a             ; Shift right logical A (divide by 2)
+	rrc b             ; Rotate right through carry B, carry is the LSB of the low byte shift, B is used as a temporary register.
+	and %00000001     ; Mask all but the carry bit.
+	or a              ; Or the carry bit with the shifted high byte.
+	ld [hl], a        ; Store the result back into the high byte of wCurDamage
+	call BattleCommand_ApplyDamage
+.no_double_damage
 	jp RefreshBattleHuds
 
 DoPlayerDamage:

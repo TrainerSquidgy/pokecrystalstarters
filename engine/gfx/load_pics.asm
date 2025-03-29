@@ -74,7 +74,6 @@ GetUnownLetter:
 	jr z, .Aerodactyl
 	cp PIDGEOT
 	jr z, .Pidgeot
-	ret
 .Pidgeot
 	ld a, 38
 	ld [wMegaPicture], a
