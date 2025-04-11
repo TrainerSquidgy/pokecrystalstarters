@@ -3365,3 +3365,47 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+SlakothEvosAttacks:
+	db EVOLVE_LEVEL, 18, VIGOROTH
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 1, YAWN
+	db 7, ENCORE
+	db 13, SLACK_OFF
+	db 19, FAINT_ATTACK
+	db 25, AMNESIA
+	db 31, COVET
+	db 37, COUNTER
+	db 43, FLAIL
+	db 0 ; no more level-up moves
+
+VigorothEvosAttacks:
+	db EVOLVE_LEVEL, 36, SLAKING
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 1, YAWN
+	db 7, ENCORE
+	db 13, SLACK_OFF
+	db 19, FURY_SWIPES
+	db 25, ENDURE
+	db 31, SLASH
+	db 37, COUNTER
+	db 43, DYNAMICPUNCH
+	db 49, REVERSAL
+	db 0 ; no more level-up moves
+	
+SlakingEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 1, YAWN
+	db 7, ENCORE
+	db 13, SLACK_OFF
+	db 19, FAINT_ATTACK
+	db 25, AMNESIA
+	db 31, COVET
+	db 36, SWAGGER
+	db 37, COUNTER
+	db 43, FLAIL
+	db 0 ; no more level-up moves

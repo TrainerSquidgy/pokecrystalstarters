@@ -1149,3 +1149,10 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+MadeTargetDrowzy:
+	text "<USER>"
+	line "made"
+	cont "<TARGET>"
+	cont "drowzy!"
+	prompt
