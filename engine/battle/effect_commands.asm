@@ -2581,7 +2581,17 @@ PlayerAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
-	
+; huge power
+	ld a, [wBattleMonSpecies]
+	cp MARILLF
+	jr z, .huge_power
+	cp AZUMARILLF
+	jr nz, .not_huge_power
+.huge_power
+	srl c
+	jr nz, .not_huge_power
+	inc c
+.not_huge_power
 	call SnowDefenseBoost
 
 	ld a, [wEnemyScreens]
@@ -2823,11 +2833,21 @@ EnemyAttackDamage:
 	jr nc, .special
 
 ; physical
-	ld hl, wBattleMonDefense
 	ld a, [hli]
+	ld hl, wBattleMonDefense
 	ld b, a
 	ld c, [hl]
-
+; huge power
+	ld a, [wEnemyMonSpecies]
+	cp MARILLF
+	jr z, .huge_power
+	cp AZUMARILLF
+	jr nz, .not_huge_power
+.huge_power
+	srl c
+	jr nz, .not_huge_power
+	inc c
+.not_huge_power
 	call SnowDefenseBoost
 
 	ld a, [wPlayerScreens]
@@ -2947,9 +2967,7 @@ BattleCommand_DamageCalc:
 	srl c
 	jr nz, .dont_selfdestruct
 	inc c
-
 .dont_selfdestruct
-
 ; Variable-hit moves and Conversion can have a power of 0.
 	cp EFFECT_MULTI_HIT
 	jr z, .skip_zero_damage_check
@@ -6814,7 +6832,7 @@ _CheckBattleScene:
 SnowDefenseBoost: 
 ; Raise Defense by 50% if there's Snow and the opponent
 ; is Ice-type.
-		ld a, [wBattleWeather]
+	ld a, [wBattleWeather]
 	cp WEATHER_SNOW
 	ret nz
 

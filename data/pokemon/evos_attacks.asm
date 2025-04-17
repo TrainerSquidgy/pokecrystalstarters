@@ -3365,3 +3365,33 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+MarillFEvosAttacks:
+	db EVOLVE_LEVEL, 18, AZUMARILLF
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 3, DEFENSE_CURL
+	db 6, TAIL_WHIP
+	db 10, WATER_GUN
+	db 15, ROLLOUT
+	db 21, BUBBLEBEAM
+	db 28, DOUBLE_EDGE
+	db 36, RAIN_DANCE
+	db 45, PLAY_ROUGH
+	db 0 ; no more level-up moves
+
+AzumarillFEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, DEFENSE_CURL
+	db 1, TAIL_WHIP
+	db 1, WATER_GUN
+	db 3, DEFENSE_CURL
+	db 6, TAIL_WHIP
+	db 10, WATER_GUN
+	db 15, ROLLOUT
+	db 25, BUBBLEBEAM
+	db 36, DOUBLE_EDGE
+	db 48, RAIN_DANCE
+	db 60, PLAY_ROUGH
+	db 0 ; no more level-up moves
