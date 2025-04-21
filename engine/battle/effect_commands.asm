@@ -6911,4 +6911,14 @@ BattleCommand_AddDamage:
     ret
 	
 	
-
+BattleCommand_HoneClaws:
+; Attack
+	call ResetMiss
+	call BattleCommand_SpecialAttackUp
+	call BattleCommand_StatUpMessage
+	
+; Accuracy
+	call ResetMiss
+	call BattleCommand_AccuracyUp
+	jp BattleCommand_StatUpMessage
+	ret

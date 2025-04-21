@@ -252,20 +252,24 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw HoneClawsDescription
+	dw SlashDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
+
+HoneClawsDescription:
+	db "Ups ACCURACY"
+	next "and ATTACK.@"
 
 PoundDescription:
 	db   "Pounds with fore-"

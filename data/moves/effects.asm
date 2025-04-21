@@ -2093,3 +2093,12 @@ Snow:
 	startweather
 	endmove
 	
+HoneClaws:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	raisesub
+	honeclaws
+	endmove

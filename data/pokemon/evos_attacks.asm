@@ -3365,3 +3365,41 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+DrilburEvosAttacks:
+	db EVOLVE_LEVEL, 31, EXCADRILL
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 5, RAPID_SPIN
+	db 8, MUD_SLAP
+	db 12, FURY_SWIPES
+	db 15, METAL_CLAW
+	db 19, DIG
+	db 22, HONE_CLAWS
+	db 26, SLASH
+	db 29, ROCK_SLIDE
+	db 33, EARTHQUAKE
+	db 36, SWORDS_DANCE
+	db 40, SANDSTORM
+	db 43, DRILL_RUN
+	db 47, FISSURE
+	db 0 ; no more level-up moves
+	
+ExcadrillEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SCRATCH
+	db 5, RAPID_SPIN
+	db 8, MUD_SLAP
+	db 12, FURY_SWIPES
+	db 15, METAL_CLAW
+	db 19, DIG
+	db 22, HONE_CLAWS
+	db 26, SLASH
+	db 29, ROCK_SLIDE
+	db 31, HORN_DRILL
+	db 36, EARTHQUAKE
+	db 42, SWORDS_DANCE
+	db 49, SANDSTORM
+	db 55, DRILL_RUN
+	db 62, FISSURE
+	db 0 ; no more level-up moves

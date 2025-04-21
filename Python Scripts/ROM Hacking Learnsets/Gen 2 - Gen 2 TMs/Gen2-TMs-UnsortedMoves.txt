@@ -1,78 +1,397 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
+Scratch
+Mud Sport
+Rapid Spin
+Mud-Slap
+Fury Swipes
+Metal Claw
+Dig
+Hone Claws
+Slash
 Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Earthquake
+Swords Dance
+Sandstorm
+Drill Run
+Fissure
+Hone Claws
 Toxic
 Hidden Power
-Sunny Day
-Hyper Beam
-Light Screen
 Protect
-Safeguard
 Frustration
-SolarBeam
 Earthquake
 Return
-Psychic
-Shadow Ball
+Dig
+Brick Break
 Double Team
-Reflect
-Flamethrower
+Sludge Bomb
 Sandstorm
-Fire Blast
 Rock Tomb
+Aerial Ace
 Facade
-Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
+Attract
+Round
+Fling
+Shadow Claw
+Swords Dance
+Bulldoze
 Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
+X-Scissor
+Poison Jab
 Swagger
 Substitute
-Trick Room
-AncientPower
+Rock Smash
+Cut
+Strength
+Drill Run
 Earth Power
-Gravity
+Iron Defense
+Sleep Talk
+Snore
+Stealth Rock
+Hone Claws
+Toxic
+Hidden Power
+Protect
+Frustration
+Earthquake
+Return
+Dig
+Brick Break
+Double Team
+Sludge Bomb
+Sandstorm
+Rock Tomb
+Aerial Ace
+Facade
+Rest
+Attract
+Round
+Fling
+Shadow Claw
+Swords Dance
+Bulldoze
+Rock Slide
+X-Scissor
+Poison Jab
+Swagger
+Sleep Talk
+Substitute
+Rock Smash
+Secret PowerORAS
+Confide
+Cut
+Strength
+Rock SmashORAS
+Drill Run
+Earth Power
+Iron Defense
+Snore
+Stealth Rock
+Drill Run
+Earth Power
+Iron Defense
+Snore
+Stealth Rock
+Toxic
+Hidden Power
+Protect
+Frustration
+Earthquake
+Return
+Brick Break
+Double Team
+Sludge Bomb
+Sandstorm
+Rock Tomb
+Aerial Ace
+Facade
+Rest
+Attract
+Round
+Fling
+Shadow Claw
+Swords Dance
+Bulldoze
+Rock Slide
+X-Scissor
+Poison Jab
+Swagger
+Sleep Talk
+Substitute
+Confide
+Dig
+Rest
+Rock Slide
+Snore
+Protect
+Attract
+Sandstorm
+Facade
+Brick Break
+Rock Tomb
+Sand Tomb
+Mud Shot
+Fling
+Shadow Claw
+Round
+Bulldoze
+Swords Dance
+Earthquake
+Substitute
+Sludge Bomb
+Endure
+Sleep Talk
+Iron Defense
+Poison Jab
+X-Scissor
+Earth Power
+Stealth Rock
+Drill Run
+High Horsepower
+Take Down
+Mud-Slap
+Protect
+Facade
+Aerial Ace
+Bulldoze
+Metal Claw
+Mud Shot
+Rock Tomb
+Fling
+Endure
+Sunny Day
+Sandstorm
+Dig
+Brick Break
+Shadow Claw
+Sleep Talk
+Poison Jab
+Stomping Tantrum
+Rest
+Rock Slide
+Swords Dance
+Substitute
+Iron Defense
+X-Scissor
+Drill Run
+Stealth Rock
 Helping Hand
+Earth Power
+Earthquake
+Tera Blast
+Sand Tomb
+High Horsepower
+Double-Edge
+Scorching Sands
+Metal Sound
+Curse
+Hone Claws
+Toxic
+Hidden Power
+Hyper Beam
+Protect
+Frustration
+Earthquake
+Return
+Dig
+Brick Break
+Double Team
+Sludge Bomb
+Sandstorm
+Rock Tomb
+Aerial Ace
+Facade
+Rest
+Attract
+Round
+Focus Blast
+Fling
+Shadow Claw
+Giga Impact
+Swords Dance
+Bulldoze
+Rock Slide
+X-Scissor
+Poison Jab
+Swagger
+Substitute
+Rock Smash
+Cut
+Strength
+Drill Run
+Earth Power
 Iron Defense
 Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Magnet Rise
+Sleep Talk
 Snore
-Swift
-Zen Headbutt
-Baton Pass
+Stealth Rock
+Drill Run
+Earth Power
+Iron Defense
+Iron Head
+Magnet Rise
+Snore
+Stealth Rock
+Hone Claws
+Toxic
+Hidden Power
+Hyper Beam
+Protect
+Frustration
+Earthquake
+Return
+Dig
+Brick Break
+Double Team
+Sludge Bomb
+Sandstorm
+Rock Tomb
+Aerial Ace
+Facade
+Rest
+Attract
+Round
+Focus Blast
+Fling
+Shadow Claw
+Giga Impact
+Swords Dance
+Bulldoze
+Rock Slide
+X-Scissor
+Poison Jab
+Swagger
+Sleep Talk
+Substitute
+Rock SmashXY
+Secret PowerORAS
+Confide
+Cut
+Strength
+Rock SmashORAS
+Toxic
+Hidden Power
+Hyper Beam
+Protect
+Frustration
+Earthquake
+Return
+Brick Break
+Double Team
+Sludge Bomb
+Sandstorm
+Rock Tomb
+Aerial Ace
+Facade
+Rest
+Attract
+Round
+Focus Blast
+Fling
+Brutal Swing
+Shadow Claw
+Smart Strike
+Giga Impact
+Swords Dance
+Bulldoze
+Rock Slide
+X-Scissor
+Poison Jab
+Swagger
+Sleep Talk
+Substitute
+Confide
+Drill Run
+Earth Power
+Iron Defense
+Iron Head
+Magnet Rise
+Snore
+Stealth Rock
+Stomping Tantrum
+Hyper Beam
+Giga Impact
+Dig
+Rest
+Rock Slide
+Snore
+Protect
+Attract
+Sandstorm
+Facade
+Brick Break
+Rock Tomb
+Sand Tomb
+Mud Shot
+Rock Blast
+Fling
+Shadow Claw
+Round
+Bulldoze
+Smart Strike
+Brutal Swing
+Stomping Tantrum
+Swords Dance
+Earthquake
+Substitute
+Sludge Bomb
+Endure
+Sleep Talk
+Iron Defense
+Poison Jab
+X-Scissor
+Focus Blast
+Earth Power
+Iron Head
+Stealth Rock
+Drill Run
+High Horsepower
+Take Down
+Mud-Slap
+Scary Face
+Protect
+Facade
+Aerial Ace
+Bulldoze
+Metal Claw
+Mud Shot
+Rock Tomb
+Fling
+Endure
+Sunny Day
+Sandstorm
+Smart Strike
+Dig
+Brick Break
+Shadow Claw
 Body Slam
-Defense Curl
+Sleep Talk
+Rock Blast
+Poison Jab
+Stomping Tantrum
+Rest
+Rock Slide
+Swords Dance
+Iron Head
+Substitute
+Iron Defense
+X-Scissor
+Drill Run
+Stealth Rock
+Helping Hand
+Earth Power
+Earthquake
+Giga Impact
+Focus Blast
+Hyper Beam
+Steel Beam
+Tera Blast
+Sand Tomb
+High Horsepower
 Double-Edge
-Mimic
-Selfdestruct
+Scorching Sands
+Throat Chop
+Metal Sound
+Curse

@@ -1,16 +1,18 @@
-Pokémon: Sableye
+Pokémon: Excadrill
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Rapid Spin
+1: Mud-Slap
+5: Rapid Spin
+8: Mud-Slap
+12: Fury Swipes
+15: Metal Claw
+19: Dig
+22: Hone Claws
+26: Slash
+29: Rock Slide
+31: Horn Drill
+36: Earthquake
+42: Swords Dance
+49: Sandstorm
+55: Drill Run
+62: Fissure

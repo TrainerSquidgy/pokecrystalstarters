@@ -1,2 +1,2 @@
-Pokémon: Sableye
-Dynamicpunch, Headbutt, Curse, Toxic, Rock_Smash, Psych_Up, Hidden_Power, Sunny_Day, Snore, Icy_Wind, Protect, Rain_Dance, Endure, Frustration, Return, Dig, Psychic, Shadow_Ball, Mud_Slap, Double_Team, Ice_Punch, Swagger, Sleep_Talk, Thunderpunch, Dream_Eater, Rest, Attract, Thief, Fire_Punch, Fury_Cutter, Nightmare, Cut, Flash
+Pokémon: Excadrill
+Curse, Toxic, Rock_Smash, Hidden_Power, Sunny_Day, Snore, Hyper_Beam, Protect, Endure, Frustration, Earthquake, Return, Dig, Mud_Slap, Double_Team, Swagger, Sleep_Talk, Sludge_Bomb, Sandstorm, Rest, Attract, Cut, Strength
