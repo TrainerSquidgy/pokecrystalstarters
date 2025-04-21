@@ -2582,6 +2582,9 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 ; huge power
+	ld a, [wAbilitiesActivated]
+	and a
+	jr z, .not_huge_power
 	ld a, [wBattleMonSpecies]
 	cp MARILLF
 	jr z, .huge_power
@@ -2833,11 +2836,14 @@ EnemyAttackDamage:
 	jr nc, .special
 
 ; physical
-	ld a, [hli]
 	ld hl, wBattleMonDefense
+	ld a, [hli]
 	ld b, a
 	ld c, [hl]
 ; huge power
+	ld a, [wAbilitiesActivated]
+	and a
+	jr z, .not_huge_power
 	ld a, [wEnemyMonSpecies]
 	cp MARILLF
 	jr z, .huge_power

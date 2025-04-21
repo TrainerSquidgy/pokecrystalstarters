@@ -878,8 +878,8 @@ PokemonStrings:
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
 .Celebi	db "CELEBI@@@@@"
-.MarillF	db "MARILLF@@@@"
-.AzumarillF	db "AZUMARILLF@"
+.MarillF	db "MARILL@@@@@"
+.AzumarillF	db "AZUMARILL@@"
 ;PYTHONBUFFER4
 
 
