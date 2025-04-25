@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db CHINCHOU_F
+	db LANTURN_F
 	assert_table_length NUM_POKEMON

@@ -3365,3 +3365,32 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ChinchouFEvosAttacks:
+	db EVOLVE_LEVEL, 27, LANTURN_F
+	db 0 ; no more evolutions
+	db 1, WATER_GUN
+	db 1, THUNDERSHOCK
+	db 5, SUPERSONIC
+	db 8,  THUNDER_WAVE
+	db 13, FLAIL
+	db 17, BUBBLEBEAM
+	db 25, SPARK
+	db 29, CONFUSE_RAY
+	db 37, TAKE_DOWN
+	db 41, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+LanturnFEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, WATER_GUN
+	db 1, THUNDERSHOCK
+	db 5, SUPERSONIC
+	db 8, THUNDER_WAVE
+	db 13, FLAIL
+	db 17, BUBBLEBEAM
+	db 25, SPARK
+	db 33, CONFUSE_RAY
+	db 45, TAKE_DOWN
+	db 53, HYDRO_PUMP
+	db 0 ; no more level-up moves

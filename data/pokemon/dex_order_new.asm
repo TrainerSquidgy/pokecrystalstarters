@@ -253,4 +253,6 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
+	db CHINCHOU_F
+	db LANTURN_F
 	assert_table_length NUM_POKEMON
