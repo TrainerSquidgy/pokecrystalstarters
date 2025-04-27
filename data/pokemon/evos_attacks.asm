@@ -3365,3 +3365,15 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+CastformEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 10, WATER_GUN
+	db 10, EMBER
+	db 10, POWDER_SNOW
+	db 20, RAIN_DANCE
+	db 20, SUNNY_DAY
+	db 20, HAIL
+	db 30, WEATHER_BALL
+	db 0 ; no more level-up moves

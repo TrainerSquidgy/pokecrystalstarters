@@ -252,9 +252,9 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw WeatherBallDescription
+	dw HailDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
@@ -1270,3 +1270,11 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+HailDescription:
+	db   "Starts hailing"
+	next "for 5 turns.@"
+
+WeatherBallDescription:
+	db   "Type changes"
+	next "with weather.@"

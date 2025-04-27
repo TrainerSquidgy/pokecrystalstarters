@@ -46,6 +46,35 @@ GetUnownLetter:
 	ldh a, [hQuotient + 3]
 	inc a
 	ld [wUnownLetter], a
+	
+	ld a, [wBattleMonSpecies]
+	cp CASTFORM
+	jr nz, .not_castform
+	
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .sun
+	cp WEATHER_HAIL
+	jr z, .hail
+	cp WEATHER_RAIN
+	jr z, .rain
+.sun
+	ld a, 39
+	ld [wUnownLetter], a
+	ld [wCastformForm], a
+	ret
+.hail
+	ld a, 40
+	ld [wUnownLetter], a
+	ld [wCastformForm], a
+	ret
+.rain
+	ld a, 41
+	ld [wUnownLetter], a
+	ld [wCastformForm], a
+	ret
+
+.not_castform	
 	ld a, [wSetMegaEvolutionPicture]
 	and a
 	ret nz
@@ -293,9 +322,27 @@ GetMonBackpic:
 	ld a, b
 	ld d, BANK(PokemonPicPointers)
 	cp UNOWN
+	jr z, .castform_unown
+	push af
+	ld a, [wBattleWeather]
+	and a
+	jr z, .no_weather
+	cp WEATHER_SANDSTORM
+	jr z, .no_weather
+	ld a, [wWeatherCount]
+	and a
+	jr z, .no_weather
+	pop af
+	cp CASTFORM
 	jr nz, .ok
+.castform_unown
 	ld a, c
 	ld d, BANK(UnownPicPointers)
+	jr .ok
+.no_weather
+	pop af
+	ld a, CASTFORM
+	ld d, BANK(PokemonPicPointers)
 .ok
 	dec a
 	ld bc, 6

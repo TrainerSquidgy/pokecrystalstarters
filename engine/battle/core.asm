@@ -1690,10 +1690,30 @@ HandleWeather:
 	ld hl, wWeatherCount
 	dec [hl]
 	jr nz, .continues
-	
+
 ; ended
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
+	ld a, [wBattleMonSpecies]
+	cp CASTFORM
+	jr nz, .check_enemy
+	ld a, NORMAL
+	ld [wBattleMonType1], a
+	ld [wBattleMonType2], a
+	ld a, [wBattleWeather]
+	cp WEATHER_SANDSTORM
+	jr z, .check_enemy
+	call SendOutPlayerMon
+	ld hl, BattleText_Transformed
+	call StdBattleTextbox
+.check_enemy
+	ld a, [wEnemyMonSpecies]
+	cp CASTFORM
+	jr nz, .not_castform
+	ld a, NORMAL
+	ld [wEnemyMonType1], a
+	ld [wEnemyMonType2], a
+.not_castform
 	xor a
 	ld [wBattleWeather], a
 	ret

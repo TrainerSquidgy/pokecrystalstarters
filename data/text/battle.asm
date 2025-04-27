@@ -1149,3 +1149,8 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+BattleText_Transformed:
+	text "<USER>"
+	line "transformed."
+	prompt

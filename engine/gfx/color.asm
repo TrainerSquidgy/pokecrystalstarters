@@ -665,19 +665,34 @@ GetBattlemonBackpicPalettePointer:
 	farcall GetPartyMonDVs
 	ld c, l
 	ld b, h
-	ld a, [wSetMegaEvolutionPicture]
+	ld a, [wTempBattleMonSpecies]
+	cp CASTFORM
+	jr nz, .not_castform
+	ld a, [wWeatherCount]
 	and a
-	jr z, .not_mega
-	ld a, [wTempBattleMonSpecies]
-	cp CHARIZARD
-	jr z, .charizard
-	jr .not_mega
-.charizard
-	ld a, GOLBAT
-	jr .mega
-.not_mega
-	ld a, [wTempBattleMonSpecies]
-.mega
+	jr z, .not_right_weather
+	ld a, [wBattleWeather]
+	and a
+	jr z, .not_right_weather
+	cp WEATHER_SANDSTORM
+	jr z, .not_right_weather
+	cp WEATHER_RAIN
+	jr z, .rain
+	cp WEATHER_SUN
+	jr z, .sun
+	ld a, 254
+	jr .not_castform
+.sun
+	ld a, CHARMELEON
+	jr .not_castform
+
+.rain
+	ld a, 255
+	jr .not_castform
+
+.not_right_weather
+	ld a, CASTFORM
+.not_castform
 	call GetPlayerOrMonPalettePointer
 	pop de
 	ret
@@ -1350,3 +1365,9 @@ INCLUDE "gfx/beta_poker/beta_poker.pal"
 
 SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
+
+UpdateCastformColor:
+	farcall _CGB_BattleColors
+	ld a, 1
+	ld [hCGBPalUpdate], a
+	ret

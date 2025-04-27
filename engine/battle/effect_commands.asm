@@ -6001,6 +6001,12 @@ BattleCommand_DoubleFlyingDamage:
 	bit SUBSTATUS_FLYING, a
 	ret z
 	jr DoubleDamage
+	
+BattleCommand_DoubleWeatherDamage:
+	ld a, [wWeatherBallBonus]
+	and a
+	ret z
+	jr DoubleDamage
 
 BattleCommand_DoubleUndergroundDamage:
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
@@ -6865,7 +6871,7 @@ BattleCommand_StartWeather:
 	ld hl, SunGotBrightText
 	jr .start_weather
 
-.rain	
+.rain
 	ld a, WEATHER_RAIN
 	ld hl, DownpourText
 .start_weather
@@ -6910,5 +6916,100 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
-	
+BattleCommand_WeatherBall:
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .Sun
+	cp WEATHER_RAIN
+	jr z, .Rain
+	cp WEATHER_HAIL
+	jr z, .Hail
+	cp WEATHER_SANDSTORM
+	jr z, .Sandstorm
+	xor a
+	ld [wWeatherBallBonus], a
+	ret
 
+.Sandstorm
+	ld a, ROCK
+	jr .Finish
+	
+.Sun
+	ld a, FIRE
+	jr .Finish
+.Rain
+	ld a, WATER
+	jr .Finish
+.Hail
+	ld a, ICE
+.Finish
+	push af
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	pop af
+	ld [hl], a
+	ld a, 1
+	ld [wWeatherBallBonus], a
+	ret	
+
+BattleCommand_CastformSpriteAndType:
+	ld a, [wBattleMonSpecies]
+	cp CASTFORM
+	jr nz, .check_enemy
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .hail_player
+	cp WEATHER_RAIN
+	jr z, .rain_player
+	cp WEATHER_SUN
+	jr z, .sun_player
+	cp WEATHER_SANDSTORM
+	jr z, .sandstorm_player
+	ret
+.hail_player
+	ld a, ICE
+	jr .player_type_handled
+.rain_player
+	ld a, WATER
+	jr .player_type_handled
+.sun_player
+	ld a, FIRE
+	jr .player_type_handled
+.sandstorm_player
+	ld a, NORMAL	
+.player_type_handled
+	ld [wBattleMonType1], a
+	ld [wBattleMonType2], a
+	farcall UpdateCastformColor
+	farcall SendOutPlayerMon
+	ld hl, BattleText_Transformed
+	call StdBattleTextbox
+.check_enemy
+	ld a, [wEnemyMonSpecies]
+	cp CASTFORM
+	ret nz
+	ld a, [wBattleWeather]
+	cp WEATHER_HAIL
+	jr z, .hail_enemy
+	cp WEATHER_RAIN
+	jr z, .rain_enemy
+	cp WEATHER_SUN
+	jr z, .sun_enemy
+	cp WEATHER_SANDSTORM
+	jr z, .sandstorm_enemy
+	ret
+.hail_enemy
+	ld a, ICE
+	jr .enemy_type_handled
+.rain_enemy
+	ld a, WATER
+	jr .enemy_type_handled
+.sun_enemy
+	ld a, FIRE
+	jr .enemy_type_handled
+.sandstorm_enemy
+	ld a, NORMAL	
+.enemy_type_handled
+	ld [wEnemyMonType1], a
+	ld [wEnemyMonType2], a
+	ret

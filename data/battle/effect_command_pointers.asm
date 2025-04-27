@@ -178,4 +178,7 @@ BattleCommandPointers:
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
 	dw BattleCommand_StartWeather
+	dw BattleCommand_WeatherBall
+	dw BattleCommand_DoubleWeatherDamage
+	dw BattleCommand_CastformSpriteAndType
 	assert_table_length NUM_EFFECT_COMMANDS

@@ -1527,6 +1527,7 @@ Sandstorm:
 	usedmovetext
 	doturn
 	startweather
+	castformtypeandsprite
 	endmove
 
 Endure:
@@ -1814,6 +1815,7 @@ RainDance:
 	usedmovetext
 	doturn
 	startweather
+	castformtypeandsprite
 	endmove
 
 SunnyDay:
@@ -1821,6 +1823,7 @@ SunnyDay:
 	usedmovetext
 	doturn
 	startweather
+	castformtypeandsprite
 	endmove
 
 FakeOut:
@@ -2084,6 +2087,7 @@ Hail:
 	usedmovetext
 	doturn
 	startweather
+	castformtypeandsprite
 	endmove
 	
 Snow:
@@ -2092,4 +2096,25 @@ Snow:
 	doturn
 	startweather
 	endmove
-	
+
+WeatherBall:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	weatherball
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	doubleweatherballdamage
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

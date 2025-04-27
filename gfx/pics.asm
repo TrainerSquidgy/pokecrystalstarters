@@ -710,14 +710,14 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+CastformFrontpic:      INCBIN "gfx/pokemon/castform/front.animated.2bpp.lz"
+CastformBackpic:        INCBIN "gfx/pokemon/castform/back.2bpp.lz"
+CastformSunFrontpic:      INCBIN "gfx/pokemon/vulpix/front.animated.2bpp.lz"
+CastformSunBackpic:        INCBIN "gfx/pokemon/castform-sunny/back.2bpp.lz"
+CastformHailFrontpic:      INCBIN "gfx/pokemon/smoochum/front.animated.2bpp.lz"
+CastformHailBackpic:        INCBIN "gfx/pokemon/castform-hail/back.2bpp.lz"
+CastformRainFrontpic:      INCBIN "gfx/pokemon/poliwag/front.animated.2bpp.lz"
+CastformRainBackpic:        INCBIN "gfx/pokemon/castform-rainy/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
