@@ -1,14 +1,14 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Metagross
+1: Take Down
+1: Confusion
+1: Metal Claw
+1: Scary Face
+20: Confusion
+20: Metal Claw
+26: Scary Face
+32: Pursuit
+38: Psychic
+44: Iron Defense
+55: Meteor Mash
+66: Agility
+77: Hyper Beam

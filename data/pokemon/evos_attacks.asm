@@ -3365,3 +3365,41 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+BeldumEvosAttacks:
+	db EVOLVE_LEVEL, 20, METANG
+	db 0 ; No More Evolutions
+	db 1, TAKE_DOWN
+	db 0
+	
+MetangEvosAttacks:
+	db EVOLVE_LEVEL, 45, METAGROSS
+	db 0 ; No More Evolutions
+	db 1, TAKE_DOWN
+	db 20, CONFUSION
+	db 20, METAL_CLAW
+	db 26, SCARY_FACE
+	db 32, PURSUIT
+	db 38, PSYCHIC_M
+	db 44, IRON_DEFENSE
+	db 50, METEOR_MASH
+	db 56, AGILITY
+	db 62, HYPER_BEAM
+	db 0
+	
+MetagrossEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TAKE_DOWN
+	db 1, CONFUSION
+	db 1, METAL_CLAW
+	db 1, SCARY_FACE
+	db 20, CONFUSION
+	db 20, METAL_CLAW
+	db 26, SCARY_FACE
+	db 32, PURSUIT
+	db 38, PSYCHIC_M
+	db 44, IRON_DEFENSE
+	db 55, METEOR_MASH
+	db 66, AGILITY
+	db 77, HYPER_BEAM
+	db 0

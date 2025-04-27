@@ -1,16 +1,16 @@
-LechonkEvosAttacks:
+MetagrossEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, TAKE_DOWN
+	db 1, CONFUSION
+	db 1, METAL_CLAW
+	db 1, SCARY_FACE
+	db 20, CONFUSION
+	db 20, METAL_CLAW
+	db 26, SCARY_FACE
+	db 32, PURSUIT
+	db 38, PSYCHIC
+	db 44, IRON_DEFENSE
+	db 55, METEOR_MASH
+	db 66, AGILITY
+	db 77, HYPER_BEAM
 	db 0
