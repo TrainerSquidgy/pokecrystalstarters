@@ -3188,6 +3188,8 @@ wMegaPicture:: db
 wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
 wSpinnersOff:: db
+wMegaXorY:: db
+wMetronomeOnly:: db
 wPlayerRageFistCounter:: db
 wOpponentRageFistCounter:: db
 wPlayerRageFist1:: db
@@ -3203,7 +3205,7 @@ wOpponentRageFist4:: db
 wOpponentRageFist5:: db
 wOpponentRageFist6:: db
 wPlayerUsedRageFist:: db
-	ds 47
+	ds 45
 
 wEventFlags:: flag_array NUM_EVENTS
 

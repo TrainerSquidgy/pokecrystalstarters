@@ -234,6 +234,17 @@ ElmsLabExtraOptions:
 	writetext ElmsLabtext_InverseYes
 .InverseDone
 	waitbutton
+	writetext ElmsLabText_MetronomeOnlyAsk
+	yesorno
+	iftrue .YesMetronome
+	loadmem wMetronomeOnly, 0
+	writetext ElmsLabText_MetronomeOnlyNo
+	sjump .MetronomeDone
+.YesMetronome
+	loadmem wMetronomeOnly, 1
+	writetext ElmsLabText_MetronomeOnlyYes 
+.MetronomeDone
+	waitbutton
 	writetext ElmsLabText_SpinnersAsk
 	yesorno
 	iftrue .YesSpinners
@@ -265,6 +276,21 @@ ElmsLabText_ProfessorsRepelAsk:
 	line "PROF'S REPEL?"
 	done
 	
+ElmsLabText_MetronomeOnlyAsk:
+	text "Play on METRONOME"
+	line "-only mode?"
+	done
+	
+ElmsLabText_MetronomeOnlyYes:
+	text "Good luck."
+	line "You'll need it."
+	done
+	
+ElmsLabText_MetronomeOnlyNo:
+	text "You're still able"
+	line "to pick moves."
+	done
+
 ElmsLabText_ProfessorsRepelYes:
 	text "Turn it on in"
 	line "the KEY ITEMS"

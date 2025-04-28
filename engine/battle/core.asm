@@ -5821,6 +5821,14 @@ MoveInfoBox:
 	ret
 
 CheckPlayerHasUsableMoves:
+	ld a, [wMetronomeOnly]
+	and a
+	jr z, .notMetronome
+	ld a, METRONOME
+	ld [wCurPlayerMove], a
+	xor a
+	ret
+.notMetronome
 	ld a, STRUGGLE
 	ld [wCurPlayerMove], a
 	ld a, [wPlayerDisableCount]
@@ -5923,6 +5931,12 @@ ParseEnemyAction:
 	jr .finish
 
 .continue
+	ld a, [wMetronomeOnly]
+	and a
+	jr z, .notMetronome
+	ld a, METRONOME
+	jp .finish
+.notMetronome
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyMonPP
 	ld b, NUM_MOVES
