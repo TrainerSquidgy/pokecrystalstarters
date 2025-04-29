@@ -1,78 +1,211 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Headbutt
+Curse
 Toxic
 Hidden Power
-Sunny Day
-Hyper Beam
-Light Screen
+Snore
 Protect
+Endure
+Frustration
+Iron Tail
+Return
+Dig
+Double Team
+Swagger
+Sleep Talk
+Swift
+Rest
+Attract
+Icy Wind
+Ice Beam
+Powder Snow
+Tail Whip
+Roar
+Baby-Doll Eyes
+Ice Shard
+Confuse Ray
+Icy Wind
+Payback
+Mist
+Feint Attack
+Hex
+Aurora Beam
+Extrasensory
+Safeguard
+Ice Beam
+Imprison
+Blizzard
+Grudge
+Captivate
+Sheer Cold
+Roar
+Toxic
+Hail
+Hidden Power
+Ice Beam
+Blizzard
+Protect
+Rain Dance
 Safeguard
 Frustration
-SolarBeam
-Earthquake
 Return
-Psychic
-Shadow Ball
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
 Facade
-Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
+Attract
+Round
+Payback
+Aurora Veil
 Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
+Frost Breath
 Swagger
+Sleep Talk
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
+Dark Pulse
+Confide
+Aqua Tail
+Covet
+Foul Play
+Heal Bell
+Icy Wind
+Iron Tail
 Pain Split
-Rollout
-Signal Beam
+Role Play
 Snore
-Swift
+Spite
 Zen Headbutt
-Baton Pass
+Take Down
+Charm
+Fake Tears
+Agility
+Protect
+Confuse Ray
+Disarming Voice
+Chilling Water
+Facade
+Hex
+Swift
+Icy Wind
+Draining Kiss
+Stored Power
+Endure
+Rain Dance
+Snowscape
+Dig
+Zen Headbutt
+Foul Play
 Body Slam
-Defense Curl
+Sleep Talk
+Dazzling Gleam
+Rest
+Imprison
+Dark Pulse
+Substitute
+Encore
+Play Rough
+Helping Hand
+Baton Pass
+Ice Beam
+Misty Terrain
+Nasty Plot
+Blizzard
+Tera Blast
+Roar
+Spite
+Icicle Spear
+Weather Ball
+Pain Split
+Psych Up
 Double-Edge
-Mimic
-Selfdestruct
+Take Down
+Charm
+Fake Tears
+Agility
+Protect
+Confuse Ray
+Disarming Voice
+Chilling Water
+Facade
+Hex
+Swift
+Icy Wind
+Draining Kiss
+Stored Power
+Avalanche
+Endure
+Rain Dance
+Snowscape
+Psyshock
+Dig
+Zen Headbutt
+Foul Play
+Body Slam
+Sleep Talk
+Dazzling Gleam
+Rest
+Imprison
+Dark Pulse
+Substitute
+Encore
+Play Rough
+Calm Mind
+Helping Hand
+Baton Pass
+Ice Beam
+Misty Terrain
+Nasty Plot
+Blizzard
+Giga Impact
+Hyper Beam
+Tera Blast
+Roar
+Spite
+Icicle Spear
+Weather Ball
+Pain Split
+Psych Up
+Double-Edge
+Triple Axel
+Aqua Tail
+Covet
+Foul Play
+Heal Bell
+Icy Wind
+Iron Tail
+Laser Focus
+Pain Split
+Role Play
+Snore
+Spite
+Wonder Room
+Zen Headbutt
+Psyshock
+Calm Mind
+Roar
+Toxic
+Hail
+Hidden Power
+Ice Beam
+Blizzard
+Hyper Beam
+Protect
+Rain Dance
+Safeguard
+Frustration
+Return
+Double Team
+Facade
+Rest
+Attract
+Round
+Payback
+Giga Impact
+Aurora Veil
+Psych Up
+Frost Breath
+Dream Eater
+Swagger
+Sleep Talk
+Substitute
+Dark Pulse
+Dazzling Gleam
+Confide

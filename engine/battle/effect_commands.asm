@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +423,7 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1077,8 +1073,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1918,10 +1912,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5591,20 +5581,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6910,5 +6892,20 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
+BattleCommand_Payback:
+	call CheckOpponentWentFirst
+	ret z
+	ld a, d
+	add a
+	ld d, a
+	ret
 	
-
+BattleCommand_Hex:
+; Get the opponent's status condition
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+; Return if it's 0 (no condition)
+	and a
+	ret z
+; It's not 0, so double the damage
+	jp DoubleDamage
