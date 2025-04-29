@@ -327,7 +327,6 @@ KoffingEggMoves:
 	db PSYWAVE
 	db PSYBEAM
 	db DESTINY_BOND
-	db PAIN_SPLIT
 	db -1 ; end
 
 RhyhornEggMoves:
@@ -802,5 +801,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+VulpixAEggMoves:
+NinetalesAEggMoves:
 NoEggMoves:
 	db -1 ; end

@@ -220,7 +220,7 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
+	dw SheerColdDescription
 	dw DazzleGleamDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
@@ -320,6 +320,10 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
+
+SheerColdDescription:
+	db   "A one-hit KO,"
+	next "frozen attack.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -1146,9 +1150,6 @@ SafeguardDescription:
 	db   "Prevents all"
 	next "status problems.@"
 
-PainSplitDescription:
-	db   "Adds user & foe's"
-	next "HPs. Shares total.@"
 
 SacredFireDescription:
 	db   "An attack that may"

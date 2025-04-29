@@ -251,6 +251,6 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA      ; f9
 	db NO_MOVE      ; HO_OH      ; fa
 	db NO_MOVE      ; CELEBI     ; fb
-;	db NO_MOVE      ; VULPIX-A   ; fc
-;	db DAZZLE_GLEAM ; NINETALES-A; fd
+	db NO_MOVE      ; VULPIX-A   ; fc
+	db DAZZLE_GLEAM ; NINETALES-A; fd
 	assert_table_length NUM_POKEMON

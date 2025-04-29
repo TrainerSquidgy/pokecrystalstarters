@@ -2710,7 +2710,7 @@ MisdreavusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
-	db 36, PAIN_SPLIT
+	db 36, HEX
 	db 46, PERISH_SONG
 	db 0 ; no more level-up moves
 
@@ -3366,3 +3366,36 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+VulpixAEvosAttacks:
+	db EVOLVE_ITEM, ICE_STONE, NINETALESA
+	db 0 ; No More Evolutions
+	db 1, POWDER_SNOW
+	db 4, TAIL_WHIP
+	db 7, ROAR
+	db 9, BABYDOLLEYES
+	db 10, ICE_SHARD
+	db 12, CONFUSE_RAY
+	db 15, ICY_WIND
+	db 18, PAYBACK
+	db 20, MIST
+	db 23, FAINT_ATTACK
+	db 26, HEX
+	db 28, AURORA_BEAM
+	db 31, EXTRASENSORY
+	db 34, SAFEGUARD
+	db 36, ICE_BEAM
+	db 39, CAPTIVATE
+	db 42, BLIZZARD
+	db 45, SHEER_COLD
+	db 0
+	
+NinetalesAEvosAttacks:
+	db 0
+	db 1, DAZZLE_GLEAM
+	db 1, NASTY_PLOT
+	db 1, ICE_BEAM
+	db 1, ICE_SHARD
+	db 1, CONFUSE_RAY
+	db 1, SAFEGUARD
+	db 0

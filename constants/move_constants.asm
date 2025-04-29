@@ -225,7 +225,7 @@
 	const PRESENT      ; d9
 	const FRUSTRATION  ; da
 	const SAFEGUARD    ; db
-	const PAIN_SPLIT   ; dc
+	const SHEER_COLD   ; dc
 	const DAZZLE_GLEAM  ; dd
 	const MAGNITUDE    ; de
 	const DYNAMICPUNCH ; df

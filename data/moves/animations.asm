@@ -221,7 +221,7 @@ BattleAnimations::
 	dw BattleAnim_Present
 	dw BattleAnim_Frustration
 	dw BattleAnim_Safeguard
-	dw BattleAnim_PainSplit
+	dw BattleAnim_Blizzard
 	dw BattleAnim_Flash
 	dw BattleAnim_Magnitude
 	dw BattleAnim_Dynamicpunch
@@ -3952,18 +3952,6 @@ BattleAnim_Safeguard:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_PainSplit:
-	anim_2gfx BATTLE_ANIM_GFX_HIT, BATTLE_ANIM_GFX_OBJECTS
-	anim_call BattleAnim_TargetObj_2Row
-	anim_bgeffect BATTLE_BG_EFFECT_BODY_SLAM, $0, BG_EFFECT_USER, $0
-	anim_wait 4
-	anim_sound 0, 1, SFX_TACKLE
-	anim_obj BATTLE_ANIM_OBJ_HIT, 112, 48, $0
-	anim_obj BATTLE_ANIM_OBJ_HIT, 76, 96, $0
-	anim_wait 8
-	anim_call BattleAnim_ShowMon_0
-	anim_wait 1
-	anim_ret
 
 BattleAnim_Magnitude:
 	anim_1gfx BATTLE_ANIM_GFX_ROCKS

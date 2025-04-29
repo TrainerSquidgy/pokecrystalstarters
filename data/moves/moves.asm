@@ -233,7 +233,7 @@ Moves:
 	move PRESENT,      EFFECT_PRESENT,             1, NORMAL,        90, 15,   0
 	move FRUSTRATION,  EFFECT_FRUSTRATION,         1, NORMAL,       100, 20,   0
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, NORMAL,       100, 25,   0
-	move PAIN_SPLIT,   EFFECT_PAIN_SPLIT,          0, NORMAL,       100, 20,   0
+	move SHEER_COLD,   EFFECT_OHKO,                0, ICE,           30,  5,   0
 	move DAZZLE_GLEAM, EFFECT_NORMAL_HIT,         80, FAIRY_S,      100, 10,   0
 	move MAGNITUDE,    EFFECT_MAGNITUDE,           1, GROUND,       100, 30,   0
 	move DYNAMICPUNCH, EFFECT_CONFUSE_HIT,       100, FIGHTING,      50,  5, 100

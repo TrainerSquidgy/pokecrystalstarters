@@ -367,7 +367,6 @@ KoffingRelearnedEggMoves:
 	db 1, PSYWAVE
 	db 1, PSYBEAM
 	db 1, DESTINY_BOND
-	db 1, PAIN_SPLIT
 	db 0
 
 RhyhornRelearnedEggMoves:
@@ -903,6 +902,8 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+VulpixARelearnedEggMoves:
+NinetalesARelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

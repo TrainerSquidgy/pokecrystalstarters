@@ -1,16 +1,21 @@
-LechonkEvosAttacks:
+Vulpix-AEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, POWDER_SNOW
+	db 4, TAIL_WHIP
+	db 7, ROAR
+	db 9, BABY-DOLL_EYES
+	db 10, ICE_SHARD
+	db 12, CONFUSE_RAY
+	db 15, ICY_WIND
+	db 18, PAYBACK
+	db 20, MIST
+	db 23, FEINT_ATTACK
+	db 26, HEX
+	db 28, AURORA_BEAM
+	db 31, EXTRASENSORY
+	db 34, SAFEGUARD
+	db 36, ICE_BEAM
+	db 39, CAPTIVATE
+	db 42, BLIZZARD
+	db 45, SHEER_COLD
 	db 0

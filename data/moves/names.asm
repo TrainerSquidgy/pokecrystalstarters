@@ -219,7 +219,7 @@ MoveNames::
 	li "PRESENT"
 	li "FRUSTRATION"
 	li "SAFEGUARD"
-	li "PAIN SPLIT"
+	li "SHEER COLD"
 	li "DAZZLE GLEAM"
 	li "MAGNITUDE"
 	li "DYNAMICPUNCH"
