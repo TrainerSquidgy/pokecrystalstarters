@@ -1139,3 +1139,13 @@ ItStartedToSnowText:
 	text "It started"
 	line "to snow!"
 	prompt
+
+IsChargedText:
+	text "<USER>"
+	line "is charging."
+	prompt
+	
+MegaEvolvedText:
+	text "<USER>"
+	line "MEGA EVOLVED!"
+	prompt
