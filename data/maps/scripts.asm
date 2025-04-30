@@ -154,15 +154,14 @@ INCLUDE "maps/ElmsLab.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
-INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route26HealHouse.asm"
-INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
-INCLUDE "maps/Route27SandstormHouse.asm"
-INCLUDE "maps/Route29Route46Gate.asm"
 
 
 SECTION "Map Scripts 10", ROMX
+INCLUDE "maps/DayOfWeekSiblingsHouse.asm"
 
+INCLUDE "maps/Route27SandstormHouse.asm"
+INCLUDE "maps/Route29Route46Gate.asm"
 INCLUDE "maps/Route22.asm"
 INCLUDE "maps/GoldenrodUnderground.asm"
 INCLUDE "maps/GoldenrodUndergroundSwitchRoomEntrances.asm"
@@ -484,5 +483,7 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/ElmsHouse.asm"
+INCLUDE "maps/MahoganyTMShop.asm"
 
 ENDSECTION

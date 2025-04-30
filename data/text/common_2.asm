@@ -1575,3 +1575,25 @@ _OakText5::
 	para "That's why I study"
 	line "#MON every day."
 	prompt
+
+_MegaRingTurnedOnText::
+	text "MEGA RING's"
+	line "powers enabled."
+	prompt
+	
+_MegaRingTurnedOffText::
+	text "MEGA RING's"
+	line "powers disabled."
+	prompt
+
+_WildEncountersOffText::
+	text "Wild #MON"
+	line "will not appear."
+	prompt
+	
+_WildEncountersOnText::
+	text "Wild #MON"
+	line "will reappear."
+	prompt
+	
+	
