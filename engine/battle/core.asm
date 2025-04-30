@@ -289,6 +289,7 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
+	call HandleCharge
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
@@ -9265,4 +9266,37 @@ BattleStartMessage:
 	ld c, $2 ; start
 	farcall Mobile_PrintOpponentBattleMessage
 
+	ret
+
+HandleCharge:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player1
+	call .CheckPlayer
+	jr .CheckEnemy
+
+.player1
+	call .CheckEnemy
+.CheckPlayer:
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_CHARGE_THIS_TURN, a
+	jr z, .player_wears_off
+	res SUBSTATUS_CHARGE_THIS_TURN, a
+	ld [wPlayerSubStatus2], a
+	ret
+.player_wears_off
+	res SUBSTATUS_CHARGE, a
+	ld [wPlayerSubStatus2], a
+	ret
+
+.CheckEnemy:
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CHARGE_THIS_TURN, a
+	jr z, .enemy_wears_off
+	res SUBSTATUS_CHARGE_THIS_TURN, a
+	ld [wEnemySubStatus2], a
+	ret
+.enemy_wears_off
+	res SUBSTATUS_CHARGE, a
+	ld [wEnemySubStatus2], a
 	ret

@@ -1,78 +1,179 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
 Toxic
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
 Protect
-Safeguard
+Rain Dance
 Frustration
-SolarBeam
-Earthquake
+Thunderbolt
+Thunder
 Return
-Psychic
-Shadow Ball
+Dig
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
+Aerial Ace
 Facade
-Secret Power
 Rest
-Skill Swap
-Overheat
+Attract
+Thief
+Round
+Fling
 Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
+Retaliate
 Giga Impact
-Rock Polish
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
+Volt Switch
+Thunder Wave
 Grass Knot
 Swagger
+Sleep Talk
+U-turn
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
+Wild Charge
+Secret PowerORAS
+Confide
+Cut
+Zap Cannon
+Covet
+Electroweb
 Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
+Iron Tail
+Last Resort
+Magnet Rise
+Recycle
+Shock Wave
 Signal Beam
 Snore
+Super Fang
+Thunder Punch
+Ally Switch
+Covet
+Electroweb
+Helping Hand
+Iron Tail
+Last Resort
+Magnet Rise
+Recycle
+Shock Wave
+Signal Beam
+Snore
+Super Fang
+Thunder Punch
+Toxic
+Hidden Power
+Sunny Day
+Protect
+Rain Dance
+Frustration
+Thunderbolt
+Thunder
+Return
+Double Team
+Aerial Ace
+Facade
+Rest
+Attract
+Thief
+Round
+Fling
+Charge Beam
+Giga Impact
+Volt Switch
+Thunder Wave
+Grass Knot
+Swagger
+Sleep Talk
+U-turn
+Substitute
+Wild Charge
+Confide
+Tackle
+Tail Whip
+Thunder Shock
+Charge
+Charm
+Parabolic Charge
+Nuzzle
+Thunder Wave
+Volt Switch
+Rest
+Snore
+Charge Beam
+Entrainment
+Play Rough
+Thunder
+Discharge
+Thunder Punch
+Giga Impact
+Thunder Wave
+Dig
+Rest
+Thief
+Snore
+Protect
+Charm
+Attract
+Rain Dance
+Sunny Day
+Facade
+Helping Hand
+U-turn
+Fling
+Round
+Retaliate
+Volt Switch
+Electroweb
+Electric Terrain
+Eerie Impulse
+Thunderbolt
+Thunder
+Substitute
+Endure
+Sleep Talk
+Iron Tail
+Grass Knot
+Electro Ball
+Ally Switch
+Wild Charge
+Play Rough
+Dazzling Gleam
+Take Down
+Charm
+Agility
+Protect
+Thief
+Trailblaze
+Charge Beam
+Facade
 Swift
-Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+Draining Kiss
+Fling
+Endure
+Volt Switch
+Sunny Day
+Rain Dance
+Dig
+U-turn
+Thunder Punch
+Sleep Talk
+Seed Bomb
+Electro Ball
+Light Screen
+Dazzling Gleam
+Grass Knot
+Thunder Wave
+Rest
+Eerie Impulse
+Substitute
+Thunderbolt
+Play Rough
+Helping Hand
+Electric Terrain
+Misty Terrain
+Wild Charge
+Giga Impact
+Hyper Beam
+Thunder
+Tera Blast
+Charge
+Super Fang
+Endeavor
+Electroweb
