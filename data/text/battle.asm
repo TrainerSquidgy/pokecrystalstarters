@@ -1169,3 +1169,8 @@ IsChargedText:
 	text "<USER>"
 	line "is charging."
 	prompt
+	
+TookDamageText:
+	text "<USER>"
+	line "took damage."
+	prompt

@@ -180,4 +180,5 @@ BattleCommandPointers:
 	dw BattleCommand_StartWeather
 	dw BattleCommand_ChargeMove
 	dw BattleCommand_MagnetRise
+	dw BattleCommand_SpikyShield
 	assert_table_length NUM_EFFECT_COMMANDS

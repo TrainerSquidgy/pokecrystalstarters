@@ -2113,3 +2113,11 @@ MagnetRise:
 	doturn
 	magnetrise
 	endmove
+
+SpikyShield:
+	checkobedience
+	usedmovetext
+	doturn
+	protect
+	spikyshield
+	endmove

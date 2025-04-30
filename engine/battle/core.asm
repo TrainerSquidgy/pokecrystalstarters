@@ -618,7 +618,7 @@ ParsePlayerAction:
 .not_encored
 	ld a, [wBattlePlayerAction]
 	cp BATTLEPLAYERACTION_SWITCH
-	jr z, .reset_rage
+	jp z, .reset_rage
 	and a
 	jr nz, .reset_bide
 	ld a, [wPlayerSubStatus3]
@@ -667,6 +667,8 @@ ParsePlayerAction:
 .continue_rage
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_PROTECT
+	jr z, .continue_protect
+	cp EFFECT_SPIKY_SHIELD
 	jr z, .continue_protect
 	cp EFFECT_ENDURE
 	jr z, .continue_protect
@@ -977,6 +979,9 @@ EndOpponentProtectEndureDestinyBond:
 	call GetBattleVarAddr
 	res SUBSTATUS_PROTECT, [hl]
 	res SUBSTATUS_ENDURE, [hl]
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_SPIKY_SHIELD, [hl]
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
@@ -6047,6 +6052,8 @@ ParseEnemyAction:
 	cp EFFECT_PROTECT
 	ret z
 	cp EFFECT_ENDURE
+	ret z
+	cp EFFECT_SPIKY_SHIELD
 	ret z
 	xor a
 	ld [wEnemyProtectCount], a

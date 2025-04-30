@@ -179,6 +179,7 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 	const SUBSTATUS_CURLED
 	const SUBSTATUS_CHARGE
 	const SUBSTATUS_CHARGE_THIS_TURN
+	const SUBSTATUS_SPIKY_SHIELD
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags
 	const_def
