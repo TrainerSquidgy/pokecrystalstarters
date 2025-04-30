@@ -214,6 +214,11 @@ BattleText_MonFainted:
 BattleText_UseNextMon:
 	text "Use next #MON?"
 	done
+	
+BattleText_MegaEvolveAsk:
+	text "MEGA EVOLVE"
+	line "your #MON?"
+	done
 
 UnusedRivalWinText: ; unreferenced
 	text "<RIVAL>: Yes!"
@@ -1145,6 +1150,7 @@ IsChargedText:
 	line "is charging."
 	prompt
 	
+
 MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"

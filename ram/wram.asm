@@ -3173,7 +3173,24 @@ wEggMovesLeft:: db
 wGuaranteedHMFriendCatch:: db
 wElmPreview:: db
 wAlteredHiddenPowerDVs:: db
-	ds 78
+wInverseActivated:: db
+wAbilitiesActivated:: db
+wTutorsLimited:: db
+wHiddenPowerLoop:: db
+wHiddenPowerType:: db
+wTempHiddenPowerType:: db
+wTempHiddenPowerPower:: db
+wWhichHiddenPower:: db
+wMegaEvolutionActive:: db
+wAlreadyMegaEvolved:: db
+wBackupMaxHP:: ds 2
+wMegaPicture:: db
+wSetMegaEvolutionPicture:: db
+wMegaEvolutionEnabled:: db
+wSpinnersOff:: db
+wMegaXorY:: db
+wMetronomeOnly:: db
+	ds 60
 
 wEventFlags:: flag_array NUM_EVENTS
 
