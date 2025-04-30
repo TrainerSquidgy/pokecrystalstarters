@@ -3367,3 +3367,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TogedemaruEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, THUNDERSHOCK
+	db 6, DEFENSE_CURL
+	db 11, ROLLOUT
+	db 16, CHARGE
+	db 21, SPARK
+	db 26, NUZZLE
+	db 31, MAGNET_RISE
+	db 36, DISCHARGE
+	db 41, ZING_ZAP
+	db 46, PIN_MISSILE
+	db 51, SPIKY_SHIELD
+	db 56, FELL_STINGER
+	db 0

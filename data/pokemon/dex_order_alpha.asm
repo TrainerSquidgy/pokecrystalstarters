@@ -253,4 +253,5 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db TOGEDEMARU
 	assert_table_length NUM_POKEMON
