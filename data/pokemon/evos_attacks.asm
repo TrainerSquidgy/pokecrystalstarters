@@ -3367,3 +3367,22 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+DedenneEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 7, THUNDERSHOCK
+	db 11, CHARGE
+	db 15, CHARM
+	db 19, PARA_CHARGE
+	db 23, NUZZLE
+	db 27, THUNDER_WAVE
+	db 31, REST
+	db 35, SNORE
+	db 39, CHARGE_BEAM
+	db 43, PLAY_ROUGH
+	db 47, THUNDER
+	db 51, DISCHARGE
+	db 0

@@ -1,14 +1,15 @@
-Pokémon: Lechonk
+Pokémon: Dedenne
 1: Tackle
 1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+7: Thunder Shock
+11: Charge
+15: Charm
+19: Parabolic Charge
+23: Nuzzle
+27: Thunder Wave
+31: Rest
+35: Snore
+39: Charge Beam
+43: Play Rough
+47: Thunder
+51: Discharge

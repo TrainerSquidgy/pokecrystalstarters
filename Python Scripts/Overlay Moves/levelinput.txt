@@ -1,16 +1,15 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Dedenne
+1: Tackle
+1: Tail Whip
+7: Thunder Shock
+11: Charge
+15: Charm
+19: Parabolic Charge
+23: Nuzzle
+27: Thunder Wave
+31: Rest
+35: Snore
+39: Charge Beam
+43: Play Rough
+47: Thunder
+51: Discharge

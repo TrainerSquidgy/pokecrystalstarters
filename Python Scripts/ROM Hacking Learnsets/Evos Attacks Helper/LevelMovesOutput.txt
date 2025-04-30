@@ -1,16 +1,17 @@
-LechonkEvosAttacks:
+DedenneEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 7, THUNDER_SHOCK
+	db 11, CHARGE
+	db 15, CHARM
+	db 19, PARABOLIC_CHARGE
+	db 23, NUZZLE
+	db 27, THUNDER_WAVE
+	db 31, REST
+	db 35, SNORE
+	db 39, CHARGE_BEAM
+	db 43, PLAY_ROUGH
+	db 47, THUNDER
+	db 51, DISCHARGE
 	db 0
