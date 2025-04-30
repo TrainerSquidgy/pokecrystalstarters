@@ -177,6 +177,8 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 ; wPlayerSubStatus2 or wEnemySubStatus2 bit flags
 	const_def
 	const SUBSTATUS_CURLED
+	const SUBSTATUS_CHARGE
+	const SUBSTATUS_CHARGE_THIS_TURN
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags
 	const_def
@@ -214,7 +216,7 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 ; wPlayerScreens or wEnemyScreens bit flags
 	const_def
 	const SCREENS_SPIKES
-	const_skip
+	const SCREENS_LEVITATING
 	const SCREENS_SAFEGUARD
 	const SCREENS_LIGHT_SCREEN
 	const SCREENS_REFLECT

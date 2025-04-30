@@ -118,6 +118,21 @@ BattleText_SafeguardFaded:
 	line "SAFEGUARD faded!"
 	prompt
 
+BattleText_TargetIsLevitating:
+	text "<TARGET>"
+	line "is levitating!"
+	prompt
+
+BattleText_IsLevitating:
+	text "<USER>"
+	line "is levitating!"
+	prompt
+
+BattleText_CameDown:
+	text "<USER>"
+	line "came down!"
+	prompt
+
 BattleText_MonsLightScreenFell:
 	text_ram wStringBuffer1
 	text " #MON's"
@@ -1148,4 +1163,9 @@ ItStartedToSnowText:
 MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
+	prompt
+	
+IsChargedText:
+	text "<USER>"
+	line "is charging."
 	prompt

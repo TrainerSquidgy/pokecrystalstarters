@@ -268,7 +268,7 @@ PidgeotEvosAttacks:
 RattataEvosAttacks:
 	db EVOLVE_LEVEL, 20, RATICATE
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, EARTHQUAKE
 	db 1, TAIL_WHIP
 	db 7, QUICK_ATTACK
 	db 13, HYPER_FANG
@@ -2160,6 +2160,7 @@ TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	db 1, SCRATCH
+	db 1, MAGNET_RISE
 	db 1, LEER
 	db 7, RAGE
 	db 13, WATER_GUN
@@ -2203,7 +2204,7 @@ FeraligatrEvosAttacks:
 SentretEvosAttacks:
 	db EVOLVE_LEVEL, 15, FURRET
 	db 0 ; no more evolutions
-	db 1, TACKLE
+	db 1, EARTHQUAKE
 	db 5, DEFENSE_CURL
 	db 11, QUICK_ATTACK
 	db 17, FURY_SWIPES

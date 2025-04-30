@@ -161,4 +161,6 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw ChargeMove
+	dw MagnetRise
 	assert_table_length NUM_MOVE_EFFECTS

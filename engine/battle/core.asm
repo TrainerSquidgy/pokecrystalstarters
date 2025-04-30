@@ -289,6 +289,8 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
+	call HandleMagnetRise
+	call HandleCharge
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
@@ -1615,6 +1617,35 @@ HandleSafeguard:
 .print
 	ldh [hBattleTurn], a
 	ld hl, BattleText_SafeguardFaded
+	jp StdBattleTextbox
+
+HandleMagnetRise:
+	ld a, [wPlayerMagnetRiseCount]
+	and a
+	jr z, .EnemyMagnetRise
+	call SetPlayerTurn
+	ld a, [wPlayerMagnetRiseCount]
+	dec a
+	ld [wPlayerMagnetRiseCount], a
+	and a
+	jr nz, .EnemyMagnetRise
+	ld hl, wPlayerScreens
+	res SCREENS_LEVITATING, [hl]
+	ld hl, BattleText_CameDown
+	call StdBattleTextbox
+.EnemyMagnetRise
+	ld a, [wEnemyMagnetRiseCount]
+	and a
+	ret z
+	call SetEnemyTurn
+	ld a, [wEnemyMagnetRiseCount]
+	dec a
+	ld [wEnemyMagnetRiseCount], a
+	and a
+	ret nz
+	ld hl, wEnemyScreens
+	res SCREENS_LEVITATING, [hl]
+	ld hl, BattleText_CameDown
 	jp StdBattleTextbox
 
 HandleScreens:
@@ -9265,4 +9296,37 @@ BattleStartMessage:
 	ld c, $2 ; start
 	farcall Mobile_PrintOpponentBattleMessage
 
+	ret
+
+HandleCharge:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player1
+	call .CheckPlayer
+	jr .CheckEnemy
+
+.player1
+	call .CheckEnemy
+.CheckPlayer:
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_CHARGE_THIS_TURN, a
+	jr z, .player_wears_off
+	res SUBSTATUS_CHARGE_THIS_TURN, a
+	ld [wPlayerSubStatus2], a
+	ret
+.player_wears_off
+	res SUBSTATUS_CHARGE, a
+	ld [wPlayerSubStatus2], a
+	ret
+
+.CheckEnemy:
+	ld a, [wEnemySubStatus2]
+	bit SUBSTATUS_CHARGE_THIS_TURN, a
+	jr z, .enemy_wears_off
+	res SUBSTATUS_CHARGE_THIS_TURN, a
+	ld [wEnemySubStatus2], a
+	ret
+.enemy_wears_off
+	res SUBSTATUS_CHARGE, a
+	ld [wEnemySubStatus2], a
 	ret

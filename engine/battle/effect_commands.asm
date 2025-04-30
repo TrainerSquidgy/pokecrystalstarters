@@ -1290,6 +1290,23 @@ BattleCommand_Stab:
 .SkipStab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	cp GROUND
+	jr nz, .not_ground
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_turn
+	ld hl, wPlayerScreens
+.got_turn
+	bit SCREENS_LEVITATING, [hl]
+	jr z, .not_ground
+	ld a, 1
+	ld [wAttackMissed], a
+	ld hl, BattleText_TargetIsLevitating
+	jp StdBattleTextbox
+.not_ground
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
 	ld b, a
 	push af
 	ld hl, TypeMatchups
@@ -1338,6 +1355,7 @@ BattleCommand_Stab:
 	and a
 	jr nz, .NotImmune
 	inc a
+.Immune
 	ld [wAttackMissed], a
 	xor a
 .NotImmune:
@@ -6910,5 +6928,54 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
+BattleCommand_ChargeMove:
+;Charge (The Move)
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_CHARGE, [hl]
+	set SUBSTATUS_CHARGE_THIS_TURN, [hl]
+	call AnimateCurrentMove
+	ld hl, IsChargedText
+	jp StdBattleTextbox
 	
+ApplyChargeModifier:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	ld a, [hl]
+	bit SUBSTATUS_CHARGE, a
+	ret z
+	ld a, [wCurType]
+	cp ELECTRIC
+	ret nz
+	ld hl, wCurDamage + 1
+	ld a, [hld]
+	ld h, [hl]
+	ld l, a
+	add hl, hl
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
+	ret
+	
+BattleCommand_MagnetRise:
+	ld hl, wPlayerScreens
+	ld bc, wPlayerMagnetRiseCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens_pointer
+	ld hl, wEnemyScreens
+	ld bc, wEnemyMagnetRiseCount
+.got_screens_pointer
+	bit SCREENS_LEVITATING, [hl]
+	jr nz, .failed
+	set SCREENS_LEVITATING, [hl]
+	ld a, 5
+	ld [bc], a
+	ld hl, BattleText_IsLevitating
+	call AnimateCurrentMove
+	jp StdBattleTextbox
 
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
