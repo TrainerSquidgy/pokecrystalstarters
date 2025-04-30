@@ -1,16 +1,17 @@
-LechonkEvosAttacks:
+EmolgaEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, THUNDERSHOCK
+	db 4, QUICK_ATTACK
+	db 7, TAIL_WHIP
+	db 10, CHARGE
+	db 13, SPARK
+	db 16, PURSUIT
+	db 19, DOUBLE_TEAM
+	db 22, SHOCK_WAVE
+	db 26, ELECTRO_BALL
+	db 30, ACROBATICS
+	db 34, LIGHT_SCREEN
+	db 38, ENCORE
+	db 42, AGILITY
+	db 46, DISCHARGE
 	db 0

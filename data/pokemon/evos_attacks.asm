@@ -3367,3 +3367,21 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+EmolgaEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, THUNDERSHOCK
+	db 4, QUICK_ATTACK
+	db 7, TAIL_WHIP
+	db 10, CHARGE
+	db 13, SPARK
+	db 16, PURSUIT
+	db 19, DOUBLE_TEAM
+	db 22, SHOCK_WAVE
+	db 26, ELECTRO_BALL
+	db 30, ACROBATICS
+	db 34, LIGHT_SCREEN
+	db 38, ENCORE
+	db 42, AGILITY
+	db 46, DISCHARGE
+	db 0

@@ -1,14 +1,15 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Emolga
+1: ThunderShock
+4: Quick Attack
+7: Tail Whip
+10: Charge
+13: Spark
+16: Pursuit
+19: Double Team
+22: Shock Wave
+26: Electro Ball
+30: Acrobatics
+34: Light Screen
+38: Encore
+42: Agility
+46: Discharge
