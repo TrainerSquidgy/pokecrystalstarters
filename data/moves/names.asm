@@ -220,7 +220,7 @@ MoveNames::
 	li "FRUSTRATION"
 	li "SAFEGUARD"
 	li "PAIN SPLIT"
-	li "SACRED FIRE"
+	li "FELL STINGER"
 	li "MAGNITUDE"
 	li "DYNAMICPUNCH"
 	li "MEGAHORN"

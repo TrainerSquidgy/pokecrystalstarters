@@ -1,16 +1,16 @@
-LechonkEvosAttacks:
+TogedemaruEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, THUNDER_SHOCK
+	db 6, DEFENSE_CURL
+	db 11, ROLLOUT
+	db 16, CHARGE
+	db 21, SPARK
+	db 26, NUZZLE
+	db 31, MAGNET_RISE
+	db 36, DISCHARGE
+	db 41, ZING_ZAP
+	db 46, PIN_MISSILE
+	db 51, SPIKY_SHIELD
+	db 56, FELL_STINGER
 	db 0

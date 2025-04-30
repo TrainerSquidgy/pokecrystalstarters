@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw FellStingerDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -1141,10 +1141,6 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
-
 MagnitudeDescription:
 	db   "A ground attack"
 	next "with random power.@"
@@ -1268,3 +1264,7 @@ BeatUpDescription:
 ChargeDescription:
 	db   "Doubles ELECTRIC"
 	next "on next turn.@"
+	
+FellStingerDescription:
+	db   "Ups attack if"
+	next "enemy faints.@"

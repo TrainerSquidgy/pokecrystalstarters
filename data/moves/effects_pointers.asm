@@ -164,4 +164,5 @@ MoveEffectsPointers:
 	dw ChargeMove
 	dw MagnetRise
 	dw SpikyShield
+	dw FellStinger
 	assert_table_length NUM_MOVE_EFFECTS

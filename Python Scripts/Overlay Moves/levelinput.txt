@@ -1,16 +1,14 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Togedemaru
+1: Tackle
+1: Thunder Shock
+6: Defense Curl
+11: Rollout
+16: Charge
+21: Spark
+26: Nuzzle
+31: Magnet Rise
+36: Discharge
+41: Zing Zap
+46: Pin Missile
+51: Spiky Shield
+56: Fell Stinger

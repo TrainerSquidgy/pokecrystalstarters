@@ -2455,6 +2455,8 @@ BattleCommand_CheckFaint:
 .no_dbond
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
+	cp EFFECT_FELL_STINGER
+	jr z, .fell_stinger_attack_boost
 	cp EFFECT_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_DOUBLE_HIT
@@ -2471,6 +2473,18 @@ BattleCommand_CheckFaint:
 
 .finish
 	jp EndMoveEffect
+
+.fell_stinger_attack_boost
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+	call ResetMiss
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+	call ResetMiss
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+	call ResetMiss
+	jr .finish
 
 BattleCommand_BuildOpponentRage:
 	jp .start
