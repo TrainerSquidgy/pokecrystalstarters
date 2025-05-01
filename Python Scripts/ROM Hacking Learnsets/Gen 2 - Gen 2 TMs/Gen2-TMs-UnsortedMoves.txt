@@ -1,211 +1,326 @@
-Headbutt
-Curse
+Scratch
+Focus Energy
+Poison Gas
+Screech
+Fury Swipes
+SmokeScreen
+Slash
+Toxic
+Night Slash
+Memento
+Explosion
+Roar
 Toxic
 Hidden Power
-Snore
+Sunny Day
+Taunt
 Protect
-Endure
+Rain Dance
 Frustration
 Iron Tail
 Return
 Dig
+Shadow Ball
 Double Team
-Swagger
-Sleep Talk
-Swift
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
+Facade
+Secret Power
 Rest
 Attract
-Icy Wind
-Ice Beam
-Powder Snow
-Tail Whip
-Roar
-Baby-Doll Eyes
-Ice Shard
-Confuse Ray
-Icy Wind
+Thief
+Snatch
+Endure
+Explosion
+Shadow Claw
 Payback
-Mist
-Feint Attack
-Hex
-Aurora Beam
-Extrasensory
-Safeguard
-Ice Beam
-Imprison
-Blizzard
-Grudge
 Captivate
-Sheer Cold
+Dark Pulse
+Sleep Talk
+Natural Gift
+Swagger
+Substitute
+Cut
+Defog
+Rock Smash
+Fury Cutter
+Headbutt
+Mud-Slap
+Snore
+Sucker Punch
+Swift
 Roar
 Toxic
-Hail
-Hidden Power
-Ice Beam
-Blizzard
+Sunny Day
+Taunt
 Protect
 Rain Dance
-Safeguard
-Frustration
-Return
+Iron Tail
+Dig
+Shadow Ball
 Double Team
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
 Facade
 Rest
 Attract
-Round
+Thief
+Endure
+Nasty Plot
+Explosion
+Shadow Claw
 Payback
-Aurora Veil
-Psych Up
-Frost Breath
+Snarl
+Dark Pulse
+Sleep Talk
 Swagger
-Sleep Talk
 Substitute
+Cut
+Defog
+Rock Smash
+Dig
+Screech
+Rest
+Thief
+Snore
+Protect
+Scary Face
+Attract
+Rain Dance
+Sunny Day
+Facade
+Swift
+Payback
+Assurance
+Shadow Claw
+Venoshock
+Round
+Hex
+Tail Slap
+Snarl
+Flamethrower
+Focus Energy
+Fire Blast
+Substitute
+Sludge Bomb
+Endure
+Sleep Talk
+Iron Tail
+Crunch
+Shadow Ball
+Taunt
 Dark Pulse
+Nasty Plot
+Foul Play
+Play Rough
+Venom Drench
+Throat Chop
+Dark Pulse
+Flamethrower
+Focus Energy
+Iron Tail
+Play Rough
+Poison Jab
+Rest
+Rock Smash
+Shadow Ball
+Shadow Claw
+Sludge Bomb
+Snarl
+Swift
+Captivate 
 Confide
-Aqua Tail
-Covet
-Foul Play
-Heal Bell
-Icy Wind
-Iron Tail
-Pain Split
-Role Play
-Snore
-Spite
-Zen Headbutt
-Take Down
-Charm
-Fake Tears
-Agility
-Protect
-Confuse Ray
-Disarming Voice
-Chilling Water
-Facade
-Hex
-Swift
-Icy Wind
-Draining Kiss
-Stored Power
-Endure
-Rain Dance
-Snowscape
-Dig
-Zen Headbutt
-Foul Play
-Body Slam
-Sleep Talk
-Dazzling Gleam
-Rest
-Imprison
-Dark Pulse
-Substitute
-Encore
-Play Rough
-Helping Hand
-Baton Pass
-Ice Beam
-Misty Terrain
-Nasty Plot
-Blizzard
-Tera Blast
+Cut
+Defog
+Double Team
+Flame Burst 
+Frustration 
+Fury Cutter
+Headbutt
+Hidden Power 
+Hone Claws
+Incinerate
+Mud-Slap
+Natural Gift 
+Punishment 
+Pursuit 
+Return 
 Roar
-Spite
-Icicle Spear
-Weather Ball
-Pain Split
-Psych Up
-Double-Edge
-Take Down
-Charm
-Fake Tears
-Agility
-Protect
-Confuse Ray
-Disarming Voice
-Chilling Water
-Facade
-Hex
-Swift
-Icy Wind
-Draining Kiss
-Stored Power
-Avalanche
-Endure
-Rain Dance
-Snowscape
-Psyshock
-Dig
-Zen Headbutt
-Foul Play
-Body Slam
-Sleep Talk
-Dazzling Gleam
-Rest
-Imprison
-Dark Pulse
-Substitute
-Encore
-Play Rough
-Calm Mind
-Helping Hand
-Baton Pass
-Ice Beam
-Misty Terrain
-Nasty Plot
-Blizzard
-Giga Impact
-Hyper Beam
-Tera Blast
-Roar
-Spite
-Icicle Spear
-Weather Ball
-Pain Split
-Psych Up
-Double-Edge
-Triple Axel
-Aqua Tail
-Covet
-Foul Play
-Heal Bell
-Icy Wind
-Iron Tail
-Laser Focus
-Pain Split
-Role Play
-Snore
-Spite
-Wonder Room
-Zen Headbutt
-Psyshock
-Calm Mind
+Rock Smash
+Secret Power 
+Snatch 
+Swagger
+Torment
 Roar
 Toxic
-Hail
 Hidden Power
-Ice Beam
-Blizzard
+Sunny Day
+Taunt
 Hyper Beam
 Protect
 Rain Dance
-Safeguard
 Frustration
+Iron Tail
 Return
+Dig
+Shadow Ball
 Double Team
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Snatch
+Endure
+Explosion
+Shadow Claw
+Payback
+Giga Impact
+Captivate
+Dark Pulse
+Sleep Talk
+Natural Gift
+Poison Jab
+Swagger
+Substitute
+Cut
+Strength
+Defog
+Rock Smash
+Fury Cutter
+Headbutt
+Mud-Slap
+Snore
+Sucker Punch
+Swift
+Tackle
+Acid Spray
+Poison Gas
+Venoshock
+Night Slash
+Poison Jab
+Flamethrower
+Double-Edge
+Hyper Beam
+Giga Impact
+Fire Spin
+Dig
+Screech
+Rest
+Thief
+Snore
+Protect
+Scary Face
+Attract
+Rain Dance
+Sunny Day
+Facade
+Swift
+Payback
+Assurance
+Shadow Claw
+Venoshock
+Round
+Hex
+Tail Slap
+Snarl
+Flamethrower
+Focus Energy
+Fire Blast
+Substitute
+Sludge Bomb
+Endure
+Sleep Talk
+Iron Tail
+Crunch
+Shadow Ball
+Taunt
+Poison Jab
+Dark Pulse
+Nasty Plot
+Foul Play
+Play Rough
+Venom Drench
+Throat Chop
+Roar
+Toxic
+Sunny Day
+Taunt
+Hyper Beam
+Protect
+Rain Dance
+Iron Tail
+Dig
+Shadow Ball
+Double Team
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
 Facade
 Rest
 Attract
-Round
+Thief
+Endure
+Nasty Plot
+Explosion
+Shadow Claw
 Payback
 Giga Impact
-Aurora Veil
-Psych Up
-Frost Breath
-Dream Eater
-Swagger
-Sleep Talk
-Substitute
+Snarl
 Dark Pulse
-Dazzling Gleam
+Sleep Talk
+Poison Jab
+Swagger
+Substitute
+Cut
+Strength
+Defog
+Rock Smash
+Dark Pulse
+Flamethrower
+Focus Energy
+Giga Impact
+Hyper Beam
+Iron Tail
+Play Rough
+Poison Jab
+Rest
+Rock Smash
+Shadow Ball
+Shadow Claw
+Sludge Bomb
+Snarl
+Swift
+Captivate 
 Confide
+Cut
+Defog
+Double Team
+Flame Burst 
+Frustration 
+Fury Cutter
+Headbutt
+Hidden Power 
+Hone Claws
+Incinerate
+Mud-Slap
+Natural Gift 
+Punishment 
+Pursuit 
+Return 
+Roar
+Rock Smash
+Secret Power 
+Snatch 
+Strength
+Swagger
+Torment
