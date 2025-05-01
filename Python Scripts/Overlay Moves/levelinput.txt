@@ -1,16 +1,14 @@
-Pokémon: Sableye
+Pokémon: Skuntank
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Focus Energy
+1: Poison Gas
+4: Poison Gas
+7: Screech
+11: Fury Swipes
+15: SmokeScreen
+25: Slash
+20: Toxic
+31: Night Slash
+34: Flamethrower
+41: Memento
+52: Explosion

@@ -3367,3 +3367,36 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+StunkyEvosAttacks:
+	db EVOLVE_LEVEL, 34, SKUNTANK
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, FOCUS_ENERGY
+	db 4, POISON_GAS
+	db 7, SCREECH
+	db 11, FURY_SWIPES
+	db 15, SMOKESCREEN
+	db 25, SLASH
+	db 20, TOXIC
+	db 31, NIGHT_SLASH
+	db 37, MEMENTO
+	db 44, EXPLOSION
+	db 0
+	
+SkuntankEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, FOCUS_ENERGY
+	db 1, POISON_GAS
+	db 4, POISON_GAS
+	db 7, SCREECH
+	db 11, FURY_SWIPES
+	db 15, SMOKESCREEN
+	db 25, SLASH
+	db 20, TOXIC
+	db 31, NIGHT_SLASH
+	db 34, FLAMETHROWER
+	db 41, MEMENTO
+	db 52, EXPLOSION
+	db 0

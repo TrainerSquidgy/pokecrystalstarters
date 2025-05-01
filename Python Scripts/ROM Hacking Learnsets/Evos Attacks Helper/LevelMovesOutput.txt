@@ -1,16 +1,16 @@
-LechonkEvosAttacks:
+SkuntankEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, SCRATCH
+	db 1, FOCUS_ENERGY
+	db 1, POISON_GAS
+	db 4, POISON_GAS
+	db 7, SCREECH
+	db 11, FURY_SWIPES
+	db 15, SMOKESCREEN
+	db 25, SLASH
+	db 20, TOXIC
+	db 31, NIGHT_SLASH
+	db 34, FLAMETHROWER
+	db 41, MEMENTO
+	db 52, EXPLOSION
 	db 0

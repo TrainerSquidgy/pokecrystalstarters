@@ -6912,3 +6912,34 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_Memento:
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+	call CheckSubstituteOpp
+	jr nz, .failed
+
+	call AnimateCurrentMove
+
+	; Faint user.
+	farcall GetMaxHP
+	farcall SubtractHPFromUser
+
+	; Lower Stats
+	call BattleCommand_AttackDown2
+	call BattleCommand_StatDownAnim
+	call BattleCommand_StatDownMessage
+	call BattleCommand_StatDownFailText
+	call ResetMiss
+	call BattleCommand_SpecialAttackDown2
+	call BattleCommand_StatDownAnim
+	call BattleCommand_StatDownMessage
+	call BattleCommand_StatDownFailText
+	ret
+
+.failed
+	call AnimateFailedMove
+	call TryPrintButItFailed
+	call EndMoveEffect
+	ret

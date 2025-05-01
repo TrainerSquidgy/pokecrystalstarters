@@ -252,9 +252,9 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw SlashDescription
+	dw MementoDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
@@ -878,6 +878,10 @@ CrabhammerDescription:
 ExplosionDescription:
 	db   "Very powerful but"
 	next "makes user faint.@"
+
+MementoDescription:
+	db   "Drop enemy stats,"
+	next "but user faints.@"
 
 FurySwipesDescription:
 	db   "Quickly scratches"

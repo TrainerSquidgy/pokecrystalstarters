@@ -2093,3 +2093,10 @@ Snow:
 	startweather
 	endmove
 	
+Memento:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	memento
+	endmove

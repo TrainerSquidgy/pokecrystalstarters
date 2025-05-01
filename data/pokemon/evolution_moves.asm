@@ -229,6 +229,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SKARMORY   ; e3
 	db NO_MOVE      ; HOUNDOUR   ; e4
 	db NO_MOVE      ; HOUNDOOM   ; e5
+	db NO_MOVE      ; HOUNDOOM   ; e5
 	db NO_MOVE      ; KINGDRA    ; e6
 	db NO_MOVE      ; PHANPY     ; e7
 	db NO_MOVE      ; DONPHAN    ; e8
@@ -250,5 +251,6 @@ EvolutionMoves::
 	db NO_MOVE      ; TYRANITAR  ; f8
 	db NO_MOVE      ; LUGIA      ; f9
 	db NO_MOVE      ; HO_OH      ; fa
+	db NO_MOVE      ; CELEBI     ; fb
 	db NO_MOVE      ; CELEBI     ; fb
 	assert_table_length NUM_POKEMON
