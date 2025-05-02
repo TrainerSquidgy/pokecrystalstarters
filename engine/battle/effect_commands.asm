@@ -7036,37 +7036,3 @@ BattleCommand_UproarState:
 	ld hl, TargetWokeUpText
 	jp StdBattleTextbox
 	
-BattleCommand_Yawn:
-    ld a, BATTLE_VARS_STATUS_OPP
-    call GetBattleVarAddr
-    ld d, h
-    ld e, l
-    ld a, [de]
-    and SLP_MASK
-    ld hl, AlreadyAsleepText
-    jr nz, .fail
-
-    ldh a, [hBattleTurn]
-    and a
-    ld hl, wPlayerYawning
-    jr nz, .next
-    ld hl, wEnemyYawning
-
-.next
-    ; is the opponent already under the effects of yawn?
-    ld a, [hl]
-    and a
-    jp nz, PrintButItFailed
-
-    ; apply it!
-    ld a, 2
-    ld [hl], a
-
-    ld hl, MadeTargetDrowzy
-    jp StdBattleTextbox
-
-.fail
-    push hl
-    call AnimateFailedMove
-    pop hl
-    jp StdBattleTextbox

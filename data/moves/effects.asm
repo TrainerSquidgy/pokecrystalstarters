@@ -2116,12 +2116,3 @@ Uproar:
 	kingsrock
 	uproarstate
 	endmove
-	
-Yawn:
-	checkobedience
-	usedmovetext
-	doturn
-	yawn
-	endmove
-
-	

@@ -252,10 +252,10 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw HeadbuttDescription
 	dw UproarDescription
-	dw YawnDescription
 	assert_table_length NUM_ATTACKS
+	dw MoveFFDescription
+	dw MoveFFDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -1271,7 +1271,3 @@ BeatUpDescription:
 UproarDescription:
 	db   "Rampage attack."
 	next "Everyone wakes.@"
-
-YawnDescription:
-	db   "Sends enemy to"
-	next "SLP next turn.@"

@@ -1175,10 +1175,3 @@ CantSleepText:
 	text "<USER>"
 	line "can't fall asleep!"
 	prompt
-	
-MadeTargetDrowzy:
-	text "<USER>"
-	line "made"
-	cont "<TARGET>"
-	cont "drowzy!"
-	prompt

@@ -180,5 +180,4 @@ BattleCommandPointers:
 	dw BattleCommand_StartWeather
 	dw BattleCommand_UproarEffect
 	dw BattleCommand_UproarState
-	dw BattleCommand_Yawn
 	assert_table_length NUM_EFFECT_COMMANDS

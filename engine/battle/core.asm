@@ -1225,30 +1225,6 @@ HandleWrap:
 	call SetPlayerTurn
 
 .do_it
-	; yawn?
-	ld hl, wPlayerYawning
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .continue_yawn
-	ld hl, wEnemyYawning
-.continue_yawn
-	ld a, [hl]
-	and a
-	jr z, .check_wrap ; counter is 0 (no yawn)
-	dec a
-	ld [hl], a
-	jr nz, .check_wrap
-
-	; yawn: fall asleep
-	xor a
-	ld [wAttackMissed], a
-	ld [wEffectFailed], a
-	farcall BattleCommand_SwitchTurn
-	farcall BattleCommand_SleepTarget
-	farcall BattleCommand_SwitchTurn
-
-
-.check_wrap
 	ld hl, wPlayerWrapCount
 	ld de, wPlayerTrappingMove
 	ldh a, [hBattleTurn]

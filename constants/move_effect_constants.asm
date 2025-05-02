@@ -161,5 +161,4 @@
 	const EFFECT_HAIL
 	const EFFECT_SNOW
 	const EFFECT_UPROAR
-	const EFFECT_YAWN
 DEF NUM_MOVE_EFFECTS EQU const_value
