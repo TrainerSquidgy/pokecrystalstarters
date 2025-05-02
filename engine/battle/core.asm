@@ -595,6 +595,10 @@ CheckPlayerLockedIn:
 	ld hl, wPlayerSubStatus1
 	bit SUBSTATUS_ROLLOUT, [hl]
 	jp nz, .quit
+	
+	ld hl, wPlayerSubStatus4
+	bit SUBSTATUS_UPROAR, [hl]
+	jp nz, .quit
 
 	and a
 	ret
@@ -1221,6 +1225,30 @@ HandleWrap:
 	call SetPlayerTurn
 
 .do_it
+	; yawn?
+	ld hl, wPlayerYawning
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .continue_yawn
+	ld hl, wEnemyYawning
+.continue_yawn
+	ld a, [hl]
+	and a
+	jr z, .check_wrap ; counter is 0 (no yawn)
+	dec a
+	ld [hl], a
+	jr nz, .check_wrap
+
+	; yawn: fall asleep
+	xor a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
+	farcall BattleCommand_SwitchTurn
+	farcall BattleCommand_SleepTarget
+	farcall BattleCommand_SwitchTurn
+
+
+.check_wrap
 	ld hl, wPlayerWrapCount
 	ld de, wPlayerTrappingMove
 	ldh a, [hBattleTurn]
@@ -5898,6 +5926,9 @@ ParseEnemyAction:
 	ld a, [wEnemySubStatus3]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
 	jp nz, .skip_load
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_UPROAR, a
+	jp nz, .skip_load
 
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
@@ -6036,7 +6067,7 @@ ResetVarsForSubstatusRage:
 
 CheckEnemyLockedIn:
 	ld a, [wEnemySubStatus4]
-	and 1 << SUBSTATUS_RECHARGE
+	and 1 << SUBSTATUS_RECHARGE | 1 << SUBSTATUS_UPROAR
 	ret nz
 
 	ld hl, wEnemySubStatus3

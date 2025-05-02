@@ -2093,3 +2093,35 @@ Snow:
 	startweather
 	endmove
 	
+Uproar:
+	checkrampage
+	checkobedience
+	doturn
+	uproar
+	usedmovetext
+	checkhit
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	clearmissdamage
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	uproarstate
+	endmove
+	
+Yawn:
+	checkobedience
+	usedmovetext
+	doturn
+	yawn
+	endmove
+
+	

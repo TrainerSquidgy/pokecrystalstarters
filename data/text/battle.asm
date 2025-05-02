@@ -1149,3 +1149,36 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+MakingUproarText:
+	text "<USER>"
+	line "is making an"
+	cont "UPROAR!"
+	prompt
+
+CalmedDownText:
+	text "<USER>"
+	line "calmed down."
+	prompt
+
+TargetWokeUpText:
+	text "<TARGET>"
+	line "woke up!"
+	prompt
+
+CantBePutToSleepText:
+	text "<TARGET>"
+	line "can't fall asleep!"
+	prompt
+
+CantSleepText:
+	text "<USER>"
+	line "can't fall asleep!"
+	prompt
+	
+MadeTargetDrowzy:
+	text "<USER>"
+	line "made"
+	cont "<TARGET>"
+	cont "drowzy!"
+	prompt

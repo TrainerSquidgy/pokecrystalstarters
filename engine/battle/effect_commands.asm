@@ -334,6 +334,10 @@ CantMove:
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	res SUBSTATUS_ROLLOUT, [hl]
+	
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_UPROAR, [hl]
 
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
@@ -983,6 +987,13 @@ BattleCommand_DoTurn:
 	and 1 << SUBSTATUS_IN_LOOP | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
 	ret nz
 
+	; SubStatus4
+	inc de
+
+	ld a, [de]
+	bit SUBSTATUS_UPROAR, a
+	ret nz
+
 	call .consume_pp
 	ld a, b
 	and a
@@ -1085,6 +1096,7 @@ BattleCommand_DoTurn:
 	db EFFECT_ROLLOUT
 	db EFFECT_BIDE
 	db EFFECT_RAMPAGE
+	db EFFECT_UPROAR
 	db -1
 
 CheckMimicUsed:
@@ -1959,6 +1971,9 @@ BattleCommand_LowerSub:
 	jr z, .rollout_rampage
 	cp EFFECT_RAMPAGE
 	jr z, .rollout_rampage
+	cp EFFECT_UPROAR
+	jr z, .rollout_rampage
+
 
 	ld a, 1
 	and a
@@ -3605,6 +3620,17 @@ UpdateMoveData:
 	jp CopyName1
 
 BattleCommand_SleepTarget:
+	
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	jp nz, .uproar
+
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	jp nz, .uproar
+
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_SLEEP
@@ -3700,6 +3726,11 @@ BattleCommand_SleepTarget:
 .dont_fail
 	xor a
 	ret
+
+.uproar
+	call AnimateFailedMove
+	ld hl, CantBePutToSleepText
+	jp StdBattleTextbox
 
 BattleCommand_PoisonTarget:
 	call CheckSubstituteOpp
@@ -4928,6 +4959,10 @@ BattleCommand_CheckRampage:
 	jr z, .player
 	ld de, wEnemyRolloutCount
 .player
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	jr nz, .handle_uproar
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	bit SUBSTATUS_RAMPAGE, [hl]
@@ -4954,6 +4989,15 @@ BattleCommand_CheckRampage:
 	ld [de], a
 .continue_rampage
 	ld b, rampage_command
+	jp SkipToBattleCommand
+	
+.handle_uproar
+	ld a, [de]
+	dec a
+	ld [de], a
+	jr nz, .continue_uproar
+.continue_uproar
+	ld b, uproar_command
 	jp SkipToBattleCommand
 
 BattleCommand_Rampage:
@@ -6094,6 +6138,10 @@ BattleCommand_Heal:
 	push hl
 	push de
 	push af
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_UPROAR, [hl]
+	jp nz, .cant_sleep
 	call BattleCommand_MoveDelay
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
@@ -6144,6 +6192,13 @@ BattleCommand_Heal:
 .hp_full
 	call AnimateFailedMove
 	ld hl, HPIsFullText
+	jp StdBattleTextbox
+	
+.cant_sleep
+	ld a, 1
+	ld [wAttackMissed], a
+	call AnimateFailedMove
+	ld hl, CantSleepText
 	jp StdBattleTextbox
 
 INCLUDE "engine/battle/move_effects/transform.asm"
@@ -6912,3 +6967,106 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_UproarEffect:
+; No uproar during Sleep Talk.
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and SLP_MASK
+	ret nz
+
+	ld de, wPlayerRolloutCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wEnemyRolloutCount
+.ok
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	set SUBSTATUS_UPROAR, [hl]
+; Uproar lasts for 3 turns
+	ld a, 2
+	ld [de], a
+	ld a, 1
+	ld [wSomeoneIsRampaging], a
+	ret
+
+BattleCommand_UproarState:
+; Print text on the first and last turns of Uproar.
+	ld de, wPlayerRolloutCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wEnemyRolloutCount
+.ok
+	ld b, 2
+	ld a, [de]
+	cp b
+	jr z, .first_turn
+	and a
+	ret nz
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_UPROAR, [hl]
+	ld hl, CalmedDownText
+	jp StdBattleTextbox
+
+.first_turn
+	ld hl, MakingUproarText
+	call StdBattleTextbox
+
+; get the opponent's status condition
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+; return if opponent is not asleep
+	ld b, a
+	and SLP_MASK
+	ret z
+	
+; Wake up a sleeping opponent after Uproar is first used.
+	ld hl, wEnemyMonStatus
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_status
+	ld hl, wBattleMonStatus
+.got_status
+	xor a
+	ld [hl], a
+	farcall UpdateOpponentInParty
+	farcall RefreshBattleHuds
+	ld hl, TargetWokeUpText
+	jp StdBattleTextbox
+	
+BattleCommand_Yawn:
+    ld a, BATTLE_VARS_STATUS_OPP
+    call GetBattleVarAddr
+    ld d, h
+    ld e, l
+    ld a, [de]
+    and SLP_MASK
+    ld hl, AlreadyAsleepText
+    jr nz, .fail
+
+    ldh a, [hBattleTurn]
+    and a
+    ld hl, wPlayerYawning
+    jr nz, .next
+    ld hl, wEnemyYawning
+
+.next
+    ; is the opponent already under the effects of yawn?
+    ld a, [hl]
+    and a
+    jp nz, PrintButItFailed
+
+    ; apply it!
+    ld a, 2
+    ld [hl], a
+
+    ld hl, MadeTargetDrowzy
+    jp StdBattleTextbox
+
+.fail
+    push hl
+    call AnimateFailedMove
+    pop hl
+    jp StdBattleTextbox

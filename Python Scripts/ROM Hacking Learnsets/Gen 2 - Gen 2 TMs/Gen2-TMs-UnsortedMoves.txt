@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Tackle
 Harden
 Confusion
@@ -11,22 +12,92 @@ Heal Block
 Rock Slide
 SolarBeam
 Explosion
+=======
 Calm Mind
 Toxic
 Hidden Power
 Sunny Day
-Hyper Beam
+Taunt
 Light Screen
 Protect
+Rain Dance
 Safeguard
 Frustration
-SolarBeam
-Earthquake
 Return
 Psychic
 Shadow Ball
 Double Team
 Reflect
+Shock Wave
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Skill Swap
+Snatch
+Flash
+Curse
+Disable
+Dream Eater
+Hypnosis
+Defense Curl
+Double-Edge
+Dream Eater
+Endure
+Icy Wind
+Mimic
+Nightmare
+Psych Up
+Rollout
+Sleep Talk
+Snore
+Substitute
+Swagger
+Gravity
+Heal Bell
+Helping Hand
+Icy Wind
+Knock Off
+Magic Coat
+Last Resort
+Rollout
+Signal Beam
+Snore
+Trick
+Uproar
+Zen Headbutt
+Curse
+Disable
+Dream Eater
+Future Sight
+Hypnosis
+Recover†
+Wish
+>>>>>>> Stashed changes
+Calm Mind
+Toxic
+Hidden Power
+Sunny Day
+Taunt
+Light Screen
+Protect
+<<<<<<< Updated upstream
+Safeguard
+Frustration
+SolarBeam
+Earthquake
+=======
+Rain Dance
+Safeguard
+Frustration
+>>>>>>> Stashed changes
+Return
+Psychic
+Shadow Ball
+Double Team
+Reflect
+<<<<<<< Updated upstream
 Flamethrower
 Sandstorm
 Fire Blast
@@ -48,8 +119,24 @@ Flash
 Stone Edge
 Gyro Ball
 Stealth Rock
+=======
+Shock Wave
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Skill Swap
+Snatch
+Energy Ball
+Charge Beam
+Endure
+Recycle
+Flash
+Thunder Wave
+>>>>>>> Stashed changes
 Psych Up
-Rock Slide
+Captivate
 Sleep Talk
 Natural Gift
 Dream Eater
@@ -57,6 +144,7 @@ Grass Knot
 Swagger
 Substitute
 Trick Room
+<<<<<<< Updated upstream
 AncientPower
 Earth Power
 Gravity
@@ -76,3 +164,5 @@ Defense Curl
 Double-Edge
 Mimic
 Selfdestruct
+=======
+>>>>>>> Stashed changes
