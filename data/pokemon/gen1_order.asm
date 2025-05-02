@@ -250,7 +250,9 @@ Pokered_MonIndices:
 	db STEELIX
 	db SNUBBULL
 	db GRANBULL
-	db QWILFISH
+	db VANILLITE
 	db WOBBUFFET
 	db WOBBUFFET
+	db VANILLISH
+	db VANILLUXE
 	assert_table_length NUM_POKEMON + 1

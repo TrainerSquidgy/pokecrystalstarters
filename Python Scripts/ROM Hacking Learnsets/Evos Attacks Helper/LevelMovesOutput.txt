@@ -1,16 +1,22 @@
-LechonkEvosAttacks:
+VanilluxeEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, WEATHER_BALL
+	db 1, ICICLE_SPEAR
+	db 1, HARDEN
+	db 1, ASTONISH
+	db 1, UPROAR
+	db 4, HARDEN
+	db 7, ASTONISH
+	db 10, UPROAR
+	db 13, ICY_WIND
+	db 16, MIST
+	db 19, AVALANCHE
+	db 22, TAUNT
+	db 26, MIRROR_SHOT
+	db 31, ACID_ARMOR
+	db 36, ICE_BEAM
+	db 42, HAIL
+	db 50, MIRROR_COAT
+	db 59, BLIZZARD
+	db 67, SHEER_COLD
 	db 0

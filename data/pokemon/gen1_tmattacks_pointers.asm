@@ -252,5 +252,7 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks ; Celebi
+	dw VanilliteGen1TMAttacks
+	dw VanillishGen1TMAttacks
+	dw VanilluxeGen1TMAttacks
 	assert_table_length NUM_POKEMON

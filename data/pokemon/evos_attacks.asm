@@ -3367,3 +3367,68 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+VanilliteEvosAttacks:
+	db EVOLVE_LEVEL, 35, VANILLISH
+	db 0 ; No More Evolutions
+	db 1, ICICLE_SPEAR
+	db 4, HARDEN
+	db 7, ASTONISH
+	db 10, UPROAR
+	db 13, ICY_WIND
+	db 16, MIST
+	db 19, AVALANCHE
+	db 22, TAUNT
+	db 26, MIRROR_SHOT
+	db 31, ACID_ARMOR
+	db 35, ICE_BEAM
+	db 40, HAIL
+	db 44, MIRROR_COAT
+	db 49, BLIZZARD
+	db 53, SHEER_COLD
+	db 0
+	
+VanillishEvosAttacks:
+	db EVOLVE_LEVEL, 47, VANILLUXE
+	db 0 ; No More Evolutions
+	db 1, ICICLE_SPEAR
+	db 1, HARDEN
+	db 1, ASTONISH
+	db 1, UPROAR
+	db 4, HARDEN
+	db 7, ASTONISH
+	db 10, UPROAR
+	db 13, ICY_WIND
+	db 16, MIST
+	db 19, AVALANCHE
+	db 22, TAUNT
+	db 26, MIRROR_SHOT
+	db 31, ACID_ARMOR
+	db 36, ICE_BEAM
+	db 42, HAIL
+	db 47, MIRROR_COAT
+	db 53, BLIZZARD
+	db 0
+	
+VanilluxeEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, WEATHER_BALL
+	db 1, ICICLE_SPEAR
+	db 1, HARDEN
+	db 1, ASTONISH
+	db 1, UPROAR
+	db 4, HARDEN
+	db 7, ASTONISH
+	db 10, UPROAR
+	db 13, ICY_WIND
+	db 16, MIST
+	db 19, AVALANCHE
+	db 22, TAUNT
+	db 26, MIRROR_SHOT
+	db 31, ACID_ARMOR
+	db 36, ICE_BEAM
+	db 42, HAIL
+	db 50, MIRROR_COAT
+	db 59, BLIZZARD
+	db 67, SHEER_COLD
+	db 0

@@ -1,16 +1,20 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Vanilluxe
+1: Weather Ball
+1: Icicle Spear
+1: Harden
+1: Astonish
+1: Uproar
+4: Harden
+7: Astonish
+10: Uproar
+13: Icy Wind
+16: Mist
+19: Avalanche
+22: Taunt
+26: Mirror Shot
+31: Acid Armor
+36: Ice Beam
+42: Hail
+50: Mirror Coat
+59: Blizzard
+67: Sheer Cold

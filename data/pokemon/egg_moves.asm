@@ -804,5 +804,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+VanillishEggMoves:
+VanilluxeEggMoves:
+VanilliteEggMoves:
 NoEggMoves:
 	db -1 ; end

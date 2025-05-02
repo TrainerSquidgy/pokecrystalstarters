@@ -231,14 +231,6 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
         elif file_path == "data/pokemon/gen1_tmattacks.asm":
             append_line_above(file_path, 'NoGen1TMAttacks:', f'{pokemon_name}Gen1TMAttacks:\n')
 
-        elif file_path == "engine/events/starterselection.asm":
-            append_line_above(file_path, '	dw .Celebi', f'	dw .{pokemon_name}\n')
-            delete_line(file_path, '	dw .Celebi')
-            append_line_above(file_path, '.Celebi	db "CELEBI@@@@@"', f'.{pokemon_name}	db "{padded_name.upper()}@"\n')
-            delete_line(file_path, '.Celebi	db "CELEBI@@@@@"')
-            delete_line_above(file_path, ';PYTHONBUFFER1')
-            append_line_above(file_path, ';PYTHONBUFFER1', f'	ld a, {pokemon_name.upper()}"\n')
-            
         
 # Get the Pokémon name from the input file
 pokemon_name = get_pokemon_name()
