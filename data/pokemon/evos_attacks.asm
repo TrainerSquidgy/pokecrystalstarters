@@ -3367,3 +3367,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ChimechoEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, WRAP
+	db 6, GROWL
+	db 9, ASTONISH
+	db 14, CONFUSION
+	db 17, TAKE_DOWN
+	db 22, UPROAR
+	db 25, YAWN
+	db 30, PSYWAVE
+	db 33, DOUBLE_EDGE
+	db 38, HEAL_BELL
+	db 41, SAFEGUARD
+	db 0
