@@ -1175,3 +1175,24 @@ CantSleepText:
 	text "<USER>"
 	line "can't fall asleep!"
 	prompt
+
+BattleText_YouAreTaunted:
+	text "TAUNT allows only"
+	line "attacking moves!"
+	prompt
+
+TauntPreventsMoveText:
+	text "But TAUNT prevents"
+	line "that move from"
+	cont "being used!"
+	prompt
+
+WasTauntedText:
+	text "<USER>"
+	line "taunts the foe!"
+	prompt
+
+NoLongerTauntedText:
+	text "<USER>'s"
+	line "no longer taunted."
+	prompt

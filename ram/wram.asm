@@ -3192,7 +3192,10 @@ wMegaXorY:: db
 wMetronomeOnly:: db
 wPlayerYawning:: db
 wEnemyYawning:: db
-	ds 58
+wWeatherBallBonus:: db
+wPlayerTauntCount:: db
+wEnemyTauntCount:: db
+	ds 55
 
 wEventFlags:: flag_array NUM_EVENTS
 

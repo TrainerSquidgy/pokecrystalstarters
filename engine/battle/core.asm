@@ -289,6 +289,7 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
+	call HandleTaunt
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
@@ -1280,6 +1281,21 @@ SwitchTurnCore:
 	ldh [hBattleTurn], a
 	ret
 
+HandleTaunt:
+	call SetPlayerTurn
+	ld hl, wPlayerTauntCount
+	call .handle
+	call SetEnemyTurn
+	ld hl, wEnemyTauntCount
+.handle
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	ld hl, NoLongerTauntedText
+	jp StdBattleTextbox
+
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -1957,25 +1973,6 @@ GetMaxHP:
 	ld a, [hl]
 	ld [wHPBuffer1], a
 	ld c, a
-	ret
-
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
 	ret
 
 CheckUserHasEnoughHP:
@@ -3652,6 +3649,7 @@ NewEnemyMonStatus:
 	xor a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
+	ld [wEnemyTauntCount], a
 	ld [wLastEnemyMove], a
 	ld hl, wEnemySubStatus1
 rept 4
@@ -4148,6 +4146,7 @@ endr
 	ld [hl], a
 	ld [wPlayerDisableCount], a
 	ld [wPlayerFuryCutterCount], a
+	ld [wPlayerTauntCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld [wDisabledMove], a
@@ -5572,21 +5571,18 @@ MoveSelectionScreen:
 .use_move
 	pop af
 	ret nz
+	call SetPlayerTurn ; just in case
 
-	ld hl, wBattleMonPP
 	ld a, [wMenuCursorY]
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	and PP_MASK
-	jr z, .no_pp_left
-	ld a, [wPlayerDisableCount]
-	swap a
-	and $f
+	call CheckUsableMove
 	dec a
-	cp c
+	jr z, .no_pp_left
+	dec a
 	jr z, .move_disabled
+	dec a
+	jr z, .taunted
+	; Encore is handled elsewhere
+
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -5601,6 +5597,10 @@ MoveSelectionScreen:
 	ld [wCurPlayerMove], a
 	xor a
 	ret
+
+.taunted
+	ld hl, BattleText_YouAreTaunted
+	jr .place_textbox_start_over
 
 .move_disabled
 	ld hl, BattleText_TheMoveIsDisabled
@@ -6607,17 +6607,6 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
-
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
 	ld [wTempEnemyMonSpecies], a
@@ -6970,19 +6959,6 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -7888,45 +7864,11 @@ GoodComeBackText:
 	text_far _GoodComeBackText
 	text_end
 
-TextJump_ComeBack: ; unreferenced
-	ld hl, ComeBackText
-	ret
 
 ComeBackText:
 	text_far _ComeBackText
 	text_end
 
-HandleSafariAngerEatingStatus: ; unreferenced
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildMonIsEating
-	jr .finish
-
-.angry
-	dec hl
-	assert wSafariMonEating - 1 == wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
-	push hl
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
-
-.finish
-	push hl
-	call SafeLoadTempTilemapToTilemap
-	pop hl
-	jp StdBattleTextbox
 
 FillInExpBar:
 	push hl
@@ -8154,9 +8096,6 @@ StartBattle:
 	scf
 	ret
 
-CallDoBattle: ; unreferenced
-	call DoBattle
-	ret
 
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
@@ -8329,56 +8268,6 @@ InitEnemyWildmon:
 	predef PlaceGraphic
 	ret
 
-FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	dec a
-	ld hl, Moves + MOVE_PP
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
-
-.clear
-	xor a
-	ld [hli], a
-
-.clearpp
-	push bc
-	push hl
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	xor a
-	ld [hl], a
-	pop hl
-	pop bc
-	dec b
-	jr nz, .clear
-	ret
 
 ExitBattle:
 	call .HandleEndOfBattle
@@ -9272,4 +9161,101 @@ BattleStartMessage:
 	ld c, $2 ; start
 	farcall Mobile_PrintOpponentBattleMessage
 
+	ret
+
+
+CheckUsableMove:
+; Check if move a in the move list is usable. Returns z if usable
+; Note that the first move in the list is move 0, not move 1.
+; If nz, a contains a number describing why it isn't usable:
+; 1 - no PP
+; 2 - disabled
+; 3 - taunted
+; 4 - encored
+	push hl
+	push de
+	push bc
+
+	; Check if we're out of pp.
+	ld c, a
+	ld b, 0
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonPP
+	ld de, wBattleMonMoves
+	jr z, .got_pp
+	ld hl, wEnemyMonPP
+	ld de, wEnemyMonMoves
+.got_pp
+	add hl, bc
+	ld a, [hl]
+	and PP_MASK
+	ld a, 1
+	jr z, .end
+
+	; Check Encore
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_ENCORED, a
+	jr z, .not_encored
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wCurMoveNum
+	jr z, .got_encore_num
+	ld hl, wCurEnemyMoveNum
+.got_encore_num
+	ld a, [hl]
+	cp c
+	ld a, 4
+	jr z, .end
+
+.not_encored
+	; Check Disable
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerDisableCount
+	ld bc, wDisabledMove
+	jr z, .got_disable
+	ld hl, wEnemyDisableCount
+	ld bc, wEnemyDisabledMove
+.got_disable
+	ld a, [hl]
+	ld h, d
+	ld l, e
+	and a
+	ld a, [bc]
+	pop bc
+	add hl, bc
+	jr z, .not_disabled
+	cp [hl]
+	ld a, 2
+	jr z, .end
+
+.not_disabled
+	; Check Taunt. Treat move power 0 as "status" moves.
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTauntCount]
+	jr z, .got_taunt
+	ld a, [wEnemyTauntCount]
+.got_taunt
+	and a
+	jr z, .done
+
+	ld a, [hl]
+	ld l, a
+	ld a, MOVE_POWER
+	call GetMoveAttr
+	and a
+	ld a, 3
+	jr z, .end
+	xor a
+	jr .done
+.end
+	and a
+.done
+	pop bc
+	pop de
+	pop hl
 	ret

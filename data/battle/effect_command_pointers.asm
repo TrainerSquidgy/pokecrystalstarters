@@ -180,4 +180,8 @@ BattleCommandPointers:
 	dw BattleCommand_StartWeather
 	dw BattleCommand_UproarEffect
 	dw BattleCommand_UproarState
+	dw BattleCommand_Avalanche
+	dw BattleCommand_WeatherBall
+	dw BattleCommand_DoubleWeatherDamage
+	dw BattleCommand_Taunt
 	assert_table_length NUM_EFFECT_COMMANDS

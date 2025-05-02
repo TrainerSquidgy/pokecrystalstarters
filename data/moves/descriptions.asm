@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw OctazookaDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw AvalancheDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw SheerColdDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -220,8 +220,8 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
-	dw SacredFireDescription
+	dw TauntDescription
+	dw SandstormDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -234,7 +234,7 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
-	dw MorningSunDescription
+	dw WeatherBallDescription
 	dw SynthesisDescription
 	dw MoonlightDescription
 	dw HiddenPowerDescription
@@ -253,9 +253,9 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw UproarDescription
+	dw IcicleSpearDescription
+	dw HeadbuttDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFFDescription
-	dw MoveFFDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -311,10 +311,6 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
-
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -391,6 +387,10 @@ FuryAttackDescription:
 HornDrillDescription:
 	db   "A one-hit KO,"
 	next "drill attack.@"
+
+SheerColdDescription:
+	db   "A one-hit KO,"
+	next "frozen attack.@"
 
 TackleDescription:
 	db   "A full-body charge"
@@ -824,6 +824,10 @@ BarrageDescription:
 	db   "Throws orbs to hit"
 	next "2-5 times.@"
 
+IcicleSpearDescription:
+	db   "Throws ice to hit"
+	next "2-5 times.@"
+
 LeechLifeDescription:
 	db   "Steals 1/2 of the"
 	next "damage inflicted.@"
@@ -831,10 +835,6 @@ LeechLifeDescription:
 LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
-
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -967,10 +967,6 @@ FlailDescription:
 Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
-
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1144,10 +1140,6 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
-
 MagnitudeDescription:
 	db   "A ground attack"
 	next "with random power.@"
@@ -1196,9 +1188,14 @@ VitalThrowDescription:
 	db   "A 2nd-strike move"
 	next "that never misses.@"
 
-MorningSunDescription:
-	db   "Restores HP"
-	next "(varies by time).@"
+WeatherBallDescription:
+	db   "Weather changes"
+	next "move's type.@"
+	
+TauntDescription:
+	db   "Taunts foe into"
+	next "offensive moves.@"
+
 
 SynthesisDescription:
 	db   "Restores HP"
@@ -1271,3 +1268,7 @@ BeatUpDescription:
 UproarDescription:
 	db   "Rampage attack."
 	next "Everyone wakes.@"
+	
+AvalancheDescription:
+	db   "Does more if"
+	next "user hit first.@"

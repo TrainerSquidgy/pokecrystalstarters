@@ -2116,3 +2116,54 @@ Uproar:
 	kingsrock
 	uproarstate
 	endmove
+
+Avalanche:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	avalanche
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+WeatherBall:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	weatherball
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	doubleweatherballdamage
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+Taunt:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	taunt
+	endmove
