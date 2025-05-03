@@ -2093,16 +2093,3 @@ Snow:
 	startweather
 	endmove
 	
-WaterSport:
-	checkobedience
-	usedmovetext
-	doturn
-	watersport
-	endmove
-
-Refresh:
-	checkobedience
-	usedmovetext
-	doturn
-	refresh
-	endmove

@@ -1,139 +1,78 @@
-Water Pulse
+Tackle
+Harden
+Confusion
+Rock Throw
+Fire Spin
+Rock Polish
+Psywave
+Embargo
+Cosmic Power
+Heal Block
+Rock Slide
+SolarBeam
+Explosion
+Calm Mind
 Toxic
-Hail
 Hidden Power
-Ice Beam
-Blizzard
+Sunny Day
+Hyper Beam
+Light Screen
 Protect
-Rain Dance
+Safeguard
 Frustration
+SolarBeam
+Earthquake
 Return
+Psychic
+Shadow Ball
 Double Team
+Reflect
+Flamethrower
+Sandstorm
+Fire Blast
+Rock Tomb
 Facade
 Secret Power
 Rest
-Attract
-Surf
-Waterfall
-Dive
-Double-Edge
+Skill Swap
+Overheat
+Charge Beam
 Endure
-Icy Wind
-Mimic
-Sleep Talk
-Snore
-Substitute
-Swagger
-Swift
-Dive
-Icy Wind
-Snore
-Swift
-Water Pulse
-Toxic
-Hail
-Hidden Power
-Ice Beam
-Blizzard
-Protect
-Rain Dance
-Frustration
-Return
-Double Team
-Facade
-Secret Power
-Rest
-Attract
-Endure
-Captivate
+Will-O-Wisp
+Embargo
+Explosion
+Recycle
+Giga Impact
+Rock Polish
+Flash
+Stone Edge
+Gyro Ball
+Stealth Rock
+Psych Up
+Rock Slide
 Sleep Talk
 Natural Gift
+Dream Eater
+Grass Knot
 Swagger
 Substitute
-Surf
-Whirlpool
-Waterfall
-Water Gun
-Wrap
-Water Sport
-Refresh
-Water Pulse
-Twister
-Recover
-Rain Dance
-Hydro Pump
-Attract
-Safeguard
-Water Pulse
-Toxic
-Hail
-Hidden Power
-Ice Beam
-Blizzard
-Hyper Beam
-Protect
-Rain Dance
-Safeguard
-Frustration
-Iron Tail
-Return
-Double Team
-Facade
-Secret Power
-Rest
-Attract
-Surf
-Waterfall
-Dive
-Body Slam
-Double-Edge
-Endure
-Icy Wind
-Mimic
-Mud-Slap
-Psych Up
-Sleep Talk
-Snore
-Substitute
-Swagger
-Swift
-Aqua Tail
-Dive
-Icy Wind
+Trick Room
+AncientPower
+Earth Power
+Gravity
+Helping Hand
+Iron Defense
 Iron Head
 Magic Coat
-Mud-Slap
+Pain Split
+Rollout
+Signal Beam
 Snore
 Swift
-Twister
-Water Pulse
-Toxic
-Hail
-Hidden Power
-Ice Beam
-Blizzard
-Hyper Beam
-Protect
-Rain Dance
-Safeguard
-Frustration
-Iron Tail
-Return
-Double Team
-Facade
-Secret Power
-Rest
-Attract
-Endure
-Dragon Pulse
-Giga Impact
-Avalanche
-Psych Up
-Captivate
-Sleep Talk
-Natural Gift
-Swagger
-Substitute
-Surf
-Whirlpool
-Waterfall
+Zen Headbutt
+Baton Pass
+Body Slam
+Defense Curl
+Double-Edge
+Mimic
+Selfdestruct
