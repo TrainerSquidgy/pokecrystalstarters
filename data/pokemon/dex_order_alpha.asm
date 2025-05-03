@@ -253,6 +253,4 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
-	db FEEBAS
-	db MILOTIC
 	assert_table_length NUM_POKEMON

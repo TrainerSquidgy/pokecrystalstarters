@@ -251,6 +251,4 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves ; Celebi
-	dw FeebasEggMoves
-	dw MiloticEggMoves
 	assert_table_length NUM_POKEMON

@@ -253,6 +253,4 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
-	db FEEBAS
-	db MILOTIC
 	assert_table_length NUM_POKEMON
