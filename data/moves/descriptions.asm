@@ -252,22 +252,16 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw WaterSportDescription
-	dw RefreshDescription
-	dw PsybeamDescription
 	assert_table_length NUM_ATTACKS
+	dw MoveFCDescription
+	dw MoveFDDescription
+	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-WaterSportDescription:
-	db   "Lowers FIRE moves"
-	next "until switch.@"
-
-RefreshDescription:
-	db   "Heals user of"
-	next "status condition.@"	
-	
+MoveFCDescription:
+MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:

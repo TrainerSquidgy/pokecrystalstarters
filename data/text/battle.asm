@@ -1149,14 +1149,3 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
-	
-WaterSportText:
-	text "Fire's power was"
-	line "weakened!"
-	prompt
-
-StatusHealText:
-	text "<USER>'s"
-	line "status returned"
-	cont "to normal!"
-	prompt
