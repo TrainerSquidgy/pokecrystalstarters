@@ -1,16 +1,12 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Milotic
+1: Water Gun
+5: Wrap
+10: Water Sport
+15: Refresh
+20: Water Pulse
+25: Twister
+30: Recover
+35: Rain Dance
+40: Hydro Pump
+45: Attract
+50: Safeguard
