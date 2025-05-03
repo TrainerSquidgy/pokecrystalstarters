@@ -123,9 +123,6 @@ EvolveAfterBattle_MasterLoop:
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
-	
-	cp EVOLVE_STAT_EXP_SPD
-	jr z, .evolve_stat_exp_spd
 
 ; EVOLVE_STAT
 	ld a, [wTempMonLevel]
@@ -153,20 +150,6 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .dont_evolve_2
 
 	inc hl
-	jp .proceed
-
-.evolve_stat_exp_spd
-	ld a, [wTempMonLevel]
-	cp [hl]                  ; [hl] = level threshold from evos_attacks
-	jp c, .dont_evolve_2     ; too low level
-	inc hl                   ; move to species ID
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_2
-	
-	ld a, [wTempMonSpcExp]       ; low byte
-	cp 100	
-	jp c, .dont_evolve_2
 	jp .proceed
 
 .happiness

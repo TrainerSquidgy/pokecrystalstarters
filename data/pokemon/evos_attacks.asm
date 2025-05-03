@@ -3369,8 +3369,6 @@ CelebiEvosAttacks:
 	db 0 ; no more level-up moves
 
 FeebasEvosAttacks:
-	db EVOLVE_STAT_EXP_SPD, 1, MILOTIC
-	db EVOLVE_ITEM, PRISM_SCALE, MILOTIC
 	db 0 ; No More Evolutions
 	db 1, SPLASH
 	db 15, TACKLE

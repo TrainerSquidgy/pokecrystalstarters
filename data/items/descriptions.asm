@@ -100,7 +100,7 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw PrismScaleDesc
+	dw TeruSama7Desc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -286,7 +286,6 @@ BicycleDesc:
 	db   "A collapsible bike"
 	next "for fast movement.@"
 
-PrismScaleDesc:
 MoonStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
