@@ -910,8 +910,6 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
-FeebasRelearnedEggMoves:
-MiloticRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

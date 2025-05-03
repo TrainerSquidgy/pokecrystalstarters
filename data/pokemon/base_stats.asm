@@ -274,6 +274,4 @@ INCLUDE "data/pokemon/base_stats/tyranitar.asm"
 INCLUDE "data/pokemon/base_stats/lugia.asm"
 INCLUDE "data/pokemon/base_stats/ho_oh.asm"
 INCLUDE "data/pokemon/base_stats/celebi.asm"
-INCLUDE "data/pokemon/base_stats/feebas.asm"
-INCLUDE "data/pokemon/base_stats/milotic.asm"
 	assert_table_length NUM_POKEMON
