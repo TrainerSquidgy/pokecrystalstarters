@@ -1,16 +1,17 @@
-LechonkEvosAttacks:
+BreloomEvosAttacks:
 	db 0 ; No More Evolutions
+	db 1, ABSORB
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, STUN_SPORE
+	db 1, LEECH_SEED
+	db 4, TACKLE
+	db 7, STUN_SPORE
+	db 10, LEECH_SEED
+	db 16, MEGA_DRAIN
+	db 22, HEADBUTT
+	db 23, MACH_PUNCH
+	db 28, COUNTER
+	db 36, SKY_UPPERCUT
+	db 45, MIND_READER
+	db 54, DYNAMICPUNCH
 	db 0

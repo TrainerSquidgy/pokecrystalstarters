@@ -3367,3 +3367,37 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+ShroomishEvosAttacks:
+	db EVOLVE_LEVEL, 23, BRELOOM
+	db 0 ; No More Evolutions
+	db 1, ABSORB
+	db 4, TACKLE
+	db 7, STUN_SPORE
+	db 10, LEECH_SEED
+	db 16, MEGA_DRAIN
+	db 22, HEADBUTT
+	db 28, POISONPOWDER
+	db 36, GROWTH
+	db 45, GIGA_DRAIN
+	db 54, SPORE
+	db 0
+	
+BreloomEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, ABSORB
+	db 1, TACKLE
+	db 1, STUN_SPORE
+	db 1, LEECH_SEED
+	db 4, TACKLE
+	db 7, STUN_SPORE
+	db 10, LEECH_SEED
+	db 16, MEGA_DRAIN
+	db 22, HEADBUTT
+	db 23, MACH_PUNCH
+	db 28, COUNTER
+	db 36, SKY_UPPERCUT
+	db 45, MIND_READER
+	db 54, DYNAMICPUNCH
+	db 0

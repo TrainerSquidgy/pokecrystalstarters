@@ -1,14 +1,15 @@
-Pokémon: Lechonk
+Pokémon: Breloom
+1: Absorb
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Stun Spore
+1: Leech Seed
+4: Tackle
+7: Stun Spore
+10: Leech Seed
+16: Mega Drain
+22: Headbutt
+23: Mach Punch
+28: Counter
+36: Sky Uppercut
+45: Mind Reader
+54: DynamicPunch
