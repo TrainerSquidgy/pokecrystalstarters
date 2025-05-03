@@ -3190,9 +3190,7 @@ wMegaEvolutionEnabled:: db
 wSpinnersOff:: db
 wMegaXorY:: db
 wMetronomeOnly:: db
-wTestRam1:: db
-wTestRam2:: db
-	ds 58
+	ds 60
 
 wEventFlags:: flag_array NUM_EVENTS
 
