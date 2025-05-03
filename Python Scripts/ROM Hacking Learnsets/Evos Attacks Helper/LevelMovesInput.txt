@@ -1,14 +1,12 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Milotic
+1: Water Gun
+5: Wrap
+10: Water Sport
+15: Refresh
+20: Water Pulse
+25: Twister
+30: Recover
+35: Rain Dance
+40: Hydro Pump
+45: Attract
+50: Safeguard

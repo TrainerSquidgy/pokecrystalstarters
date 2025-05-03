@@ -1,16 +1,14 @@
-LechonkEvosAttacks:
+MiloticEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, WATER_GUN
+	db 5, WRAP
+	db 10, WATER_SPORT
+	db 15, REFRESH
+	db 20, WATER_PULSE
+	db 25, TWISTER
+	db 30, RECOVER
+	db 35, RAIN_DANCE
+	db 40, HYDRO_PUMP
+	db 45, ATTRACT
+	db 50, SAFEGUARD
 	db 0

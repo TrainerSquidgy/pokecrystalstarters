@@ -3367,3 +3367,25 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+FeebasEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SPLASH
+	db 15, TACKLE
+	db 30, FLAIL
+	db 0
+	
+MiloticEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, WATER_GUN
+	db 5, WRAP
+	db 10, WATER_SPORT
+	db 15, REFRESH
+	db 20, WATER_PULSE
+	db 25, TWISTER
+	db 30, RECOVER
+	db 35, RAIN_DANCE
+	db 40, HYDRO_PUMP
+	db 45, ATTRACT
+	db 50, SAFEGUARD
+	db 0
