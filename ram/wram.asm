@@ -3190,7 +3190,11 @@ wMegaEvolutionEnabled:: db
 wSpinnersOff:: db
 wMegaXorY:: db
 wMetronomeOnly:: db
-	ds 60
+wPlayerLuckyChantCount:: db
+wEnemyLuckyChantCount:: db
+wPlayerWishCount:: db
+wEnemyWishCount:: db
+	ds 56
 
 wEventFlags:: flag_array NUM_EVENTS
 

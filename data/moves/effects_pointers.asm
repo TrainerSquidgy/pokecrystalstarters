@@ -161,4 +161,9 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw LuckyChant
+	dw Wish
+	dw CalmMind
+	dw NormalHit
+	dw CloseCombat
 	assert_table_length NUM_MOVE_EFFECTS

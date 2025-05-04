@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw WishDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -130,7 +130,7 @@ MoveDescriptions::
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
-	dw SkullBashDescription
+	dw CloseCombatDescription
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw CaptivateDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw LeafBladeDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -220,8 +220,8 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
-	dw SacredFireDescription
+	dw SlashDescription
+	dw SlashDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -252,17 +252,14 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw LuckyChantDescription
+	dw SwiftDescription
+	dw CalmMindDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -314,10 +311,6 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
-
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -783,9 +776,9 @@ SwiftDescription:
 	db   "An attack that"
 	next "never misses.@"
 
-SkullBashDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+CloseCombatDescription:
+	db   "Lowers user's"
+	next "DEFENSE stats.@"
 
 SpikeCannonDescription:
 	db   "Fires spikes to"
@@ -834,10 +827,6 @@ LeechLifeDescription:
 LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
-
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -971,7 +960,7 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
+LeafBladeDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
@@ -1083,6 +1072,10 @@ CharmDescription:
 	db   "Sharply lowers the"
 	next "foe's ATTACK.@"
 
+CaptivateDescription:
+	db   "Sharply lowers the"
+	next "foe's SPCL.ATK.@"
+
 RolloutDescription:
 	db   "Attacks 5 turns"
 	next "with rising power.@"
@@ -1143,13 +1136,9 @@ SafeguardDescription:
 	db   "Prevents all"
 	next "status problems.@"
 
-PainSplitDescription:
-	db   "Adds user & foe's"
-	next "HPs. Shares total.@"
-
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
+FeintDescription:
+	db   "Only hits enemies"
+	next "using PROTECT.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
@@ -1270,3 +1259,15 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+LuckyChantDescription:
+	db   "Stops CRITICAL"
+	next "hits. 5 turns.@"
+	
+WishDescription:
+	db   "Makes a wish to"
+	next "restore HP soon.@"
+	
+CalmMindDescription:
+	db   "Ups both SP.ATK"
+	next "and SP.DEF.@"

@@ -1149,3 +1149,18 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+BattleText_LuckyChant:
+	text "The CHANT shields"
+	next "your #MON."
+	prompt
+	
+BattleText_ChantWoreOff:
+	text "The LUCKY CHANT"
+	next "wore off."
+	prompt
+	
+WishCameTrueText:
+	text "The wish came"
+	line "true!"
+	prompt

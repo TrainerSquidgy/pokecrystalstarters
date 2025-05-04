@@ -10,7 +10,7 @@ NidoranFGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -24,7 +24,7 @@ NidoranMGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -46,7 +46,7 @@ RhydonGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -67,7 +67,7 @@ KangaskhanGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -90,7 +90,7 @@ ClefairyGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -99,14 +99,14 @@ ClefairyGen1TMAttacks:
 
 SpearowGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -143,7 +143,7 @@ NidokingGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -167,7 +167,7 @@ SlowbroGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -222,7 +222,7 @@ LickitungGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -270,7 +270,7 @@ GengarGen1TMAttacks:
 	db 1, BIDE
 	db 1, METRONOME
 	db 1, SELFDESTRUCT
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, EXPLOSION
 	db 1, SUBSTITUTE
@@ -295,7 +295,7 @@ NidoqueenGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -316,7 +316,7 @@ CuboneGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -330,7 +330,7 @@ RhyhornGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -348,7 +348,7 @@ LaprasGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -364,14 +364,14 @@ ArcanineGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
 MewGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
-	db 1, RAZOR_WIND
+	
 	db 1, SWORDS_DANCE
 	db 1, WHIRLWIND
 	db 1, MEGA_KICK
@@ -396,9 +396,9 @@ MewGen1TMAttacks:
 	db 1, METRONOME
 	db 1, SELFDESTRUCT
 	db 1, EGG_BOMB
-	db 1, SKULL_BASH
+	
 	db 1, SOFTBOILED
-	db 1, SKY_ATTACK
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, EXPLOSION
@@ -419,7 +419,7 @@ GyaradosGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -452,7 +452,7 @@ TentacoolGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -476,7 +476,7 @@ ScytherGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -491,7 +491,7 @@ StaryuGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -515,7 +515,7 @@ BlastoiseGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -543,7 +543,7 @@ TangelaGen1TMAttacks:
 	db 1, MEGA_DRAIN
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -557,7 +557,7 @@ GrowlitheGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -571,7 +571,7 @@ OnixGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, SELFDESTRUCT
-	db 1, SKULL_BASH
+	
 	db 1, EXPLOSION
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
@@ -579,20 +579,20 @@ OnixGen1TMAttacks:
 
 FearowGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 PidgeyGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -600,7 +600,7 @@ PidgeyGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -618,7 +618,7 @@ SlowpokeGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -641,7 +641,7 @@ KadabraGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -687,7 +687,7 @@ ChanseyGen1TMAttacks:
 	db 1, BIDE
 	db 1, METRONOME
 	db 1, EGG_BOMB
-	db 1, SKULL_BASH
+	
 	db 1, SOFTBOILED
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
@@ -710,7 +710,7 @@ MachokeGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -731,7 +731,7 @@ MrMimeGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
@@ -751,7 +751,7 @@ HitmonleeGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -769,7 +769,7 @@ HitmonchanGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -783,7 +783,7 @@ ArbokGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -799,7 +799,7 @@ ParasectGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -819,7 +819,7 @@ PsyduckGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -839,7 +839,7 @@ DrowzeeGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -882,7 +882,7 @@ MagmarGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -903,7 +903,7 @@ ElectabuzzGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
@@ -947,7 +947,7 @@ MankeyGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -964,7 +964,7 @@ SeelGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -991,13 +991,13 @@ TaurosGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
 FarfetchDGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, SWORDS_DANCE
 	db 1, WHIRLWIND
 	db 1, BODY_SLAM
@@ -1007,7 +1007,7 @@ FarfetchDGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1026,7 +1026,7 @@ VenonatGen1TMAttacks:
 
 DragoniteGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, HORN_DRILL
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
@@ -1038,7 +1038,7 @@ DragoniteGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1053,8 +1053,8 @@ DoduoGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
-	db 1, SKY_ATTACK
+	
+	
 	db 1, TRI_ATTACK
 	db 1, SUBSTITUTE
 	db 0
@@ -1069,7 +1069,7 @@ PoliwagGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1092,14 +1092,14 @@ JynxGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
 	db 0
 
 MoltresGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1107,13 +1107,13 @@ MoltresGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 ArticunoGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1123,13 +1123,13 @@ ArticunoGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 ZapdosGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1137,7 +1137,7 @@ ZapdosGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1157,7 +1157,7 @@ MeowthGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1184,7 +1184,7 @@ VulpixGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1197,7 +1197,7 @@ NinetalesGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1215,7 +1215,7 @@ PikachuGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1234,7 +1234,7 @@ RaichuGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1251,7 +1251,7 @@ DratiniGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1269,7 +1269,7 @@ DragonairGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1290,7 +1290,7 @@ KabutoGen1TMAttacks:
 
 KabutopsGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, SWORDS_DANCE
 	db 1, MEGA_KICK
 	db 1, BODY_SLAM
@@ -1304,7 +1304,7 @@ KabutopsGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1317,7 +1317,7 @@ HorseaGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1330,7 +1330,7 @@ SeadraGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1346,7 +1346,7 @@ SandshrewGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -1363,7 +1363,7 @@ SandslashGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -1396,7 +1396,7 @@ OmastarGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1417,7 +1417,7 @@ JigglypuffGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -1441,7 +1441,7 @@ WigglytuffGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -1457,7 +1457,7 @@ EeveeGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1470,7 +1470,7 @@ FlareonGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1483,7 +1483,7 @@ JolteonGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1499,7 +1499,7 @@ VaporeonGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1518,14 +1518,14 @@ MachopGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
 
 ZubatGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1546,7 +1546,7 @@ EkansGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -1562,7 +1562,7 @@ ParasGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1583,7 +1583,7 @@ PoliwhirlGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1605,7 +1605,7 @@ PoliwrathGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, SUBSTITUTE
 	db 0
@@ -1628,7 +1628,7 @@ BeedrillGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1642,8 +1642,8 @@ DodrioGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
-	db 1, SKY_ATTACK
+	
+	
 	db 1, TRI_ATTACK
 	db 1, SUBSTITUTE
 	db 0
@@ -1663,7 +1663,7 @@ PrimeapeGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -1683,7 +1683,7 @@ DugtrioGen1TMAttacks:
 
 VenomothGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1709,7 +1709,7 @@ DewgongGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1723,7 +1723,7 @@ MetapodGen1TMAttacks:
 
 ButterfreeGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1752,7 +1752,7 @@ MachampGen1TMAttacks:
 	db 1, MIMIC
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
 	db 0
@@ -1773,7 +1773,7 @@ GolduckGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1793,7 +1793,7 @@ HypnoGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -1802,7 +1802,7 @@ HypnoGen1TMAttacks:
 
 GolbatGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -1832,7 +1832,7 @@ MewtwoGen1TMAttacks:
 	db 1, BIDE
 	db 1, METRONOME
 	db 1, SELFDESTRUCT
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -1859,7 +1859,7 @@ SnorlaxGen1TMAttacks:
 	db 1, BIDE
 	db 1, METRONOME
 	db 1, SELFDESTRUCT
-	db 1, SKULL_BASH
+	
 	db 1, PSYWAVE
 	db 1, ROCK_SLIDE
 	db 1, SUBSTITUTE
@@ -1921,7 +1921,7 @@ ElectrodeGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, SELFDESTRUCT
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, EXPLOSION
 	db 1, SUBSTITUTE
@@ -1945,7 +1945,7 @@ ClefableGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -1973,7 +1973,7 @@ PersianGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -1993,7 +1993,7 @@ MarowakGen1TMAttacks:
 	db 1, FISSURE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2025,7 +2025,7 @@ AbraGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -2048,7 +2048,7 @@ AlakazamGen1TMAttacks:
 	db 1, REFLECT
 	db 1, BIDE
 	db 1, METRONOME
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -2057,7 +2057,7 @@ AlakazamGen1TMAttacks:
 
 PidgeottoGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2065,13 +2065,13 @@ PidgeottoGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
 PidgeotGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2079,7 +2079,7 @@ PidgeotGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2094,7 +2094,7 @@ StarmieGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -2141,7 +2141,7 @@ TentacruelGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2155,7 +2155,7 @@ GoldeenGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2169,7 +2169,7 @@ SeakingGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2183,7 +2183,7 @@ PonytaGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2197,7 +2197,7 @@ RapidashGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2211,7 +2211,7 @@ RattataGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2225,7 +2225,7 @@ RaticateGen1TMAttacks:
 	db 1, RAGE
 	db 1, MIMIC
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2241,7 +2241,7 @@ NidorinoGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2257,7 +2257,7 @@ NidorinaGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2290,7 +2290,7 @@ PorygonGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, THUNDER_WAVE
 	db 1, PSYWAVE
 	db 1, TRI_ATTACK
@@ -2299,7 +2299,7 @@ PorygonGen1TMAttacks:
 
 AerodactylGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
+	
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE
@@ -2308,7 +2308,7 @@ AerodactylGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKY_ATTACK
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2341,7 +2341,7 @@ CharmanderGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2361,7 +2361,7 @@ SquirtleGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2381,7 +2381,7 @@ CharmeleonGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2401,7 +2401,7 @@ WartortleGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 
@@ -2422,7 +2422,7 @@ CharizardGen1TMAttacks:
 	db 1, MIMIC
 	db 1, REFLECT
 	db 1, BIDE
-	db 1, SKULL_BASH
+	
 	db 1, SUBSTITUTE
 	db 0
 

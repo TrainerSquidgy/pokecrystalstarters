@@ -2093,3 +2093,44 @@ Snow:
 	startweather
 	endmove
 	
+LuckyChant:
+	checkobedience
+	usedmovetext
+	doturn
+	luckychant
+	endmove
+
+Wish:
+	checkobedience
+	usedmovetext
+	doturn
+	wish
+	endmove
+
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	calmmind
+	endmove
+	
+CloseCombat:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	closecombat
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

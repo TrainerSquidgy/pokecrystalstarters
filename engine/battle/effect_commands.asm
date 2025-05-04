@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +423,7 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1077,9 +1073,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
-	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
@@ -1122,7 +1115,16 @@ BattleCommand_Critical:
 
 	xor a
 	ld [wCriticalHit], a
-
+	
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerScreens
+	jr nz, .got_screens_pointer
+	ld hl, wEnemyScreens
+.got_screens_pointer	
+	bit SCREENS_LUCKY_CHANT, [hl]
+	ret nz
+	
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
 	and a
@@ -1653,6 +1655,23 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	and SLP_MASK
 	ret
+	
+.Feint:
+; Return z if using Feint and opponent is protected.
+; Fail move if using Feint and opponent isn't protected.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FEINT
+	ret nz
+	call .Protect
+	jr z, .Feint_Fail
+	xor a
+	ret
+
+.Feint_Fail
+	call AnimateFailedMove
+	call PrintButItFailed
+	jp EndMoveEffect
 
 .Protect:
 ; Return nz if the opponent is protected.
@@ -1918,12 +1937,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
-	cp EFFECT_SKULL_BASH
-	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
@@ -5579,11 +5592,6 @@ BattleCommand_Charge:
 	ld hl, .UsedText
 	call BattleTextbox
 
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_SKULL_BASH
-	ld b, endturn_command
-	jp z, SkipToBattleCommand
 	jp EndMoveEffect
 
 .UsedText:
@@ -5591,20 +5599,9 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
-	jr z, .done
-
-	cp SKULL_BASH
-	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6911,4 +6908,88 @@ BattleCommand_AddDamage:
     ret
 	
 	
+BattleCommand_LuckyChant:
+	ld hl, wPlayerScreens
+	ld bc, wPlayerLuckyChantCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screens_pointer
+	ld hl, wEnemyScreens
+	ld bc, wEnemyLuckyChantCount
+.got_screens_pointer
+	bit SCREENS_LUCKY_CHANT, [hl]
+	jr nz, .failed
+	set SCREENS_LUCKY_CHANT, [hl]
+	ld a, 5
+	ld [bc], a
+	ld hl, BattleText_LuckyChant
+	call AnimateCurrentMove
+	jp StdBattleTextbox
 
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
+BattleCommand_Wish:
+	ld hl, wPlayerWishCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_wish_count
+	ld hl, wEnemyWishCount
+.got_wish_count
+
+; Don't set Wish if it's already up for the user
+	ld a, [hl]
+	and a
+	jr nz, .already_wished
+
+	push hl
+	call AnimateCurrentMove
+	pop hl
+
+; Set 2 turn countdown for Wish
+	ld a, 2
+	ld [hl], a
+	ret
+
+.already_wished
+	call AnimateFailedMove
+	call PrintButItFailed
+	ret
+	
+BattleCommand_CalmMind:
+; calmmind
+	call ResetMiss
+	call BattleCommand_SpecialAttackUp
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_SpecialDefenseUp
+	jp BattleCommand_StatUpMessage
+	
+BattleCommand_CloseCombat:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	lb bc, DEFENSE, SP_DEFENSE
+BattleCommand_SelfStatDownHitTwice:
+; input: 1-2 stats to decrease in b and c respectively
+	push bc
+	call BattleCommand_SelfStatDownHit
+	pop bc
+	ld b, c
+BattleCommand_SelfStatDownHit:
+	ld a, b
+	and a
+	ret z
+	push bc
+	call ResetMiss
+	pop bc
+	ld a, b
+	call LowerStat
+	call BattleCommand_SwitchTurn
+	ld a, [wLoweredStat]
+	or $80
+	ld [wLoweredStat], a
+	call BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn

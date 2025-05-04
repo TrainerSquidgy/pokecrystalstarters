@@ -1,55 +1,48 @@
-Tackle
-Harden
+Growl
 Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
+Double Team
+Teleport
+Lucky Chant
+Magical Leaf
+Calm Mind
+Psychic
+Future Sight
+Charm
+Hypnosis
+Dream Eater
 Calm Mind
 Toxic
 Hidden Power
 Sunny Day
-Hyper Beam
+Taunt
 Light Screen
 Protect
+Rain Dance
 Safeguard
 Frustration
-SolarBeam
-Earthquake
+Thunderbolt
 Return
 Psychic
 Shadow Ball
 Double Team
 Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
+Shock Wave
+Torment
 Facade
 Secret Power
 Rest
+Attract
+Thief
 Skill Swap
-Overheat
+Snatch
+Fling
 Charge Beam
 Endure
-Will-O-Wisp
-Embargo
-Explosion
 Recycle
-Giga Impact
-Rock Polish
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
+Thunder Wave
 Psych Up
-Rock Slide
+Captivate
 Sleep Talk
 Natural Gift
 Dream Eater
@@ -57,22 +50,288 @@ Grass Knot
 Swagger
 Substitute
 Trick Room
-AncientPower
-Earth Power
-Gravity
+Fire Punch
+Headbutt
 Helping Hand
-Iron Defense
-Iron Head
+Ice Punch
+Icy Wind
 Magic Coat
+Mud-Slap
 Pain Split
-Rollout
 Signal Beam
 Snore
 Swift
+ThunderPunch
+Trick
 Zen Headbutt
-Baton Pass
 Body Slam
 Defense Curl
 Double-Edge
 Mimic
-Selfdestruct
+Nightmare
+Sing
+Wish
+Growl
+Confusion
+Double Team
+Teleport
+Confusion
+Double Team
+Teleport
+Lucky Chant
+Magical Leaf
+Calm Mind
+Psychic
+Future Sight
+Charm
+Hypnosis
+Dream Eater
+Calm Mind
+Toxic
+Hidden Power
+Sunny Day
+Taunt
+Light Screen
+Protect
+Rain Dance
+Safeguard
+Frustration
+Thunderbolt
+Return
+Psychic
+Shadow Ball
+Double Team
+Reflect
+Shock Wave
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Skill Swap
+Snatch
+Fling
+Charge Beam
+Endure
+Recycle
+Flash
+Thunder Wave
+Psych Up
+Captivate
+Sleep Talk
+Natural Gift
+Dream Eater
+Grass Knot
+Swagger
+Substitute
+Trick Room
+Fire Punch
+Headbutt
+Helping Hand
+Ice Punch
+Icy Wind
+Magic Coat
+Mud-Slap
+Pain Split
+Signal Beam
+Snore
+Swift
+ThunderPunch
+Trick
+Zen Headbutt
+Body Slam
+Defense Curl
+Double-Edge
+Mimic
+Nightmare
+Sing
+Wish
+Growl
+Confusion
+Double Team
+Teleport
+Confusion
+Double Team
+Teleport
+Wish
+Magical Leaf
+Calm Mind
+Psychic
+Future Sight
+Captivate
+Hypnosis
+Dream Eater
+Calm Mind
+Toxic
+Hidden Power
+Sunny Day
+Taunt
+Hyper Beam
+Light Screen
+Protect
+Rain Dance
+Safeguard
+Frustration
+Thunderbolt
+Return
+Psychic
+Shadow Ball
+Double Team
+Reflect
+Shock Wave
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Skill Swap
+Snatch
+Focus Blast
+Energy Ball
+Fling
+Charge Beam
+Endure
+Recycle
+Giga Impact
+Flash
+Thunder Wave
+Psych Up
+Captivate
+Sleep Talk
+Natural Gift
+Dream Eater
+Grass Knot
+Swagger
+Substitute
+Trick Room
+Fire Punch
+Headbutt
+Heal Bell
+Helping Hand
+Ice Punch
+Icy Wind
+Magic Coat
+Mud-Slap
+Pain Split
+Signal Beam
+Snore
+Swift
+ThunderPunch
+Trick
+Zen Headbutt
+Body Slam
+Defense Curl
+Double-Edge
+Mimic
+Nightmare
+Sing
+Night Slash
+Leaf Blade
+Leer
+Confusion
+Double Team
+Teleport
+Confusion
+Double Team
+Teleport
+Fury Cutter
+Slash
+Swords Dance
+Psycho Cut
+Feint
+False Swipe
+Protect
+Close Combat
+Focus Punch
+Calm Mind
+Toxic
+Bulk Up
+Hidden Power
+Sunny Day
+Taunt
+Hyper Beam
+Light Screen
+Protect
+Rain Dance
+Safeguard
+Frustration
+Thunderbolt
+Earthquake
+Return
+Psychic
+Shadow Ball
+Brick Break
+Double Team
+Reflect
+Shock Wave
+Rock Tomb
+Aerial Ace
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Skill Swap
+Snatch
+Focus Blast
+False Swipe
+Fling
+Charge Beam
+Endure
+Drain Punch
+Recycle
+Giga Impact
+Flash
+Stone Edge
+Thunder Wave
+Swords Dance
+Psych Up
+Captivate
+Rock Slide
+X-Scissor
+Sleep Talk
+Natural Gift
+Poison Jab
+Dream Eater
+Grass Knot
+Swagger
+Substitute
+Trick Room
+Cut
+Strength
+Rock Smash
+Fire Punch
+Fury Cutter
+Headbutt
+Helping Hand
+Ice Punch
+Knock Off
+Low Kick
+Magic Coat
+Mud-Slap
+Pain Split
+Signal Beam
+Snore
+Swift
+Trick
+ThunderPunch
+Vacuum Wave
+Zen Headbutt
+Growl
+Lucky Chant
+Magical Leaf
+Imprison
+Future Sight
+Charm
+Hypnosis
+Icy Wind
+Body Slam
+Defense Curl
+Double-Edge
+Mimic
+Nightmare
+Sing
+Wish

@@ -1955,25 +1955,6 @@ GetMaxHP:
 	ld c, a
 	ret
 
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
-	ret
-
 CheckUserHasEnoughHP:
 	ld hl, wBattleMonHP + 1
 	ldh a, [hBattleTurn]
@@ -9266,3 +9247,76 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+HandleLuckyChant:
+	ld a, [wPlayerLuckyChantCount]
+	and a
+	jr z, .EnemyLuckyChant
+	call SetPlayerTurn
+	ld a, [wPlayerLuckyChantCount]
+	dec a
+	ld [wPlayerLuckyChantCount], a
+	and a
+	jr nz, .EnemyLuckyChant
+	ld hl, wPlayerScreens
+	res SCREENS_LUCKY_CHANT, [hl]
+	ld hl, BattleText_ChantWoreOff
+	call StdBattleTextbox
+.EnemyLuckyChant
+	ld a, [wEnemyLuckyChantCount]
+	and a
+	ret z
+	call SetEnemyTurn
+	ld a, [wEnemyLuckyChantCount]
+	dec a
+	ld [wEnemyLuckyChantCount], a
+	and a
+	ret nz
+	ld hl, wEnemyScreens
+	res SCREENS_LUCKY_CHANT, [hl]
+	ld hl, BattleText_ChantWoreOff
+	jp StdBattleTextbox
+	
+HandleWishEffect:
+; At the end of the 2nd turn, Wish restores 1/2
+; of the max HP of the user's current Pokemon.
+	call SetPlayerTurn
+	ld hl, wPlayerWishCount
+	call .do_it
+	call SetEnemyTurn
+	ld hl, wEnemyWishCount
+.do_it
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	call RestoreHalfMaxHP
+	ld hl, WishCameTrueText
+	jp StdBattleTextbox
+	
+RestoreHalfMaxHP:
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetHalfMaxHP
+	call SwitchTurnCore
+	jp RestoreHP
+	
