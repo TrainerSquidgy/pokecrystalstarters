@@ -777,8 +777,8 @@ SwiftDescription:
 	next "never misses.@"
 
 CloseCombatDescription:
-	db   "Lowers user's"
-	next "DEFENSE stats.@"
+	db   "Hits hard but"
+	next "drops own DEFENSE.@"
 
 SpikeCannonDescription:
 	db   "Fires spikes to"
