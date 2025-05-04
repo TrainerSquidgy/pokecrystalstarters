@@ -156,7 +156,7 @@ PokemonCries::
 	mon_cry CRY_BULBASAUR,    64,  256 ; DRAGONAIR
 	mon_cry CRY_BULBASAUR,    60,  320 ; DRAGONITE
 	mon_cry CRY_PARAS,       153,  383 ; MEWTWO
-	mon_cry CRY_PARAS,       238,  383 ; MEW
+	mon_cry CRY_NIDORAN_M,     0,    0
 	mon_cry CRY_CHIKORITA,   -16,  176 ; CHIKORITA
 	mon_cry CRY_CHIKORITA,   -34,  288 ; BAYLEEF
 	mon_cry CRY_CHIKORITA,  -183,  512 ; MEGANIUM

@@ -1,5 +1,6 @@
 JohtoFrames: ; used only for BANK(JohtoFrames)
 
+GalladeFrames:  INCLUDE "gfx/pokemon/gallade/frames.asm"
 ChikoritaFrames:  INCLUDE "gfx/pokemon/chikorita/frames.asm"
 BayleefFrames:    INCLUDE "gfx/pokemon/bayleef/frames.asm"
 MeganiumFrames:   INCLUDE "gfx/pokemon/meganium/frames.asm"

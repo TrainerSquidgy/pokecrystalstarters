@@ -3420,3 +3420,24 @@ GardevoirEvosAttacks:
 	db 49, HYPNOSIS
 	db 55, DREAM_EATER
 	db 0
+
+GalladeEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, NIGHT_SLASH
+	db 1, LEAF_BLADE
+	db 1, LEER
+	db 1, CONFUSION
+	db 1, DOUBLE_TEAM
+	db 1, TELEPORT
+	db 6, CONFUSION
+	db 10, DOUBLE_TEAM
+	db 12, TELEPORT
+	db 17, FURY_CUTTER
+	db 22, SLASH
+	db 25, SWORDS_DANCE
+	db 31, PSYCHO_CUT
+	db 37, FEINT
+	db 43, FALSE_SWIPE
+	db 49, PROTECT
+	db 55, CLOSE_COMBAT
+	db 0	

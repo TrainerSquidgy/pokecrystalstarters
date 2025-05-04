@@ -20,7 +20,7 @@ Pokered_MonIndices:
 	db RHYHORN
 	db LAPRAS
 	db ARCANINE
-	db MEW
+	db GALLADE
 	db GYARADOS
 	db SHELLDER
 	db TENTACOOL

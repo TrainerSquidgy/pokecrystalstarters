@@ -131,7 +131,6 @@ AlphabeticalPokedexOrder:
 	db MEGANIUM
 	db MEOWTH
 	db METAPOD
-	db MEW
 	db MEWTWO
 	db MILTANK
 	db MISDREAVUS
@@ -255,4 +254,5 @@ AlphabeticalPokedexOrder:
 	db RALTS
 	db KIRLIA
 	db GARDEVOIR
+	db GALLADE
 	assert_table_length NUM_POKEMON

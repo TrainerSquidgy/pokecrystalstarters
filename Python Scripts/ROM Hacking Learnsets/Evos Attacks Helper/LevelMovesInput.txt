@@ -1,16 +1,18 @@
-Pokémon: Gardevoir
-1: Growl
+Pokémon: Gallade
+1: Night Slash
+1: Leaf Blade
+1: Leer
 1: Confusion
 1: Double Team
 1: Teleport
 6: Confusion
 10: Double Team
 12: Teleport
-17: Wish
-22: Magical Leaf
-25: Calm Mind
-31: Psychic
-37: Future Sight
-43: Captivate
-49: Hypnosis
-55: Dream Eater
+17: Fury Cutter
+22: Slash
+25: Swords Dance
+31: Psycho Cut
+37: Feint
+43: False Swipe
+49: Protect
+55: Close Combat

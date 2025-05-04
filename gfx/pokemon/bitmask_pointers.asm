@@ -150,7 +150,7 @@ BitmasksPointers:
 	dw DragonairBitmasks
 	dw DragoniteBitmasks
 	dw MewtwoBitmasks
-	dw MewBitmasks
+	dw GalladeBitmasks
 	dw ChikoritaBitmasks
 	dw BayleefBitmasks
 	dw MeganiumBitmasks

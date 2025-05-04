@@ -3954,7 +3954,7 @@ BattleTower_UbersCheck:
 	ld a, [de]
 	cp MEWTWO
 	jr z, .uber
-	cp MEW
+	cp GALLADE
 	jr z, .uber
 	cp LUGIA
 	jr c, .next

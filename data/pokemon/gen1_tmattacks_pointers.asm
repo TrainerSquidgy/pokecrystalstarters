@@ -152,7 +152,7 @@ Gen1TMAttacksPointers::
 	dw DragonairGen1TMAttacks
 	dw DragoniteGen1TMAttacks
 	dw MewtwoGen1TMAttacks
-	dw MewGen1TMAttacks
+	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks

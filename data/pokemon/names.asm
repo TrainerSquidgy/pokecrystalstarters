@@ -150,7 +150,7 @@ PokemonNames::
 	db "DRAGONAIR@"
 	db "DRAGONITE@"
 	db "MEWTWO@@@@"
-	db "MEW@@@@@@@"
+	db "GALLADE@@@"
 	db "CHIKORITA@"
 	db "BAYLEEF@@@"
 	db "MEGANIUM@@"

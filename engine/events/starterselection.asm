@@ -522,7 +522,7 @@ PokemonStrings:
 	dw .Dragonair
 	dw .Dragonite
 	dw .Mewtwo
-	dw .Mew
+	dw .Gallade
 	dw .Chikorita
 	dw .Bayleef
 	dw .Meganium
@@ -777,7 +777,7 @@ PokemonStrings:
 .Dragonair	db "DRAGONAIR@@"
 .Dragonite	db "DRAGONITE@@"
 .Mewtwo	db "MEWTWO@@@@@"
-.Mew	db "MEW@@@@@@@@"
+.Gallade	db "GALLADE@@@@"
 .Chikorita	db "CHIKORITA@@"
 .Bayleef	db "BAYLEEF@@@@"
 .Meganium	db "MEGANIUM@@@"

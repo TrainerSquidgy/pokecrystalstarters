@@ -251,8 +251,8 @@ NewPokedexOrder:
 	db LUGIA
 	db HO_OH
 	db MEWTWO
-	db MEW
 	db RALTS
 	db KIRLIA
 	db GARDEVOIR
+	db GALLADE
 	assert_table_length NUM_POKEMON

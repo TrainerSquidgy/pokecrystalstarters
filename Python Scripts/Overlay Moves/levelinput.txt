@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Kirlia
+1: Growl
+1: Confusion
+1: Double Team
+1: Teleport
+6: Confusion
+10: Double Team
+12: Teleport
+17: Lucky Chant
+22: Magical Leaf
+25: Calm Mind
+31: Psychic
+37: Future Sight
+43: Charm
+49: Hypnosis
+55: Dream Eater

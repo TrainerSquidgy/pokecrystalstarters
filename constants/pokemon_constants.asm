@@ -169,8 +169,8 @@
 	const DRAGONAIR  ; 94
 	const DRAGONITE  ; 95
 	const MEWTWO     ; 96
-	const MEW        ; 97
 DEF JOHTO_POKEMON EQU const_value
+	const GALLADE    ; 97
 	const CHIKORITA  ; 98
 	const BAYLEEF    ; 99
 	const MEGANIUM   ; 9a

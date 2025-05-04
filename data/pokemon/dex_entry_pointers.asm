@@ -151,7 +151,7 @@ PokedexDataPointerTable:
 	dw DragonairPokedexEntry
 	dw DragonitePokedexEntry
 	dw MewtwoPokedexEntry
-	dw MewPokedexEntry
+	dw GalladePokedexEntry
 	dw ChikoritaPokedexEntry
 	dw BayleefPokedexEntry
 	dw MeganiumPokedexEntry

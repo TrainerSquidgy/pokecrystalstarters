@@ -1993,7 +1993,7 @@ LinkTrade:
 	call SetTradeRoomBGPals
 	farcall Link_WaitBGMap
 
-; Check if either of the Pokémon sent was a Mew or Celebi, and send a different
+; Check if either of the Pokémon sent was a GALLADE or Celebi, and send a different
 ; byte depending on that. Presumably this would've been some prevention against
 ; illicit trade machines, but it doesn't seem like a very effective one.
 ; Removing this code breaks link compatibility with the vanilla gen2 games, but
@@ -2001,17 +2001,17 @@ LinkTrade:
 	ld b, 1
 	pop af
 	ld c, a
-	cp MEW
+	cp GALLADE
 	jr z, .send_checkbyte
 	ld a, [wCurPartySpecies]
-	cp MEW
+	cp GALLADE
 	jr z, .send_checkbyte
 	ld b, 2
 	ld a, c
-	cp MEW
+	cp GALLADE
 	jr z, .send_checkbyte
 	ld a, [wCurPartySpecies]
-	cp MEW
+	cp GALLADE
 	jr z, .send_checkbyte
 
 ; Send the byte in a loop until the desired byte has been received.

@@ -152,5 +152,4 @@ KantoMonSpecials:
 	db  70 ; DRAGONAIR
 	db 100 ; DRAGONITE
 	db 154 ; MEWTWO
-	db 100 ; MEW
 	assert_table_length JOHTO_POKEMON - 1
