@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+GardevoirEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, GROWL
+	db 1, CONFUSION
+	db 1, DOUBLE_TEAM
+	db 1, TELEPORT
+	db 6, CONFUSION
+	db 10, DOUBLE_TEAM
+	db 12, TELEPORT
+	db 17, WISH
+	db 22, MAGICAL_LEAF
+	db 25, CALM_MIND
+	db 31, PSYCHIC
+	db 37, FUTURE_SIGHT
+	db 43, CAPTIVATE
+	db 49, HYPNOSIS
+	db 55, DREAM_EATER
 	db 0

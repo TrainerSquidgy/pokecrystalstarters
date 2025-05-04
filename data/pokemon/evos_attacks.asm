@@ -3364,3 +3364,59 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+RaltsEvosAttacks:
+	db EVOLVE_LEVEL, 20, KIRLIA
+	db 0 ; No More Evolutions
+	db 1, GROWL
+	db 6, CONFUSION
+	db 10, DOUBLE_TEAM
+	db 12, TELEPORT
+	db 17, LUCKY_CHANT
+	db 21, MAGICAL_LEAF
+	db 23, CALM_MIND
+	db 28, PSYCHIC_M
+	db 33, FUTURE_SIGHT
+	db 38, CHARM
+	db 43, HYPNOSIS
+	db 48, DREAM_EATER
+	db 0
+	
+KirliaEvosAttacks:
+	db EVOLVE_LEVEL, 30, GARDEVOIR
+	db 0 ; No More Evolutions
+	db 1, GROWL
+	db 1, CONFUSION
+	db 1, DOUBLE_TEAM
+	db 1, TELEPORT
+	db 6, CONFUSION
+	db 10, DOUBLE_TEAM
+	db 12, TELEPORT
+	db 17, LUCKY_CHANT
+	db 22, MAGICAL_LEAF
+	db 25, CALM_MIND
+	db 31, PSYCHIC_M
+	db 37, FUTURE_SIGHT
+	db 43, CHARM
+	db 49, HYPNOSIS
+	db 55, DREAM_EATER
+	db 0
+	
+GardevoirEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, GROWL
+	db 1, CONFUSION
+	db 1, DOUBLE_TEAM
+	db 1, TELEPORT
+	db 6, CONFUSION
+	db 10, DOUBLE_TEAM
+	db 12, TELEPORT
+	db 17, WISH
+	db 22, MAGICAL_LEAF
+	db 25, CALM_MIND
+	db 31, PSYCHIC_M
+	db 37, FUTURE_SIGHT
+	db 43, CAPTIVATE
+	db 49, HYPNOSIS
+	db 55, DREAM_EATER
+	db 0

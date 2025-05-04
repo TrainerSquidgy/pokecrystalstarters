@@ -710,14 +710,15 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
+KirliaFrontpic: INCBIN "gfx/pokemon/kirlia/front.animated.2bpp.lz"
+KirliaBackpic: INCBIN "gfx/pokemon/kirlia/back.2bpp.lz"
+GardevoirBackpic: INCBIN "gfx/pokemon/gardevoir/back.2bpp.lz"
+GardevoirFrontpic: INCBIN "gfx/pokemon/gardevoir/front.animated.2bpp.lz"
+RaltsFrontpic: INCBIN "gfx/pokemon/ralts/front.animated.2bpp.lz"
+RaltsBackpic: INCBIN "gfx/pokemon/ralts/back.2bpp.lz"
+GalladeFrontpic: INCBIN "gfx/pokemon/gallade/front.animated.2bpp.lz"
+GalladeBackpic: INCBIN "gfx/pokemon/gallade/back.2bpp.lz"
 
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
 SECTION "Pics 20", ROMX
 

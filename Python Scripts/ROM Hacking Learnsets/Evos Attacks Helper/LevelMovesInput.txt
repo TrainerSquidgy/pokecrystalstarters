@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Gardevoir
+1: Growl
+1: Confusion
+1: Double Team
+1: Teleport
+6: Confusion
+10: Double Team
+12: Teleport
+17: Wish
+22: Magical Leaf
+25: Calm Mind
+31: Psychic
+37: Future Sight
+43: Captivate
+49: Hypnosis
+55: Dream Eater

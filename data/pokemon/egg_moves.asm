@@ -804,5 +804,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+KirliaEggMoves:
+GardevoirEggMoves:
+RaltsEggMoves:
 NoEggMoves:
 	db -1 ; end
