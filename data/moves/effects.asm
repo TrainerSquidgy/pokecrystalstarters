@@ -2093,3 +2093,47 @@ Snow:
 	startweather
 	endmove
 	
+SpAtkUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+; BUG: Moves that do damage and increase your stats do not increase stats after a KO (see docs/bugs_and_glitches.md)
+	checkfaint
+	buildopponentrage
+	specialattackup
+	statupmessage
+	endmove
+
+HeavySlam:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	heavyslam
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	defrostopponent
+	kingsrock
+	endmove

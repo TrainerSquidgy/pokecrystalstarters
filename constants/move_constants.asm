@@ -18,7 +18,7 @@
 	const SCRATCH      ; 0a
 	const VICEGRIP     ; 0b
 	const GUILLOTINE   ; 0c
-	const RAZOR_WIND   ; 0d
+	const METAL_SOUND  ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
@@ -148,7 +148,7 @@
 	const BARRAGE      ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
-	const SKY_ATTACK   ; 8f
+	const DISCHARGE   ; 8f
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
 	const DIZZY_PUNCH  ; 92
@@ -182,7 +182,7 @@
 	const CURSE        ; ae
 	const FLAIL        ; af
 	const CONVERSION2  ; b0
-	const AEROBLAST    ; b1
+	const EARTH_POWER  ; b1
 	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
@@ -257,6 +257,9 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
+	const BULLDOZE
+	const CHARGE_BEAM
+	const HEAVY_SLAM
 DEF NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point

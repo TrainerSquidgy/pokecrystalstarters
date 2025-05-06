@@ -9266,3 +9266,4 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+

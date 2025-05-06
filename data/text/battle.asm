@@ -1149,3 +1149,25 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+GravityReturnedText:
+	text "Gravity returned"
+	line "to normal!"
+	prompt
+
+GravityText:
+	text "Gravity"
+	line "intensified!"
+	prompt
+	
+CouldntStayAirborneText:
+	text "<TARGET>"
+	line "couldn't stay in"
+	cont "the air because of"
+	cont "GRAVITY!"
+	prompt
+	
+BattleText_TheMoveCantBeSelected:
+	text "The move can't be"
+	line "selected!"
+	prompt

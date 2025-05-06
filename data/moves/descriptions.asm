@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw MetalSoundDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw BodySlamDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw PsychicMDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -252,17 +252,14 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw BulldozeDescription
+	dw ChargeBeamDescription
+	dw HeavySlamDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +312,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+MetalSoundDescription:
+	db   "A move that will"
+	next "lower SPCL.DEF.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -511,6 +508,10 @@ BubblebeamDescription:
 	db   "An attack that may"
 	next "lower SPEED.@"
 
+BulldozeDescription:
+	db   "An attack that"
+	next "lowers SPEED.@"
+
 AuroraBeamDescription:
 	db   "An attack that may"
 	next "lower ATTACK.@"
@@ -562,6 +563,10 @@ LeechSeedDescription:
 GrowthDescription:
 	db   "Raises the SPCL."
 	next "ATK rating.@"
+
+ChargeBeamDescription:
+	db   "A move that may"
+	next "raise SPCL.ATK.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -835,10 +840,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 TransformDescription:
 	db   "The user assumes"
 	next "the foe's guise.@"
@@ -971,9 +972,6 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1270,3 +1268,7 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+HeavySlamDescription:
+	db   "Does more if"
+	next "user's heavier.@"
