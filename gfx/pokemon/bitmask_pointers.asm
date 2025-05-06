@@ -250,5 +250,7 @@ BitmasksPointers:
 	dw TyranitarBitmasks
 	dw LugiaBitmasks
 	dw HoOhBitmasks
-	dw CelebiBitmasks
+	dw MagnemitesBitmasks
+	dw MagnetonsBitmasks
+	dw MagnezoneBitmasks
 	assert_table_length NUM_POKEMON

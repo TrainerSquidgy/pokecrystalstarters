@@ -3355,15 +3355,69 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
-	db 0 ; no more level-up moves
+MagnemitesEvosAttacks:
+	db EVOLVE_LEVEL, 30, MAGNETONS
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, METAL_SOUND
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 14, SONICBOOM
+	db 17, THUNDER_WAVE
+	db 22, SPARK
+	db 27, LOCK_ON
+	db 30, MAGNET_BOMB
+	db 33, SCREECH
+	db 38, DISCHARGE
+	db 43, MIRROR_SHOT
+	db 46, MAGNET_RISE
+	db 49, GYRO_BALL
+	db 54, ZAP_CANNON
+	db 0
+	
+MagnetonsEvosAttacks:
+	db EVOLVE_ITEM, THUNDERSTONE, MAGNEZONE
+	db EVOLVE_LOCATION, LANDMARK_LAKE_OF_RAGE, MAGNEZONE
+	db 0 ; No More Evolutions
+	db 1, TRI_ATTACK
+	db 1, TACKLE
+	db 1, METAL_SOUND
+	db 1, THUNDERSHOCK
+	db 1, SUPERSONIC
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 14, SONICBOOM
+	db 17, THUNDER_WAVE
+	db 22, SPARK
+	db 27, LOCK_ON
+	db 30, MAGNET_BOMB
+	db 34, SCREECH
+	db 40, DISCHARGE
+	db 46, MIRROR_SHOT
+	db 50, MAGNET_RISE
+	db 54, GYRO_BALL
+	db 60, ZAP_CANNON
+	db 0
+
+MagnezoneEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, MIRROR_COAT
+	db 1, BARRIER
+	db 1, METAL_SOUND
+	db 1, TACKLE
+	db 1, THUNDERSHOCK
+	db 1, SUPERSONIC
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 14, SONICBOOM
+	db 17, THUNDER_WAVE
+	db 22, SPARK
+	db 27, LOCK_ON
+	db 30, MAGNET_BOMB
+	db 34, SCREECH
+	db 40, DISCHARGE
+	db 46, MIRROR_SHOT
+	db 50, MAGNET_RISE
+	db 54, GYRO_BALL
+	db 60, ZAP_CANNON
+	db 0

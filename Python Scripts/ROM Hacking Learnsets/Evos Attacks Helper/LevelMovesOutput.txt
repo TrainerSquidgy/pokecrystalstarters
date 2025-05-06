@@ -1,16 +1,22 @@
-LechonkEvosAttacks:
+MagnezoneEvosAttacks:
 	db 0 ; No More Evolutions
+	db 1, MIRROR_COAT
+	db 1, BARRIER
+	db 1, METAL_SOUND
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, THUNDERSHOCK
+	db 1, SUPERSONIC
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 14, SONICBOOM
+	db 17, THUNDER_WAVE
+	db 22, SPARK
+	db 27, LOCK-ON
+	db 30, MAGNET_BOMB
+	db 34, SCREECH
+	db 40, DISCHARGE
+	db 46, MIRROR_SHOT
+	db 50, MAGNET_RISE
+	db 54, GYRO_BALL
+	db 60, ZAP_CANNON
 	db 0

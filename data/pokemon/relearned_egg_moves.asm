@@ -910,6 +910,9 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+MagnetonsRelearnedEggMoves:
+MagnezoneRelearnedEggMoves:
+MagnemitesRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

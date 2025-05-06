@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+MagnetonsEggMoves:
+MagnezoneEggMoves:
+MagnemitesEggMoves:
 NoEggMoves:
 	db -1 ; end
