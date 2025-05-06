@@ -539,6 +539,7 @@ ElmsLabWalkUpToElmScript:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
+	promptbutton
 	sjump .MustSayYes
 
 .ElmGetsEmail:
@@ -1140,8 +1141,58 @@ ElmsLabTravelTip4:
 	jumptext ElmsLabTravelTip4Text
 
 ElmsLabTrashcan:
-	jumptext ElmsLabTrashcanText
+	opentext 
+	writetext ElmsLabTrashcanText
+	waitbutton
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .end
+	writetext ElmsLabShortcutText
+	yesorno
+	iftrue .shortcut
+	writetext ElmsLabNoShortcutText
+	waitbutton
+	getmonname STRING_BUFFER_3, VOLTORB
+	reanchormap
+	pokepic VOLTORB
+	cry VOLTORB
+	waitbutton
+	closepokepic
+	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	writetext ChoseStarterText2
+	promptbutton
+	waitsfx
+	opentext
+	writetext ReceivedStarterTextNoPreview
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+	givepoke VOLTORB, 5, BERRY
+	closetext
+	applymovement PLAYER, AfterVoltorbMovement
+	sjump ElmDirectionsScript
+		
+.shortcut
+	waitbutton
+	givepoke MEWTWO, 100, MYSTERYBERRY
+	closetext
+	setevent EVENT_OPENED_MT_SILVER
+	clearevent EVENT_RED_IN_MT_SILVER
+	warp SILVER_CAVE_ROOM_3, 9, 11
+	end
+.end
+	closetext
+	end
 
+ElmsLabNoShortcutText:
+	text "Okay, then. You"
+	line "asked for this..."
+	done
+	
+ElmsLabShortcutText:
+	text "Time to take"
+	line "a shortcut?"
+	done
+	
 ElmsLabPC:
 	jumptext ElmsLabPCText
 	
@@ -1373,6 +1424,8 @@ AfterTotodileMovement:
 	turn_head UP
 	step_end
 
+AfterVoltorbMovement:
+	step LEFT
 AfterChikoritaMovement:
 	step LEFT
 	step LEFT
@@ -1547,6 +1600,12 @@ ChoseStarterText:
 	text "ELM: I think"
 	line "that's a great"
 	cont "#MON too!"
+	done
+
+ChoseStarterText2:
+	text "ELM: Oh, oh no."
+	line "That's not a"
+	cont "good #MON!"
 	done
 
 ReceivedStarterText:
