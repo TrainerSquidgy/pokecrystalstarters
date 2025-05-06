@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: SandShocks
+1: Sunny Day
+1: Thunder Wave
+1: Supersonic
+1: Thunder Shock
+7: Spark
+13: Bulldoze
+19: Charge Beam
+25: Tri Attack
+31: Screech
+38: Heavy Slam
+45: Metal Sound
+52: Discharge
+59: Earth Power
+66: Mirror Coat
+73: Zap Cannon

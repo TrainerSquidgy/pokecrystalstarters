@@ -3367,3 +3367,22 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SandShocksEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SUNNY_DAY
+	db 1, THUNDER_WAVE
+	db 1, SUPERSONIC
+	db 1, THUNDERSHOCK
+	db 7, SPARK
+	db 13, BULLDOZE
+	db 19, CHARGE_BEAM
+	db 25, TRI_ATTACK
+	db 31, SCREECH
+	db 38, HEAVY_SLAM
+	db 45, METAL_SOUND
+	db 52, DISCHARGE
+	db 59, EARTH_POWER
+	db 66, MIRROR_COAT
+	db 73, ZAP_CANNON
+	db 0

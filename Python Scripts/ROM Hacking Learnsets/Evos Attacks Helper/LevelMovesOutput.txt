@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+SandShocksEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, SUNNY_DAY
+	db 1, THUNDER_WAVE
+	db 1, SUPERSONIC
+	db 1, THUNDER_SHOCK
+	db 7, SPARK
+	db 13, BULLDOZE
+	db 19, CHARGE_BEAM
+	db 25, TRI_ATTACK
+	db 31, SCREECH
+	db 38, HEAVY_SLAM
+	db 45, METAL_SOUND
+	db 52, DISCHARGE
+	db 59, EARTH_POWER
+	db 66, MIRROR_COAT
+	db 73, ZAP_CANNON
 	db 0
