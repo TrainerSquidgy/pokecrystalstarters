@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw ScreechDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw SwiftDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw BodySlamDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -252,17 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw OctazookaDescription
+	dw MagnetRiseDescription
+	dw GyroBallDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+MagnetRiseDescription:
+	db   "Rise up for"
+	next "five turns.@"
+	
+GyroBallDescription:
+	db   "Does more if"
+	next "user is slower.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +320,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -835,9 +837,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -1147,9 +1146,6 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
 
 MagnitudeDescription:
 	db   "A ground attack"

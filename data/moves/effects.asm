@@ -2093,3 +2093,30 @@ Snow:
 	startweather
 	endmove
 	
+MagnetRise:
+	checkobedience
+	usedmovetext
+	doturn
+	magnetrise
+	endmove
+	
+GyroBall:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	gyroball
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

@@ -1149,3 +1149,18 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+
+BattleText_TargetIsLevitating:
+	text "<TARGET>"
+	line "is levitating!"
+	prompt
+
+BattleText_IsLevitating:
+	text "<USER>"
+	line "is levitating!"
+	prompt
+
+BattleText_CameDown:
+	text "<USER>"
+	line "came down!"
+	prompt

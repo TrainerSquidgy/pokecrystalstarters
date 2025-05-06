@@ -289,6 +289,7 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
+	call HandleMagnetRise
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
@@ -9266,3 +9267,32 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+HandleMagnetRise:
+	ld a, [wPlayerMagnetRiseCount]
+	and a
+	jr z, .EnemyMagnetRise
+	call SetPlayerTurn
+	ld a, [wPlayerMagnetRiseCount]
+	dec a
+	ld [wPlayerMagnetRiseCount], a
+	and a
+	jr nz, .EnemyMagnetRise
+	ld hl, wPlayerScreens
+	res SCREENS_LEVITATING, [hl]
+	ld hl, BattleText_CameDown
+	call StdBattleTextbox
+.EnemyMagnetRise
+	ld a, [wEnemyMagnetRiseCount]
+	and a
+	ret z
+	call SetEnemyTurn
+	ld a, [wEnemyMagnetRiseCount]
+	dec a
+	ld [wEnemyMagnetRiseCount], a
+	and a
+	ret nz
+	ld hl, wEnemyScreens
+	res SCREENS_LEVITATING, [hl]
+	ld hl, BattleText_CameDown
+	jp StdBattleTextbox
