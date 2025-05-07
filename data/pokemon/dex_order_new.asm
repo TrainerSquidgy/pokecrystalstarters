@@ -252,5 +252,7 @@ NewPokedexOrder:
 	db HO_OH
 	db MEWTWO
 	db MEW
-	db CELEBI
+	db CLAMPERL
+	db HUNTAIL
+	db GOREBYSS
 	assert_table_length NUM_POKEMON

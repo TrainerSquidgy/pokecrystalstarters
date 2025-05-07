@@ -3367,3 +3367,38 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ClamperlEvosAttacks:
+	db EVOLVE_ITEM, DEEPSEATOOTH, HUNTAIL
+	db EVOLVE_ITEM, DEEPSEASCALE, GOREBYSS
+	db 0
+	db 1, CLAMP
+	db 1, IRON_DEFENSE
+	db 1, WATER_GUN
+	db 1, WHIRLPOOL
+	db 0
+
+HuntailEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, WHIRLPOOL
+	db 8, BITE
+	db 15, SCREECH
+	db 22, WATER_PULSE
+	db 29, SCARY_FACE
+	db 36, CRUNCH
+	db 43, BATON_PASS
+	db 50, HYDRO_PUMP
+	db 0
+	
+GorebyssEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, WHIRLPOOL
+	db 8, CONFUSION
+	db 15, AGILITY
+	db 22, WATER_PULSE
+	db 29, AMNESIA
+	db 36, PSYCHIC_M
+	db 43, BATON_PASS
+	db 50, HYDRO_PUMP
+	db 0
+	

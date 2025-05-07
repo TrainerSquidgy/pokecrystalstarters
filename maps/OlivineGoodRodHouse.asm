@@ -19,6 +19,14 @@ GoodRodGuru:
 	verbosegiveitem GOOD_ROD
 	writetext GaveGoodRodText
 	waitbutton
+	verbosegiveitem DEEPSEATOOTH
+	iffalse .NoRoom
+	setevent EVENT_GOT_DEEPSEATOOTH
+	verbosegiveitem DEEPSEASCALE
+	iffalse .NoRoom
+	setevent EVENT_GOT_DEEPSEASCALE
+	writetext AlsoHaveTheseText
+.NoRoom
 	closetext
 	setevent EVENT_GOT_GOOD_ROD
 	end
@@ -30,6 +38,19 @@ GoodRodGuru:
 	end
 
 .AlreadyGotItem:
+	checkevent EVENT_GOT_DEEPSEATOOTH
+	iftrue .scale
+	verbosegiveitem DEEPSEATOOTH
+	iffalse .NoRoom2
+	setevent EVENT_GOT_DEEPSEATOOTH
+.scale
+	checkevent EVENT_GOT_DEEPSEASCALE
+	iftrue .NoRoom2
+	verbosegiveitem DEEPSEASCALE
+	iffalse .NoRoom2
+	setevent EVENT_GOT_DEEPSEASCALE
+	writetext AlsoHaveTheseText
+.NoRoom2
 	writetext HaveGoodRodText
 	waitbutton
 	closetext
@@ -38,6 +59,17 @@ GoodRodGuru:
 GoodRodHouseBookshelf: ; unreferenced
 	jumpstd PictureBookshelfScript
 
+AlsoHaveTheseText:
+	text "I want you to"
+	line "take these, too."
+	
+	para "I fished them up."
+	line "They're said to"
+	
+	para "evolve certain"
+	line "#MON!"
+	done
+	
 OfferGoodRodText:
 	text "OLIVINE is on the"
 	line "sea!"

@@ -2506,6 +2506,9 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+HuntailGen1TMAttacks:
+GorebyssGen1TMAttacks:
+ClamperlGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0

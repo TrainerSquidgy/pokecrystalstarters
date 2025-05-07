@@ -250,5 +250,7 @@ AnimationPointers:
 	dw TyranitarAnimation
 	dw LugiaAnimation
 	dw HoOhAnimation
-	dw CelebiAnimation
+	dw ClamperlAnimation
+	dw HuntailAnimation
+	dw GorebyssAnimation
 	assert_table_length NUM_POKEMON
