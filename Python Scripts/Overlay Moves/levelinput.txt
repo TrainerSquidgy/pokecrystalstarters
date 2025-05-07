@@ -1,16 +1,11 @@
-Pokémon: Sableye
+Pokémon: Shedinja
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Harden
+5: Leech Life
+9: Sand-Attack
+14: Fury Swipes
+19: Mind Reader
+25: Spite
+31: Confuse Ray
+38: Shadow Ball
+45: Grudge

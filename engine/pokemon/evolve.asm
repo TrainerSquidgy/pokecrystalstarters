@@ -329,6 +329,23 @@ endr
 	call IsMonHoldingEverstone
 	jp z, .dont_evolve_3
 
+	ld a, [wEvolutionOldSpecies]
+	cp NINCADA
+	jr nz, .not_nincada
+	
+	push hl
+	push de
+	push bc
+	ld hl, wTempMon
+    ld de, wShedinja
+    ld bc, wTempMonBoxEnd - wTempMon  ; Should be 91
+    call CopyBytes
+	pop bc
+	pop de
+	pop hl
+	
+.not_nincada
+
 .proceed
 	ld a, [wTempMonLevel]
 	ld [wCurPartyLevel], a
@@ -370,9 +387,10 @@ endr
 	call PrintText
 
 	pop hl
-
+	
 	ld a, [hl]
 	ld [wCurSpecies], a
+	ld [wTempShedinjaSpecies], a
 	ld [wTempMonSpecies], a
 	ld [wEvolutionNewSpecies], a
 	ld [wNamedObjectIndex], a
@@ -395,7 +413,8 @@ endr
 	call ClearTilemap
 	call UpdateSpeciesNameIfNotNicknamed
 	call GetBaseData
-
+	
+	
 	ld hl, wTempMonExp + 2
 	ld de, wTempMonMaxHP
 	ld b, TRUE
@@ -457,6 +476,16 @@ endr
 	push hl
 	ld l, e
 	ld h, d
+	push hl
+	ld a, [wTempShedinjaSpecies]
+	cp NINJASK
+	jr z, .ninjask
+	cp NINCADA
+	jr nz, .skip_ninjask
+.ninjask
+	call CheckShedinjaCreation
+.skip_ninjask
+	pop hl
 	jp EvolveAfterBattle_MasterLoop
 
 .dont_evolve_1
@@ -828,3 +857,94 @@ GetPreEvolution:
 	ld [wCurPartySpecies], a
 	scf
 	ret
+	
+CheckShedinjaCreation::
+    ; Check species = Nincada
+    ld a, [wTempShedinjaSpecies]
+    cp NINJASK
+    ret nz  ; Skip if not Nincada
+
+    ; Check party space
+    ld a, [wPartyCount]
+    cp PARTY_LENGTH
+    ret nc  ; Skip if party is full
+
+    ; Check for Poké Ball
+    ld a, POKE_BALL
+    ld [wCurItem], a
+	ld hl, wNumBalls
+    call CheckItem
+    ret nc  ; Skip if no Poké Ball
+
+    ; Give Shedinja from wShedinja without nickname
+    call GiveShedinjaFromBuffer
+
+    ; Remove 1 Poké Ball
+    ld a, POKE_BALL
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChange], a
+	ld a, -1
+	ld [wCurItemQuantity], a
+	ld hl, wNumItems
+	call TossItem
+
+    ret
+	
+GiveShedinjaFromBuffer::
+    push bc
+    push de
+    push hl
+
+    ; Set party mon type
+    xor a
+    ld [wMonType], a
+
+    ; Set species + level
+    ld a, SHEDINJA
+    ld [wCurPartySpecies], a
+    ld a, [wShedinjaLevel]
+    ld [wCurPartyLevel], a
+
+    ; Load wShedinja into wTempMon for TryAddMonToParty
+    ld hl, wShedinja
+    ld de, wTempMon
+    ld bc, wShedinjaStructEnd - wShedinja
+    call CopyBytes
+
+    ; Add to party
+    farcall TryAddMonToParty
+    jr nc, .fail
+	
+    ; Skip nickname
+    ld hl, wPartyMonNicknames
+    ld a, [wPartyCount]
+    dec a
+    ld [wCurPartyMon], a
+    call SkipNames
+
+    ; Force HP = 1
+   ; ld a, [wCurPartyMon]
+   ; ld hl, wPartyMon1HP
+   ; ld bc, PARTYMON_STRUCT_LENGTH
+   ; call AddNTimes
+   ; ld [hl], 1
+   ; inc hl
+   ; ld [hl], 0
+
+    ; Set caught data
+    farcall SetCaughtData
+
+    pop hl
+    pop de
+    pop bc
+    ret
+
+.fail
+	; Shouldn’t happen, but safe fallback
+    pop hl
+    pop de
+    pop bc
+    ret
+
+

@@ -3193,8 +3193,10 @@ wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
 wWonderGuardActivated:: db
-wShedinjaSuccessful:: db
-	ds 56
+wTempShedinjaSpecies:: db
+wShedinja:: party_struct wShedinja
+	
+	ds 8
 
 wEventFlags:: flag_array NUM_EVENTS
 
