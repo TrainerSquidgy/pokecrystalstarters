@@ -3367,3 +3367,9 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+WurmpleEvosAttacks:
+BeautiflyEvosAttacks:
+DustoxEvosAttacks:
+	db 0
+	db 0

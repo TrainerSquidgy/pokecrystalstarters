@@ -506,11 +506,13 @@ PokemonPicPointers::
 	dba_pic LugiaBackpic
 	dba_pic HoOhFrontpic
 	dba_pic HoOhBackpic
-	dba_pic CelebiFrontpic
-	dba_pic CelebiBackpic
+	dba_pic WurmpleFrontpic
+	dba_pic WurmpleBackpic
+	dba_pic BeautiflyFrontpic
+	dba_pic BeautiflyBackpic
+	dba_pic DustoxFrontpic
+	dba_pic DustoxBackpic
 	assert_table_length NUM_POKEMON
-	dbw -1, -1 ; unused
-	dbw -1, -1 ; unused
 	dba_pic EggPic
 	dbw -1, -1 ; unused
 	assert_table_length EGG
