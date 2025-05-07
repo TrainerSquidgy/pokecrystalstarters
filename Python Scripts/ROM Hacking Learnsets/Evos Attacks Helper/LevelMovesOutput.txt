@@ -1,16 +1,13 @@
-LechonkEvosAttacks:
+DustoxEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, CONFUSION
+	db 10, CONFUSION
+	db 13, GUST
+	db 17, PROTECT
+	db 20, MOONLIGHT
+	db 24, PSYBEAM
+	db 27, WHIRLWIND
+	db 31, LIGHT_SCREEN
+	db 34, SILVER_WIND
+	db 38, TOXIC
 	db 0

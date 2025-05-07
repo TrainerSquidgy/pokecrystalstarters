@@ -236,8 +236,8 @@ NewPokedexOrder:
 	db SQUIRTLE
 	db WARTORTLE
 	db BLASTOISE
-	db ARTICUNO
-	db ZAPDOS
+	db SILCOON
+	db CASCOON
 	db MOLTRES
 	db RAIKOU
 	db ENTEI

@@ -1957,28 +1957,18 @@ SnorlaxEvosAttacks:
 	db 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
-ArticunoEvosAttacks:
+SilcoonEvosAttacks:
+	db EVOLVE_LEVEL, 10, BEAUTIFLY
 	db 0 ; no more evolutions
-	db 1, GUST
-	db 1, POWDER_SNOW
-	db 13, MIST
-	db 25, AGILITY
-	db 37, MIND_READER
-	db 49, ICE_BEAM
-	db 61, REFLECT
-	db 73, BLIZZARD
+	db 1, HARDEN
+	db 7, HARDEN
 	db 0 ; no more level-up moves
 
-ZapdosEvosAttacks:
+CascoonEvosAttacks:
+	db EVOLVE_LEVEL, 10, DUSTOX
 	db 0 ; no more evolutions
-	db 1, PECK
-	db 1, THUNDERSHOCK
-	db 13, THUNDER_WAVE
-	db 25, AGILITY
-	db 37, DETECT
-	db 49, DRILL_PECK
-	db 61, LIGHT_SCREEN
-	db 73, THUNDER
+	db 1, HARDEN
+	db 7, HARDEN
 	db 0 ; no more level-up moves
 
 MoltresEvosAttacks:
@@ -3369,7 +3359,37 @@ CelebiEvosAttacks:
 	db 0 ; no more level-up moves
 
 WurmpleEvosAttacks:
+	db EVOLVE_RNG, 7, CASCOON
+	db 0
+	db 1, TACKLE
+	db 5, STRING_SHOT
+	db 5, POISON_STING
+	db 0
+
 BeautiflyEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, ABSORB
+	db 10, ABSORB
+	db 13, GUST
+	db 17, STUN_SPORE
+	db 20, MORNING_SUN
+	db 24, MEGA_DRAIN
+	db 27, WHIRLWIND
+	db 31, ATTRACT
+	db 34, SILVER_WIND
+	db 38, GIGA_DRAIN
+	db 0
+
 DustoxEvosAttacks:
-	db 0
-	db 0
+	db 0 ; No More Evolutions
+	db 1, CONFUSION
+	db 10, CONFUSION
+	db 13, GUST
+	db 17, PROTECT
+	db 20, MOONLIGHT
+	db 24, PSYBEAM
+	db 27, WHIRLWIND
+	db 31, LIGHT_SCREEN
+	db 34, SILVER_WIND
+	db 38, TOXIC
+	db 0	

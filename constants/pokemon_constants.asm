@@ -162,8 +162,8 @@
 	const KABUTOPS   ; 8d
 	const AERODACTYL ; 8e
 	const SNORLAX    ; 8f
-	const ARTICUNO   ; 90
-	const ZAPDOS     ; 91
+	const SILCOON   ; 90
+	const CASCOON     ; 91
 	const MOLTRES    ; 92
 	const DRATINI    ; 93
 	const DRAGONAIR  ; 94

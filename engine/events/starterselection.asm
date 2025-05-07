@@ -515,8 +515,8 @@ PokemonStrings:
 	dw .Kabutops
 	dw .Aerodactyl
 	dw .Snorlax
-	dw .Articuno
-	dw .Zapdos
+	dw .Silcoon
+	dw .Cascoon
 	dw .Moltres
 	dw .Dratini
 	dw .Dragonair
@@ -770,8 +770,8 @@ PokemonStrings:
 .Kabutops	db "KABUTOPS@@@"
 .Aerodactyl	db "AERODACTYL@"
 .Snorlax	db "SNORLAX@@@@"
-.Articuno	db "ARTICUNO@@@"
-.Zapdos	db "ZAPDOS@@@@@"
+.Silcoon	db "SILCOON@@@@"
+.Cascoon		db "CASCOON@@@"
 .Moltres	db "MOLTRES@@@@"
 .Dratini	db "DRATINI@@@@"
 .Dragonair	db "DRAGONAIR@@"
@@ -877,7 +877,7 @@ PokemonStrings:
 .Tyranitar	db "TYRANITAR@@"
 .Lugia	db "LUGIA@@@@@@"
 .Hooh	db "HO-OH@@@@@@"
-.Celebi	db "CELEBI@@@@@"
+.Celebi	db "WURMPLE@@@@"
 .Beautifly	db "BEAUTIFLY@@"
 .Dustox	db "DUSTOX@@@@@"
 ;PYTHONBUFFER4

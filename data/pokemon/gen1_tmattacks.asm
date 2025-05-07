@@ -1111,7 +1111,7 @@ MoltresGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
-ArticunoGen1TMAttacks:
+SilcoonGen1TMAttacks:
 	db 0
 	db 1, RAZOR_WIND
 	db 1, WHIRLWIND
@@ -1127,7 +1127,7 @@ ArticunoGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
-ZapdosGen1TMAttacks:
+CascoonGen1TMAttacks:
 	db 0
 	db 1, RAZOR_WIND
 	db 1, WHIRLWIND

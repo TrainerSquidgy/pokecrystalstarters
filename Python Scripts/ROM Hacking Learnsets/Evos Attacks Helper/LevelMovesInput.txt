@@ -1,14 +1,11 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Dustox
+1: Confusion
+10: Confusion
+13: Gust
+17: Protect
+20: Moonlight
+24: Psybeam
+27: Whirlwind
+31: Light Screen
+34: Silver Wind
+38: Toxic

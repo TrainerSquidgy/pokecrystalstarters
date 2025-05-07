@@ -341,15 +341,15 @@ endr
 	push hl
 	
 	ld a, [wEvolutionOldSpecies]
-	cp TOTODILE
+	cp WURMPLE
 	jr nz, .not_wurmple
 	ld a, [wTempMonCaughtData]
 	bit 0, a
 	jr z, .silcoon
-	ld a, WARTORTLE
+	ld a, SILCOON
 	jr .wurmple_done
 .silcoon
-	ld a, POLIWHIRL
+	ld a, CASCOON
 	jr .wurmple_done
 .not_wurmple
 	ld a, [hl]
@@ -388,15 +388,15 @@ endr
 	pop hl
 
 	ld a, [wEvolutionOldSpecies]
-	cp TOTODILE
+	cp WURMPLE
 	jr nz, .not_wurmple2
 	ld a, [wTempMonCaughtData]
 	bit 0, a
 	jr z, .silcoon2
-	ld a, WARTORTLE
+	ld a, SILCOON
 	jr .wurmple_done2
 .silcoon2
-	ld a, POLIWHIRL
+	ld a, CASCOON
 	jr .wurmple_done2
 .not_wurmple2
 	ld a, [hl]

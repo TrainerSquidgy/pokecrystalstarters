@@ -289,10 +289,10 @@ PokemonPicPointers::
 	dba_pic AerodactylBackpic
 	dba_pic SnorlaxFrontpic
 	dba_pic SnorlaxBackpic
-	dba_pic ArticunoFrontpic
-	dba_pic ArticunoBackpic
-	dba_pic ZapdosFrontpic
-	dba_pic ZapdosBackpic
+	dba_pic SilcoonFrontpic
+	dba_pic SilcoonBackpic
+	dba_pic CascoonFrontpic
+	dba_pic CascoonBackpic
 	dba_pic MoltresFrontpic
 	dba_pic MoltresBackpic
 	dba_pic DratiniFrontpic

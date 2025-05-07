@@ -73,8 +73,8 @@ Pokered_MonIndices:
 	db POLIWAG
 	db JYNX
 	db MOLTRES
-	db ARTICUNO
-	db ZAPDOS
+	db SILCOON
+	db CASCOON
 	db DITTO
 	db MEOWTH
 	db KRABBY

@@ -145,8 +145,8 @@ Gen1TMAttacksPointers::
 	dw KabutopsGen1TMAttacks
 	dw AerodactylGen1TMAttacks
 	dw SnorlaxGen1TMAttacks
-	dw ArticunoGen1TMAttacks
-	dw ZapdosGen1TMAttacks
+	dw SilcoonGen1TMAttacks
+	dw CascoonGen1TMAttacks
 	dw MoltresGen1TMAttacks
 	dw DratiniGen1TMAttacks
 	dw DragonairGen1TMAttacks

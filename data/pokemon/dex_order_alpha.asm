@@ -10,7 +10,7 @@ AlphabeticalPokedexOrder:
 	db ARBOK
 	db ARCANINE
 	db ARIADOS
-	db ARTICUNO
+	db SILCOON
 	db AZUMARILL
 	db BAYLEEF
 	db BEEDRILL
@@ -250,7 +250,7 @@ AlphabeticalPokedexOrder:
 	db WOOPER
 	db XATU
 	db YANMA
-	db ZAPDOS
+	db CASCOON
 	db ZUBAT
 	db WURMPLE
 	db BEAUTIFLY

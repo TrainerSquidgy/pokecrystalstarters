@@ -144,8 +144,8 @@ PokedexDataPointerTable:
 	dw KabutopsPokedexEntry
 	dw AerodactylPokedexEntry
 	dw SnorlaxPokedexEntry
-	dw ArticunoPokedexEntry
-	dw ZapdosPokedexEntry
+	dw SilcoonPokedexEntry
+	dw CascoonPokedexEntry
 	dw MoltresPokedexEntry
 	dw DratiniPokedexEntry
 	dw DragonairPokedexEntry
