@@ -252,15 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw GrudgeDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
 	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+GrudgeDescription:
+	db   "Foe's move loses"
+	next "all PP upon KO.@"
+	
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:

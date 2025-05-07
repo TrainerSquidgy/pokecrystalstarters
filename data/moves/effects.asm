@@ -2093,3 +2093,10 @@ Snow:
 	startweather
 	endmove
 	
+Grudge:
+	checkobedience
+	usedmovetext
+	doturn
+	grudge
+	endmove
+	

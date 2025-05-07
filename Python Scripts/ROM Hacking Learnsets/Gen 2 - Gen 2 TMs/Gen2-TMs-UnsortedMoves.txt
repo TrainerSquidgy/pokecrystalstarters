@@ -1,78 +1,99 @@
-Tackle
+Scratch
 Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
+Leech Life
+Sand-Attack
+Fury Swipes
+Mind Reader
+False Swipe
+Mud-Slap
+Metal Claw
+Dig
+Toxic
+Hidden Power
+Sunny Day
+Protect
+Giga Drain
+Frustration
 SolarBeam
-Explosion
-Calm Mind
+Return
+Dig
+Shadow Ball
+Double Team
+Sandstorm
+Aerial Ace
+Facade
+Secret Power
+Rest
+False Swipe
+Endure
+Flash
+X-Scissor
+Sleep Talk
+Natural Gift
+Swagger
+Substitute
+Cut
+Bug Bite
+Fury Cutter
+Mud-Slap
+Snore
+String Shot
+Spite
+Scratch
+Harden
+Leech Life
+Sand-Attack
+Fury Swipes
+Mind Reader
+Spite
+Confuse Ray
+Shadow Ball
+Grudge
 Toxic
 Hidden Power
 Sunny Day
 Hyper Beam
-Light Screen
 Protect
-Safeguard
+Giga Drain
 Frustration
 SolarBeam
-Earthquake
 Return
-Psychic
+Dig
 Shadow Ball
 Double Team
-Reflect
-Flamethrower
 Sandstorm
-Fire Blast
-Rock Tomb
+Aerial Ace
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Thief
+False Swipe
 Endure
 Will-O-Wisp
-Embargo
-Explosion
-Recycle
+Shadow Claw
 Giga Impact
-Rock Polish
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
+X-Scissor
 Sleep Talk
 Natural Gift
 Dream Eater
-Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Cut
+Bug Bite
+Fury Cutter
+Mud-Slap
 Snore
-Swift
-Zen Headbutt
+String Shot
+Spite
+Sucker Punch
+Trick
+Mud-Slap
+Metal Claw
+Screech
+Swords Dance
+Slash
+Agility
 Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+Fury CutterDP
+Nightmare

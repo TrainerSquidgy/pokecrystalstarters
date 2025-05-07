@@ -2432,6 +2432,16 @@ BattleCommand_CheckFaint:
 	jr .finish
 
 .no_dbond
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_GRUDGE, a
+	jr z, .no_grudge
+
+	call DoGrudgeEffect
+
+	jr .finish
+
+.no_grudge
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
@@ -6912,3 +6922,74 @@ BattleCommand_AddDamage:
 	
 	
 
+
+BattleCommand_Grudge:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_GRUDGE, [hl]
+	call AnimateCurrentMove
+	ld hl, BearAGrudgeText
+	jp StdBattleTextbox
+	
+DoGrudgeEffect:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurPlayerMove]
+	jr z, .ok1
+	ld a, [wCurEnemyMove]
+.ok1
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	call .drain_mon_pp
+	ld hl, LostPPDueToGrudgeText
+	call StdBattleTextbox
+	ret
+
+.drain_mon_pp
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonPP
+	jr z, .go
+	ld hl, wEnemyMonPP
+.go
+	call .drain_pp
+
+	ldh a, [hBattleTurn]
+	and a
+
+	ld hl, wPartyMon1PP
+	ld a, [wCurBattleMon]
+	jr z, .player
+
+	ld a, [wBattleMode]
+	dec a
+	jr z, .wild
+
+	ld hl, wOTPartyMon1PP
+	ld a, [wCurOTMon]
+.player
+	call GetPartyLocation
+	push hl
+	farcall CheckMimicUsed
+	pop hl
+	ret c
+	jr .drain_pp
+
+.wild
+	ld hl, wWildMonPP
+
+.drain_pp
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wCurMoveNum]
+	jr z, .ok
+	ld a, [wCurEnemyMoveNum]
+.ok
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	and PP_UP_MASK
+	ld [hl], a
+	ret
+	
