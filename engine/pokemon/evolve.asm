@@ -94,6 +94,9 @@ EvolveAfterBattle_MasterLoop:
 	ld a, b
 	cp EVOLVE_LEVEL
 	jp z, .level
+	
+	cp EVOLVE_RNG
+	jp z, .level
 
 	ld a, b
 	cp EVOLVE_LEVEL_MALE
@@ -336,8 +339,21 @@ endr
 	ld [wMonTriedToEvolve], a
 
 	push hl
-
+	
+	ld a, [wEvolutionOldSpecies]
+	cp TOTODILE
+	jr nz, .not_wurmple
+	ld a, [wTempMonCaughtData]
+	bit 0, a
+	jr z, .silcoon
+	ld a, WARTORTLE
+	jr .wurmple_done
+.silcoon
+	ld a, POLIWHIRL
+	jr .wurmple_done
+.not_wurmple
 	ld a, [hl]
+.wurmple_done
 	ld [wEvolutionNewSpecies], a
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMonNicknames
@@ -371,7 +387,20 @@ endr
 
 	pop hl
 
+	ld a, [wEvolutionOldSpecies]
+	cp TOTODILE
+	jr nz, .not_wurmple2
+	ld a, [wTempMonCaughtData]
+	bit 0, a
+	jr z, .silcoon2
+	ld a, WARTORTLE
+	jr .wurmple_done2
+.silcoon2
+	ld a, POLIWHIRL
+	jr .wurmple_done2
+.not_wurmple2
 	ld a, [hl]
+.wurmple_done2
 	ld [wCurSpecies], a
 	ld [wTempMonSpecies], a
 	ld [wEvolutionNewSpecies], a

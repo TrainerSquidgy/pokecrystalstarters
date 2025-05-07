@@ -167,7 +167,7 @@ DEF NUM_HOF_TEAMS EQU 30
 	const EVOLVE_MOVE
 	const EVOLVE_ITEM_FEMALE
 	const EVOLVE_ITEM_MALE
-	
+	const EVOLVE_RNG
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1
