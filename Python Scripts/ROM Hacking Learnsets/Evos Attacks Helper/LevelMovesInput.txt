@@ -1,14 +1,11 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Shedinja
+1: Scratch
+1: Harden
+5: Leech Life
+9: Sand-Attack
+14: Fury Swipes
+19: Mind Reader
+25: Spite
+31: Confuse Ray
+38: Shadow Ball
+45: Grudge

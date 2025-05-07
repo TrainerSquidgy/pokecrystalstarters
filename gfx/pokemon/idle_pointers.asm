@@ -250,5 +250,7 @@ AnimationIdlePointers:
 	dw TyranitarAnimationIdle
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
-	dw CelebiAnimationIdle
+	dw NincadaAnimationIdle
+	dw NinjaskAnimationIdle
+	dw ShedinjaAnimationIdle
 	assert_table_length NUM_POKEMON

@@ -3367,3 +3367,51 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+NincadaEvosAttacks:
+	db EVOLVE_LEVEL, 20, NINJASK
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, HARDEN
+	db 5, LEECH_LIFE
+	db 9, SAND_ATTACK
+	db 14, FURY_SWIPES
+	db 19, MIND_READER
+	db 25, FALSE_SWIPE
+	db 31, MUD_SLAP
+	db 38, METAL_CLAW
+	db 45, DIG
+	db 0
+	
+NinjaskEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, HARDEN
+	db 1, LEECH_LIFE
+	db 1, SAND_ATTACK
+	db 5, LEECH_LIFE
+	db 9, SAND_ATTACK
+	db 14, FURY_SWIPES
+	db 19, MIND_READER
+	db 20, DOUBLE_TEAM
+	db 20, FURY_CUTTER
+	db 20, SCREECH
+	db 25, SWORDS_DANCE
+	db 31, SLASH
+	db 38, AGILITY
+	db 45, BATON_PASS
+	db 0
+	
+ShedinjaEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, HARDEN
+	db 5, LEECH_LIFE
+	db 9, SAND_ATTACK
+	db 14, FURY_SWIPES
+	db 19, MIND_READER
+	db 25, SPITE
+	db 31, CONFUSE_RAY
+	db 38, SHADOW_BALL
+	db 45, GRUDGE
+	db 0

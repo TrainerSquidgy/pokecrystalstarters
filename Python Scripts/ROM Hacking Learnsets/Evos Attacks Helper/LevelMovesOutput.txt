@@ -1,16 +1,13 @@
-LechonkEvosAttacks:
+ShedinjaEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, SCRATCH
+	db 1, HARDEN
+	db 5, LEECH_LIFE
+	db 9, SAND-ATTACK
+	db 14, FURY_SWIPES
+	db 19, MIND_READER
+	db 25, SPITE
+	db 31, CONFUSE_RAY
+	db 38, SHADOW_BALL
+	db 45, GRUDGE
 	db 0
