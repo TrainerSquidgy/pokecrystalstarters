@@ -1400,6 +1400,48 @@ BattleCommand_Stab:
 	and %10000000
 	or b
 	ld [wTypeModifier], a
+.wonder_guard_start
+	push hl
+	push bc
+	push de
+	push af
+	ldh a, [hBattleTurn]
+    and a
+    jr z, .enemy_wonder_guard
+    ld a, [wBattleMonSpecies]
+	cp SHEDINJA
+	jp nz, .wonder_guard_end
+	ld a, [wTypeModifier]
+	and $7f
+	cp SUPER_EFFECTIVE
+	jp z, .wonder_guard_end	
+	
+.player_wonder_guard_worked
+	ld a, 1
+	ld [wWonderGuardActivated], a
+	xor a
+	inc a
+	ld [wAttackMissed], a
+	jp .wonder_guard_end
+.enemy_wonder_guard
+    ld a, [wEnemyMonSpecies]
+	cp SHEDINJA
+	jp nz, .wonder_guard_end
+	ld a, [wTypeModifier]
+	and $7f
+	cp SUPER_EFFECTIVE
+	jp z, .wonder_guard_end	
+	ld a, 1
+	ld [wWonderGuardActivated], a
+	xor a
+	inc a
+	ld [wAttackMissed], a
+.wonder_guard_end	
+	pop hl
+	pop bc
+	pop de
+	pop af
+	
 	ret
 
 BattleCheckTypeMatchup:
