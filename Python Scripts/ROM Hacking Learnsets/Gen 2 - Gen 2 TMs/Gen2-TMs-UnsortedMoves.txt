@@ -1,78 +1,71 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Clamp
+Iron Defense
+Water Gun
+Whirlpool
+Water Pulse
 Toxic
+Hail
 Hidden Power
-Sunny Day
-Hyper Beam
-Light Screen
+Ice Beam
+Blizzard
 Protect
+Rain Dance
+Frustration
+Return
+Double Team
+Facade
+Secret Power
+Rest
+Attract
+Brine
+Endure
+Captivate
+Sleep Talk
+Natural Gift
+Swagger
+Substitute
+Surf
+Whirlpool
+Waterfall
+Dive
+Icy Wind
+Iron Defense
+Snore
+Whirlpool
+Confusion
+Agility
+Water Pulse
+Amnesia
+Psychic
+Baton Pass
+Hydro Pump
+Water Pulse
+Toxic
+Hail
+Hidden Power
+Ice Beam
+Blizzard
+Hyper Beam
+Protect
+Rain Dance
 Safeguard
 Frustration
-SolarBeam
-Earthquake
 Return
 Psychic
 Shadow Ball
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
-Swagger
-Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
+Attract
+Surf
+Waterfall
+Dive
+Aqua Tail
+Bounce
+Dive
+Icy Wind
+Mud-Slap
 Signal Beam
 Snore
 Swift
-Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
