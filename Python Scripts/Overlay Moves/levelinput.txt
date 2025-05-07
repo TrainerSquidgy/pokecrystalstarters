@@ -1,16 +1,17 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Sandy Shocks
+1: Sunny Day
+1: Thunder Wave
+1: Supersonic
+1: Thunder Shock
+7: Spark
+13: Bulldoze
+19: Charge Beam
+25: Tri Attack
+31: Screech
+38: Heavy Slam
+45: Metal Sound
+52: Discharge
+59: Earth Power
+66: Mirror Coat
+72: Lock On
+78: Zap Cannon
