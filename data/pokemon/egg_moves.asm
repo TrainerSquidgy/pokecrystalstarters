@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+LombreEggMoves:
+LudicoloEggMoves:
+LotadEggMoves:
 NoEggMoves:
 	db -1 ; end

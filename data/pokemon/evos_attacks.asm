@@ -3367,3 +3367,38 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+LotadEvosAttacks:
+	db EVOLVE_LEVEL, 14, LOMBRE
+	db 0 ; No More Evolutions
+	db 1, ASTONISH
+	db 3, GROWL
+	db 7, ABSORB
+	db 13, NATURE_POWER
+	db 21, MIST
+	db 31, RAIN_DANCE
+	db 43, MEGA_DRAIN
+	db 0
+	
+LombreEvosAttacks:
+	db EVOLVE_ITEM, WATER_STONE, LUDICOLO
+	db 0 ; No More Evolutions
+	db 1, ASTONISH
+	db 3, GROWL
+	db 7, ABSORB
+	db 13, NATURE_POWER
+	db 19, FAKE_OUT
+	db 25, FURY_SWIPES
+	db 31, WATER_SPORT
+	db 37, THIEF
+	db 43, UPROAR
+	db 49, HYDRO_PUMP
+	db 0
+	
+LudicoloEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, ASTONISH
+	db 1, GROWL
+	db 1, ABSORB
+	db 1, NATURE_POWER
+	db 0
