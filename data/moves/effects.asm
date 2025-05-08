@@ -1827,12 +1827,23 @@ FakeOut:
 	checkobedience
 	usedmovetext
 	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
 	checkhit
 	fakeout
 	moveanim
 	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove
-
+	
 BellyDrum:
 	checkobedience
 	usedmovetext
@@ -2115,4 +2126,18 @@ Uproar:
 	buildopponentrage
 	kingsrock
 	uproarstate
+	endmove
+
+NaturePower:
+	checkobedience
+	usedmovetext
+	doturn
+	naturepower
+	endmove
+
+WaterSport:
+	checkobedience
+	usedmovetext
+	doturn
+	watersport
 	endmove

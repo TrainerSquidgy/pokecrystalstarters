@@ -1088,8 +1088,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1930,10 +1928,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -2655,6 +2649,7 @@ PlayerAttackDamage:
 	ld a, [wBattleMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call CheckWaterSport
 
 	ld a, 1
 	and a
@@ -2898,6 +2893,7 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call CheckWaterSport
 
 	ld a, 1
 	and a
@@ -5414,25 +5410,23 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
+	ldh a, [hBattleTurn]
 	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
+	jr z, .player
+	ld a, [wEnemyTurnsTaken]
+	dec a
+	and a
+	jr nz, .failed
+	jr FlinchTarget
+.player
+	ld a, [wPlayerTurnsTaken]
+	dec a
+	and a
+	jr z, FlinchTarget	
+.failed
 	ld a, 1
 	ld [wAttackMissed], a
-	ret
+	jp BattleEffect_ButItFailed
 
 BattleCommand_FlinchTarget:
 	call CheckSubstituteOpp
@@ -5635,20 +5629,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -7036,3 +7023,78 @@ BattleCommand_UproarState:
 	ld hl, TargetWokeUpText
 	jp StdBattleTextbox
 	
+BattleCommand_NaturePower:
+	ld a, [wPlayerState]
+	cp PLAYER_SURF
+	jr z, .bubblebeam
+	cp PLAYER_SURF_PIKA
+	jr z, .surf
+	ld a, [wEnvironment]
+	cp TOWN
+	jr z, .swift
+	cp ROUTE
+	jr z, .razor_leaf
+	cp INDOOR
+	jr z, .swift
+	cp CAVE
+	jr z, .shadow_ball
+.swift
+	ld a, SWIFT
+	jr .got_new_move
+.bubblebeam
+	ld a, BUBBLEBEAM
+	jr .got_new_move
+.surf
+	ld a, SURF
+	jr .got_new_move
+.shadow_ball
+	ld a, SHADOW_BALL
+	jr .got_new_move
+.razor_leaf
+	ld a, RAZOR_LEAF
+.got_new_move
+	ld b, a
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld [hl], b
+	call UpdateMoveData
+	
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+
+	ld hl, NaturePowerTurnedIntoText
+	call StdBattleTextbox
+	
+	jp ResetTurn
+	
+CheckWaterSport:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp FIRE
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerSubStatus2
+	jr z, .go
+	ld hl, wEnemySubStatus2
+.go
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	ret z
+	rrc d
+	ret
+
+BattleCommand_WaterSport:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	jp z, .set_water_sport
+	call AnimateFailedMove
+	jp PrintButItFailed
+.set_water_sport
+	set SUBSTATUS_WATER_SPORT, [hl]
+	call AnimateCurrentMove
+	ld hl, WaterSportText
+	jp StdBattleTextbox
+

@@ -1175,3 +1175,16 @@ CantSleepText:
 	text "<USER>"
 	line "can't fall asleep!"
 	prompt
+
+NaturePowerTurnedIntoText:
+	text "NATURE POWER"
+	line "turned into"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+	
+WaterSportText:
+	text "FIRE's power"
+	line "was weakened!"
+	prompt

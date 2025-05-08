@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw WaterSportDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw HeadbuttDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -253,13 +253,17 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw UproarDescription
+	dw NaturePowerDescription
+	dw FakeOutDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFFDescription
-	dw MoveFFDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
+FakeOutDescription:
+	db   "Only works 1st"
+	next "turn. Flinches.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -312,9 +316,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+WaterSportDescription:
+	db   "Halves FIRE until"
+	next "user switches.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -832,10 +836,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 TransformDescription:
 	db   "The user assumes"
 	next "the foe's guise.@"
@@ -1271,3 +1271,7 @@ BeatUpDescription:
 UproarDescription:
 	db   "Rampage attack."
 	next "Everyone wakes.@"
+	
+NaturePowerDescription:
+	db   "Changes with"
+	next "the environment.@"

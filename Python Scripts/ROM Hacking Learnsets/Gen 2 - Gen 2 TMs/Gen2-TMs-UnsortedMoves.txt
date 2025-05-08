@@ -1,168 +1,150 @@
-<<<<<<< Updated upstream
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-=======
-Calm Mind
+Astonish
+Growl
+Absorb
+Nature Power
+Mist
+Rain Dance
+Mega Drain
+Water Pulse
 Toxic
+Hail
+Bullet Seed
 Hidden Power
 Sunny Day
-Taunt
-Light Screen
+Ice Beam
+Blizzard
 Protect
 Rain Dance
-Safeguard
+Giga Drain
 Frustration
+SolarBeam
 Return
-Psychic
-Shadow Ball
 Double Team
-Reflect
-Shock Wave
-Torment
 Facade
 Secret Power
 Rest
 Attract
-Skill Swap
-Snatch
-Flash
-Curse
-Disable
-Dream Eater
-Hypnosis
-Defense Curl
-Double-Edge
-Dream Eater
-Endure
-Icy Wind
-Mimic
-Nightmare
-Psych Up
-Rollout
-Sleep Talk
-Snore
-Substitute
-Swagger
-Gravity
-Heal Bell
-Helping Hand
-Icy Wind
-Knock Off
-Magic Coat
-Last Resort
-Rollout
-Signal Beam
-Snore
-Trick
-Uproar
-Zen Headbutt
-Curse
-Disable
-Dream Eater
-Future Sight
-Hypnosis
-Recover†
-Wish
->>>>>>> Stashed changes
-Calm Mind
-Toxic
-Hidden Power
-Sunny Day
-Taunt
-Light Screen
-Protect
-<<<<<<< Updated upstream
-Safeguard
-Frustration
-SolarBeam
-Earthquake
-=======
-Rain Dance
-Safeguard
-Frustration
->>>>>>> Stashed changes
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-<<<<<<< Updated upstream
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-=======
-Shock Wave
-Torment
-Facade
-Secret Power
-Rest
-Attract
-Skill Swap
-Snatch
+Thief
 Energy Ball
-Charge Beam
 Endure
-Recycle
 Flash
-Thunder Wave
->>>>>>> Stashed changes
-Psych Up
+Swords Dance
 Captivate
 Sleep Talk
 Natural Gift
-Dream Eater
 Grass Knot
 Swagger
 Substitute
-Trick Room
-<<<<<<< Updated upstream
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Surf
+Whirlpool
+Headbutt
+Icy Wind
+Seed Bomb
 Snore
-Swift
+Synthesis
+Uproar
 Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
-=======
->>>>>>> Stashed changes
+Astonish
+Growl
+Absorb
+Nature Power
+Fake Out
+Fury Swipes
+Water Sport
+Thief
+Uproar
+Hydro Pump
+Water Pulse
+Toxic
+Hail
+Bullet Seed
+Hidden Power
+Sunny Day
+Ice Beam
+Blizzard
+Protect
+Rain Dance
+Giga Drain
+Frustration
+SolarBeam
+Return
+Brick Break
+Double Team
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Energy Ball
+Fling
+Endure
+Drain Punch
+Flash
+Swords Dance
+Captivate
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Substitute
+Surf
+Strength
+Whirlpool
+Rock Smash
+Waterfall
+Dive
+Fire Punch
+Headbutt
+Ice Punch
+Icy Wind
+Mud-Slap
+Seed Bomb
+Snore
+Synthesis
+ThunderPunch
+Uproar
+Zen Headbutt
+DynamicPunch
+Focus Punch
+Water Pulse
+Toxic
+Hail
+Bullet Seed
+Hidden Power
+Sunny Day
+Ice Beam
+Blizzard
+Hyper Beam
+Protect
+Rain Dance
+Giga Drain
+Frustration
+SolarBeam
+Return
+Brick Break
+Double Team
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Focus Blast
+Energy Ball
+Fling
+Endure
+Drain Punch
+Giga Impact
+Flash
+Swords Dance
+Captivate
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Substitute
+Surf
+Strength
+Whirlpool
+Rock Smash
+Waterfall
+Rock Climb
