@@ -1,16 +1,15 @@
-LechonkEvosAttacks:
+FlygonEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, BITE
+	db 1, SAND-ATTACK
+	db 1, FAINT_ATTACK
+	db 1, SAND_TOMB
+	db 9, SAND-ATTACK
+	db 17, FAINT_ATTACK
+	db 25, SAND_TOMB
+	db 33, CRUNCH
+	db 35, DRAGONBREATH
+	db 41, SCREECH
+	db 53, SANDSTORM
+	db 65, HYPER_BEAM
 	db 0

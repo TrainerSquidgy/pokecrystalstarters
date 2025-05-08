@@ -1,16 +1,13 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Flygon
+1: Bite
+1: Sand-Attack
+1: Faint Attack
+1: Sand Tomb
+9: Sand-Attack
+17: Faint Attack
+25: Sand Tomb
+33: Crunch
+35: DragonBreath
+41: Screech
+53: Sandstorm
+65: Hyper Beam

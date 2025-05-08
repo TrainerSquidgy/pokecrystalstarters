@@ -252,5 +252,7 @@ NewPokedexOrder:
 	db HO_OH
 	db MEWTWO
 	db MEW
-	db CELEBI
+	db TRAPINCH
+	db VIBRAVA
+	db FLYGON
 	assert_table_length NUM_POKEMON

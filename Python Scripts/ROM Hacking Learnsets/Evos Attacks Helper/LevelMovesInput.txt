@@ -1,14 +1,13 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Flygon
+1: Bite
+1: Sand-Attack
+1: Faint Attack
+1: Sand Tomb
+9: Sand-Attack
+17: Faint Attack
+25: Sand Tomb
+33: Crunch
+35: DragonBreath
+41: Screech
+53: Sandstorm
+65: Hyper Beam

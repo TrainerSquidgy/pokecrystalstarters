@@ -3367,3 +3367,49 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+TrapinchEvosAttacks:
+	db EVOLVE_LEVEL, 35, VIBRAVA
+	db 0 ; No More Evolutions
+	db 1, BITE
+	db 9, SAND_ATTACK
+	db 17, FAINT_ATTACK
+	db 25, SAND_TOMB
+	db 33, CRUNCH
+	db 41, DIG
+	db 49, SANDSTORM
+	db 57, HYPER_BEAM
+	db 0
+	
+VibravaEvosAttacks:
+	db EVOLVE_LEVEL, 45, FLYGON
+	db 0 ; No More Evolutions
+	db 1, BITE
+	db 1, SAND_ATTACK
+	db 1, FAINT_ATTACK
+	db 1, SAND_TOMB
+	db 9, SAND_ATTACK
+	db 17, FAINT_ATTACK
+	db 25, SAND_TOMB
+	db 33, CRUNCH
+	db 35, DRAGONBREATH
+	db 41, SCREECH
+	db 49, SANDSTORM
+	db 57, HYPER_BEAM
+	db 0
+
+FlygonEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, BITE
+	db 1, SAND_ATTACK
+	db 1, FAINT_ATTACK
+	db 1, SAND_TOMB
+	db 9, SAND_ATTACK
+	db 17, FAINT_ATTACK
+	db 25, SAND_TOMB
+	db 33, CRUNCH
+	db 35, DRAGONBREATH
+	db 41, SCREECH
+	db 53, SANDSTORM
+	db 65, HYPER_BEAM
+	db 0
