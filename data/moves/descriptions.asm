@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw WaterSportDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,17 +252,26 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw StockpileDescription
+	dw SwallowDescription
+	dw SpitUpDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+StockpileDescription:
+	db   "Charges up power"
+	next "up to 3 turns.@"
+	
+SwallowDescription:
+	db   "Uses stockpile"
+	next "to boost HP.@"
+	
+SpitUpDescription:
+	db   "Uses stockpile"
+	next "to attack enemy.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +324,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+WaterSportDescription:
+	db   "Halves FIRE until"
+	next "user switches.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"

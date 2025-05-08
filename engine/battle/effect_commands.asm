@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1918,8 +1917,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -2640,6 +2637,7 @@ PlayerAttackDamage:
 	ld a, [wBattleMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call CheckWaterSport
 
 	ld a, 1
 	and a
@@ -2883,6 +2881,7 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call CheckWaterSport
 
 	ld a, 1
 	and a
@@ -2940,10 +2939,14 @@ BattleCommand_DamageCalc:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 
+	cp EFFECT_SPIT_UP
+	jp z, .spit_up_double
+
 ; Selfdestruct and Explosion halve defense.
 	cp EFFECT_SELFDESTRUCT
 	jr nz, .dont_selfdestruct
 
+.spit_up_double
 	srl c
 	jr nz, .dont_selfdestruct
 	inc c
@@ -5591,10 +5594,7 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -6910,5 +6910,182 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
+BattleCommand_Stockpile:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_stockpile_count
+	ld a, [wPlayerStockpile]
+	cp 3
+	jr z, .failed
+	inc a
+	ld [wPlayerStockpile], a
+	jr .done
+.enemy_stockpile_count
+	ld a, [wEnemyStockpile]
+	cp 3
+	jr z, .failed
+	inc a
+	ld [wEnemyStockpile], a
+.done
+	ld [wTextDecimalByte], a
+	ld hl, StockpileCountText
+	jp StdBattleTextbox
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+BattleCommand_Swallow:
+	ld de, wBattleMonHP
+	ld hl, wBattleMonMaxHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld de, wEnemyMonHP
+	ld hl, wEnemyMonMaxHP
+.got_hp
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld b, a
+	push hl
+	push de
+	push bc
+	ld c, 2
+	call CompareBytes
+	pop bc
+	pop de
+	pop hl
+	jp z, .hp_full
+	
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_stockpile_count
+	ld a, [wPlayerStockpile]
+	and a
+	jr z, .failed
+	dec a
+	jr z, .one
+	dec a
+	jr z, .two
+	jr .three
+.enemy_stockpile_count
+	ld a, [wEnemyStockpile]
+	and a
+	jr z, .failed
+	dec a
+	jr z, .one
+	dec a
+	jr z, .two	
+.three
+	ld hl, GetMaxHP
+	call CallBattleCore
+	jr .restore
+.two
+	ld hl, GetHalfMaxHP
+	call CallBattleCore
+	jr .restore
+.one
+	ld hl, GetQuarterMaxHP
+	call CallBattleCore
+.restore
+	call AnimateCurrentMove
+	call BattleCommand_SwitchTurn
+	ld hl, RestoreHP
+	call CallBattleCore
+	call BattleCommand_SwitchTurn
+	call UpdateUserInParty
+	call RefreshBattleHuds
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_stockpile_reset
+	xor a
+	ld [wPlayerStockpile], a 
+	jr .textbox
+.enemy_stockpile_reset
+	xor a
+	ld [wEnemyStockpile], a 
+.textbox
+	ld hl, RegainedHealthText
+	jp StdBattleTextbox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+.hp_full
+	call AnimateFailedMove
+	ld hl, HPIsFullText
+	call StdBattleTextbox
+	jp EndMoveEffect
+
+BattleCommand_SpitUp:
+	ld hl, wPlayerStockpile
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_spit_up
+	ld hl, wEnemyStockpile
+.player_spit_up
+	ld a, [hl]
+	and a
+	jr z, .failed
+	dec a
+	and a
+	jr z, .one
+	dec a
+	and a
+	jr z, .two
+;three
+	ld d, 150
+	jr .damagedone
+.two
+	ld d, 100
+	jr .damagedone
+.one
+	ld d, 50
+.damagedone
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_spit_up_reset
+	xor a
+	ld [wEnemyStockpile], a
+	ret
+.player_spit_up_reset
+	xor a
+	ld [wPlayerStockpile], a
+	ret
+
+.failed	
+	ld a, 1
+	ld [wAttackMissed], a
+	call AnimateFailedMove
+	jp PrintButItFailed
 	
 
+BattleCommand_WaterSport:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	jp z, .set_water_sport
+	call AnimateFailedMove
+	jp PrintButItFailed
+.set_water_sport
+	set SUBSTATUS_WATER_SPORT, [hl]
+	call AnimateCurrentMove
+	ld hl, WaterSportText
+	jp StdBattleTextbox
+
+CheckWaterSport:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp FIRE
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerSubStatus2
+	jr z, .go
+	ld hl, wEnemySubStatus2
+.go
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	ret z
+	rrc d
+	ret

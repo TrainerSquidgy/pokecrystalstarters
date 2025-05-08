@@ -2161,6 +2161,9 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
+	db 1, STOCKPILE
+	db 1, SPIT_UP
+	db 1, SWALLOW
 	db 7, RAGE
 	db 13, WATER_GUN
 	db 20, BITE

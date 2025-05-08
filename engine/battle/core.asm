@@ -4143,6 +4143,7 @@ endr
 	ld [hli], a
 	ld [hl], a
 	ld [wPlayerDisableCount], a
+	ld [wPlayerStockpile], a
 	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
@@ -6027,6 +6028,7 @@ ParseEnemyAction:
 
 ResetVarsForSubstatusRage:
 	xor a
+	ld [wEnemyStockpile], a
 	ld [wEnemyFuryCutterCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
@@ -8408,6 +8410,8 @@ CleanUpBattleRAM:
 	xor a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
+	ld [wPlayerStockpile], a
+	ld [wEnemyStockpile], a
 	ld [wLowHealthAlarm], a
 	ld [wHiddenPowerLoop], a
 	ld [wBattleMode], a

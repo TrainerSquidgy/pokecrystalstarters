@@ -2093,3 +2093,41 @@ Snow:
 	startweather
 	endmove
 	
+Stockpile:
+	checkobedience
+	usedmovetext
+	doturn
+	stockpile
+	endmove
+	
+Swallow:
+	checkobedience
+	usedmovetext
+	doturn
+	swallow
+	endmove
+	
+SpitUp:
+	checkobedience
+	usedmovetext
+	doturn
+	damagestats
+	spitup
+	damagecalc
+	stab
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+	
+WaterSport:
+	checkobedience
+	usedmovetext
+	doturn
+	watersport
+	endmove
