@@ -1,78 +1,170 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Bite
+Sand-Attack
+Faint Attack
+Sand Tomb
+Crunch
+Dig
+Sandstorm
+Hyper Beam
 Toxic
 Hidden Power
 Sunny Day
 Hyper Beam
-Light Screen
 Protect
-Safeguard
+Giga Drain
 Frustration
 SolarBeam
 Earthquake
 Return
-Psychic
-Shadow Ball
+Dig
 Double Team
-Reflect
-Flamethrower
 Sandstorm
-Fire Blast
 Rock Tomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
 Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
+Captivate
 Rock Slide
 Sleep Talk
 Natural Gift
-Dream Eater
-Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
+Strength
+Rock Smash
+Bug Bite
 Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Fury Cutter
+Headbutt
+Mud-Slap
+Snore
+Bite
+Sand-Attack
+Faint Attack
+Sand Tomb
+Sand-Attack
+Faint Attack
+Sand Tomb
+Crunch
+DragonBreath
+Screech
+Sandstorm
+Hyper Beam
+Toxic
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Giga Drain
+Frustration
+SolarBeam
+Earthquake
+Return
+Dig
+Double Team
+Sandstorm
+Rock Tomb
+Facade
+Secret Power
+Rest
+Attract
+Steel Wing
+Roost
+Endure
+Dragon Pulse
+Silver Wind
+Captivate
+Rock Slide
+Sleep Talk
+Natural Gift
+Swagger
+U-turn
+Substitute
+Fly
+Strength
+Defog
+Rock Smash
+Air Cutter
+Bug Bite
+Draco Meteor
+Earth Power
+Fury Cutter
+Headbutt
+Heat Wave
+Mud-Slap
+Ominous Wind
+Outrage
 Snore
 Swift
-Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+Tailwind
+Twister
+Bite
+Sand-Attack
+Faint Attack
+Sand Tomb
+Sand-Attack
+Faint Attack
+Sand Tomb
+Crunch
+DragonBreath
+Screech
+Sandstorm
+Hyper Beam
+Dragon Claw
+Toxic
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Giga Drain
+Frustration
+SolarBeam
+Iron Tail
+Earthquake
+Return
+Dig
+Double Team
+Flamethrower
+Sandstorm
+Fire Blast
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Steel Wing
+Roost
+Endure
+Dragon Pulse
+Silver Wind
+Giga Impact
+Stone Edge
+Captivate
+Rock Slide
+Sleep Talk
+Natural Gift
+Swagger
+U-turn
+Substitute
+Fly
+Strength
+Defog
+Rock Smash
+Air Cutter
+Bug Bite
+Draco Meteor
+Earth Power
+Fire Punch
+Fury Cutter
+Headbutt
+Heat Wave
+Mud-Slap
+Ominous Wind
+Outrage
+Snore
+Swift
+Tailwind
+ThunderPunch
+Twister
