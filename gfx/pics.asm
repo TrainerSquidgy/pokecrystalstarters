@@ -707,17 +707,28 @@ UnownYBackpic:       INCBIN "gfx/pokemon/unown_y/back.2bpp.lz"
 UnownPBackpic:       INCBIN "gfx/pokemon/unown_p/back.2bpp.lz"
 UnownIBackpic:       INCBIN "gfx/pokemon/unown_i/back.2bpp.lz"
 UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
+SpindaFrontpic: INCBIN "gfx/pokemon/spinda/front.animated.2bpp.lz"
+SpindaBackpic: INCBIN "gfx/pokemon/spinda/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
+Spinda1Frontpic: INCBIN "gfx/pokemon/spinda1/front.animated.2bpp.lz"
+Spinda1Backpic: INCBIN "gfx/pokemon/spinda1/back.2bpp.lz"
+Spinda2Frontpic: INCBIN "gfx/pokemon/spinda2/front.animated.2bpp.lz"
+Spinda2Backpic: INCBIN "gfx/pokemon/spinda2/back.2bpp.lz"
+Spinda3Frontpic: INCBIN "gfx/pokemon/spinda3/front.animated.2bpp.lz"
+Spinda3Backpic: INCBIN "gfx/pokemon/spinda3/back.2bpp.lz"
+Spinda4Frontpic: INCBIN "gfx/pokemon/spinda4/front.animated.2bpp.lz"
+Spinda4Backpic: INCBIN "gfx/pokemon/spinda4/back.2bpp.lz"
+Spinda5Frontpic: INCBIN "gfx/pokemon/spinda5/front.animated.2bpp.lz"
+Spinda5Backpic: INCBIN "gfx/pokemon/spinda5/back.2bpp.lz"
+Spinda6Frontpic: INCBIN "gfx/pokemon/spinda6/front.animated.2bpp.lz"
+Spinda6Backpic: INCBIN "gfx/pokemon/spinda6/back.2bpp.lz"
+Spinda7Frontpic: INCBIN "gfx/pokemon/spinda7/front.animated.2bpp.lz"
+Spinda7Backpic: INCBIN "gfx/pokemon/spinda7/back.2bpp.lz"
+Spinda8Frontpic: INCBIN "gfx/pokemon/spinda8/front.animated.2bpp.lz"
+Spinda8Backpic: INCBIN "gfx/pokemon/spinda8/back.2bpp.lz"
 
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
 SECTION "Pics 20", ROMX
 

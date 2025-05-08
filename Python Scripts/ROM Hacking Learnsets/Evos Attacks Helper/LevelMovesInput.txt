@@ -1,14 +1,12 @@
-Pokémon: Lechonk
+Pokémon: Spinda
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+5: Uproar
+12: Faint Attack
+16: Psybeam
+23: Hypnosis
+27: Dizzy Punch
+34: Teeter Dance
+38: Psych Up
+45: Double-Edge
+49: Flail
+56: Thrash

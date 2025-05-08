@@ -3367,3 +3367,18 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SpindaEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 5, UPROAR
+	db 12, FAINT_ATTACK
+	db 16, PSYBEAM
+	db 23, HYPNOSIS
+	db 27, DIZZY_PUNCH
+	db 34, TEETER_DANCE
+	db 38, PSYCH_UP
+	db 45, DOUBLE_EDGE
+	db 49, FLAIL
+	db 56, THRASH
+	db 0
