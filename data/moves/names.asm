@@ -252,4 +252,5 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "UPROAR"
+	li "TEETER DANCE"
 	assert_list_length NUM_ATTACKS

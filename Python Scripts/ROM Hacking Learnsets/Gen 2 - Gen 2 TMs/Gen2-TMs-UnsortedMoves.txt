@@ -1,168 +1,79 @@
-<<<<<<< Updated upstream
 Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-=======
-Calm Mind
-Toxic
-Hidden Power
-Sunny Day
-Taunt
-Light Screen
-Protect
-Rain Dance
-Safeguard
-Frustration
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Shock Wave
-Torment
-Facade
-Secret Power
-Rest
-Attract
-Skill Swap
-Snatch
-Flash
-Curse
-Disable
-Dream Eater
-Hypnosis
-Defense Curl
-Double-Edge
-Dream Eater
-Endure
-Icy Wind
-Mimic
-Nightmare
-Psych Up
-Rollout
-Sleep Talk
-Snore
-Substitute
-Swagger
-Gravity
-Heal Bell
-Helping Hand
-Icy Wind
-Knock Off
-Magic Coat
-Last Resort
-Rollout
-Signal Beam
-Snore
-Trick
 Uproar
-Zen Headbutt
-Curse
-Disable
-Dream Eater
-Future Sight
+Faint Attack
+Psybeam
 Hypnosis
-Recover†
-Wish
->>>>>>> Stashed changes
+Dizzy Punch
+Teeter Dance
+Psych Up
+Double-Edge
+Flail
+Thrash
+Focus Punch
+Water Pulse
 Calm Mind
 Toxic
 Hidden Power
 Sunny Day
-Taunt
-Light Screen
 Protect
-<<<<<<< Updated upstream
-Safeguard
-Frustration
-SolarBeam
-Earthquake
-=======
 Rain Dance
 Safeguard
 Frustration
->>>>>>> Stashed changes
 Return
+Dig
 Psychic
 Shadow Ball
+Brick Break
 Double Team
-Reflect
-<<<<<<< Updated upstream
-Flamethrower
-Sandstorm
-Fire Blast
+Shock Wave
 Rock Tomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-=======
-Shock Wave
-Torment
-Facade
-Secret Power
-Rest
 Attract
+Thief
 Skill Swap
 Snatch
-Energy Ball
-Charge Beam
+Fling
 Endure
+Drain Punch
 Recycle
 Flash
-Thunder Wave
->>>>>>> Stashed changes
 Psych Up
 Captivate
+Rock Slide
 Sleep Talk
 Natural Gift
 Dream Eater
-Grass Knot
 Swagger
 Substitute
 Trick Room
-<<<<<<< Updated upstream
-AncientPower
-Earth Power
-Gravity
+Strength
+Rock Smash
+Fire Punch
+Headbutt
 Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
+Ice Punch
+Icy Wind
+Last Resort
+Low Kick
+Mud-Slap
+Role Play
 Rollout
-Signal Beam
 Snore
+Sucker Punch
 Swift
+ThunderPunch
+Uproar
 Zen Headbutt
-Baton Pass
 Body Slam
+Counter
 Defense Curl
-Double-Edge
+DynamicPunch
+Mega Kick
+Mega Punch
+Metronome
 Mimic
-Selfdestruct
-=======
->>>>>>> Stashed changes
+Nightmare
+Seismic Toss
+Sing

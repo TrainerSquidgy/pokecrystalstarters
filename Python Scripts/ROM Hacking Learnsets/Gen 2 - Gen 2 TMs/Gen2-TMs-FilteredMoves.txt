@@ -1,43 +1,36 @@
 TMs:
+DYNAMICPUNCH
+HEADBUTT
 CURSE
 ROLLOUT
 TOXIC
+ROCK_SMASH
 PSYCH_UP
 HIDDEN_POWER
 SUNNY_DAY
 SNORE
-<<<<<<< Updated upstream
-HYPER_BEAM
-=======
 ICY_WIND
->>>>>>> Stashed changes
 PROTECT
+RAIN_DANCE
 ENDURE
 FRUSTRATION
-<<<<<<< Updated upstream
-SOLARBEAM
-EARTHQUAKE
-=======
->>>>>>> Stashed changes
 RETURN
+DIG
 PSYCHIC_M
 SHADOW_BALL
+MUD_SLAP
 DOUBLE_TEAM
+ICE_PUNCH
 SWAGGER
 SLEEP_TALK
-<<<<<<< Updated upstream
-SANDSTORM
-FIRE_BLAST
 SWIFT
-=======
->>>>>>> Stashed changes
 DEFENSE_CURL
+THUNDERPUNCH
 DREAM_EATER
 REST
 ATTRACT
-<<<<<<< Updated upstream
-=======
+THIEF
+FIRE_PUNCH
 NIGHTMARE
->>>>>>> Stashed changes
+STRENGTH
 FLASH
-FLAMETHROWER

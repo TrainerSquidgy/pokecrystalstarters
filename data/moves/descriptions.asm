@@ -253,8 +253,8 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw UproarDescription
+	dw ConfuseRayDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFFDescription
 	dw MoveFFDescription
 	dw MoveFFDescription
 	dw Move00Description
