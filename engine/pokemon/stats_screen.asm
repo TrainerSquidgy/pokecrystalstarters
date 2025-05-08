@@ -827,8 +827,14 @@ OTString:
 	db "OT/@"
 
 StatsScreen_PlaceFrontpic:
+	ld a, [wTempMonSpecies]
+	cp SPINDA
+	jr nz, .not_spinda
+
+.not_spinda
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
+.spinda_done
 	call StatsScreen_GetAnimationParam
 	jr c, .egg
 	and a

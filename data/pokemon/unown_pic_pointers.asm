@@ -77,4 +77,20 @@ UnownPicPointers::
 	dba_pic MegaAerodactylBackpic
 	dba_pic MegaPidgeotFrontpic
 	dba_pic MegaPidgeotBackpic
-	assert_table_length NUM_UNOWN + 12
+	dba_pic Spinda1Frontpic
+	dba_pic Spinda1Backpic
+	dba_pic Spinda2Frontpic
+	dba_pic Spinda2Backpic
+	dba_pic Spinda3Frontpic
+	dba_pic Spinda3Backpic
+	dba_pic Spinda4Frontpic
+	dba_pic Spinda4Backpic
+	dba_pic Spinda5Frontpic
+	dba_pic Spinda5Backpic
+	dba_pic Spinda6Frontpic
+	dba_pic Spinda6Backpic
+	dba_pic Spinda7Frontpic
+	dba_pic Spinda7Backpic
+	dba_pic Spinda8Frontpic
+	dba_pic Spinda8Backpic
+	assert_table_length NUM_UNOWN + 20

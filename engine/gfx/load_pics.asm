@@ -1,10 +1,12 @@
 GetUnownLetter:
 ; Return Unown letter in wUnownLetter based on DVs at hl
+	ld a, [wCurPartySpecies]
+	cp SPINDA
+	jp z, .Spinda
 
 ; Take the middle 2 bits of each DV and place them in order:
 ;	atk  def  spd  spc
 ;	.ww..xx.  .yy..zz.
-
 	; atk
 	ld a, [hl]
 	and %01100000
@@ -123,7 +125,49 @@ GetUnownLetter:
 	ld a, 28
 	ld [wMegaPicture], a
 	ret
-	
+.Spinda
+	ld a, [wTempMonCaughtData]
+	ld [wTestingRamSlot1], a
+	cp 32
+    jr c, .spinda1
+    cp 64
+    jr c, .spinda2
+    cp 96
+    jr c, .spinda3
+    cp 128
+    jr c, .spinda4
+    cp 160
+    jr c, .spinda5
+    cp 192
+    jr c, .spinda6
+    cp 224
+    jr c, .spinda7
+    ld a, 46
+	jr .spindamerge
+.spinda1
+	ld a, 39
+	jr .spindamerge
+.spinda2
+	ld a, 40
+	jr .spindamerge
+.spinda3
+	ld a, 41
+	jr .spindamerge
+.spinda4
+	ld a, 42
+	jr .spindamerge
+.spinda5
+	ld a, 43
+	jr .spindamerge
+.spinda6
+	ld a, 44
+	jr .spindamerge
+.spinda7
+	ld a, 45
+	jr .spindamerge
+.spindamerge
+	ld [wUnownLetter], a
+	ret
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -180,6 +224,8 @@ _GetFrontpic:
 
 GetFrontpicPointer:
 	ld a, [wCurPartySpecies]
+	cp SPINDA
+	jr z, .unown
 	cp UNOWN
 	jr z, .unown
 	ld a, [wCurPartySpecies]
@@ -292,8 +338,11 @@ GetMonBackpic:
 	ld hl, PokemonPicPointers
 	ld a, b
 	ld d, BANK(PokemonPicPointers)
+	cp SPINDA
+	jr z, .spinda
 	cp UNOWN
 	jr nz, .ok
+.spinda
 	ld a, c
 	ld d, BANK(UnownPicPointers)
 .ok
