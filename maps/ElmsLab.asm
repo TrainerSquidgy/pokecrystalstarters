@@ -514,6 +514,56 @@ ElmsLabText_AskTotodile:
 	line "TOTODILE?"
 	done
 
+BinSkipItemRandomizer:
+	ld a, $f9
+	call RandomRange
+	cp ITEM_FA
+	jr z, BinSkipItemRandomizer
+	cp ITEM_64
+	jr z, BinSkipItemRandomizer
+	cp ITEM_78
+	jr z, BinSkipItemRandomizer
+	cp ITEM_87
+	jr z, BinSkipItemRandomizer
+	cp ITEM_88
+	jr z, BinSkipItemRandomizer
+	cp ITEM_89
+	jr z, BinSkipItemRandomizer
+	cp ITEM_8D
+	jr z, BinSkipItemRandomizer
+	cp ITEM_8E
+	jr z, BinSkipItemRandomizer
+	cp ITEM_91
+	jr z, BinSkipItemRandomizer
+	cp ITEM_93
+	jr z, BinSkipItemRandomizer
+	cp ITEM_94
+	jr z, BinSkipItemRandomizer
+	cp ITEM_95
+	jr z, BinSkipItemRandomizer
+	cp ITEM_99
+	jr z, BinSkipItemRandomizer
+	cp ITEM_9A
+	jr z, BinSkipItemRandomizer
+	cp ITEM_9B
+	jr z, BinSkipItemRandomizer
+	cp ITEM_A2
+	jr z, BinSkipItemRandomizer
+	cp ITEM_AB
+	jr z, BinSkipItemRandomizer
+	cp ITEM_B0
+	jr z, BinSkipItemRandomizer
+	cp ITEM_B3
+	jr z, BinSkipItemRandomizer
+	cp ITEM_BE
+	jr z, BinSkipItemRandomizer
+	cp ITEM_C3
+	jr z, BinSkipItemRandomizer
+	cp ITEM_DC
+	jr z, BinSkipItemRandomizer
+	ld [wPartyMon1Item], a
+	ret
+
 ElmsLabRandomizer:
 	ld a, 250
 	call RandomRange
@@ -528,6 +578,13 @@ ElmsLabRandomizer:
 	inc a
 	ld [wElmPokemon3], a
 	ret
+	
+BinSkipRandomizer:
+	ld a, 250
+	call RandomRange
+	inc a
+	ld [wBinSkipPokemon], a
+	ret
 
 ElmsLabWalkUpToElmScript:
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
@@ -539,6 +596,7 @@ ElmsLabWalkUpToElmScript:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
+	promptbutton
 	sjump .MustSayYes
 
 .ElmGetsEmail:
@@ -1140,8 +1198,135 @@ ElmsLabTravelTip4:
 	jumptext ElmsLabTravelTip4Text
 
 ElmsLabTrashcan:
-	jumptext ElmsLabTrashcanText
+	opentext 
+	writetext ElmsLabTrashcanText
+	waitbutton
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .end
+	writetext ElmsLabShortcutText
+	yesorno
+	iftrue .shortcut
+	writetext ElmsLabNoShortcutText
+	waitbutton
+	getmonname STRING_BUFFER_3, VOLTORB
+	reanchormap
+	pokepic VOLTORB
+	cry VOLTORB
+	waitbutton
+	closepokepic
+	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	writetext ChoseStarterText2
+	promptbutton
+	waitsfx
+	opentext
+	writetext ReceivedStarterTextNoPreview
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	promptbutton
+	givepoke VOLTORB, 5, BERRY
+	closetext
+	applymovement PLAYER, AfterVoltorbMovement
+	sjump ElmDirectionsScript
+		
+.shortcut
+	waitbutton
+	callasm BinSkipRandomizer
+	givepoke MEWTWO, 100, MYSTERYBERRY
+	setflag ENGINE_MINERALBADGE
+	setflag ENGINE_HIVEBADGE
+	setflag ENGINE_PLAINBADGE
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_GLACIERBADGE
+	setflag ENGINE_RISINGBADGE
+	setflag ENGINE_STORMBADGE
+	setflag ENGINE_FOGBADGE
+	setevent EVENT_FOUGHT_SUDOWOODO
+	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
+	setevent EVENT_BEAT_FALKNER
+	setevent EVENT_BEAT_BUGSY
+	setevent EVENT_BEAT_WHITNEY
+	setevent EVENT_BEAT_MORTY
+	setevent EVENT_BEAT_CLAIR
+	setevent EVENT_BEAT_PRYCE
+	setevent EVENT_BEAT_JASMINE
+	setevent EVENT_BEAT_CHUCK
+	giveitem TM_DYNAMICPUNCH ; bf
+	giveitem TM_HEADBUTT     ; c0
+	giveitem TM_CURSE        ; c1
+	giveitem TM_ROLLOUT      ; c2
+	giveitem TM_ROAR         ; c4
+	giveitem TM_TOXIC        ; c5
+	giveitem TM_ZAP_CANNON   ; c6
+	giveitem TM_ROCK_SMASH   ; c7
+	giveitem TM_PSYCH_UP     ; c8
+	giveitem TM_HIDDEN_POWER ; c9
+	giveitem TM_SUNNY_DAY    ; ca
+	giveitem TM_SWEET_SCENT  ; cb
+	giveitem TM_SNORE        ; cc
+	giveitem TM_BLIZZARD     ; cd
+	giveitem TM_HYPER_BEAM   ; ce
+	giveitem TM_ICY_WIND     ; cf
+	giveitem TM_PROTECT      ; d0
+	giveitem TM_RAIN_DANCE   ; d1
+	giveitem TM_GIGA_DRAIN   ; d2
+	giveitem TM_ENDURE       ; d3
+	giveitem TM_FRUSTRATION  ; d4
+	giveitem TM_SOLARBEAM    ; d5
+	giveitem TM_IRON_TAIL    ; d6
+	giveitem TM_DRAGONBREATH ; d7
+	giveitem TM_THUNDER      ; d8
+	giveitem TM_EARTHQUAKE   ; d9
+	giveitem TM_RETURN       ; da
+	giveitem TM_DIG          ; db
+	giveitem TM_PSYCHIC_M    ; dd
+	giveitem TM_SHADOW_BALL  ; de
+	giveitem TM_MUD_SLAP     ; df
+	giveitem TM_DOUBLE_TEAM  ; e0
+	giveitem TM_ICE_PUNCH    ; e1
+	giveitem TM_SWAGGER      ; e2
+	giveitem TM_SLEEP_TALK   ; e3
+	giveitem TM_SLUDGE_BOMB  ; e4
+	giveitem TM_SANDSTORM    ; e5
+	giveitem TM_FIRE_BLAST   ; e6
+	giveitem TM_SWIFT        ; e7
+	giveitem TM_DEFENSE_CURL ; e8
+	giveitem TM_THUNDERPUNCH ; e9
+	giveitem TM_DREAM_EATER  ; ea
+	giveitem TM_DETECT       ; eb
+	giveitem TM_REST         ; ec
+	giveitem TM_ATTRACT      ; ed
+	giveitem TM_THIEF        ; ee
+	giveitem TM_STEEL_WING   ; ef
+	giveitem TM_FIRE_PUNCH   ; f0
+	giveitem TM_FURY_CUTTER  ; f1
+	giveitem TM_NIGHTMARE    ; f2
+	giveitem HM_CUT
+	giveitem HM_FLASH
+	giveitem HM_STRENGTH
+	giveitem HM_SURF
+	giveitem HM_FLY
+	giveitem HM_WHIRLPOOL
+	giveitem HM_WATERFALL
+	callasm BinSkipItemRandomizer
+	closetext
+	setevent EVENT_OPENED_MT_SILVER
+	clearevent EVENT_RED_IN_MT_SILVER
+	warp SILVER_CAVE_ROOM_3, 9, 11
+	end
+.end
+	closetext
+	end
 
+ElmsLabNoShortcutText:
+	text "Okay, then. You"
+	line "asked for this..."
+	done
+	
+ElmsLabShortcutText:
+	text "Time to take"
+	line "a shortcut?"
+	done
+	
 ElmsLabPC:
 	jumptext ElmsLabPCText
 	
@@ -1373,6 +1558,8 @@ AfterTotodileMovement:
 	turn_head UP
 	step_end
 
+AfterVoltorbMovement:
+	step LEFT
 AfterChikoritaMovement:
 	step LEFT
 	step LEFT
@@ -1547,6 +1734,12 @@ ChoseStarterText:
 	text "ELM: I think"
 	line "that's a great"
 	cont "#MON too!"
+	done
+
+ChoseStarterText2:
+	text "ELM: Oh, oh no."
+	line "That's not a"
+	cont "good #MON!"
 	done
 
 ReceivedStarterText:
