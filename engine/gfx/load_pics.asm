@@ -128,21 +128,41 @@ GetUnownLetter:
 .Spinda
 	ld a, [wTempMonCaughtData]
 	ld [wTestingRamSlot1], a
-	cp 32
+	cp 16
     jr c, .spinda1
-    cp 64
+    cp 32
     jr c, .spinda2
-    cp 96
+    cp 48
     jr c, .spinda3
-    cp 128
+    cp 64
     jr c, .spinda4
-    cp 160
+    cp 80
     jr c, .spinda5
-    cp 192
+    cp 96
     jr c, .spinda6
-    cp 224
+    cp 112
     jr c, .spinda7
-    ld a, 46
+	cp 128
+    jr c, .spinda8
+    cp 144
+    jr c, .spinda9
+    cp 160
+    jr c, .spinda10
+    cp 176
+    jr c, .spinda11
+    cp 192
+    jr c, .spinda12
+    cp 208
+    jr c, .spinda13
+    cp 224
+    jr c, .spinda14
+    cp 240
+    jr c, .spinda15
+    cp 254
+	jr c, .spinda16
+	cp 255
+	jr c, .spinda17
+	ld a, 56
 	jr .spindamerge
 .spinda1
 	ld a, 39
@@ -164,6 +184,36 @@ GetUnownLetter:
 	jr .spindamerge
 .spinda7
 	ld a, 45
+	jr .spindamerge
+.spinda8
+	ld a, 46
+	jr .spindamerge
+.spinda9
+	ld a, 47
+	jr .spindamerge
+.spinda10
+	ld a, 48
+	jr .spindamerge
+.spinda11
+	ld a, 49
+	jr .spindamerge
+.spinda12
+	ld a, 50
+	jr .spindamerge
+.spinda13
+	ld a, 51
+	jr .spindamerge
+.spinda14
+	ld a, 52
+	jr .spindamerge
+.spinda15
+	ld a, 53
+	jr .spindamerge
+.spinda16
+	ld a, 54
+	jr .spindamerge
+.spinda17
+	ld a, 55
 	jr .spindamerge
 .spindamerge
 	ld [wUnownLetter], a
