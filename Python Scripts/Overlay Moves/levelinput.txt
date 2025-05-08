@@ -1,16 +1,14 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Pelipper
+1: Growl
+1: Water Gun
+1: Water Sport
+1: Wing Attack
+3: Water Gun
+7: Supersonic
+13: Wing Attack
+21: Mist
+25: Protect
+33: Stockpile
+33: Swallow
+47: Spit Up
+61: Hydro Pump

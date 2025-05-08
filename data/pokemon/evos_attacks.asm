@@ -3370,3 +3370,33 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+WingullEvosAttacks:
+	db EVOLVE_LEVEL, 25, PELIPPER
+	db 0 ; No More Evolutions
+	db 1, GROWL
+	db 1, WATER_GUN
+	db 7, SUPERSONIC
+	db 13, WING_ATTACK
+	db 21, MIST
+	db 31, QUICK_ATTACK
+	db 43, PURSUIT
+	db 55, AGILITY
+	db 0
+	
+PelipperEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, GROWL
+	db 1, WATER_GUN
+	db 1, WATER_SPORT
+	db 1, WING_ATTACK
+	db 3, WATER_GUN
+	db 7, SUPERSONIC
+	db 13, WING_ATTACK
+	db 21, MIST
+	db 25, PROTECT
+	db 33, STOCKPILE
+	db 33, SWALLOW
+	db 47, SPIT_UP
+	db 61, HYDRO_PUMP
+	db 0

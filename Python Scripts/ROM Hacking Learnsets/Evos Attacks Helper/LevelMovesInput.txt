@@ -1,14 +1,14 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Pelipper
+1: Growl
+1: Water Gun
+1: Water Sport
+1: Wing Attack
+3: Water Gun
+7: Supersonic
+13: Wing Attack
+21: Mist
+25: Protect
+33: Stockpile
+33: Swallow
+47: Spit Up
+61: Hydro Pump
