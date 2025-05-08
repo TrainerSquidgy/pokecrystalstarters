@@ -3191,7 +3191,10 @@ wSpinnersOff:: db
 wMegaXorY:: db
 wPlayerYawning::db
 wEnemyYawning::db
-	ds 59
+wMetronomeOnly:: db
+wBinSkipPokemon:: db
+wBinSkipItem:: db
+	ds 56
 
 wEventFlags:: flag_array NUM_EVENTS
 

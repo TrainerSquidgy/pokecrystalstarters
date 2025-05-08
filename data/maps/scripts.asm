@@ -153,8 +153,6 @@ INCLUDE "maps/Route34.asm"
 INCLUDE "maps/ElmsLab.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
-INCLUDE "maps/PlayersNeighborsHouse.asm"
-INCLUDE "maps/Route26HealHouse.asm"
 
 
 SECTION "Map Scripts 10", ROMX
@@ -484,5 +482,8 @@ SECTION "Map Scripts 25", ROMX
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/ElmsHouse.asm"
+INCLUDE "maps/MahoganyTMShop.asm"
+INCLUDE "maps/PlayersNeighborsHouse.asm"
+INCLUDE "maps/Route26HealHouse.asm"
 
 ENDSECTION
