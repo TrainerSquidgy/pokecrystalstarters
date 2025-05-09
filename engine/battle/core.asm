@@ -3604,7 +3604,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call GetBaseData
 	ld a, OTPARTYMON
 	ld [wMonType], a
-	predef CopyMonToTempMon
+	;predef CopyMonToTempMon
 	call GetEnemyMonFrontpic
 
 	xor a

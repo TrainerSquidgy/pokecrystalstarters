@@ -1,9 +1,5 @@
 GetUnownLetter:
 ; Return Unown letter in wUnownLetter based on DVs at hl
-	ld a, [wCurPartySpecies]
-	cp SPINDA
-	jp z, .Spinda
-
 ; Take the middle 2 bits of each DV and place them in order:
 ;	atk  def  spd  spc
 ;	.ww..xx.  .yy..zz.
@@ -125,105 +121,6 @@ GetUnownLetter:
 	ld a, 28
 	ld [wMegaPicture], a
 	ret
-.Spinda
-	ld a, [wSpindaForm]
-	and a
-	jr nz, .WildSpinda
-	ld a, [wTempMonCaughtData]
-.WildSpinda
-	ld [wTestingRamSlot1], a
-	cp 16
-    jr c, .spinda1
-    cp 32
-    jr c, .spinda2
-    cp 48
-    jr c, .spinda3
-    cp 64
-    jr c, .spinda4
-    cp 80
-    jr c, .spinda5
-    cp 96
-    jr c, .spinda6
-    cp 112
-    jr c, .spinda7
-	cp 128
-    jr c, .spinda8
-    cp 144
-    jr c, .spinda9
-    cp 160
-    jr c, .spinda10
-    cp 176
-    jr c, .spinda11
-    cp 192
-    jr c, .spinda12
-    cp 208
-    jr c, .spinda13
-    cp 224
-    jr c, .spinda14
-    cp 240
-    jr c, .spinda15
-    cp 254
-	jr c, .spinda16
-	cp 255
-	jr c, .spinda17
-	ld a, 56
-	jr .spindamerge
-.spinda1
-	ld a, 39
-	jr .spindamerge
-.spinda2
-	ld a, 40
-	jr .spindamerge
-.spinda3
-	ld a, 41
-	jr .spindamerge
-.spinda4
-	ld a, 42
-	jr .spindamerge
-.spinda5
-	ld a, 43
-	jr .spindamerge
-.spinda6
-	ld a, 44
-	jr .spindamerge
-.spinda7
-	ld a, 45
-	jr .spindamerge
-.spinda8
-	ld a, 46
-	jr .spindamerge
-.spinda9
-	ld a, 47
-	jr .spindamerge
-.spinda10
-	ld a, 48
-	jr .spindamerge
-.spinda11
-	ld a, 49
-	jr .spindamerge
-.spinda12
-	ld a, 50
-	jr .spindamerge
-.spinda13
-	ld a, 51
-	jr .spindamerge
-.spinda14
-	ld a, 52
-	jr .spindamerge
-.spinda15
-	ld a, 53
-	jr .spindamerge
-.spinda16
-	ld a, 54
-	jr .spindamerge
-.spinda17
-	ld a, 55
-	jr .spindamerge
-.spindamerge
-	ld [wUnownLetter], a
-	xor a
-	ld [wSpindaForm], a
-	ret
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -279,6 +176,9 @@ _GetFrontpic:
 	ret
 
 GetFrontpicPointer:
+	ld a, [wCurPartySpecies]
+	cp SPINDA
+	call z, GetSpindaFrontpicPointer
 	ld a, [wCurPartySpecies]
 	cp SPINDA
 	jr z, .unown
@@ -371,6 +271,10 @@ LoadFrontpicTiles:
 	ret
 
 GetMonBackpic:
+	ld a, [wCurPartySpecies]
+	cp SPINDA
+	call z, GetSpindaBackpicPointer
+	
 	ld a, [wSetMegaEvolutionPicture]
 	and a
 	jr nz, MegaPicture
@@ -718,4 +622,201 @@ endr
 	dec c
 	jr nz, .right_loop
 	pop bc
+	ret
+
+GetSpindaFrontpicPointer:
+	ld a, [wSpindaForm]
+	and a
+	jr nz, .WildSpinda
+.OwnSpinda
+	ld a, [wTempMonCaughtData]
+.WildSpinda
+	ld [wTestingRamSlot1], a
+	cp 16
+    jr c, .spinda1
+    cp 32
+    jr c, .spinda2
+    cp 48
+    jr c, .spinda3
+    cp 64
+    jr c, .spinda4
+    cp 80
+    jr c, .spinda5
+    cp 96
+    jr c, .spinda6
+    cp 112
+    jr c, .spinda7
+	cp 128
+    jr c, .spinda8
+    cp 144
+    jr c, .spinda9
+    cp 160
+    jr c, .spinda10
+    cp 176
+    jr c, .spinda11
+    cp 192
+    jr c, .spinda12
+    cp 208
+    jr c, .spinda13
+    cp 224
+    jr c, .spinda14
+    cp 240
+    jr c, .spinda15
+    cp 254
+	jr c, .spinda16
+	cp 255
+	jr c, .spinda17
+	ld a, 56
+	jr .spindamerge
+.spinda1
+	ld a, 39
+	jr .spindamerge
+.spinda2
+	ld a, 40
+	jr .spindamerge
+.spinda3
+	ld a, 41
+	jr .spindamerge
+.spinda4
+	ld a, 42
+	jr .spindamerge
+.spinda5
+	ld a, 43
+	jr .spindamerge
+.spinda6
+	ld a, 44
+	jr .spindamerge
+.spinda7
+	ld a, 45
+	jr .spindamerge
+.spinda8
+	ld a, 46
+	jr .spindamerge
+.spinda9
+	ld a, 47
+	jr .spindamerge
+.spinda10
+	ld a, 48
+	jr .spindamerge
+.spinda11
+	ld a, 49
+	jr .spindamerge
+.spinda12
+	ld a, 50
+	jr .spindamerge
+.spinda13
+	ld a, 51
+	jr .spindamerge
+.spinda14
+	ld a, 52
+	jr .spindamerge
+.spinda15
+	ld a, 53
+	jr .spindamerge
+.spinda16
+	ld a, 54
+	jr .spindamerge
+.spinda17
+	ld a, 55
+	jr .spindamerge
+.spindamerge
+	ld [wUnownLetter], a
+	xor a
+	ld [wSpindaForm], a
+	ret
+	
+GetSpindaBackpicPointer:
+	ld a, [wTempMonCaughtData]
+	ld [wTestingRamSlot1], a
+	cp 16
+    jr c, .spinda1
+    cp 32
+    jr c, .spinda2
+    cp 48
+    jr c, .spinda3
+    cp 64
+    jr c, .spinda4
+    cp 80
+    jr c, .spinda5
+    cp 96
+    jr c, .spinda6
+    cp 112
+    jr c, .spinda7
+	cp 128
+    jr c, .spinda8
+    cp 144
+    jr c, .spinda9
+    cp 160
+    jr c, .spinda10
+    cp 176
+    jr c, .spinda11
+    cp 192
+    jr c, .spinda12
+    cp 208
+    jr c, .spinda13
+    cp 224
+    jr c, .spinda14
+    cp 240
+    jr c, .spinda15
+    cp 254
+	jr c, .spinda16
+	cp 255
+	jr c, .spinda17
+	ld a, 56
+	jr .spindamerge
+.spinda1
+	ld a, 39
+	jr .spindamerge
+.spinda2
+	ld a, 40
+	jr .spindamerge
+.spinda3
+	ld a, 41
+	jr .spindamerge
+.spinda4
+	ld a, 42
+	jr .spindamerge
+.spinda5
+	ld a, 43
+	jr .spindamerge
+.spinda6
+	ld a, 44
+	jr .spindamerge
+.spinda7
+	ld a, 45
+	jr .spindamerge
+.spinda8
+	ld a, 46
+	jr .spindamerge
+.spinda9
+	ld a, 47
+	jr .spindamerge
+.spinda10
+	ld a, 48
+	jr .spindamerge
+.spinda11
+	ld a, 49
+	jr .spindamerge
+.spinda12
+	ld a, 50
+	jr .spindamerge
+.spinda13
+	ld a, 51
+	jr .spindamerge
+.spinda14
+	ld a, 52
+	jr .spindamerge
+.spinda15
+	ld a, 53
+	jr .spindamerge
+.spinda16
+	ld a, 54
+	jr .spindamerge
+.spinda17
+	ld a, 55
+	jr .spindamerge
+.spindamerge
+	ld [wUnownLetter], a
+	xor a
+	ld [wSpindaForm], a
 	ret

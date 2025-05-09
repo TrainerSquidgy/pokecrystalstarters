@@ -239,6 +239,8 @@ INCLUDE "engine/movie/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
 INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"
+INCLUDE "engine/events/sacred_ash.asm"
+
 
 SECTION "bank14", ROMX
 
@@ -246,7 +248,6 @@ INCLUDE "engine/pokemon/party_menu.asm"
 INCLUDE "engine/events/squirtbottle.asm"
 INCLUDE "engine/events/card_key.asm"
 INCLUDE "engine/events/basement_key.asm"
-INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/pokemon/tempmon.asm"
 INCLUDE "engine/pokemon/types.asm"
 INCLUDE "engine/pokemon/mon_stats.asm"
