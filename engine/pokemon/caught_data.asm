@@ -166,7 +166,11 @@ SetCaughtData:
 	ld hl, wPartyMon1CaughtLevel
 	call GetPartyLocation
 SetBoxmonOrEggmonCaughtData:
+	ld a, [wSpindaSavedForm]
+	and a
+	jr nz, .setspots	
 	call Random
+.setspots
 	ld [hl], a
 	ld [hli], a
 	ld a, [wMapGroup]

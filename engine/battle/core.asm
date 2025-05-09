@@ -8414,6 +8414,8 @@ CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
 	ld [wSetMegaEvolutionPicture], a
+	ld [wSpindaForm], a
+	ld [wSpindaSavedForm], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
 	ld [wHiddenPowerLoop], a

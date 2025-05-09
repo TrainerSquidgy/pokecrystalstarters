@@ -453,13 +453,13 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_11
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, HOPPIP
-	db 13, RATICATE
-	db 15, MAGNEMITE
-	db 16, PIDGEOTTO
-	db 16, RATTATA
-	db 16, HOPPIP
-	db 16, HOPPIP
+	db 14, SPINDA
+	db 13, SPINDA
+	db 15, SPINDA
+	db 16, SPINDA
+	db 16, SPINDA
+	db 16, SPINDA
+	db 16, SPINDA
 	; day
 	db 14, HOPPIP
 	db 13, RATICATE

@@ -3194,7 +3194,9 @@ wPlayerYawning:: db
 wEnemyYawning:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
-	ds 56
+wSpindaForm:: db
+wSpindaSavedForm:: db
+	ds 54
 
 wEventFlags:: flag_array NUM_EVENTS
 

@@ -870,6 +870,7 @@ SelectMenuCallback:
 	end
 
 CountStep:
+	
 	; Don't count steps in link communication rooms.
 	ld a, [wLinkMode]
 	and a

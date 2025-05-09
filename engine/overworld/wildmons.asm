@@ -250,6 +250,10 @@ ApplyCleanseTagEffectOnEncounterRate::
 	ret
 
 ChooseWildEncounter:
+	
+	call Random
+	ld [wSpindaForm], a
+	ld [wSpindaSavedForm], a
 	call LoadWildMonDataPointer
 	jp nc, .nowildbattle
 	call CheckEncounterRoamMon
@@ -337,9 +341,10 @@ ChooseWildEncounter:
 	ret
 
 .loadwildmon
+	
 	ld a, b
 	ld [wTempWildMonSpecies], a
-
+	
 	ld a, [wMapGroup]
 	ld b, a
 	ld a, [wMapNumber]

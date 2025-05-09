@@ -703,7 +703,6 @@ PokeBallEffect:
 	call ClearSprites
 
 .return_from_capture
-	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	ret z
 	cp BATTLETYPE_DEBUG

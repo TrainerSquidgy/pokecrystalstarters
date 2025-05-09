@@ -126,7 +126,11 @@ GetUnownLetter:
 	ld [wMegaPicture], a
 	ret
 .Spinda
+	ld a, [wSpindaForm]
+	and a
+	jr nz, .WildSpinda
 	ld a, [wTempMonCaughtData]
+.WildSpinda
 	ld [wTestingRamSlot1], a
 	cp 16
     jr c, .spinda1
@@ -217,6 +221,8 @@ GetUnownLetter:
 	jr .spindamerge
 .spindamerge
 	ld [wUnownLetter], a
+	xor a
+	ld [wSpindaForm], a
 	ret
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
