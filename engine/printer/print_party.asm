@@ -319,7 +319,7 @@ PlaceGenderAndShininess:
 	hlcoord 17, 2
 	ld [hl], a
 	ld bc, wTempMonDVs
-	farcall CheckShininess
+	farcall CheckPlayerShinyFromPID
 	ret nc
 	hlcoord 18, 2
 	ld [hl], "⁂"

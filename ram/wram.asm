@@ -3192,7 +3192,10 @@ wMegaXorY:: db
 wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
-	ds 58
+wTempPIDSlot:: db
+wTempPID1:: db
+wTempPID2:: db
+	ds 55
 
 wEventFlags:: flag_array NUM_EVENTS
 

@@ -5,42 +5,35 @@ DEF SHINY_DEF_DV EQU 10
 DEF SHINY_SPD_DV EQU 10
 DEF SHINY_SPC_DV EQU 10
 
-CheckShininess:
-; Check if a mon is shiny by DVs at bc.
-; Return carry if shiny.
-
-	ld l, c
-	ld h, b
-
-; Attack
-	ld a, [hl]
-	and SHINY_ATK_MASK << 4
-	jr z, .not_shiny
-
-; Defense
-	ld a, [hli]
-	and %1111
-	cp SHINY_DEF_DV
+CheckPlayerShinyFromPID:
+	ld a, [wTempMonCaughtData]
+	ld l, a
+	ld a, [wTempMonCaughtData + 1]
+	ld h, a
+	jr CheckPIDShinyCommon
+	
+CheckEnemyShinyFromPID:
+	ld a, [wTempPID1]
+	ld l, a
+	ld a, [wTempPID2]
+	ld h, a
+	jr CheckPIDShinyCommon
+	
+CheckPIDShinyCommon:
+	; HL = PID
+	ld a, h
+	cp $FF
 	jr nz, .not_shiny
-
-; Speed
-	ld a, [hl]
-	and %1111 << 4
-	cp SHINY_SPD_DV << 4
-	jr nz, .not_shiny
-
-; Special
-	ld a, [hl]
-	and %1111
-	cp SHINY_SPC_DV
-	jr nz, .not_shiny
-
-; shiny
-	scf
-	ret
+	ld a, l
+	cp $F8
+	jr nc, .shiny
 
 .not_shiny
-	and a
+	and a ; clear carry
+	ret
+
+.shiny
+	scf ; set carry
 	ret
 
 Unused_CheckShininess:
@@ -375,7 +368,6 @@ LoadStatsScreenPals:
 	ret z
 	ld hl, StatsScreenPals
 	ld b, 0
-	dec c
 	add hl, bc
 	add hl, bc
 	ldh a, [rSVBK]
@@ -694,7 +686,7 @@ GetEnemyFrontpicPalettePointer:
 
 GetPlayerOrMonPalettePointer:
 	and a
-	jp nz, GetMonNormalOrShinyPalettePointer
+	jp nz, GetMonNormalOrShinyPalettePointerPlayer
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
 	jr nz, .male
@@ -782,12 +774,25 @@ _GetMonPalettePointer:
 	add hl, bc
 	ret
 
+GetMonNormalOrShinyPalettePointerPlayer:
+	push bc
+	call _GetMonPalettePointer
+	pop bc
+	push hl
+	call CheckPlayerShinyFromPID
+	pop hl
+	ret nc
+rept 4
+	inc hl
+endr
+	ret
+	
 GetMonNormalOrShinyPalettePointer:
 	push bc
 	call _GetMonPalettePointer
 	pop bc
 	push hl
-	call CheckShininess
+	call CheckEnemyShinyFromPID
 	pop hl
 	ret nc
 rept 4

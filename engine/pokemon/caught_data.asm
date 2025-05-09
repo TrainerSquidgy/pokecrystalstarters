@@ -166,36 +166,14 @@ SetCaughtData:
 	ld hl, wPartyMon1CaughtLevel
 	call GetPartyLocation
 SetBoxmonOrEggmonCaughtData:
-	ld a, [wTimeOfDay]
-	inc a
-	rrca
-	rrca
-	ld b, a
-	ld a, [wCurPartyLevel]
-	or b
-	ld [hli], a
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	cp MAP_POKECENTER_2F
-	jr nz, .NotPokecenter2F
-	ld a, b
-	cp GROUP_POKECENTER_2F
-	jr nz, .NotPokecenter2F
-
-	ld a, [wBackupMapGroup]
-	ld b, a
-	ld a, [wBackupMapNumber]
-	ld c, a
-
-.NotPokecenter2F:
-	call GetWorldMapLocation
-	ld b, a
-	ld a, [wPlayerGender]
-	rrca ; shift bit 0 (PLAYERGENDER_FEMALE_F) to bit 7 (CAUGHT_GENDER_MASK)
-	or b
-	ld [hl], a
+	; Just roll a 16-bit random PID and store it
+	ld a, [wTempPID1]
+	ld [hli], a ; PID low byte
+	ld a, [wTempPID2]
+	ld [hl], a  ; PID high byte
+	xor a
+	ld a, [wTempPID1]
+	ld a, [wTempPID2]
 	ret
 
 SetBoxMonCaughtData:

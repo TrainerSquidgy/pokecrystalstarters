@@ -250,6 +250,11 @@ ApplyCleanseTagEffectOnEncounterRate::
 	ret
 
 ChooseWildEncounter:
+	call Random
+	ld [wTempPID1], a
+	call Random
+	ld [wTempPID2], a
+	
 	call LoadWildMonDataPointer
 	jp nc, .nowildbattle
 	call CheckEncounterRoamMon

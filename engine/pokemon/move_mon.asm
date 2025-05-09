@@ -2017,6 +2017,10 @@ CalcMonStatC:
 GivePoke::
 	push de
 	push bc
+	call Random
+	ld [wTempPID1], a
+	call Random
+	ld [wTempPID2], a
 	xor a ; PARTYMON
 	ld [wMonType], a
 	call TryAddMonToParty

@@ -3600,7 +3600,7 @@ ShowSetEnemyMonAndSendOutAnimation:
 	call GetBaseData
 	ld a, OTPARTYMON
 	ld [wMonType], a
-	predef CopyMonToTempMon
+	;predef CopyMonToTempMon
 	call GetEnemyMonFrontpic
 
 	xor a
@@ -3955,16 +3955,11 @@ InitBattleMon:
 	ret
 
 BattleCheckPlayerShininess:
-	call GetPartyMonDVs
-	jr BattleCheckShininess
+	farcall CheckPlayerShinyFromPID
+	ret
 
 BattleCheckEnemyShininess:
-	call GetEnemyMonDVs
-
-BattleCheckShininess:
-	ld b, h
-	ld c, l
-	callfar CheckShininess
+	farcall CheckEnemyShinyFromPID
 	ret
 
 GetPartyMonDVs:
@@ -8406,6 +8401,9 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wTempPIDSlot], a
+	ld [wTempPID1], a
+	ld [wTempPID2], a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
