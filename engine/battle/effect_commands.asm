@@ -6956,10 +6956,12 @@ BattleCommand_LastResort:
 	ld a, [wBattleMonMoves + 2]
 	cp LAST_RESORT
 	ret z
-	jr nz, .player3moves
 	ld a, [wBattleMonMoves + 1]
 	cp LAST_RESORT
 	ret z
+	ld a, [wBattleMonMoves]
+	cp LAST_RESORT
+	ret z	
 	jr .failed
 
 .enemy
@@ -6992,8 +6994,10 @@ BattleCommand_LastResort:
 	ld a, [wEnemyMonMoves + 2]
 	cp LAST_RESORT
 	ret z
-	jr nz, .enemy3moves
 	ld a, [wEnemyMonMoves + 1]
+	cp LAST_RESORT
+	ret z
+	ld a, [wEnemyMonMoves]
 	cp LAST_RESORT
 	ret z	
 .failed
