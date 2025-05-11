@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1918,10 +1916,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5591,20 +5585,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6910,5 +6897,248 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
-	
+BattleCommand_CheckMagicCoat:
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_MAGIC_COAT, [hl]
+	ret z
+	res SUBSTATUS_MAGIC_COAT, [hl]
 
+	ld hl, BouncedBackText
+	push hl
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+
+; display bounce back/snatch text
+	pop hl
+	call StdBattleTextbox
+
+; backup and replace enemy move
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld a, [hl]
+	push af
+	push hl
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld b, a
+	call BattleCommand_SwitchTurn
+	pop hl
+	ld [hl], b
+	push hl
+
+	call UpdateMoveData
+	call ResetTurn
+
+; restore old move
+	pop hl
+	pop af
+	ld [hl], a
+	call UpdateMoveData
+	call BattleCommand_SwitchTurn
+	ret
+	
+BattleCommand_MagicCoat:
+	call CheckOpponentWentFirst
+	jr nz, .fail
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_MAGIC_COAT, [hl]
+	call AnimateCurrentMove
+	ld hl, MagicCoatText
+	jp StdBattleTextbox
+
+.fail
+	jp BattleEffect_ButItFailed
+	
+BattleCommand_StoredPower:
+; Power = 20 + 20 * (user's number of stat boosts)
+; Maximum power of 240 (power caps out at around 255 in Crystal,
+; so we can't reach the official moves' max of 860)
+
+	push bc
+	ld hl, wPlayerStatLevels
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_stat_levels
+	ld hl, wEnemyStatLevels
+.got_stat_levels
+	ld b, NUM_LEVEL_STATS
+	ld c, BASE_STAT_LEVEL
+	ld d, 0
+.loop
+; Compare user's stat level to base.
+	ld a, [hl]
+	cp c
+	jr z, .check_loop
+	jr c, .check_loop
+; If the stat level is positive, add it to d.
+	sub c
+	add d
+; End if we've hit the move's power cap
+; (at 11 positive stat levels).
+	cp 11
+	jr nc, .max_boosts
+	ld d, a
+.check_loop
+; Loop until we've looked at every stat.
+	inc hl
+	dec b
+	jr nz, .loop
+.calc_power
+; Power = 20 + 20 * (user's number of stat boosts, stored in d)
+	ld a, d
+	ld c, 20
+	call SimpleMultiply
+	ld d, 20
+	add d
+	ld d, a
+	pop bc
+	ret
+
+.max_boosts
+; Maximum power of 240 at 11 positive stat levels.
+	ld d, 240
+	pop bc
+	ret
+	
+BattleCommand_Trick:
+; Get both held items
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+	farcall CheckHiddenOpponent
+	jr nz, .failed
+
+	ld hl, wBattleMonItem
+	ld de, wEnemyMonItem
+
+; Fails if neither Pokemon is holding an item.
+	ld a, [hl]
+	and a
+	jr nz, .check_mail
+
+	ld a, [de]
+	and a
+	jr nz, .check_mail
+
+.failed
+	farcall FailMove
+	ret
+
+.check_mail
+; Fails if the player is holding mail.
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	jr c, .failed
+	
+; Fails if the enemy is holding mail.
+	ld a, [de]
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	jr c, .failed
+
+	ld a, [wLinkMode]
+	and a
+	jr z, .trade_items
+
+	ld a, [wBattleMode]
+	dec a
+	jr z, .failed
+
+.trade_items
+; Put enemy's item in wNamedObjectIndex
+	ld hl, wEnemyMonItem
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+
+; Load player's item in hl and de
+	ld a, 1
+	call BattlePartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wBattleMonItem
+; Store it in b for later
+	ld a, [hl]
+	ld b, a
+	
+; Overwrite player's item (hl and de)
+; with enemy's item (wNamedObjectIndex)
+	ld a, [wNamedObjectIndex]
+	ld [hl], a
+	ld [de], a
+	
+; Load enemy's item in hl and de
+	ld a, 1
+	call OTPartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonItem
+	
+; Overwrite enemy's item (hl and de)
+; with player's original item (b)
+	ld a, b
+	ld [hl], a
+	ld [de], a
+
+; Print Trick text
+	farcall AnimateCurrentMove
+	ld hl, TrickText
+	call StdBattleTextbox
+
+	ld hl, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_user_item
+	ld hl, wEnemyMonItem
+.got_user_item
+	ld a, [hl]
+	and a
+	jr z, .get_target_item
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	ld hl, TrickUserObtainedText
+	call StdBattleTextbox
+
+.get_target_item
+	ld hl, wEnemyMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_target_item
+	ld hl, wBattleMonItem
+.got_target_item
+	ld a, [hl]
+	and a
+	ret z
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	ld hl, TrickTargetObtainedText
+	jp StdBattleTextbox
+	
+	
+BattleCommand_MindBlown:
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+	callfar GetHalfMaxHP
+	callfar CheckUserHasEnoughHP
+	jr nc, .failed
+	push bc
+	call AnimateCurrentMove
+	pop bc
+	callfar SubtractHPFromUser
+	call UpdateUserInParty
+	ret
+	
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed

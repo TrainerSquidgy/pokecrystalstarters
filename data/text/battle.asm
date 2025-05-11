@@ -1149,3 +1149,39 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+BouncedBackText:
+	text "<USER>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "bounced back!"
+	prompt
+	
+MagicCoatText:
+	text "<USER>"
+	line "shrouded itself in"
+	cont "a MAGIC COAT!"
+	prompt
+	
+TrickUserObtainedText:
+	text "<USER>"
+	line "obtained"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt
+
+TrickTargetObtainedText:
+	text "<TARGET>"
+	line "obtained"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt	
+	
+TrickText:
+	text "<USER>"
+	line "switched items"
+	cont "with its target!"
+	prompt

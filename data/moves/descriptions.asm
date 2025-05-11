@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw FlameBurstDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw TrickDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw MindBlownDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -252,17 +252,21 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw HeadbuttDescription
+	dw MagicCoatDescription
+	dw StoredPowerDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+MagicCoatDescription:
+	db   "Bounces back some"
+	next "status moves.@"
+	
+StoredPowerDescription:
+	db   "Does more with"
+	next "each stat boost.@"
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +319,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+FlameBurstDescription:
+	db   "Attacks with a"
+	next "giant flame.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -971,9 +975,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+MindBlownDescription:
+	db   "Halves own HP to"
+	next "do big damage.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1270,3 +1274,7 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+TrickDescription:
+	db   "User and target"
+	next "swap their items.@"
