@@ -2141,7 +2141,7 @@ HealBlock:
 	healblock
 	endmove
 	
-HealBlock:
+WonderRoom:
 	checkobedience
 	usedmovetext
 	doturn

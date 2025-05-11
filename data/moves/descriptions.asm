@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw WonderRoomDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
