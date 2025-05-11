@@ -2171,3 +2171,10 @@ MindBlown:
 	buildopponentrage
 	kingsrock
 	endmove
+
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	calmmind
+	endmove

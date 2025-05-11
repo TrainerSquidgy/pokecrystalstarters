@@ -910,6 +910,7 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+BlacephalnRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

@@ -3367,3 +3367,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+BlacephalnEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, EMBER
+	db 1, ASTONISH
+	db 7, MAGIC_COAT
+	db 13, STORED_POWER
+	db 17, FLAME_BURST
+	db 23, NIGHT_SHADE
+	db 29, LIGHT_SCREEN
+	db 31, CALM_MIND
+	db 37, FIRE_BLAST
+	db 41, SHADOW_BALL
+	db 47, TRICK
+	db 59, MIND_BLOWN
+	db 0

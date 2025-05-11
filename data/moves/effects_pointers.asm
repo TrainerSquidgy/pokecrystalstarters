@@ -165,4 +165,5 @@ MoveEffectsPointers:
 	dw StoredPower
 	dw Trick
 	dw MindBlown
+	dw CalmMind
 	assert_table_length NUM_MOVE_EFFECTS

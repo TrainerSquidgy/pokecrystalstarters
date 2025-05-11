@@ -1,14 +1,13 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Blacephaln
+1: Ember
+1: Astonish
+7: Magic Coat
+13: Stored Power
+17: Flame Burst
+23: Night Shade
+29: Light Screen
+31: Calm Mind
+37: Fire Blast
+41: Shadow Ball
+47: Trick
+59: Mind Blown

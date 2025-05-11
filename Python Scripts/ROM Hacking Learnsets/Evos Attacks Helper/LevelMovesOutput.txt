@@ -1,16 +1,15 @@
-LechonkEvosAttacks:
+BlacephalnEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, EMBER
+	db 1, ASTONISH
+	db 7, MAGIC_COAT
+	db 13, STORED_POWER
+	db 17, FLAME_BURST
+	db 23, NIGHT_SHADE
+	db 29, LIGHT_SCREEN
+	db 31, CALM_MIND
+	db 37, FIRE_BLAST
+	db 41, SHADOW_BALL
+	db 47, TRICK
+	db 59, MIND_BLOWN
 	db 0

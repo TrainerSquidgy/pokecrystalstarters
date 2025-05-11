@@ -183,4 +183,5 @@ BattleCommandPointers:
 	dw BattleCommand_StoredPower
 	dw BattleCommand_Trick
 	dw BattleCommand_MindBlown
+	dw BattleCommand_CalmMind
 	assert_table_length NUM_EFFECT_COMMANDS

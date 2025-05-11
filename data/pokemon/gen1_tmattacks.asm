@@ -2506,6 +2506,12 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+BlacephalnGen1TMAttacks:
+	db 0
+	db 1, SELFDESTRUCT
+	db 1, EXPLOSION
+	db 1, SUBSTITUTE
+	db 0
 NoGen1TMAttacks:
 	db 0
 	db 0
