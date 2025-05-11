@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw FuryCutterDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw LastResortDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw CaptivateDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -220,8 +220,8 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
-	dw SacredFireDescription
+	dw RockBlastDescription
+	dw HyperVoiceDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -234,7 +234,7 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
-	dw MorningSunDescription
+	dw BulletSeedDescription
 	dw SynthesisDescription
 	dw MoonlightDescription
 	dw HiddenPowerDescription
@@ -252,17 +252,19 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw TickleDescription
+	dw DoubleslapDescription
+	dw WakeUpSlapDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+
+WakeUpSlapDescription:
+	db   "Does more if foe"
+	next "is asleep. Wakes.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -282,6 +284,14 @@ DoubleslapDescription:
 CometPunchDescription:
 	db   "Repeatedly punches"
 	next "2-5 times.@"
+
+BulletSeedDescription:
+	db   "Fires seeds at"
+	next "enemy 2-5 times.@"
+
+RockBlastDescription:
+	db   "Yeets rocks at"
+	next "enemy 2-5 times.@"
 
 MegaPunchDescription:
 	db   "A powerful punch"
@@ -314,10 +324,6 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
-
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -422,6 +428,10 @@ DoubleEdgeDescription:
 TailWhipDescription:
 	db   "Lowers the foe's"
 	next "DEFENSE.@"
+
+TickleDescription::
+	db   "Lowers the foe's"
+	next "ATTACK & DEFENSE.@"
 
 PoisonStingDescription:
 	db   "An attack that may"
@@ -835,9 +845,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+LastResortDescription:
+	db   "Only use after"
+	next "all other moves.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -1083,6 +1093,10 @@ CharmDescription:
 	db   "Sharply lowers the"
 	next "foe's ATTACK.@"
 
+CaptivateDescription:
+	db   "Sharply lowers the"
+	next "foe's SP.ATK.@"
+
 RolloutDescription:
 	db   "Attacks 5 turns"
 	next "with rising power.@"
@@ -1143,13 +1157,10 @@ SafeguardDescription:
 	db   "Prevents all"
 	next "status problems.@"
 
-PainSplitDescription:
-	db   "Adds user & foe's"
-	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
+HyperVoiceDescription:
+	db   "Uses sound waves"
+	next "to attack. Burp?@"
 
 MagnitudeDescription:
 	db   "A ground attack"
@@ -1198,10 +1209,6 @@ MetalClawDescription:
 VitalThrowDescription:
 	db   "A 2nd-strike move"
 	next "that never misses.@"
-
-MorningSunDescription:
-	db   "Restores HP"
-	next "(varies by time).@"
 
 SynthesisDescription:
 	db   "Restores HP"

@@ -198,9 +198,6 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +422,6 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -995,7 +989,7 @@ BattleCommand_DoTurn:
 	ld a, [de]
 	bit SUBSTATUS_TRANSFORMED, a
 	ret nz
-
+	
 	ldh a, [hBattleTurn]
 	and a
 
@@ -1077,8 +1071,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1918,10 +1910,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5370,24 +5358,6 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
 	ret
 
 BattleCommand_FlinchTarget:
@@ -5591,20 +5561,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6910,5 +6872,132 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
+BattleCommand_Tickle:
+	call ResetMiss
+	call BattleCommand_AttackDown
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_DefenseDown
+	jp BattleCommand_StatUpMessage
+
+BattleCommand_WakeUpSlap:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and SLP_MASK
+	ret z
 	
+	ld hl, wEnemyMonStatus
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .proceed
+	ld hl, wBattleMonStatus
+
+.proceed
+	xor a
+	ld [hl], a	
+	
+	call BattleCommand_SwitchTurn
+	ld hl, WokeUpText
+	call StdBattleTextbox
+	call BattleCommand_SwitchTurn
+	jp DoubleDamage
+	
+BattleCommand_EchoedVoice:
+	ld hl, wPlayerEchoedVoiceCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyEchoedVoiceCount
+
+.go
+	inc [hl]
+	ld a, [hl]
+	cp 5
+	jr c, .loop
+	ld a, 5
+.loop
+	dec a
+	and a
+	ret z
+	call BattleCommand_AddDamage
+	jr .loop
+	
+BattleCommand_LastResort:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+	ld a, [wBattleMonMoves + 3]
+	and a
+	jr nz, .player4moves
+	ld a, [wBattleMonMoves + 2]
+	and a
+	jr nz, .player3moves
+	ld a, [wBattleMonMoves + 1]
+	and a
+	jr nz, .player2moves
+	jr z, .failed
+.player4moves	
+	ld a, [wPlayerUsedMoves + 2]
+	and a
+	jr z, .failed
+.player3moves	
+	ld a, [wPlayerUsedMoves + 1]
+	and a
+	jr z, .failed
+.player2moves	
+	ld a, [wPlayerUsedMoves]
+	and a
+	jr z, .failed	
+.checkforlastresort
+	ld a, [wBattleMonMoves + 3]
+	cp LAST_RESORT
+	ret z
+	ld a, [wBattleMonMoves + 2]
+	cp LAST_RESORT
+	ret z
+	jr nz, .player3moves
+	ld a, [wBattleMonMoves + 1]
+	cp LAST_RESORT
+	ret z
+	jr .failed
+
+.enemy
+	ld a, [wEnemyMonMoves + 3]
+	and a
+	jr nz, .enemy4moves
+	ld a, [wEnemyMonMoves + 2]
+	and a
+	jr nz, .enemy3moves
+	ld a, [wEnemyMonMoves + 1]
+	and a
+	jr nz, .enemy2moves
+	jr z, .failed
+.enemy4moves	
+	ld a, [wEnemyUsedMoves + 2]
+	and a
+	jr z, .failed
+.enemy3moves	
+	ld a, [wEnemyUsedMoves + 1]
+	and a
+	jr z, .failed
+.enemy2moves	
+	ld a, [wEnemyUsedMoves]
+	and a
+	jr z, .failed
+.checkforlastresortenemy
+	ld a, [wEnemyMonMoves + 3]
+	cp LAST_RESORT
+	ret z
+	ld a, [wEnemyMonMoves + 2]
+	cp LAST_RESORT
+	ret z
+	jr nz, .enemy3moves
+	ld a, [wEnemyMonMoves + 1]
+	cp LAST_RESORT
+	ret z	
+.failed
+	ld a, 1
+	ld [wAttackMissed], a
+	jp BattleEffect_ButItFailed
 
