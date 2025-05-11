@@ -910,6 +910,12 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+MinccinoRelearnedEggMoves:
+CinccinoRelearnedEggMoves:
+	db 0
+	db 1, FLAIL
+	db 1, TAIL_WHIP
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0

@@ -805,5 +805,9 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+MinccinoEggMoves:
+CinccinoEggMoves:
+	db FLAIL
+	db TAIL_WHIP
 NoEggMoves:
 	db -1 ; end

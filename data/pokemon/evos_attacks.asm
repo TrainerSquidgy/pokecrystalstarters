@@ -2160,7 +2160,7 @@ TotodileEvosAttacks:
 	db EVOLVE_LEVEL, 18, CROCONAW
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 1, LAST_RESORT
+	db 1, LEER
 	db 7, RAGE
 	db 13, WATER_GUN
 	db 20, BITE
@@ -3367,3 +3367,32 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+MinccinoEvosAttacks:
+	db EVOLVE_ITEM, SHINY_STONE, CINCCINO
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 4, GROWL
+	db 8, TICKLE
+	db 11, DOUBLESLAP
+	db 15, ENCORE
+	db 18, SWIFT
+	db 22, SING
+	db 25, TAIL_SLAP
+	db 29, CHARM
+	db 32, WAKE_UP_SLAP
+	db 36, ECHOED_VOICE
+	db 39, SLAM
+	db 43, CAPTIVATE
+	db 46, HYPER_VOICE
+	db 49, LAST_RESORT
+	db 0
+	
+CinccinoEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, BULLET_SEED
+	db 1, ROCK_BLAST
+	db 1, TICKLE
+	db 1, SING
+	db 1, TAIL_SLAP
+	db 0

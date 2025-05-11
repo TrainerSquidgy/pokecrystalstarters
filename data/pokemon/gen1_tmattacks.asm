@@ -2506,6 +2506,14 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+MinccinoGen1TMAttacks:
+CinccinoGen1TMAttacks:
+	db 0
+	db 1, THUNDER_WAVE
+	db 1, SUBSTITUTE
+	db 1, BUBBLEBEAM
+	db 0
+
 NoGen1TMAttacks:
 	db 0
 	db 0
