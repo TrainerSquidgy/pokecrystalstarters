@@ -48,8 +48,7 @@ GetUnownLetter:
 	ld [wUnownLetter], a
 	ld a, [wBattleMonSpecies]
 	cp MAUSHOLD
-	ret nz
-	
+	jr nz, .mega
 	ld a, [wMausholdForm]
 	and a
 	jr z, .maushold4
@@ -57,9 +56,87 @@ GetUnownLetter:
 	jr .done_maushold
 .maushold4
 	ld a, 27
-.done_maushold
 	ld [wUnownLetter], a
 	ret
+.mega
+	ld a, [wSetMegaEvolutionPicture]
+	and a
+	ret nz
+	ld a, [wBattleMonSpecies]
+	cp VENUSAUR
+	jr z, .Venusaur
+	cp GENGAR
+	jr z, .Gengar
+	cp PINSIR
+	jr z, .Pinsir
+	cp CHARIZARD
+	jr z, .Charizard
+	cp BLASTOISE
+	jr z, .Blastoise
+	cp BEEDRILL
+	jr z, .Beedrill
+	cp ALAKAZAM
+	jr z, .Alakazam
+	cp HERACROSS
+	jr z, .Heracross
+	cp AMPHAROS
+	jr z, .Ampharos
+	cp HOUNDOOM
+	jr z, .Houndoom
+	cp AERODACTYL
+	jr z, .Aerodactyl
+	cp PIDGEOT
+	jr z, .Pidgeot
+	ret
+.Pidgeot
+	ld a, 40
+	ld [wMegaPicture], a
+	ret
+.Aerodactyl
+	ld a, 39
+	ld [wMegaPicture], a
+	ret
+.Houndoom
+	ld a, 38
+	ld [wMegaPicture], a
+	ret
+.Ampharos
+	ld a, 37
+	ld [wMegaPicture], a
+	ret
+.Heracross
+	ld a, 36
+	ld [wMegaPicture], a
+	ret
+.Alakazam
+	ld a, 35
+	ld [wMegaPicture], a
+	ret
+.Beedrill
+	ld a, 34
+	ld [wMegaPicture], a
+	ret
+.Blastoise
+	ld a, 33
+	ld [wMegaPicture], a
+	ret
+.Charizard
+	ld a, 32
+	ld [wMegaPicture], a
+	ret
+.Venusaur
+	ld a, 29
+	ld [wMegaPicture], a
+	ret
+.Pinsir
+	ld a, 31
+	ld [wMegaPicture], a
+	ret
+.Gengar
+	ld a, 30
+	ld [wMegaPicture], a
+	ret
+	
 GetMonFrontpic:
 	ld a, [wCurPartySpecies]
 	ld [wCurSpecies], a
@@ -217,6 +294,10 @@ LoadFrontpicTiles:
 	ret
 
 GetMonBackpic:
+	ld a, [wSetMegaEvolutionPicture]
+	and a
+	jr nz, MegaPicture
+	
 	ld a, [wCurPartySpecies]
 	call IsAPokemon
 	ret c
@@ -249,6 +330,51 @@ GetMonBackpic:
 	ld a, MAUSHOLD
 	ld d, BANK(PokemonPicPointers)
 .ok
+	dec a
+	ld bc, 6
+	call AddNTimes
+	ld bc, 3
+	add hl, bc
+	ld a, d
+	call GetFarByte
+	call FixPicBank
+	push af
+	inc hl
+	ld a, d
+	call GetFarWord
+	ld de, wDecompressScratch
+	pop af
+	call FarDecompress
+	ld hl, wDecompressScratch
+	ld c, 6 * 6
+	call FixBackpicAlignment
+	pop hl
+	ld de, wDecompressScratch
+	ldh a, [hROMBank]
+	ld b, a
+	call Get2bpp
+	pop af
+	ldh [rSVBK], a
+	ret
+	
+MegaPicture:
+	ld a, [wCurPartySpecies]
+	call IsAPokemon
+	ret c
+
+	ld a, [wMegaPicture]
+	ld c, a
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wDecompressScratch)
+	ldh [rSVBK], a
+	push de
+
+	; These are assumed to be at the same address in their respective banks.
+	assert PokemonPicPointers == UnownPicPointers
+	ld hl, PokemonPicPointers
+	ld a, c
+	ld d, BANK(UnownPicPointers)
 	dec a
 	ld bc, 6
 	call AddNTimes

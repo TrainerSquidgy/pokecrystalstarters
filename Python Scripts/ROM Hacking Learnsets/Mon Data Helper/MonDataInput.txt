@@ -1,0 +1,58 @@
+Mon Name: Relicanth
+
+HP:     100
+Attack: 90
+Defense: 130
+Special Attack: 45
+Special Defense: 65
+Speed: 55
+
+Type 1: Water
+Type 2: Rock
+
+Catch Rate: 25
+Base Experience: 198
+
+Held Item 1: None
+Held Item 2: None
+
+Egg Cycles: 40
+Egg Group 1: Water 1
+Egg Group 2: Water 2
+
+Growth Rate: Slow
+
+TMs:
+DYNAMICPUNCH
+HEADBUTT
+CURSE
+TOXIC
+ROCK_SMASH
+PSYCH_UP
+HIDDEN_POWER
+SUNNY_DAY
+SNORE
+ICY_WIND
+PROTECT
+RAIN_DANCE
+ENDURE
+FRUSTRATION
+RETURN
+DIG
+PSYCHIC_M
+SHADOW_BALL
+MUD_SLAP
+DOUBLE_TEAM
+ICE_PUNCH
+SWAGGER
+SLEEP_TALK
+THUNDERPUNCH
+DREAM_EATER
+REST
+ATTRACT
+THIEF
+FIRE_PUNCH
+FURY_CUTTER
+NIGHTMARE
+CUT
+FLASH
