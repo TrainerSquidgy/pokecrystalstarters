@@ -6875,11 +6875,11 @@ BattleCommand_AddDamage:
 BattleCommand_Tickle:
 	call ResetMiss
 	call BattleCommand_AttackDown
-	call BattleCommand_StatUpMessage
+	call BattleCommand_StatDownMessage
 
 	call ResetMiss
 	call BattleCommand_DefenseDown
-	jp BattleCommand_StatUpMessage
+	jp BattleCommand_StatDownMessage
 
 BattleCommand_WakeUpSlap:
 	ld a, BATTLE_VARS_STATUS_OPP
