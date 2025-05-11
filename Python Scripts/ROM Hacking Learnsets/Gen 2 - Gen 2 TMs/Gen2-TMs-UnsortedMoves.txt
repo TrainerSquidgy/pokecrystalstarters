@@ -1,78 +1,123 @@
-Tackle
-Harden
-Confusion
-Rock Throw
+Fire Punch
+Hyper Beam
+Solar Beam
 Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
+Light Screen
+Self-Destruct
+Rest
+Thief
+Snore
+Protect
+Sunny Day
+Will-O-Wisp
+Facade
+Rock Blast
+Payback
+Fling
+Shadow Claw
+Round
+Mystical Fire
+Flamethrower
+Psychic
+Fire Blast
+Substitute
+Psyshock
+Endure
+Sleep Talk
+Encore
+Shadow Ball
+Uproar
+Heat Wave
+Taunt
+Trick
+Overheat
+Calm Mind
+Dark Pulse
+Zen Headbutt
+Foul Play
+Stored Power
+Fire Punch
+Hyper Beam
+Solar Beam
+Fire Spin
+Light Screen
+Self-Destruct
+Rest
+Thief
+Snore
+Protect
+Sunny Day
+Will-O-Wisp
+Facade
+Rock Blast
+Payback
+Fling
+Shadow Claw
+Round
+Mystical Fire
+Flamethrower
+Psychic
+Fire Blast
+Substitute
+Psyshock
+Endure
+Sleep Talk
+Encore
+Shadow Ball
+Uproar
+Heat Wave
+Taunt
+Trick
+Overheat
+Calm Mind
+Dark Pulse
+Zen Headbutt
+Foul Play
+Stored Power
+After You
+Foul Play
+Heat Wave
+Knock Off
+Last Resort
+Pain Split
+Recycle
+Snore
+Spite
+Trick
+Uproar
+Psyshock
 Calm Mind
 Toxic
 Hidden Power
 Sunny Day
+Taunt
 Hyper Beam
 Light Screen
 Protect
-Safeguard
 Frustration
-SolarBeam
-Earthquake
+Smack Down
 Return
 Psychic
 Shadow Ball
 Double Team
-Reflect
 Flamethrower
-Sandstorm
 Fire Blast
-Rock Tomb
+Torment
 Facade
-Secret Power
+Flame Charge
 Rest
-Skill Swap
+Thief
+Round
 Overheat
-Charge Beam
-Endure
+Fling
+Quash
 Will-O-Wisp
-Embargo
 Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
+Shadow Claw
+Payback
 Swagger
+Sleep Talk
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
-Snore
-Swift
-Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+Dark Pulse
+Confide
+Headbutt

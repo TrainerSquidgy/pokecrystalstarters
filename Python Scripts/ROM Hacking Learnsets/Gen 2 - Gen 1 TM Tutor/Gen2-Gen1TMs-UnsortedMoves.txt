@@ -1,247 +1,123 @@
-Calm Mind
-Toxic
-Hidden Power
-Ice Beam
+Fire Punch
 Hyper Beam
+Solar Beam
+Fire Spin
 Light Screen
-Protect
-Rain Dance
-Safeguard
-Frustration
-Earthquake
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Sandstorm
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Flash
-Body Slam
-Defense Curl
-Double-Edge
-Dream Eater
-Endure
-Explosion
-Mimic
-Psych Up
-Rock Slide
-Rollout
-Selfdestruct
-Sleep Talk
-Snore
-Substitute
-Swagger
-Swift
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
-Snore
-Swift
-Zen Headbutt
-Calm Mind
-Toxic
-Hidden Power
-Ice Beam
-Blizzard
-Hyper Beam
-Light Screen
-Protect
-Rain Dance
-Safeguard
-Frustration
-Earthquake
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Sandstorm
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Charge Beam
-Endure
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
-Swagger
-Substitute
-Trick Room
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Psychic
-Future Sight
-Explosion
-Moonblast
-Moonlight
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Rock Slide
-Psyshock
-Cosmic Power
-Psychic
-Stone Edge
-Future Sight
-Magic Room
-Explosion
-Hyper Beam
-Giga Impact
-Light Screen
-Reflect
-Safeguard
 Self-Destruct
 Rest
-Rock Slide
+Thief
 Snore
 Protect
-Icy Wind
-Sandstorm
-Rain Dance
-Hail
+Sunny Day
+Will-O-Wisp
 Facade
-Swift
-Helping Hand
-Weather Ball
-Rock Tomb
-Sand Tomb
 Rock Blast
-Power Swap
-Trick Room
-Magic Room
+Payback
+Fling
+Shadow Claw
 Round
-Acrobatics
-Bulldoze
-Psychic Terrain
-Stomping Tantrum
-Body Slam
-Ice Beam
-Blizzard
-Earthquake
+Mystical Fire
+Flamethrower
 Psychic
+Fire Blast
 Substitute
 Psyshock
 Endure
 Sleep Talk
-Baton Pass
+Encore
 Shadow Ball
-Future Sight
-Skill Swap
-Cosmic Power
+Uproar
+Heat Wave
+Taunt
+Trick
+Overheat
 Calm Mind
-Gyro Ball
-Power Gem
-Earth Power
-Nasty Plot
+Dark Pulse
 Zen Headbutt
-Iron Head
-Stone Edge
-Stealth Rock
-Grass Knot
+Foul Play
 Stored Power
-Ally Switch
+Fire Punch
+Hyper Beam
+Solar Beam
+Fire Spin
+Light Screen
+Self-Destruct
+Rest
+Thief
+Snore
+Protect
+Sunny Day
+Will-O-Wisp
+Facade
+Rock Blast
+Payback
+Fling
+Shadow Claw
+Round
+Mystical Fire
+Flamethrower
+Psychic
+Fire Blast
+Substitute
+Psyshock
+Endure
+Sleep Talk
+Encore
+Shadow Ball
+Uproar
+Heat Wave
+Taunt
+Trick
+Overheat
 Calm Mind
-Hail
-Ice Beam
-Blizzard
+Dark Pulse
+Zen Headbutt
+Foul Play
+Stored Power
+After You
+Foul Play
+Heat Wave
+Knock Off
+Last Resort
+Pain Split
+Recycle
+Snore
+Spite
+Trick
+Uproar
+Psyshock
+Calm Mind
+Toxic
+Hidden Power
+Sunny Day
+Taunt
 Hyper Beam
 Light Screen
 Protect
-Rain Dance
-Safeguard
-Earthquake
+Frustration
+Smack Down
+Return
 Psychic
 Shadow Ball
 Double Team
-Reflect
-Sandstorm
-Rock Tomb
+Flamethrower
+Fire Blast
+Torment
 Facade
+Flame Charge
 Rest
-Skill Swap
-Charge Beam
-Endure
-Nasty Plot
+Thief
+Round
+Overheat
+Fling
+Quash
+Will-O-Wisp
 Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
+Shadow Claw
+Payback
+Swagger
 Sleep Talk
-Bulldoze
-Dream Eater
-Grass Knot
-Swagger
 Substitute
-Trick Room
-Ancient Power
-Baton Pass
-Charge Beam
+Dark Pulse
 Confide
-Defense Curl
-Double Team
-Double-Edge
-Dream Eater
-Embargo 
-Flash 
-Frustration 
-Gravity
-Heal Block 
-Hidden Power 
-Laser Focus
-Magic Coat
-Mimic
-Natural Gift 
-Pain Split
-Psych Up
-Psywave 
-Recycle
-Return 
-Rollout
-Secret Power 
-Signal Beam 
-Smack Down
-Swagger
-Telekinesis 
-Toxic
+Headbutt
