@@ -1,16 +1,20 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Reuniclus
+1: Psywave
+1: Reflect
+1: Rollout
+1: Snatch
+3: Reflect
+7: Rollout
+10: Snatch
+14: Hidden Power
+16: Light Screen
+19: Charm
+24: Recover
+25: Psyshock
+28: Endeavor
+31: Future Sight
+34: Pain Split
+39: Psychic
+41: Dizzy Punch
+48: Heal Block
+59: Wonder Room

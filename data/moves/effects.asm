@@ -1177,6 +1177,7 @@ Splash:
 	checkobedience
 	usedmovetext
 	doturn
+	checksnatch
 	splash
 	endmove
 

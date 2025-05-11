@@ -1,16 +1,22 @@
-LechonkEvosAttacks:
+ReuniclusEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, PSYWAVE
+	db 1, REFLECT
+	db 1, ROLLOUT
+	db 1, SNATCH
+	db 3, REFLECT
+	db 7, ROLLOUT
+	db 10, SNATCH
+	db 14, HIDDEN_POWER
+	db 16, LIGHT_SCREEN
+	db 19, CHARM
+	db 24, RECOVER
+	db 25, PSYSHOCK
+	db 28, ENDEAVOR
+	db 31, FUTURE_SIGHT
+	db 34, PAIN_SPLIT
+	db 39, PSYCHIC
+	db 41, DIZZY_PUNCH
+	db 48, HEAL_BLOCK
+	db 59, WONDER_ROOM
 	db 0

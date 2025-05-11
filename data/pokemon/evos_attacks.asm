@@ -3367,3 +3367,69 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SolosisEvosAttacks:
+	db EVOLVE_LEVEL, 32, DUOSION
+	db 0 ; No More Evolutions
+	db 1, PSYWAVE
+	db 4, REFLECT
+	db 8, ROLLOUT
+	db 11, SNATCH
+	db 15, HIDDEN_POWER
+	db 18, LIGHT_SCREEN
+	db 22, CHARM
+	db 25, RECOVER
+	db 29, PSYSHOCK
+	db 32, ENDEAVOR
+	db 36, FUTURE_SIGHT
+	db 39, PAIN_SPLIT
+	db 43, PSYCHIC_M
+	db 46, HEAL_BLOCK
+	db 50, WONDER_ROOM
+	db 0
+	
+DuosionEvosAttacks:
+	db EVOLVE_LEVEL, 41, REUNICLUS
+	db 0 ; No More Evolutions
+	db 1, PSYWAVE
+	db 1, REFLECT
+	db 1, ROLLOUT
+	db 1, SNATCH
+	db 3, REFLECT
+	db 7, ROLLOUT
+	db 10, SNATCH
+	db 14, HIDDEN_POWER
+	db 16, LIGHT_SCREEN
+	db 19, CHARM
+	db 24, RECOVER
+	db 25, PSYSHOCK
+	db 28, ENDEAVOR
+	db 31, FUTURE_SIGHT
+	db 34, PAIN_SPLIT
+	db 39, PSYCHIC_M
+	db 46, HEAL_BLOCK
+	db 53, WONDER_ROOM
+	db 0
+	
+ReuniclusEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, PSYWAVE
+	db 1, REFLECT
+	db 1, ROLLOUT
+	db 1, SNATCH
+	db 3, REFLECT
+	db 7, ROLLOUT
+	db 10, SNATCH
+	db 14, HIDDEN_POWER
+	db 16, LIGHT_SCREEN
+	db 19, CHARM
+	db 24, RECOVER
+	db 25, PSYSHOCK
+	db 28, ENDEAVOR
+	db 31, FUTURE_SIGHT
+	db 34, PAIN_SPLIT
+	db 39, PSYCHIC_M
+	db 41, DIZZY_PUNCH
+	db 48, HEAL_BLOCK
+	db 59, WONDER_ROOM
+	db 0

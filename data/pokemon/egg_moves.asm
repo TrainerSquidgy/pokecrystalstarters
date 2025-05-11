@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+DuosionEggMoves:
+ReuniclusEggMoves:
+SolosisEggMoves:
 NoEggMoves:
 	db -1 ; end

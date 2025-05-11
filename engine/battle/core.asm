@@ -718,7 +718,7 @@ HandleEncore:
 .player_1
 	call .do_enemy
 .do_player
-	ld hl, wEnemyHealBlockCount
+	ld hl, wPlayerHealBlockCount
 	ld a, [hl]
 	and a
 	jr z, .skip_heal_block
@@ -5982,8 +5982,8 @@ ParseEnemyAction:
 	jr z, .not_heal_block
 	ld a, [hl]
 	call IsHealingMove
-.not_heal_block
 	jr z, .disabled
+.not_heal_block
 	ld a, [de]
 	and PP_MASK
 	jr nz, .enough_pp

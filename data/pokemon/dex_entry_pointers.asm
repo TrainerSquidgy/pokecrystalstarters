@@ -251,5 +251,7 @@ PokedexDataPointerTable:
 	dw TyranitarPokedexEntry
 	dw LugiaPokedexEntry
 	dw HoOhPokedexEntry
-	dw CelebiPokedexEntry
+	dw SolosisPokedexEntry
+	dw DuosionPokedexEntry
+	dw ReuniclusPokedexEntry
 	assert_table_length NUM_POKEMON

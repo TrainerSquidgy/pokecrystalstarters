@@ -2506,6 +2506,9 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+DuosionGen1TMAttacks:
+ReuniclusGen1TMAttacks:
+SolosisGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0
