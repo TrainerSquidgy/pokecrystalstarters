@@ -99,8 +99,8 @@ ItemDescriptions:
 	dw TwistedSpoonDesc
 	dw WhtApricornDesc
 	dw BlackbeltDesc
+	dw BlkApricornDesc
 	dw WaterStoneDesc
-	dw TeruSama7Desc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc

@@ -65,5 +65,5 @@ ArnieGiftText:
 	line "can evolve some"
 	
 	para "#MON not found"
-	cont "here in JOHTO!"
+	line "here in JOHTO!"
 	done

@@ -2507,11 +2507,31 @@ VictreebelGen1TMAttacks:
 	db 0
 
 MinccinoGen1TMAttacks:
+	db 0
+	db 1, THUNDER_WAVE
+	db 1, SUBSTITUTE
+	db 1, BUBBLEBEAM
+	db 0
 CinccinoGen1TMAttacks:
 	db 0
 	db 1, THUNDER_WAVE
 	db 1, SUBSTITUTE
 	db 1, BUBBLEBEAM
+	db 1, POUND
+	db 1, GROWL
+	db 1, TICKLE
+	db 1, DOUBLESLAP
+	db 1, ENCORE
+	db 1, SWIFT
+	db 1, SING
+	db 1, TAIL_SLAP
+	db 1, CHARM
+	db 1, WAKE_UP_SLAP
+	db 1, ECHOED_VOICE
+	db 1, SLAM
+	db 1, CAPTIVATE
+	db 1, HYPER_VOICE
+	db 1, LAST_RESORT
 	db 0
 
 NoGen1TMAttacks:
