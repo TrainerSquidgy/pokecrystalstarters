@@ -57,3 +57,13 @@ ArnieRematchText:
 	para "I've turned over a"
 	line "new leaf!"
 	done
+
+ArnieGiftText:
+	text  "Here you go!"
+	
+	para "My friend says it"
+	line "can evolve some"
+	
+	para "#MON not found"
+	cont "here in JOHTO!"
+	done
