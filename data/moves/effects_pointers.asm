@@ -161,4 +161,9 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw Snatch
+	dw NormalHit
+	dw Endeavor
+	dw HealBlock
+	dw WonderRoom
 	assert_table_length NUM_MOVE_EFFECTS

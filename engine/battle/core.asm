@@ -606,6 +606,15 @@ CheckPlayerLockedIn:
 ParsePlayerAction:
 	call CheckPlayerLockedIn
 	jp c, .locked_in
+	ld hl, wPlayerHealBlockCount
+	ld a, [hl]
+	and a
+	jr z, .skip_heal_block
+	dec [hl]
+	jr nz, .skip_heal_block
+	ld hl, HealBlockWoreOffText
+	call StdBattleTextbox
+.skip_heal_block
 	ld hl, wPlayerSubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	jr z, .not_encored
@@ -709,6 +718,15 @@ HandleEncore:
 .player_1
 	call .do_enemy
 .do_player
+	ld hl, wEnemyHealBlockCount
+	ld a, [hl]
+	and a
+	jr z, .skip_heal_block
+	dec [hl]
+	jr nz, .skip_heal_block
+	ld hl, HealBlockWoreOffText
+	call StdBattleTextbox
+.skip_heal_block
 	ld hl, wPlayerSubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	ret z
@@ -5583,6 +5601,13 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
+	ld a, [wPlayerHealBlockCount]
+	and a
+	jr z, .not_heal_block
+	ld a, [hl]
+	call IsHealingMove
+	jr z, .heal_blocked
+.not_heal_block
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -5597,6 +5622,10 @@ MoveSelectionScreen:
 	ld [wCurPlayerMove], a
 	xor a
 	ret
+
+.heal_blocked
+	ld hl, BattleText_TheMoveCantBeSelected
+	jr .place_textbox_start_over
 
 .move_disabled
 	ld hl, BattleText_TheMoveIsDisabled
@@ -5830,7 +5859,13 @@ CheckPlayerHasUsableMoves:
 	and a
 	ld hl, wBattleMonPP
 	jr nz, .disabled
-
+	ld a, [wPlayerHealBlockCount]
+	and a
+	jr z, .not_heal_block
+	ld a, [hl]
+	call IsHealingMove
+	jr z, .disabled
+.not_heal_block
 	ld a, [hli]
 	or [hl]
 	inc hl
@@ -5941,6 +5976,13 @@ ParseEnemyAction:
 	jp z, .struggle
 	ld a, [wEnemyDisabledMove]
 	cp [hl]
+	jr z, .disabled
+	ld a, [wEnemyHealBlockCount]
+	and a
+	jr z, .not_heal_block
+	ld a, [hl]
+	call IsHealingMove
+.not_heal_block
 	jr z, .disabled
 	ld a, [de]
 	and PP_MASK
@@ -8406,6 +8448,8 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wPlayerHealBlockCount], a
+	ld [wEnemyHealBlockCount], a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
@@ -9266,3 +9310,18 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+
+IsHealingMove:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_HEAL
+	ret z
+	cp EFFECT_MOONLIGHT
+	ret z
+	cp EFFECT_MORNING_SUN
+	ret z
+	cp EFFECT_SYNTHESIS
+	ret
+	
+	

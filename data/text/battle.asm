@@ -1149,3 +1149,39 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+WaitsForMoveText:
+	text "<USER>"
+	line "waits for a target"
+	cont "to make a move!"
+	prompt
+
+SnatchedMoveText:
+	text "<TARGET>"
+	line "snatched"
+	cont "<USER>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+	
+HealBlockText:
+	text "<TARGET>"
+	line "was prevented from"
+	cont "healing!"
+	prompt
+
+HealBlockWoreOffText:
+	text "<TARGET>'s"
+	line "HEAL BLOCK wore"
+	cont "off!"
+	prompt
+	
+BattleText_TheMoveCantBeSelected:
+	text "The move can't be"
+	line "selected!"
+	prompt
+	
+BattleText_StatsChanged:
+	text "DEFENSE and SP."
+	line "DEF are swapped.@"

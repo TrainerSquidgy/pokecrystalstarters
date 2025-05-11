@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1301,7 +1299,7 @@ BattleCommand_Stab:
 	pop af
 .TypesLoop:
 	call GetNextTypeMatchupsByte
-    inc hl
+inc hl
 
 	cp -1
 	jr z, .end
@@ -1918,10 +1916,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -2366,7 +2360,7 @@ BattleCommand_SuperEffectiveText:
 	
 BattleCommand_CheckFaint:
 ; Faint the opponent if its HP reached zero
-;  and faint the user along with it if it used Destiny Bond.
+;and faint the user along with it if it used Destiny Bond.
 ; Ends the move effect if the opponent faints.
 
 	ld hl, wEnemyMonHP
@@ -2601,13 +2595,26 @@ PlayerAttackDamage:
 	ld c, [hl]
 	ld hl, wPlayerAttack
 	jr .thickclub
-
+	
 .special
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_PSYSHOCK
+	jr z, .psyshock
+	
 	ld hl, wEnemyMonSpclDef
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	jr .screens
+	
+.psyshock
+	ld hl, wEnemyMonDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
 
+.screens
 	ld a, [wEnemyScreens]
 	bit SCREENS_LIGHT_SCREEN, a
 	jr z, .specialcrit
@@ -2694,7 +2701,7 @@ TruncateHL_BC:
 CheckDamageStatsCritical:
 ; Return carry if boosted stats should be used in damage calculations.
 ; Unboosted stats should be used if the attack is a critical hit,
-;  and the stage of the opponent's defense is higher than the user's attack.
+;and the stage of the opponent's defense is higher than the user's attack.
 
 	ld a, [wCriticalHit]
 	and a
@@ -3411,7 +3418,7 @@ DoEnemyDamage:
 
 .ignore_substitute
 	; Subtract wCurDamage from wEnemyMonHP.
-	;  store original HP in little endian wHPBuffer2
+	;store original HP in little endian wHPBuffer2
 	ld a, [hld]
 	ld b, a
 	ld a, [wEnemyMonHP + 1]
@@ -3488,8 +3495,8 @@ DoPlayerDamage:
 
 .ignore_substitute
 	; Subtract wCurDamage from wBattleMonHP.
-	;  store original HP in little endian wHPBuffer2
-	;  store new HP in little endian wHPBuffer3
+	;store original HP in little endian wHPBuffer2
+	;store new HP in little endian wHPBuffer3
 	ld a, [hld]
 	ld b, a
 	ld a, [wBattleMonHP + 1]
@@ -4685,7 +4692,7 @@ BattleCommand_AllStatsUp:
 ; Special Defense
 	call ResetMiss
 	call BattleCommand_SpecialDefenseUp
-	jp   BattleCommand_StatUpMessage
+	jp BattleCommand_StatUpMessage
 
 ResetMiss:
 	xor a
@@ -5591,20 +5598,13 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -5693,10 +5693,10 @@ BattleCommand_TrapTarget:
 	jp StdBattleTextbox
 
 .Traps:
-	dbw BIND,      UsedBindText      ; 'used BIND on'
-	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
-	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
+	dbw BIND,UsedBindText; 'used BIND on'
+	dbw WRAP,WrappedByText ; 'was WRAPPED by'
+	dbw FIRE_SPIN, FireSpinTrapText; 'was trapped!'
+	dbw CLAMP, ClampedByText ; 'was CLAMPED by'
 	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
 
 INCLUDE "engine/battle/move_effects/mist.asm"
@@ -6248,7 +6248,7 @@ FailMove:
 
 FailMimic:
 	ld hl, ButItFailedText ; 'but it failed!'
-	ld de, ItFailedText    ; 'it failed!'
+	ld de, ItFailedText; 'it failed!'
 	jp FailText_CheckOpponentProtect
 
 PrintDidntAffect:
@@ -6800,7 +6800,7 @@ AppearUserRaiseSub:
 	ret
 
 _CheckBattleScene:
-; Checks the options.  Returns carry if battle animations are disabled.
+; Checks the options.Returns carry if battle animations are disabled.
 	push hl
 	push de
 	push bc
@@ -6878,37 +6878,236 @@ BattleCommand_StartWeather:
 	jp StdBattleTextbox
 
 GetNextTypeMatchupsByte:
-   ld a, BANK(TypeMatchups)
-   call GetFarByte
-   ret
+ ld a, BANK(TypeMatchups)
+ call GetFarByte
+ ret
 
 
 BattleCommand_AddDamage:
 	push af
 	push hl
-    ld hl, wCurDamage + 1
-    ld a, [hl]           
-    ld d, a              
-    dec hl               
-    ld a, [hl]           
-    ld e, a              
-    ld hl, wCurDamage    
-    ld a, [hl]           
-    add a, e             
-    ld [hl], a           
-    inc hl               
-    ld a, [hl]           
-    adc a, d             
-    ld [hl], a           
-    jr nc, .done         
-    ld a, $FF            
-    ld hl, wCurDamage    
-    ld [hl], a           
-    ld [hli], a         
+ld hl, wCurDamage + 1
+ld a, [hl] 
+ld d, a
+dec hl 
+ld a, [hl] 
+ld e, a
+ld hl, wCurDamage
+ld a, [hl] 
+add a, e 
+ld [hl], a 
+inc hl 
+ld a, [hl] 
+adc a, d 
+ld [hl], a 
+jr nc, .done 
+ld a, $FF
+ld hl, wCurDamage
+ld [hl], a 
+ld [hli], a 
 .done:
 	pop hl
 	pop af
-    ret
+ret
 	
 	
 
+BattleCommand_CheckSnatch:
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_SNATCH, [hl]
+	ret z
+	res SUBSTATUS_SNATCH, [hl]
+
+	ld hl, SnatchedMoveText
+	push hl
+
+; get move name
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+
+; display bounce back/snatch text
+	pop hl
+	call StdBattleTextbox
+
+; backup and replace enemy move
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld a, [hl]
+	push af
+	push hl
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld b, a
+	call BattleCommand_SwitchTurn
+	pop hl
+	ld [hl], b
+	push hl
+
+	call UpdateMoveData
+	call ResetTurn
+
+; restore old move
+	pop hl
+	pop af
+	ld [hl], a
+	call UpdateMoveData
+
+	call BattleCommand_SwitchTurn
+
+	ret
+	
+	
+BattleCommand_Snatch:
+	call CheckOpponentWentFirst
+	jr nz, .fail
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_SNATCH, [hl]
+	call AnimateCurrentMove
+	ld hl, WaitsForMoveText
+	jp StdBattleTextbox
+
+.fail
+	jp BattleEffect_ButItFailed
+
+
+BattleCommand_Endeavor:
+	; Load the addresses of the HP values for the player's and enemy's Pokémon
+	ld hl, wBattleMonHP; Load address of player's Pokémon HP
+	ld de, wEnemyMonHP ; Load address of enemy's Pokémon HP
+	ldh a, [hBattleTurn] ; Load the value of the battle turn counter into register A
+	and a; Clear the zero flag
+	jr z, .ok; If the turn counter is zero, skip to .ok
+
+	; Swap the HP addresses to ensure player's Pokémon HP is in HL and enemy's Pokémon HP is in DE
+	ld hl, wEnemyMonHP ; Load address of enemy's Pokémon HP
+	ld de, wBattleMonHP; Load address of player's Pokémon HP
+
+.ok
+	; Load the next byte from the player's Pokémon HP into register A
+	ld a, [hli]
+	ld l, [hl] ; Load the low byte of player's Pokémon HP into L
+	ld h, a; Load the high byte of player's Pokémon HP into H
+	ld a, [de] ; Load the next byte from the enemy's Pokémon HP into A
+	ld b, a; Copy the enemy's HP into register B
+	inc de ; Increment the DE pointer to get the next byte
+	ld a, [de] ; Load the byte after the enemy's HP into A
+	ld c, a; Copy this byte into register C
+
+	; Compare the high byte of player's Pokémon HP (H) with the enemy's HP (B)
+	ld a, h
+	cp b
+	jr c, .do_effect; If H < B, jump to .do_effect
+	ld a, l; Otherwise, load the low byte of player's Pokémon HP (L) into A
+	cp c 
+
+	; Jump to .fail if the low byte of player's Pokémon HP (L) is greater or equal to the byte after enemy's HP (C)
+	jr nc, .fail
+
+.do_effect:
+	; Calculate the damage by subtracting the enemy's HP (B) from the player's HP (H) and store it in [wCurDamage + 1]
+	ld a, b
+	sub h
+	ld h, a
+	ld a, c
+	sbc l
+	ld [wCurDamage + 1], a
+
+	; Store the high byte of the damage result (H) in [wCurDamage]
+	ld a, h
+	ld [wCurDamage], a
+
+	ret; Return from the function
+
+.fail:
+	; Set [wAttackMissed] to 1 to indicate that the attack missed
+	ld a, 1
+	ld [wAttackMissed], a
+
+	ret; Return from the function
+	
+BattleCommand_HealBlock:
+	ld hl, wPlayerHealBlockCount
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .go
+	ld hl, wEnemyHealBlockCount
+.go
+	ld a, [hl]
+	and a
+	jr nz, .fail
+
+	ld a, 5
+	ld [hl], a
+
+	ld hl, HealBlockText
+	jp StdBattleTextbox
+
+.fail
+	jp BattleEffect_ButItFailed
+	
+BattleCommand_WonderRoom:
+	ld hl, wBattleMonDefense
+	ld a, [hl] ; low byte
+	ld e, a
+	inc hl
+	ld a, [hl] ; high byte
+	ld d, a
+
+	ld hl, wBattleMonSpclDef
+	ld a, [hl] ; low byte
+	ld c, a
+	inc hl
+	ld a, [hl] ; high byte
+	ld b, a
+
+	ld hl, wBattleMonDefense
+	ld a, c
+	ld [hl], a
+	inc hl
+	ld a, b
+	ld [hl], a
+
+	ld hl, wBattleMonSpclDef
+	ld a, e
+	ld [hl], a
+	inc hl
+	ld a, d
+	ld [hl], a
+
+	ld hl, wEnemyMonDefense
+	ld a, [hl]
+	ld e, a
+	inc hl
+	ld a, [hl]
+	ld d, a
+
+	ld hl, wEnemyMonSpclDef
+	ld a, [hl]
+	ld c, a
+	inc hl
+	ld a, [hl]
+	ld b, a
+
+	ld hl, wEnemyMonDefense
+	ld a, c
+	ld [hl], a
+	inc hl
+	ld a, b
+	ld [hl], a
+
+	ld hl, wEnemyMonSpclDef
+	ld a, e
+	ld [hl], a
+	inc hl
+	ld a, d
+	ld [hl], a
+
+	ld hl, BattleText_StatsChanged
+	call StdBattleTextbox
+	ret

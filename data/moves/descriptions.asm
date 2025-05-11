@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HealBlockDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,17 +252,25 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw SnatchDescription
+	dw PsyshockDescription
+	dw EndeavorDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+SnatchDescription:
+	db   "Steals foe's stat"
+	next "boosting moves.@"
+	
+PsyshockDescription:
+	db   "Uses foe's physi-"
+	next "cal DEFENSE.@"
+
+EndeavorDescription:
+	db   "Makes foe's HP"
+	line "same as user's.@"
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +323,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HealBlockDescription:
+	db   "Stops foe healing"
+	next "for 5 turns.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -835,9 +843,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+WonderRoomDescription:
+	db   "Swaps DEFENSE"
+	next "and SPCL.DEF.@"
 
 TransformDescription:
 	db   "The user assumes"
