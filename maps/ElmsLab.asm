@@ -291,12 +291,10 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_RareCandiesDone
 .EndOptions
 	writetext ElmsLabText_OptionsDone
-	promptbutton
-	closetext
 	turnobject PLAYER, RIGHT
 	promptbutton
 	closetext
-	done
+	end
 
 ElmsLabText_AskOverworldChanges:
 	text "Modify OVERWORLD"
