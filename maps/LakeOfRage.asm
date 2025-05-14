@@ -300,9 +300,10 @@ LakeOfRageLanceRadioSignalText:
 	done
 
 LakeOfRageLanceRefusedText:
-	text "Oh… Well, if you"
-	line "change your mind,"
-	cont "please help me."
+	text "Oh… you must be"
+	line "SNOWY. Come back"
+	cont "When you actually"
+	cont "want to progress."
 	done
 
 LakeOfRageLanceAskHelpText:
