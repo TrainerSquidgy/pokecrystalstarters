@@ -138,14 +138,12 @@ ElmsLabtext_InverseYes:
 
 ElmsLabExtraOptions:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .End
+	iftrue .EndOptions
 	opentext
-	writetext ElmsLabText_AskExtraOptions
+	writetext ElmsLabText_AskExtraOptionsForYourMon
 	yesorno
-	iftrue .ExtraOptions
-	writetext ElmsLabText_NoExtraOptions
-	sjump .StartersDone
-.ExtraOptions
+	iffalse .ExtraMonOptionsDone
+.ExtraOptionsMon ; Extra Options for your Pokémon 
 	writetext ElmsLabText_PLAHiddenPowerAsk
 	yesorno
 	iffalse .NoPLA
@@ -171,22 +169,11 @@ ElmsLabExtraOptions:
 	iftrue .AbilitiesYes
 	loadmem wAbilitiesActivated, 0
 	writetext ElmsLabText_AbilitiesNo
-	sjump .Merge3
+	sjump .NoAbilities
 .AbilitiesYes
 	loadmem wAbilitiesActivated, 1
 	writetext ElmsLabText_AbilitiesYes
-.Merge3
-	promptbutton
-	writetext ElmsLabText_AskLimitTutors
-	yesorno
-	iffalse .NoLimit
-	loadmem wTutorsLimited, 0
-	writetext ElmsLabText_LimitTutorsYes
-	sjump .Merge4
-.NoLimit
-	loadmem wTutorsLimited, 1
-	writetext ElmsLabText_LimitTutorsNo
-.Merge4
+.NoAbilities
 	promptbutton
 	writetext ElmsLabText_EvolutionsAsk
 	yesorno
@@ -210,6 +197,22 @@ ElmsLabExtraOptions:
 	loadmem wMegaEvolutionEnabled, 1
 	writetext ElmsLabText_MegasYes
 .HandledMegas
+.ExtraMonOptionsDone
+	promptbutton
+; GamePlay Changes for your Pokémon	
+	writetext ElmsLabText_AskGamePlayChanges
+	yesorno
+	iffalse .GameplayDone
+	writetext ElmsLabText_AskLimitTutors
+	yesorno
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	sjump .NoTutors
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+.NoTutors
 	waitbutton
 	writetext ElmsLabText_AskRival
 	yesorno
@@ -233,7 +236,7 @@ ElmsLabExtraOptions:
 	loadmem wInverseActivated, 1
 	writetext ElmsLabtext_InverseYes
 .InverseDone
-	waitbutton
+	waitbutton	
 	writetext ElmsLabText_MetronomeOnlyAsk
 	yesorno
 	iftrue .YesMetronome
@@ -245,6 +248,11 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_MetronomeOnlyYes 
 .MetronomeDone
 	waitbutton
+.GameplayDone
+	; Overworld Changes
+	writetext ElmsLabText_AskOverworldChanges
+	yesorno
+	iffalse .EndOptions
 	writetext ElmsLabText_SpinnersAsk
 	yesorno
 	iftrue .YesSpinners
@@ -266,10 +274,64 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_ProfessorsRepelYes
 .ProfsRepelDone
 	waitbutton
+	writetext ElmsLabText_RareCandiesAsk
+	yesorno
+	iffalse .EndOptions
+	verbosegiveitem RARE_CANDY, 10
+	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
+	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
+	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
+	setevent EVENT_VIOLET_CITY_RARE_CANDY
+	setevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
+	setevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
+	setevent EVENT_ROUTE_27_RARE_CANDY
+	setevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
+	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
+	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	writetext ElmsLabText_RareCandiesDone
+.EndOptions
+	writetext ElmsLabText_OptionsDone
+	promptbutton
 	closetext
 	turnobject PLAYER, RIGHT
-.End
-	end
+	promptbutton
+	closetext
+	done
+
+ElmsLabText_AskOverworldChanges:
+	text "Modify OVERWORLD"
+	line "events like the"
+	cont "SPINNERS and"
+	cont "ITEMS?"
+	done
+	
+ElmsLabText_RareCandiesDone:
+	text "All the 10 RARE"
+	line "CANDIES have been"
+	cont "given to you."
+	done
+	
+ElmsLabText_RareCandiesAsk:
+	text "Want all 10 RARE"
+	line "CANDIES straight"
+	cont "away?"
+	done
+	
+ElmsLabText_AskGamePlayChanges:
+	text "Make changes to"
+	line "core GAME PLAY?"
+	done
+	
+ElmsLabText_OptionsDone:
+	text "All options have"
+	line "now been set."
+	done
+	
+ElmsLabText_AskExtraOptionsForYourMon:
+	text "Set EXTRA OPTIONS"
+	line "for your"
+	cont "#MON?"
+	done
 
 ElmsLabText_ProfessorsRepelAsk:
 	text "Borrow the"
