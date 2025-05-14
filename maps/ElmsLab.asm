@@ -291,8 +291,6 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_RareCandiesDone
 .EndOptions
 	writetext ElmsLabText_OptionsDone
-	promptbutton
-	closetext
 	turnobject PLAYER, RIGHT
 	promptbutton
 	closetext
