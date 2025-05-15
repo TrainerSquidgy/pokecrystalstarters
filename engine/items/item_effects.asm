@@ -167,7 +167,7 @@ ItemEffects:
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
 	dw CandyJarEffect            ; CANDY_JAR
-	dw NoEffect            ; ITEM_9A
+	dw EscapeRopeEffectKey            ; ITEM_9A
 	dw NoEffect            ; ITEM_9B
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
@@ -2093,6 +2093,12 @@ EscapeRopeEffect:
 	ld a, [wItemEffectSucceeded]
 	cp 1
 	call z, UseDisposableItem
+	ret
+
+EscapeRopeEffectKey:
+	xor a
+	ld [wItemEffectSucceeded], a
+	farcall EscapeRopeFunction
 	ret
 
 SuperRepelEffect:

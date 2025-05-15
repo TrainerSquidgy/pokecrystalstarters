@@ -579,8 +579,6 @@ BinSkipItemRandomizer:
 	call RandomRange
 	cp ITEM_FA
 	jr z, BinSkipItemRandomizer
-	cp ITEM_9A
-	jr z, BinSkipItemRandomizer
 	cp ITEM_9B
 	jr z, BinSkipItemRandomizer
 	cp ITEM_A2

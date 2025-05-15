@@ -153,7 +153,7 @@ ItemNames::
 	li "DRAGON SCALE"
 	li "BERSERK GENE"
 	li "CANDY JAR"
-	li "TERU-SAMA"
+	li "ESCAPE ROPE"
 	li "TERU-SAMA"
 	li "SACRED ASH"
 	li "HEAVY BALL"
