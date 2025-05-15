@@ -266,6 +266,7 @@ ElmsLabExtraOptions:
 .NoLimit
 	loadmem wTutorsLimited, 1
 	writetext ElmsLabText_LimitTutorsNo
+	waitbutton
 .NoTutors
 	writetext ElmsLabText_AskHelpfulItems
 	yesorno
@@ -274,6 +275,7 @@ ElmsLabExtraOptions:
 .AskHelpfulItems
 	waitbutton
 	writetext ElmsLabText_HMItemsAsk
+	yesorno
 	iffalse .Spinners
 	clearevent EVENT_RECEIVED_SCYTHE
 	clearevent EVENT_RECEIVED_AIR_BALLOON
