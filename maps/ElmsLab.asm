@@ -579,30 +579,6 @@ BinSkipItemRandomizer:
 	call RandomRange
 	cp ITEM_FA
 	jr z, BinSkipItemRandomizer
-	cp ITEM_64
-	jr z, BinSkipItemRandomizer
-	cp ITEM_78
-	jr z, BinSkipItemRandomizer
-	cp ITEM_87
-	jr z, BinSkipItemRandomizer
-	cp ITEM_88
-	jr z, BinSkipItemRandomizer
-	cp ITEM_89
-	jr z, BinSkipItemRandomizer
-	cp ITEM_8D
-	jr z, BinSkipItemRandomizer
-	cp ITEM_8E
-	jr z, BinSkipItemRandomizer
-	cp ITEM_91
-	jr z, BinSkipItemRandomizer
-	cp ITEM_93
-	jr z, BinSkipItemRandomizer
-	cp ITEM_94
-	jr z, BinSkipItemRandomizer
-	cp ITEM_95
-	jr z, BinSkipItemRandomizer
-	cp ITEM_99
-	jr z, BinSkipItemRandomizer
 	cp ITEM_9A
 	jr z, BinSkipItemRandomizer
 	cp ITEM_9B
@@ -647,6 +623,7 @@ BinSkipRandomizer:
 	ret
 
 ElmsLabWalkUpToElmScript:
+	loadmem wLevelCap, 100
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
