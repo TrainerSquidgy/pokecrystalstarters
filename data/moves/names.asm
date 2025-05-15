@@ -251,4 +251,5 @@ MoveNames::
 	li "ROCK SMASH"
 	li "WHIRLPOOL"
 	li "BEAT UP"
+	li "SMACK DOWN"
 	assert_list_length NUM_ATTACKS
