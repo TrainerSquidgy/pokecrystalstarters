@@ -349,6 +349,10 @@ IlexForestCharcoalMasterScript:
 	iftrue .AlreadyGotCut
 	writetext Text_CharcoalMasterIntro
 	promptbutton
+	checkevent EVENT_RECEIVED_SCYTHE
+	iftrue .NoHMItem
+	verbosegiveitem SCYTHE
+.NoHMItem
 	verbosegiveitem HM_CUT
 	setevent EVENT_GOT_HM01_CUT
 	writetext Text_CharcoalMasterOutro
@@ -377,6 +381,11 @@ IlexForestHeadbuttGuyScript:
 	promptbutton
 	verbosegiveitem TM_HEADBUTT
 	iffalse .BagFull
+	checkevent EVENT_RECEIVED_TREE_SHAKER
+	iftrue .NoHMItem
+	verbosegiveitem TREE_SHAKER
+	setevent EVENT_RECEIVED_TREE_SHAKER
+.NoHMItem
 	setevent EVENT_GOT_TM02_HEADBUTT
 .AlreadyGotHeadbutt:
 	writetext Text_HeadbuttOutro

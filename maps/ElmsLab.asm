@@ -203,6 +203,15 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_AskGamePlayChanges
 	yesorno
 	iffalse .GameplayDone
+	writetext ElmsLabtext_LevelCapAsk
+	yesorno
+	iffalse .NoLevelCap
+	loadmem wLevelCap, 9
+	writetext ElmsLabText_LevelCapYes
+.NoLevelCap
+	writetext ElmsLabtext_LevelCapNo
+.LevelCapDone
+	promptbutton
 	writetext ElmsLabText_AskLimitTutors
 	yesorno
 	iffalse .NoLimit
@@ -253,6 +262,25 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_AskOverworldChanges
 	yesorno
 	iffalse .EndOptions
+	writetext ElmsLabText_HMItemsAsk
+	iffalse .Spinners
+	clearevent EVENT_RECEIVED_SCYTHE
+	clearevent EVENT_RECEIVED_AIR_BALLOON
+	clearevent EVENT_RECEIVED_RAFT
+	clearevent EVENT_RECEIVED_BURLY_MAN
+	clearevent EVENT_RECEIVED_LANTERN
+	clearevent EVENT_RECEIVED_BATH_PLUG
+	clearevent EVENT_RECEIVED_LADDER
+	clearevent EVENT_RECEIVED_FART_JAR
+	clearevent EVENT_RECEIVED_HONEY_JAR
+	clearevent EVENT_RECEIVED_TREE_SHAKER
+	clearevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	writetext ElmsLabText_HMItemsYes
+	waitbutton
+.Spinners
 	writetext ElmsLabText_SpinnersAsk
 	yesorno
 	iftrue .YesSpinners
@@ -274,10 +302,19 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_ProfessorsRepelYes
 .ProfsRepelDone
 	waitbutton
+	writetext ElmsLabText_CandyJarAsk
+	yesorno 
+	iffalse .NoCandyjar
+	verbosegiveitem CANDY_JAR
+	sjump .CandyEvents
+.NoCandyjar
+	writetext ElmsLabText_CandyJarNo
+	waitbutton
 	writetext ElmsLabText_RareCandiesAsk
 	yesorno
 	iffalse .EndOptions
 	verbosegiveitem RARE_CANDY, 10
+.CandyEvents
 	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
 	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
 	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
@@ -309,6 +346,17 @@ ElmsLabText_RareCandiesDone:
 	cont "given to you."
 	done
 	
+ElmsLabText_CandyJarAsk:
+	text "Want to take a"
+	line "CANDY JAR for"
+	cont "your journey?"
+	done
+	
+ElmsLabText_CandyJarNo:
+	text "I'll hold on to"
+	line "this then."
+	done
+	
 ElmsLabText_RareCandiesAsk:
 	text "Want all 10 RARE"
 	line "CANDIES straight"
@@ -334,6 +382,39 @@ ElmsLabText_AskExtraOptionsForYourMon:
 ElmsLabText_ProfessorsRepelAsk:
 	text "Borrow the"
 	line "PROF'S REPEL?"
+	done
+	
+ElmsLabText_HMItemsAsk:
+	text "Play with ITEMS"
+	line "that act like"
+	cont "HM Moves?"
+	done
+	
+ElmsLabText_HMItemsYes:
+	text "Throughout your"
+	line "adventure, you"
+	cont "will obtain the"
+	cont "HM ITEMS."
+	done
+	
+ElmsLabtext_LevelCapAsk:
+	text "Play with a"
+	line "hard-coded"
+	cont "LEVEL CAP?"
+	done
+
+ElmsLabText_LevelCapYes:
+	text "You will stop"
+	line "gaining EXP."
+	cont "once you reach"
+	cont "the next key"
+	cont "trainer's level."
+	done
+	
+ElmsLabtext_LevelCapNo:
+	text "Your #MON"
+	line "will gain EXP."
+	cont "as normal."
 	done
 	
 ElmsLabText_MetronomeOnlyAsk:
