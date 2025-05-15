@@ -138,8 +138,11 @@ ElmsLabtext_InverseYes:
 
 ElmsLabExtraOptions:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .EndOptions
+	iftrue .EndNoOptions
 	opentext
+	writetext ElmsLabText_ExtraOptionsGlobalAsk
+	yesorno
+	iffalse .EndOptions
 	writetext ElmsLabText_AskExtraOptionsForYourMon
 	yesorno
 	iffalse .ExtraMonOptionsDone
@@ -212,17 +215,6 @@ ElmsLabExtraOptions:
 	writetext ElmsLabtext_LevelCapNo
 .LevelCapDone
 	promptbutton
-	writetext ElmsLabText_AskLimitTutors
-	yesorno
-	iffalse .NoLimit
-	loadmem wTutorsLimited, 0
-	writetext ElmsLabText_LimitTutorsYes
-	sjump .NoTutors
-.NoLimit
-	loadmem wTutorsLimited, 1
-	writetext ElmsLabText_LimitTutorsNo
-.NoTutors
-	waitbutton
 	writetext ElmsLabText_AskRival
 	yesorno
 	iffalse .NoRival
@@ -258,10 +250,29 @@ ElmsLabExtraOptions:
 .MetronomeDone
 	waitbutton
 .GameplayDone
-	; Overworld Changes
-	writetext ElmsLabText_AskOverworldChanges
+	; Overworld and NPC Changes
+	writetext ElmsLabText_AskAboutHelpfulNPCs
 	yesorno
-	iffalse .EndOptions
+	iftrue .AskTutorLimit
+	setevent EVENT_HELPFUL_NPCS_DISABLED
+	sjump .NoTutors
+.AskTutorLimit
+	writetext ElmsLabText_AskLimitTutors
+	yesorno
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	sjump .NoTutors
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+.NoTutors
+	writetext ElmsLabText_AskHelpfulItems
+	yesorno
+	iffalse .Spinners
+
+.AskHelpfulItems
+	waitbutton
 	writetext ElmsLabText_HMItemsAsk
 	iffalse .Spinners
 	clearevent EVENT_RECEIVED_SCYTHE
@@ -280,17 +291,6 @@ ElmsLabExtraOptions:
 	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
 	writetext ElmsLabText_HMItemsYes
 	waitbutton
-.Spinners
-	writetext ElmsLabText_SpinnersAsk
-	yesorno
-	iftrue .YesSpinners
-	loadmem wSpinnersOff, 0
-	writetext ElmsLabText_SpinnersNo
-	sjump .SpinnersDone
-.YesSpinners
-	loadmem wSpinnersOff, 1
-	writetext ElmsLabText_SpinnersYes
-.SpinnersDone
 	waitbutton
 	writetext ElmsLabText_ProfessorsRepelAsk
 	yesorno
@@ -312,7 +312,7 @@ ElmsLabExtraOptions:
 	waitbutton
 	writetext ElmsLabText_RareCandiesAsk
 	yesorno
-	iffalse .EndOptions
+	iffalse .Spinners
 	verbosegiveitem RARE_CANDY, 10
 .CandyEvents
 	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
@@ -326,18 +326,41 @@ ElmsLabExtraOptions:
 	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	writetext ElmsLabText_RareCandiesDone
-.EndOptions
+.Spinners
+	writetext ElmsLabText_SpinnersAsk
+	yesorno
+	iftrue .YesSpinners
+	loadmem wSpinnersOff, 0
+	writetext ElmsLabText_SpinnersNo
+	sjump .SpinnersDone
+.YesSpinners
+	loadmem wSpinnersOff, 1
+	writetext ElmsLabText_SpinnersYes
+.SpinnersDone
+	waitbutton
 	writetext ElmsLabText_OptionsDone
 	turnobject PLAYER, RIGHT
+.EndOptions
 	promptbutton
 	closetext
+.EndNoOptions
 	end
+	
+ElmsLabText_AskHelpfulItems:
+	text "Modify some ITEMS"
+	line "and add extra"
+	cont "helpful items?"
+	done
 
-ElmsLabText_AskOverworldChanges:
-	text "Modify OVERWORLD"
-	line "events like the"
-	cont "SPINNERS and"
-	cont "ITEMS?"
+ElmsLabText_AskAboutHelpfulNPCs:
+	text "Add helpful NPCs"
+	line "to the top floor"
+	cont "all #MON"
+	cont "CENTERS and a"
+	
+	para "MOVE REMINDER"
+	line "in BLACKTHORN"
+	cont "CITY?"
 	done
 	
 ElmsLabText_RareCandiesDone:
@@ -372,11 +395,24 @@ ElmsLabText_OptionsDone:
 	text "All options have"
 	line "now been set."
 	done
+
+ElmsLabText_ExtraOptionsGlobalAsk:
+	text "You are about to"
+	line "be asked to set"
+	cont "EXTRA OPTIONS for"
+	cont "your challenge."
+	
+	para "Declining here"
+	line "will leave this"
+	cont "whole menu."
+	
+	para "Set EXTRA OPTIONS"
+	line "for your game?"
+	done
 	
 ElmsLabText_AskExtraOptionsForYourMon:
 	text "Set EXTRA OPTIONS"
-	line "for your"
-	cont "#MON?"
+	line "for your #MON?"
 	done
 
 ElmsLabText_ProfessorsRepelAsk:
