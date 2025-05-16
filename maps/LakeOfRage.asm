@@ -233,6 +233,9 @@ LakeOfRageHiddenFullRestore:
 	hiddenitem FULL_RESTORE, EVENT_LAKE_OF_RAGE_HIDDEN_FULL_RESTORE
 
 LakeOfRageHiddenRareCandy:
+	readmem wRareCandiesObtained
+	addval 1
+	writemem wRareCandiesObtained
 	hiddenitem RARE_CANDY, EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
 
 LakeOfRageHiddenMaxPotion:

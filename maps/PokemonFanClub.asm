@@ -27,6 +27,9 @@ PokemonFanClubChairmanScript:
 	writetext PokemonFanClubChairmanIWantYouToHaveThisText
 	promptbutton
 	verbosegiveitem RARE_CANDY
+	readmem wRareCandiesObtained
+	addval 1
+	writemem wRareCandiesObtained
 	iffalse .BagFull
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	writetext PokemonFanClubChairmanItsARareCandyText

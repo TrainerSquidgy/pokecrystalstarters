@@ -90,6 +90,9 @@ VioletCityPPUp:
 	itemball PP_UP
 
 VioletCityRareCandy:
+	readmem wRareCandiesObtained
+	addval 1
+	writemem wRareCandiesObtained
 	itemball RARE_CANDY
 
 VioletCityFruitTree:

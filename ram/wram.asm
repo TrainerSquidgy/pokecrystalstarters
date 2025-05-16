@@ -3120,7 +3120,8 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+	ds 48
+wRareCandiesObtained:: db
 
 ; fight counts
 wJackFightCount::    db

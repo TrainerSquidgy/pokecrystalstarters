@@ -488,6 +488,9 @@ Route34Nugget:
 	itemball NUGGET
 
 Route34HiddenRareCandy:
+	readmem wRareCandiesObtained
+	addval 1
+	writemem wRareCandiesObtained
 	hiddenitem RARE_CANDY, EVENT_ROUTE_34_HIDDEN_RARE_CANDY
 
 Route34HiddenSuperPotion:

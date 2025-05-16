@@ -30,6 +30,9 @@ WhirlIslandB1FBoulder:
 	jumpstd StrengthBoulderScript
 
 WhirlIslandB1FHiddenRareCandy:
+	readmem wRareCandiesObtained
+	addval 1
+	writemem wRareCandiesObtained
 	hiddenitem RARE_CANDY, EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
 
 WhirlIslandB1FHiddenUltraBall:

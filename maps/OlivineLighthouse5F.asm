@@ -33,6 +33,9 @@ TrainerSailorErnest:
 	end
 
 OlivineLighthouse5FRareCandy:
+	readmem wRareCandiesObtained
+	addval 1
+	writemem wRareCandiesObtained
 	itemball RARE_CANDY
 
 OlivineLighthouse5FSuperRepel:
