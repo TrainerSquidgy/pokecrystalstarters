@@ -303,9 +303,6 @@ Route27TMSolarbeam:
 	itemball TM_SOLARBEAM
 
 Route27RareCandy:
-	readmem wRareCandiesObtained
-	addval 1
-	writemem wRareCandiesObtained
 	itemball RARE_CANDY
 
 Route27FisherStepLeftTwiceMovement:

@@ -394,6 +394,13 @@ ObtainedRareCandiesText::
 	text " RARE CANDIES."
 	done
 	
+ObtainedRareCandyText::
+	text "You have obtained"
+	line "@"
+	text_decimal wRareCandiesObtained, 1, 2
+	text " RARE CANDY."
+	done
+	
 RareCandyGuy_CinnabarIsland::
 	text "Amidst the terror"
 	line "and carnage of a"

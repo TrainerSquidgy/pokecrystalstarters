@@ -79,10 +79,15 @@ RareCandyGuy_Ecruteak:
 	farwritetext RareCandyGuy_IntroText
 	yesorno
 	iffalse .End
-	farwritetext ObtainedRareCandiesText
-	waitbutton
 	readmem wRareCandiesObtained
 	ifequal 10, .AllObtained
+	ifequal 1, .SingleRareCandy
+	farwritetext ObtainedRareCandiesText
+	promptbutton
+	sjump .Reroll
+.SingleRareCandy
+	farwritetext ObtainedRareCandyText
+	promptbutton
 .Reroll
 	random 9
 	ifequal 0, .CinnabarIsland

@@ -7,9 +7,6 @@ Route28Sign:
 	jumptext Route28SignText
 
 Route28HiddenRareCandy:
-	readmem wRareCandiesObtained
-	addval 1
-	writemem wRareCandiesObtained
 	hiddenitem RARE_CANDY, EVENT_ROUTE_28_HIDDEN_RARE_CANDY
 
 Route28SignText:

@@ -27,9 +27,6 @@ MountMortar2FInsideMaxPotion:
 	itemball MAX_POTION
 
 MountMortar2FInsideRareCandy:
-	readmem wRareCandiesObtained
-	addval 1
-	writemem wRareCandiesObtained
 	itemball RARE_CANDY
 
 MountMortar2FInsideTMDefenseCurl:

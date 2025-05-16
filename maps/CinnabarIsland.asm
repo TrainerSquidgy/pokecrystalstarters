@@ -33,9 +33,6 @@ CinnabarIslandPokecenterSign:
 	jumpstd PokecenterSignScript
 
 CinnabarIslandHiddenRareCandy:
-	readmem wRareCandiesObtained
-	addval 1
-	writemem wRareCandiesObtained
 	hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
 
 CinnabarIslandBlueTeleport:
