@@ -160,10 +160,10 @@ GoldenrodGameCornerTMVendorMenuHeader:
 GoldenrodGameCornerPrizeMonVendorScript:
 	faceplayer
 	opentext
-	writetext GoldenrodGameCornerPrizeVendorIntroAbraText
-	waitbutton
 	checkevent EVENT_RECEIVED_FART_JAR
 	iftrue .NoHMItem
+	writetext GoldenrodGameCornerPrizeVendorIntroAbraText
+	waitbutton
 	verbosegiveitem FART_JAR
 	setevent EVENT_RECEIVED_FART_JAR
 .NoHMItem
