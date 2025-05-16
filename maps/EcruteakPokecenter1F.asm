@@ -89,17 +89,18 @@ RareCandyGuy_Ecruteak:
 	farwritetext ObtainedRareCandyText
 	promptbutton
 .Reroll
-	random 9
-	ifequal 0, .CinnabarIsland
-	ifequal 1, .OlivineLighthouse
-	ifequal 2, .LakeOfRage
-	ifequal 2, .SilverCave
-	ifequal 4, .VermilionCityChairman
-	ifequal 5, .Route34
-	ifequal 6, .VioletCity
-	ifequal 7, .MtMortar
-	ifequal 8, .Route27
+	callasm RareCandyRNGEcruteak
+	readmem wRareCandyRNG
 	ifequal 9, .WhirlIslands	
+	ifequal 8, .Route27
+	ifequal 7, .MtMortar
+	ifequal 6, .VioletCity
+	ifequal 5, .Route34
+	ifequal 4, .VermilionCityChairman
+	ifequal 3, .SilverCave
+	ifequal 2, .LakeOfRage
+	ifequal 1, .OlivineLighthouse
+	ifequal 0, .CinnabarIsland
 .Fallback	
 	farwritetext RareCandyGuy_FallbackText
 	sjump .End
@@ -185,6 +186,11 @@ RareCandyGuy_Ecruteak:
 	closetext
 	end
 
+RareCandyRNGEcruteak:
+	ld a, 9
+	call RandomRange
+	ld [wRareCandyRNG], a
+	ret
 
 EcruteakPokecenter1FBillMovement1:
 	step UP

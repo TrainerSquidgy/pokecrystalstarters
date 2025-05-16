@@ -3120,7 +3120,8 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 48
+	ds 47
+wRareCandyRNG:: db
 wRareCandiesObtained:: db
 
 ; fight counts

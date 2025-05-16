@@ -27,27 +27,18 @@ RareCandyGuy_Saffron:
 	farwritetext RareCandyGuy_IntroText
 	yesorno
 	iffalse .End
-	readmem wRareCandiesObtained
-	ifequal 10, .AllObtained
-	ifequal 1, .SingleRareCandy
-	farwritetext ObtainedRareCandiesText
-	promptbutton
-	sjump .Reroll
-.SingleRareCandy
-	farwritetext ObtainedRareCandyText
-	promptbutton
-.Reroll
-	random 9
-	ifequal 0, .CinnabarIsland
-	ifequal 1, .OlivineLighthouse
-	ifequal 2, .LakeOfRage
-	ifequal 2, .SilverCave
-	ifequal 4, .VermilionCityChairman
-	ifequal 5, .Route34
-	ifequal 6, .VioletCity
-	ifequal 7, .MtMortar
-	ifequal 8, .Route27
+		callasm RareCandyRNGEcruteak
+	readmem wRareCandyRNG
 	ifequal 9, .WhirlIslands	
+	ifequal 8, .Route27
+	ifequal 7, .MtMortar
+	ifequal 6, .VioletCity
+	ifequal 5, .Route34
+	ifequal 4, .VermilionCityChairman
+	ifequal 3, .SilverCave
+	ifequal 2, .LakeOfRage
+	ifequal 1, .OlivineLighthouse
+	ifequal 0, .CinnabarIsland
 .Fallback	
 	farwritetext RareCandyGuy_FallbackText
 	sjump .End
@@ -210,6 +201,13 @@ SaffronPokecenter1FFisherReturnedMachinePartText:
 	line "that's common"
 	cont "knowledge."
 	done
+
+RareCandyRNGSaffron:
+	ld a, 9
+	call RandomRange
+	ld [wRareCandyRNG], a
+	ret
+
 
 SaffronPokecenter1FYoungsterText:
 	text "SILPH CO.'s HEAD"

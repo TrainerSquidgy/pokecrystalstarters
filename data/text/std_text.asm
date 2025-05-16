@@ -459,7 +459,7 @@ RareCandyGuy_VermilionCityChairman::
 	cont "with a RARE CANDY"
 	
 	para "trainers who"
-	cont "listen to his"
+	line "listen to his"
 	cont "ramblings."
 	done 
 	
@@ -494,7 +494,7 @@ RareCandy_MtMortar::
 	cont "MOUNTAIN and then"
 	
 	para "climb a WATERFALL"
-	cont "to find one of"
+	line "to find one of"
 	cont "the RARE CANDIES."
 	done
 
