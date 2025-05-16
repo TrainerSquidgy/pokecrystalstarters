@@ -2613,6 +2613,23 @@ PlayerAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	
+	ld a, [wEnemyScreens]
+	bit SCREENS_REFLECT, a
+	jr z, .specialcrit
+	sla c
+	rl b
+
+	ld hl, wBattleMonSpclAtk
+	call CheckDamageStatsCritical
+	jr c, .lightball
+
+	ld hl, wEnemyDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wPlayerSpAtk
+	jr .lightball
 
 .screens
 	ld a, [wEnemyScreens]
