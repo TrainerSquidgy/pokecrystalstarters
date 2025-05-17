@@ -27,7 +27,8 @@ RareCandyGuy_Saffron:
 	farwritetext RareCandyGuy_IntroText
 	yesorno
 	iffalse .End
-		callasm RareCandyRNGEcruteak
+.Reroll
+	callasm RareCandyRNGEcruteak
 	readmem wRareCandyRNG
 	ifequal 9, .WhirlIslands	
 	ifequal 8, .Route27
