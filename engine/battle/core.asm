@@ -93,7 +93,7 @@ DoBattle:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	call SpikesDamage
+	call DoEntryHazards
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -107,7 +107,7 @@ DoBattle:
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call SpikesDamage
+	call DoEntryHazards
 
 .not_linked_2
 	jp BattleTurn
@@ -471,7 +471,7 @@ DetermineMoveOrder:
 .switch
 	callfar AI_Switch
 	call SetEnemyTurn
-	call SpikesDamage
+	call DoEntryHazards
 	jp .enemy_first
 
 .use_move
@@ -2388,7 +2388,7 @@ EnemyPartyMonEntrance:
 .done_switch
 	call ResetBattleParticipants
 	call SetEnemyTurn
-	call SpikesDamage
+	call DoEntryHazards
 	xor a
 	ld [wEnemyMoveStruct + MOVE_ANIM], a
 	ld [wBattlePlayerAction], a
@@ -2824,7 +2824,7 @@ ForcePlayerMonChoice:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	call SpikesDamage
+	call DoEntryHazards
 	ld a, $1
 	and a
 	ld c, a
@@ -2845,7 +2845,7 @@ PlayerPartyMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	jp DoEntryHazards
 
 CheckMobileBattleError:
 	ld a, [wLinkMode]
@@ -4162,6 +4162,83 @@ BreakAttraction:
 	res SUBSTATUS_IN_LOVE, [hl]
 	ret
 
+DoEntryHazards:
+	call SpikesDamage
+	call HandleStealthRock
+	ret
+	
+HandleStealthRock:
+    ; Determine which player's variables to use
+    ldh a, [hBattleTurn]
+    ld hl, wPlayerScreens
+    ld de, wBattleMonType
+    ld bc, UpdatePlayerHUD
+    jr z, .check_stealth_rock
+
+    ; If not player's turn, use enemy's variables
+    ld hl, wEnemyScreens
+    ld de, wEnemyMonType
+    ld bc, UpdateEnemyHUD
+
+.check_stealth_rock:
+    ; Check if Stealth Rock is active
+    bit SCREENS_STEALTH_ROCK, [hl]
+    ret z
+
+    push bc
+
+    ; Check type matchups for ROCK-type
+    ld a, [de]
+    ld [wStoredTypeMatchup], a
+    inc de
+    ld a, [de]
+    ld [wStoredTypeMatchup + 1], a
+    ld a, ROCK
+    ld [wStoredTypeMatchup + 2], a
+    farcall CheckAnyTypeMatchup
+
+    ; Save type matchup result
+    ld a, [wTypeMatchup]
+    push af
+
+    ; Display text indicating damage from Stealth Rock
+    ld hl, BattleText_UserHurtByStealthRock 
+    call StdBattleTextbox
+
+    ; Get max HP of target
+    call GetMaxHP
+    pop af
+
+    ; Determine damage multiplier based on type effectiveness
+    ; -1: double damage, 40: normal damage, 20: half damage, 10: quarter damage, 5: eighth damage
+    cp -1
+    call c, .halve_hp
+    cp 40
+    call c, .halve_hp
+    cp 20
+    call c, .halve_hp
+    cp 10
+    call c, .halve_hp
+    cp 5
+    call c, .halve_hp
+
+    ; Apply damage
+    call SubtractHPFromTarget
+
+    pop hl
+    call .hl
+
+    jp WaitBGMap
+
+.hl:
+    jp hl
+
+.halve_hp:
+    srl b
+    rr c
+    ret
+
+
 SpikesDamage:
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
@@ -5322,7 +5399,7 @@ PlayerSwitch:
 EnemyMonEntrance:
 	callfar AI_Switch
 	call SetEnemyTurn
-	jp SpikesDamage
+	jp DoEntryHazards
 
 BattleMonEntrance:
 	call WithdrawMonText
@@ -5355,7 +5432,7 @@ BattleMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	call SpikesDamage
+	call DoEntryHazards
 	ld a, $2
 	ld [wMenuCursorY], a
 	ret
@@ -5379,7 +5456,7 @@ PassedBattleMonEntrance:
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
 	call SetPlayerTurn
-	jp SpikesDamage
+	jp DoEntryHazards
 
 BattleMenu_Run:
 	call SafeLoadTempTilemapToTilemap

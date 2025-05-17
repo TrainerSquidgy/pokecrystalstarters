@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw PowerGemDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw StoneEdgeDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw MoonblastDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -252,17 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw SmackDownDescriptoin
+	dw SmackDownDescription
+	dw SpikesDescription
+	dw GuardSplitDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+GuardSplitDescription:
+	db   "Combines and ave-"
+	next "rages DEF stats.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +316,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+PowerGemDescription:
+	db   "Flings pointed"
+	next "rocks at enemy.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -835,9 +836,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+StoneEdgeDescription:
+	db   "Stabs enemy with"
+	next "shiv of stone.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -971,9 +972,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+MoonblastDescription:
+	db   "May lower enemy's"
+	next "SPECIAL ATTACK.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1271,6 +1272,7 @@ BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
 
-SmackDownDescriptoin:
+SmackDownDescription:
 	db   "Grounds enemy"
 	next "flying #MON.@"
+	

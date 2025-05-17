@@ -1149,3 +1149,33 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+FellStraightDownText:
+	text "<ENEMY>"
+	line "dropped down!"
+	prompt
+	
+CouldntStayAirborneText:
+	text "<ENEMY>"
+	line "couldn't stay"
+	cont "airborne!"
+	prompt
+	
+BattleText_UserHurtByStealthRock:
+	text "POINTED ROCKS"
+	line "dug into"
+	cont "<USER>."
+	prompt
+
+StealthRockText:
+	text "ROCKS float"
+	line "all around"
+	cont "<TARGET>!"
+	prompt
+
+
+SharedGuardText:
+	text "<USER>"
+	line "shared guard with"
+	cont "<TARGET>!"
+	prompt

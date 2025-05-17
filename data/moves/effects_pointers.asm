@@ -162,4 +162,6 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw SmackDown
+	dw StealthRock
+	dw GuardSplit
 	assert_table_length NUM_MOVE_EFFECTS

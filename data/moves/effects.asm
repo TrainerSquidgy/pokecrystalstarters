@@ -2094,26 +2094,6 @@ Snow:
 	endmove
 	
 
-NormalHit:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
-	endmove
-
 SmackDown:
 	checkobedience
 	usedmovetext
@@ -2134,3 +2114,18 @@ SmackDown:
 	buildopponentrage
 	kingsrock
 	endmove
+
+StealthRock:
+	checkobedience
+	usedmovetext
+	doturn
+	stealthrock
+	endmove
+	
+GuardSplit:
+	checkobedience
+	usedmovetext
+	doturn
+	guardsplit
+	endmove
+	

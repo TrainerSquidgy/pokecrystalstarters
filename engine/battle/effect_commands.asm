@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1402,19 +1400,28 @@ BattleCommand_Stab:
 	ld [wTypeModifier], a
 	ret
 
+CheckAnyTypeMatchup:
+	ld hl, wStoredTypeMatchup
+	push hl
+	push de
+	push bc
+	ld a, [wStoredTypeMatchup + 2]
+	jr JoinTypeMatchups
 BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .get_type
- 	ld hl, wBattleMonType1
+	ld hl, wBattleMonType1
 .get_type
 	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar ; preserves hl, de, and bc
+	call GetBattleVar
+	; fallthrough
 CheckTypeMatchup:
 	push hl
 	push de
 	push bc
+JoinTypeMatchups:
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -1485,7 +1492,6 @@ CheckTypeMatchup:
 	pop de
 	pop hl
 	ret
-
 
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
@@ -1918,10 +1924,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5591,20 +5593,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6910,5 +6904,159 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
+BattleCommand_SmackDown:
+	ld a, SUBSTATUS_SMACK_DOWN
+	call GetBattleVarAddr
+	set SUBSTATUS_SMACK_DOWN, [hl]
+	ld hl, FellStraightDownText
+	call StdBattleTextbox
 	
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_FLYING, [hl]
+	ret z
 
+	res SUBSTATUS_FLYING, [hl]
+	res SUBSTATUS_CHARGED, [hl]
+	ld hl, CouldntStayAirborneText
+	jp StdBattleTextbox
+	
+	
+TypeMatchupSpecialCases2:
+	ld a, b
+	ld b, d
+	ld d, a
+	ld e, c
+	call TypeMatchupSpecialCases
+	ld [wTypeMatchup], a
+	ld a, b
+	ld b, d
+	ld d, a
+	ld c, e
+	ret
+	
+TypeMatchupSpecialCases:
+	call SmackDownTypeCheck
+	ret c
+	ld a, 10
+	ret
+
+SmackDownTypeCheck:
+	ld a, GROUND
+	cp b
+	jr nz, .no
+	ld a, SUBSTATUS_SMACK_DOWN
+	call GetBattleVarAddr
+	bit SUBSTATUS_SMACK_DOWN, [hl]
+	jr nz, .no
+	ld a, FLYING
+	cp d
+	jr z, .yes
+	cp e
+	jr z, .yes
+	and a
+	ret
+.no
+	and a
+	ret
+.yes
+	xor a
+	scf
+	ret
+	
+BattleCommand_StealthRock:
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_screen
+	ld hl, wPlayerScreens
+.got_screen
+
+; Fail if Stealth Rock is already up.
+	bit SCREENS_STEALTH_ROCK, [hl]
+	jr nz, .failed
+
+	set SCREENS_STEALTH_ROCK, [hl]
+
+	call AnimateCurrentMove
+
+	ld hl, StealthRockText
+	jp StdBattleTextbox
+
+.failed
+	jp FailMove
+	
+	
+BattleCommand_GuardSplit:
+; Average the player's defense with the enemy's defense and
+; the player's special defense with the enemy's special defense.
+	ld a, [wAttackMissed]
+	and a
+	jp nz, .ButItFailed
+
+	call CheckHiddenOpponent
+	jr nz, .ButItFailed
+
+	call AnimateCurrentMove
+	ld hl, SharedGuardText
+	call StdBattleTextbox
+
+; Get player's and enemy's defense.	
+	ld a, [wPlayerDefense]
+	ld b, a
+	ld a, [wPlayerDefense + 1]
+	ld c, a
+	
+	ld a, [wEnemyDefense]
+	ld h, a
+	ld a, [wEnemyDefense + 1]
+	ld l, a
+
+; Add the defense stats together.
+	add hl, bc
+
+; Divide the result by 2 to get the average.
+	srl h
+	rr l
+
+; Load the averaged value as both Pokemon's defense stat.
+	ld a, h
+	ld [wPlayerDefense], a
+	ld [wEnemyDefense], a
+	ld a, l
+	ld [wPlayerDefense + 1], a
+	ld [wEnemyDefense + 1], a
+
+; Get player's and enemy's special defense.	
+	ld a, [wPlayerSpDef]
+	ld b, a
+	ld a, [wPlayerSpDef + 1]
+	ld c, a
+	
+	ld a, [wEnemySpDef]
+	ld h, a
+	ld a, [wEnemySpDef + 1]
+	ld l, a
+
+; Add the special defense stats together.
+	add hl, bc
+
+; Divide the result by 2 to get the average.
+	srl h
+	rr l
+
+; Load the averaged value as both Pokemon's special defense stat.
+	ld a, h
+	ld [wPlayerSpDef], a
+	ld [wEnemySpDef], a
+	ld a, l
+	ld [wPlayerSpDef + 1], a
+	ld [wEnemySpDef + 1], a
+
+	farcall CalcPlayerStats
+	farcall CalcEnemyStats
+	ret
+
+.ButItFailed:
+	farcall PrintDidntAffect2
+	ret
