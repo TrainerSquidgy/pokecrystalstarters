@@ -1311,17 +1311,45 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_IDENTIFIED, a
-	jr nz, .end
+	jp nz, .end
 	
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp NORMAL
+	jr z, .CheckForMiltank
+	cp GHOST
+	jr nz, .NotForesight
+	
+.CheckForMiltank
 	ldh a, [hBattleTurn]
 	and a
 	ld a, [wEnemyMonSpecies]
 	jr nz, .scrappy
 	ld a, [wBattleMonSpecies]
 .scrappy
-	cp MILTANK
-	jr z, .end
+	cp MILTANKS
+	jr nz, .NotForesight
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonType1]
+	jr z, .player
+	ld a, [wBattleMonType1]
+	cp GHOST
+	jr z, .scrappy2
+	ld a, [wBattleMonType2]
+	cp GHOST
+	jr nz, .NotForesight
+.player
+	cp GHOST
+	jr z, .scrappy2
+	ld a, [wEnemyMonType2]
+	cp GHOST
+	jr nz, .NotForesight
+.scrappy2
+	ld a, 10
+	jp .MiltankScrappy
 	
+.NotForesight
 	jr .TypesLoop
 
 .SkipForesightCheck:
@@ -1407,6 +1435,7 @@ BattleCommand_Stab:
 	ld a, [wTypeModifier]
 	and %10000000
 	or b
+.MiltankScrappy
 	ld [wTypeModifier], a
 	ret
 

@@ -3367,3 +3367,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+MiltanksEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 3, GROWL
+	db 5, DEFENSE_CURL
+	db 8, STOMP
+	db 11, MILK_DRINK
+	db 15, BIDE
+	db 19, ROLLOUT
+	db 24, BODY_SLAM
+	db 29, ZEN_HEADBUTT
+	db 35, CAPTIVATE
+	db 41, GYRO_BALL
+	db 48, HEAL_BELL
+	db 55, WAKE_UP_SLAP
+	db 0

@@ -1,16 +1,16 @@
-LechonkEvosAttacks:
+MiltankEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 3, GROWL
+	db 5, DEFENSE_CURL
+	db 8, STOMP
+	db 11, MILK_DRINK
+	db 15, BIDE
+	db 19, ROLLOUT
+	db 24, BODY_SLAM
+	db 29, ZEN_HEADBUTT
+	db 35, CAPTIVATE
+	db 41, GYRO_BALL
+	db 48, HEAL_BELL
+	db 55, WAKE-UP_SLAP
 	db 0

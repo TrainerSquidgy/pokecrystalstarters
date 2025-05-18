@@ -1,14 +1,14 @@
-Pokémon: Lechonk
+Pokémon: Miltank
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+3: Growl
+5: Defense Curl
+8: Stomp
+11: Milk Drink
+15: Bide
+19: Rollout
+24: Body Slam
+29: Zen Headbutt
+35: Captivate
+41: Gyro Ball
+48: Heal Bell
+55: Wake-Up Slap
