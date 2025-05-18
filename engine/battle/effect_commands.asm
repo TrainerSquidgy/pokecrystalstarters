@@ -6905,7 +6905,7 @@ BattleCommand_AddDamage:
     ret
 	
 BattleCommand_SmackDown:
-	ld a, SUBSTATUS_SMACK_DOWN
+	ld a, BATTLE_VARS_SUBSTATUS2
 	call GetBattleVarAddr
 	set SUBSTATUS_SMACK_DOWN, [hl]
 	ld hl, FellStraightDownText

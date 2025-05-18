@@ -3367,3 +3367,22 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+CarbinkEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, HARDEN
+	db 6, ROCK_THROW
+	db 11, SHARPEN
+	db 16, SMACK_DOWN
+	db 21, REFLECT
+	db 26, STEALTH_ROCK
+	db 31, GUARD_SPLIT
+	db 36, ANCIENTPOWER
+	db 41, FLAIL
+	db 46, POWER_GEM
+	db 51, STONE_EDGE
+	db 56, MOONBLAST
+	db 61, LIGHT_SCREEN
+	db 66, SAFEGUARD
+	db 0

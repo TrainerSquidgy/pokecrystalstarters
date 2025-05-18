@@ -1,14 +1,16 @@
-Pokémon: Lechonk
+Pokémon: Carbink
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Harden
+6: Rock Throw
+11: Sharpen
+16: Smack Down
+21: Reflect
+26: Stealth Rock
+31: Guard Split
+36: AncientPower
+41: Flail
+46: Power Gem
+51: Stone Edge
+56: Moonblast
+61: Light Screen
+66: Safeguard

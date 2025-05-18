@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+CarbinkEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, HARDEN
+	db 6, ROCK_THROW
+	db 11, SHARPEN
+	db 16, SMACK_DOWN
+	db 21, REFLECT
+	db 26, STEALTH_ROCK
+	db 31, GUARD_SPLIT
+	db 36, ANCIENTPOWER
+	db 41, FLAIL
+	db 46, POWER_GEM
+	db 51, STONE_EDGE
+	db 56, MOONBLAST
+	db 61, LIGHT_SCREEN
+	db 66, SAFEGUARD
 	db 0
