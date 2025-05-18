@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw WakeUpSlapDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,17 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw HeadbuttDescription
+	dw CaptivateDescription
+	dw GyroBallDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+GyroBallDescription:
+	db "Does more if"
+	next "user's slower.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +316,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+WakeUpSlapDescription:
+	db   "Slaps the foe and"
+	next "wakes them up.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -798,6 +799,10 @@ ConstrictDescription:
 AmnesiaDescription:
 	db   "Sharply raises the"
 	next "user's SPCL.DEF.@"
+
+CaptivateDescription:
+	db   "Sharply lowers"
+	next "foe's SPCL.ATK.@"
 
 KinesisDescription:
 	db   "Reduces the foe's"
