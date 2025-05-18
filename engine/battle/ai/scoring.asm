@@ -173,6 +173,7 @@ AI_Types:
 	pop hl
 
 	ld a, [wTypeMatchup]
+	ld [wTestingRamSlot1], a
 	and a
 	jr z, .immune
 	cp EFFECTIVE
