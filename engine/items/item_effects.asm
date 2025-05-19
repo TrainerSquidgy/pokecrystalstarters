@@ -58,12 +58,12 @@ ItemEffects:
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
-	dw MegaStoneEffect
+	dw MegaStoneEffect     ; MEGA_RING
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
+	dw NoEffect            ; MEGA_STONE
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
@@ -103,7 +103,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLU_APRICORN
-	dw NoEffect            ; ITEM_5A
+	dw ProfsRepelEffect    ; PROFS_REPEL
 	dw NoEffect            ; AMULET_COIN
 	dw NoEffect            ; YLW_APRICORN
 	dw NoEffect            ; GRN_APRICORN
@@ -113,7 +113,7 @@ ItemEffects:
 	dw NoEffect            ; WHT_APRICORN
 	dw NoEffect            ; BLACKBELT_I
 	dw NoEffect            ; BLK_APRICORN
-	dw NoEffect            ; ITEM_64
+	dw ScytheEffect        ; SCYTHE
 	dw NoEffect            ; PNK_APRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
@@ -133,7 +133,7 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
-	dw NoEffect            ; ITEM_78
+	dw AirBalloonEffect    ; AIR_BALLOON
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT
 	dw HealPowderEffect    ; HEAL_POWDER
@@ -148,26 +148,26 @@ ItemEffects:
 	dw NoEffect            ; STAR_PIECE
 	dw BasementKeyEffect   ; BASEMENT_KEY
 	dw NoEffect            ; PASS
-	dw NoEffect            ; ITEM_87
-	dw NoEffect            ; ITEM_88
-	dw NoEffect            ; ITEM_89
+	dw RaftEffect          ; RAFT
+	dw BurlyManEffect      ; BURLY_MAN 
+	dw LanternEffect       ; LANTERN
 	dw NoEffect            ; CHARCOAL
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
-	dw NoEffect            ; ITEM_8D
-	dw NoEffect            ; ITEM_8E
+	dw BathPlugEffect      ; BATH_PLUG
+	dw LadderEffect        ; LadderEffect
 	dw EvoStoneEffect      ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
-	dw NoEffect            ; ITEM_91
+	dw FartJarEffect       ; FART_JAR
 	dw NoEffect            ; LEFTOVERS
-	dw NoEffect            ; ITEM_93
-	dw NoEffect            ; ITEM_94
-	dw NoEffect            ; ITEM_95
+	dw HoneyJarEffect            ; ITEM_93
+	dw TreeShakerEffect            ; ITEM_94
+	dw BigHammerEffect            ; ITEM_95
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw NoEffect            ; ITEM_99
-	dw NoEffect            ; ITEM_9A
+	dw CandyJarEffect            ; CANDY_JAR
+	dw EscapeRopeEffectKey            ; ITEM_9A
 	dw NoEffect            ; ITEM_9B
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
@@ -1073,6 +1073,14 @@ BallDodgedText: ; unreferenced
 	text_far _BallDodgedText
 	text_end
 
+WildEncountersOnText: ; 
+	text_far _WildEncountersOnText
+	text_end
+	
+WildEncountersOffText: ; 
+	text_far _WildEncountersOffText
+	text_end
+
 BallMissedText: ; unreferenced
 	text_far _BallMissedText
 	text_end
@@ -1292,6 +1300,13 @@ RareCandy_StatBooster_GetParameters:
 	ld hl, wPartyMonNicknames
 	call GetNickname
 	ret
+DecidedNotToUse:
+    ; If the player decided not to use the item, clear the success flag
+    xor a
+    ld [wItemEffectSucceeded], a
+    ret
+
+
 
 RareCandyEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -2078,6 +2093,12 @@ EscapeRopeEffect:
 	ld a, [wItemEffectSucceeded]
 	cp 1
 	call z, UseDisposableItem
+	ret
+
+EscapeRopeEffectKey:
+	xor a
+	ld [wItemEffectSucceeded], a
+	farcall EscapeRopeFunction
 	ret
 
 SuperRepelEffect:
@@ -2949,6 +2970,86 @@ GetMthMoveOfCurrentMon:
 	add hl, bc
 	ret
 
+ScytheEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall CutFunction
+	ret
+
+LanternEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall FlashFunction
+	ret
+
+FartJarEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall MonMenu_Teleport
+	ret
+
+HoneyJarEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall SweetScentFromMenu
+	ret
+
+TreeShakerEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall TryHeadbuttOW
+	ret
+
+BigHammerEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall RockSmashFunction
+	ret
+	
+RaftEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall TrySurfOW
+	ret
+	
+BurlyManEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall TryStrengthOW
+	ret
+
+BathPlugEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall TryWhirlpoolOW
+	ret
+
+LadderEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall TryWaterfallOW
+	ret
+
+AirBalloonEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall FlyFunction
+	ret
+	
+	ld hl, UnusableItem_NuzlockeIneffectiveText
+	call PrintText
+	jp DecidedNotToUse
+
+UnusableItemNuzlocke:
+	ld hl, UnusableItem_NuzlockeIneffectiveText
+	call PrintText
+	jp DecidedNotToUse
+	
+UnusableItem_NuzlockeIneffectiveText:
+	text_far _NuzlockeItemFailure
+	text_end
+
+
 MegaStoneEffect:
 	ld a, [wMegaEvolutionActive]
 	and a
@@ -2963,4 +3064,112 @@ MegaStoneEffect:
 	ld [wMegaEvolutionActive], a
 	ld hl, MegaRingTurnedOnText
 	call PrintText
+	ret
+	
+ProfsRepelEffect:
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	jr z, .TurnWildOff
+	res STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	ld hl, WildEncountersOnText
+	jp PrintText
+	
+.TurnWildOff
+	set STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]
+	ld hl, WildEncountersOffText
+	jp PrintText
+	
+CandyJarEffect:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+
+	jp c, RareCandy_StatBooster_ExitMenu
+
+	call RareCandy_StatBooster_GetParameters
+	
+	call IsMonFainted
+	ld a, TRUE
+	jp z, NoEffectMessage
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+
+	ld a, [wLevelCap]
+	ld b, a
+	ld a, [hl]
+	cp b
+	jp nc, NoEffectMessage
+
+	inc a
+	ld [hl], a
+	ld [wCurPartyLevel], a
+	push de
+	ld d, a
+	farcall CalcExpAtLevel
+
+	pop de
+	ld a, MON_EXP
+	call GetPartyParamLocation
+
+	ldh a, [hMultiplicand + 0]
+	ld [hli], a
+	ldh a, [hMultiplicand + 1]
+	ld [hli], a
+	ldh a, [hMultiplicand + 2]
+	ld [hl], a
+
+	ld a, MON_MAXHP
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	push bc
+	call UpdateStatsAfterItem
+
+	ld a, MON_MAXHP + 1
+	call GetPartyParamLocation
+
+	pop bc
+	ld a, [hld]
+	sub c
+	ld c, a
+	ld a, [hl]
+	sbc b
+	ld b, a
+	dec hl
+	ld a, [hl]
+	add c
+	ld [hld], a
+	ld a, [hl]
+	adc b
+	ld [hl], a
+	farcall LevelUpHappinessMod
+
+	ld a, PARTYMENUTEXT_LEVEL_UP
+	call ItemActionText
+
+	xor a ; PARTYMON
+	ld [wMonType], a
+	predef CopyMonToTempMon
+
+	hlcoord 9, 0
+	ld b, 10
+	ld c, 9
+	call Textbox
+
+	hlcoord 11, 1
+	ld bc, 4
+	predef PrintTempMonStats
+
+	call WaitPressAorB_BlinkCursor
+
+	xor a ; PARTYMON
+	ld [wMonType], a
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+	predef LearnLevelMoves
+
+	xor a
+	ld [wForceEvolution], a
+	farcall EvolvePokemon
+
 	ret

@@ -64,6 +64,10 @@ GoldenrodGymWhitneyScript:
 .GotPlainBadge:
 	writetext WhitneyPlainBadgeText
 	promptbutton
+readmem wLevelCap
+	ifgreater 25, .skipLevelCap
+	loadmem wLevelCap, 25
+.skipLevelCap
 	verbosegiveitem TM_ATTRACT
 	iffalse .NoRoomForAttract
 	setevent EVENT_GOT_TM45_ATTRACT

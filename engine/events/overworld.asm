@@ -502,14 +502,20 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
+	ld d, SURF
+	call CheckPartyMove
+	jr nc, .check_badge
+	ld a, RAFT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .quit
+.check_badge
 	ld de, ENGINE_FOGBADGE
 	call CheckEngineFlag
 	jr c, .quit
 
-	ld d, SURF
-	call CheckPartyMove
-	jr c, .quit
-
+	
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .quit
@@ -705,7 +711,13 @@ Script_UsedWaterfall:
 TryWaterfallOW::
 	ld d, WATERFALL
 	call CheckPartyMove
-	jr c, .failed
+	jr nc, .check_badge
+	ld a, LADDER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .failed	
+.check_badge
 	ld de, ENGINE_RISINGBADGE
 	call CheckEngineFlag
 	jr c, .failed
@@ -1056,8 +1068,13 @@ BouldersMayMoveText:
 TryStrengthOW:
 	ld d, STRENGTH
 	call CheckPartyMove
-	jr c, .nope
-
+	jr nc, .check_badge
+	ld a, BURLY_MAN
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .nope
+.check_badge
 	ld de, ENGINE_PLAINBADGE
 	call CheckEngineFlag
 	jr c, .nope
@@ -1190,7 +1207,13 @@ DisappearWhirlpool:
 TryWhirlpoolOW::
 	ld d, WHIRLPOOL
 	call CheckPartyMove
-	jr c, .failed
+	jr nc, .check_badge
+	ld a, BATH_PLUG
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .failed	
+.check_badge
 	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
 	jr c, .failed
@@ -1285,8 +1308,13 @@ HeadbuttScript:
 TryHeadbuttOW::
 	ld d, HEADBUTT
 	call CheckPartyMove
-	jr c, .no
-
+	jr nc, .yes
+	ld a, TREE_SHAKER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr nc, .no
+.yes
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript
 	call CallScript
@@ -1410,6 +1438,11 @@ HasRockSmash:
 	ld d, ROCK_SMASH
 	call CheckPartyMove
 	jr nc, .yes
+	ld a, BIG_HAMMER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr c, .yes
 ; no
 	ld a, 1
 	jr .done
@@ -1759,10 +1792,17 @@ GotOffBikeText:
 	text_end
 
 TryCutOW::
+	ld a, SCYTHE
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr c, .checkbadge
+		
 	ld d, CUT
 	call CheckPartyMove
 	jr c, .cant_cut
 
+.checkbadge
 	ld de, ENGINE_HIVEBADGE
 	call CheckEngineFlag
 	jr c, .cant_cut
