@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db BUIZEL
+	db FLOATZEL
 	assert_table_length NUM_POKEMON

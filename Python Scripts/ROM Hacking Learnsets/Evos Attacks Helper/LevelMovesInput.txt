@@ -1,14 +1,15 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Floatzel
+1: Ice Fang
+1: SonicBoom
+1: Growl
+1: Water Sport
+1: Quick Attack
+3: Quick Attack
+6: Water Gun
+10: Pursuit
+15: Swift
+21: Aqua Jet
+26: Crunch
+29: Agility
+39: Whirlpool
+50: Razor Wind

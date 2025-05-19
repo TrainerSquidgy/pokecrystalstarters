@@ -1,16 +1,15 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Floatzel
+1: Ice Fang
+1: SonicBoom
+1: Growl
+1: Water Sport
+1: Quick Attack
+3: Quick Attack
+6: Water Gun
+10: Pursuit
+15: Swift
+21: Aqua Jet
+26: Crunch
+29: Agility
+39: Whirlpool
+50: Razor Wind

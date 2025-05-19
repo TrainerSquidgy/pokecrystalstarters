@@ -3367,3 +3367,37 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+BuizelEvosAttacks:
+	db EVOLVE_LEVEL, 26, FLOATZEL
+	db 0 ; No More Evolutions
+	db 1, SONICBOOM
+	db 1, GROWL
+	db 1, WATER_SPORT
+	db 3, QUICK_ATTACK
+	db 6, WATER_GUN
+	db 10, PURSUIT
+	db 15, SWIFT
+	db 21, AQUA_JET
+	db 28, AGILITY
+	db 36, WHIRLPOOL
+	db 45, RAZOR_WIND
+	db 0
+	
+FloatzelEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, ICE_FANG
+	db 1, SONICBOOM
+	db 1, GROWL
+	db 1, WATER_SPORT
+	db 1, QUICK_ATTACK
+	db 3, QUICK_ATTACK
+	db 6, WATER_GUN
+	db 10, PURSUIT
+	db 15, SWIFT
+	db 21, AQUA_JET
+	db 26, CRUNCH
+	db 29, AGILITY
+	db 39, WHIRLPOOL
+	db 50, RAZOR_WIND
+	db 0
