@@ -252,16 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw IceFangDescription
+	dw WaterSportDescription
+	dw QuickAttackDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+IceFangDescription:
+	db   "May make foe"
+	next "flinch or freeze.@"
+	
+WaterSportDescription:
+	db   "Halves damage of"
+	next "FIRE-type moves.@"
+	
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:

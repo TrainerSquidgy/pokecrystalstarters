@@ -2093,3 +2093,32 @@ Snow:
 	startweather
 	endmove
 	
+IceFang:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	effectchance
+	flinchtarget
+	effectchance
+	freezetarget
+	endmove
+
+WaterSport:
+	checkobedience
+	usedmovetext
+	doturn
+	watersport
+	endmove
