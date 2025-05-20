@@ -2869,6 +2869,8 @@ IsMobileBattle:
 	cp LINK_MOBILE
 	ret
 
+SetUpBattlePartyMenu_NoLoop:
+	call ClearBGPalettes
 SetUpBattlePartyMenu:
 	call ClearBGPalettes
 SetUpBattlePartyMenu_Loop: ; switch to fullscreen menu?

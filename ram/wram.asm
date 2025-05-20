@@ -460,6 +460,7 @@ wPlayerSDefLevel:: db
 wPlayerAccLevel::  db
 wPlayerEvaLevel::  db
 	ds 1
+wPlayerStatLevelsEnd::
 
 wEnemyStatLevels::
 wEnemyAtkLevel::  db
@@ -470,6 +471,7 @@ wEnemySDefLevel:: db
 wEnemyAccLevel::  db
 wEnemyEvaLevel::  db
 	ds 1
+wEnemyStatLevelsEnd::
 
 wEnemyTurnsTaken::  db
 wPlayerTurnsTaken:: db
