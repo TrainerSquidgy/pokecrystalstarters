@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db ARCHEN
+	db ARCHEOPS
 	assert_table_length NUM_POKEMON

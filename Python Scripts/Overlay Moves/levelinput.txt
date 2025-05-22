@@ -1,16 +1,19 @@
-Pokémon: Sableye
-1: Scratch
+Pokémon: Archeops
+1: Quick Attack
 1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Wing Attack
+1: Rock Throw
+5: Rock Throw
+8: Double Team
+11: Scary Face
+18: AncientPower
+21: Agility
+25: Protect
+28: Acrobatics
+31: DragonBreath
+35: Crunch
+40: Endeavor
+46: U-turn
+51: Rock Slide
+57: Dragon Claw
+62: Thrash

@@ -1,14 +1,19 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Archeops
+1: Quick Attack
+1: Leer
+1: Wing Attack
+1: Rock Throw
+5: Rock Throw
+8: Double Team
+11: Scary Face
+18: AncientPower
+21: Agility
+25: Protect
+28: Acrobatics
+31: DragonBreath
+35: Crunch
+40: Endeavor
+46: U_turn
+51: Rock Slide
+57: Dragon Claw
+62: Thrash

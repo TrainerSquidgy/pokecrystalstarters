@@ -3367,3 +3367,47 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ArchenEvosAttacks:
+	db EVOLVE_LEVEL, 37, ARCHEOPS
+	db 0 ; No More Evolutions
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 1, WING_ATTACK
+	db 5, ROCK_THROW
+	db 8, DOUBLE_TEAM
+	db 12, SCARY_FACE
+	db 15, ANCIENTPOWER
+	db 19, AGILITY
+	db 22, PROTECT
+	db 26, ACROBATICS
+	db 29, DRAGONBREATH
+	db 33, CRUNCH
+	db 36, ENDEAVOR
+	db 40, U_TURN
+	db 43, ROCK_SLIDE
+	db 47, DRAGON_CLAW
+	db 50, THRASH
+	db 0
+	
+ArcheopsEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 1, WING_ATTACK
+	db 1, ROCK_THROW
+	db 5, ROCK_THROW
+	db 8, DOUBLE_TEAM
+	db 11, SCARY_FACE
+	db 18, ANCIENTPOWER
+	db 21, AGILITY
+	db 25, PROTECT
+	db 28, ACROBATICS
+	db 31, DRAGONBREATH
+	db 35, CRUNCH
+	db 40, ENDEAVOR
+	db 46, U_TURN
+	db 51, ROCK_SLIDE
+	db 57, DRAGON_CLAW
+	db 62, THRASH
+	db 0

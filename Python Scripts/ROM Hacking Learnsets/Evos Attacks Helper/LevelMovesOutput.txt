@@ -1,16 +1,21 @@
-LechonkEvosAttacks:
+ArcheopsEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 1, WING_ATTACK
+	db 1, ROCK_THROW
+	db 5, ROCK_THROW
+	db 8, DOUBLE_TEAM
+	db 11, SCARY_FACE
+	db 18, ANCIENTPOWER
+	db 21, AGILITY
+	db 25, PROTECT
+	db 28, ACROBATICS
+	db 31, DRAGONBREATH
+	db 35, CRUNCH
+	db 40, ENDEAVOR
+	db 46, U_TURN
+	db 51, ROCK_SLIDE
+	db 57, DRAGON_CLAW
+	db 62, THRASH
 	db 0
