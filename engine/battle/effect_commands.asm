@@ -2640,6 +2640,7 @@ PlayerAttackDamage:
 	ld a, [wBattleMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call CheckWaterSport
 
 	ld a, 1
 	and a
@@ -2883,6 +2884,7 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call CheckWaterSport
 
 	ld a, 1
 	and a
@@ -6912,3 +6914,31 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_WaterSport:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	jp z, .set_water_sport
+	call AnimateFailedMove
+	jp PrintButItFailed
+.set_water_sport
+	set SUBSTATUS_WATER_SPORT, [hl]
+	call AnimateCurrentMove
+	ld hl, WaterSportText
+	jp StdBattleTextbox
+
+CheckWaterSport:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp FIRE
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerSubStatus2
+	jr z, .go
+	ld hl, wEnemySubStatus2
+.go
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	ret z
+	rrc d
+	ret

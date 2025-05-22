@@ -2093,3 +2093,9 @@ Snow:
 	startweather
 	endmove
 	
+WaterSport:
+	checkobedience
+	usedmovetext
+	doturn
+	watersport
+	endmove

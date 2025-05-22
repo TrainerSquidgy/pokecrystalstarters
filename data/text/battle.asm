@@ -1149,3 +1149,8 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+WaterSportText:
+	text "Fire's power was"
+	line "weakened!"
+	prompt

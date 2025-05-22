@@ -1,78 +1,129 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Bubble
+Quick Attack
+Sweet Scent
+Water Sport
+BubbleBeam
+Agility
+Mist
+Haze
+Water Pulse
 Toxic
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
+Ice Beam
+Blizzard
 Protect
-Safeguard
+Rain Dance
+Giga Drain
 Frustration
 SolarBeam
-Earthquake
 Return
-Psychic
 Shadow Ball
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
+Attract
+Thief
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
-Swagger
-Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
+Bug Bite
+Icy Wind
+Mud-Slap
 Signal Beam
 Snore
+String Shot
 Swift
-Zen Headbutt
+Water Pulse
+Toxic
+Hidden Power
+Sunny Day
+Ice Beam
+Blizzard
+Protect
+Rain Dance
+Giga Drain
+Frustration
+SolarBeam
+Return
+Shadow Ball
+Double Team
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Endure
+Flash
+Psych Up
+Captivate
+Sleep Talk
+Natural Gift
+Swagger
+Substitute
+Bubble
+Quick Attack
+Sweet Scent
+Water Sport
+Quick Attack
+Sweet Scent
+Water Sport
+Gust
+Scary Face
+Stun Spore
+Silver Wind
+Whirlwind
+Water Pulse
+Toxic
+Hidden Power
+Sunny Day
+Ice Beam
+Blizzard
+Hyper Beam
+Protect
+Rain Dance
+Giga Drain
+Frustration
+SolarBeam
+Return
+Shadow Ball
+Double Team
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Roost
+Energy Ball
+Endure
+Silver Wind
+Giga Impact
+Flash
+Psych Up
+Captivate
+Sleep Talk
+Natural Gift
+Swagger
+U-turn
+Substitute
+Defog
+Air Cutter
+Bug Bite
+Icy Wind
+Mud-Slap
+Ominous Wind
+Signal Beam
+Snore
+String Shot
+Swift
+Tailwind
+Twister
+BubbleBeam
+Agility
+Mist
+Haze
 Baton Pass
-Body Slam
-Defense Curl
 Double-Edge
 Mimic
-Selfdestruct
+Mud Sport
+Nightmare
