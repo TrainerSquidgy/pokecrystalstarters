@@ -1149,3 +1149,12 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+PluckText:
+	text "<USER>"
+	line "stole and ate"
+	cont "<TARGET>'s"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt

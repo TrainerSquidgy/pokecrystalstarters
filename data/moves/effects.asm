@@ -2092,4 +2092,60 @@ Snow:
 	doturn
 	startweather
 	endmove
+
+UTurn:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	uturnanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	uturn
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove	
+
+Acrobatics:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	acrobatics
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	endmove
 	
+	
+Endeavor:
+	checkobedience
+	usedmovetext
+	doturn
+	endeavor
+	checkhit
+	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1769,16 +1768,6 @@ BattleCommand_CheckHit:
 	ret
 
 .BlizzardSnow:
-; Return z if the current move always hits in rain, and it is raining.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BLIZZARD
-	ret nz
-
-	ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret z
-	cp WEATHER_HAIL
 	ret
 
 .XAccuracy:
@@ -1918,8 +1907,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -5591,10 +5578,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -6812,29 +6795,6 @@ _CheckBattleScene:
 
 
 SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-		ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
 	ret
 	
 BattleCommand_StartWeather:
@@ -6884,37 +6844,13 @@ GetNextTypeMatchupsByte:
 
 
 BattleCommand_AddDamage:
-	push af
-	push hl
-    ld hl, wCurDamage + 1
-    ld a, [hl]           
-    ld d, a              
-    dec hl               
-    ld a, [hl]           
-    ld e, a              
-    ld hl, wCurDamage    
-    ld a, [hl]           
-    add a, e             
-    ld [hl], a           
-    inc hl               
-    ld a, [hl]           
-    adc a, d             
-    ld [hl], a           
-    jr nc, .done         
-    ld a, $FF            
-    ld hl, wCurDamage    
-    ld [hl], a           
-    ld [hli], a         
-.done:
-	pop hl
-	pop af
     ret
 	
 	
 
 
 
-BattleCommand_uturn:
+BattleCommand_UTurn:
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
@@ -7062,3 +6998,91 @@ ResetUTurnStatusEnemy:
 	ld a, BASE_STAT_LEVEL
 	call ByteFill
 	ret
+
+BattleCommand_Acrobatics:
+	ld hl, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld hl, wEnemyMonItem
+.go
+	ld a, [hl]
+	and a
+	ret nz
+	jp DoubleDamage
+	
+BattleCommand_Endeavor:
+	; Load the addresses of the HP values for the player's and enemy's Pokémon
+	ld hl, wBattleMonHP    ; Load address of player's Pokémon HP
+	ld de, wEnemyMonHP     ; Load address of enemy's Pokémon HP
+	ldh a, [hBattleTurn]   ; Load the value of the battle turn counter into register A
+	and a                  ; Clear the zero flag
+	jr z, .ok              ; If the turn counter is zero, skip to .ok
+
+	; Swap the HP addresses to ensure player's Pokémon HP is in HL and enemy's Pokémon HP is in DE
+	ld hl, wEnemyMonHP     ; Load address of enemy's Pokémon HP
+	ld de, wBattleMonHP    ; Load address of player's Pokémon HP
+
+.ok
+	; Load the next byte from the player's Pokémon HP into register A
+	ld a, [hli]
+	ld l, [hl]             ; Load the low byte of player's Pokémon HP into L
+	ld h, a                ; Load the high byte of player's Pokémon HP into H
+	ld a, [de]             ; Load the next byte from the enemy's Pokémon HP into A
+	ld b, a                ; Copy the enemy's HP into register B
+	inc de                 ; Increment the DE pointer to get the next byte
+	ld a, [de]             ; Load the byte after the enemy's HP into A
+	ld c, a                ; Copy this byte into register C
+
+	; Compare the high byte of player's Pokémon HP (H) with the enemy's HP (B)
+	ld a, h
+	cp b
+	jr c, .do_effect        ; If H < B, jump to .do_effect
+	ld a, l                ; Otherwise, load the low byte of player's Pokémon HP (L) into A
+	cp c                   
+
+	; Jump to .fail if the low byte of player's Pokémon HP (L) is greater or equal to the byte after enemy's HP (C)
+	jr nc, .fail
+
+.do_effect:
+	; Calculate the damage by subtracting the enemy's HP (B) from the player's HP (H) and store it in [wCurDamage + 1]
+	ld a, b
+	sub h
+	ld h, a
+	ld a, c
+	sbc l
+	ld [wCurDamage + 1], a
+
+	; Store the high byte of the damage result (H) in [wCurDamage]
+	ld a, h
+	ld [wCurDamage], a
+
+	ret  ; Return from the function
+
+.fail:
+	; Set [wAttackMissed] to 1 to indicate that the attack missed
+	ld a, 1
+	ld [wAttackMissed], a
+
+	ret  ; Return from the function
+	
+	
+BattleCommand_UTurnAnim:
+; uturnanim
+
+; Play a unique animation if the user is the last in its party
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_turn
+
+	farcall CheckPlayerHasMonToSwitchTo
+	jp nz, BattleCommand_MoveAnim
+	jp .reappear
+
+.enemy_turn:	
+	farcall FindAliveEnemyMons
+	jp nc, BattleCommand_MoveAnim
+.reappear
+	ld a, 1
+	ld [wBattleAnimParam], a
+	jp PlayDamageAnim

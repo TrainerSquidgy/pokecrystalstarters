@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw DragonClawDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,17 +252,26 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw UTurnDescription
+	dw AcrobaticsDescription
+	dw EndeavorDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+UTurnDescription:
+	db   "Does damage then"
+	next "switches out.@"
+
+AcrobaticsDescription:
+	db   "Double damage if"
+	next "no held item.@"
+
+EndeavorDescription:
+	db   "Foe's HP will"
+	next "match user's.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +324,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+DragonClawDescription:
+	db   "Attacks the foe"
+	next "with sharp claw.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
