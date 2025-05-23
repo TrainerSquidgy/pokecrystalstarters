@@ -1,14 +1,13 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Masquerain
+1: Bubble
+1: Quick Attack
+1: Sweet Scent
+1: Water Sport
+7: Quick Attack
+13: Sweet Scent
+19: Water Sport
+26: Gust
+33: Scary Face
+40: Stun Spore
+47: Silver Wind
+53: Whirlwind

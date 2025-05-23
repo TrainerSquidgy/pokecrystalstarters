@@ -2506,6 +2506,8 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+SurskitGen1TMAttacks:
+MasquerainGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0

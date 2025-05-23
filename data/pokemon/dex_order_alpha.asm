@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db SURSKIT
+	db MASQUERAIN
 	assert_table_length NUM_POKEMON

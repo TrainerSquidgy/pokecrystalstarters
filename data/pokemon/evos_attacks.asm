@@ -3367,3 +3367,32 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SurskitEvosAttacks:
+	db EVOLVE_LEVEL, 22, MASQUERAIN
+	db 0 ; No More Evolutions
+	db 1, BUBBLE
+	db 7, QUICK_ATTACK
+	db 13, SWEET_SCENT
+	db 19, WATER_SPORT
+	db 25, BUBBLEBEAM
+	db 31, AGILITY
+	db 37, MIST
+	db 37, HAZE
+	db 0
+	
+MasquerainEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, BUBBLE
+	db 1, QUICK_ATTACK
+	db 1, SWEET_SCENT
+	db 1, WATER_SPORT
+	db 7, QUICK_ATTACK
+	db 13, SWEET_SCENT
+	db 19, WATER_SPORT
+	db 26, GUST
+	db 33, SCARY_FACE
+	db 40, STUN_SPORE
+	db 47, SILVER_WIND
+	db 53, WHIRLWIND
+	db 0

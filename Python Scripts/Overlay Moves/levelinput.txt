@@ -1,16 +1,13 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Masquerain
+1: Bubble
+1: Quick Attack
+1: Sweet Scent
+1: Water Sport
+7: Quick Attack
+13: Sweet Scent
+19: Water Sport
+26: Gust
+33: Scary Face
+40: Stun Spore
+47: Silver Wind
+53: Whirlwind

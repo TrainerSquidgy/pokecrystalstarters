@@ -1,16 +1,15 @@
-LechonkEvosAttacks:
+MasquerainEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, BUBBLE
+	db 1, QUICK_ATTACK
+	db 1, SWEET_SCENT
+	db 1, WATER_SPORT
+	db 7, QUICK_ATTACK
+	db 13, SWEET_SCENT
+	db 19, WATER_SPORT
+	db 26, GUST
+	db 33, SCARY_FACE
+	db 40, STUN_SPORE
+	db 47, SILVER_WIND
+	db 53, WHIRLWIND
 	db 0
