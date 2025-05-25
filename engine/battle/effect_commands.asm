@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -334,7 +332,7 @@ CantMove:
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	res SUBSTATUS_ROLLOUT, [hl]
-
+	
 	ld a, BATTLE_VARS_SUBSTATUS3
 	call GetBattleVarAddr
 	ld a, [hl]
@@ -425,9 +423,6 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -633,6 +628,7 @@ BattleCommand_CheckObedience:
 	ldh a, [hBattleTurn]
 	and a
 	ret nz
+
 	call CheckUserIsCharging
 	ret nz
 
@@ -938,31 +934,6 @@ IgnoreSleepOnly:
 
 BattleCommand_UsedMoveText:
 	farcall DisplayUsedMoveText
-	
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .player_taunt
-	ld a, [wEnemyTauntCount]
-	and a
-	ret z
-	farcall CheckEnemyTaunt
-	ret nc
-	jr .taunted
-	
-.player_taunt
-	ld a, [wPlayerTauntCount]
-	and a
-	ret z
-	farcall CheckPlayerTaunt
-	ret nc
-.taunted
-	ld a, 1
-	ld [wEffectFailed], a
-	ld [wAttackMissed], a 
-	ld hl, BattleText_YouAreTaunted
-	jp StdBattleTextbox
-
-.not_taunted
 	ret
 
 CheckUserIsCharging:
@@ -978,6 +949,7 @@ CheckUserIsCharging:
 BattleCommand_DoTurn:
 	call CheckUserIsCharging
 	ret nz
+
 	ld hl, wBattleMonPP
 	ld de, wPlayerSubStatus3
 	ld bc, wPlayerTurnsTaken
@@ -1005,6 +977,16 @@ BattleCommand_DoTurn:
 	ld a, [de]
 	and 1 << SUBSTATUS_IN_LOOP | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
 	ret nz
+
+	push hl
+	call CheckTauntPreventsCurrentMove
+	pop hl
+	jr nc, .not_taunted
+	call BattleCommand_MoveDelay
+	ld hl, TauntPreventsMoveText
+	call StdBattleTextbox
+	jp EndMoveEffect
+.not_taunted
 
 	call .consume_pp
 	ld a, b
@@ -1100,8 +1082,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1941,10 +1921,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -1982,7 +1958,7 @@ BattleCommand_LowerSub:
 	jr z, .rollout_rampage
 	cp EFFECT_RAMPAGE
 	jr z, .rollout_rampage
-
+	
 	ld a, 1
 	and a
 	ret
@@ -3628,6 +3604,7 @@ UpdateMoveData:
 	jp CopyName1
 
 BattleCommand_SleepTarget:
+	
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_SLEEP
@@ -4978,7 +4955,7 @@ BattleCommand_CheckRampage:
 .continue_rampage
 	ld b, rampage_command
 	jp SkipToBattleCommand
-
+	
 BattleCommand_Rampage:
 ; No rampage during Sleep Talk.
 	ld a, BATTLE_VARS_STATUS
@@ -5614,20 +5591,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6168,7 +6137,7 @@ BattleCommand_Heal:
 	call AnimateFailedMove
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
-
+	
 INCLUDE "engine/battle/move_effects/transform.asm"
 
 BattleEffect_ButItFailed:
@@ -6932,30 +6901,52 @@ BattleCommand_AddDamage:
 	pop hl
 	pop af
     ret
-	
-	
+
 
 BattleCommand_Taunt:
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .player
-	ld a, [wPlayerTauntCount]
-	and a
+	ld hl, wEnemyTauntCount
+	jr z, .got_opponent_taunt
+	ld hl, wPlayerTauntCount
+.got_opponent_taunt
+	push hl
+	farcall CheckOpponentWentFirst
+	pop hl
+	ld a, 4
+	jr z, .got_duration
+	inc a
+.got_duration
+	; Check if the opponent is already Taunted.
+	dec [hl]
+	inc [hl]
 	jr nz, .failed
-	ld a, 2
-	ld [wPlayerTauntCount], a
-	jr .taunttext
-.player
-	ld a, [wEnemyTauntCount]
-	and a
-	jr nz, .failed
-	ld a, 2
-	ld [wEnemyTauntCount], a
-	
-.taunttext
-	ld hl, BattleText_FoeTaunted
+
+	; Otherwise, set Taunt.
+	ld [hl], a
+
+	farcall AnimateCurrentMove
+	ld hl, WasTauntedText
 	jp StdBattleTextbox
-	
+
 .failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+	farcall AnimateFailedMove
+	farcall PrintButItFailed
+	farcall EndMoveEffect
+	ret
+
+CheckTauntPreventsCurrentMove:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTauntCount]
+	jr z, .check
+	ld a, [wEnemyTauntCount]
+.check
+	and a
+	ret z
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVar
+	and a
+	ret nz
+	scf
+	ret

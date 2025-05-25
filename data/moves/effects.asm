@@ -2097,5 +2097,7 @@ Taunt:
 	checkobedience
 	usedmovetext
 	doturn
+	checkhit
 	taunt
 	endmove
+	

@@ -261,8 +261,9 @@ MoveDescriptions::
 	assert_table_length $100
 
 TauntDescription:
-	db   "Foe can only use"
-	line "attacking moves.@"
+	db   "Taunts the foe"
+	next "into attacking.@"
+
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:

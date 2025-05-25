@@ -3120,11 +3120,13 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+	ds 47
+wRareCandyRNG:: db
+wRareCandiesObtained:: db
 
 ; fight counts
 wJackFightCount::    db
-wBeverlyFightCount:: db ; unreferenced
+wUsingHMItem:: db 
 wHueyFightCount::    db
 wGavenFightCount::   db
 wBethFightCount::    db
@@ -3137,18 +3139,18 @@ wLizFightCount::     db
 wAnthonyFightCount:: db
 wToddFightCount::    db
 wGinaFightCount::    db
-wIrwinFightCount::   db ; unreferenced
+wHMItemActive::      db 
 wArnieFightCount::   db
 wAlanFightCount::    db
 wDanaFightCount::    db
 wChadFightCount::    db
-wDerekFightCount::   db ; unreferenced
+wGiftlockeActive::   db 
 wTullyFightCount::   db
 wBrentFightCount::   db
 wTiffanyFightCount:: db
 wVanceFightCount::   db
 wWiltonFightCount::  db
-wKenjiFightCount::   db ; unreferenced
+wLevelCap::   db 
 wParryFightCount::   db
 wErinFightCount::    db
 wElmPokemon1::      db
@@ -3187,11 +3189,14 @@ wBackupMaxHP:: ds 2
 wMegaPicture:: db
 wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
-wPlayerTauntCount:: db
-wEnemyTauntCount:: db
 wSpinnersOff:: db
 wMegaXorY:: db
-	ds 59
+wMetronomeOnly:: db
+wBinSkipPokemon:: db
+wBinSkipItem:: db
+wPlayerTauntCount:: db
+wEnemyTauntCount:: db
+	ds 56
 
 wEventFlags:: flag_array NUM_EVENTS
 

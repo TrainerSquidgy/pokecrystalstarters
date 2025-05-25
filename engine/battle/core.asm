@@ -289,27 +289,12 @@ HandleBetweenTurnEffects:
 	call HandleDefrost
 	call HandleSafeguard
 	call HandleScreens
+	call HandleTaunt
 	call HandleStatBoostingHeldItems
 	call HandleHealingItems
 	call UpdateBattleMonInParty
-	call HandleTaunt
 	call LoadTilemapToTempTilemap
 	jp HandleEncore
-
-HandleTaunt:
-	call SetPlayerTurn
-	ld hl, wPlayerTauntCount
-	call .handle
-	call SetEnemyTurn
-	ld hl, wEnemyTauntCount
-.handle
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ret nz
-	ld hl, NoLongerTauntedText
-	jp StdBattleTextbox
 
 CheckFaint_PlayerThenEnemy:
 ; BUG: Perish Song and Spikes can leave a Pokemon with 0 HP and not faint (see docs/bugs_and_glitches.md)
@@ -611,7 +596,7 @@ CheckPlayerLockedIn:
 	ld hl, wPlayerSubStatus1
 	bit SUBSTATUS_ROLLOUT, [hl]
 	jp nz, .quit
-
+	
 	and a
 	ret
 
@@ -1292,6 +1277,21 @@ SwitchTurnCore:
 	ldh [hBattleTurn], a
 	ret
 
+HandleTaunt:
+	call SetPlayerTurn
+	ld hl, wPlayerTauntCount
+	call .handle
+	call SetEnemyTurn
+	ld hl, wEnemyTauntCount
+.handle
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	ld hl, NoLongerTauntedText
+	jp StdBattleTextbox
+
 HandleLeftovers:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -1969,25 +1969,6 @@ GetMaxHP:
 	ld a, [hl]
 	ld [wHPBuffer1], a
 	ld c, a
-	ret
-
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
 	ret
 
 CheckUserHasEnoughHP:
@@ -3662,9 +3643,9 @@ ShowSetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
-	ld [wEnemyTauntCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
+	ld [wEnemyTauntCount], a
 	ld [wLastEnemyMove], a
 	ld hl, wEnemySubStatus1
 rept 4
@@ -4146,7 +4127,6 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
-	ld [wPlayerTauntCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
@@ -4162,6 +4142,7 @@ endr
 	ld [hl], a
 	ld [wPlayerDisableCount], a
 	ld [wPlayerFuryCutterCount], a
+	ld [wPlayerTauntCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld [wDisabledMove], a
@@ -5586,36 +5567,18 @@ MoveSelectionScreen:
 .use_move
 	pop af
 	ret nz
+	call SetPlayerTurn ; just in case
 
-	ld hl, wBattleMonPP
 	ld a, [wMenuCursorY]
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	and PP_MASK
-	jr z, .no_pp_left
-	ld a, [wPlayerDisableCount]
-	swap a
-	and $f
+	call CheckUsableMove
 	dec a
-	cp c
+	jr z, .no_pp_left
+	dec a
 	jr z, .move_disabled
-	
-	ld a, [wPlayerTauntCount]
-	and a
-	jr z, .not_taunted
-	ld a, [wMenuCursorY]
-	ld hl, wBattleMonMoves
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ld hl, IsStatusMove
-	call IsInByteArray
-	jr c, .taunted
+	dec a
+	jr z, .taunted
+	; Encore is handled elsewhere
 
-.not_taunted
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -5631,12 +5594,12 @@ MoveSelectionScreen:
 	xor a
 	ret
 
+.taunted
+	ld hl, BattleText_YouAreTaunted
+	jr .place_textbox_start_over
+
 .move_disabled
 	ld hl, BattleText_TheMoveIsDisabled
-	jr .place_textbox_start_over
-	
-.taunted
-	ld hl, BattleText_TheMoveCantBeSelected
 	jr .place_textbox_start_over
 
 .no_pp_left
@@ -5853,17 +5816,21 @@ MoveInfoBox:
 	ret
 
 CheckPlayerHasUsableMoves:
-	
-	
+	ld a, [wMetronomeOnly]
+	and a
+	jr z, .notMetronome
+	ld a, METRONOME
+	ld [wCurPlayerMove], a
+	xor a
+	ret
+.notMetronome
 	ld a, STRUGGLE
 	ld [wCurPlayerMove], a
-	ld a, [wPlayerTauntCount]
-	and a
-	jr nz, .check_taunt
 	ld a, [wPlayerDisableCount]
 	and a
 	ld hl, wBattleMonPP
 	jr nz, .disabled
+
 	ld a, [hli]
 	or [hl]
 	inc hl
@@ -5891,7 +5858,8 @@ CheckPlayerHasUsableMoves:
 	jr .loop
 
 .done
-	and PP_MASK
+; BUG: A Disabled but PP Up–enhanced move may not trigger Struggle (see docs/bugs_and_glitches.md)
+	and a
 	ret nz
 
 .force_struggle
@@ -5901,31 +5869,6 @@ CheckPlayerHasUsableMoves:
 	call DelayFrames
 	xor a
 	ret
-	
-.check_taunt
-	ld a, [wBattleMonMoves]
-	ld hl, IsStatusMove
-	call IsInByteArray
-	ret nc
-	ld a, [wBattleMonMoves + 1]
-	and a
-	jr z, .force_struggle
-	ld hl, IsStatusMove
-	call IsInByteArray
-	ret nc
-	ld a, [wBattleMonMoves + 2]
-	and a
-	jr z, .force_struggle
-	ld hl, IsStatusMove
-	call IsInByteArray
-	ret nc
-	ld a, [wBattleMonMoves + 3]
-	and a
-	jr z, .force_struggle
-	ld hl, IsStatusMove
-	call IsInByteArray
-	ret nc
-	jr .force_struggle
 
 ParseEnemyAction:
 	ld a, [wEnemyIsSwitching]
@@ -5955,7 +5898,7 @@ ParseEnemyAction:
 	ld a, [wEnemySubStatus3]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
 	jp nz, .skip_load
-
+	
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
 	ld a, [wLastEnemyMove]
@@ -5983,6 +5926,12 @@ ParseEnemyAction:
 	jr .finish
 
 .continue
+	ld a, [wMetronomeOnly]
+	and a
+	jr z, .notMetronome
+	ld a, METRONOME
+	jp .finish
+.notMetronome
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyMonPP
 	ld b, NUM_MOVES
@@ -5993,18 +5942,9 @@ ParseEnemyAction:
 	ld a, [wEnemyDisabledMove]
 	cp [hl]
 	jr z, .disabled
-	ld a, [hl]
-	ld hl, IsStatusMove
-	call IsInByteArray
-	jr nc, .not_status
-	ld a, [wEnemyTauntCount]
-	and a
-	jr nz, .taunt
-.not_status
 	ld a, [de]
 	and PP_MASK
 	jr nz, .enough_pp
-
 
 .disabled
 	inc hl
@@ -6012,12 +5952,6 @@ ParseEnemyAction:
 	dec b
 	jr nz, .loop
 	jr .struggle
-
-.taunt
-	ld a, [wEnemyMonMoves + 1]
-	and a
-	jr z, .struggle
-	jr .disabled
 
 .enough_pp
 	ld a, [wBattleMode]
@@ -6101,10 +6035,6 @@ ResetVarsForSubstatusRage:
 	ret
 
 CheckEnemyLockedIn:
-	ld a, [wEnemySubStatus4]
-	and 1 << SUBSTATUS_RECHARGE
-	ret nz
-
 	ld hl, wEnemySubStatus3
 	ld a, [hl]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
@@ -6666,17 +6596,6 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
-
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
 	ld [wTempEnemyMonSpecies], a
@@ -7029,19 +6948,6 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -7947,45 +7853,11 @@ GoodComeBackText:
 	text_far _GoodComeBackText
 	text_end
 
-TextJump_ComeBack: ; unreferenced
-	ld hl, ComeBackText
-	ret
 
 ComeBackText:
 	text_far _ComeBackText
 	text_end
 
-HandleSafariAngerEatingStatus: ; unreferenced
-	ld hl, wSafariMonEating
-	ld a, [hl]
-	and a
-	jr z, .angry
-	dec [hl]
-	ld hl, BattleText_WildMonIsEating
-	jr .finish
-
-.angry
-	dec hl
-	assert wSafariMonEating - 1 == wSafariMonAngerCount
-	ld a, [hl]
-	and a
-	ret z
-	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
-	push hl
-	ld a, [wEnemyMonSpecies]
-	ld [wCurSpecies], a
-	call GetBaseData
-	ld a, [wBaseCatchRate]
-	ld [wEnemyMonCatchRate], a
-	pop hl
-
-.finish
-	push hl
-	call SafeLoadTempTilemapToTilemap
-	pop hl
-	jp StdBattleTextbox
 
 FillInExpBar:
 	push hl
@@ -8213,9 +8085,6 @@ StartBattle:
 	scf
 	ret
 
-CallDoBattle: ; unreferenced
-	call DoBattle
-	ret
 
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
@@ -8388,56 +8257,6 @@ InitEnemyWildmon:
 	predef PlaceGraphic
 	ret
 
-FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	dec a
-	ld hl, Moves + MOVE_PP
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
-
-.clear
-	xor a
-	ld [hli], a
-
-.clearpp
-	push bc
-	push hl
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	xor a
-	ld [hl], a
-	pop hl
-	pop bc
-	dec b
-	jr nz, .clear
-	ret
 
 ExitBattle:
 	call .HandleEndOfBattle
@@ -8472,8 +8291,6 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
-	ld [wPlayerTauntCount], a
-	ld [wEnemyTauntCount], a
 	ld [wSetMegaEvolutionPicture], a
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
@@ -9335,117 +9152,99 @@ BattleStartMessage:
 
 	ret
 
-IsStatusMove:
-	db BIDE
-	db LEER
-	db ROAR
-	db REST
-	db MIST
-	db HAZE
-	db SING
-	db FLASH
-	db GROWL
-	db CHARM
-	db CURSE
-	db MIMIC
-	db GLARE
-	db SPORE
-	db SPITE
-	db TAUNT
-	db TOXIC
-	db HARDEN
-	db ENCORE
-	db ENDURE
-	db DETECT
-	db SKETCH
-	db GROWTH
-	db SPIKES
-	db SPLASH
-	db KINESIS
-	db SHARPEN
-	db ATTRACT
-	db SCREECH
-	db BARRIER
-	db DISABLE
-	db RECOVER
-	db LOCK_ON
-	db PROTECT
-	db REFLECT
-	db AMNESIA
-	db AGILITY
-	db SWAGGER
-	db MEDITATE
-	db WITHDRAW
-	db MINIMIZE
-	db PSYCH_UP
-	db HYPNOSIS
-	db TELEPORT
-	db TAIL_WHIP
-	db WHIRLWIND
-	db FORESIGHT
-	db HEAL_BELL
-	db MEAN_LOOK
-	db METRONOME
-	db MOONLIGHT
-	db NIGHTMARE
-	db SAFEGUARD
-	db SANDSTORM
-	db SUNNY_DAY
-	db SYNTHESIS
-	db TRANSFORM
-	db BATON_PASS
-	db BELLY_DRUM
-	db SUPERSONIC
-	db SWEET_KISS
-	db CONVERSION
-	db ACID_ARMOR
-	db SOFTBOILED
-	db MILK_DRINK
-	db LEECH_SEED
-	db SPIDER_WEB
-	db PAIN_SPLIT
-	db STUN_SPORE
-	db POISON_GAS
-	db RAIN_DANCE
-	db SLEEP_TALK
-	db SCARY_FACE
-	db SUBSTITUTE
-	db SAND_ATTACK
-	db SMOKESCREEN
-	db CONFUSE_RAY
-	db CONVERSION2
-	db SWEET_SCENT
-	db DOUBLE_TEAM
-	db MIND_READER
-	db MIRROR_MOVE  
-	db MORNING_SUN
-	db PERISH_SONG
-	db LOVELY_KISS
-	db STRING_SHOT
-	db SWORDS_DANCE
-	db DEFENSE_CURL
-	db DESTINY_BOND
-	db FOCUS_ENERGY
-	db LIGHT_SCREEN
-	db THUNDER_WAVE
-	db POISONPOWDER
-	db SLEEP_POWDER
-	db COTTON_SPORE
-	db -1
-	
-CheckEnemyTaunt:
-	ld a, [wCurEnemyMove]
-	ld hl, IsStatusMove
-	call IsInByteArray
-	ret nc
-	scf
+
+CheckUsableMove:
+; Check if move a in the move list is usable. Returns z if usable
+; Note that the first move in the list is move 0, not move 1.
+; If nz, a contains a number describing why it isn't usable:
+; 1 - no PP
+; 2 - disabled
+; 3 - taunted
+; 4 - encored
+	push hl
+	push de
+	push bc
+
+	; Check if we're out of pp.
+	ld c, a
+	ld b, 0
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonPP
+	ld de, wBattleMonMoves
+	jr z, .got_pp
+	ld hl, wEnemyMonPP
+	ld de, wEnemyMonMoves
+.got_pp
+	add hl, bc
+	ld a, [hl]
+	and PP_MASK
+	ld a, 1
+	jr z, .end
+
+	; Check Encore
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_ENCORED, a
+	jr z, .not_encored
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wCurMoveNum
+	jr z, .got_encore_num
+	ld hl, wCurEnemyMoveNum
+.got_encore_num
+	ld a, [hl]
+	cp c
+	ld a, 4
+	jr z, .end
+
+.not_encored
+	; Check Disable
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerDisableCount
+	ld bc, wDisabledMove
+	jr z, .got_disable
+	ld hl, wEnemyDisableCount
+	ld bc, wEnemyDisabledMove
+.got_disable
+	ld a, [hl]
+	ld h, d
+	ld l, e
+	and a
+	ld a, [bc]
+	pop bc
+	add hl, bc
+	jr z, .not_disabled
+	cp [hl]
+	ld a, 2
+	jr z, .end
+
+.not_disabled
+	; Check Taunt. Treat move power 0 as "status" moves.
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTauntCount]
+	jr z, .got_taunt
+	ld a, [wEnemyTauntCount]
+.got_taunt
+	and a
+	jr z, .done
+
+	ld a, [hl]
+	ld l, a
+	ld a, MOVE_POWER
+	call GetMoveAttr
+	and a
+	ld a, 3
+	jr z, .end
+	xor a
+	jr .done
+.end
+	and a
+.done
+	pop bc
+	pop de
+	pop hl
 	ret
-CheckPlayerTaunt:
-	ld a, [wCurPlayerMove]
-	ld hl, IsStatusMove
-	call IsInByteArray
-	ret nc
-	scf
-	ret
-	
-		
