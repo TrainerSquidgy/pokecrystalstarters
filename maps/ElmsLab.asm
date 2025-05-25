@@ -332,10 +332,14 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_SpinnersAsk
 	yesorno
 	iftrue .YesSpinners
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
 	loadmem wSpinnersOff, 0
 	writetext ElmsLabText_SpinnersNo
 	sjump .SpinnersDone
 .YesSpinners
+	setevent EVENT_REGULAR_BOARDER_DOUGLAS
+	clearevent EVENT_STATIC_BOARDER_DOUGLAS
 	loadmem wSpinnersOff, 1
 	writetext ElmsLabText_SpinnersYes
 .SpinnersDone
@@ -1505,6 +1509,8 @@ ElmsLabPC:
 ElmsLabRandomizeStarters:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
 	opentext
 	writetext ElmsLab_RandomizeStartersAsk
 	yesorno
