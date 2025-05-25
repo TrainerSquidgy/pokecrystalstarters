@@ -252,4 +252,5 @@ EvolutionMoves::
 	db NO_MOVE      ; HO_OH      ; fa
 	db NO_MOVE      ; CELEBI     ; fb
 	db NO_MOVE      ; CELEBI     ; fb
+	db NO_MOVE      ; CELEBI     ; fb
 	assert_table_length NUM_POKEMON
