@@ -805,5 +805,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+CorphishEggMoves:
+CrawdauntEggMoves:
 NoEggMoves:
 	db -1 ; end

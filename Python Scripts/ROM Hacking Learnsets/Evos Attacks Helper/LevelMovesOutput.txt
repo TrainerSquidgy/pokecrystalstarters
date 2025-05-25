@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+CrawdauntEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, BUBBLE
+	db 1, HARDEN
+	db 1, VICEGRIP
+	db 1, LEER
+	db 7, HARDEN
+	db 10, VICEGRIP
+	db 13, LEER
+	db 19, BUBBLEBEAM
+	db 22, PROTECT
+	db 25, KNOCK_OFF
+	db 33, TAUNT
+	db 38, CRABHAMMER
+	db 43, SWORDS_DANCE
+	db 51, CRUNCH
+	db 56, GUILLOTINE
 	db 0

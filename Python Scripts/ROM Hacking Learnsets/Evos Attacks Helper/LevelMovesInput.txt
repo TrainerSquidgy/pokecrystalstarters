@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Crawdaunt
+1: Bubble
+1: Harden
+1: ViceGrip
+1: Leer
+7: Harden
+10: ViceGrip
+13: Leer
+19: BubbleBeam
+22: Protect
+25: Knock Off
+33: Taunt
+38: Crabhammer
+43: Swords Dance
+51: Crunch
+56: Guillotine
