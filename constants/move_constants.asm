@@ -258,6 +258,7 @@
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
 	const TAUNT
+	const KNOCK_OFF
 DEF NUM_ATTACKS EQU const_value - 1
 
 ; Battle animations use the same constants as the moves up to this point

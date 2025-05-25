@@ -162,4 +162,5 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw Taunt
+	dw KnockOff
 	assert_table_length NUM_MOVE_EFFECTS

@@ -253,8 +253,8 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw TauntDescription
+	dw KnockOffDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
@@ -264,7 +264,10 @@ TauntDescription:
 	db   "Taunts the foe"
 	next "into attacking.@"
 
-MoveFDDescription:
+KnockOffDescription:
+	db   "Knocks off the"
+	next "foe's ITEM.@"
+	
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:

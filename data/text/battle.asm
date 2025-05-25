@@ -1170,3 +1170,10 @@ NoLongerTauntedText:
 	text "<USER>'s"
 	line "no longer taunted."
 	prompt
+	
+KnockOffText:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "knocked off!"

@@ -2101,3 +2101,23 @@ Taunt:
 	taunt
 	endmove
 	
+KnockOff:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	knockoff
+	buildopponentrage
+	kingsrock
+	endmove
