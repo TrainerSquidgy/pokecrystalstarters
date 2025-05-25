@@ -254,17 +254,16 @@ MoveDescriptions::
 	dw BeatUpDescription
 	dw ForesightDescription
 	dw ThiefDescription
-	dw MudSportDescription
+	dw WaterSportDescription
 	assert_table_length NUM_ATTACKS
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MudSportDescription:
-	db   "Weakens ELECTRIC"
-	next "type moves.@"
-MoveFDDescription:
-MoveFEDescription:
+WaterSportDescription:
+	 db  "Halves power of"
+	next "ELECTRIC moves.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
