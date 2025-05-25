@@ -1150,22 +1150,23 @@ MegaEvolvedText:
 	line "MEGA EVOLVED!"
 	prompt
 	
-BattleText_FoeTaunted:
-	text "<USER>"
-	line "taunted the foe."
-	prompt
-	
-NoLongerTauntedText:
-	text "<USER>'s"
-	line "taunt wore off."
-	prompt
-	
 BattleText_YouAreTaunted:
 	text "TAUNT allows only"
 	line "attacking moves!"
 	prompt
-	
-BattleText_TheMoveCantBeSelected:
-	text "The move can't be"
-	line "selected!"
+
+TauntPreventsMoveText:
+	text "But TAUNT prevents"
+	line "that move from"
+	cont "being used!"
+	prompt
+
+WasTauntedText:
+	text "<USER>"
+	line "taunts the foe!"
+	prompt
+
+NoLongerTauntedText:
+	text "<USER>'s"
+	line "no longer taunted."
 	prompt
