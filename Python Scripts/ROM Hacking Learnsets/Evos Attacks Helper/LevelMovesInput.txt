@@ -1,14 +1,12 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Zangoose
+1: Scratch
+4: Leer
+7: Quick Attack
+10: Swords Dance
+13: Fury Cutter
+19: Slash
+25: Pursuit
+31: Crush Claw
+37: Taunt
+46: Detect
+55: False Swipe
