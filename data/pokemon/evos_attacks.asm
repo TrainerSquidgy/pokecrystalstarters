@@ -3367,3 +3367,33 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+NumelEvosAttacks:
+	db EVOLVE_LEVEL, 33, CAMERUPT
+	db 0 ; no more evolutions
+	db 1, GROWL
+	db 1, TACKLE
+	db 11, EMBER
+	db 19, MAGNITUDE
+	db 25, FOCUS_ENERGY
+	db 29, TAKE_DOWN
+	db 31, AMNESIA
+	db 35, EARTHQUAKE
+	db 41, FLAMETHROWER
+	db 49, DOUBLE_EDGE
+	db 0 ; no more level-up moves
+
+CameruptEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, GROWL
+	db 1, TACKLE
+	db 11, EMBER
+	db 19, MAGNITUDE
+	db 25, FOCUS_ENERGY
+	db 29, TAKE_DOWN
+	db 31, AMNESIA
+	db 33, ROCK_SLIDE
+	db 37, EARTHQUAKE
+	db 45, ERUPTION
+	db 55, FISSURE
+	db 0 ; no more level-up moves
