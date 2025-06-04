@@ -266,4 +266,5 @@ Moves:
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
 	move HEAT_WAVE,    EFFECT_BURN_HIT,          100, FIRE,          90, 10,  10
+	move IRON_DEFENSE, EFFECT_DEFENSE_UP_2,        0, STEEL, 	    100, 15,   0
 	assert_table_length NUM_ATTACKS

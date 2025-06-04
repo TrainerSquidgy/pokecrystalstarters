@@ -1,16 +1,14 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Camerupt
+1: Growl
+1: Tackle
+1: Ember
+1: Magnitude
+11: Ember
+19: Magnitude
+25: Focus Energy
+29: Take Down
+31: Amnesia
+33: Rock Slide
+37: Earthquake
+45: Eruption
+55: Fissure

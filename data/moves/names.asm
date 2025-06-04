@@ -252,4 +252,5 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "HEAT WAVE"
+	li "IRON DEFENSE"
 	assert_list_length NUM_ATTACKS

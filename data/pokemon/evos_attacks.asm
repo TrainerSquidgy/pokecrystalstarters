@@ -3367,3 +3367,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+TorkoalEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, EMBER
+	db 4, SMOG
+	db 7, CURSE
+	db 14, SMOKESCREEN
+	db 17, FIRE_SPIN
+	db 20, BODY_SLAM
+	db 27, PROTECT
+	db 30, FLAMETHROWER
+	db 33, IRON_DEFENSE
+	db 40, AMNESIA
+	db 43, FLAIL
+	db 46, HEAT_WAVE
+	db 0; no more level-up moves
