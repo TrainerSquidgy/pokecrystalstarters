@@ -3367,3 +3367,40 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+WailmerEvosAttacks:
+	db EVOLVE_LEVEL, 40, WAILORD
+	db 0 ; no more evolutions
+	db 1, SPLASH
+	db 5, GROWL
+	db 10, WATER_GUN
+	db 14, ROLLOUT
+	db 19, WHIRLPOOL
+	db 23, ASTONISH
+	db 28, WATER_PULSE
+	db 32, MIST
+	db 37, REST
+	db 41, WATER_SPOUT
+	db 46, AMNESIA
+	db 50, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+WailordEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SPLASH
+	db 1, GROWL
+	db 1, WATER_GUN
+	db 1, ROLLOUT
+	db 5, GROWL
+	db 10, WATER_GUN
+	db 14, ROLLOUT
+	db 19, WHIRLPOOL
+	db 23, ASTONISH
+	db 28, WATER_PULSE
+	db 32, MIST
+	db 37, REST
+	db 44, WATER_SPOUT
+	db 52, AMNESIA
+	db 59, HYDRO_PUMP
+	db 0 ; no more level-up moves
