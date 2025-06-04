@@ -1149,3 +1149,8 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+IsChargedText:
+	text "<USER>"
+	line "is charging."
+	prompt

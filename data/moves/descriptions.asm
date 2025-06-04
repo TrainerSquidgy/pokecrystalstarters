@@ -252,17 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw SharpenDescription
+	dw ForesightDescription
+	dw ChargeDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+ChargeDescription:
+	db   "Doubles ELECTRIC"
+	next "on next turn.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
