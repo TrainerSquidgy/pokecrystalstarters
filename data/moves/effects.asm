@@ -2093,3 +2093,23 @@ Snow:
 	startweather
 	endmove
 	
+WaterSpout:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	waterspout
+	damagecalc
+	stab
+	checkhit
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
