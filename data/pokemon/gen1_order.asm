@@ -253,4 +253,6 @@ Pokered_MonIndices:
 	db QWILFISH
 	db WOBBUFFET
 	db WOBBUFFET
+	db ELECTRIKE
+	db MANECTRIC
 	assert_table_length NUM_POKEMON + 1

@@ -1,16 +1,15 @@
-Pokémon: Sableye
-1: Scratch
+Pokémon: Manectric
+1: Tackle
+1: Thunder Wave
 1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Howl
+4: Thunder Wave
+9: Leer
+12: Howl
+17: Quick Attack
+20: Spark
+25: Odor Sleuth
+31: Roar
+39: Bite
+45: Thunder
+53: Charge

@@ -1,14 +1,15 @@
-Pokémon: Lechonk
+Pokémon: Manectric
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Thunder Wave
+1: Leer
+1: Howl
+4: Thunder Wave
+9: Leer
+12: Howl
+17: Quick Attack
+20: Spark
+25: Odor Sleuth
+31: Roar
+39: Bite
+45: Thunder
+53: Charge

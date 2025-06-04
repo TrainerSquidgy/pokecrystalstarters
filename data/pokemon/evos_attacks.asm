@@ -3367,3 +3367,38 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+ElectrikeEvosAttacks:
+	db EVOLVE_LEVEL, 26, MANECTRIC
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 4, THUNDER_WAVE
+	db 9, LEER
+	db 12, HOWL
+	db 17, QUICK_ATTACK
+	db 20, SPARK
+	db 25, ODOR_SLEUTH
+	db 28, ROAR
+	db 33, BITE
+	db 36, THUNDER
+	db 41, CHARGE
+	db 0
+	
+ManectricEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, THUNDER_WAVE
+	db 1, LEER
+	db 1, HOWL
+	db 4, THUNDER_WAVE
+	db 9, LEER
+	db 12, HOWL
+	db 17, QUICK_ATTACK
+	db 20, SPARK
+	db 25, ODOR_SLEUTH
+	db 31, ROAR
+	db 39, BITE
+	db 45, THUNDER
+	db 53, CHARGE
+	db 0
