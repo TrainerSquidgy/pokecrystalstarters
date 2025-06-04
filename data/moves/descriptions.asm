@@ -252,8 +252,8 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw EruptionDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
 	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
@@ -966,6 +966,10 @@ CurseDescription:
 FlailDescription:
 	db   "Stronger if the"
 	next "user's HP is low.@"
+
+EruptionDescription:
+	db   "Stronger if the"
+	next "user HP is high.@"
 
 Conversion2Description:
 	db   "The user's type is"
