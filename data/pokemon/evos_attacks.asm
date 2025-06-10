@@ -3367,3 +3367,40 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+MakuhitaEvosAttacks:
+	db EVOLVE_LEVEL, 24, HARIYAMA
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, FOCUS_ENERGY
+	db 4, SAND_ATTACK
+	db 10, ARM_THRUST
+	db 13, VITAL_THROW
+	db 19, FAKE_OUT
+	db 22, WHIRLWIND
+	db 28, KNOCK_OFF
+	db 31, SMELLINGSALT
+	db 37, BELLY_DRUM
+	db 40, ENDURE
+	db 46, SEISMIC_TOSS
+	db 49, REVERSAL
+	db 0
+	
+HariyamaEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, FOCUS_ENERGY
+	db 1, SAND_ATTACK
+	db 1, ARM_THRUST
+	db 4, SAND_ATTACK
+	db 10, ARM_THRUST
+	db 13, VITAL_THROW
+	db 19, FAKE_OUT
+	db 22, WHIRLWIND
+	db 29, KNOCK_OFF
+	db 33, SMELLINGSALT
+	db 40, BELLY_DRUM
+	db 44, ENDURE
+	db 51, SEISMIC_TOSS
+	db 55, REVERSAL
+	db 0

@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Hariyama
+1: Tackle
+1: Focus Energy
+1: Sand-Attack
+1: Arm Thrust
+4: Sand-Attack
+10: Arm Thrust
+13: Vital Throw
+19: Fake Out
+22: Whirlwind
+29: Knock Off
+33: SmellingSalt
+40: Belly Drum
+44: Endure
+51: Seismic Toss
+55: Reversal

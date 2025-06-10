@@ -1,14 +1,16 @@
-Pokémon: Lechonk
+Pokémon: Hariyama
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Focus Energy
+1: Sand-Attack
+1: Arm Thrust
+4: Sand-Attack
+10: Arm Thrust
+13: Vital Throw
+19: Fake Out
+22: Whirlwind
+29: Knock Off
+33: SmellingSalt
+40: Belly Drum
+44: Endure
+51: Seismic Toss
+55: Reversal
