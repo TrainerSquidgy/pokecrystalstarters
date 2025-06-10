@@ -2093,3 +2093,35 @@ Snow:
 	startweather
 	endmove
 	
+WakeUpSlap:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	wakeupslap
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	endmove
+	
+Captivate:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	captivate
+	lowersub
+	statdownanim
+	raisesub
+	statdownmessage
+	statdownfailtext
+	endmove

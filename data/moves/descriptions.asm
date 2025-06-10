@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw AncientpowerDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw WakeUpSlapDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw CaptivateDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw QuickAttackDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -252,15 +252,15 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw HailDescription
+	dw SheerColdDescription
+	dw HeadbuttDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -314,10 +314,6 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
-
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -625,6 +621,10 @@ EarthquakeDescription:
 
 FissureDescription:
 	db   "A ground-type,"
+	next "one-hit KO attack.@"
+
+SheerColdDescription:
+	db   "An ice-type,"
 	next "one-hit KO attack.@"
 
 DigDescription:
@@ -1067,6 +1067,10 @@ OutrageDescription:
 	db   "Works 2-3 turns"
 	next "and confuses user.@"
 
+HailDescription:
+	db   "Sets up HAIL"
+	next "for 5 turns.@"
+
 SandstormDescription:
 	db   "Inflicts damage"
 	next "every turn.@"
@@ -1146,10 +1150,6 @@ SafeguardDescription:
 PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
-
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
@@ -1270,3 +1270,11 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+WakeUpSlapDescription:
+	db   "Does more if foe"
+	next "is asleep. Wakes.@"
+	
+CaptivateDescription:
+	db   "Lowers SP.ATK if"
+	next "opposite gender.@"
