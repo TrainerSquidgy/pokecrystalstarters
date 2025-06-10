@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Froslass
+1: Powder Snow
+1: Leer
+1: Double Team
+1: Astonish
+4: Double Team
+10: Astonish
+13: Icy Wind
+19: Confuse Ray
+22: Ominous Wind
+28: Wake_Up Slap
+31: Captivate
+37: Ice Shard
+40: Hail
+51: Blizzard
+59: Destiny Bond

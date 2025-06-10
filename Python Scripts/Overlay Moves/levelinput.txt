@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
+Pokémon: Froslass
+1: Powder Snow
 1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Double Team
+1: Astonish
+4: Double Team
+10: Astonish
+13: Icy Wind
+19: Confuse Ray
+22: Ominous Wind
+28: Wake-Up Slap
+31: Captivate
+37: Ice Shard
+40: Hail
+51: Blizzard
+59: Destiny Bond

@@ -252,5 +252,7 @@ NewPokedexOrder:
 	db HO_OH
 	db MEWTWO
 	db MEW
-	db CELEBI
+	db SNORUNT
+	db GLALIE
+	db FROSLASS
 	assert_table_length NUM_POKEMON

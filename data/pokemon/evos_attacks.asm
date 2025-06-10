@@ -3367,3 +3367,57 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SnoruntEvosAttacks:
+	db EVOLVE_LEVEL, 40, GLALIE
+	db EVOLVE_ITEM_FEMALE, DAWN_STONE, FROSLASS
+	db 0 ; No More Evolutions
+	db 1, POWDER_SNOW
+	db 1, LEER
+	db 7, DOUBLE_TEAM
+	db 10, BITE
+	db 16, ICY_WIND
+	db 19, HEADBUTT
+	db 25, PROTECT
+	db 28, CRUNCH
+	db 34, ICE_BEAM
+	db 37, HAIL
+	db 43, BLIZZARD
+	db 0
+	
+GlalieEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, POWDER_SNOW
+	db 1, LEER
+	db 1, DOUBLE_TEAM
+	db 1, BITE
+	db 7, DOUBLE_TEAM
+	db 10, BITE
+	db 16, ICY_WIND
+	db 19, HEADBUTT
+	db 25, PROTECT
+	db 28, CRUNCH
+	db 34, ICE_BEAM
+	db 42, HAIL
+	db 53, BLIZZARD
+	db 61, SHEER_COLD
+	db 0
+	
+FroslassEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, POWDER_SNOW
+	db 1, LEER
+	db 1, DOUBLE_TEAM
+	db 1, ASTONISH
+	db 4, DOUBLE_TEAM
+	db 10, ASTONISH
+	db 13, ICY_WIND
+	db 19, CONFUSE_RAY
+	db 22, OMINOUS_WIND
+	db 28, WAKE_UP_SLAP
+	db 31, CAPTIVATE
+	db 37, ICE_SHARD
+	db 40, HAIL
+	db 51, BLIZZARD
+	db 59, DESTINY_BOND
+	db 0
