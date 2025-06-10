@@ -1149,3 +1149,15 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+CuredOfParalysisText:
+	text "<TARGET>"
+	line "was cured of PRZ."
+	prompt
+	
+KnockOffText:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "knocked off!"

@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw SmellingSaltDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,17 +252,23 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw ArmThrustDescription
+	dw FakeOutDescription
+	dw KnockOffDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+
+FakeOutDescription:
+	db   "Only works 1st"
+	next "turn. Flinches.@"
+
+KnockOffDescription:
+	db   "Knocks off the"
+	next "foe's ITEM.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +321,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+SmellingSaltDescription:
+	db   "Does more if foe"
+	next "is paralyzed.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -389,6 +395,10 @@ HornAttackDescription:
 
 FuryAttackDescription:
 	db   "Jabs the target"
+	next "2-5 times.@"
+
+ArmThrustDescription:
+	db   "Whacks the target"
 	next "2-5 times.@"
 
 HornDrillDescription:

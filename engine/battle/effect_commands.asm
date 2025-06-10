@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1918,8 +1917,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -5370,25 +5367,23 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
+	ldh a, [hBattleTurn]
 	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
+	jr z, .player
+	ld a, [wEnemyTurnsTaken]
+	dec a
+	and a
+	jr nz, .failed
+	jr FlinchTarget
+.player
+	ld a, [wPlayerTurnsTaken]
+	dec a
+	and a
+	jr z, FlinchTarget	
+.failed
 	ld a, 1
 	ld [wAttackMissed], a
-	ret
+	jp BattleEffect_ButItFailed
 
 BattleCommand_FlinchTarget:
 	call CheckSubstituteOpp
@@ -5591,10 +5586,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -6912,3 +6903,112 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_SmellingSalt:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	and PAR
+	ret z
+	
+	ld hl, wEnemyMonStatus
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .proceed
+	ld hl, wBattleMonStatus
+
+.proceed
+	xor a
+	ld [hl], a	
+	
+	ld hl, CuredOfParalysisText
+	call StdBattleTextbox
+	jp DoubleDamage
+	
+BattleCommand_KnockOff:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+; The enemy needs to have an item to knockoff.
+
+	call .enemyitem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal mail.
+
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	ret c
+
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+
+	ld a, [wLinkMode]
+	and a
+	jr z, .stealenemyitem
+
+	ld a, [wBattleMode]
+	dec a
+	ret z
+
+.stealenemyitem
+	call .enemyitem
+	xor a
+	ld [hl], a
+	ld [de], a
+
+	jr .knock
+
+.enemy
+
+
+; The player must have an item to steal.
+
+	call .playeritem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal mail!
+
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	ret c
+
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+
+; If the enemy steals your item,
+; it's gone for good if you don't get it back.
+
+	call .playeritem
+	xor a
+	ld [hl], a
+	ld [de], a
+
+.knock
+	call GetItemName
+	ld hl, KnockOffText
+	jp StdBattleTextbox
+
+.playeritem
+	ld a, MON_ITEM
+	call BattlePartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wBattleMonItem
+	ret
+
+.enemyitem
+	ld a, MON_ITEM
+	call OTPartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonItem
+	ret
+	
