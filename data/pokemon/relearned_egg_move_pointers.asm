@@ -251,4 +251,6 @@ RelearnedEggMovePointers::
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves ; Celebi
+	dw MakuhitaRelearnedEggMoves
+	dw HariyamaRelearnedEggMoves
 	assert_table_length NUM_POKEMON

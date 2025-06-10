@@ -805,5 +805,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+MakuhitaEggMoves:
+HariyamaEggMoves:
 NoEggMoves:
 	db -1 ; end
