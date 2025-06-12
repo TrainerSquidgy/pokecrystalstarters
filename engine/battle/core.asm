@@ -3655,6 +3655,7 @@ rept 4
 endr
 	ld [hl], a
 	ld [wEnemyDisableCount], a
+	ld [wEnemyStockpile], a
 	ld [wEnemyFuryCutterCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
@@ -4143,6 +4144,7 @@ endr
 	ld [hli], a
 	ld [hl], a
 	ld [wPlayerDisableCount], a
+	ld [wPlayerStockpile], a
 	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
@@ -8455,6 +8457,8 @@ CleanUpBattleRAM:
 	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
 	ld [wHiddenPowerLoop], a
+	ld [wEnemyStockpile], a
+	ld [wPlayerStockpile], a
 	ld [wBattleMode], a
 	ld [wBattleType], a
 	ld [wAttackMissed], a

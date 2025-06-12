@@ -1149,3 +1149,10 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+
+StockpileCountText:
+	text "<USER>"
+	line "STOCKPILED @"
+	text_decimal wTextDecimalByte, 1, 1
+	text "!"
+	prompt
