@@ -344,7 +344,8 @@ ArbokEvosAttacks:
 	db 0 ; no more level-up moves
 
 PikachuEvosAttacks:
-	db EVOLVE_ITEM, THUNDERSTONE, RAICHU
+	db EVOLVE_ITEM, THUNDERSTONE, RAICHUA
+	db EVOLVE_ITEM, LINKING_CORD, RAICHU
 	db 0 ; no more evolutions
 	db 1, THUNDERSHOCK
 	db 1, GROWL
@@ -3367,3 +3368,13 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+RaichuAEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, PSYCHIC_M
+	db 1, FAKE_OUT
+	db 1, THUNDERSHOCK
+	db 1, TAIL_WHIP
+	db 1, QUICK_ATTACK
+	db 1, THUNDERBOLT
+	db 0

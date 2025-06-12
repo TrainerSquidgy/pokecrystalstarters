@@ -1,16 +1,9 @@
-LechonkEvosAttacks:
+Raichu-AEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
+	db 1, PSYCHIC
+	db 1, FAKE_OUT
+	db 1, THUNDER_SHOCK
 	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, QUICK_ATTACK
+	db 1, THUNDERBOLT
 	db 0

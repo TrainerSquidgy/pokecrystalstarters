@@ -251,4 +251,5 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA      ; f9
 	db NO_MOVE      ; HO_OH      ; fa
 	db NO_MOVE      ; CELEBI     ; fb
+	db PSYCHIC_M    ; RAICHU_A     ; fb
 	assert_table_length NUM_POKEMON
