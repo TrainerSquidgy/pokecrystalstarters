@@ -107,12 +107,10 @@ DanceTheaterSurfGuy:
 	promptbutton
 	verbosegiveitem HM_SURF
 	setevent EVENT_GOT_HM03_SURF
-	checkevent EVENT_RECEIVED_RAFT
-	iftrue .NoHMItem
-	verbosegiveitem RAFT
-	setevent EVENT_RECEIVED_RAFT
-.NoHMItem
 	writetext SurfGuySurfExplanationText
+	waitbutton
+	verbosegiveitem DAWN_STONE
+	writetext SurfGuyDuskStoneExplanationText
 	waitbutton
 	readmem wMegaEvolutionEnabled
 	ifequal 0, .SkipMega
@@ -243,6 +241,15 @@ KimonoGirlMikiAfterBattleText:
 
 	para "My #MON keep my"
 	line "spirits up too."
+	done
+
+SurfGuyDuskStoneExplanationText:
+	text "I see you have"
+	line "the RALTS line."
+	
+	para "Take this, it'll"
+	line "evole male KIRLIA"
+	cont "into GALLADE."
 	done
 
 SurfGuyNeverLeftAScratchText:
