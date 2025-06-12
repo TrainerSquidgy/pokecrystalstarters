@@ -1,78 +1,151 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Psychic
+Encore
+Fake Out
+Thunder Shock
+Growl
+Tail Whip
+Double Team
+Psychic
 Toxic
 Hidden Power
-Sunny Day
 Hyper Beam
 Light Screen
 Protect
+Rain Dance
 Safeguard
 Frustration
-SolarBeam
-Earthquake
+Thunderbolt
+Thunder
 Return
 Psychic
-Shadow Ball
+Brick Break
 Double Team
 Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
 Facade
-Secret Power
 Rest
-Skill Swap
-Overheat
+Attract
+Thief
+Round
+Echoed Voice
+Focus Blast
+Fling
 Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
 Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
+Volt Switch
+Thunder Wave
 Grass Knot
 Swagger
+Sleep Talk
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
+Wild Charge
+Confide
+Ally Switch
+Covet
+Electroweb
+Focus Punch
 Helping Hand
-Iron Defense
-Iron Head
+Iron Tail
+Knock Off
+Laser Focus
 Magic Coat
-Pain Split
-Rollout
+Magic Room
+Magnet Rise
+Recycle
+Shock Wave
 Signal Beam
 Snore
-Swift
-Zen Headbutt
-Baton Pass
+Telekinesis
+Thunder Punch
+Charm
+Sweet Kiss
+Nasty Plot
+UproarUSUM
+Growl
+Play Nice
+Electro Ball
+Feint
+Spark
+Nuzzle
+Discharge
+Slam
+Agility
+Volt Tackle
+Celebrate
+Hold Hands
+Teeter Dance
+Happy Hour
+Sweet Scent
+Counter
+Refresh
+Fly
+Surf
 Body Slam
+Captivate
+Curse
 Defense Curl
+Detect
+Dig
 Double-Edge
+Dynamic Punch
+Endeavor
+Extreme Speed
+Flash
+Follow Me
+Headbutt
+Heart Stamp
+Last Resort
+Mega Kick
+Mega Punch
 Mimic
-Selfdestruct
+Mud-Slap
+Natural Gift
+Pay Day
+Rage
+Reflect
+Rock Smash
+Rollout
+Secret Power
+Seismic Toss
+Sing
+Skull Bash
+Strength
+Submission
+Swift
+Take Down
+Yawn
+Zap Cannon
+Body Slam
+Captivate
+Curse
+Defense Curl
+Detect
+Dig
+Double-Edge
+Dynamic Punch
+Endeavor
+Extreme Speed
+Flash
+Follow Me
+Headbutt
+Heart Stamp
+Last Resort
+Mega Kick
+Mega Punch
+Mimic
+Mud-Slap
+Natural Gift
+Pay Day
+Rage
+Reflect
+Rock Smash
+Rollout
+Secret Power
+Seismic Toss
+Sing
+Skull Bash
+Strength
+Submission
+Swift
+Take Down
+Yawn
+Zap Cannon
