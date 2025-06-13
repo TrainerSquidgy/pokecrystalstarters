@@ -6918,6 +6918,17 @@ BattleCommand_Stockpile:
 	jp PrintButItFailed
 
 BattleCommand_Swallow:
+
+	ld hl, wPlayerStockpile
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_player
+	ld hl, wEnemyStockpile
+.got_player
+	ld a, [hl]
+	and a
+	jp z, .failed
+	
 	ld de, wBattleMonHP
 	ld hl, wBattleMonMaxHP
 	ldh a, [hBattleTurn]
@@ -7035,6 +7046,7 @@ BattleCommand_SpitUp:
 	call BattleCommand_DefenseDown
 	call BattleCommand_DefenseDown
 	call BattleCommand_SwitchTurn
+	call ResetMiss
 	ld d, 150
 	jr .damagedone
 .two
@@ -7042,12 +7054,14 @@ BattleCommand_SpitUp:
 	call BattleCommand_DefenseDown
 	call BattleCommand_DefenseDown
 	call BattleCommand_SwitchTurn
+	call ResetMiss
 	ld d, 100
 	jr .damagedone
 .one
 	call BattleCommand_SwitchTurn
 	call BattleCommand_DefenseDown
 	call BattleCommand_SwitchTurn
+	call ResetMiss
 	ld d, 50
 .damagedone
 	ldh a, [hBattleTurn]

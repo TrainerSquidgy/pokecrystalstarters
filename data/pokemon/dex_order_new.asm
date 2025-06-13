@@ -253,4 +253,6 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
+	db DRIFLOON
+	db DRIFBLIM
 	assert_table_length NUM_POKEMON

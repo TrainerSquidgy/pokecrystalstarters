@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+DrifblimEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, CONSTRICT
+	db 1, MINIMIZE
+	db 1, ASTONISH
+	db 1, GUST
+	db 6, ASTONISH
+	db 11, GUST
+	db 14, FOCUS_ENERGY
+	db 17, PAYBACK
+	db 22, STOCKPILE
+	db 27, SPIT_UP
+	db 27, SWALLOW
+	db 32, OMINOUS_WIND
+	db 37, BATON_PASS
+	db 44, SHADOW_BALL
+	db 51, EXPLOSION
 	db 0

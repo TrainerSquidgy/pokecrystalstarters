@@ -910,6 +910,8 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+DrifloonRelearnedEggMoves:
+DrifblimRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

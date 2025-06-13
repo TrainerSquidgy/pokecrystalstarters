@@ -3367,3 +3367,40 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+DrifloonEvosAttacks:
+	db EVOLVE_LEVEL, 28, DRIFBLIM
+	db 0 ; No More Evolutions
+	db 1, CONSTRICT
+	db 1, MINIMIZE
+	db 6, ASTONISH
+	db 11, GUST
+	db 14, FOCUS_ENERGY
+	db 17, PAYBACK
+	db 22, STOCKPILE
+	db 27, SPIT_UP
+	db 27, SWALLOW
+	db 30, OMINOUS_WIND
+	db 33, BATON_PASS
+	db 38, SHADOW_BALL
+	db 43, EXPLOSION
+	db 0
+	
+DrifblimEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, CONSTRICT
+	db 1, MINIMIZE
+	db 1, ASTONISH
+	db 1, GUST
+	db 6, ASTONISH
+	db 11, GUST
+	db 14, FOCUS_ENERGY
+	db 17, PAYBACK
+	db 22, STOCKPILE
+	db 27, SPIT_UP
+	db 27, SWALLOW
+	db 32, OMINOUS_WIND
+	db 37, BATON_PASS
+	db 44, SHADOW_BALL
+	db 51, EXPLOSION
+	db 0

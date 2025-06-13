@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Drifblim
+1: Constrict
+1: Minimize
+1: Astonish
+1: Gust
+6: Astonish
+11: Gust
+14: Focus Energy
+17: Payback
+22: Stockpile
+27: Spit Up
+27: Swallow
+32: Ominous Wind
+37: Baton Pass
+44: Shadow Ball
+51: Explosion

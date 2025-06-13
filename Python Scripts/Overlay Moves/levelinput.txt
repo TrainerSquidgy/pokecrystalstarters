@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Drifblim
+1: Constrict
+1: Minimize
+1: Astonish
+1: Gust
+6: Astonish
+11: Gust
+14: Focus Energy
+17: Payback
+22: Stockpile
+27: Spit Up
+27: Swallow
+32: Ominous Wind
+37: Baton Pass
+44: Shadow Ball
+51: Explosion
