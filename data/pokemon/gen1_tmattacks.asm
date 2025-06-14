@@ -2526,4 +2526,5 @@ AbqaGen1TMAttacks:
 	db 1, SKULL_BASH   
 	db 1, THUNDER_WAVE 
 	db 1, SUBSTITUTE
+NoGen1TMAttacks:
 	db 0
