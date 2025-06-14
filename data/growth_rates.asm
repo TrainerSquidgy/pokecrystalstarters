@@ -18,6 +18,7 @@ GrowthRates:
 	growth_rate 6, 5, -15, 100, 140 ; Medium Slow
 	growth_rate 4, 5,   0,   0,   0 ; Fast
 	growth_rate 5, 4,   0,   0,   0 ; Slow
+	growth_rate 1, 2, -13, 201,  62 ; Too Fast
 	assert_table_length NUM_GROWTH_RATES -2
 	
 ErraticExperience:
