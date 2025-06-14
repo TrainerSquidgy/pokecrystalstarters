@@ -812,4 +812,6 @@ AbqaEggMoves:
 	db GROWL
 	db PAY_DAY 
 	db REFLECT
+NoEggMoves:
 	db -1 ; end
+
