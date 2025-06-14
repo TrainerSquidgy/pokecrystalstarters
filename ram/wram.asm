@@ -3194,7 +3194,13 @@ wMegaXorY:: db
 wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
-	ds 58
+wPlayerEchoedVoiceCount:: db
+wEnemyEchoedVoiceCount:: db
+wEnemyAteABerry:: db
+wPlayerAteABerry:: db
+wPlayerYawning:: db
+wEnemyYawning:: db
+	ds 52
 
 wEventFlags:: flag_array NUM_EVENTS
 
