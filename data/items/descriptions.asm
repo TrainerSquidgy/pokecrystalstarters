@@ -45,12 +45,12 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw PeatBlockDesc
+	dw MegaRingDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw TeruSama4Desc
+	dw MegaStoneDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc
@@ -90,7 +90,7 @@ ItemDescriptions:
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama6Desc
+	dw ProfsRepelDesc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -100,7 +100,7 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw TeruSama7Desc
+	dw ScytheDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -120,7 +120,7 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw TeruSama8Desc
+	dw AirBalloonDesc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
@@ -135,27 +135,27 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw TeruSama9Desc
-	dw TeruSama10Desc
-	dw TeruSama11Desc
+	dw RaftDesc
+	dw BurlyManDesc
+	dw LanternDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
-	dw TeruSama12Desc
-	dw TeruSama13Desc
+	dw BathPlugDesc
+	dw LadderDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TeruSama14Desc
+	dw FartJarDesc
 	dw LeftoversDesc
-	dw TeruSama15Desc
-	dw TeruSama16Desc
-	dw TeruSama17Desc
+	dw HoneyJarDesc
+	dw TreeShakerDesc
+	dw BigHammerDesc
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw TeruSama18Desc
-	dw TeruSama19Desc
-	dw TeruSama20Desc
+	dw RareCandyDesc
+	dw EscapeRopeDesc
+	dw PeatBlockDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -438,6 +438,10 @@ PeatBlockDesc:
 	db   "Mud. Loved by"
 	next "some #MON.@"
 
+MegaRingDesc:
+	db   "An odd ring. Used"
+	next "to MEGA EVOLVE.@"
+
 FreshWaterDesc:
 	db   "Restores #MON"
 	next "HP by 50.@"
@@ -454,8 +458,9 @@ XAttackDesc:
 	db   "Raises ATTACK."
 	next "(1 BTL)@"
 
-TeruSama4Desc:
-	db   "?@"
+MegaStoneDesc:
+	db   "Used to MEGA"
+	next "EVOLVE. (HOLD)@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."
@@ -610,8 +615,9 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
-TeruSama6Desc:
-	db   "?@"
+ProfsRepelDesc:
+	db   "Disables all"
+	next "WILD #MON.@"
 
 AmuletCoinDesc:
 	db   "Doubles monetary"
@@ -646,8 +652,9 @@ BlkApricornDesc:
 	db   "A black APRICORN."
 	next "@"
 
-TeruSama7Desc:
-	db   "?@"
+ScytheDesc:
+	db   "Chops down"
+	next "pesky trees.@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."
@@ -725,8 +732,9 @@ FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing. (HOLD)@"
 
-TeruSama8Desc:
-	db   "?@"
+AirBalloonDesc:
+	db   "Helps you FLY"
+	next "to seen places.@"
 
 EnergyPowderDesc:
 	db   "Restores #MON"
@@ -783,14 +791,17 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
+RaftDesc:
+	db   "Crosses bodies"
+	next "of water.@"
 
-TeruSama10Desc:
-	db   "?@"
+BurlyManDesc:
+	db   "Calls a bloke."
+	next  "Moves boulders.@"
 
-TeruSama11Desc:
-	db   "?@"
+LanternDesc:
+	db   "Lights up"
+	next "dark caves.@"
 
 CharcoalDesc:
 	db   "Powers up fire-"
@@ -804,11 +815,13 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (HOLD)@"
 
-TeruSama12Desc:
-	db   "?@"
+BathPlugDesc:
+	db   "Stops WHIRLPOOLS"
+	next "temporarily.@"
 
-TeruSama13Desc:
-	db   "?@"
+LadderDesc:
+	db   "Climb WATERFALLS"
+	next "with ease!@"	
 
 MetalCoatDesc:
 	db   "Powers up steel-"
@@ -818,21 +831,25 @@ DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
 
-TeruSama14Desc:
-	db   "?@"
+FartJarDesc:
+	db   "Rental ABRA. Can"
+	next "use to TELEPORT.@"
 
 LeftoversDesc:
 	db   "Restores HP during"
 	next "battle. (HOLD)@"
 
-TeruSama15Desc:
-	db   "?@"
+HoneyJarDesc:
+	db   "Sweet HONEY which"
+	next "will force PKMN.@"
 
-TeruSama16Desc:
-	db   "?@"
+TreeShakerDesc:
+	db   "Use on trees"
+	next "encounter #MON.@"
 
-TeruSama17Desc:
-	db   "?@"
+BigHammerDesc:
+	db   "Breaks ROCKS"
+	next "with HAMMER!@"
 
 MysteryBerryDesc:
 	db   "A self-restore"

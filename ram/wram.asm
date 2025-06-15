@@ -3120,11 +3120,13 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+	ds 47
+wRareCandyRNG:: db
+wRareCandiesObtained:: db
 
 ; fight counts
 wJackFightCount::    db
-wBeverlyFightCount:: db ; unreferenced
+wUsingHMItem:: db 
 wHueyFightCount::    db
 wGavenFightCount::   db
 wBethFightCount::    db
@@ -3137,18 +3139,18 @@ wLizFightCount::     db
 wAnthonyFightCount:: db
 wToddFightCount::    db
 wGinaFightCount::    db
-wIrwinFightCount::   db ; unreferenced
+wHMItemActive::      db 
 wArnieFightCount::   db
 wAlanFightCount::    db
 wDanaFightCount::    db
 wChadFightCount::    db
-wDerekFightCount::   db ; unreferenced
+wGiftlockeActive::   db 
 wTullyFightCount::   db
 wBrentFightCount::   db
 wTiffanyFightCount:: db
 wVanceFightCount::   db
 wWiltonFightCount::  db
-wKenjiFightCount::   db ; unreferenced
+wLevelCap::   db 
 wParryFightCount::   db
 wErinFightCount::    db
 wElmPokemon1::      db
@@ -3168,7 +3170,31 @@ wRivalCarriesStarter:: db
 wIsAStarter:: db
 wStarterDVSelection:: db
 wEvolutionsDisabled:: db
-	ds 83
+wGen1MovesLeft:: db
+wEggMovesLeft:: db
+wGuaranteedHMFriendCatch:: db
+wElmPreview:: db
+wAlteredHiddenPowerDVs:: db
+wInverseActivated:: db
+wAbilitiesActivated:: db
+wTutorsLimited:: db
+wHiddenPowerLoop:: db
+wHiddenPowerType:: db
+wTempHiddenPowerType:: db
+wTempHiddenPowerPower:: db
+wWhichHiddenPower:: db
+wMegaEvolutionActive:: db
+wAlreadyMegaEvolved:: db
+wBackupMaxHP:: ds 2
+wMegaPicture:: db
+wSetMegaEvolutionPicture:: db
+wMegaEvolutionEnabled:: db
+wSpinnersOff:: db
+wMegaXorY:: db
+wMetronomeOnly:: db
+wBinSkipPokemon:: db
+wBinSkipItem:: db
+	ds 58
 
 wEventFlags:: flag_array NUM_EVENTS
 

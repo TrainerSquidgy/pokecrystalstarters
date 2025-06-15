@@ -69,7 +69,7 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp nz, .dont_evolve_2
 
-	ld a, b
+	ld a, b						
 	cp EVOLVE_TRADE
 	jp z, .trade
 
@@ -81,15 +81,17 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp nz, .dont_evolve_2
 
-	
-
-
-
 	ld a, b
 	cp EVOLVE_ITEM
 	jp z, .item
 	cp EVOLVE_URSALUNA
 	jp z, .ursaluna
+	cp EVOLVE_ITEM_MALE
+	jp z, .item_m
+	cp EVOLVE_ITEM_FEMALE
+	jp z, .item_f
+	cp EVOLVE_MOVE
+	jp z, .move
 
 	ld a, [wForceEvolution]
 	and a
@@ -98,6 +100,32 @@ EvolveAfterBattle_MasterLoop:
 	ld a, b
 	cp EVOLVE_LEVEL
 	jp z, .level
+
+	ld a, b
+	cp EVOLVE_LEVEL_MALE
+	jp z, .level_m
+
+	ld a, b
+	cp EVOLVE_LEVEL_FEMALE
+	jp z, .level_f
+
+
+	ld a, b
+	cp EVOLVE_DAY
+	jp z, .level_day
+
+	ld a, b
+	cp EVOLVE_NITE
+	jp z, .level_nite
+	cp EVOLVE_HELD
+	jp z, .holding
+	cp EVOLVE_HELD_DAY
+	jp z, .holding_day
+	cp EVOLVE_HELD_NITE
+	jp z, .holding_nite
+	ld a, b
+	cp EVOLVE_LOCATION
+	jp z, .location
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
@@ -190,13 +218,13 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp nz, .dont_evolve_3
-	jr .proceed
+	jp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp z, .dont_evolve_3
-	jr .proceed
+	jp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -209,7 +237,7 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [hli]
 	ld b, a
 	inc a
-	jr z, .proceed
+	jp z, .proceed
 
 	ld a, [wLinkMode]
 	cp LINK_TIMECAPSULE
@@ -221,8 +249,25 @@ EvolveAfterBattle_MasterLoop:
 
 	xor a
 	ld [wTempMonItem], a
-	jr .proceed
+	jp .proceed
 
+
+.item_f
+	ld a, $3
+	ld [wMonType], a
+	push hl
+	predef GetGender
+	pop hl
+	jr z, .item
+.notMale
+	jp .dont_evolve_2
+.item_m
+	ld a, $3
+	ld [wMonType], a
+	push hl
+	predef GetGender
+	pop hl
+	jr z, .notMale
 .item
 	ld a, [wTempMonSpecies]
 	cp URSARING
@@ -248,7 +293,92 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .dont_evolve_3
-	jr .proceed
+	jp .proceed
+
+.move
+	call IsMonHoldingEverstone
+	jp z, .dont_evolve_2
+	ld a, [hli]
+	ld b, a
+	push hl
+	ld hl, wTempMonMoves
+	rept NUM_MOVES
+	ld a, [hli]
+	cp b
+	jr z, .pop_proceed
+endr
+	pop hl
+	jp .dont_evolve_3
+.pop_proceed
+	pop hl
+	jp .proceed
+
+
+.holding_day
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jp z, .dont_evolve_3
+	jr .holding
+.holding_nite
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jp .holding
+	cp NITE
+	jp nz, .dont_evolve_3
+	
+.holding
+	ld a, [hli]
+	ld b, a
+	ld a, [wTempMonItem]
+	cp b
+	jp nz, .dont_evolve_3
+	xor a
+	ld [wTempMonItem], a
+	jp .proceed
+
+
+.location
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	push hl
+	call GetWorldMapLocation
+	pop hl
+	ld b, a
+	ld a, [hli]
+	cp b
+	jp nz, .dont_evolve_3
+	jp .proceed
+
+.level_f
+	ld a, $3
+	ld [wMonType], a
+	push hl
+	predef GetGender
+	pop hl
+	jr z, .level
+.notMaleLevel
+	jp .dont_evolve_2
+.level_m
+	ld a, $3
+	ld [wMonType], a
+	push hl
+	predef GetGender
+	pop hl
+	jr z, .notMaleLevel
+	jp .level
+
+.level_day
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jp z, .dont_evolve_2
+	jr .level
+.level_nite
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jp nz, .dont_evolve_2
+
 
 .level
 	ld a, [wTempMonSpecies]
@@ -368,6 +498,7 @@ EvolveAfterBattle_MasterLoop:
 	ld [wTempSpecies], a
 	xor a
 	ld [wMonType], a
+	call LearnEvolutionMove
 	call LearnLevelMoves
 	ld a, [wTempSpecies]
 	dec a
@@ -415,6 +546,46 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wMonTriedToEvolve]
 	and a
 	call nz, RestartMapMusic
+	ret
+
+LearnEvolutionMove:
+	ld a, [wTempSpecies]
+	ld [wCurPartySpecies], a
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, EvolutionMoves
+	add hl, bc
+	ld a, [hl]
+	and a
+	ret z
+
+	push hl
+	ld d, a
+	ld hl, wPartyMon1Moves
+	ld a, [wCurPartyMon]
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+
+	ld b, NUM_MOVES
+.check_move
+	ld a, [hli]
+	cp d
+	jr z, .has_move
+	dec b
+	jr nz, .check_move
+
+	ld a, d
+	ld [wPutativeTMHMMove], a
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	call CopyName1
+	predef LearnMove
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+
+.has_move
+	pop hl
 	ret
 
 UpdateSpeciesNameIfNotNicknamed:

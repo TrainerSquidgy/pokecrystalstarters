@@ -142,10 +142,21 @@ INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
 
+SECTION "PLA Hidden Power", ROMX
+INCLUDE "engine/battle/move_effects/pla_hidden_power.asm"
 
 SECTION "Effect Commands", ROMX
 
 INCLUDE "engine/battle/effect_commands.asm"
+
+SECTION "Mega Pokemon", ROMX
+
+INCLUDE "data/pokemon/mega_pokemon.asm"
+
+
+SECTION "Type Matchups", ROMX
+
+INCLUDE "data/types/type_matchups.asm"
 
 
 SECTION "Enemy Trainers", ROMX
@@ -226,13 +237,12 @@ INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/battle/check_battle_scene.asm"
 INCLUDE "engine/movie/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
-
+INCLUDE "engine/events/poisonstep.asm"
+INCLUDE "engine/events/sweet_scent.asm"
 
 SECTION "bank14", ROMX
 
 INCLUDE "engine/pokemon/party_menu.asm"
-INCLUDE "engine/events/poisonstep.asm"
-INCLUDE "engine/events/sweet_scent.asm"
 INCLUDE "engine/events/squirtbottle.asm"
 INCLUDE "engine/events/card_key.asm"
 INCLUDE "engine/events/basement_key.asm"
@@ -314,6 +324,7 @@ INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
+INCLUDE "data/pokemon/dex_numbers.asm"
 
 
 SECTION "Phone Scripts 1", ROMX
@@ -459,6 +470,7 @@ INCLUDE "engine/pokemon/bills_pc.asm"
 
 SECTION "bank39", ROMX
 
+INCLUDE "engine/menus/extra_options.asm"
 INCLUDE "engine/menus/options_menu.asm"
 INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/intro.asm"
@@ -482,13 +494,13 @@ SECTION "bank3F", ROMX
 
 INCLUDE "engine/tilesets/tileset_anims.asm"
 INCLUDE "engine/events/npc_trade.asm"
+INCLUDE "engine/events/wonder_trade.asm"
 INCLUDE "engine/events/mom_phone.asm"
 
 
 SECTION "mobile40", ROMX
 
 INCLUDE "mobile/mobile_40.asm"
-
 
 SECTION "bank41", ROMX
 
@@ -670,7 +682,6 @@ SECTION "Battle Tower Trainer Data", ROMX
 
 INCLUDE "data/battle_tower/unknown.asm"
 
-
 SECTION "Mobile News Data", ROMX
 
 INCLUDE "mobile/news/news.asm"
@@ -683,6 +694,13 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
+SECTION "Egg Move and Gen 1 Tutors", ROMX
+
+INCLUDE "data/pokemon/gen1_tmattacks.asm"
+INCLUDE "data/pokemon/relearned_egg_moves.asm"
+INCLUDE "engine/events/egg_move_relearner.asm"
+INCLUDE "engine/events/gen1tm_move_relearner.asm"
+INCLUDE "engine/events/move_relearner.asm"
 
 SECTION "Stadium 2 Checksums", ROMX[$7DE0], BANK[$7F]
 

@@ -160,4 +160,7 @@ MoveEffectsPointers:
 	dw DefenseCurl
 	dw BabyDollEyes
 	dw HeadlongRush
+	dw Blizzard
+	dw Hail
+	dw Snow
 	assert_table_length NUM_MOVE_EFFECTS
