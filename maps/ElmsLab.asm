@@ -103,6 +103,7 @@ ElmsLabStarterChoice:
 	iffalse .NoHMFriends
 	loadmem wIlexForestEncounters, 0
 	loadmem wRoute34Encounters, 0
+	loadmem wRoute33Encounters, 0
 	loadmem wGuaranteedHMFriendCatch, 1
 	writetext ElmsLabText_AskAboutHMFriendsYes
 	sjump .DoneHMFriends
@@ -110,15 +111,40 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskAboutHMFriendsNo
 	loadmem wIlexForestEncounters, 3
 	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
+	writetext ElmsLabText_AskStream
+	yesorno
+	iffalse .nostream
+	loadmem wIsAStream, 1
+	writetext ElmsLabText_StreamYes
+	sjump .streamdone
+.nostream
+	loadmem wIsAStream, 0
+	writetext ElmsLabText_StreamNo
+.streamdone
+	promptbutton
 	closetext
 	turnobject PLAYER, DOWN
 .End
 	end
 	
+ElmsLabText_AskStream:
+	text "Is this a"
+	line "STREAMED run?"
+	done
+	
+ElmsLabText_StreamYes:
+	text "Streaming"
+	line "flag set."
+	done
 
+ElmsLabText_StreamNo:
+	text "Streaming"
+	line "flag unset."
+	done
 	
 ElmsLabText_InverseNo:
 	text "All type matchups"
@@ -332,10 +358,14 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_SpinnersAsk
 	yesorno
 	iftrue .YesSpinners
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
 	loadmem wSpinnersOff, 0
 	writetext ElmsLabText_SpinnersNo
 	sjump .SpinnersDone
 .YesSpinners
+	setevent EVENT_REGULAR_BOARDER_DOUGLAS
+	clearevent EVENT_STATIC_BOARDER_DOUGLAS
 	loadmem wSpinnersOff, 1
 	writetext ElmsLabText_SpinnersYes
 .SpinnersDone
@@ -1505,6 +1535,8 @@ ElmsLabPC:
 ElmsLabRandomizeStarters:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
 	opentext
 	writetext ElmsLab_RandomizeStartersAsk
 	yesorno
@@ -2404,11 +2436,11 @@ ElmsLabText_AskAboutHMFriends:
 	done
 	
 ElmsLabText_AskAboutHMFriendsYes:
-	text "The first"
-	line "encounters will"
-	cont "be HM Friends"
-	cont "in ILEX FOREST"
-	cont "and ROUTE 34."
+	text "On ROUTES 33,"
+	line "34, and ILEX"
+	cont "FOREST, your"
+	cont "first encounters"
+	cont "will be fixed."
 	done
 	
 ElmsLabText_AskAboutHMFriendsNo:
