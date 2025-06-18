@@ -3195,7 +3195,8 @@ wMegaXorY:: db
 wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
-	ds 57
+wIsAStream:: db
+	ds 56
 
 wEventFlags:: flag_array NUM_EVENTS
 

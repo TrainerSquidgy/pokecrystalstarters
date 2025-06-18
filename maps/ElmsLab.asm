@@ -115,12 +115,36 @@ ElmsLabStarterChoice:
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
+	writetext ElmsLabText_AskStream
+	yesorno
+	iffalse .nostream
+	loadmem wIsAStream, 1
+	writetext ElmsLabText_StreamYes
+	sjump .streamdone
+.nostream
+	loadmem wIsAStream, 0
+	writetext ElmsLabText_StreamNo
+.streamdone
+	promptbutton
 	closetext
 	turnobject PLAYER, DOWN
 .End
 	end
 	
+ElmsLabText_AskStream:
+	text "Is this a"
+	line "STREAMED run?"
+	done
+	
+ElmsLabText_StreamYes:
+	text "Streaming"
+	line "flag set."
+	done
 
+ElmsLabText_StreamNo:
+	text "Streaming"
+	line "flag unset."
+	done
 	
 ElmsLabText_InverseNo:
 	text "All type matchups"
