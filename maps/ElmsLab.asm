@@ -103,6 +103,7 @@ ElmsLabStarterChoice:
 	iffalse .NoHMFriends
 	loadmem wIlexForestEncounters, 0
 	loadmem wRoute34Encounters, 0
+	loadmem wRoute33Encounters, 0
 	loadmem wGuaranteedHMFriendCatch, 1
 	writetext ElmsLabText_AskAboutHMFriendsYes
 	sjump .DoneHMFriends
@@ -110,6 +111,7 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskAboutHMFriendsNo
 	loadmem wIlexForestEncounters, 3
 	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
@@ -2410,11 +2412,11 @@ ElmsLabText_AskAboutHMFriends:
 	done
 	
 ElmsLabText_AskAboutHMFriendsYes:
-	text "The first"
-	line "encounters will"
-	cont "be HM Friends"
-	cont "in ILEX FOREST"
-	cont "and ROUTE 34."
+	text "On ROUTES 33,"
+	line "34, and ILEX"
+	cont "FOREST, your"
+	cont "first encounters"
+	cont "will be fixed."
 	done
 	
 ElmsLabText_AskAboutHMFriendsNo:
