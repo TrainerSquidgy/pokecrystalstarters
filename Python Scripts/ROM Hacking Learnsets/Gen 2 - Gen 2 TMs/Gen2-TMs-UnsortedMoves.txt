@@ -1,78 +1,185 @@
 Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
+Ember
+Bite
+Fire Fang
 Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Crunch
+Double-Edge
+Flare Blitz
+Ember
+Leer
+Howl
+Bite
+Flame Wheel
+Helping Hand
+Fire Fang
+Retaliate
+Crunch
+Take Down
+Flamethrower
+Roar
+Rock Slide
+Reversal
+Flare Blitz
+Take Down
+Agility
+Scary Face
+Protect
+Fire Fang
+Thunder Fang
+Fire Spin
+Facade
+Rock Tomb
+Flame Charge
+Endure
+Sunny Day
+Sandstorm
+Smart Strike
+Dig
+Psychic Fangs
+Body Slam
+Sleep Talk
+Rock Blast
+Rest
+Rock Slide
+Power Gem
+Substitute
+Will-O-Wisp
+Crunch
+Stealth Rock
+Heat Wave
+Flamethrower
+Helping Hand
+Reversal
+Fire Blast
+Wild Charge
+Stone Edge
+Outrage
+Overheat
+Flare Blitz
+Close Combat
+Tera Blast
+Roar
+Smack Down
+Double-Edge
+Temper Flare
+Scorching Sands
+Dig
+Headbutt
+Curse
+Roar
 Toxic
+Rock Smash
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
-Protect
-Safeguard
-Frustration
-SolarBeam
-Earthquake
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
-Swagger
-Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
 Snore
+Protect
+Endure
+Frustration
+Iron Tail
+DragonBreath
+Return
+Dig
+Double Team
+Swagger
+Sleep Talk
+Fire Blast
 Swift
-Zen Headbutt
-Baton Pass
+Rest
+Attract
+Headbutt
+Curse
+Roar
+Toxic
+Rock Smash
+Hidden Power
+Sunny Day
+Snore
+Hyper Beam
+Protect
+Endure
+Frustration
+Iron Tail
+DragonBreath
+Return
+Dig
+Double Team
+Swagger
+Sleep Talk
+Fire Blast
+Swift
+Rest
+Attract
+Flame Wheel
+Helping Hand
+Agility
+Fire Fang
+Retaliate
+Crunch
+Take Down
+Roar
+Rock Slide
+Reversal
+Flare Blitz
+Rock Throw
+Ember
+Leer
+Howl
+Bite
+Extreme Speed
+Flamethrower
+Raging Fury
+Take Down
+Agility
+Scary Face
+Protect
+Fire Fang
+Thunder Fang
+Thief
+Fire Spin
+Facade
+Aerial Ace
+Bulldoze
+Snarl
+Rock Tomb
+Flame Charge
+Endure
+Sunny Day
+Sandstorm
+Smart Strike
+Dig
+Psychic Fangs
 Body Slam
-Defense Curl
+Sleep Talk
+Rock Blast
+Rest
+Rock Slide
+Iron Head
+Power Gem
+Substitute
+Will-O-Wisp
+Crunch
+Dragon Pulse
+Stealth Rock
+Hyper Voice
+Heat Wave
+Flamethrower
+Helping Hand
+Reversal
+Fire Blast
+Wild Charge
+Stone Edge
+Giga Impact
+Outrage
+Overheat
+Hyper Beam
+Flare Blitz
+Close Combat
+Solar Beam
+Tera Blast
+Roar
+Smack Down
+Heat Crash
 Double-Edge
-Mimic
-Selfdestruct
+Temper Flare
+Scorching Sands
