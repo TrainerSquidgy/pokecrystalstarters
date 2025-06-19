@@ -1,16 +1,12 @@
-LechonkEvosAttacks:
+ArcanineHEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 5, EMBER
+	db 9, BITE
+	db 15, FIRE_FANG
+	db 21, ROCK_SLIDE
+	db 29, RAGING_FURY
+	db 29, CRUNCH
+	db 37, DOUBLE_EDGE
+	db 47, FLARE_BLITZ
 	db 0

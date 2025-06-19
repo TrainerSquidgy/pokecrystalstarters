@@ -1,14 +1,10 @@
-Pokémon: Lechonk
+Pokémon: ArcanineH
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+5: Ember
+9: Bite
+15: Fire Fang
+21: Rock Slide
+29: Raging Fury
+29: Crunch
+37: Double_Edge
+47: Flare Blitz

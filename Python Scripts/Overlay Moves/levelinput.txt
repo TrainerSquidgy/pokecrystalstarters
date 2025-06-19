@@ -1,16 +1,10 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Arcanine-H
+1: Tackle
+5: Ember
+9: Bite
+15: Fire Fang
+21: Rock Slide
+29: Raging Fury
+29: Crunch
+37: Double-Edge
+47: Flare Blitz

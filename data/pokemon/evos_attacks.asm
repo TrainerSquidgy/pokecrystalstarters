@@ -3367,3 +3367,29 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+GrowlitheHEvosAttacks:
+	db EVOLVE_ITEM, FIRE_STONE, ARCANINEH
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 5, EMBER
+	db 9, BITE
+	db 15, FIRE_FANG
+	db 21, ROCK_SLIDE
+	db 29, CRUNCH
+	db 37, DOUBLE_EDGE
+	db 47, FLARE_BLITZ
+	db 0
+	
+ArcanineHEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 5, EMBER
+	db 9, BITE
+	db 15, FIRE_FANG
+	db 21, ROCK_SLIDE
+	db 29, RAGING_FURY
+	db 29, CRUNCH
+	db 37, DOUBLE_EDGE
+	db 47, FLARE_BLITZ
+	db 0
