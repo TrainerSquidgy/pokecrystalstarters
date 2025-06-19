@@ -3157,6 +3157,7 @@ wElmPokemon1::      db
 wElmPokemon2::      db
 wElmPokemon3::      db
 wIlexForestEncounters:: db
+wRoute33Encounters:: db
 wRoute34Encounters:: db
 wTestingRamSlot1:: db	
 wTempCompSpecies:: db
@@ -3194,13 +3195,14 @@ wMegaXorY:: db
 wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
+wIsAStream:: db
 wPlayerEchoedVoiceCount:: db
 wEnemyEchoedVoiceCount:: db
 wEnemyAteABerry:: db
 wPlayerAteABerry:: db
 wPlayerYawning:: db
 wEnemyYawning:: db
-	ds 52
+	ds 51
 
 wEventFlags:: flag_array NUM_EVENTS
 
