@@ -93,7 +93,6 @@ BattleCommandPointers:
 	dw BattleCommand_Spikes
 	dw BattleCommand_Foresight
 	dw BattleCommand_PerishSong
-	dw BattleCommand_StartSandstorm
 	dw BattleCommand_Endure
 	dw BattleCommand_CheckCurl
 	dw BattleCommand_RolloutPower
@@ -114,8 +113,6 @@ BattleCommandPointers:
 	dw BattleCommand_HealDay
 	dw BattleCommand_HealNite
 	dw BattleCommand_HiddenPower
-	dw BattleCommand_StartRain
-	dw BattleCommand_StartSun
 	dw BattleCommand_AttackUp
 	dw BattleCommand_DefenseUp
 	dw BattleCommand_SpeedUp
@@ -181,4 +178,5 @@ BattleCommandPointers:
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
 	dw BattleCommand_StartHail
+	dw BattleCommand_StartWeather
 	assert_table_length NUM_EFFECT_COMMANDS

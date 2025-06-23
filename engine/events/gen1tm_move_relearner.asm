@@ -7,12 +7,20 @@
 	const GEN1TMRELEARNERTEXT_NOTAPOKEMON
 	const GEN1TMRELEARNERTEXT_LEARNEDTOOMANY
 	const GEN1TMRELEARNERTEXT_NOMOVESTOLEARN
+	const GEN1TMRELEARNERTEXT_INTRONOLIMIT
 
 Gen1TMRelearner:
+	ld a, [wTutorsLimited]
+	and a
+	jr nz, .skip_limit
 	ld a, [wGen1MovesLeft]
 	and a
 	jp z, .learned_enough
 	ld a, GEN1TMRELEARNERTEXT_INTRO
+	jr .intro_merge
+.skip_limit
+	ld a, GEN1TMRELEARNERTEXT_INTRONOLIMIT
+.intro_merge
 	call PrintGen1TMRelearnerText
 	call YesNoBox
 	jp c, .cancel
@@ -49,6 +57,8 @@ Gen1TMRelearner:
 	call CopyBytes
 	ld b, 0
 	predef LearnMove
+	xor a
+	ld [wEggMovesLeft], a
 	ld a, [wGen1MovesLeft]
 	dec a
 	ld [wGen1MovesLeft], a
@@ -365,6 +375,7 @@ PrintGen1TMRelearnerText:
 	dw .NotMon
 	dw .LearnedTooMany
 	dw .NoMovesToLearn
+	dw .IntroNoLimit
 
 .Intro
 	text "Hello! I am the"
@@ -378,9 +389,14 @@ PrintGen1TMRelearnerText:
 
 	para "I can share that"
 	line "knowledge just"
-
-	para "four times."
-	line "How about it?"
+	cont "four times."
+	
+	para "If you get my"
+	line "help, you can't"
+	cont "get help from"
+	cont "my brother."
+	
+	para "How about it?"
 	done
 	
 .WhichMon
@@ -414,4 +430,21 @@ PrintGen1TMRelearnerText:
 	text "This #MON can't"
 	line "learn any moves"
 	cont "from me."
+	done
+	
+.IntroNoLimit
+	text "Hello! I am the"
+	line "past move tutor."
+
+	para "I know all the"
+	line "past moves that"
+
+	para "a #MON can"
+	line "learn."
+
+	para "I can share that"
+	line "knowledge with"
+	cont "you right now."
+		
+	para "How about it?"
 	done

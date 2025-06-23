@@ -1,6 +1,6 @@
 DoPlayerTurn:
 	call SetPlayerTurn
-
+	
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	ret nz
@@ -1291,10 +1291,17 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
+	push af
 	ld hl, TypeMatchups
-
+	ld a, [wInverseActivated]
+	and a
+	jr z, .got_inverted
+	ld hl, InverseTypeMatchups
+.got_inverted
+	pop af
 .TypesLoop:
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+    inc hl
 
 	cp -1
 	jr z, .end
@@ -1312,7 +1319,7 @@ BattleCommand_Stab:
 .SkipForesightCheck:
 	cp b
 	jr nz, .SkipType
-	ld a, [hl]
+	call GetNextTypeMatchupsByte
 	cp d
 	jr z, .GotMatchup
 	cp e
@@ -1327,7 +1334,7 @@ BattleCommand_Stab:
 	and %10000000
 	ld b, a
 ; If the target is immune to the move, treat it as a miss and calculate the damage as 0
-	ld a, [hl]
+	call GetNextTypeMatchupsByte
 	and a
 	jr nz, .NotImmune
 	inc a
@@ -1399,25 +1406,32 @@ BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, CheckTypeMatchup
-	ld hl, wBattleMonType1
-	; fallthrough
+	jr z, .get_type
+ 	ld hl, wBattleMonType1
+.get_type
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar ; preserves hl, de, and bc
 CheckTypeMatchup:
-; BUG: AI makes a false assumption about CheckTypeMatchup (see docs/bugs_and_glitches.md)
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
 	ld d, a
 	ld b, [hl]
 	inc hl
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
+	push af
 	ld hl, TypeMatchups
+	ld a, [wInverseActivated]
+	and a
+	jr z, .got_inverted
+	ld hl, InverseTypeMatchups
+.got_inverted
+	pop af
 .TypesLoop:
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	cp -1
 	jr z, .End
 	cp -2
@@ -1431,7 +1445,8 @@ CheckTypeMatchup:
 .Next:
 	cp d
 	jr nz, .Nope
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	cp b
 	jr z, .Yup
 	cp c
@@ -1449,7 +1464,8 @@ CheckTypeMatchup:
 	ldh [hDividend + 0], a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	ldh [hMultiplicand + 2], a
 	ld a, [wTypeMatchup]
 	ldh [hMultiplier], a
@@ -1469,6 +1485,7 @@ CheckTypeMatchup:
 	pop de
 	pop hl
 	ret
+
 
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
@@ -1491,7 +1508,6 @@ BattleCommand_ResetTypeMatchup:
 
 INCLUDE "engine/battle/ai/switch.asm"
 
-INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
 ; Modify the damage spread between 85% and 100%.
@@ -1760,10 +1776,10 @@ BattleCommand_CheckHit:
 	ret nz
 
 	ld a, [wBattleWeather]
+	cp WEATHER_SNOW
+	ret z
 	cp WEATHER_HAIL
 	ret
-
-
 
 .XAccuracy:
 	ld a, BATTLE_VARS_SUBSTATUS4
@@ -2347,7 +2363,7 @@ BattleCommand_SuperEffectiveText:
 	ld hl, NotVeryEffectiveText
 .print
 	jp StdBattleTextbox
-
+	
 BattleCommand_CheckFaint:
 ; Faint the opponent if its HP reached zero
 ;  and faint the user along with it if it used Destiny Bond.
@@ -2565,6 +2581,8 @@ PlayerAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
+	
+	call SnowDefenseBoost
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
@@ -2810,6 +2828,7 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
+	
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -5678,7 +5697,7 @@ BattleCommand_TrapTarget:
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
 	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
 	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
-
+	
 INCLUDE "engine/battle/move_effects/mist.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
@@ -6365,7 +6384,6 @@ INCLUDE "engine/battle/move_effects/foresight.asm"
 
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
-INCLUDE "engine/battle/move_effects/sandstorm.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
 
@@ -6517,10 +6535,6 @@ BattleCommand_TimeBasedHealContinue:
 	dw GetMaxHP
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
-
-INCLUDE "engine/battle/move_effects/rain_dance.asm"
-
-INCLUDE "engine/battle/move_effects/sunny_day.asm"
 
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
 
@@ -6797,19 +6811,82 @@ _CheckBattleScene:
 
 
 BattleCommand_StartHail:
-; starthail
+	call AnimateFailedMove
+	jp PrintButItFailed
 
-	ld a, [wBattleWeather]
-	cp WEATHER_HAIL
-	jr z, .failed
-
+	
+BattleCommand_StartWeather:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_RAIN_DANCE
+	jr z, .rain
+	cp EFFECT_SUNNY_DAY
+	jr z, .sun
+	cp EFFECT_SANDSTORM
+	jr z, .sandstorm	
+	cp EFFECT_SNOW
+	jr z, .snow
 	ld a, WEATHER_HAIL
+	ld hl, ItStartedToHailText
+	jr .start_weather
+.snow	
+	ld a, WEATHER_SNOW
+	ld hl, ItStartedToSnowText
+	jr .start_weather
+	
+.sandstorm
+	ld a, WEATHER_SANDSTORM
+	ld hl, SandstormBrewedText	
+	jr .start_weather	
+.sun
+	ld a, WEATHER_SUN
+	ld hl, SunGotBrightText
+	jr .start_weather
+
+.rain	
+	ld a, WEATHER_RAIN
+	ld hl, DownpourText
+.start_weather
 	ld [wBattleWeather], a
 	ld a, 5
 	ld [wWeatherCount], a
-	ld hl, ItStartedToHailText
+	push hl
+	call AnimateCurrentMove
+	pop hl
 	jp StdBattleTextbox
 
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
+GetNextTypeMatchupsByte:
+   ld a, BANK(TypeMatchups)
+   call GetFarByte
+   ret
+
+
+BattleCommand_AddDamage:
+	push af
+	push hl
+    ld hl, wCurDamage + 1
+    ld a, [hl]           
+    ld d, a              
+    dec hl               
+    ld a, [hl]           
+    ld e, a              
+    ld hl, wCurDamage    
+    ld a, [hl]           
+    add a, e             
+    ld [hl], a           
+    inc hl               
+    ld a, [hl]           
+    adc a, d             
+    ld [hl], a           
+    jr nc, .done         
+    ld a, $FF            
+    ld hl, wCurDamage    
+    ld [hl], a           
+    ld [hli], a         
+.done:
+	pop hl
+	pop af
+    ret
+	
+	
+

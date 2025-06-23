@@ -214,6 +214,11 @@ BattleText_MonFainted:
 BattleText_UseNextMon:
 	text "Use next #MON?"
 	done
+	
+BattleText_MegaEvolveAsk:
+	text "MEGA EVOLVE"
+	line "your #MON?"
+	done
 
 UnusedRivalWinText: ; unreferenced
 	text "<RIVAL>: Yes!"
@@ -1124,4 +1129,23 @@ ItStartedToHailText:
 PeltedByHailText:
 	text "<USER>"
 	line "is pelted by HAIL!"
+	prompt
+
+BattleText_SnowContinuesToFall:
+	text "Snow continues to"
+	line "fall."
+	prompt
+	
+BattleText_TheSnowStopped:
+	text "The snow stopped."
+	prompt
+
+ItStartedToSnowText:
+	text "It started"
+	line "to snow!"
+	prompt
+
+MegaEvolvedText:
+	text "<USER>"
+	line "MEGA EVOLVED!"
 	prompt

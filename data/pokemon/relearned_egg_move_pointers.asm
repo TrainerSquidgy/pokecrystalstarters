@@ -1,11 +1,13 @@
 RelearnedEggMovePointers::
 	table_width 2, RelearnedEggMovePointers
 	dw BulbasaurRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw BulbasaurRelearnedEggMoves
+	dw BulbasaurRelearnedEggMoves
 	dw CharmanderRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw CharmanderRelearnedEggMoves
+	dw CharmanderRelearnedEggMoves
+	dw SquirtleRelearnedEggMoves
+	dw SquirtleRelearnedEggMoves
 	dw SquirtleRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
@@ -13,119 +15,117 @@ RelearnedEggMovePointers::
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
 	dw PidgeyRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw PidgeyRelearnedEggMoves
+	dw PidgeyRelearnedEggMoves
 	dw RattataRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw RattataRelearnedEggMoves
 	dw SpearowRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SpearowRelearnedEggMoves
 	dw EkansRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw EkansRelearnedEggMoves
+	dw PichuRelearnedEggMoves
+	dw PichuRelearnedEggMoves
 	dw SandshrewRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SandshrewRelearnedEggMoves
 	dw NidoranFRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NidoranMRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw NidoranMRelearnedEggMoves
+	dw NidoranMRelearnedEggMoves
+	dw CleffaRelearnedEggMoves
+	dw CleffaRelearnedEggMoves
 	dw VulpixRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw VulpixRelearnedEggMoves
+	dw IgglybuffRelearnedEggMoves
+	dw IgglybuffRelearnedEggMoves
 	dw ZubatRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw ZubatRelearnedEggMoves
 	dw OddishRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw OddishRelearnedEggMoves
+	dw OddishRelearnedEggMoves
 	dw ParasRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw ParasRelearnedEggMoves
 	dw VenonatRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw VenonatRelearnedEggMoves
 	dw DiglettRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw DiglettRelearnedEggMoves
 	dw MeowthRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw MeowthRelearnedEggMoves
 	dw PsyduckRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw PsyduckRelearnedEggMoves
 	dw MankeyRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw MankeyRelearnedEggMoves
 	dw GrowlitheRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw GrowlitheRelearnedEggMoves
 	dw PoliwagRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw PoliwagRelearnedEggMoves
+	dw PoliwagRelearnedEggMoves
 	dw AbraRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw AbraRelearnedEggMoves
+	dw AbraRelearnedEggMoves
 	dw MachopRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw MachopRelearnedEggMoves
+	dw MachopRelearnedEggMoves
 	dw BellsproutRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw BellsproutRelearnedEggMoves
+	dw BellsproutRelearnedEggMoves
 	dw TentacoolRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw TentacoolRelearnedEggMoves
 	dw GeodudeRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw GeodudeRelearnedEggMoves
+	dw GeodudeRelearnedEggMoves
 	dw PonytaRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw PonytaRelearnedEggMoves
 	dw SlowpokeRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SlowpokeRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw FarfetchDRelearnedEggMoves
 	dw DoduoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw DoduoRelearnedEggMoves
 	dw SeelRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SeelRelearnedEggMoves
 	dw GrimerRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw GrimerRelearnedEggMoves
 	dw ShellderRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw ShellderRelearnedEggMoves
 	dw GastlyRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw GastlyRelearnedEggMoves
+	dw GastlyRelearnedEggMoves
 	dw OnixRelearnedEggMoves
 	dw DrowzeeRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw DrowzeeRelearnedEggMoves
+	dw KrabbyRelearnedEggMoves
 	dw KrabbyRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
 	dw ExeggcuteRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw ExeggcuteRelearnedEggMoves
 	dw CuboneRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw CuboneRelearnedEggMoves
+	dw TyrogueRelearnedEggMoves
+	dw TyrogueRelearnedEggMoves
 	dw LickitungRelearnedEggMoves
 	dw KoffingRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw KoffingRelearnedEggMoves
 	dw RhyhornRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw RhyhornRelearnedEggMoves
 	dw ChanseyRelearnedEggMoves
 	dw TangelaRelearnedEggMoves
 	dw KangaskhanRelearnedEggMoves
 	dw HorseaRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw HorseaRelearnedEggMoves
 	dw GoldeenRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw GoldeenRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw MrMimeRelearnedEggMoves
 	dw ScytherRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SmoochumRelearnedEggMoves
+	dw ElekidRelearnedEggMoves
+	dw MagbyRelearnedEggMoves
 	dw PinsirRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
@@ -133,118 +133,120 @@ RelearnedEggMovePointers::
 	dw LaprasRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw EeveeRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw EeveeRelearnedEggMoves
+	dw EeveeRelearnedEggMoves
+	dw EeveeRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw OmanyteRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw OmanyteRelearnedEggMoves
 	dw KabutoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw KabutoRelearnedEggMoves
 	dw AerodactylRelearnedEggMoves
 	dw SnorlaxRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw DratiniRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw DratiniRelearnedEggMoves
+	dw DratiniRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw ChikoritaRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw ChikoritaRelearnedEggMoves
+	dw ChikoritaRelearnedEggMoves
 	dw CyndaquilRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw CyndaquilRelearnedEggMoves
+	dw CyndaquilRelearnedEggMoves
 	dw TotodileRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw TotodileRelearnedEggMoves
+	dw TotodileRelearnedEggMoves
 	dw SentretRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SentretRelearnedEggMoves
 	dw HoothootRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw HoothootRelearnedEggMoves
 	dw LedybaRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw LedybaRelearnedEggMoves
 	dw SpinarakRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SpinarakRelearnedEggMoves
+	dw ZubatRelearnedEggMoves
 	dw ChinchouRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw ChinchouRelearnedEggMoves
 	dw PichuRelearnedEggMoves
 	dw CleffaRelearnedEggMoves
 	dw IgglybuffRelearnedEggMoves
 	dw TogepiRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw TyrogueRelearnedEggMoves
 	dw NatuRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw NatuRelearnedEggMoves
 	dw MareepRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw MareepRelearnedEggMoves
+	dw MareepRelearnedEggMoves
+	dw OddishRelearnedEggMoves
 	dw MarillRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw MarillRelearnedEggMoves
 	dw SudowoodoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw PoliwagRelearnedEggMoves
 	dw HoppipRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw HoppipRelearnedEggMoves
+	dw HoppipRelearnedEggMoves
 	dw AipomRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw YanmaRelearnedEggMoves
 	dw WooperRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw WooperRelearnedEggMoves
+	dw EeveeRelearnedEggMoves
+	dw EeveeRelearnedEggMoves
 	dw MurkrowRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SlowpokeRelearnedEggMoves
 	dw MisdreavusRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw GirafarigRelearnedEggMoves
 	dw PinecoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw PinecoRelearnedEggMoves
 	dw DunsparceRelearnedEggMoves
 	dw GligarRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw OnixRelearnedEggMoves
 	dw SnubbullRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SnubbullRelearnedEggMoves
 	dw QwilfishRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw ScytherRelearnedEggMoves
 	dw ShuckleRelearnedEggMoves
 	dw HeracrossRelearnedEggMoves
 	dw SneaselRelearnedEggMoves
 	dw TeddiursaRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw TeddiursaRelearnedEggMoves
 	dw SlugmaRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SlugmaRelearnedEggMoves
 	dw SwinubRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw SwinubRelearnedEggMoves
 	dw CorsolaRelearnedEggMoves
 	dw RemoraidRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw RemoraidRelearnedEggMoves
 	dw DelibirdRelearnedEggMoves
 	dw MantineRelearnedEggMoves
 	dw SkarmoryRelearnedEggMoves
 	dw HoundourRelearnedEggMoves
-	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw HoundourRelearnedEggMoves
+	dw HorseaRelearnedEggMoves
 	dw PhanpyRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw PhanpyRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw StantlerRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw TyrogueRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw TyrogueRelearnedEggMoves
 	dw SmoochumRelearnedEggMoves
 	dw ElekidRelearnedEggMoves
 	dw MagbyRelearnedEggMoves
 	dw MiltankRelearnedEggMoves
+	dw ChanseyRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves
+	dw LarvitarRelearnedEggMoves
+	dw LarvitarRelearnedEggMoves
 	dw LarvitarRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
