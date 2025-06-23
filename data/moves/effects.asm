@@ -2085,8 +2085,6 @@ Hail:
 	doturn
 	startweather
 	endmove
-	startweather
-	endmove
 	
 Snow:
 	checkobedience

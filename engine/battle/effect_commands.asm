@@ -2582,8 +2582,7 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	
-	call SnowDefenseBoost
-
+	
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit

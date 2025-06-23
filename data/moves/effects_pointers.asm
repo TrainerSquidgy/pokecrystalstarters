@@ -158,8 +158,6 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
-	dw FreezeHit
-	dw Hail
 	dw Blizzard
 	dw Hail
 	dw Snow
