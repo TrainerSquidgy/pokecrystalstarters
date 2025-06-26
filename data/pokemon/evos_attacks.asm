@@ -3367,3 +3367,15 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+HeckleEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, HEADBUTT
+	db 1, EARTHQUAKE
+	db 1, ANCIENTPOWER
+	db 1, ICE_BEAM
+	db 20, BODY_SLAM
+	db 30, RETURN
+	db 0 ; no more level-up moves
+
