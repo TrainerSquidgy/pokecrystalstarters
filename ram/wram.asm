@@ -3198,7 +3198,7 @@ wBinSkipItem:: db
 wIsAStream:: db
 wPlayerYawning::db
 wEnemyYawning::db
-	ds 55
+	ds 54
 
 wEventFlags:: flag_array NUM_EVENTS
 
