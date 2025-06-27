@@ -3192,12 +3192,12 @@ wSetMegaEvolutionPicture:: db
 wMegaEvolutionEnabled:: db
 wSpinnersOff:: db
 wMegaXorY:: db
-wPlayerYawning::db
-wEnemyYawning::db
 wMetronomeOnly:: db
-wIsAStream:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
+wIsAStream:: db
+wPlayerYawning::db
+wEnemyYawning::db
 	ds 55
 
 wEventFlags:: flag_array NUM_EVENTS
