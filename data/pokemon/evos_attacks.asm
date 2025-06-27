@@ -3373,7 +3373,7 @@ HeckleEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HEADBUTT
 	db 1, EARTHQUAKE
-	db 1, ANCIENTPOWER
+	db 1, FLAMETHROWER
 	db 1, ICE_BEAM
 	db 20, BODY_SLAM
 	db 30, RETURN
