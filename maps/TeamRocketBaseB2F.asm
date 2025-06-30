@@ -287,6 +287,11 @@ RocketBaseElectrodeScript:
 	promptbutton
 	verbosegiveitem HM_WHIRLPOOL
 	setevent EVENT_GOT_HM06_WHIRLPOOL
+	checkevent EVENT_RECEIVED_BATH_PLUG
+	iftrue .NoHMItem
+	verbosegiveitem BATH_PLUG
+	setevent EVENT_RECEIVED_BATH_PLUG
+.NoHMItem
 	writetext RocketBaseLanceWhirlpoolText
 	waitbutton
 	closetext
