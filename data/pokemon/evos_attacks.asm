@@ -3376,6 +3376,6 @@ HeckleEvosAttacks:
 	db 1, FLAMETHROWER
 	db 1, ICE_BEAM
 	db 20, BODY_SLAM
-	db 30, RETURN
+	db 45, RETURN
 	db 0 ; no more level-up moves
 
