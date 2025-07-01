@@ -1223,7 +1223,63 @@ Script_loadtemptrainer:
 	ld [wOtherTrainerClass], a
 	ld a, [wTempTrainerID]
 	ld [wOtherTrainerID], a
+	ld a, [wOtherTrainerClass]
+	cp FALKNER
+	ret z
+	cp BUGSY
+	ret z
+	cp WHITNEY
+	ret z
+	cp MORTY
+	ret z
+	cp CHUCK
+	ret z
+	cp PRYCE
+	ret z
+	cp JASMINE
+	ret z
+	cp CLAIR
+	ret z
+	cp WILL
+	ret z
+	cp KOGA
+	ret z
+	cp BRUNO
+	ret z
+	cp KAREN
+	ret z
+	cp LANCE
+	ret z
+	cp BROCK
+	ret z
+	cp MISTY
+	ret z
+	cp LT_SURGE
+	ret z
+	cp SABRINA
+	ret z
+	cp ERIKA
+	ret z
+	cp JANINE
+	ret z
+	cp BROCK
+	ret z
+	cp BLAINE
+	ret z
+	cp BLUE
+	ret z
+	cp RED
+	ret z
+	cp RIVAL1_STARTER
+	ret z
+	cp RIVAL2_STARTER
+	ret z
+	ld a, CAMPER
+	ld [wOtherTrainerClass], a
+	ld a, TODD1
+	ld [wOtherTrainerID], a
 	ret
+
 
 Script_loadwildmon:
 	ld a, (1 << 7)

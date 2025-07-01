@@ -99,7 +99,7 @@ TrainerType1:
 	
 	ld [wCurPartyLevel], a
 	
-	;call ScaleTrainerEncounters
+	call ScaleTrainerEncounters
 	
 	ld a, [hli]
 	ld [wCurPartySpecies], a
