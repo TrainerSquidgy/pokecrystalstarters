@@ -137,11 +137,6 @@ NewBarkTownElmsLabSign:
 NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
-NewBarkTownCheatyBikeText:
-	text "Want a free"
-	line "BICYCLE?"
-	done
-
 NewBarkTown_TeacherRunsToYouMovement1:
 	step LEFT
 	step LEFT
