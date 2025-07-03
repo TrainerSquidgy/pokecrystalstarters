@@ -126,52 +126,12 @@ NewBarkTownRivalScript:
 	end
 
 NewBarkTownSign:
-	opentext
-	writetext NewBarkTownMegaAsk
-	yesorno
-	iffalse .NoMega
-	loadmem wMegaEvolutionEnabled, 1
-	writetext NewBarkTownMegaYes
-	waitbutton
-	verbosegiveitem MEGA_RING
-	verbosegiveitem MEGA_STONE
-	sjump .Merge
-.NoMega
-	writetext NewBarkTownMegaNo
-	waitbutton
-.Merge
-	closetext
 	jumptext NewBarkTownSignText
-
-NewBarkTownMegaNo:
-	text "Talk to me again"
-	line "if you change"
-	cont "your mind."
-	done
-
-NewBarkTownMegaAsk:
-	text "Want to get early"
-	line "access to"
-	cont "MEGA EVOLUTION?"
-	done
-	
-NewBarkTownMegaYes:
-	text "Here's the items"
-	line "you will need."
-	done
 
 NewBarkTownPlayersHouseSign:
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
-	opentext
-	writetext NewBarkTownCheatyBikeText
-	yesorno
-	iffalse .Sign
-	setevent EVENT_GOT_BICYCLE
-	verbosegiveitem BICYCLE
-	closetext
-.Sign
 	jumptext NewBarkTownElmsLabSignText
 
 NewBarkTownElmsHouseSign:
