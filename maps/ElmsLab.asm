@@ -355,19 +355,30 @@ ElmsLabExtraOptions:
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	writetext ElmsLabText_RareCandiesDone
 .Spinners
-	writetext ElmsLabText_SpinnersAsk
+	writetext ElmsLabText_SpinnersAtAllAsk
 	yesorno
-	iftrue .YesSpinners
-	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
-	setevent EVENT_STATIC_BOARDER_DOUGLAS
-	loadmem wSpinnersOff, 0
-	writetext ElmsLabText_SpinnersNo
-	sjump .SpinnersDone
+	iftrue .DisabledOrRotators
 .YesSpinners
-	setevent EVENT_REGULAR_BOARDER_DOUGLAS
 	clearevent EVENT_STATIC_BOARDER_DOUGLAS
+	setevent  EVENT_REGULAR_BOARDER_DOUGLAS
+	loadmem wSpinnersOff, 0
+	writetext ElmsLabText_SpinnersRotatorsNo
+	sjump .SpinnersDone
+.DisabledOrRotators
+	writetext ElmsLabText_SpinnersRotatorsAsk
+	yesorno
+	iffalse .SpinnersOffEntirely
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
 	loadmem wSpinnersOff, 1
-	writetext ElmsLabText_SpinnersYes
+	writetext ElmsLabText_SpinnersRotatorsYes
+	sjump .SpinnersDone
+.SpinnersOffEntirely
+	writetext ElmsLabText_SpinnersFaceAwayAsk
+	yesorno
+	iffalse .YesSpinners
+	loadmem wSpinnersOff, 2
+	writetext ElmsLabText_SpinnersFaceAwayYes	
 .SpinnersDone
 	waitbutton
 	writetext ElmsLabText_OptionsDone
@@ -377,6 +388,16 @@ ElmsLabExtraOptions:
 	closetext
 .EndNoOptions
 	end
+	
+ElmsLabText_SpinnersFaceAwayAsk:
+	text "Make all SPINNERS"
+	line "turn away?"
+	done
+	
+ElmsLabText_SpinnersFaceAwayYes:
+	text "SPINNERS will"
+	line "never face you."
+	done
 	
 ElmsLabText_AskHelpfulItems:
 	text "Modify some ITEMS"
@@ -513,12 +534,21 @@ ElmsLabText_ProfessorsRepelNo:
 	line "of this then!"
 	done
 
-ElmsLabText_SpinnersAsk:
+ElmsLabText_SpinnersAtAllAsk:
+	text "Modify SPINNER"
+	line "MOVEMENT?"
+	done
+	
+ElmsLabText_SpinnersAtAllNo:
+	text "SPINNERS are"
+	line "still enabled."
+
+ElmsLabText_SpinnersRotatorsAsk:
 	text "Turn all SPINNERS"
 	line "into ROTATORS?"
 	done
 	
-ElmsLabText_SpinnersYes:
+ElmsLabText_SpinnersRotatorsYes:
 	text "All map objects"
 	line "with random spin,"
 	
@@ -526,7 +556,7 @@ ElmsLabText_SpinnersYes:
 	line "predictable way."
 	done
 	
-ElmsLabText_SpinnersNo:
+ElmsLabText_SpinnersRotatorsNo:
 	text "All map objects"
 	line "with random spin,"
 	

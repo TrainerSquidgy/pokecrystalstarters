@@ -164,10 +164,23 @@ NewBarkTownPlayersHouseSign:
 	jumptext NewBarkTownPlayersHouseSignText
 
 NewBarkTownElmsLabSign:
+	opentext
+	writetext NewBarkTownCheatyBikeText
+	yesorno
+	iffalse .Sign
+	setevent EVENT_GOT_BICYCLE
+	verbosegiveitem BICYCLE
+	closetext
+.Sign
 	jumptext NewBarkTownElmsLabSignText
 
 NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
+
+NewBarkTownCheatyBikeText:
+	text "Want a free"
+	line "BICYCLE?"
+	done
 
 NewBarkTown_TeacherRunsToYouMovement1:
 	step LEFT
