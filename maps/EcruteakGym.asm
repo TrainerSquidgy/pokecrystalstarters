@@ -47,6 +47,11 @@ EcruteakGymMortyScript:
 .FightDone:
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
+	readmem wLevelCap
+	ifgreater 30, .skipLevelCap
+	loadmem wLevelCap, 30
+.skipLevelCap
+
 	setevent EVENT_BEAT_SAGE_JEFFREY
 	setevent EVENT_BEAT_SAGE_PING
 	setevent EVENT_BEAT_MEDIUM_MARTHA

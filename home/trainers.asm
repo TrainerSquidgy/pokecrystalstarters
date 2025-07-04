@@ -58,6 +58,12 @@ _CheckTrainerBattle::
 	jr c, .next
 
 ; And hasn't already been beaten
+	ld a, [wSpinnersOff]
+	cp 2
+	jr nz, .SpinnersOn
+;	call DenySpin
+;	jr c, .next
+.SpinnersOn
 	push bc
 	push de
 	ld hl, MAPOBJECT_SCRIPT_POINTER
@@ -99,6 +105,30 @@ _CheckTrainerBattle::
 	ld a, c
 	ld [wSeenTrainerDirection], a
 	jr LoadTrainer_continue
+
+; Check if a possible spinner should look away if they are facing the player
+DenySpin:
+    ld hl, MAPOBJECT_MOVEMENT
+    add hl, de
+    ld a, [hl]
+    cp SPRITEMOVEDATA_SPINRANDOM_FAST
+    jr z, .dodeny
+    cp SPRITEMOVEDATA_SPINRANDOM_SLOW
+    jr z, .dodeny
+    and a
+    ret
+.dodeny
+    ld hl, MAPOBJECT_OBJECT_STRUCT_ID
+    add hl, de
+    ld a, [hl]
+    call GetObjectStruct
+    ld bc, OBJECT_DIRECTION
+    add hl, bc
+    ld a, [hl]
+    xor $FF
+    ld [hl], a
+    scf
+    ret
 
 TalkToTrainer::
 	ld a, 1
@@ -201,30 +231,6 @@ FacingPlayerDistance::
 
 .NotFacing:
 	and a
-	ret
-
-CheckTrainerFlag:: ; unreferenced
-	push bc
-	ld hl, OBJECT_MAP_OBJECT_INDEX
-	add hl, bc
-	ld a, [hl]
-	call GetMapObject
-	ld hl, MAPOBJECT_SCRIPT_POINTER
-	add hl, bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call GetMapScriptsBank
-	call GetFarWord
-	ld d, h
-	ld e, l
-	push de
-	ld b, CHECK_FLAG
-	call EventFlagAction
-	pop de
-	ld a, c
-	and a
-	pop bc
 	ret
 
 PrintWinLossText::
