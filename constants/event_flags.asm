@@ -282,7 +282,13 @@
 	const EVENT_RECEIVED_CANDY_JAR
 	const EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
 	const EVENT_HELPFUL_NPCS_DISABLED
-; Unused: next 326 events
+	const EVENT_STATIC_BOARDER_DOUGLAS
+	const EVENT_REGULAR_BOARDER_DOUGLAS
+	const EVENT_PROFS_REPEL
+	const EVENT_CANDY_JAR
+	const EVENT_10_CANDIES
+	const EVENT_HM_ITEMS
+; Unused: next 320 events
 
 	const_next 600
 ; Kurt Apricorn events
