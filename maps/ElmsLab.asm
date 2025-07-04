@@ -153,6 +153,15 @@ ElmsLab_ExtraPokemonOptions:
 	writetext ElmsLabText_NoAlteredHiddenPower
 .Merge
 	promptbutton
+	
+; Enable LEGENDS ARCEUS HIDDEN POWER
+	writetext ElmsLabText_PLAHiddenPowerAsk
+	yesorno 
+	iffalse .NoPLAHiddenPower
+	loadmem wWhichHiddenPower, 1
+	writetext ElmsLabText_PLAHiddenPowerYes
+	promptbutton
+.NoPLAHiddenPower
 
 ; Enabling or disabling EVOLUTIONS.
 	writetext ElmsLabText_EvolutionsAsk
@@ -193,9 +202,10 @@ ElmsLab_ExtraPokemonOptions:
 .HandledMegas
 	promptbutton
 	writetext ElmsLabText_PokemonOptionsDone
-.EndOptions
 	promptbutton
+.EndOptions
 	closetext
+	turnobject PLAYER, UP
 .EndNoOptions
 	end
 
@@ -259,9 +269,10 @@ ElmsLab_ExtraCoreGameplayOptions:
 .MetronomeDone
 	promptbutton
 	writetext ElmsLabText_BattleOptionsDone
-.EndOptions
 	promptbutton
+.EndOptions
 	closetext
+	turnobject PLAYER, UP
 .EndNoOptions
 	end
 
@@ -341,16 +352,19 @@ ElmsLab_ExtraQualityOfLifeItems:
 	yesorno
 	iftrue .YesProfsRepel
 	writetext ElmsLabText_ProfessorsRepelNo
-	sjump .EndOptions
+	promptbutton
+	sjump .RepelDone
 .YesProfsRepel
 	setevent EVENT_PROFS_REPEL
 	verbosegiveitem PROFS_REPEL
 	writetext ElmsLabText_ProfessorsRepelYes
 	promptbutton
-.EndOptions
+.RepelDone
 	writetext ElmsLabText_HelpfulItemsDone
 	promptbutton
+.EndOptions
 	closetext
+	turnobject PLAYER, UP
 .EndNoOptions
 	end
 
@@ -412,23 +426,117 @@ ElmsLab_ExtraQualityOfLifeSettings:
 	promptbutton
 	
 ; Disable Encounters with B
-	writetext ElmsLabText_DisableEncountersWithBAsk
-	yesorno
-	iffalse .NoRepel
-	loadmem wPressBToRepel, 1
-	writetext ElmsLabText_DisableEncountersWithBYes
+;	writetext ElmsLabText_DisableEncountersWithBAsk
+;	yesorno
+;	iffalse .NoRepel
+;	loadmem wPressBToRepel, 1
+;	writetext ElmsLabText_DisableEncountersWithBYes
+;	promptbutton
 	sjump .EndOptions
 .NoRepel
 	loadmem wPressBToRepel, 0
 	writetext ElmsLabText_DisableEncountersWithBNo
-.EndOptions
 	promptbutton
+.EndOptions
 	writetext ElmsLabText_QoLExtrasDone
+	promptbutton
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+ElmsLab_ResetSettings:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
+	writetext ElmsLabText_ResetOptions
+	yesorno
+	iffalse .NoOptions
+	writetext ElmsLabText_AreYouSure
+	yesorno
+	iffalse .NoOptions
+	checkevent EVENT_CANDY_JAR
+	iffalse .NoCandyJar
+	takeitem CANDY_JAR
+	clearevent EVENT_CANDY_JAR
+.NoCandyJar
+	checkevent EVENT_10_CANDIES
+	iffalse .NoCandies
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	clearevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
+	clearevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
+	clearevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
+	clearevent EVENT_VIOLET_CITY_RARE_CANDY
+	clearevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
+	clearevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
+	clearevent EVENT_ROUTE_27_RARE_CANDY
+	clearevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
+	clearevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
+	clearevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	
+.NoCandies
+	checkevent EVENT_PROFS_REPEL
+	iffalse .NoProfsRepel
+	takeitem PROFS_REPEL
+.NoProfsRepel
+	checkevent EVENT_HM_ITEMS
+	iffalse .NoHMItems
+	setevent EVENT_RECEIVED_SCYTHE
+	setevent EVENT_RECEIVED_AIR_BALLOON
+	setevent EVENT_RECEIVED_RAFT
+	setevent EVENT_RECEIVED_BURLY_MAN
+	setevent EVENT_RECEIVED_LANTERN
+	setevent EVENT_RECEIVED_BATH_PLUG
+	setevent EVENT_RECEIVED_LADDER
+	setevent EVENT_RECEIVED_FART_JAR
+	setevent EVENT_RECEIVED_HONEY_JAR
+	setevent EVENT_RECEIVED_TREE_SHAKER
+	setevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	clearevent EVENT_HM_ITEMS
+.NoHMItems
+	loadmem wLevelCap, 100
+	loadmem wElmPokemon1, 155
+	loadmem wElmPokemon2, 158
+	loadmem wElmPokemon3, 152
+	loadmem wIsAStarter, 0
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+	loadmem wIsAStream, 0
+	loadmem wEvolutionsDisabled, 0
+	loadmem wAbilitiesActivated, 0
+	loadmem wMegaEvolutionEnabled, 0
+	loadmem wRivalCarriesStarter, 0
+	loadmem wInverseActivated, 0
+	loadmem wMetronomeOnly, 0
+	loadmem wTutorsLimited, 0
+	loadmem wSpinnersOff, 0
+	loadmem wPressBToRepel, 0
+	loadmem wWhichHiddenPower, 0
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
+	writetext ElmsLabText_ResetOptionsYes
+	sjump .EndOptions
+.NoOptions
+	writetext ElmsLabText_ResetOptionsNo
+.EndOptions
 	promptbutton
 	closetext
 .EndNoOptions
 	end
-
 
 
 ElmsLabRandomizer:
@@ -2180,11 +2288,8 @@ ElmsLabText_ExtraQoLAsk:
 	line "these EXTRAS?"
 	
 	para "EGG and RBY MOVE"
-	line "TUTORS, change"
-	
-	para "SPINNER movement,"
-	line "or disable WILD"
-	cont "BATTLES with B?"
+	line "TUTORS, or change"
+	cont "SPINNER movement?"
 	done
 	
 ElmsLabText_AskHelpfulItems:
@@ -2617,6 +2722,26 @@ ElmsLabText_AskAboutHMFriendsNo:
 	cont "encounters."
 	done
 	
+ElmsLabText_ResetOptions:
+	text "Reset ALL OPTIONS"
+	line "and revert to"
+	cont "vanilla gameplay?"
+	done
+	
+ElmsLabText_AreYouSure:
+	text "Are you sure?"
+	done
+	
+ElmsLabText_ResetOptionsYes:
+	text "All EXTRA OPTIONS"
+	line "are reset."
+	done
+
+ElmsLabText_ResetOptionsNo:
+	text "No changes have"
+	line "been made to"
+	cont "EXTRA OPTIONS."
+	done
 
 
 ElmsLab_MapEvents:
@@ -2656,6 +2781,7 @@ ElmsLab_MapEvents:
 	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
 	bg_event  1,  2, BGEVENT_READ, ElmsLabExtraOptions
+	bg_event  0,  2, BGEVENT_READ, ElmsLab_ResetSettings
 	bg_event  6,  6, BGEVENT_READ, ElmsLab_ExtraPokemonOptions
 	bg_event  7,  6, BGEVENT_READ, ElmsLab_ExtraQualityOfLifeItems
 	bg_event  8,  6, BGEVENT_READ, ElmsLab_ExtraQualityOfLifeSettings
