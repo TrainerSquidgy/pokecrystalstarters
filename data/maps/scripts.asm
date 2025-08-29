@@ -149,12 +149,9 @@ INCLUDE "maps/TinTowerRoof.asm"
 
 SECTION "Map Scripts 9", ROMX
 
-INCLUDE "maps/Route34.asm"
 INCLUDE "maps/ElmsLab.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
-INCLUDE "maps/PlayersNeighborsHouse.asm"
-INCLUDE "maps/Route26HealHouse.asm"
 
 
 SECTION "Map Scripts 10", ROMX
@@ -176,14 +173,6 @@ INCLUDE "maps/IcePathB1F.asm"
 INCLUDE "maps/IcePathB2FMahoganySide.asm"
 INCLUDE "maps/IcePathB2FBlackthornSide.asm"
 INCLUDE "maps/IcePathB3F.asm"
-INCLUDE "maps/LavenderPokecenter1F.asm"
-INCLUDE "maps/LavenderPokecenter2FBeta.asm"
-INCLUDE "maps/MrFujisHouse.asm"
-INCLUDE "maps/LavenderSpeechHouse.asm"
-INCLUDE "maps/LavenderNameRater.asm"
-INCLUDE "maps/LavenderMart.asm"
-INCLUDE "maps/SoulHouse.asm"
-INCLUDE "maps/LavRadioTower1F.asm"
 INCLUDE "maps/Route8SaffronGate.asm"
 INCLUDE "maps/Route12SuperRodHouse.asm"
 
@@ -478,11 +467,26 @@ INCLUDE "maps/Route23.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route28SteelWingHouse.asm"
 
-
 SECTION "Map Scripts 25", ROMX
+INCLUDE "maps/LavenderPokecenter1F.asm"
+INCLUDE "maps/LavenderPokecenter2FBeta.asm"
+INCLUDE "maps/MrFujisHouse.asm"
+INCLUDE "maps/LavenderSpeechHouse.asm"
+INCLUDE "maps/LavenderNameRater.asm"
+INCLUDE "maps/LavenderMart.asm"
+INCLUDE "maps/SoulHouse.asm"
+INCLUDE "maps/LavRadioTower1F.asm"
+
+
+SECTION "Map Scripts 26", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/ElmsHouse.asm"
+INCLUDE "maps/MahoganyTMShop.asm"
+INCLUDE "maps/PlayersNeighborsHouse.asm"
+INCLUDE "maps/Route26HealHouse.asm"
+INCLUDE "maps/Route34.asm"
+
 
 ENDSECTION
