@@ -2093,3 +2093,9 @@ Snow:
 	startweather
 	endmove
 	
+HoneClaws:
+	checkobedience
+	usedmovetext
+	doturn
+	honeclaws
+	endmove

@@ -719,6 +719,9 @@ SECTION "Pics 19", ROMX
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
+HawluchaBackpic: INCBIN "gfx/pokemon/hawlucha/back.2bpp.lz"
+HawluchaFrontpic: INCBIN "gfx/pokemon/hawlucha/front.animated.2bpp.lz"
+
 SECTION "Pics 20", ROMX
 
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"

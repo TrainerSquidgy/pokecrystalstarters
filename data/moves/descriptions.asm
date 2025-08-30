@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw SwiftDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -252,16 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw HoneClawsDescription
+	dw FlyingPressDescription
+	dw CharmDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+HoneClawsDescription:
+	db   "Ups ATTACK and"
+	next "ACCURACY.@"
+	
+FlyingPressDescription:
+	db   "Dual-type. FLY-"
+	next "ING, FIGHTING.@"
+
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:

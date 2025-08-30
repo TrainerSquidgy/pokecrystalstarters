@@ -518,6 +518,8 @@ INCLUDE "gfx/pokemon/ho_oh/shiny.pal"
 INCBIN "gfx/pokemon/celebi/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/celebi/shiny.pal"
 
+INCBIN "gfx/pokemon/hawlucha/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/hawlucha/shiny.pal"
 	assert_table_length NUM_POKEMON + 1
 
 ; 252
@@ -531,14 +533,6 @@ INCBIN "gfx/pokemon/egg/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/egg/shiny.pal"
 
 	assert_table_length EGG + 1
-
-; 254
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-; 254 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-
 ; 255
 	RGB 23, 23, 23
 	RGB 17, 17, 17

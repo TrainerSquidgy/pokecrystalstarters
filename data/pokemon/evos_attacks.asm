@@ -3367,3 +3367,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+HawluchaEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, DETECT
+	db 1, TACKLE
+	db 6, HONE_CLAWS
+	db 11, KARATE_CHOP
+	db 16, WING_ATTACK
+	db 21, SUBMISSION
+	db 26, AERIAL_ACE
+	db 31, ENCORE
+	db 36, FLYING_PRESS
+	db 41, FEATHERDANCE
+	db 46, HI_JUMP_KICK
+	db 51, SKY_ATTACK
+	db 56, SWORDS_DANCE
+	db 0 ; no more level-up moves

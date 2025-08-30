@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1287,21 +1286,68 @@ BattleCommand_Stab:
 	ld hl, wTypeModifier
 	set 7, [hl]
 
+
+	ld hl, wTypeModifier
+	set 7, [hl]
+
 .SkipStab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	ld b, a
+	call .AdjustDamageForTypeEffectiveness
+
+ 	ld a, BATTLE_VARS_MOVE_EFFECT
+    call GetBattleVar
+    cp EFFECT_FLYING_PRESS
+    ret nz
+
+    ; If the move has no effect, don't continue checking if the Flying part of Flying Press will work
+    ld a, [wAttackMissed]
+    and a
+    ret nz
+
+    ; Redo all that with Flying typing
+	ld a, FLYING
+	call .AdjustDamageForTypeEffectiveness
+
+	; Override what's shown based on our tally
+	ld a, [wMoveTotalEffectiveness]
+	cp $80
+	ld a, EFFECTIVE
+	jr z, .override_type_modifier
+	ld a, NOT_VERY_EFFECTIVE
+	jr c, .override_type_modifier
+	ld a, SUPER_EFFECTIVE
+
+.override_type_modifier
 	push af
-	ld hl, TypeMatchups
-	ld a, [wInverseActivated]
-	and a
-	jr z, .got_inverted
-	ld hl, InverseTypeMatchups
-.got_inverted
+	ld a, [wTypeModifier]
+	and %10000000
+	ld b, a
 	pop af
+	or b
+	ld [wTypeModifier], a
+	ret
+
+.TallyEffectiveness
+	; tally how many supereffectives vs not very effectives
+	cp EFFECTIVE
+	ret z ; if normally effective, do nothing
+
+	ld b, -1
+	jr c, .addEffectivePoint
+	ld b, 1
+.addEffectivePoint
+	ld a, [wMoveTotalEffectiveness]
+	add b
+	ld [wMoveTotalEffectiveness], a
+	ret
+
+.AdjustDamageForTypeEffectiveness
+	ld b, a
+	ld hl, TypeMatchups
+
 .TypesLoop:
-	call GetNextTypeMatchupsByte
-    inc hl
+	ld a, [hli]
 
 	cp -1
 	jr z, .end
@@ -1319,7 +1365,7 @@ BattleCommand_Stab:
 .SkipForesightCheck:
 	cp b
 	jr nz, .SkipType
-	call GetNextTypeMatchupsByte
+	ld a, [hl]
 	cp d
 	jr z, .GotMatchup
 	cp e
@@ -1330,11 +1376,16 @@ BattleCommand_Stab:
 	push hl
 	push bc
 	inc hl
+
+	ld a, [hl]
+	and %01111111
+	call .TallyEffectiveness
+
 	ld a, [wTypeModifier]
 	and %10000000
 	ld b, a
 ; If the target is immune to the move, treat it as a miss and calculate the damage as 0
-	call GetNextTypeMatchupsByte
+	ld a, [hl]
 	and a
 	jr nz, .NotImmune
 	inc a
@@ -1401,6 +1452,7 @@ BattleCommand_Stab:
 	or b
 	ld [wTypeModifier], a
 	ret
+
 
 BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
@@ -1918,8 +1970,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -5591,10 +5641,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -6911,4 +6957,13 @@ BattleCommand_AddDamage:
     ret
 	
 	
+BattleCommand_HoneClaws:
+; hone claws
+	call ResetMiss
+	call BattleCommand_AttackUp
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_AccuracyUp
+	jp BattleCommand_StatUpMessage
 
