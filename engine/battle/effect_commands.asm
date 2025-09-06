@@ -198,9 +198,6 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +422,6 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1077,8 +1071,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1918,10 +1910,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -2625,6 +2613,19 @@ PlayerAttackDamage:
 	ld c, [hl]
 	ld hl, wPlayerSpAtk
 
+	
+; Handle Foul Play (Special attack in this game)
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FOUL_PLAY
+	jr nz, .not_foul_play
+	call BattleCommand_SwitchTurn
+	call GetSpAtkStatInHL
+	call BattleCommand_SwitchTurn
+	jr .lightball
+
+.not_foul_play
+	call GetSpAtkStatInHL
 .lightball
 ; Note: Returns player special attack at hl in hl.
 	call LightBallBoost
@@ -2633,6 +2634,7 @@ PlayerAttackDamage:
 .thickclub
 ; Note: Returns player attack at hl in hl.
 	call ThickClubBoost
+
 
 .done
 	call TruncateHL_BC
@@ -2643,6 +2645,84 @@ PlayerAttackDamage:
 
 	ld a, 1
 	and a
+	ret
+
+GetAttackStatInHL:
+; Returns stats in hl. Preserves bc, de.
+	push de
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonAttack
+	ld de, wPlayerAttack
+	ld bc, wPlayerAtkLevel
+	jr z, _GetOffensiveStatInHL
+	ld hl, wEnemyMonAttack
+	ld de, wEnemyAttack
+	ld bc, wEnemyAtkLevel
+	jr _GetOffensiveStatInHL
+GetSpAtkStatInHL:
+	push de
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpclAtk
+	ld de, wPlayerSpAtk
+	ld bc, wPlayerSAtkLevel
+	jr z, _GetOffensiveStatInHL
+	ld hl, wEnemyMonSpclAtk
+	ld de, wEnemySpAtk
+	ld bc, wEnemySAtkLevel
+	; fallthrough
+_GetOffensiveStatInHL:
+	ld a, [bc]
+	jr _GetStatInHL
+GetDefenseStatInHL:
+	push de
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonDefense
+	ld de, wPlayerDefense
+	ld bc, wPlayerDefLevel
+	jr nz, _GetDefensiveStatInHL
+	ld hl, wEnemyMonDefense
+	ld de, wEnemyDefense
+	ld bc, wEnemyDefLevel
+	jr _GetDefensiveStatInHL
+GetSpDefStatInHL:
+	push de
+	push bc
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpclDef
+	ld de, wPlayerSpDef
+	ld bc, wPlayerSDefLevel
+	jr nz, _GetDefensiveStatInHL
+	ld hl, wEnemyMonSpclDef
+	ld de, wEnemySpDef
+	ld bc, wEnemySDefLevel
+	; fallthrough
+_GetDefensiveStatInHL:
+	; invert so >7 gives more damage
+	ld a, [bc]
+	cpl
+	add BASE_STAT_LEVEL * 2 + 1
+	; fallthrough
+_GetStatInHL:
+	; If (possibly modified) stat change is more than base, don't check crit.
+	cp BASE_STAT_LEVEL
+	jr nc, .getstat_done
+
+	; If a crit happened, replace modified stat hl with unmodified de
+	ld a, [wCriticalHit]
+	and a
+	jr z, .getstat_done
+	ld h, d
+	ld l, e
+.getstat_done
+	pop bc
+	pop de
 	ret
 
 TruncateHL_BC:
@@ -5370,24 +5450,6 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
 	ret
 
 BattleCommand_FlinchTarget:
@@ -5591,20 +5653,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY
@@ -6910,5 +6964,246 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
-	
+BattleCommand_Payback:
+	call CheckOpponentWentFirst
+	ret z
+	ld a, d
+	add a
+	ld d, a
+	ret	
 
+BattleCommand_Switcheroo:
+; Get both held items
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+
+	farcall CheckHiddenOpponent
+	jr nz, .failed
+
+	ld hl, wBattleMonItem
+	ld de, wEnemyMonItem
+
+; Fails if neither Pokemon is holding an item.
+	ld a, [hl]
+	and a
+	jr nz, .check_mail
+
+	ld a, [de]
+	and a
+	jr nz, .check_mail
+
+.failed
+	farcall FailMove
+	ret
+
+.check_mail
+; Fails if the player is holding mail.
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	jr c, .failed
+	
+; Fails if the enemy is holding mail.
+	ld a, [de]
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	jr c, .failed
+
+	ld a, [wLinkMode]
+	and a
+	jr z, .trade_items
+
+	ld a, [wBattleMode]
+	dec a
+	jr z, .failed
+
+.trade_items
+; Put enemy's item in wNamedObjectIndex
+	ld hl, wEnemyMonItem
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+
+; Load player's item in hl and de
+	ld a, 1
+	call BattlePartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wBattleMonItem
+; Store it in b for later
+	ld a, [hl]
+	ld b, a
+	
+; Overwrite player's item (hl and de)
+; with enemy's item (wNamedObjectIndex)
+	ld a, [wNamedObjectIndex]
+	ld [hl], a
+	ld [de], a
+	
+; Load enemy's item in hl and de
+	ld a, 1
+	call OTPartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonItem
+	
+; Overwrite enemy's item (hl and de)
+; with player's original item (b)
+	ld a, b
+	ld [hl], a
+	ld [de], a
+
+; Print Trick text
+	farcall AnimateCurrentMove
+	ld hl, TrickText
+	call StdBattleTextbox
+
+	ld hl, wBattleMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_user_item
+	ld hl, wEnemyMonItem
+.got_user_item
+	ld a, [hl]
+	and a
+	jr z, .get_target_item
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	ld hl, TrickUserObtainedText
+	call StdBattleTextbox
+
+.get_target_item
+	ld hl, wEnemyMonItem
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_target_item
+	ld hl, wBattleMonItem
+.got_target_item
+	ld a, [hl]
+	and a
+	ret z
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	ld hl, TrickTargetObtainedText
+	jp StdBattleTextbox
+	
+BattleCommand_Superpower:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	lb bc, ATTACK, DEFENSE
+BattleCommand_SelfStatDownHitTwice:
+; input: 1-2 stats to decrease in b and c respectively
+	push bc
+	call BattleCommand_SelfStatDownHit
+	pop bc
+	ld b, c
+BattleCommand_SelfStatDownHit:
+	ld a, b
+	and a
+	ret z
+	push bc
+	call ResetMiss
+	pop bc
+	ld a, b
+	call LowerStat
+	call BattleCommand_SwitchTurn
+	ld a, [wLoweredStat]
+	or $80
+	ld [wLoweredStat], a
+	call BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn
+
+BattleCommand_TopsyTurvy:
+
+	ld a, [wAttackMissed]
+	and a
+	jp nz, .failed
+
+	farcall CheckHiddenOpponent
+	jr nz, .failed
+
+; Get the target's stat changes.
+	ld hl, wEnemyStatLevels
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_stat_levels
+	ld hl, wPlayerStatLevels
+.got_stat_levels
+	push hl
+	ld b, NUM_LEVEL_STATS
+; If any of the enemy's stats is modified from its base level,
+; the move succeeds.  Otherwise, it fails.
+.loop
+	ld a, [hli]
+	cp BASE_STAT_LEVEL
+	jr nz, .break
+	dec b
+	jr nz, .loop
+	pop hl
+.failed:
+	farcall AnimateFailedMove
+	farcall PrintButItFailed
+	ret
+
+.break
+	pop hl
+	ld b, NUM_LEVEL_STATS
+.loop2
+; Check whether the target's current stat is at, above, or below its base level.
+; If it's at the base stat level, skip ahead and repeat the loop for the next stat.
+	ld a, [hl]
+	cp BASE_STAT_LEVEL
+	jr z, .check_loop
+	jr nc, .boosted_stat
+; .lowered_stat
+; Get the difference between the base stat level (a)
+; and the current stat level (c).
+	ld a, [hl]
+	ld c, a
+	ld a, BASE_STAT_LEVEL
+	sub c
+; Add the difference (a) to the base stat level (c)
+; to get the reversed stat level.
+	ld c, BASE_STAT_LEVEL
+	add c
+; Load the reversed stat level as the current stat level.
+	ld [hl], a
+.check_loop
+; Move to the next stat.
+	inc hl
+; Break the loop if every stat has been examined.
+	dec b
+	jr nz, .loop2
+	jr .next
+
+.boosted_stat
+; Get the difference between the current stat level (a)
+; and the base stat level (c).
+	ld c, BASE_STAT_LEVEL
+	ld a, [hl]
+	sub c
+; Subtract the difference (d) from the base stat level (c)
+; to get the reversed stat level.
+	ld d, a
+	ld a, c
+	sub d
+; Load the reversed stat level as the current stat level.
+	ld [hl], a
+	jr .check_loop
+
+.next
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .calc_enemy_stats
+	call CalcPlayerStats
+	jr .merge
+
+.calc_enemy_stats
+	call CalcEnemyStats
+.merge
+	call AnimateCurrentMove
+	ld hl, StatChangesReversedText
+	jp StdBattleTextbox

@@ -161,4 +161,9 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw NormalHit
+	dw Payback
+	dw Switcheroo
+	dw TopsyTurvy
+	dw Superpower
 	assert_table_length NUM_MOVE_EFFECTS

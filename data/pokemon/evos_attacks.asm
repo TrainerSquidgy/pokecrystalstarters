@@ -1990,7 +1990,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2663,7 +2663,7 @@ EspeonEvosAttacks:
 	db 36, PSYBEAM
 	db 42, PSYCH_UP
 	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
+	db 52, SYNTHESIS
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -3329,7 +3329,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, AEROBLAST
+	db 1, WING_ATTACK
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3343,7 +3343,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
+	db 1, FIRE_BLAST
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER

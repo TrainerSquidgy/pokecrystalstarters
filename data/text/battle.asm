@@ -1149,3 +1149,31 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+TrickUserObtainedText:
+	text "<USER>"
+	line "obtained"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt
+
+TrickTargetObtainedText:
+	text "<TARGET>"
+	line "obtained"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt	
+	
+TrickText:
+	text "<USER>"
+	line "switched items"
+	cont "with its target!"
+	prompt
+	
+StatChangesReversedText:
+	text "<TARGET>'s"
+	line "stat changes were"
+	cont "all reversed!"
+	prompt

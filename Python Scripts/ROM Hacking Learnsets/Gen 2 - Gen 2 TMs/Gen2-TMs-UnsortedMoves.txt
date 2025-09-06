@@ -1,78 +1,255 @@
+Peck
 Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
-Toxic
-Hidden Power
-Sunny Day
-Hyper Beam
-Light Screen
-Protect
-Safeguard
-Frustration
-SolarBeam
-Earthquake
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Natural Gift
-Dream Eater
-Grass Knot
+Hypnosis
+Wrap
+Payback
+Pluck
+Psybeam
 Swagger
-Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
-Snore
+Slash
+Night Slash
+Psycho Cut
+Switcheroo
+Foul Play
+Topsy-Turvy
+Superpower
+Fake Tears
+Protect
+Psybeam
+Thief
+Facade
+Aerial Ace
 Swift
-Zen Headbutt
+Stored Power
+Fling
+Endure
+Sunny Day
+Rain Dance
+Psyshock
+Foul Play
+Sleep Talk
+Reflect
+Light Screen
+Rest
+Rock Slide
+Taunt
+Dark Pulse
+Skill Swap
+Substitute
+Trick
+Liquidation
+Psychic
+Flamethrower
+Thunderbolt
+Calm Mind
+Helping Hand
 Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+Nasty Plot
+Trick Room
+Tera Blast
+Spite
+Gravity
+Knock Off
+Lunge
+Lash Out
+Psych Up
+Future Sight
+Expanding Force
+Light Screen
+Reflect
+Rest
+Rock Slide
+Thief
+Snore
+Protect
+Attract
+Rain Dance
+Sunny Day
+Facade
+Fake Tears
+Payback
+Fling
+Guard Swap
+Psycho Cut
+Trick Room
+Round
+Retaliate
+Flamethrower
+Thunderbolt
+Psychic
+Substitute
+Endure
+Sleep Talk
+Baton Pass
+Future Sight
+Taunt
+Superpower
+Calm Mind
+Dark Pulse
+Nasty Plot
+Foul Play
+Stored Power
+Ally Switch
+Liquidation
+Aerial Ace
+Bind
+Camouflage 
+Confide
+Constrict 
+Cut
+Double Team
+Embargo 
+Flash 
+Flatter
+Frustration 
+Happy Hour
+Hidden Power 
+Knock Off
+Power Split
+Psych Up
+Psywave 
+Return 
+Role Play
+Secret Power 
+Simple Beam
+Snatch 
+Spite
+Telekinesis 
+Torment
+Toxic
+Reversal
+Peck
+Tackle
+Hypnosis
+Wrap
+Payback
+Pluck
+Psybeam
+Swagger
+Slash
+Night Slash
+Psycho Cut
+Switcheroo
+Foul Play
+Topsy-Turvy
+Superpower
+Fake Tears
+Scary Face
+Protect
+Psybeam
+Thief
+Trailblaze
+Facade
+Aerial Ace
+Swift
+Stored Power
+Fling
+Endure
+Sunny Day
+Rain Dance
+Psyshock
+Foul Play
+Sleep Talk
+Reflect
+Light Screen
+Rest
+Rock Slide
+Taunt
+Dark Pulse
+Skill Swap
+Substitute
+Trick
+Liquidation
+Psychic
+Flamethrower
+Thunderbolt
+Calm Mind
+Helping Hand
+Baton Pass
+Reversal
+Nasty Plot
+Giga Impact
+Trick Room
+Hyper Beam
+Tera Blast
+Spite
+Gravity
+Knock Off
+Lunge
+Lash Out
+Psych Up
+Future Sight
+Expanding Force
+Throat Chop
+Psychic Noise
+Hyper Beam
+Giga Impact
+Light Screen
+Reflect
+Rest
+Rock Slide
+Thief
+Snore
+Protect
+Scary Face
+Attract
+Rain Dance
+Sunny Day
+Facade
+Fake Tears
+Payback
+Fling
+Guard Swap
+Psycho Cut
+Trick Room
+Round
+Retaliate
+Brutal Swing
+Flamethrower
+Thunderbolt
+Psychic
+Substitute
+Reversal
+Psyshock
+Endure
+Sleep Talk
+Baton Pass
+Future Sight
+Taunt
+Superpower
+Calm Mind
+Dark Pulse
+Nasty Plot
+Foul Play
+Stored Power
+Ally Switch
+Throat Chop
+Liquidation
+Aerial Ace
+Bind
+Block
+Camouflage 
+Confide
+Constrict 
+Cut
+Double Team
+Embargo 
+Flash 
+Flatter
+Frustration 
+Happy Hour
+Hidden Power 
+Knock Off
+Power Split
+Psych Up
+Psywave 
+Return 
+Role Play
+Secret Power 
+Signal Beam 
+Simple Beam
+Snatch 
+Spite
+Telekinesis 
+Torment
+Toxic
