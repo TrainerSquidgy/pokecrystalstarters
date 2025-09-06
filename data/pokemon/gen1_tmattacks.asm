@@ -2489,6 +2489,8 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+InkayGen1TMAttacks:
+MalamarGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0

@@ -801,5 +801,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+InkayEggMoves:
+MalamarEggMoves:
 NoEggMoves:
 	db -1 ; end

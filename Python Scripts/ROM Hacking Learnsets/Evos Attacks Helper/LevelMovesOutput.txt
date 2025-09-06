@@ -1,16 +1,19 @@
-LechonkEvosAttacks:
+MalamarEvosAttacks:
 	db 0 ; No More Evolutions
+	db 1, REVERSAL
+	db 1, PECK
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, HYPNOSIS
+	db 1, WRAP
+	db 9, PAYBACK
+	db 12, PLUCK
+	db 15, PSYBEAM
+	db 18, SWAGGER
+	db 21, SLASH
+	db 24, NIGHT_SLASH
+	db 27, PSYCHO_CUT
+	db 33, SWITCHEROO
+	db 37, FOUL_PLAY
+	db 42, TOPSY-TURVY
+	db 47, SUPERPOWER
 	db 0

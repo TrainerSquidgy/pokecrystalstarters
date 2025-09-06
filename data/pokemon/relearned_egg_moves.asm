@@ -906,6 +906,8 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+InkayRelearnedEggMoves:
+MalamarRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0

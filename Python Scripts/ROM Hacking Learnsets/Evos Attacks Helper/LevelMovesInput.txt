@@ -1,14 +1,17 @@
-Pokémon: Lechonk
+Pokémon: Malamar
+1: Reversal
+1: Peck
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Hypnosis
+1: Wrap
+9: Payback
+12: Pluck
+15: Psybeam
+18: Swagger
+21: Slash
+24: Night Slash
+27: Psycho Cut
+33: Switcheroo
+37: Foul Play
+42: Topsy-Turvy
+47: Superpower

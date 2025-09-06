@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db INKAY
+	db MALAMAR
 	assert_table_length NUM_POKEMON
