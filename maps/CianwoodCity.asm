@@ -100,6 +100,11 @@ CianwoodCityChucksWife:
 	verbosegiveitem HM_FLY
 	iffalse .Done
 	setevent EVENT_GOT_HM02_FLY
+	checkevent EVENT_RECEIVED_AIR_BALLOON
+	iftrue .NoHMItem
+	verbosegiveitem AIR_BALLOON
+	setevent EVENT_RECEIVED_AIR_BALLOON
+.NoHMItem
 	writetext ChucksWifeFlySpeechText
 	promptbutton
 .GotFly:
