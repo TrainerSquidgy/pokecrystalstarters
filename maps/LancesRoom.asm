@@ -65,6 +65,11 @@ LancesRoomLanceScript:
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton
+	readmem wLevelCap
+	ifgreater 58, .SkipLevelCap
+	loadmem wLevelCap, 58
+.SkipLevelCap
+	
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 0, $0b ; open door

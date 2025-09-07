@@ -1596,4 +1596,8 @@ _WildEncountersOnText::
 	line "will reappear."
 	prompt
 	
-	
+
+_NuzlockeItemFailure::
+	text "You cannot use"
+	line "this item."
+	prompt

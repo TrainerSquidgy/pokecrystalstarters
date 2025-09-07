@@ -32,6 +32,10 @@ OlivineGymJasmineScript:
 	iftrue .GotIronTail
 	writetext Jasmine_BadgeSpeech
 	promptbutton
+	readmem wLevelCap
+	ifgreater 40, .skipLevelCap
+	loadmem wLevelCap, 40
+.skipLevelCap
 	verbosegiveitem TM_IRON_TAIL
 	iffalse .NoRoomForIronTail
 	readmem wMegaEvolutionEnabled
