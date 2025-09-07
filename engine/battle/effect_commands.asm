@@ -7093,26 +7093,10 @@ BattleCommand_Superpower:
 	ld a, [wAttackMissed]
 	and a
 	ret nz
-	lb bc, ATTACK, DEFENSE
-BattleCommand_SelfStatDownHitTwice:
-; input: 1-2 stats to decrease in b and c respectively
-	push bc
-	call BattleCommand_SelfStatDownHit
-	pop bc
-	ld b, c
-BattleCommand_SelfStatDownHit:
-	ld a, b
-	and a
-	ret z
-	push bc
-	call ResetMiss
-	pop bc
-	ld a, b
-	call LowerStat
 	call BattleCommand_SwitchTurn
-	ld a, [wLoweredStat]
-	or $80
-	ld [wLoweredStat], a
+	call BattleCommand_AttackDown
+	call BattleCommand_StatDownMessage
+	call BattleCommand_DefenseDown
 	call BattleCommand_StatDownMessage
 	jp BattleCommand_SwitchTurn
 
