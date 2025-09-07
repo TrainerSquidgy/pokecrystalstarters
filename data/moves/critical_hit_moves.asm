@@ -5,4 +5,5 @@ CriticalHitMoves:
 	db SLASH
 	db CROSS_CHOP
 	db NIGHT_SLASH
+	db PSYCHO_CUT
 	db -1
