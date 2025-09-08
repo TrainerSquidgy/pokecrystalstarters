@@ -214,6 +214,11 @@ BattleText_MonFainted:
 BattleText_UseNextMon:
 	text "Use next #MON?"
 	done
+	
+BattleText_MegaEvolveAsk:
+	text "MEGA EVOLVE"
+	line "your #MON?"
+	done
 
 UnusedRivalWinText: ; unreferenced
 	text "<RIVAL>: Yes!"
@@ -1149,3 +1154,7 @@ AbsorbedNutrientsText:
 	text "<TARGET>"
 	line "absorbed nutrients"
 	cont "with its roots!"
+MegaEvolvedText:
+	text "<USER>"
+	line "MEGA EVOLVED!"
+	prompt
