@@ -5,6 +5,7 @@
 	const SPROUTTOWER3F_SAGE4
 	const SPROUTTOWER3F_POKE_BALL1
 	const SPROUTTOWER3F_POKE_BALL2
+	const SPROUTTOWER3F_POKE_BALL3
 	const SPROUTTOWER3F_RIVAL
 
 SproutTower3F_MapScripts:
@@ -78,6 +79,10 @@ SageLiScript:
 	promptbutton
 	verbosegiveitem HM_FLASH
 	setevent EVENT_GOT_HM05_FLASH
+	checkevent EVENT_RECEIVED_LANTERN
+	iftrue .NoHMItem
+	verbosegiveitem LANTERN
+.NoHMItem
 	setevent EVENT_BEAT_SAGE_LI
 	writetext SageLiFlashExplanationText
 	waitbutton
@@ -134,6 +139,9 @@ SproutTower3FPotion:
 
 SproutTower3FEscapeRope:
 	itemball ESCAPE_ROPE
+
+SproutTower3FEscapeRopeKey:
+	itemball ESCAPE_ROPE_KEY
 
 SproutTower3FPlayerApproachesRivalMovement:
 	step UP
@@ -351,4 +359,5 @@ SproutTower3F_MapEvents:
 	object_event 11, 11, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageNeal, -1
 	object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FPotion, EVENT_SPROUT_TOWER_3F_POTION
 	object_event 14,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FEscapeRope, EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	object_event 14,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SproutTower3FEscapeRopeKey, EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
 	object_event 10,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_SPROUT_TOWER
