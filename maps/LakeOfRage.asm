@@ -82,9 +82,9 @@ RedGyarados:
 	opentext
 	writetext LakeOfRageGyaradosCryText
 	pause 15
-	cry GYARADOS
+	cry MALAMAR
 	closetext
-	loadwildmon GYARADOS, 30
+	loadwildmon MALAMAR, 30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCESHINY
 	startbattle
 	ifequal LOSE, .NotBeaten
@@ -311,7 +311,8 @@ LakeOfRageLanceAskHelpText:
 	done
 
 LakeOfRageGyaradosCryText:
-	text "GYARADOS: Gyashaa!"
+	text "MALAMAR:"
+	line "Muh-luh-ma..."
 	done
 
 LakeOfRageGotRedScaleText:
