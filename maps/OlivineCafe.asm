@@ -17,6 +17,11 @@ OlivineCafeStrengthSailorScript:
 	promptbutton
 	verbosegiveitem HM_STRENGTH
 	setevent EVENT_GOT_HM04_STRENGTH
+	checkevent EVENT_RECEIVED_BURLY_MAN
+	iftrue .NoHMItem
+	verbosegiveitem BURLY_MAN
+	setevent EVENT_RECEIVED_BURLY_MAN
+.NoHMItem
 .GotStrength:
 	writetext OlivineCafeStrengthSailorText_GotStrength
 	waitbutton
