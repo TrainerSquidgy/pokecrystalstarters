@@ -3120,7 +3120,9 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+	ds 47
+wRareCandyRNG:: db
+wRareCandiesObtained:: db
 
 ; fight counts
 wJackFightCount::    db
@@ -3155,6 +3157,7 @@ wElmPokemon1::      db
 wElmPokemon2::      db
 wElmPokemon3::      db
 wIlexForestEncounters:: db
+wRoute33Encounters:: db
 wRoute34Encounters:: db
 wTestingRamSlot1:: db	
 wTempCompSpecies:: db
@@ -3192,7 +3195,8 @@ wMegaXorY:: db
 wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
-	ds 58
+wIsAStream:: db
+	ds 56
 
 wEventFlags:: flag_array NUM_EVENTS
 

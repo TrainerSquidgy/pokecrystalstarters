@@ -154,7 +154,7 @@ ItemDescriptions:
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
 	dw RareCandyDesc
-	dw TeruSama19Desc
+	dw EscapeRopeDesc
 	dw TeruSama20Desc
 	dw SacredAshDesc
 	dw HeavyBallDesc

@@ -103,6 +103,7 @@ ElmsLabStarterChoice:
 	iffalse .NoHMFriends
 	loadmem wIlexForestEncounters, 0
 	loadmem wRoute34Encounters, 0
+	loadmem wRoute33Encounters, 0
 	loadmem wGuaranteedHMFriendCatch, 1
 	writetext ElmsLabText_AskAboutHMFriendsYes
 	sjump .DoneHMFriends
@@ -110,15 +111,40 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskAboutHMFriendsNo
 	loadmem wIlexForestEncounters, 3
 	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
+	writetext ElmsLabText_AskStream
+	yesorno
+	iffalse .nostream
+	loadmem wIsAStream, 1
+	writetext ElmsLabText_StreamYes
+	sjump .streamdone
+.nostream
+	loadmem wIsAStream, 0
+	writetext ElmsLabText_StreamNo
+.streamdone
+	promptbutton
 	closetext
 	turnobject PLAYER, DOWN
 .End
 	end
 	
+ElmsLabText_AskStream:
+	text "Is this a"
+	line "STREAMED run?"
+	done
+	
+ElmsLabText_StreamYes:
+	text "Streaming"
+	line "flag set."
+	done
 
+ElmsLabText_StreamNo:
+	text "Streaming"
+	line "flag unset."
+	done
 	
 ElmsLabText_InverseNo:
 	text "All type matchups"
@@ -138,8 +164,11 @@ ElmsLabtext_InverseYes:
 
 ElmsLabExtraOptions:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .EndOptions
+	iftrue .EndNoOptions
 	opentext
+	writetext ElmsLabText_ExtraOptionsGlobalAsk
+	yesorno
+	iffalse .EndOptions
 	writetext ElmsLabText_AskExtraOptionsForYourMon
 	yesorno
 	iffalse .ExtraMonOptionsDone
@@ -203,17 +232,15 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_AskGamePlayChanges
 	yesorno
 	iffalse .GameplayDone
-	writetext ElmsLabText_AskLimitTutors
+	writetext ElmsLabtext_LevelCapAsk
 	yesorno
-	iffalse .NoLimit
-	loadmem wTutorsLimited, 0
-	writetext ElmsLabText_LimitTutorsYes
-	sjump .NoTutors
-.NoLimit
-	loadmem wTutorsLimited, 1
-	writetext ElmsLabText_LimitTutorsNo
-.NoTutors
-	waitbutton
+	iffalse .NoLevelCap
+	loadmem wLevelCap, 9
+	writetext ElmsLabText_LevelCapYes
+.NoLevelCap
+	writetext ElmsLabtext_LevelCapNo
+.LevelCapDone
+	promptbutton
 	writetext ElmsLabText_AskRival
 	yesorno
 	iffalse .NoRival
@@ -249,20 +276,49 @@ ElmsLabExtraOptions:
 .MetronomeDone
 	waitbutton
 .GameplayDone
-	; Overworld Changes
-	writetext ElmsLabText_AskOverworldChanges
+	; Overworld and NPC Changes
+	writetext ElmsLabText_AskAboutHelpfulNPCs
 	yesorno
-	iffalse .EndOptions
-	writetext ElmsLabText_SpinnersAsk
+	iftrue .AskTutorLimit
+	setevent EVENT_HELPFUL_NPCS_DISABLED
+	sjump .NoTutors
+.AskTutorLimit
+	writetext ElmsLabText_AskLimitTutors
 	yesorno
-	iftrue .YesSpinners
-	loadmem wSpinnersOff, 0
-	writetext ElmsLabText_SpinnersNo
-	sjump .SpinnersDone
-.YesSpinners
-	loadmem wSpinnersOff, 1
-	writetext ElmsLabText_SpinnersYes
-.SpinnersDone
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	sjump .NoTutors
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+	waitbutton
+.NoTutors
+	writetext ElmsLabText_AskHelpfulItems
+	yesorno
+	iffalse .Spinners
+
+.AskHelpfulItems
+	waitbutton
+	writetext ElmsLabText_HMItemsAsk
+	yesorno
+	iffalse .Spinners
+	clearevent EVENT_RECEIVED_SCYTHE
+	clearevent EVENT_RECEIVED_AIR_BALLOON
+	clearevent EVENT_RECEIVED_RAFT
+	clearevent EVENT_RECEIVED_BURLY_MAN
+	clearevent EVENT_RECEIVED_LANTERN
+	clearevent EVENT_RECEIVED_BATH_PLUG
+	clearevent EVENT_RECEIVED_LADDER
+	clearevent EVENT_RECEIVED_FART_JAR
+	clearevent EVENT_RECEIVED_HONEY_JAR
+	clearevent EVENT_RECEIVED_TREE_SHAKER
+	clearevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	writetext ElmsLabText_HMItemsYes
+	waitbutton
 	waitbutton
 	writetext ElmsLabText_ProfessorsRepelAsk
 	yesorno
@@ -274,10 +330,19 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_ProfessorsRepelYes
 .ProfsRepelDone
 	waitbutton
+	writetext ElmsLabText_CandyJarAsk
+	yesorno 
+	iffalse .NoCandyjar
+	verbosegiveitem CANDY_JAR
+	sjump .CandyEvents
+.NoCandyjar
+	writetext ElmsLabText_CandyJarNo
+	waitbutton
 	writetext ElmsLabText_RareCandiesAsk
 	yesorno
-	iffalse .EndOptions
+	iffalse .Spinners
 	verbosegiveitem RARE_CANDY, 10
+.CandyEvents
 	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
 	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
 	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
@@ -289,24 +354,62 @@ ElmsLabExtraOptions:
 	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
 	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
 	writetext ElmsLabText_RareCandiesDone
-.EndOptions
+.Spinners
+	writetext ElmsLabText_SpinnersAsk
+	yesorno
+	iftrue .YesSpinners
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
+	loadmem wSpinnersOff, 0
+	writetext ElmsLabText_SpinnersNo
+	sjump .SpinnersDone
+.YesSpinners
+	setevent EVENT_REGULAR_BOARDER_DOUGLAS
+	clearevent EVENT_STATIC_BOARDER_DOUGLAS
+	loadmem wSpinnersOff, 1
+	writetext ElmsLabText_SpinnersYes
+.SpinnersDone
+	waitbutton
 	writetext ElmsLabText_OptionsDone
 	turnobject PLAYER, RIGHT
+.EndOptions
 	promptbutton
 	closetext
+.EndNoOptions
 	end
+	
+ElmsLabText_AskHelpfulItems:
+	text "Modify some ITEMS"
+	line "and add extra"
+	cont "helpful items?"
+	done
 
-ElmsLabText_AskOverworldChanges:
-	text "Modify OVERWORLD"
-	line "events like the"
-	cont "SPINNERS and"
-	cont "ITEMS?"
+ElmsLabText_AskAboutHelpfulNPCs:
+	text "Add helpful NPCs"
+	line "to the top floor"
+	cont "all #MON"
+	cont "CENTERS and a"
+	
+	para "MOVE REMINDER"
+	line "in BLACKTHORN"
+	cont "CITY?"
 	done
 	
 ElmsLabText_RareCandiesDone:
 	text "All the 10 RARE"
 	line "CANDIES have been"
 	cont "given to you."
+	done
+	
+ElmsLabText_CandyJarAsk:
+	text "Want to take a"
+	line "CANDY JAR for"
+	cont "your journey?"
+	done
+	
+ElmsLabText_CandyJarNo:
+	text "I'll hold on to"
+	line "this then."
 	done
 	
 ElmsLabText_RareCandiesAsk:
@@ -324,16 +427,62 @@ ElmsLabText_OptionsDone:
 	text "All options have"
 	line "now been set."
 	done
+
+ElmsLabText_ExtraOptionsGlobalAsk:
+	text "You are about to"
+	line "be asked to set"
+	cont "EXTRA OPTIONS for"
+	cont "your challenge."
+	
+	para "Declining here"
+	line "will leave this"
+	cont "whole menu."
+	
+	para "Set EXTRA OPTIONS"
+	line "for your game?"
+	done
 	
 ElmsLabText_AskExtraOptionsForYourMon:
 	text "Set EXTRA OPTIONS"
-	line "for your"
-	cont "#MON?"
+	line "for your #MON?"
 	done
 
 ElmsLabText_ProfessorsRepelAsk:
 	text "Borrow the"
 	line "PROF'S REPEL?"
+	done
+	
+ElmsLabText_HMItemsAsk:
+	text "Play with ITEMS"
+	line "that act like"
+	cont "HM Moves?"
+	done
+	
+ElmsLabText_HMItemsYes:
+	text "Throughout your"
+	line "adventure, you"
+	cont "will obtain the"
+	cont "HM ITEMS."
+	done
+	
+ElmsLabtext_LevelCapAsk:
+	text "Play with a"
+	line "hard-coded"
+	cont "LEVEL CAP?"
+	done
+
+ElmsLabText_LevelCapYes:
+	text "You will stop"
+	line "gaining EXP."
+	cont "once you reach"
+	cont "the next key"
+	cont "trainer's level."
+	done
+	
+ElmsLabtext_LevelCapNo:
+	text "Your #MON"
+	line "will gain EXP."
+	cont "as normal."
 	done
 	
 ElmsLabText_MetronomeOnlyAsk:
@@ -579,8 +728,6 @@ BinSkipItemRandomizer:
 	call RandomRange
 	cp ITEM_FA
 	jr z, BinSkipItemRandomizer
-	cp ITEM_9A
-	jr z, BinSkipItemRandomizer
 	cp ITEM_9B
 	jr z, BinSkipItemRandomizer
 	cp ITEM_A2
@@ -624,6 +771,20 @@ BinSkipRandomizer:
 
 ElmsLabWalkUpToElmScript:
 	loadmem wLevelCap, 100
+	setevent EVENT_RECEIVED_SCYTHE
+	setevent EVENT_RECEIVED_AIR_BALLOON
+	setevent EVENT_RECEIVED_RAFT
+	setevent EVENT_RECEIVED_BURLY_MAN
+	setevent EVENT_RECEIVED_LANTERN
+	setevent EVENT_RECEIVED_BATH_PLUG
+	setevent EVENT_RECEIVED_LADDER
+	setevent EVENT_RECEIVED_FART_JAR
+	setevent EVENT_RECEIVED_HONEY_JAR
+	setevent EVENT_RECEIVED_TREE_SHAKER
+	setevent EVENT_RECEIVED_BIG_HAMMER
+	setevent EVENT_RECEIVED_CANDY_JAR
+	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
@@ -1144,6 +1305,10 @@ AideScript_GiveYouBalls:
 	promptbutton
 	itemnotify
 	closetext
+	readmem wLevelCap
+	ifgreater 9, .skipLevelCap
+	loadmem wLevelCap, 9
+.skipLevelCap
 	setscene SCENE_ELMSLAB_NOOP
 	end
 
@@ -1370,6 +1535,8 @@ ElmsLabPC:
 ElmsLabRandomizeStarters:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
 	opentext
 	writetext ElmsLab_RandomizeStartersAsk
 	yesorno
@@ -2269,11 +2436,11 @@ ElmsLabText_AskAboutHMFriends:
 	done
 	
 ElmsLabText_AskAboutHMFriendsYes:
-	text "The first"
-	line "encounters will"
-	cont "be HM Friends"
-	cont "in ILEX FOREST"
-	cont "and ROUTE 34."
+	text "On ROUTES 33,"
+	line "34, and ILEX"
+	cont "FOREST, your"
+	cont "first encounters"
+	cont "will be fixed."
 	done
 	
 ElmsLabText_AskAboutHMFriendsNo:

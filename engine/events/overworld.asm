@@ -502,21 +502,20 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
-	call CheckEngineFlag
-	jr c, .quit
-
 	ld d, SURF
 	call CheckPartyMove
-	jr c, .raftcheck
-	
-.raftcheck
+	jr nc, .check_badge
 	ld a, RAFT
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .quit
+.check_badge
+	ld de, ENGINE_FOGBADGE
+	call CheckEngineFlag
+	jr c, .quit
 
+	
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .quit
@@ -1069,15 +1068,13 @@ BouldersMayMoveText:
 TryStrengthOW:
 	ld d, STRENGTH
 	call CheckPartyMove
-	jr c, .check_item
-	
-.check_item
+	jr nc, .check_badge
 	ld a, BURLY_MAN
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
 	jr nc, .nope
-
+.check_badge
 	ld de, ENGINE_PLAINBADGE
 	call CheckEngineFlag
 	jr c, .nope
@@ -1795,15 +1792,20 @@ GotOffBikeText:
 	text_end
 
 TryCutOW::
-	ld de, ENGINE_HIVEBADGE
-	call CheckEngineFlag
-	jr c, .cant_cut
-	
 	ld a, SCYTHE
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
-	jr nc, .cant_cut
+	jr c, .checkbadge
+		
+	ld d, CUT
+	call CheckPartyMove
+	jr c, .cant_cut
+
+.checkbadge
+	ld de, ENGINE_HIVEBADGE
+	call CheckEngineFlag
+	jr c, .cant_cut
 
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
