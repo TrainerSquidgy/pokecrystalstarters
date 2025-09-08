@@ -471,6 +471,7 @@ INCLUDE "engine/pokemon/bills_pc.asm"
 
 SECTION "bank39", ROMX
 
+INCLUDE "engine/menus/extra_options.asm"
 INCLUDE "engine/menus/options_menu.asm"
 INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/intro.asm"
