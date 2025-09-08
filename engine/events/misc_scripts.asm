@@ -16,6 +16,7 @@ FindItemInBallScript::
 	pause 60
 	itemnotify
 	closetext
+	callasm .CheckRareCandy
 	end
 
 .no_room
@@ -52,4 +53,14 @@ FindItemInBallScript::
 	ret nc
 	ld a, $1
 	ld [wScriptVar], a
+	ret
+
+
+.CheckRareCandy:
+	ld a, [wCurItem]
+	cp RARE_CANDY
+	ret nz
+	ld a, [wRareCandiesObtained]
+	inc a
+	ld [wRareCandiesObtained], a
 	ret
