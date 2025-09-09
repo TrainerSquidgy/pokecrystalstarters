@@ -155,7 +155,7 @@ ItemDescriptions:
 	dw BerserkGeneDesc
 	dw RareCandyDesc
 	dw EscapeRopeDesc
-	dw TeruSama20Desc
+	dw SunStoneDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -863,9 +863,6 @@ TeruSama18Desc:
 	db   "?@"
 
 TeruSama19Desc:
-	db   "?@"
-
-TeruSama20Desc:
 	db   "?@"
 
 SacredAshDesc:
