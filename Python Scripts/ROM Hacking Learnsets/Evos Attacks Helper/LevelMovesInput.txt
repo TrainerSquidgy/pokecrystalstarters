@@ -1,14 +1,15 @@
-Pokémon: Lechonk
+Pokémon: Staraptor
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Growl
+1: Quick Attack
+1: Wing Attack
+5: Quick Attack
+9: Wing Attack
+13: Double Team
+18: Endeavor
+23: Whirlwind
+28: Aerial Ace
+33: Take Down
+34: Close Combat
+41: Agility
+49: Brave Bird

@@ -3355,15 +3355,53 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
-	db 0 ; no more level-up moves
+StarlyEvosAttacks:
+	db EVOLVE_LEVEL, 14, STARAVIA
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 5, QUICK_ATTACK
+	db 9, WING_ATTACK
+	db 13, DOUBLE_TEAM
+	db 17, ENDEAVOR
+	db 21, WHIRLWIND
+	db 25, AERIAL_ACE
+	db 29, TAKE_DOWN
+	db 33, AGILITY
+	db 37, BRAVE_BIRD
+	db 0
+
+StaraviaEvosAttacks:
+	db EVOLVE_LEVEL, 34, STARAPTOR
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, QUICK_ATTACK
+	db 5, QUICK_ATTACK
+	db 9, WING_ATTACK
+	db 13, DOUBLE_TEAM
+	db 18, ENDEAVOR
+	db 23, WHIRLWIND
+	db 28, AERIAL_ACE
+	db 33, TAKE_DOWN
+	db 38, AGILITY
+	db 43, BRAVE_BIRD
+	db 0
+	
+StaraptorEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, QUICK_ATTACK
+	db 1, WING_ATTACK
+	db 5, QUICK_ATTACK
+	db 9, WING_ATTACK
+	db 13, DOUBLE_TEAM
+	db 18, ENDEAVOR
+	db 23, WHIRLWIND
+	db 28, AERIAL_ACE
+	db 33, TAKE_DOWN
+	db 34, CLOSE_COMBAT
+	db 41, AGILITY
+	db 49, BRAVE_BIRD
+	db 0

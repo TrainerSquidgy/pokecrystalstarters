@@ -2506,6 +2506,9 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+StaraviaGen1TMAttacks:
+StaraptorGen1TMAttacks:
+StarlyGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0

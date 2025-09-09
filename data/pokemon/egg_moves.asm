@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+StaraviaEggMoves:
+StaraptorEggMoves:
+StarlyEggMoves:
 NoEggMoves:
 	db -1 ; end

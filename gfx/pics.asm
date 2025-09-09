@@ -710,14 +710,12 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+StarlyFrontpic: INCBIN "gfx/pokemon/starly/front.animated.2bpp.lz"
+StarlyBackpic: INCBIN "gfx/pokemon/starly/back.2bpp.lz"
+StaraviaFrontpic: INCBIN "gfx/pokemon/staravia/front.animated.2bpp.lz"
+StaraviaBackpic: INCBIN "gfx/pokemon/staravia/back.2bpp.lz"
+StaraptorBackpic: INCBIN "gfx/pokemon/staraptor/back.2bpp.lz"
+StaraptorFrontpic: INCBIN "gfx/pokemon/staraptor/front.animated.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
