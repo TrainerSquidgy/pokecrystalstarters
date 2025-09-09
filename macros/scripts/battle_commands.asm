@@ -177,8 +177,7 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
-	command calmmind
-	command waterspout
+	command roost
 	command startweather
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
