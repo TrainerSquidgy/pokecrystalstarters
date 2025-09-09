@@ -1,14 +1,17 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Voctaria
+1: Sweet Kiss
+1: Lick
+1: Pound
+1: Powder Snow
+1: Ice Punch
+7: Lovely Kiss
+10: DoubleSlap
+16: Faint Attack
+19: Powder Snow
+25: Mean Look
+28: Body Slam
+37: Operatta
+43: Ice Beam
+52: Chilly Kiss
+58: Blizzard
+67: Hyper Beam

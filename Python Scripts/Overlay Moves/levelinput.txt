@@ -1,16 +1,17 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Voctaria
+1: Sweet Kiss
+1: Lick
+1: Pound
+1: Powder Snow
+1: Ice Punch
+7: Lovely Kiss
+10: DoubleSlap
+16: Faint Attack
+19: Powder Snow
+25: Mean Look
+28: Body Slam
+37: Operatta
+43: Ice Beam
+52: Chilly Kiss
+58: Blizzard
+67: Hyper Beam

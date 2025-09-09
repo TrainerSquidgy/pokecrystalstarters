@@ -1693,6 +1693,7 @@ ScytherEvosAttacks:
 	db 0 ; no more level-up moves
 
 JynxEvosAttacks:
+	db EVOLVE_ITEM, OPERIZER, VOCTARIA
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, LICK
@@ -3367,3 +3368,23 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+VoctariaEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SWEET_KISS
+	db 1, LICK
+	db 1, POUND
+	db 1, POWDER_SNOW
+	db 1, ICE_PUNCH
+	db 7, LOVELY_KISS
+	db 10, DOUBLESLAP
+	db 16, FAINT_ATTACK
+	db 19, POWDER_SNOW
+	db 25, MEAN_LOOK
+	db 28, BODY_SLAM
+	db 37, OPERATTA
+	db 43, ICE_BEAM
+	db 52, CHILLY_KISS
+	db 58, BLIZZARD
+	db 67, HYPER_BEAM
+	db 0
