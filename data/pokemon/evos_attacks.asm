@@ -3367,3 +3367,38 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+StuffulEvosAttacks:
+	db EVOLVE_LEVEL, 27, BEWEAR
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, LEER
+	db 5, BIDE
+	db 10, BABYDOLLEYES
+	db 14, BRUTAL_SWING
+	db 19, FLAIL
+	db 23, PAYBACK
+	db 28, TAKE_DOWN
+	db 32, HAMMER_ARM
+	db 37, THRASH
+	db 41, PAIN_SPLIT
+	db 46, DOUBLE_EDGE
+	db 50, SUPERPOWER
+	db 0
+	
+BewearEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, LEER
+	db 5, BIDE
+	db 10, BABYDOLLEYES
+	db 14, BRUTAL_SWING
+	db 19, FLAIL
+	db 23, PAYBACK
+	db 30, TAKE_DOWN
+	db 36, HAMMER_ARM
+	db 43, THRASH
+	db 49, PAIN_SPLIT
+	db 56, DOUBLE_EDGE
+	db 62, SUPERPOWER
+	db 0
