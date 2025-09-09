@@ -1,217 +1,146 @@
-Focus Punch
-Water Pulse
-Calm Mind
-Toxic
-Hidden Power
-Sunny Day
-Taunt
-Protect
-Rain Dance
-Frustration
-Return
-Dig
-Psychic
-Shadow Ball
-Brick Break
-Double Team
-Shock Wave
-Rock Tomb
-Aerial Ace
-Torment
-Facade
-Secret Power
-Rest
-Attract
-Thief
-Snatch
-Cut
-Flash
-Rock Smash
-Moonlight
-Psych Up
-Recover
-Body Slam
-Counter
-Double-Edge
-Dream Eater
-DynamicPunch
-Endure
-Fire Punch
-Fury Cutter
-Ice Punch
-Mega Kick
-Mega Punch
-Metronome
-Mimic
-Mud-Slap
-Nightmare
-Psych Up
-Seismic Toss
-Sleep Talk
-Snore
-Substitute
-Swagger
-ThunderPunch
-Leer
-Scratch
-Astonish
+Bubble
+Thunder Wave
+Supersonic
+Flail
+Water Gun
+Spark
 Confuse Ray
-Shadow Sneak
-Fake Out
-Disable
-Detect
-Night Shade
-Fury Swipes
-Knock Off
-Quash
-Shadow Claw
-Mean Look
-Power Gem
-Zen Headbutt
-Shadow Ball
-Foul Play
-Mega Punch
-Mega Kick
-Fire Punch
-Ice Punch
-Thunder Punch
-Dig
-Rest
-Thief
+Take Down
+Hydro Pump
+Curse
+Toxic
+Zap Cannon
+Hidden Power
 Snore
 Protect
-Icy Wind
-Attract
 Rain Dance
-Sunny Day
-Will-O-Wisp
-Facade
-Helping Hand
-Brick Break
-Imprison
-Rock Tomb
-Payback
-Fling
-Drain Punch
-Shadow Claw
-Wonder Room
-Low Sweep
-Round
-Hex
-Retaliate
-Snarl
-Body Slam
-Low Kick
-Psychic
-Metronome
-Substitute
 Endure
-Sleep Talk
-Encore
-Shadow Ball
-Taunt
-Trick
-Calm Mind
-Gyro Ball
-Poison Jab
-Dark Pulse
-Power Gem
-Nasty Plot
-Zen Headbutt
-Foul Play
-Ally Switch
-Dazzling Gleam
-Focus Punch
-Water Pulse
-Calm Mind
-Sunny Day
-Taunt
-Protect
-Rain Dance
-Dazzling Gleam
-Low Sweep
-Dig
-Psychic
-Shadow Ball
-Brick Break
+Frustration
+Thunder
+Return
 Double Team
-Shock Wave
-Rock Tomb
-Aerial Ace
-Torment
-Facade
+Swagger
+Sleep Talk
 Rest
 Attract
-Thief
-Fling
-Endure
-Drain Punch
-Will-O-Wisp
-Nasty Plot
-Shadow Claw
-Payback
+Surf
 Flash
-Gyro Ball
-Psych Up
-Snarl
-Dark Pulse
-Sleep Talk
-Poison Jab
-Dream Eater
-Swagger
-Substitute
-Cut
-Rock Smash
-Feint
-Flatter
-Metal Burst
-Recover
-Sucker Punch
-Torment
-Aerial Ace
-Captivate
-Confide
-Counter
-Cut
-Double Team
+Whirlpool
+Waterfall
+Ice Beam
+Thunderbolt
 Double-Edge
-Dream Eater
-Dynamic Punch
-Embargo
-Feint Attack
-Flash
-Focus Punch
-Foresight
-Frustration
-Fury Cutter
-Gravity
-Headbutt
-Hidden Power
-Hone Claws
-Incinerate
-Magic Coat
+Endure
 Mimic
-Moonlight
-Mud-Slap
-Natural Gift
-Nightmare
-Octazooka
-Ominous Wind
-Pain Split
-Power-Up Punch
-Psych Up
-Punishment
-Return
-Rock Smash
-Role Play
-Secret Power
-Seismic Toss
-Shock Wave
-Signal Beam
-Snatch
-Spite
+Snore
+Substitute
 Swagger
-Telekinesis
-Tickle
-Toxic
+Sleep Talk
+Thunder Wave
 Water Pulse
+Toxic
+Hail
+Hidden Power
+Ice Beam
+Blizzard
+Protect
+Rain Dance
+Frustration
+Thunderbolt
+Thunder
+Return
+Double Team
+Shock Wave
+Facade
+Secret Power
+Rest
+Attract
+Surf
+Flash
+Waterfall
+Dive
+Bubble
+Thunder Wave
+Supersonic
+Flail
+Water Gun
+Spark
+Confuse Ray
+Take Down
+Hydro Pump
+Charge
+Bubble
+Thunder Wave
+Supersonic
+Supersonic
+Flail
+Water Gun
+Spark
+Confuse Ray
+Take Down
+Hydro Pump
+Curse
+Toxic
+Zap Cannon
+Hidden Power
+Snore
+Hyper Beam
+Protect
+Rain Dance
+Endure
+Frustration
+Thunder
+Return
+Double Team
+Swagger
+Sleep Talk
+Rest
+Attract
+Surf
+Flash
+Whirlpool
+Waterfall
+Ice Beam
+Thunderbolt
+Bubble
+Thunder Wave
+Supersonic
+Supersonic
+Flail
+Water Gun
+Spark
+Confuse Ray
+Take Down
+Hydro Pump
+Charge
+Water Pulse
+Toxic
+Hail
+Hidden Power
+Ice Beam
+Blizzard
+Hyper Beam
+Protect
+Rain Dance
+Frustration
+Thunderbolt
+Thunder
+Return
+Double Team
+Shock Wave
+Facade
+Secret Power
+Rest
+Attract
+Surf
+Flash
+Waterfall
+Dive
+Double-Edge
+Endure
+Mimic
+Snore
+Substitute
+Swagger
+Sleep Talk
+Thunder Wave
