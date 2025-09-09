@@ -252,16 +252,22 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw OperattaDescription
+	dw ChillyKissDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+OperattaDescription:
+	db   "May cause the"
+	next "foe to sleep.@"
+
+ChillyKissDescription:
+	db "A kiss that can"
+	next "burn the foe.@"
+	
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
