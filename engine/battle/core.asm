@@ -3935,6 +3935,7 @@ TryToRunAwayFromBattle:
 InitBattleMon:
 	ld a, MON_SPECIES
 	call GetPartyParamLocation
+	
 	ld de, wBattleMonSpecies
 	ld bc, MON_OT_ID
 	call CopyBytes
@@ -5022,6 +5023,38 @@ LoadBattleMenu2:
 	ret
 
 BattleMenu_Pack:
+	ld a, [wMegaEvolutionEnabled]
+	and a
+	jr z, .skip_checking_mega
+	
+	ld a, [wBattleMonSpecies]
+	farcall CheckIfMonIsInMegaList
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wMegaEvolutionActive]
+	and a
+	jr z, .skip_checking_mega
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr nz, .skip_checking_mega
+	ld a, [wBattleMonItem]
+	cp MEGA_STONE
+	jr nz, .skip_checking_mega
+	
+	ld hl, BattleText_MegaEvolveAsk
+	call StdBattleTextbox
+	lb bc, 1, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	jr c, .skip_checking_mega
+	ld a, [wMenuCursorY]
+	cp $1 ; YES
+	jr nz, .skip_checking_mega
+	farcall MegaEvolvePokemon
+	jp BattleMenu
+	
+	
+.skip_checking_mega
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
@@ -5802,6 +5835,14 @@ MoveInfoBox:
 	ret
 
 CheckPlayerHasUsableMoves:
+	ld a, [wMetronomeOnly]
+	and a
+	jr z, .notMetronome
+	ld a, METRONOME
+	ld [wCurPlayerMove], a
+	xor a
+	ret
+.notMetronome
 	ld a, STRUGGLE
 	ld [wCurPlayerMove], a
 	ld a, [wPlayerDisableCount]
@@ -5904,6 +5945,12 @@ ParseEnemyAction:
 	jr .finish
 
 .continue
+	ld a, [wMetronomeOnly]
+	and a
+	jr z, .notMetronome
+	ld a, METRONOME
+	jp .finish
+.notMetronome
 	ld hl, wEnemyMonMoves
 	ld de, wEnemyMonPP
 	ld b, NUM_MOVES
@@ -6183,7 +6230,16 @@ LoadEnemyMon:
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_FORCESHINY
 	jr nz, .GenerateDVs
-
+	
+	ld a, 31
+	call RandomRange
+	and a
+	jr nz, .ShinyDVs
+	call Random
+	and a
+	jr z, .GenerateDVs
+	
+.ShinyDVs
 	ld b, ATKDEFDV_SHINY ; $ea
 	ld c, SPDSPCDV_SHINY ; $aa
 	jr .UpdateDVs
@@ -7133,6 +7189,17 @@ GiveExperiencePoints:
 	inc de
 	dec c
 	jr nz, .stat_exp_loop
+	pop bc
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
+	ld a, [hl]
+	cp b
+	pop bc
+	jp nc, .next_mon
+	push bc
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
@@ -7222,7 +7289,8 @@ GiveExperiencePoints:
 	ld [wCurSpecies], a
 	call GetBaseData
 	push bc
-	ld d, MAX_LEVEL
+	ld a, [wLevelCap]
+	ld d, a
 	callfar CalcExpAtLevel
 	pop bc
 	ld hl, MON_EXP + 2
@@ -7257,8 +7325,12 @@ GiveExperiencePoints:
 	pop bc
 	ld hl, MON_LEVEL
 	add hl, bc
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
 	ld a, [hl]
-	cp MAX_LEVEL
+	cp b
+	pop bc
 	jp nc, .next_mon
 	cp d
 	jp z, .next_mon
@@ -7342,6 +7414,11 @@ GiveExperiencePoints:
 	call ApplyStatLevelMultiplierOnAllStats
 	callfar ApplyStatusEffectOnPlayerStats
 	callfar BadgeStatBoosts
+	ld a, [wAlreadyMegaEvolved]
+	and a
+	jr z, .not_mega
+	farcall MegaEvolvePokemon
+.not_mega
 	callfar UpdatePlayerHUD
 	call EmptyBattleTextbox
 	call LoadTilemapToTempTilemap
@@ -7429,12 +7506,32 @@ GiveExperiencePoints:
 	ld a, [wBattleParticipantsNotFainted]
 	ld b, a
 	ld c, PARTY_LENGTH
-	ld d, 0
+	ld de, 0
 .count_loop
+	push bc
+	push de
+	ld a, e
+	ld hl, wPartyMon1Level
+	call GetPartyLocation
+	ld a, [wLevelCap]
+	ld b, a
+	ld a, [hl]
+	cp b
+	pop de
+	pop bc
+	jr c, .gains_exp
+	srl b
+	ld a, d
+	jr .no_exp
+.gains_exp
+	
 	xor a
 	srl b
 	adc d
 	ld d, a
+	
+.no_exp
+	inc e
 	dec c
 	jr nz, .count_loop
 	cp 2
@@ -7505,8 +7602,12 @@ AnimateExpBar:
 	cp [hl]
 	jp nz, .finish
 
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
 	ld a, [wBattleMonLevel]
-	cp MAX_LEVEL
+	cp b
+	pop bc
 	jp nc, .finish
 
 	ldh a, [hProduct + 3]
@@ -7543,7 +7644,8 @@ AnimateExpBar:
 	ld [hl], a
 
 .NoOverflow:
-	ld d, MAX_LEVEL
+	ld a, [wLevelCap]
+	ld d, a
 	callfar CalcExpAtLevel
 	ldh a, [hProduct + 1]
 	ld b, a
@@ -7578,8 +7680,12 @@ AnimateExpBar:
 	ld d, a
 
 .LoopLevels:
+	ld a, [wLevelCap]
+	push bc
+	ld b, a
 	ld a, e
-	cp MAX_LEVEL
+	cp b
+	pop bc
 	jr nc, .FinishExpBar
 	cp d
 	jr z, .FinishExpBar
@@ -8364,7 +8470,10 @@ ExitBattle:
 CleanUpBattleRAM:
 	call BattleEnd_HandleRoamMons
 	xor a
+	ld [wSetMegaEvolutionPicture], a
+	ld [wAlreadyMegaEvolved], a
 	ld [wLowHealthAlarm], a
+	ld [wHiddenPowerLoop], a
 	ld [wBattleMode], a
 	ld [wBattleType], a
 	ld [wAttackMissed], a
