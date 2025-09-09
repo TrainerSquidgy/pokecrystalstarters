@@ -214,6 +214,11 @@ BattleText_MonFainted:
 BattleText_UseNextMon:
 	text "Use next #MON?"
 	done
+	
+BattleText_MegaEvolveAsk:
+	text "MEGA EVOLVE"
+	line "your #MON?"
+	done
 
 UnusedRivalWinText: ; unreferenced
 	text "<RIVAL>: Yes!"
@@ -1143,4 +1148,9 @@ BattleText_TheSnowStopped:
 ItStartedToSnowText:
 	text "It started"
 	line "to snow!"
+	prompt
+
+MegaEvolvedText:
+	text "<USER>"
+	line "MEGA EVOLVED!"
 	prompt

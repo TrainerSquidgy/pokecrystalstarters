@@ -2117,3 +2117,4 @@ Snow:
 	doturn
 	startweather
 	endmove
+	
