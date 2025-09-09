@@ -1077,8 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1918,10 +1916,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5591,10 +5585,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -5603,10 +5593,7 @@ BattleCommand_Charge:
 	ld hl, .BattleLoweredHeadText
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6912,3 +6899,30 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_Payback:
+	call CheckOpponentWentFirst
+	ret z
+	ld a, d
+	add a
+	ld d, a
+	ret	
+	
+BattleCommand_HammerArm:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call BattleCommand_SwitchTurn
+	call BattleCommand_SpeedDown
+	call BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn
+
+BattleCommand_Superpower:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call BattleCommand_SwitchTurn
+	call BattleCommand_AttackDown
+	call BattleCommand_StatDownMessage
+	call BattleCommand_DefenseDown
+	call BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn

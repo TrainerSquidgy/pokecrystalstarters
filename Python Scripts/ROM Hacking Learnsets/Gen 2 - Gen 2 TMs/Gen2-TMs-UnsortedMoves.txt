@@ -1,4 +1,5 @@
 Tackle
+<<<<<<< Updated upstream
 Harden
 Confusion
 Rock Throw
@@ -12,10 +13,137 @@ Rock Slide
 SolarBeam
 Explosion
 Calm Mind
+=======
+Leer
+Bide
+Baby-Doll Eyes
+Brutal Swing
+Flail
+Payback
+Take Down
+Hammer Arm
+Thrash
+Pain Split
+Double-Edge
+Superpower
+Mega Punch
+Mega Kick
+Ice Punch
+Thunder Punch
+Rest
+Rock Slide
+Snore
+Protect
+Charm
+Attract
+Facade
+Brick Break
+Rock Tomb
+Payback
+Fling
+Low Sweep
+Round
+Bulldoze
+Brutal Swing
+Stomping Tantrum
+Swords Dance
+Earthquake
+Substitute
+Endure
+Sleep Talk
+Taunt
+Superpower
+Bulk Up
+Focus Blast
+Zen Headbutt
+Iron Head
+Work Up
+Aerial Ace
+Bide 
+Bind
+Confide
+Double Team
+Dual Chop
+Focus Punch
+Frustration 
+Hidden Power 
+Return 
+Roar
+Role Play
+Swagger
+>>>>>>> Stashed changes
 Toxic
-Hidden Power
-Sunny Day
+Wide Guard
+Aerial Ace
+Bide 
+Bind
+Confide
+Double Team
+Dual Chop
+Focus Punch
+Frustration 
+Hidden Power 
+Return 
+Roar
+Role Play
+Swagger
+Toxic
+Wide Guard
+Mega Punch
+Mega Kick
+Ice Punch
+Thunder Punch
+Rest
+Rock Slide
+Snore
+Protect
+Charm
+Attract
+Facade
+Brick Break
+Rock Tomb
+Payback
+Fling
+Low Sweep
+Round
+Bulldoze
+Brutal Swing
+Stomping Tantrum
+Swords Dance
+Earthquake
+Substitute
+Endure
+Sleep Talk
+Taunt
+Superpower
+Bulk Up
+Focus Blast
+Zen Headbutt
+Iron Head
+Work Up
+Headbutt
+Bind
+Tackle
+Leer
+Baby-Doll Eyes
+Payback
+Bind
+Brutal Swing
+Endure
+Strength
+Take Down
+Flail
+Hammer Arm
+Thrash
+Pain Split
+Double-Edge
+Superpower
+Mega Punch
+Mega Kick
+Ice Punch
+Thunder Punch
 Hyper Beam
+<<<<<<< Updated upstream
 Light Screen
 Protect
 Safeguard
@@ -76,3 +204,59 @@ Defense Curl
 Double-Edge
 Mimic
 Selfdestruct
+=======
+Giga Impact
+Rest
+Rock Slide
+Snore
+Protect
+Charm
+Attract
+Facade
+Revenge
+Brick Break
+Rock Tomb
+Payback
+Fling
+Drain Punch
+Shadow Claw
+Low Sweep
+Round
+Bulldoze
+Brutal Swing
+Stomping Tantrum
+Swords Dance
+Body Slam
+Low Kick
+Earthquake
+Substitute
+Reversal
+Endure
+Sleep Talk
+Taunt
+Superpower
+Dragon Claw
+Bulk Up
+Close Combat
+Focus Blast
+Zen Headbutt
+Iron Head
+Work Up
+Darkest Lariat
+High Horsepower
+Body Press
+Aerial Ace
+Bide 
+Confide
+Double Team
+Dual Chop
+Focus Punch
+Frustration 
+Hidden Power 
+Return 
+Roar
+Role Play
+Swagger
+Toxic
+Wide Guard
+>>>>>>> Stashed changes

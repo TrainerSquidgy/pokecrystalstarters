@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HammerArmDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw SuperpowerDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,17 +252,21 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw LeerDescription
+	dw BrutalSwingDescription
+	dw PaybackDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+BrutalSwingDescription:
+	db "Spins around to"
+	next "strike all foes.@"
+	
+PaybackDescription:
+	db  "Does more if"
+	next "hit first.@"
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +319,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+HammerArmDescription:
+	db   "Does damage but"
+	next "lowers SPEED.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -835,9 +839,9 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+SuperpowerDescription:
+	db   "Damages but drops"
+	next "physical stats.@"
 
 TransformDescription:
 	db   "The user assumes"
