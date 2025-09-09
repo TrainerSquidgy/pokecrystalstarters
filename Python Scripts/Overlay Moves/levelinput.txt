@@ -1,16 +1,15 @@
-Pokémon: Sableye
-1: Scratch
+Pokémon: Bewear
+Evo: Bind
+1: Tackle
 1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+5: Bide
+10: Baby-Doll Eyes
+14: Brutal Swing
+19: Flail
+23: Payback
+30: Take Down
+36: Hammer Arm
+43: Thrash
+49: Pain Split
+56: Double-Edge
+62: Superpower
