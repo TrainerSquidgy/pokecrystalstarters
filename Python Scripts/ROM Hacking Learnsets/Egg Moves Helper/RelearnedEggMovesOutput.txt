@@ -1,0 +1,6 @@
+LechonkRelearnedEggMoves:
+	db 0
+	db 1, BIDE
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 0

@@ -2120,7 +2120,6 @@ Psyshield:
 	psyshield
 	criticaltext
 	supereffectivetext
-; BUG: Moves that do damage and increase your stats do not increase stats after a KO (see docs/bugs_and_glitches.md)
 	checkfaint
 	buildopponentrage
 	defenseup
