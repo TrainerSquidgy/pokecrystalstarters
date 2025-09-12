@@ -77,8 +77,8 @@ ROMX $13
 	"bank13_2"
 ROMX $14
 	"bank14"
-	"Unused Egg Pic"
 ROMX $15
+	"Unused Egg Pic"
 	"Map Scripts 1"
 ROMX $16
 	"Map Scripts 2"
@@ -237,7 +237,6 @@ ROMX $5b
 	"bank5B"
 	"Pics 20"
 ROMX $5c
-	"mobile5C"
 	"Pics 21"
 ROMX $5d
 	"Crystal Phone Text 2"

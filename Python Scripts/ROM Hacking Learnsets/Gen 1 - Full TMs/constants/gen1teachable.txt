@@ -1,0 +1,55 @@
+1 - Mega Punch
+2 - Razor Wind
+3 - Swords Dance
+4 - Whirlwind
+5 - Mega Kick
+6 - Toxic
+7 - Horn Drill
+8 - Body Slam
+9 - Take Down
+10 - Double-Edge
+11 - Bubble Beam
+12 - Water Gun
+13 - Ice Beam
+14 - Blizzard
+15 - Hyper Beam
+16 - Pay Day
+17 - Submission
+18 - Counter
+19 - Seismic Toss
+20 - Rage
+21 - Mega Drain
+22 - Solar Beam
+23 - Dragon Rage
+24 - Thunderbolt
+25 - Thunder
+26 - Earthquake
+27 - Fissure
+28 - Dig
+29 - Psychic
+30 - Teleport
+31 - Mimic
+32 - Double Team
+33 - Reflect
+34 - Bide
+35 - Metronome
+36 - Self-Destruct
+37 - Egg Bomb
+38 - Fire Blast
+39 - Swift
+40 - Skull Bash
+41 - Soft-Boiled
+42 - Dream Eater
+43 - Sky Attack
+44 - Rest
+45 - Thunder Wave
+46 - Psywave
+47 - Explosion
+48 - Rock Slide
+49 - Tri Attack
+50 - Substitute
+51 - Cut
+52 - Fly
+53 - Surf
+54 - Strength
+55 - Flash
