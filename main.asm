@@ -170,9 +170,6 @@ INCLUDE "engine/battle/read_trainer_party.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
-
-
-SECTION "Effect Command Pointers", ROMX
 INCLUDE "data/battle/effect_command_pointers.asm"
 
 
@@ -242,7 +239,6 @@ INCLUDE "engine/movie/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
 INCLUDE "engine/events/poisonstep.asm"
 INCLUDE "engine/events/sweet_scent.asm"
-
 
 SECTION "bank14", ROMX
 
