@@ -76,7 +76,7 @@ SetStarter1::
 	and a
 	jr nz, .decrease
 	ld a, WYRDEER 
-
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -86,6 +86,7 @@ SetStarter1::
 	ld hl, wElmPokemon1
 	ld a, [hl]
 	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -199,7 +200,7 @@ SetStarter2::
 	and a
 	jr nz, .decrease
 	ld a, WYRDEER
-
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -209,6 +210,7 @@ SetStarter2::
 	ld hl, wElmPokemon2
 	ld a, [hl]
 	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -322,7 +324,7 @@ SetStarter3::
 	and a
 	jr nz, .decrease
 	ld a, WYRDEER
-
+;PYTHONBUFFER1
 .decrease
 	dec a
 	ld [hl], a
@@ -332,6 +334,7 @@ SetStarter3::
 	ld hl, wElmPokemon3
 	ld a, [hl]
 	cp 252
+;PYTHONBUFFER2
 	jr c, .increase
 	ld a, 0
 
@@ -622,6 +625,7 @@ PokemonStrings:
 	dw .Celebi
 	dw .StantlerH
 	dw .Wyrdeer
+;PYTHONBUFFER3
 	
 .Bulbasaur	db "BULBASAUR@@"
 .Ivysaur	db "IVYSAUR@@@@"
@@ -635,60 +639,60 @@ PokemonStrings:
 .Caterpie	db "CATERPIE@@@"
 .Metapod	db "METAPOD@@@@"
 .Butterfree	db "BUTTERFREE@"
-.Weedle	db "WEEDLE@@@@@"
-.Kakuna	db "KAKUNA@@@@@"
+.Weedle		db "WEEDLE@@@@@"
+.Kakuna		db "KAKUNA@@@@@"
 .Beedrill	db "BEEDRILL@@@"
-.Pidgey	db "PIDGEY@@@@@"
+.Pidgey		db "PIDGEY@@@@@"
 .Pidgeotto	db "PIDGEOTTO@@"
 .Pidgeot	db "PIDGEOT@@@@"
 .Rattata	db "RATTATA@@@@"
 .Raticate	db "RATICATE@@@"
 .Spearow	db "SPEAROW@@@@"
-.Fearow	db "FEAROW@@@@@"
-.Ekans	db "EKANS@@@@@@"
-.Arbok	db "ARBOK@@@@@@"
+.Fearow		db "FEAROW@@@@@"
+.Ekans		db "EKANS@@@@@@"
+.Arbok		db "ARBOK@@@@@@"
 .Pikachu	db "PIKACHU@@@@"
-.Raichu	db "RAICHU@@@@@"
+.Raichu		db "RAICHU@@@@@"
 .Sandshrew	db "SANDSHREW@@"
 .Sandslash	db "SANDSLASH@@"
-.NidoranF	db "NIDORAN♀@@@"
+.NidoranF	db "NIDORAN@F@@"
 .Nidorina	db "NIDORINA@@@"
 .Nidoqueen	db "NIDOQUEEN@@"
-.NidoranM	db "NIDORAN♂@@@"
+.NidoranM	db "NIDORAN@M@@"
 .Nidorino	db "NIDORINO@@@"
 .Nidoking	db "NIDOKING@@@"
 .Clefairy	db "CLEFAIRY@@@"
 .Clefable	db "CLEFABLE@@@"
-.Vulpix	db "VULPIX@@@@@"
+.Vulpix		db "VULPIX@@@@@"
 .Ninetales	db "NINETALES@@"
 .Jigglypuff	db "JIGGLYPUFF@"
 .Wigglytuff	db "WIGGLYTUFF@"
-.Zubat	db "ZUBAT@@@@@@"
-.Golbat	db "GOLBAT@@@@@"
-.Oddish	db "ODDISH@@@@@"
-.Gloom	db "GLOOM@@@@@@"
+.Zubat		db "ZUBAT@@@@@@"
+.Golbat		db "GOLBAT@@@@@"
+.Oddish		db "ODDISH@@@@@"
+.Gloom		db "GLOOM@@@@@@"
 .Vileplume	db "VILEPLUME@@"
-.Paras	db "PARAS@@@@@@"
+.Paras		db "PARAS@@@@@@"
 .Parasect	db "PARASECT@@@"
 .Venonat	db "VENONAT@@@@"
 .Venomoth	db "VENOMOTH@@@"
 .Diglett	db "DIGLETT@@@@"
 .Dugtrio	db "DUGTRIO@@@@"
-.Meowth	db "MEOWTH@@@@@"
+.Meowth		db "MEOWTH@@@@@"
 .Persian	db "PERSIAN@@@@"
 .Psyduck	db "PSYDUCK@@@@"
 .Golduck	db "GOLDUCK@@@@"
-.Mankey	db "MANKEY@@@@@"
+.Mankey		db "MANKEY@@@@@"
 .Primeape	db "PRIMEAPE@@@"
 .Growlithe	db "GROWLITHE@@"
 .Arcanine	db "ARCANINE@@@"
 .Poliwag	db "POLIWAG@@@@"
 .Poliwhirl	db "POLIWHIRL@@"
 .Poliwrath	db "POLIWRATH@@"
-.Abra	db "ABRA@@@@@@@"
+.Abra		db "ABRA@@@@@@@"
 .Kadabra	db "KADABRA@@@@"
 .Alakazam	db "ALAKAZAM@@@"
-.Machop	db "MACHOP@@@@@"
+.Machop		db "MACHOP@@@@@"
 .Machoke	db "MACHOKE@@@@"
 .Machamp	db "MACHAMP@@@@"
 .Bellsprout	db "BELLSPROUT@"
@@ -698,35 +702,35 @@ PokemonStrings:
 .Tentacruel	db "TENTACRUEL@"
 .Geodude	db "GEODUDE@@@@"
 .Graveler	db "GRAVELER@@@"
-.Golem	db "GOLEM@@@@@@"
-.Ponyta	db "PONYTA@@@@@"
+.Golem		db "GOLEM@@@@@@"
+.Ponyta		db "PONYTA@@@@@"
 .Rapidash	db "RAPIDASH@@@"
 .Slowpoke	db "SLOWPOKE@@@"
 .Slowbro	db "SLOWBRO@@@@"
 .Magnemite	db "MAGNEMITE@@"
 .Magneton	db "MAGNETON@@@"
 .Farfetchd	db "FARFETCH'D@"
-.Doduo	db "DODUO@@@@@@"
-.Dodrio	db "DODRIO@@@@@"
-.Seel	db "SEEL@@@@@@@"
+.Doduo		db "DODUO@@@@@@"
+.Dodrio		db "DODRIO@@@@@"
+.Seel		db "SEEL@@@@@@@"
 .Dewgong	db "DEWGONG@@@@"
-.Grimer	db "GRIMER@@@@@"
-.Muk	db "MUK@@@@@@@@"
+.Grimer		db "GRIMER@@@@@"
+.Muk		db "MUK@@@@@@@@"
 .Shellder	db "SHELLDER@@@"
 .Cloyster	db "CLOYSTER@@@"
-.Gastly	db "GASTLY@@@@@"
+.Gastly		db "GASTLY@@@@@"
 .Haunter	db "HAUNTER@@@@"
-.Gengar	db "GENGAR@@@@@"
-.Onix	db "ONIX@@@@@@@"
+.Gengar		db "GENGAR@@@@@"
+.Onix		db "ONIX@@@@@@@"
 .Drowzee	db "DROWZEE@@@@"
-.Hypno	db "HYPNO@@@@@@"
-.Krabby	db "KRABBY@@@@@"
+.Hypno		db "HYPNO@@@@@@"
+.Krabby		db "KRABBY@@@@@"
 .Kingler	db "KINGLER@@@@"
 .Voltorb	db "VOLTORB@@@@"
 .Electrode	db "ELECTRODE@@"
 .Exeggcute	db "EXEGGCUTE@@"
 .Exeggutor	db "EXEGGUTOR@@"
-.Cubone	db "CUBONE@@@@@"
+.Cubone		db "CUBONE@@@@@"
 .Marowak	db "MAROWAK@@@@"
 .Hitmonlee	db "HITMONLEE@@"
 .Hitmonchan	db "HITMONCHAN@"
@@ -734,46 +738,46 @@ PokemonStrings:
 .Koffing	db "KOFFING@@@@"
 .Weezing	db "WEEZING@@@@"
 .Rhyhorn	db "RHYHORN@@@@"
-.Rhydon	db "RHYDON@@@@@"
+.Rhydon		db "RHYDON@@@@@"
 .Chansey	db "CHANSEY@@@@"
 .Tangela	db "TANGELA@@@@"
 .Kangaskhan	db "KANGASKHAN@"
-.Horsea	db "HORSEA@@@@@"
-.Seadra	db "SEADRA@@@@@"
+.Horsea		db "HORSEA@@@@@"
+.Seadra		db "SEADRA@@@@@"
 .Goldeen	db "GOLDEEN@@@@"
 .Seaking	db "SEAKING@@@@"
-.Staryu	db "STARYU@@@@@"
+.Staryu		db "STARYU@@@@@"
 .Starmie	db "STARMIE@@@@"
-.MrMime	db "MR.MIME@@@@"
+.MrMime		db "MR.MIME@@@@"
 .Scyther	db "SCYTHER@@@@"
-.Jynx	db "JYNX@@@@@@@"
+.Jynx		db "JYNX@@@@@@@"
 .Electabuzz	db "ELECTABUZZ@"
-.Magmar	db "MAGMAR@@@@@"
-.Pinsir	db "PINSIR@@@@@"
-.Tauros	db "TAUROS@@@@@"
+.Magmar		db "MAGMAR@@@@@"
+.Pinsir		db "PINSIR@@@@@"
+.Tauros		db "TAUROS@@@@@"
 .Magikarp	db "MAGIKARP@@@"
 .Gyarados	db "GYARADOS@@@"
-.Lapras	db "LAPRAS@@@@@"
-.Ditto	db "DITTO@@@@@@"
-.Eevee	db "EEVEE@@@@@@"
+.Lapras		db "LAPRAS@@@@@"
+.Ditto		db "DITTO@@@@@@"
+.Eevee		db "EEVEE@@@@@@"
 .Vaporeon	db "VAPOREON@@@"
 .Jolteon	db "JOLTEON@@@@"
 .Flareon	db "FLAREON@@@@"
 .Porygon	db "PORYGON@@@@"
 .Omanyte	db "OMANYTE@@@@"
 .Omastar	db "OMASTAR@@@@"
-.Kabuto	db "KABUTO@@@@@"
+.Kabuto		db "KABUTO@@@@@"
 .Kabutops	db "KABUTOPS@@@"
 .Aerodactyl	db "AERODACTYL@"
 .Snorlax	db "SNORLAX@@@@"
 .Articuno	db "ARTICUNO@@@"
-.Zapdos	db "ZAPDOS@@@@@"
+.Zapdos		db "ZAPDOS@@@@@"
 .Moltres	db "MOLTRES@@@@"
 .Dratini	db "DRATINI@@@@"
 .Dragonair	db "DRAGONAIR@@"
 .Dragonite	db "DRAGONITE@@"
-.Mewtwo	db "MEWTWO@@@@@"
-.Mew	db "MEW@@@@@@@@"
+.Mewtwo		db "MEWTWO@@@@@"
+.Mew		db "MEW@@@@@@@@"
 .Chikorita	db "CHIKORITA@@"
 .Bayleef	db "BAYLEEF@@@@"
 .Meganium	db "MEGANIUM@@@"
@@ -784,65 +788,65 @@ PokemonStrings:
 .Croconaw	db "CROCONAW@@@"
 .Feraligatr	db "FERALIGATR@"
 .Sentret	db "SENTRET@@@@"
-.Furret	db "FURRET@@@@@"
+.Furret		db "FURRET@@@@@"
 .Hoothoot	db "HOOTHOOT@@@"
 .Noctowl	db "NOCTOWL@@@@"
-.Ledyba	db "LEDYBA@@@@@"
-.Ledian	db "LEDIAN@@@@@"
+.Ledyba		db "LEDYBA@@@@@"
+.Ledian		db "LEDIAN@@@@@"
 .Spinarak	db "SPINARAK@@@"
 .Ariados	db "ARIADOS@@@@"
-.Crobat	db "CROBAT@@@@@"
+.Crobat		db "CROBAT@@@@@"
 .Chinchou	db "CHINCHOU@@@"
 .Lanturn	db "LANTURN@@@@"
-.Pichu	db "PICHU@@@@@@"
-.Cleffa	db "CLEFFA@@@@@"
+.Pichu		db "PICHU@@@@@@"
+.Cleffa		db "CLEFFA@@@@@"
 .Igglybuff	db "IGGLYBUFF@@"
-.Togepi	db "TOGEPI@@@@@"
+.Togepi		db "TOGEPI@@@@@"
 .Togetic	db "TOGETIC@@@@"
-.Natu	db "NATU@@@@@@@"
-.Xatu	db "XATU@@@@@@@"
-.Mareep	db "MAREEP@@@@@"
+.Natu		db "NATU@@@@@@@"
+.Xatu		db "XATU@@@@@@@"
+.Mareep		db "MAREEP@@@@@"
 .Flaaffy	db "FLAAFFY@@@@"
 .Ampharos	db "AMPHAROS@@@"
 .Bellossom	db "BELLOSSOM@@"
-.Marill	db "MARILL@@@@@"
+.Marill		db "MARILL@@@@@"
 .Azumarill	db "AZUMARILL@@"
 .Sudowoodo	db "SUDOWOODO@@"
 .Politoed	db "POLITOED@@@"
-.Hoppip	db "HOPPIP@@@@@"
+.Hoppip		db "HOPPIP@@@@@"
 .Skiploom	db "SKIPLOOM@@@"
 .Jumpluff	db "JUMPLUFF@@@"
-.Aipom	db "AIPOM@@@@@@"
+.Aipom		db "AIPOM@@@@@@"
 .Sunkern	db "SUNKERN@@@@"
 .Sunflora	db "SUNFLORA@@@"
-.Yanma	db "YANMA@@@@@@"
-.Wooper	db "WOOPER@@@@@"
+.Yanma		db "YANMA@@@@@@"
+.Wooper		db "WOOPER@@@@@"
 .Quagsire	db "QUAGSIRE@@@"
-.Espeon	db "ESPEON@@@@@"
+.Espeon		db "ESPEON@@@@@"
 .Umbreon	db "UMBREON@@@@"
 .Murkrow	db "MURKROW@@@@"
 .Slowking	db "SLOWKING@@@"
 .Misdreavus	db "MISDREAVUS@"
-.Unown	db "UNOWN@@@@@@"
+.Unown		db "UNOWN@@@@@@"
 .Wobbuffet	db "WOBBUFFET@@"
 .Girafarig	db "GIRAFARIG@@"
-.Pineco	db "PINECO@@@@@"
+.Pineco		db "PINECO@@@@@"
 .Forretress	db "FORRETRESS@"
 .Dunsparce	db "DUNSPARCE@@"
-.Gligar	db "GLIGAR@@@@@"
+.Gligar		db "GLIGAR@@@@@"
 .Steelix	db "STEELIX@@@@"
 .Snubbull	db "SNUBBULL@@@"
 .Granbull	db "GRANBULL@@@"
 .Qwilfish	db "QWILFISH@@@"
-.Scizor	db "SCIZOR@@@@@"
+.Scizor		db "SCIZOR@@@@@"
 .Shuckle	db "SHUCKLE@@@@"
 .Heracross	db "HERACROSS@@"
 .Sneasel	db "SNEASEL@@@@"
 .Teddiursa	db "TEDDIURSA@@"
 .Ursaring	db "URSARING@@@"
-.Slugma	db "SLUGMA@@@@@"
+.Slugma		db "SLUGMA@@@@@"
 .Magcargo	db "MAGCARGO@@@"
-.Swinub	db "SWINUB@@@@@"
+.Swinub		db "SWINUB@@@@@"
 .Piloswine	db "PILOSWINE@@"
 .Corsola	db "CORSOLA@@@@"
 .Remoraid	db "REMORAID@@@"
@@ -853,7 +857,7 @@ PokemonStrings:
 .Houndour	db "HOUNDOUR@@@"
 .Houndoom	db "HOUNDOOM@@@"
 .Kingdra	db "KINGDRA@@@@"
-.Phanpy	db "PHANPY@@@@@"
+.Phanpy		db "PHANPY@@@@@"
 .Donphan	db "DONPHAN@@@@"
 .Porygon2	db "PORYGON2@@@"
 .Stantler	db "STANTLER@@@"
@@ -861,21 +865,22 @@ PokemonStrings:
 .Tyrogue	db "TYROGUE@@@@"
 .Hitmontop	db "HITMONTOP@@"
 .Smoochum	db "SMOOCHUM@@@"
-.Elekid	db "ELEKID@@@@@"
-.Magby	db "MAGBY@@@@@@"
+.Elekid		db "ELEKID@@@@@"
+.Magby		db "MAGBY@@@@@@"
 .Miltank	db "MILTANK@@@@"
 .Blissey	db "BLISSEY@@@@"
-.Raikou	db "RAIKOU@@@@@"
-.Entei	db "ENTEI@@@@@@"
+.Raikou		db "RAIKOU@@@@@"
+.Entei		db "ENTEI@@@@@@"
 .Suicune	db "SUICUNE@@@@"
 .Larvitar	db "LARVITAR@@@"
 .Pupitar	db "PUPITAR@@@@"
 .Tyranitar	db "TYRANITAR@@"
-.Lugia	db "LUGIA@@@@@@"
-.Hooh	db "HO-OH@@@@@@"
-.Celebi	db "CELEBI@@@@@"
-.StantlerH	db "STANTLER@@@"
+.Lugia		db "LUGIA@@@@@@"
+.Hooh		db "HO-OH@@@@@@"
+.Celebi		db "CELEBI@@@@@"
+.StantlerH  db "STANTLER@@@"
 .Wyrdeer	db "WYRDEER@@@@"
+;PYTHONBUFFER4
 
 
 WhichPokemonInBall1Text:
@@ -892,6 +897,10 @@ WhichPokemonInBall3Text:
 	
 WhatHiddenPowerTypeText:
 	text_far _WhatHiddenPowerTypeText
+	text_end
+
+ModifyHiddenPowerTypeText:
+	text_far _ModifyHiddenPowerTypeText
 	text_end
 	
 
@@ -1135,3 +1144,156 @@ TypeTextStrings:
 	.Poison   db "POISON@@@"
 	.Flying   db "FLYING@@@"
 	.Fighting db "FIGHTING@"
+	
+AlteredHiddenPower::
+	ld a, 1
+	ld [wIsAStarter], a
+	ldh a, [hInMenu]
+	push af
+	ld a, $1
+	ldh [hInMenu], a
+	ld de, TimeSetUpArrowGFX
+	ld hl, vTiles0 tile TIMESET_UP_ARROW
+	lb bc, BANK(TimeSetUpArrowGFX), 1
+	call Request1bpp
+	ld de, TimeSetDownArrowGFX
+	ld hl, vTiles0 tile TIMESET_DOWN_ARROW
+	lb bc, BANK(TimeSetDownArrowGFX), 1
+	call Request1bpp
+	xor a
+	ld [wAlteredHiddenPowerDVs], a
+.loop
+	hlcoord 0, 12
+	lb bc, 4, 2
+	call Textbox
+	call LoadStandardMenuHeader
+	ld hl, ModifyHiddenPowerTypeText
+	call PrintText
+	hlcoord 6, 3
+	ld b, 2
+	ld c, 12
+	call Textbox
+	hlcoord 13, 3
+	ld [hl], TIMESET_UP_ARROW
+	hlcoord 11, 6
+	ld [hl], TIMESET_DOWN_ARROW
+	hlcoord 7, 5
+	call AlteredHiddenPowerStrings
+	call ApplyTilemap
+	ld c, 10
+	call DelayFrames
+.loop2
+	call JoyTextDelay
+	call .GetJoypadAction
+	jr nc, .loop2
+	call ExitMenu
+	call UpdateSprites
+	ld hl, ConfirmPokemonText
+	call PrintText
+	call YesNoBox
+	jr c, .loop
+	ld a, [wAlteredHiddenPowerDVs]
+	inc a
+	ld [wStringBuffer2], a
+	call LoadStandardFont
+	pop af
+	ldh [hInMenu], a
+	ret
+
+.GetJoypadAction:
+	ldh a, [hJoyPressed]
+	and A_BUTTON
+	jr z, .not_A
+	scf
+	ret
+
+.not_A
+	ld hl, hJoyLast
+	ld a, [hl]
+	and D_UP
+	jr nz, .d_up
+	ld a, [hl]
+	and D_DOWN
+	jr nz, .d_down
+	call DelayFrame
+	and a
+	ret
+
+.d_down
+	ld hl, wAlteredHiddenPowerDVs
+	ld a, [hl]
+	and a
+	jr nz, .decrease
+	ld a, 3 + 1
+
+.decrease
+	dec a
+	ld [hl], a
+	jr .finish_dpad
+
+.d_up
+	ld hl, wAlteredHiddenPowerDVs
+	ld a, [hl]
+	cp 3
+	jr c, .increase
+	ld a, 0 - 1
+
+.increase
+	inc a
+	ld [hl], a
+
+.finish_dpad
+	xor a
+	ldh [hBGMapMode], a
+	hlcoord 7, 4
+	ld b, 2
+	ld c, 11
+	call ClearBox
+	hlcoord 7, 5
+	call .PlaceTypeStrings
+	call WaitBGMap
+	and a
+	ret
+
+.PlaceTypeStrings
+	push hl
+	ld a, [wAlteredHiddenPowerDVs]
+	ld e, a
+	ld d, 0
+	ld hl, AlteredHiddenPowerTextStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+
+
+AlteredHiddenPowerStrings:
+	push hl
+	ld a, [wAlteredHiddenPowerDVs]
+	ld e, a
+	ld d, 0
+	ld hl, AlteredHiddenPowerTextStrings
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+	
+AlteredHiddenPowerTextStrings:
+; entries correspond to Pokemon constants
+	dw .Max
+	dw .SeventyFive
+	dw .Fifty
+	dw .TwentyFive
+		
+	.Max     		db "TOP@@@@@@@@"
+	.SeventyFive	db "HI-MIDDLE@@"
+	.Fifty     		db "LO-MIDDLE@@"
+	.TwentyFive		db "BOTTOM@@@@@"
