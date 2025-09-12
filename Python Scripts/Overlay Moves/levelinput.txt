@@ -1,16 +1,18 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Dudunsparce
+1: Rage
+1: Defense Curl
+4: Mud-Slap
+8: Rollout
+12: Glare
+16: Screech
+20: AncientPower
+24: Drill Run
+28: Yawn
+32: Hyper Drill
+36: Roost
+40: Dragon Rush
+44: Coil
+48: Double-Edge
+52: Endeavor
+56: Hurricane
+62: Boomburst
