@@ -47,8 +47,3 @@ WiltonWantThisScript:
 	farwritetext WiltonWantThisText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
-
-ArnieComePickUpScript:
-	farwritetext ArnieComePickUpText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male

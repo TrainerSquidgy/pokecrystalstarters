@@ -1990,7 +1990,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, WING_ATTACK
+	db 73, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2663,7 +2663,7 @@ EspeonEvosAttacks:
 	db 36, PSYBEAM
 	db 42, PSYCH_UP
 	db 47, PSYCHIC_M
-	db 52, RECOVER
+	db 52, MORNING_SUN
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -2711,7 +2711,7 @@ MisdreavusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
-	db 36, CURSE
+	db 36, PAIN_SPLIT
 	db 46, PERISH_SONG
 	db 0 ; no more level-up moves
 
@@ -3329,7 +3329,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WING_ATTACK
+	db 1, AEROBLAST
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3343,7 +3343,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FLAMETHROWER
+	db 1, SACRED_FIRE
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3367,32 +3367,3 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
-
-MinccinoEvosAttacks:
-	db EVOLVE_ITEM, SHINY_STONE, CINCCINO
-	db 0 ; No More Evolutions
-	db 1, POUND
-	db 4, GROWL
-	db 8, TICKLE
-	db 11, DOUBLESLAP
-	db 15, ENCORE
-	db 18, SWIFT
-	db 22, SING
-	db 25, TAIL_SLAP
-	db 29, CHARM
-	db 32, WAKE_UP_SLAP
-	db 36, ECHOED_VOICE
-	db 39, SLAM
-	db 43, CAPTIVATE
-	db 46, HYPER_VOICE
-	db 49, LAST_RESORT
-	db 0
-	
-CinccinoEvosAttacks:
-	db 0 ; No More Evolutions
-	db 1, BULLET_SEED
-	db 1, ROCK_BLAST
-	db 1, TICKLE
-	db 1, SING
-	db 1, TAIL_SLAP
-	db 0

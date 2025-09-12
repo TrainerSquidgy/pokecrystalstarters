@@ -3196,14 +3196,7 @@ wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
 wIsAStream:: db
-wPlayerEchoedVoiceCount:: db
-wEnemyEchoedVoiceCount:: db
-wPlayerNumMoves:: db
-wEnemyNumMoves:: db
-wEnemyUsedMoves::
-	ds NUM_MOVES
-	
-	ds 49
+	ds 56
 
 wEventFlags:: flag_array NUM_EVENTS
 

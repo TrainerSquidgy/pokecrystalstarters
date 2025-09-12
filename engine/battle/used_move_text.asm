@@ -9,20 +9,11 @@ UsedMoveText:
 
 	ldh a, [hBattleTurn]
 	and a
-	jr nz, .enemy
-	
-	ld a, NUM_MOVES
-	ld [wPlayerNumMoves], a
+	jr nz, .start
+
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	call PlayerUpdateUsedMoves
-	
-	jr .start
-	
-.enemy
-	ld a, NUM_MOVES
-	ld [wEnemyNumMoves], a
-	ld a, [wEnemyMoveStruct + MOVE_ANIM]
-	call EnemyUpdateUsedMoves
+	call UpdateUsedMoves
+
 .start
 	ld a, BATTLE_VARS_LAST_MOVE
 	call GetBattleVarAddr
@@ -177,15 +168,10 @@ GetMoveGrammar:
 	pop bc
 	ret
 
-INCLUDE "data/moves/grammar.asm" 
+INCLUDE "data/moves/grammar.asm"
 
-PlayerUpdateUsedMoves:
+UpdateUsedMoves:
 ; append move a to wPlayerUsedMoves unless it has already been used
-	cp LAST_RESORT
-	jr nz, .keep_checking
-	ld [wPlayerUsedMoves + 3], a
-	ret
-.keep_checking
 
 	push bc
 ; start of list
@@ -226,66 +212,6 @@ PlayerUpdateUsedMoves:
 ; 4 = new move
 	ld a, b
 	ld [wPlayerUsedMoves + 3], a
-	jr .quit
-
-.add
-; go back to the byte we just inced from
-	dec hl
-; add the new move
-	ld [hl], b
-
-.quit
-; list updated
-	pop bc
-	ret
-
-EnemyUpdateUsedMoves:
-; append move a to wEnemyUsedMoves unless it has already been used
-
-	cp LAST_RESORT
-	jr nz, .keep_checking
-	ld [wEnemyUsedMoves + 3], a
-	ret
-.keep_checking
-	push bc
-; start of list
-	ld hl, wEnemyUsedMoves
-; get move id
-	ld b, a
-; next count
-	ld c, NUM_MOVES
-
-.loop
-; get move from the list
-	ld a, [hli]
-; not used yet?
-	and a
-	jr z, .add
-; already used?
-	cp b
-	jr z, .quit
-; next byte
-	dec c
-	jr nz, .loop
-
-; if the list is full and the move hasn't already been used
-; shift the list back one byte, deleting the first move used
-; this can occur with struggle or a new learned move
-	ld hl, wEnemyUsedMoves + 1
-; 1 = 2
-	ld a, [hld]
-	ld [hli], a
-; 2 = 3
-	inc hl
-	ld a, [hld]
-	ld [hli], a
-; 3 = 4
-	inc hl
-	ld a, [hld]
-	ld [hl], a
-; 4 = new move
-	ld a, b
-	ld [wEnemyUsedMoves + 3], a
 	jr .quit
 
 .add

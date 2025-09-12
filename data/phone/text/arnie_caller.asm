@@ -104,30 +104,3 @@ ArnieHurryText:
 	para "Get down to ROUTE"
 	line "35 right now!"
 	done
-
-ArnieComePickUpText:
-	text "I really want you"
-	line "to have this"
-
-	para "stone I was"
-	line "given!"
-
-	para "Hurry over to"
-	line "@"
-	text_ram wStringBuffer5
-	text "!"
-	done
-
-ArnieFoundItemText:
-	text "My friend went to"
-	line "the ICE PATH and"
-
-	para "found something"
-	line "really cool!"
-
-	para "I want you to"
-	line "have it!"
-
-	para "Come on over"
-	line "to ROUTE 35!"
-	done

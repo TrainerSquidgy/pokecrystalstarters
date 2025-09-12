@@ -178,10 +178,6 @@ ENDM
 	command startloop               ; ae
 	command curl                    ; af
 	command startweather
-	command tickle
-	command wakeupslap
-	command echoedvoice
-	command lastresort
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

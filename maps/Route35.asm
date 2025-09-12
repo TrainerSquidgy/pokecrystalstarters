@@ -135,8 +135,6 @@ TrainerBugCatcherArnie:
 	opentext
 	checkflag ENGINE_ARNIE_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkflag ENGINE_ARNIE_HAS_SHINY_STONE
-	iftrue .IceStone
 	checkflag ENGINE_YANMA_SWARM
 	iftrue .YanmaSwarming
 	checkcellnum PHONE_BUG_CATCHER_ARNIE
@@ -218,36 +216,12 @@ TrainerBugCatcherArnie:
 	reloadmapafterbattle
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
-	
-.IceStone:
-	scall .Gift
-	verbosegiveitem SHINY_STONE
-	iffalse .BagFull
-	clearflag ENGINE_ARNIE_HAS_SHINY_STONE
-	setevent EVENT_ARNIE_GAVE_SHINY_STONE
-	sjump .NumberAccepted
-	
-.BagFull:
-	sjump .PackFull
-
-.NumberAccepted:
-	jumpstd NumberAcceptedMScript
-	end
 
 .YanmaSwarming:
 	writetext BugCatcherArnieYanmaText
 	waitbutton
 	closetext
 	end
-	
-.Gift:
-	jumpstd GiftMScript
-	end
-
-.PackFull:
-	jumpstd PackFullMScript
-	end
-
 
 TrainerFirebreatherWalt:
 	trainer FIREBREATHER, WALT, EVENT_BEAT_FIREBREATHER_WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, .Script

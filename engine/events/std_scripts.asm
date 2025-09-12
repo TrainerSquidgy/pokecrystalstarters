@@ -1280,7 +1280,6 @@ GiftMScript:
 	ifequal PHONE_FISHER_TULLY, .Tully
 	ifequal PHONE_FISHER_WILTON, .Wilton
 	ifequal PHONE_BLACKBELT_KENJI, .Kenji
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
 
 .Jose:
 	farwritetext JoseGiftText
@@ -1308,10 +1307,6 @@ GiftMScript:
 	end
 .Kenji:
 	farwritetext KenjiGiftText
-	promptbutton
-	end
-.Arnie:
-	farwritetext ArnieGiftText
 	promptbutton
 	end
 

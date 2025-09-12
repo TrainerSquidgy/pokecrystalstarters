@@ -161,8 +161,4 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
-	dw Tickle
-	dw WakeUpSlap
-	dw EchoedVoice
-	dw LastResort
 	assert_table_length NUM_MOVE_EFFECTS

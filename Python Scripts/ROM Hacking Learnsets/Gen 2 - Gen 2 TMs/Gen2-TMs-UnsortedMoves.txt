@@ -1,9 +1,16 @@
-Bullet Seed
-Rock Blast
-Helping Hand
-Tickle
-Sing
-Tail Slap
+Tackle
+Harden
+Confusion
+Rock Throw
+Fire Spin
+Rock Polish
+Psywave
+Embargo
+Cosmic Power
+Heal Block
+Rock Slide
+SolarBeam
+Explosion
 Calm Mind
 Toxic
 Hidden Power
@@ -11,259 +18,61 @@ Sunny Day
 Hyper Beam
 Light Screen
 Protect
-Rain Dance
 Safeguard
 Frustration
-Thunderbolt
-Thunder
+SolarBeam
+Earthquake
 Return
-Dig
+Psychic
+Shadow Ball
 Double Team
+Reflect
+Flamethrower
+Sandstorm
+Fire Blast
+Rock Tomb
 Facade
-Rest
-Attract
-Thief
-Round
-Echoed Voice
-Focus Blast
-Fling
-Retaliate
-Giga Impact
-Thunder Wave
-Work Up
-Grass Knot
-Swagger
-U-turn
-Substitute
-After You
-Aqua Tail
-Covet
-Gunk Shot
-Helping Hand
-Hyper Voice
-Iron Tail
-Knock Off
-Last Resort
-Seed Bomb
-Sleep Talk
-Snore
-Uproar
-Captivate
-Confide
-Covet
-Double Slap
-Double Team
-Frustration
-Growl
-Hidden Power
-Laser Focus
-Mud-Slap
-Return
 Secret Power
-Shock Wave
-Swagger
-Toxic
-Wake-Up Slap
-Hyper Beam
+Rest
+Skill Swap
+Overheat
+Charge Beam
+Endure
+Will-O-Wisp
+Embargo
+Explosion
+Recycle
 Giga Impact
-Thunder Wave
-Dig
-Light Screen
-Safeguard
-Rest
-Thief
-Snore
-Protect
-Charm
-Attract
-Rain Dance
-Sunny Day
-Facade
-Swift
-Helping Hand
-Fake Tears
-Bullet Seed
-Rock Blast
-U-turn
-Fling
-Round
-Retaliate
-Tail Slap
-Thunderbolt
-Thunder
-Substitute
-Endure
+Rock Polish
+Flash
+Stone Edge
+Gyro Ball
+Stealth Rock
+Psych Up
+Rock Slide
 Sleep Talk
-Encore
-Iron Tail
-Uproar
-Hyper Voice
-Calm Mind
-Seed Bomb
-Focus Blast
-Gunk Shot
-Grass Knot
-Work Up
-Play Rough
-Dazzling Gleam
-Headbutt
-Pound
-Growl
-Tickle
-DoubleSlap
-Encore
-Swift
-Sing
-Tail Slap
-Charm
-Wake-Up Slap
-Echoed Voice
-Slam
-Captivate
-Hyper Voice
-Last Resort
-Calm Mind
-Toxic
-Hidden Power
-Sunny Day
-Protect
-Rain Dance
-Safeguard
-Frustration
-Thunderbolt
-Return
-Dig
-Double Team
-Facade
-Rest
-Attract
-Thief
-Round
-Echoed Voice
-Fling
-Retaliate
-Thunder Wave
-Work Up
+Natural Gift
+Dream Eater
 Grass Knot
 Swagger
-U-turn
 Substitute
-Aqua Tail
-Endure
-Fake Tears
-Flail
-Iron Tail
-Knock Off
-Mud-Slap
-Sleep Talk
-Tail Whip
-After You
-Aqua Tail
-Covet
-Gunk Shot
+Trick Room
+AncientPower
+Earth Power
+Gravity
 Helping Hand
-Hyper Voice
-Iron Tail
-Knock Off
-Last Resort
-Seed Bomb
-Sleep Talk
+Iron Defense
+Iron Head
+Magic Coat
+Pain Split
+Rollout
+Signal Beam
 Snore
-Uproar
-Thunder Wave
-Dig
-Safeguard
-Rest
-Thief
-Snore
-Protect
-Charm
-Attract
-Rain Dance
-Sunny Day
-Facade
 Swift
-Helping Hand
-Fake Tears
-U-turn
-Fling
-Round
-Retaliate
-Tail Slap
-Thunderbolt
-Substitute
-Endure
-Sleep Talk
-Encore
-Iron Tail
-Uproar
-Hyper Voice
-Calm Mind
-Seed Bomb
-Gunk Shot
-Grass Knot
-Work Up
-Play Rough
-Dazzling Gleam
-Captivate
-Confide
-Covet
-Double Slap
-Double Team
-Frustration
-Growl
-Hidden Power
-Mud-Slap
-Return
-Secret Power
-Shock Wave
-Swagger
-Toxic
-Wake-Up Slap
-Take Down
-Charm
-Fake Tears
-Mud-Slap
-Protect
-Thief
-Trailblaze
-Chilling Water
-Facade
-Swift
-Fling
-Endure
-Sunny Day
-Rain Dance
-Dig
-Bullet Seed
-U-turn
-Sleep Talk
-Seed Bomb
-Light Screen
-Rock Blast
-Dazzling Gleam
-Grass Knot
-Thunder Wave
-Rest
-Gunk Shot
-Substitute
-Hyper Voice
-Encore
-Ice Spinner
-Thunderbolt
-Play Rough
-Calm Mind
-Helping Hand
+Zen Headbutt
 Baton Pass
-Giga Impact
-Focus Blast
-Hyper Beam
-Thunder
-Tera Blast
-Knock Off
-Super Fang
-Uproar
+Body Slam
+Defense Curl
 Double-Edge
-Endeavor
-Triple Axel
-Alluring Voice
+Mimic
+Selfdestruct

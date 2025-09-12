@@ -902,11 +902,6 @@ PhoneScript_FoundItem_Male:
 	ifequal PHONE_POKEFANM_DEREK, .Derek
 	ifequal PHONE_FISHER_TULLY, .Tully
 	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-
-.Arnie:
-	farwritetext ArnieFoundItemText
-	end
 
 .Jose:
 	farwritetext JoseFoundItemText
