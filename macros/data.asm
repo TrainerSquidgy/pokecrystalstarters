@@ -99,3 +99,19 @@ MACRO sine_table
 		dw sin(x * 0.5 / (\1))
 	endr
 ENDM
+
+MACRO genders
+; eight arguments, all MALE ($00) or FEMALE ($80)
+; TODO: get bitfield genders to work
+;x = 0
+;rept 8
+;x = x << 1
+;x = x + (\1 >> 7)
+;	shift
+;endr
+;	db x
+rept 8
+	db \1
+	shift
+endr
+ENDM

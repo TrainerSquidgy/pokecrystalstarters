@@ -427,6 +427,7 @@ StatsScreen_InitUpperHalf:
 	inc hl
 	hlcoord 10, 0
 	call GetPokemonNumber
+	call PlaceString
 	hlcoord 4, 8
 	call PlaceString
 	hlcoord 14, 0

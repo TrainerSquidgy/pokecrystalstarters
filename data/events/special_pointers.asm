@@ -184,6 +184,8 @@ SpecialsPointers::
 	add_special SetStarter3
 	add_special SetHiddenPower
 	add_special HandleStarterOffset
+	add_special AlteredHiddenPower
+	add_special WonderTrade
 
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag

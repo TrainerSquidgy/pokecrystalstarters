@@ -27,7 +27,13 @@ MahoganyMart1FStaircaseCallback:
 
 .ShowStairs:
 	changeblock 6, 2, $1e ; stairs
+	checkevent EVENT_CLEARED_RADIO_TOWER
+	iftrue .ShowDoubleStairs
 	endcallback
+
+.ShowDoubleStairs
+	changeblock 6, 6, $3a ; stairs
+	endcallback 
 
 MahoganyMart1FPharmacistScript:
 	faceplayer
@@ -225,6 +231,7 @@ MahoganyMart1F_MapEvents:
 	warp_event  3,  7, MAHOGANY_TOWN, 1
 	warp_event  4,  7, MAHOGANY_TOWN, 1
 	warp_event  7,  3, TEAM_ROCKET_BASE_B1F, 1
+	warp_event  7,  6, MAHOGANY_TM_SHOP, 1
 
 	def_coord_events
 
