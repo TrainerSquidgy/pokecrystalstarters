@@ -2093,3 +2093,39 @@ Snow:
 	startweather
 	endmove
 	
+Yawn:
+	checkobedience
+	usedmovetext
+	doturn
+	yawn
+	endmove
+
+Roost:
+	checkobedience
+	usedmovetext
+	doturn
+	roost
+	heal
+	endmove
+	
+Coil:
+	checkobedience
+	usedmovetext
+	doturn
+	coil
+	endmove
+	
+Endeavor:
+	checkobedience
+	usedmovetext
+	doturn
+	endeavor
+	checkhit
+	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

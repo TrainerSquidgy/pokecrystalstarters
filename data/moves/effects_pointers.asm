@@ -161,4 +161,10 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw Yawn
+	dw NormalHit
+	dw Roost
+	dw Coil
+	dw Endeavor
+	dw ConfuseHit
 	assert_table_length NUM_MOVE_EFFECTS

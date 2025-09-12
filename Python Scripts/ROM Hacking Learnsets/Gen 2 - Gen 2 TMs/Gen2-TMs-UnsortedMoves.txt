@@ -1,78 +1,285 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
-Toxic
-Hidden Power
-Sunny Day
-Hyper Beam
-Light Screen
+Flail
+Defense Curl
+Mud-Slap
+Rollout
+Glare
+Screech
+Ancient Power
+Drill Run
+Yawn
+Hyper Drill
+Roost
+Dragon Rush
+Coil
+Double-Edge
+Endeavor
+Hurricane
+Boomburst
+Flail
+Defense Curl
+Mud-Slap
+Rollout
+Glare
+Screech
+Ancient Power
+Drill Run
+Yawn
+Hyper Drill
+Roost
+Dragon Rush
+Coil
+Double-Edge
+Endeavor
+Take Down
+Agility
+Mud-Slap
+Scary Face
 Protect
-Safeguard
-Frustration
-SolarBeam
+Thief
+Pounce
+Chilling Water
+Facade
+Poison Tail
+Bulldoze
+Hex
+Mud Shot
+Rock Tomb
+Stored Power
+Endure
+Sunny Day
+Rain Dance
+Sandstorm
+Smart Strike
+Dig
+Zen Headbutt
+Air Slash
+Body Slam
+Sleep Talk
+Poison Jab
+Stomping Tantrum
+Rest
+Rock Slide
+Substitute
+Drill Run
+Shadow Ball
+Stealth Rock
+Hyper Voice
+Ice Spinner
+Flamethrower
+Thunderbolt
+Amnesia
+Calm Mind
+Helping Hand
+Baton Pass
+Earth Power
+Ice Beam
+Fire Blast
+Blizzard
+Wild Charge
 Earthquake
-Return
-Psychic
+Stone Edge
+Giga Impact
+Hyper Beam
+Thunder
+Solar Beam
+Tera Blast
+Toxic
+Spite
+Gyro Ball
+Lunge
+Uproar
+Scale Shot
+Pain Split
+Psych Up
+Double-Edge
+Endeavor
+Skitter Smack
+Breaking Swipe
+Curse
+Water Pulse
+Calm Mind
+Sunny Day
+Ice Beam
+Blizzard
+Protect
+Rain Dance
+Solar Beam
+Iron Tail
+Thunderbolt
+Thunder
+Earthquake
+Dig
 Shadow Ball
 Double Team
-Reflect
+Shock Wave
 Flamethrower
-Sandstorm
 Fire Blast
 Rock Tomb
 Facade
-Secret Power
 Rest
-Skill Swap
-Overheat
+Attract
+Thief
+Roost
 Charge Beam
 Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
+Thunder Wave
 Gyro Ball
 Stealth Rock
 Psych Up
 Rock Slide
 Sleep Talk
-Natural Gift
+Bulldoze
+Poison Jab
 Dream Eater
-Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Strength
+Rock Smash
+Solar Beam
+Thunder Wave
+Dig
+Screech
+Rest
+Rock Slide
+Thief
 Snore
-Swift
-Zen Headbutt
-Baton Pass
+Protect
+Attract
+Rain Dance
+Sunny Day
+Facade
+Helping Hand
+Rock Tomb
+Round
+Hex
+Retaliate
+Bulldoze
+Air Slash
+Stomping Tantrum
 Body Slam
-Defense Curl
-Double-Edge
+Flamethrower
+Ice Beam
+Blizzard
+Thunderbolt
+Thunder
+Earthquake
+Agility
+Fire Blast
+Amnesia
+Substitute
+Endure
+Sleep Talk
+Baton Pass
+Iron Tail
+Shadow Ball
+Calm Mind
+Gyro Ball
+Poison Jab
+Zen Headbutt
+Stealth Rock
+Stored Power
+Wild Charge
+Drill Run
+Bide
+Bind
+Captivate
+Charge Beam
+Confide
+Counter
+Double Team
+Dream Eater
+Frustration
+Hidden Power
+Incinerate
 Mimic
-Selfdestruct
+Natural Gift
+Nightmare
+Pain Split
+Psych Up
+Pursuit
+Rage
+Return
+Rock Smash
+Secret Power
+Shock Wave
+Spite
+Strength
+Swagger
+Toxic
+Trump Card
+Water Pulse
+Zap Cannon
+Take Down
+Agility
+Mud-Slap
+Scary Face
+Protect
+Thief
+Pounce
+Chilling Water
+Facade
+Poison Tail
+Bulldoze
+Hex
+Mud Shot
+Rock Tomb
+Stored Power
+Dragon Tail
+Endure
+Sunny Day
+Rain Dance
+Sandstorm
+Smart Strike
+Dig
+Zen Headbutt
+Air Slash
+Body Slam
+Sleep Talk
+Poison Jab
+Stomping Tantrum
+Rest
+Rock Slide
+Body Press
+Substitute
+Drill Run
+Tailwind
+Shadow Ball
+Stealth Rock
+Hyper Voice
+Heavy Slam
+Ice Spinner
+Flamethrower
+Thunderbolt
+Amnesia
+Calm Mind
+Helping Hand
+Baton Pass
+Earth Power
+Ice Beam
+Fire Blast
+Blizzard
+Wild Charge
+Earthquake
+Stone Edge
+Giga Impact
+Outrage
+Hurricane
+Hyper Beam
+Thunder
+Solar Beam
+Tera Blast
+Toxic
+Spite
+Gyro Ball
+Lunge
+Uproar
+Dual Wingbeat
+Scale Shot
+Pain Split
+Psych Up
+Double-Edge
+Endeavor
+Skitter Smack
+Throat Chop
+Breaking Swipe
+Curse
