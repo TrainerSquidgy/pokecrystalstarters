@@ -734,6 +734,14 @@ MegaHeracrossFrontpic:      INCBIN "gfx/pokemon/megaheracross/front.animated.2bp
 MegaHeracrossBackpic:       INCBIN "gfx/pokemon/megaheracross/back.2bpp.lz"
 
 SECTION "Pics 21", ROMX
+MegaAmpharosFrontpic:      INCBIN "gfx/pokemon/megaampharos/front.animated.2bpp.lz"
+MegaAmpharosBackpic:       INCBIN "gfx/pokemon/megaampharos/back.2bpp.lz"
+MegaHoundoomFrontpic:      INCBIN "gfx/pokemon/megahoundoom/front.animated.2bpp.lz"
+MegaHoundoomBackpic:       INCBIN "gfx/pokemon/megahoundoom/back.2bpp.lz"
+MegaAerodactylFrontpic:      INCBIN "gfx/pokemon/megaaerodactyl/front.animated.2bpp.lz"
+MegaAerodactylBackpic:       INCBIN "gfx/pokemon/megaaerodactyl/back.2bpp.lz"
+MegaPidgeotFrontpic:      INCBIN "gfx/pokemon/megapidgeot/front.animated.2bpp.lz"
+MegaPidgeotBackpic:       INCBIN "gfx/pokemon/megapidgeot/back.2bpp.lz"
 
 
 SECTION "Pics 22", ROMX
