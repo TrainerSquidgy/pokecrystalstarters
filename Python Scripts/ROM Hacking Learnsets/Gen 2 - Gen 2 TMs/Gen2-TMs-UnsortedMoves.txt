@@ -1,78 +1,327 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Pound
+Growl
+Bubble
+Water Sport
+Peck
+BubbleBeam
+Bide
+Fury Attack
+Brine
+Whirlpool
+Mist
+Drill Peck
+Hydro Pump
+Water Pulse
 Toxic
+Hail
 Hidden Power
-Sunny Day
-Hyper Beam
-Light Screen
+Ice Beam
+Blizzard
 Protect
-Safeguard
+Rain Dance
 Frustration
-SolarBeam
-Earthquake
 Return
-Psychic
-Shadow Ball
+Dig
+Brick Break
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
 Rock Tomb
+Aerial Ace
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
+Brine
+Fling
 Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
 Stealth Rock
+Captivate
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Pluck
+Substitute
+Cut
+Surf
+Defog
+Whirlpool
+Waterfall
+Dive
+Headbutt
+Icy Wind
+Mud-Slap
+Signal Beam
+Snore
+Charm
+Agility
+Protect
+Water Pulse
+Disarming Voice
+Chilling Water
+Facade
+Aerial Ace
+Swift
+Icy Wind
+Rock Tomb
+Fling
+Endure
+Rain Dance
+Snowscape
+Brick Break
+Sleep Talk
+Waterfall
+Grass Knot
+Rest
+Substitute
+Liquidation
+Surf
+Ice Spinner
+Helping Hand
+Ice Beam
+Hydro Pump
+Blizzard
+Water Pledge
+Tera Blast
+Haze
+Weather Ball
+Flip Turn
 Psych Up
+Whirlpool
+Triple Axel
+Feather Dance
+Tackle
+Growl
+Growl
+Bubble
+Water Sport
+Peck
+Metal Claw
+BubbleBeam
+Bide
+Fury Attack
+Brine
+Whirlpool
+Mist
+Drill Peck
+Hydro Pump
+Water Pulse
+Toxic
+Hail
+Hidden Power
+Ice Beam
+Blizzard
+Protect
+Rain Dance
+Frustration
+Return
+Dig
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Brine
+Fling
+Endure
+Shadow Claw
+Stealth Rock
+Captivate
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Pluck
+Substitute
+Cut
+Surf
+Strength
+Defog
+Whirlpool
+Rock Smash
+Waterfall
+Take Down
+Charm
+Agility
+Protect
+Water Pulse
+Disarming Voice
+Chilling Water
+Facade
+Aerial Ace
+Metal Claw
+Swift
+Icy Wind
+Rock Tomb
+Fling
+Endure
+Rain Dance
+Snowscape
+Brick Break
+Shadow Claw
+Sleep Talk
+Waterfall
+Grass Knot
+Rest
+Substitute
+Liquidation
+Surf
+Ice Spinner
+Helping Hand
+Ice Beam
+Hydro Pump
+Blizzard
+Water Pledge
+Tera Blast
+Haze
+Weather Ball
+Flip Turn
+Psych Up
+Double-Edge
+Whirlpool
+Triple Axel
+Feather Dance
+Tackle
+Growl
+Bubble
+Growl
+Bubble
+Swords Dance
+Peck
+Metal Claw
+BubbleBeam
+Swagger
+Fury Attack
+Brine
+Aqua Jet
+Whirlpool
+Mist
+Drill Peck
+Hydro Pump
+Water Pulse
+Roar
+Toxic
+Hail
+Hidden Power
+Ice Beam
+Blizzard
+Hyper Beam
+Protect
+Rain Dance
+Frustration
+Earthquake
+Return
+Dig
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Facade
+Secret Power
+Rest
+Attract
+Steel Wing
+Brine
+Fling
+Endure
+Shadow Claw
+Giga Impact
+Avalanche
+Swords Dance
+Stealth Rock
+Captivate
 Rock Slide
 Sleep Talk
 Natural Gift
-Dream Eater
 Grass Knot
 Swagger
+Pluck
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
+Flash Cannon
+Cut
+Surf
+Strength
+Defog
+Whirlpool
+Rock Smash
+Waterfall
+Rock Climb
+Dive
+Fury Cutter
+Headbutt
+Hydro Cannon
+Icy Wind
 Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
+Knock Off
+Mud-Slap
 Signal Beam
 Snore
+Take Down
+Charm
+Agility
+Mud-Slap
+Scary Face
+Protect
+Water Pulse
+Disarming Voice
+Chilling Water
+Facade
+Aerial Ace
+Bulldoze
+Metal Claw
 Swift
-Zen Headbutt
-Baton Pass
+Icy Wind
+Rock Tomb
+Air Cutter
+Fling
+Avalanche
+Endure
+Rain Dance
+Snowscape
+False Swipe
+Brick Break
+Shadow Claw
+Air Slash
 Body Slam
-Defense Curl
+Sleep Talk
+Waterfall
+Grass Knot
+Rest
+Rock Slide
+Swords Dance
+Flash Cannon
+Substitute
+Iron Defense
+Liquidation
+Stealth Rock
+Surf
+Ice Spinner
+Helping Hand
+Ice Beam
+Hydro Pump
+Blizzard
+Water Pledge
+Earthquake
+Giga Impact
+Hydro Cannon
+Hyper Beam
+Steel Beam
+Tera Blast
+Roar
+Haze
+Knock Off
+Vacuum Wave
+Uproar
+Weather Ball
+Flip Turn
+Dual Wingbeat
+Lash Out
+Psych Up
 Double-Edge
-Mimic
-Selfdestruct
+Whirlpool
+Triple Axel
+Feather Dance
+Throat Chop
+Metal Sound

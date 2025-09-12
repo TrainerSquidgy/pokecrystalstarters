@@ -178,4 +178,6 @@ BattleCommandPointers:
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
 	dw BattleCommand_StartWeather
+	dw BattleCommand_WaterSport
+	dw BattleCommand_Brine
 	assert_table_length NUM_EFFECT_COMMANDS

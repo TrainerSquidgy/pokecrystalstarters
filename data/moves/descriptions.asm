@@ -252,16 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw WaterSportDescription
+	dw BrineDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+BrineDescription:
+	db   "Doubles in power"
+	next "if HP is low.@"
+	
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -1270,3 +1272,7 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+WaterSportDescription:
+	db   "Lowers power of"
+	next "FIRE-type moves.@"
