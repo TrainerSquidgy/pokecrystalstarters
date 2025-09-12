@@ -25,6 +25,10 @@ ViridianGymBlueScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_EARTHBADGE
+	readmem wLevelCap
+	ifgreater 81, .skipLevelCap
+	loadmem wLevelCap, 81
+.skipLevelCap
 	writetext LeaderBlueAfterText
 	waitbutton
 	closetext
