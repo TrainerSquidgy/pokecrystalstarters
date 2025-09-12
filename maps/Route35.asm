@@ -221,7 +221,7 @@ TrainerBugCatcherArnie:
 	
 .IceStone:
 	scall .Gift
-	verbosegiveitem SHINY_STONE
+	verbosegiveitem EVO_STONE
 	iffalse .BagFull
 	clearflag ENGINE_ARNIE_HAS_SHINY_STONE
 	setevent EVENT_ARNIE_GAVE_SHINY_STONE
