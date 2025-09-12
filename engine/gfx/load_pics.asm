@@ -56,6 +56,7 @@ GetUnownLetter:
 	jr .done_maushold
 .maushold4
 	ld a, 27
+.done_maushold
 	ld [wUnownLetter], a
 	ret
 .mega
