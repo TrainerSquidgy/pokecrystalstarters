@@ -1,6 +1,6 @@
 DoPlayerTurn:
 	call SetPlayerTurn
-
+	
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	ret nz
@@ -1295,10 +1295,17 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
+	push af
 	ld hl, TypeMatchups
-
+	ld a, [wInverseActivated]
+	and a
+	jr z, .got_inverted
+	ld hl, InverseTypeMatchups
+.got_inverted
+	pop af
 .TypesLoop:
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+    inc hl
 
 	cp -1
 	jr z, .end
@@ -1316,7 +1323,7 @@ BattleCommand_Stab:
 .SkipForesightCheck:
 	cp b
 	jr nz, .SkipType
-	ld a, [hl]
+	call GetNextTypeMatchupsByte
 	cp d
 	jr z, .GotMatchup
 	cp e
@@ -1331,7 +1338,7 @@ BattleCommand_Stab:
 	and %10000000
 	ld b, a
 ; If the target is immune to the move, treat it as a miss and calculate the damage as 0
-	ld a, [hl]
+	call GetNextTypeMatchupsByte
 	and a
 	jr nz, .NotImmune
 	inc a
@@ -1403,25 +1410,32 @@ BattleCheckTypeMatchup:
 	ld hl, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
-	jr z, CheckTypeMatchup
-	ld hl, wBattleMonType1
-	; fallthrough
+	jr z, .get_type
+ 	ld hl, wBattleMonType1
+.get_type
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar ; preserves hl, de, and bc
 CheckTypeMatchup:
-; BUG: AI makes a false assumption about CheckTypeMatchup (see docs/bugs_and_glitches.md)
 	push hl
 	push de
 	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
 	ld d, a
 	ld b, [hl]
 	inc hl
 	ld c, [hl]
 	ld a, EFFECTIVE
 	ld [wTypeMatchup], a
+	push af
 	ld hl, TypeMatchups
+	ld a, [wInverseActivated]
+	and a
+	jr z, .got_inverted
+	ld hl, InverseTypeMatchups
+.got_inverted
+	pop af
 .TypesLoop:
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	cp -1
 	jr z, .End
 	cp -2
@@ -1435,7 +1449,8 @@ CheckTypeMatchup:
 .Next:
 	cp d
 	jr nz, .Nope
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	cp b
 	jr z, .Yup
 	cp c
@@ -1453,7 +1468,8 @@ CheckTypeMatchup:
 	ldh [hDividend + 0], a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
-	ld a, [hli]
+	call GetNextTypeMatchupsByte
+	inc hl
 	ldh [hMultiplicand + 2], a
 	ld a, [wTypeMatchup]
 	ldh [hMultiplier], a
@@ -1473,6 +1489,7 @@ CheckTypeMatchup:
 	pop de
 	pop hl
 	ret
+
 
 BattleCommand_ResetTypeMatchup:
 ; Reset the type matchup multiplier to 1.0, if the type matchup is not 0.
@@ -1495,7 +1512,6 @@ BattleCommand_ResetTypeMatchup:
 
 INCLUDE "engine/battle/ai/switch.asm"
 
-INCLUDE "data/types/type_matchups.asm"
 
 BattleCommand_DamageVariation:
 ; Modify the damage spread between 85% and 100%.
@@ -2351,7 +2367,7 @@ BattleCommand_SuperEffectiveText:
 	ld hl, NotVeryEffectiveText
 .print
 	jp StdBattleTextbox
-
+	
 BattleCommand_CheckFaint:
 ; Faint the opponent if its HP reached zero
 ;  and faint the user along with it if it used Destiny Bond.
@@ -5686,7 +5702,7 @@ BattleCommand_TrapTarget:
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
 	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
 	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
-
+	
 INCLUDE "engine/battle/move_effects/mist.asm"
 
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
@@ -6800,31 +6816,6 @@ _CheckBattleScene:
 
 
 SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-
-; First, check if Snow is active.
-	ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
 	ret
 	
 BattleCommand_StartWeather:
@@ -6867,7 +6858,6 @@ BattleCommand_StartWeather:
 	pop hl
 	jp StdBattleTextbox
 
-
 BattleCommand_ChargeMove:
 ;Charge (The Move)
 	ld a, BATTLE_VARS_SUBSTATUS2
@@ -6897,3 +6887,36 @@ ApplyChargeModifier:
 	ld a, l
 	ld [wCurDamage + 1], a
 	ret
+
+GetNextTypeMatchupsByte:
+   ld a, BANK(TypeMatchups)
+   call GetFarByte
+   ret
+
+
+BattleCommand_AddDamage:
+	push af
+	push hl
+    ld hl, wCurDamage + 1
+    ld a, [hl]           
+    ld d, a              
+    dec hl               
+    ld a, [hl]           
+    ld e, a              
+    ld hl, wCurDamage    
+    ld a, [hl]           
+    add a, e             
+    ld [hl], a           
+    inc hl               
+    ld a, [hl]           
+    adc a, d             
+    ld [hl], a           
+    jr nc, .done         
+    ld a, $FF            
+    ld hl, wCurDamage    
+    ld [hl], a           
+    ld [hli], a         
+.done:
+	pop hl
+	pop af
+    ret
