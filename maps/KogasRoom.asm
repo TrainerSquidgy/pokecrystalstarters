@@ -61,6 +61,11 @@ KogaScript_Battle:
 	changeblock 4, 2, $16 ; open door
 	refreshmap
 	closetext
+	readmem wLevelCap
+	ifgreater 46, .SkipLevelCap
+	loadmem wLevelCap, 46
+.SkipLevelCap
+	
 	setevent EVENT_KOGAS_ROOM_EXIT_OPEN
 	waitsfx
 	end

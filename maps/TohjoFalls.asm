@@ -9,6 +9,9 @@ TohjoFalls_MapScripts:
 TohjoFallsMoonStone:
 	itemball MOON_STONE
 
+TohjoFallsLadder:
+	itemball LADDER
+
 TohjoFalls_MapEvents:
 	db 0, 0 ; filler
 
@@ -22,3 +25,4 @@ TohjoFalls_MapEvents:
 
 	def_object_events
 	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TohjoFallsMoonStone, EVENT_TOHJO_FALLS_MOON_STONE
+	object_event 11, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TohjoFallsLadder, EVENT_RECEIVED_LADDER
