@@ -1,16 +1,20 @@
-LechonkEvosAttacks:
+DudunsparceEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, RAGE
+	db 1, DEFENSE_CURL
+	db 4, MUD_SLAP
+	db 8, ROLLOUT
+	db 12, GLARE
+	db 16, SCREECH
+	db 20, ANCIENTPOWER
+	db 24, DRILL_RUN
+	db 28, YAWN
+	db 32, HYPER_DRILL
+	db 36, ROOST
+	db 40, DRAGON_RUSH
+	db 44, COIL
+	db 48, DOUBLE_EDGE
+	db 52, ENDEAVOR
+	db 56, HURRICANE
+	db 62, BOOMBURST
 	db 0

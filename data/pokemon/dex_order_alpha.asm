@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db DUNSPARCEP
+	db DUDUNSPARCE
 	assert_table_length NUM_POKEMON

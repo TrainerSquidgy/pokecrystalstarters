@@ -1,14 +1,18 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Dudunsparce
+1: Rage
+1: Defense Curl
+4: Mud_Slap
+8: Rollout
+12: Glare
+16: Screech
+20: AncientPower
+24: Drill Run
+28: Yawn
+32: Hyper Drill
+36: Roost
+40: Dragon Rush
+44: Coil
+48: Double_Edge
+52: Endeavor
+56: Hurricane
+62: Boomburst

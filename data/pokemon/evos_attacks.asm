@@ -3367,3 +3367,44 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+DunsparcePEvosAttacks:
+	db EVOLVE_MOVE, HYPER_DRILL, DUDUNSPARCE
+	db 0 ; No More Evolutions
+	db 1, RAGE
+	db 1, DEFENSE_CURL
+	db 4, MUD_SLAP
+	db 8, ROLLOUT
+	db 12, GLARE
+	db 16, SCREECH
+	db 20, ANCIENTPOWER
+	db 24, DRILL_RUN
+	db 28, YAWN
+	db 32, HYPER_DRILL
+	db 36, ROOST
+	db 40, DRAGON_RUSH
+	db 44, COIL
+	db 48, DOUBLE_EDGE
+	db 52, ENDEAVOR
+	db 0
+
+DudunsparceEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, RAGE
+	db 1, DEFENSE_CURL
+	db 4, MUD_SLAP
+	db 8, ROLLOUT
+	db 12, GLARE
+	db 16, SCREECH
+	db 20, ANCIENTPOWER
+	db 24, DRILL_RUN
+	db 28, YAWN
+	db 32, HYPER_DRILL
+	db 36, ROOST
+	db 40, DRAGON_RUSH
+	db 44, COIL
+	db 48, DOUBLE_EDGE
+	db 52, ENDEAVOR
+	db 56, HURRICANE
+	db 62, BOOMBURST
+	db 0
