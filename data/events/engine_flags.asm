@@ -168,6 +168,7 @@ EngineFlags:
 	engine_flag wDailyPhoneItemFlags, 7 ; tully has water stone
 	engine_flag wDailyPhoneItemFlags, 8 ; tiffany has pink bow
 	engine_flag wDailyPhoneItemFlags, 9 ; wilton has item (see EVENT_WILTON_HAS_*** in constants/event_flags.asm)
+	engine_flag wDailyPhoneItemFlags, 10 ; arnie has ice stone
 
 	engine_flag wDailyPhoneTimeOfDayFlags,  0 ; jack
 	engine_flag wDailyPhoneTimeOfDayFlags,  1 ; huey

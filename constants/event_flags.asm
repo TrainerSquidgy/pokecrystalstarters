@@ -284,7 +284,8 @@
 	const EVENT_HELPFUL_NPCS_DISABLED
 	const EVENT_STATIC_BOARDER_DOUGLAS
 	const EVENT_REGULAR_BOARDER_DOUGLAS
-; Unused: next 324 events
+	const EVENT_ARNIE_GAVE_SHINY_STONE
+; Unused: next 337 events
 
 	const_next 600
 ; Kurt Apricorn events

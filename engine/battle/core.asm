@@ -616,7 +616,7 @@ ParsePlayerAction:
 .not_encored
 	ld a, [wBattlePlayerAction]
 	cp BATTLEPLAYERACTION_SWITCH
-	jr z, .reset_rage
+	jp z, .reset_rage
 	and a
 	jr nz, .reset_bide
 	ld a, [wPlayerSubStatus3]
@@ -655,6 +655,12 @@ ParsePlayerAction:
 
 .continue_fury_cutter
 	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
+	cp EFFECT_ECHOED_VOICE
+	jr z, .continue_echoed_voice
+	xor a
+	ld [wPlayerEchoedVoiceCount], a
+.continue_echoed_voice
+	ld a, [wPlayerMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .continue_rage
 	ld hl, wPlayerSubStatus4
@@ -678,6 +684,7 @@ ParsePlayerAction:
 
 .locked_in
 	xor a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
@@ -692,6 +699,7 @@ ParsePlayerAction:
 .reset_rage
 	xor a
 	ld [wPlayerFuryCutterCount], a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wPlayerProtectCount], a
 	ld [wPlayerRageCounter], a
 	ld hl, wPlayerSubStatus4
@@ -3646,6 +3654,11 @@ ShowSetEnemyMonAndSendOutAnimation:
 
 NewEnemyMonStatus:
 	xor a
+	ld [wEnemyUsedMoves], a
+	ld [wEnemyUsedMoves + 1], a
+	ld [wEnemyUsedMoves + 2], a
+	ld [wEnemyUsedMoves + 3], a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastEnemyMove], a
@@ -4129,6 +4142,7 @@ SendOutPlayerMon:
 
 NewBattleMonStatus:
 	xor a
+	ld [wPlayerEchoedVoiceCount], a
 	ld [wLastPlayerCounterMove], a
 	ld [wLastEnemyCounterMove], a
 	ld [wLastPlayerMove], a
@@ -6003,6 +6017,11 @@ ParseEnemyAction:
 	ld [wEnemyFuryCutterCount], a
 
 .fury_cutter
+	cp EFFECT_ECHOED_VOICE
+	jr z, .echoed_voice
+	xor a
+	ld [wEnemyEchoedVoiceCount], a
+.echoed_voice
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_RAGE
 	jr z, .no_rage
@@ -6027,6 +6046,7 @@ ParseEnemyAction:
 
 ResetVarsForSubstatusRage:
 	xor a
+	ld [wEnemyEchoedVoiceCount], a
 	ld [wEnemyFuryCutterCount], a
 	ld [wEnemyProtectCount], a
 	ld [wEnemyRageCounter], a
@@ -9311,3 +9331,4 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+

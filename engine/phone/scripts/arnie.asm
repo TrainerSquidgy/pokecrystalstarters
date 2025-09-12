@@ -5,6 +5,8 @@ ArniePhoneCalleeScript:
 	farscall PhoneScript_AnswerPhone_Male
 	checkflag ENGINE_ARNIE_TUESDAY_MORNING
 	iftrue .NotTuesday
+	checkflag ENGINE_ARNIE_HAS_SHINY_STONE
+	iftrue .HasIceStone
 	readvar VAR_WEEKDAY
 	ifnotequal TUESDAY, .NotTuesday
 	checktime MORN
@@ -18,6 +20,11 @@ ArniePhoneCalleeScript:
 .WantsBattle:
 	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_35
 	farsjump ArnieReminderScript
+	
+.HasIceStone:
+	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_35
+	farsjump ArnieComePickUpText
+
 
 .AlreadySwarming:
 	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_35
@@ -30,10 +37,18 @@ ArniePhoneCallerScript:
 	iftrue .Swarm
 	checkflag ENGINE_ARNIE_TUESDAY_MORNING
 	iftrue .Swarm
+	checkflag ENGINE_ARNIE_HAS_SHINY_STONE
+	iftrue .Swarm
+	checkevent EVENT_ARNIE_GAVE_SHINY_STONE
+	iftrue .Swarm
+	farscall PhoneScript_Random2
+	ifequal 0, ArnieHasIceStone
 	farscall PhoneScript_Random2
 	ifequal 0, ArnieWantsBattle
 
 .Swarm:
+	farscall PhoneScript_Random11
+	ifequal 0, ArnieHasIceStone
 	farscall PhoneScript_Random5
 	ifequal 0, ArnieYanmaSwarm
 	farscall PhoneScript_Random3
@@ -62,3 +77,8 @@ ArnieFoundRare:
 
 ArnieYanmaAlreadySwarming:
 	farsjump Phone_GenericCall_Male
+
+ArnieHasIceStone:
+	setflag ENGINE_ARNIE_HAS_SHINY_STONE
+	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_35
+	farsjump PhoneScript_FoundItem_Male
