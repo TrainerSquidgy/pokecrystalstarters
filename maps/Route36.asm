@@ -140,6 +140,11 @@ Route36RockSmashGuyScript:
 	promptbutton
 	verbosegiveitem TM_ROCK_SMASH
 	iffalse .NoRoomForTM
+	checkevent EVENT_RECEIVED_BIG_HAMMER
+	iftrue .NoHMItem
+	setevent EVENT_RECEIVED_BIG_HAMMER
+	verbosegiveitem BIG_HAMMER
+.NoHMItem
 	setevent EVENT_GOT_TM08_ROCK_SMASH
 .AlreadyGotRockSmash:
 	writetext RockSmashGuyText3
