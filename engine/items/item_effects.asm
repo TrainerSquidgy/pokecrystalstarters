@@ -255,6 +255,8 @@ PokeBallEffect:
 	jp z, .catch_without_fail
 	cp PSYDUCK
 	jp z, .catch_without_fail
+	cp SPEAROW
+	jp z, .catch_without_fail
 	cp PARAS
 	jp z, .catch_without_fail	
 .no_guarantee
