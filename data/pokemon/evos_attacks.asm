@@ -3369,7 +3369,7 @@ CelebiEvosAttacks:
 	db 0 ; no more level-up moves
 
 MinccinoEvosAttacks:
-	db EVOLVE_ITEM, EVO_STONE, CINCCINO
+	db EVOLVE_ITEM, SHINY_STONE, CINCCINO
 	db 0 ; No More Evolutions
 	db 1, POUND
 	db 4, GROWL

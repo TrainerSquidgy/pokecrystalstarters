@@ -154,7 +154,7 @@ ItemNames::
 	li "BERSERK GENE"
 	li "CANDY JAR"
 	li "ESCAPE ROPE"
-	li "SHINY STONE"
+	li "EVO STONE"
 	li "SACRED ASH"
 	li "HEAVY BALL"
 	li "FLOWER MAIL"

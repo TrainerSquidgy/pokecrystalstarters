@@ -215,7 +215,7 @@ MartMahogany2:
 	db PARLYZ_HEAL
 	db SUPER_REPEL
 	db REVIVE
-	db EVO_STONE
+	db SHINY_STONE
 	db LINKING_CORD
 	db -1 ; end
 
