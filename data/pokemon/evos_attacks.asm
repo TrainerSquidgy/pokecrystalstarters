@@ -1803,6 +1803,8 @@ DittoEvosAttacks:
 	db 0 ; no more level-up moves
 
 EeveeEvosAttacks:
+	db EVOLVE_LOCATION, LANDMARK_ICE_PATH, GLACEON
+	db EVOLVE_LOCATION, LANDMARK_ILEX_FOREST, LEAFEON
 	db EVOLVE_ITEM, THUNDERSTONE, JOLTEON
 	db EVOLVE_ITEM, WATER_STONE, VAPOREON
 	db EVOLVE_ITEM, FIRE_STONE, FLAREON
@@ -3367,3 +3369,35 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+LeafeonEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 15, RAZOR_LEAF
+	db 22, QUICK_ATTACK
+	db 29, SYNTHESIS
+	db 36, MAGICAL_LEAF
+	db 43, GIGA_DRAIN
+	db 50, LAST_RESORT
+	db 57, GRASSWHISTLE
+	db 64, SUNNY_DAY
+	db 71, LEAF_BLADE
+	db 0
+	
+GlaceonEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, TAIL_WHIP
+	db 8, SAND_ATTACK
+	db 15, ICY_WIND
+	db 22, QUICK_ATTACK
+	db 29, BITE
+	db 36, ICE_SHARD
+	db 43, ICE_FANG
+	db 50, LAST_RESORT
+	db 57, MIRROR_COAT
+	db 64, HAIL
+	db 71, BLIZZARD
+	db 0

@@ -1,16 +1,13 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Glaceon
+1: Tackle
+1: Tail Whip
+8: Sand Attack
+15: Icy Wind
+22: Quick Attack
+29: Bite
+36: Ice Shard
+43: Ice Fang
+50: Last Resort
+57: Mirror Coat
+64: Hail
+71: Blizzard

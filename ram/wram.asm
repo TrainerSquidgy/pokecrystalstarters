@@ -3200,7 +3200,7 @@ wPlayerNumMoves:: db
 wEnemyNumMoves:: db
 wEnemyUsedMoves::
 	ds NUM_MOVES
-	ds 47
+	ds 50
 
 wEventFlags:: flag_array NUM_EVENTS
 

@@ -1,14 +1,13 @@
-Pokémon: Lechonk
+Pokémon: Glaceon
 1: Tackle
 1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+8: Sand-Attack
+15: Icy Wind
+22: Quick Attack
+29: Bite
+36: Ice Shard
+43: Ice Fang
+50: Last Resort
+57: Mirror Coat
+64: Hail
+71: Blizzard
