@@ -3198,7 +3198,7 @@ wBinSkipItem:: db
 wIsAStream:: db
 wPlayerStockpile:: db
 wEnemyStockpile:: db
-	ds 54
+	ds 52
 
 wEventFlags:: flag_array NUM_EVENTS
 
