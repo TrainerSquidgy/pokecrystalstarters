@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+CacturneEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, POISON_STING
+	db 1, LEER
+	db 1, ABSORB
+	db 1, GROWTH
+	db 5, ABSORB
+	db 9, GROWTH
+	db 13, LEECH_SEED
+	db 17, SAND-ATTACK
+	db 21, PIN_MISSILE
+	db 25, INGRAIN
+	db 29, FAINT_ATTACK
+	db 35, SPIKES
+	db 41, NEEDLE_ARM
+	db 47, COTTON_SPORE
+	db 53, SANDSTORM
 	db 0

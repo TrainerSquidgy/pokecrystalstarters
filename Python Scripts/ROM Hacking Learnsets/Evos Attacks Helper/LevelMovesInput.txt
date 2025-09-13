@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Cacturne
+1: Poison Sting
+1: Leer
+1: Absorb
+1: Growth
+5: Absorb
+9: Growth
+13: Leech Seed
+17: Sand-Attack
+21: Pin Missile
+25: Ingrain
+29: Faint Attack
+35: Spikes
+41: Needle Arm
+47: Cotton Spore
+53: Sandstorm

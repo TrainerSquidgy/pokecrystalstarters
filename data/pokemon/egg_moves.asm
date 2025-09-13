@@ -805,5 +805,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+CacneaEggMoves:
+CacturneEggMoves:
 NoEggMoves:
 	db -1 ; end

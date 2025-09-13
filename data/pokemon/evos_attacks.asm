@@ -3367,3 +3367,39 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+CacneaEvosAttacks:
+	db EVOLVE_LEVEL, 32, CACTURNE
+	db 0 ; No More Evolutions
+	db 1, LEER
+	db 5, ABSORB
+	db 9, GROWTH
+	db 13, LEECH_SEED
+	db 17, SAND_ATTACK
+	db 21, PIN_MISSILE
+	db 25, INGRAIN
+	db 29, FAINT_ATTACK
+	db 33, SPIKES
+	db 37, NEEDLE_ARM
+	db 41, COTTON_SPORE
+	db 45, SANDSTORM
+	db 0
+	
+CacturneEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, POISON_STING
+	db 1, LEER
+	db 1, ABSORB
+	db 1, GROWTH
+	db 5, ABSORB
+	db 9, GROWTH
+	db 13, LEECH_SEED
+	db 17, SAND_ATTACK
+	db 21, PIN_MISSILE
+	db 25, INGRAIN
+	db 29, FAINT_ATTACK
+	db 35, SPIKES
+	db 41, NEEDLE_ARM
+	db 47, COTTON_SPORE
+	db 53, SANDSTORM
+	db 0

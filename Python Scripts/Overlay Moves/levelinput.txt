@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
+Pokémon: Cacturne
+1: Poison Sting
 1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
+1: Absorb
+1: Growth
+5: Absorb
+9: Growth
+13: Leech Seed
+17: Sand-Attack
+21: Pin Missile
+25: Ingrain
 29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+35: Spikes
+41: Needle Arm
+47: Cotton Spore
+53: Sandstorm
