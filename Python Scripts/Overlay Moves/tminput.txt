@@ -1,2 +1,2 @@
 Pokémon: Bewear
-Dynamicpunch, Headbutt, Curse, Roar, Toxic, Hidden_Power, Snore, Hyper_Beam, Protect, Endure, Frustration, Earthquake, Return, Double_Team, Ice_Punch, Swagger, Sleep_Talk, Thunderpunch, Rest, Attract, Strength
+Dynamicpunch, Headbutt, Curse, Rollout, Roar, Toxic, Zap_Cannon, Rock_Smash, Hidden_Power, Sunny_Day, Snore, Hyper_Beam, Protect, Endure, Frustration, Earthquake, Return, Dig, Mud_Slap, Double_Team, Ice_Punch, Swagger, Sleep_Talk, Swift, Defense_Curl, Thunderpunch, Rest, Attract, Thief, Fury_Cutter, Cut, Strength
