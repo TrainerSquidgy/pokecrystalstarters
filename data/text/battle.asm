@@ -1154,6 +1154,8 @@ AbsorbedNutrientsText:
 	text "<TARGET>"
 	line "absorbed nutrients"
 	cont "with its roots!"
+	prompt
+
 MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
