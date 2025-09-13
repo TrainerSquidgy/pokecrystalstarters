@@ -3367,3 +3367,20 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+
+MawileEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, ASTONISH
+	db 6, FAKE_TEARS
+	db 11, BITE
+	db 16, SWEET_SCENT
+	db 21, VICEGRIP
+	db 26, FAINT_ATTACK
+	db 31, BATON_PASS
+	db 36, CRUNCH
+	db 41, IRON_DEFENSE
+	db 46, STOCKPILE
+	db 46, SWALLOW
+	db 46, SPIT_UP
+	db 0

@@ -1,14 +1,13 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Mawile
+1: Astonish
+6: Fake Tears
+11: Bite
+16: Sweet Scent
+21: ViceGrip
+26: Faint Attack
+31: Baton Pass
+36: Crunch
+41: Iron Defense
+46: Stockpile
+46: Swallow
+46: Spit Up

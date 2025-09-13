@@ -1,16 +1,15 @@
-LechonkEvosAttacks:
+MawileEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, ASTONISH
+	db 6, FAKE_TEARS
+	db 11, BITE
+	db 16, SWEET_SCENT
+	db 21, VICEGRIP
+	db 26, FAINT_ATTACK
+	db 31, BATON_PASS
+	db 36, CRUNCH
+	db 41, IRON_DEFENSE
+	db 46, STOCKPILE
+	db 46, SWALLOW
+	db 46, SPIT_UP
 	db 0
