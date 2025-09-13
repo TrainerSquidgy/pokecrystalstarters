@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +423,7 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1077,8 +1073,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1918,10 +1912,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5591,10 +5581,7 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -5603,10 +5590,7 @@ BattleCommand_Charge:
 	ld hl, .BattleLoweredHeadText
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6910,5 +6894,85 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
-	
+BattleCommand_LastResort:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+	ld a, [wBattleMonMoves + 3]
+	and a
+	jr nz, .player4moves
+	ld a, [wBattleMonMoves + 2]
+	and a
+	jr nz, .player3moves
+	ld a, [wBattleMonMoves + 1]
+	and a
+	jr nz, .player2moves
+	jr z, .failed
+.player4moves	
+	ld a, [wPlayerUsedMoves + 2]
+	and a
+	jr z, .failed
+.player3moves	
+	ld a, [wPlayerUsedMoves + 1]
+	and a
+	jr z, .failed
+.player2moves	
+	ld a, [wPlayerUsedMoves]
+	and a
+	jr z, .failed	
+.checkforlastresort
+	ld a, [wBattleMonMoves + 3]
+	cp LAST_RESORT
+	ret z
+	ld a, [wBattleMonMoves + 2]
+	cp LAST_RESORT
+	ret z
+	ld a, [wBattleMonMoves + 1]
+	cp LAST_RESORT
+	ret z
+	ld a, [wBattleMonMoves]
+	cp LAST_RESORT
+	ret z	
+	jr .failed
+
+.enemy
+	ld a, [wEnemyMonMoves + 3]
+	and a
+	jr nz, .enemy4moves
+	ld a, [wEnemyMonMoves + 2]
+	and a
+	jr nz, .enemy3moves
+	ld a, [wEnemyMonMoves + 1]
+	and a
+	jr nz, .enemy2moves
+	jr z, .failed
+.enemy4moves	
+	ld a, [wEnemyUsedMoves + 2]
+	and a
+	jr z, .failed
+.enemy3moves	
+	ld a, [wEnemyUsedMoves + 1]
+	and a
+	jr z, .failed
+.enemy2moves	
+	ld a, [wEnemyUsedMoves]
+	and a
+	jr z, .failed
+.checkforlastresortenemy
+	ld a, [wEnemyMonMoves + 3]
+	cp LAST_RESORT
+	ret z
+	ld a, [wEnemyMonMoves + 2]
+	cp LAST_RESORT
+	ret z
+	ld a, [wEnemyMonMoves + 1]
+	cp LAST_RESORT
+	ret z
+	ld a, [wEnemyMonMoves]
+	cp LAST_RESORT
+	ret z	
+.failed
+	ld a, 1
+	ld [wAttackMissed], a
+	jp BattleEffect_ButItFailed	
 

@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw SingDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw QuickAttackDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw IceFangDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -221,7 +221,7 @@ MoveDescriptions::
 	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
-	dw SacredFireDescription
+	dw HailDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -252,15 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw SwiftDescription
+	dw LastResortDescription
+	dw SlashDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+LastResortDescription:
+	db   "Only use after"
+	next "all other moves.@"
+	
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -314,10 +317,6 @@ VicegripDescription:
 GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
-
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -835,9 +834,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -971,9 +967,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+IceFangDescription:
+	db   "May freeze or"
+	next "flinch the foe.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1147,9 +1143,9 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
+HailDescription:
+	db   "Starts hail storm"
+	next "for 5 turns.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
