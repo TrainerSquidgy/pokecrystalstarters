@@ -3196,7 +3196,9 @@ wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
 wIsAStream:: db
-	ds 56
+wPlayerStockpile:: db
+wEnemyStockpile:: db
+	ds 54
 
 wEventFlags:: flag_array NUM_EVENTS
 

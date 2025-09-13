@@ -161,4 +161,7 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw Stockpile
+	dw Swallow
+	dw SpitUp
 	assert_table_length NUM_MOVE_EFFECTS
