@@ -152,6 +152,10 @@ GetMegaEvolutionStats:
 	ld [wBaseType2], a
 	ret
 .Charizard
+	ld a, [wMegaXorY]
+	dec a
+	and a
+	jr z, .CharizardY
 	ld a, 78
 	ld [wBaseHP], a
 	ld a, 130
@@ -169,6 +173,25 @@ GetMegaEvolutionStats:
 	ld a, DRAGON
 	ld [wBaseType2], a
 	ret
+.CharizardY
+	ld a, 78
+	ld [wBaseHP], a
+	ld a, 104
+	ld [wBaseAttack], a
+	ld a, 78
+	ld [wBaseDefense], a
+	ld a, 100
+	ld [wBaseSpeed], a
+	ld a, 159
+	ld [wBaseSpecialAttack], a
+	ld a, 115
+	ld [wBaseSpecialDefense], a
+	ld a, FIRE
+	ld [wBaseType1], a
+	ld a, FLYING
+	ld [wBaseType2], a
+	ret
+
 .Blastoise
 	ld a, 79
 	ld [wBaseHP], a
@@ -350,6 +373,28 @@ GetMegaEvolutionStats:
 	ld [wBaseType2], a
 	ret
 .Mewtwo
+	ld a, [wMegaXorY]
+	dec a
+	and a
+	jr z, .MewtwoY
+	ld a, 106
+	ld [wBaseHP], a
+	ld a, 150
+	ld [wBaseAttack], a
+	ld a, 70
+	ld [wBaseDefense], a
+	ld a, 140
+	ld [wBaseSpeed], a
+	ld a, 194
+	ld [wBaseSpecialAttack], a
+	ld a, 120
+	ld [wBaseSpecialDefense], a
+	ld a, PSYCHIC_TYPE
+	ld [wBaseType1], a
+	ld a, FIGHTING
+	ld [wBaseType2], a
+	ret
+.MewtwoY
 	ld a, 106
 	ld [wBaseHP], a
 	ld a, 190
