@@ -252,15 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw IngrainDescription
+	dw StompDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
+IngrainDescription:
+	db   "Restore HP but"
+	next "can't flee.@"
+
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:

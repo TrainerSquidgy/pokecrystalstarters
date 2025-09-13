@@ -765,6 +765,10 @@ TryEnemyFlee:
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .Stay
 
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_INGRAINED, a
+	jr nz, .Stay
+
 	ld a, [wEnemyWrapCount]
 	and a
 	jr nz, .Stay
@@ -3750,6 +3754,10 @@ TryToRunAwayFromBattle:
 
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
+	jp nz, .cant_escape
+	
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_INGRAINED, a
 	jp nz, .cant_escape
 
 	ld a, [wPlayerWrapCount]
@@ -9311,3 +9319,49 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+
+HandleIngrain:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+
+.DoEnemyFirst:
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+.do_it
+	ld a, BATTLE_VARS_SUBSTATUS5
+	call GetBattleVar
+	bit SUBSTATUS_INGRAINED, a
+	ret z
+
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetSixteenthMaxHP
+	call SwitchTurnCore
+	call RestoreHP
+	ld hl, AbsorbedNutrientsText
+	jp StdBattleTextbox

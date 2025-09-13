@@ -1149,3 +1149,14 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+PlantedRootsText:
+	text "<USER>"
+	line "planted roots."
+	prompt
+	
+AbsorbedNutrientsText:
+	text "<TARGET>"
+	line "absorbed nutrients"
+	cont "with its roots!"
+	prompt
