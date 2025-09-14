@@ -2506,6 +2506,31 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+SolrockGen1TMAttacks:
+	db 0
+	db 1, SWORDS_DANCE
+	db 1, BODY_SLAM
+	db 1, DOUBLE_EDGE
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, SELFDESTRUCT
+	db 1, PSYWAVE
+	db 1, EXPLOSION
+	db 1, ROCK_SLIDE
+	db 1, SUBSTITUTE
+	db 0
+LunatoneGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, DOUBLE_EDGE
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, SELFDESTRUCT
+	db 1, PSYWAVE
+	db 1, EXPLOSION
+	db 1, ROCK_SLIDE
+	db 1, SUBSTITUTE
+	db 0
 NoGen1TMAttacks:
 	db 0
 	db 0

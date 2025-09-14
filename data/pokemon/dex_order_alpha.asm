@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db SOLROCK
+	db LUNATONE
 	assert_table_length NUM_POKEMON

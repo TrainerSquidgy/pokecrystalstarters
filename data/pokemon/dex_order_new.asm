@@ -253,4 +253,6 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
+	db SOLROCK
+	db LUNATONE
 	assert_table_length NUM_POKEMON

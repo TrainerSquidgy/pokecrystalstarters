@@ -1,2 +1,2 @@
-Pokémon: Sableye
-Dynamicpunch, Headbutt, Curse, Toxic, Rock_Smash, Psych_Up, Hidden_Power, Sunny_Day, Snore, Icy_Wind, Protect, Rain_Dance, Endure, Frustration, Return, Dig, Psychic, Shadow_Ball, Mud_Slap, Double_Team, Ice_Punch, Swagger, Sleep_Talk, Thunderpunch, Dream_Eater, Rest, Attract, Thief, Fire_Punch, Fury_Cutter, Nightmare, Cut, Flash
+Pokémon: Lunatone
+Curse, Rollout, Toxic, Psych_Up, Hidden_Power, Snore, Blizzard, Hyper_Beam, Protect, Rain_Dance, Endure, Frustration, Earthquake, Return, Psychic_M, Shadow_Ball, Double_Team, Swagger, Sleep_Talk, Sandstorm, Swift, Defense_Curl, Dream_Eater, Rest, Attract, Flash, Ice_Beam

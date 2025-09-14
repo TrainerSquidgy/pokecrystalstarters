@@ -3367,3 +3367,31 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SolrockEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, HARDEN
+	db 7, CONFUSION
+	db 13, ROCK_THROW
+	db 19, FIRE_SPIN
+	db 25, PSYWAVE
+	db 31, COSMIC_POWER
+	db 37, ROCK_SLIDE
+	db 43, SOLARBEAM
+	db 49, EXPLOSION
+	db 0
+	
+LunatoneEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, HARDEN
+	db 7, CONFUSION
+	db 13, ROCK_THROW
+	db 19, HYPNOSIS
+	db 25, PSYWAVE
+	db 31, COSMIC_POWER
+	db 37, PSYCHIC_M
+	db 43, FUTURE_SIGHT
+	db 49, EXPLOSION
+	db 0
