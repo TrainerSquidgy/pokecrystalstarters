@@ -1286,61 +1286,158 @@ BattleCommand_Stab:
 	ld hl, wTypeModifier
 	set 7, [hl]
 
-
-	ld hl, wTypeModifier
-	set 7, [hl]
-
 .SkipStab:
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
-	call .AdjustDamageForTypeEffectiveness
+	call ApplyTypeFactorToDamage_UsingCheckTypeMatchup
 
- 	ld a, BATTLE_VARS_MOVE_EFFECT
-    call GetBattleVar
-    cp EFFECT_FLYING_PRESS
-    ret nz
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .after_apply
 
-    ; If the move has no effect, don't continue checking if the Flying part of Flying Press will work
-    ld a, [wAttackMissed]
-    and a
-    ret nz
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FLYING_PRESS
+	jr nz, .after_apply
 
-    ; Redo all that with Flying typing
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_IDENTIFIED, a
+	jr nz, .apply_flying
+
+	ld a, d
+	cp GHOST
+	jr z, .immune_flyingpress
+	ld a, e
+	cp GHOST
+	jr nz, .apply_flying
+
+.immune_flyingpress
+	call ResetDamage
+	ld a, 1
+	ld [wAttackMissed], a
+	jr .after_apply
+
+.apply_flying
 	ld a, FLYING
-	call .AdjustDamageForTypeEffectiveness
+	call ApplyTypeFactorToDamage_UsingCheckTypeMatchup
 
-	; Override what's shown based on our tally
-	ld a, [wMoveTotalEffectiveness]
-	cp $80
-	ld a, EFFECTIVE
-	jr z, .override_type_modifier
-	ld a, NOT_VERY_EFFECTIVE
-	jr c, .override_type_modifier
-	ld a, SUPER_EFFECTIVE
+.after_apply
+	call BattleCheckTypeMatchup          
+	
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FLYING_PRESS
+	jr nz, .set_display
 
-.override_type_modifier
+	ld a, [wTypeMatchup]
 	push af
+
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_def_ptr
+	ld hl, wBattleMonType1
+.got_def_ptr
+	ld a, FLYING
+	call CheckTypeMatchup
+
+	pop af
+	ld c, a                ; C = base factor
+	xor a
+	ldh [hDividend + 0], a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
+	ld a, [wTypeMatchup]   ; Flying factor
+	ldh [hMultiplicand + 2], a
+	ld a, c
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 3]
+	ld [wTypeMatchup], a
+
+	ld a, [wTypeMatchup]
+	and a
+	jr nz, .set_display
+	call ResetDamage
+	ld a, 1
+	ld [wAttackMissed], a
+
+.set_display
+	ld a, [wTypeMatchup]
+	ld b, a
 	ld a, [wTypeModifier]
 	and %10000000
-	ld b, a
-	pop af
 	or b
 	ld [wTypeModifier], a
 	ret
 
-.TallyEffectiveness
-	; tally how many supereffectives vs not very effectives
-	cp EFFECTIVE
-	ret z ; if normally effective, do nothing
+ApplyTypeFactorToDamage_UsingCheckTypeMatchup:
+	push af
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_def
+	ld hl, wBattleMonType1
+.got_def
+	pop af
 
-	ld b, -1
-	jr c, .addEffectivePoint
-	ld b, 1
-.addEffectivePoint
-	ld a, [wMoveTotalEffectiveness]
-	add b
-	ld [wMoveTotalEffectiveness], a
+	call CheckTypeMatchup
+	ld a, [wTypeMatchup]
+	and a
+	jr nz, .scale
+
+	call ResetDamage
+	ld a, 1
+	ld [wAttackMissed], a
 	ret
+
+.scale
+	xor a
+	ldh [hMultiplicand + 0], a
+	ld hl, wCurDamage
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hld]
+	ldh [hMultiplicand + 2], a
+
+	ld a, [wTypeMatchup]
+	ldh [hMultiplier], a
+	call Multiply
+
+	ldh a, [hProduct + 1]
+	ld b, a
+	ldh a, [hProduct + 2]
+	or b
+	ld b, a
+	ldh a, [hProduct + 3]
+	or b
+	jr z, .write_back     ; product is 0 → keep result as 0
+
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	or b
+	jr nz, .write_back
+
+	; If division would round to 0, force at least 1
+	ld a, 1
+	ldh [hMultiplicand + 2], a
+
+.write_back
+	ldh a, [hMultiplicand + 1]
+	ld [hli], a
+	ldh a, [hMultiplicand + 2]
+	ld [hl], a
+	ret 	
 
 .AdjustDamageForTypeEffectiveness
 	ld b, a
@@ -1376,10 +1473,6 @@ BattleCommand_Stab:
 	push hl
 	push bc
 	inc hl
-
-	ld a, [hl]
-	and %01111111
-	call .TallyEffectiveness
 
 	ld a, [wTypeModifier]
 	and %10000000
@@ -1444,7 +1537,78 @@ BattleCommand_Stab:
 	jr .TypesLoop
 
 .end
+	; === Extra damage pass for Flying Press (secondary FLYING typing) ===
+	; Only do this if the move is Flying Press and we didn't already miss from immunity.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FLYING_PRESS
+	jr nz, .after_flyingpress_damage
+
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .after_flyingpress_damage
+
+	; Apply FLYING effectiveness to damage & immunity using the same mechanics
+	; as the main loop, but with the attacking type forced to FLYING.
+	push hl
+	push de
+	push bc
+	ld a, FLYING
+	call ApplySecondaryTypeDamage_ForAttackingTypeA
+	pop bc
+	pop de
+	pop hl
+
+.after_flyingpress_damage
+	; === Compute the display matchup as usual for the move's real type (Fighting) ===
 	call BattleCheckTypeMatchup
+
+	; If it's not Flying Press, finish like vanilla.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_FLYING_PRESS
+	jr nz, .vanilla_set_display
+
+	; === Combine the shown effectiveness with the Flying part ===
+	; At this point, wTypeMatchup holds the combined result for the move's base type (Fighting).
+	; We now compute a second wTypeMatchup for FLYING vs the same defender and multiply them.
+
+	; Save the Fighting factor.
+	ld a, [wTypeMatchup]
+	push af
+
+	; Point HL at the target's types (same as BattleCheckTypeMatchup prologue).
+	ld hl, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_target_hl_fp
+	ld hl, wBattleMonType1
+.got_target_hl_fp
+	; Compute Flying factor into wTypeMatchup.
+	ld a, FLYING
+	call CheckTypeMatchup
+
+	; Multiply (Fighting factor) * (Flying factor) / 10 -> wTypeMatchup.
+	pop af              ; A = Fighting factor
+	ld c, a             ; C = Fighting factor
+	xor a
+	ldh [hDividend + 0], a
+	ldh [hMultiplicand + 0], a
+	ldh [hMultiplicand + 1], a
+	ld a, [wTypeMatchup]    ; Flying factor (0/5/10/20)
+	ldh [hMultiplicand + 2], a
+	ld a, c
+	ldh [hMultiplier], a
+	call Multiply
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 3]
+	ld [wTypeMatchup], a
+
+.vanilla_set_display
+	; OR the STAB bit back in like the original code
 	ld a, [wTypeMatchup]
 	ld b, a
 	ld a, [wTypeModifier]
@@ -1556,6 +1720,137 @@ BattleCommand_ResetTypeMatchup:
 
 .reset
 	ld [wTypeMatchup], a
+	ret
+	
+; ApplySecondaryTypeDamage_ForAttackingTypeA
+; Input:  A = attacking type to apply (e.g., FLYING)
+; Uses:   de must already hold the defender's two types (the caller preserves it).
+; Effect: Scales wCurDamage by this type's matchup vs (d,e), sets wAttackMissed on immunity,
+;         and keeps the STAB bit in wTypeModifier intact (just like the main loop).
+ApplySecondaryTypeDamage_ForAttackingTypeA:
+	ld b, a
+
+	; Pick the correct matchup table (normal vs inverse).
+	ld hl, TypeMatchups
+	ld a, [wInverseActivated]
+	and a
+	jr z, .got_table
+	ld hl, InverseTypeMatchups
+.got_table
+
+.SecondaryTypesLoop:
+	call GetNextTypeMatchupsByte
+	inc hl
+	cp -1
+	jp z, .done
+
+	; foresight sentinel
+	cp -2
+	jr nz, .skip_foresight
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_IDENTIFIED, a
+	jr nz, .done
+	jr .SecondaryTypesLoop
+
+.skip_foresight:
+	cp b
+	jr nz, .skip_entry
+
+	; Match defender type 1 or 2
+	call GetNextTypeMatchupsByte
+	cp d
+	jr z, .apply_here
+	cp e
+	jr z, .apply_here
+	jr .skip_entry
+
+.apply_here:
+	push hl
+	push bc
+	inc hl
+
+	; Preserve the STAB bit from wTypeModifier.
+	ld a, [wTypeModifier]
+	and %10000000
+	ld b, a
+
+	; Fetch multiplier and handle immunity like the engine does.
+	call GetNextTypeMatchupsByte ; A = 0 / 5 / 10 / 20
+	and a
+	jr nz, .not_immune
+	inc a
+	ld [wAttackMissed], a
+	xor a
+.not_immune
+	ldh [hMultiplier], a
+	add b
+	ld [wTypeModifier], a
+
+	; Multiply current damage by (A / 10), with the usual min-1 safeguard.
+	xor a
+	ldh [hMultiplicand + 0], a
+
+	ld hl, wCurDamage
+	ld a, [hli]
+	ldh [hMultiplicand + 1], a
+	ld a, [hld]
+	ldh [hMultiplicand + 2], a
+
+	call Multiply
+
+	ldh a, [hProduct + 1]
+	ld b, a
+	ldh a, [hProduct + 2]
+	or b
+	ld b, a
+	ldh a, [hProduct + 3]
+	or b
+	jr z, .write_back ; product == 0 → keep as 0 (already a miss or zeroed)
+
+	; Divide product by 10; if that would round to 0, force at least 1.
+	ld a, 10
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+	ldh a, [hQuotient + 2]
+	ld b, a
+	ldh a, [hQuotient + 3]
+	or b
+	jr nz, .store_q
+	ld a, 1
+	ldh [hMultiplicand + 2], a
+	jr .write_back
+
+.store_q
+	ldh a, [hMultiplicand + 1]
+	ld [hli], a
+	ldh a, [hMultiplicand + 2]
+	ld [hl], a
+	pop bc
+	pop hl
+	jr .advance
+
+.write_back
+	ldh a, [hMultiplicand + 1]
+	ld [hli], a
+	ldh a, [hMultiplicand + 2]
+	ld [hl], a
+	pop bc
+	pop hl
+
+.advance:
+	; skip to next entry (mirrors the main loop’s step)
+	inc hl
+	inc hl
+	jp .SecondaryTypesLoop
+
+.skip_entry:
+	inc hl
+	inc hl
+	jp .SecondaryTypesLoop
+
+.done
 	ret
 
 INCLUDE "engine/battle/ai/switch.asm"
@@ -2632,8 +2927,7 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	
-	call SnowDefenseBoost
-
+	
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -2878,8 +3172,7 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
-	call SnowDefenseBoost
-
+	
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -6857,32 +7150,6 @@ _CheckBattleScene:
 	ret
 
 
-SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-		ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-	ret
-	
 BattleCommand_StartWeather:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
