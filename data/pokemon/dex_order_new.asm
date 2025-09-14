@@ -253,4 +253,6 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
+	db SKITTY
+	db DELCATTY
 	assert_table_length NUM_POKEMON

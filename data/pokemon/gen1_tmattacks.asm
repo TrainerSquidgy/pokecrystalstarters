@@ -2506,6 +2506,8 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+SkittyGen1TMAttacks:
+DelcattyGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0

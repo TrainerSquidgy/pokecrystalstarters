@@ -1,2 +1,2 @@
-Pokémon: Sableye
-Dynamicpunch, Headbutt, Curse, Toxic, Rock_Smash, Psych_Up, Hidden_Power, Sunny_Day, Snore, Icy_Wind, Protect, Rain_Dance, Endure, Frustration, Return, Dig, Psychic, Shadow_Ball, Mud_Slap, Double_Team, Ice_Punch, Swagger, Sleep_Talk, Thunderpunch, Dream_Eater, Rest, Attract, Thief, Fire_Punch, Fury_Cutter, Nightmare, Cut, Flash
+Pokémon: Delcatty
+Headbutt, Curse, Rollout, Toxic, Rock_Smash, Psych_Up, Hidden_Power, Sunny_Day, Snore, Blizzard, Hyper_Beam, Icy_Wind, Protect, Rain_Dance, Endure, Frustration, Solarbeam, Iron_Tail, Thunder, Return, Dig, Shadow_Ball, Mud_Slap, Double_Team, Swagger, Sleep_Talk, Swift, Defense_Curl, Dream_Eater, Rest, Attract, Strength, Flash, Ice_Beam, Thunderbolt

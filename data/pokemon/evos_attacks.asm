@@ -3367,3 +3367,28 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SkittyEvosAttacks:
+	db EVOLVE_ITEM, MOON_STONE, DELCATTY
+	db 0 ; No More Evolutions
+	db 1, GROWL
+	db 1, TACKLE
+	db 3, TAIL_WHIP
+	db 7, ATTRACT
+	db 13, SING
+	db 15, DOUBLESLAP
+	db 19, METRONOME
+	db 25, CHARM
+	db 27, FAINT_ATTACK
+	db 31, COVET
+	db 37, HEAL_BELL
+	db 39, DOUBLE_EDGE
+	db 0
+	
+DelcattyEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, GROWL
+	db 1, ATTRACT
+	db 1, SING
+	db 1, DOUBLESLAP
+	db 0
