@@ -162,4 +162,7 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw Taunt
+	dw Assurance
+	dw Embargo
+	dw Revenge
 	assert_table_length NUM_MOVE_EFFECTS

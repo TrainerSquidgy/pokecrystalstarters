@@ -1170,3 +1170,8 @@ NoLongerTauntedText:
 	text "<USER>'s"
 	line "no longer taunted."
 	prompt
+	
+EmbargoText:
+	text "<TARGET>"
+	line "can't use items!"
+	prompt

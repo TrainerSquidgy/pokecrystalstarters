@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw EmbargoDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw RevengeDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw NastyPlotDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -220,8 +220,8 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
-	dw SacredFireDescription
+	dw HeadbuttDescription
+	dw NightSlashDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -253,9 +253,9 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw TauntDescription
+	dw QuickAttackDescription
+	dw AssuranceDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -264,8 +264,19 @@ TauntDescription:
 	db   "Taunts the foe"
 	next "into attacking.@"
 
-MoveFDDescription:
-MoveFEDescription:
+
+RevengeDescription:
+	db   "Doubles damage if"
+	next "already hurt.@"
+
+AssuranceDescription:
+	db   "Doubles damage if"
+	next "foe already hurt.@"
+	
+EmbargoDescription:
+	db   "Stops foe using"
+	next "HELD items.@"
+
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -318,9 +329,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -658,6 +666,10 @@ AgilityDescription:
 	db   "Sharply increases"
 	next "the user's SPEED.@"
 
+NastyPlotDescription:
+	db   "Sharply increases"
+	next "user's SPCL.ATK.@"
+
 QuickAttackDescription:
 	db   "Lets the user get"
 	next "in the first hit.@"
@@ -974,7 +986,7 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
+NightSlashDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
@@ -1150,9 +1162,6 @@ PainSplitDescription:
 	db   "Adds user & foe's"
 	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
 
 MagnitudeDescription:
 	db   "A ground attack"

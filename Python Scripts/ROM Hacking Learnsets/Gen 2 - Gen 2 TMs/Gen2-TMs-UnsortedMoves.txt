@@ -1,78 +1,192 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
+Scratch
+Leer
+Taunt
+Quick Attack
+Screech
+Faint Attack
+Fury Swipes
+Agility
+Icy Wind
+Slash
+Beat Up
+Metal Claw
+Ice Shard
+Focus Punch
 Calm Mind
 Toxic
+Hail
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
+Taunt
+Ice Beam
+Blizzard
 Protect
-Safeguard
+Rain Dance
 Frustration
-SolarBeam
-Earthquake
+Iron Tail
 Return
-Psychic
+Dig
 Shadow Ball
+Brick Break
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
+Aerial Ace
+Torment
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
+Thief
+Snatch
+False Swipe
+Fling
 Endure
-Will-O-Wisp
 Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
+Shadow Claw
+Payback
+Avalanche
+Swords Dance
 Psych Up
-Rock Slide
+Captivate
+Dark Pulse
+X-Scissor
 Sleep Talk
 Natural Gift
+Poison Jab
 Dream Eater
-Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Cut
+Surf
+Strength
+Whirlpool
+Rock Smash
+DYNAMICPUNCH
+HEADBUTT
+CURSE
+TOXIC
+ROCK_SMASH
+PSYCH_UP
+HIDDEN_POWER
+SNORE
+BLIZZARD
+ICY_WIND
+PROTECT
+RAIN_DANCE
+ENDURE
+FRUSTRATION
+IRON_TAIL
+RETURN
+DIG
+SHADOW_BALL
+MUD_SLAP
+DOUBLE_TEAM
+ICE_PUNCH
+SWAGGER
+SLEEP_TALK
+SWIFT
+DEFENSE_CURL
+DREAM_EATER
+DETECT
+REST
+ATTRACT
+THIEF
+FURY_CUTTER
+NIGHTMARE
+CUT
+SURF
+STRENGTH
+ICE_BEAM
+Fury Cutter
+Headbutt
+Ice Punch
+Icy Wind
+Knock Off
+Low Kick
+Mud-Slap
 Snore
+Spite
 Swift
-Zen Headbutt
-Baton Pass
-Body Slam
 Defense Curl
 Double-Edge
+DynamicPunch
 Mimic
-Selfdestruct
+Nightmare
+Focus Punch
+Calm Mind
+Toxic
+Hail
+Hidden Power
+Sunny Day
+Taunt
+Ice Beam
+Blizzard
+Hyper Beam
+Protect
+Rain Dance
+Frustration
+Iron Tail
+Return
+Dig
+Shadow Ball
+Brick Break
+Double Team
+Aerial Ace
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Snatch
+Focus Blast
+False Swipe
+Fling
+Endure
+Embargo
+Shadow Claw
+Payback
+Giga Impact
+Avalanche
+Swords Dance
+Psych Up
+Captivate
+Dark Pulse
+X-Scissor
+Sleep Talk
+Natural Gift
+Poison Jab
+Dream Eater
+Swagger
+Substitute
+Cut
+Surf
+Strength
+Whirlpool
+Rock Smash
+Assurance
+Embargo
+Revenge
+Scratch
+Leer
+Taunt
+Quick Attack
+Quick Attack
+Screech
+Faint Attack
+Fury Swipes
+Nasty Plot
+Icy Wind
+Night Slash
+Fling
+Metal Claw
+Dark Pulse
+Fury Cutter
+Headbutt
+Ice Punch
+Icy Wind
+Knock Off
+Low Kick
+Mud-Slap
+Snore
+Spite
+Swift

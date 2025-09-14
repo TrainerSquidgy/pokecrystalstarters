@@ -3198,7 +3198,9 @@ wBinSkipItem:: db
 wIsAStream:: db
 wPlayerTauntCount:: db
 wEnemyTauntCount:: db
-	ds 55
+wPlayerTookDamage:: db
+wEnemyTookDamage:: db
+	ds 53
 
 wEventFlags:: flag_array NUM_EVENTS
 

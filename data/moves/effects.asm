@@ -2100,4 +2100,53 @@ Taunt:
 	checkhit
 	taunt
 	endmove
+
+Assurance:
+	checkobedience
+	usedmovetext
+	doturn
+	assurance
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
 	
+Embargo:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	embargo
+	endmove
+	
+Revenge:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	revenge
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove

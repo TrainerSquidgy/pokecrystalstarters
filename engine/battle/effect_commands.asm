@@ -2136,6 +2136,7 @@ BattleCommand_FailureText:
 	jp EndMoveEffect
 
 BattleCommand_ApplyDamage:
+	call TookDamageFlag
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
@@ -3409,6 +3410,10 @@ DoEnemyDamage:
 	jp nz, DoSubstituteDamage
 
 .ignore_substitute
+	push hl
+	ld hl, wEnemySubStatus2
+	set SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	pop hl
 	; Subtract wCurDamage from wEnemyMonHP.
 	;  store original HP in little endian wHPBuffer2
 	ld a, [hld]
@@ -3486,6 +3491,10 @@ DoPlayerDamage:
 	jp nz, DoSubstituteDamage
 
 .ignore_substitute
+	push hl
+	ld hl, wPlayerSubStatus2
+	set SUBSTATUS_DAMAGED_THIS_TURN, [hl]
+	pop hl
 	; Subtract wCurDamage from wBattleMonHP.
 	;  store original HP in little endian wHPBuffer2
 	;  store new HP in little endian wHPBuffer3
@@ -6576,14 +6585,24 @@ CheckHiddenOpponent:
 
 GetUserItem:
 ; Return the effect of the user's item in bc, and its id at hl.
+
 	ld hl, wBattleMonItem
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .go
 	ld hl, wEnemyMonItem
 .go
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVar
+	bit SUBSTATUS_EMBARGO, a
+	jr nz, .embargo
+
 	ld b, [hl]
 	jp GetItemHeldEffect
+
+.embargo
+	ld b, HELD_NONE
+	ret
 
 GetOpponentItem:
 ; Return the effect of the opponent's item in bc, and its id at hl.
@@ -6593,8 +6612,17 @@ GetOpponentItem:
 	jr z, .go
 	ld hl, wBattleMonItem
 .go
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_EMBARGO, a
+	jr nz, .embargo
+
 	ld b, [hl]
 	jp GetItemHeldEffect
+
+.embargo
+	ld b, HELD_NONE
+	ret
 
 GetItemHeldEffect:
 ; Return the effect of item b in bc.
@@ -6949,4 +6977,65 @@ CheckTauntPreventsCurrentMove:
 	and a
 	ret nz
 	scf
+	ret
+	
+BattleCommand_Assurance:
+; Doubles damage if opponent was damaged before this turn.
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_DAMAGED_THIS_TURN, a
+	ret z
+
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	sla [hl]
+	ret
+	
+BattleCommand_Embargo:
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .fail
+
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_EMBARGO, [hl]
+	jr nz, .fail
+
+	set SUBSTATUS_EMBARGO, [hl]
+	ld hl, EmbargoText
+	jp StdBattleTextbox
+
+.fail
+	push hl
+	call AnimateFailedMove
+	pop hl
+	jp StdBattleTextbox
+	
+BattleCommand_Revenge:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTookDamage]
+	jr z, .go
+	ld a, [wEnemyTookDamage]
+.go
+	and a
+	ret z
+	ld a, d
+	add a
+	ld d, a
+	ret
+	
+TookDamageFlag:
+	ld a, BATTLE_VARS_SUBSTATUS4_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SUBSTITUTE, a
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerTookDamage
+	jr nz, .got_turn_damage_flag
+	ld hl, wEnemyTookDamage
+.got_turn_damage_flag
+	ld a, 1
+	ld [hl], a
 	ret
