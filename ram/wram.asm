@@ -3200,7 +3200,7 @@ wPlayerTauntCount:: db
 wEnemyTauntCount:: db
 wPlayerTookDamage:: db
 wEnemyTookDamage:: db
-	ds 53
+	ds 52
 
 wEventFlags:: flag_array NUM_EVENTS
 
