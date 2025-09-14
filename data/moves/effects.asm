@@ -2093,3 +2093,10 @@ Snow:
 	startweather
 	endmove
 	
+CosmicPower:
+	checkobedience
+	usedmovetext
+	doturn
+	startweather
+	endmove
+	

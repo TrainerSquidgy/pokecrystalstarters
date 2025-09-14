@@ -6912,3 +6912,12 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_CosmicPower:
+; cosmicpower
+	call ResetMiss
+	call BattleCommand_DefenseUp
+	call BattleCommand_StatUpMessage
+
+	call ResetMiss
+	call BattleCommand_SpecialDefenseUp
+	jp BattleCommand_StatUpMessage
