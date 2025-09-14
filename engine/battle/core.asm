@@ -1955,6 +1955,24 @@ GetMaxHP:
 	ld c, a
 	ret
 
+GetHalfHP: ; unreferenced
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonHP
+.ok
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	srl b
+	rr c
+	ld a, [hli]
+	ld [wHPBuffer1 + 1], a
+	ld a, [hl]
+	ld [wHPBuffer1], a
+	ret
 
 CheckUserHasEnoughHP:
 	ld hl, wBattleMonHP + 1
@@ -6582,6 +6600,17 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
+SwapBattlerLevels: ; unreferenced
+	push bc
+	ld a, [wBattleMonLevel]
+	ld b, a
+	ld a, [wEnemyMonLevel]
+	ld [wBattleMonLevel], a
+	ld a, b
+	ld [wEnemyMonLevel], a
+	pop bc
+	ret
+
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
 	ld [wTempEnemyMonSpecies], a
@@ -6934,6 +6963,20 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
+LoadHPExpBarGFX: ; unreferenced
+	ld de, EnemyHPBarBorderGFX
+	ld hl, vTiles2 tile $6c
+	lb bc, BANK(EnemyHPBarBorderGFX), 4
+	call Get1bpp
+	ld de, HPExpBarBorderGFX
+	ld hl, vTiles2 tile $73
+	lb bc, BANK(HPExpBarBorderGFX), 6
+	call Get1bpp
+	ld de, ExpBarGFX
+	ld hl, vTiles2 tile $55
+	lb bc, BANK(ExpBarGFX), 8
+	jp Get2bpp
+
 EmptyBattleTextbox:
 	ld hl, .empty
 	jp BattleTextbox
@@ -7138,102 +7181,6 @@ GiveExperiencePoints:
 	pop bc
 	jp nc, .next_mon
 	push bc
-	
-	ld a, [wScalingExperience]
-	and a
-	jr z, .VanillaExpCalc
-
-	; --- Gen7-ish base: base = floor((b * L) / 5) ---
-		xor a
-		ldh [hMultiplicand + 0], a
-		ldh [hMultiplicand + 1], a
-		ld a, [wEnemyMonBaseExp]   ; b
-		ldh [hMultiplicand + 2], a
-		ld a, [wEnemyMonLevel]     ; L (fainted mon)
-		ldh [hMultiplier], a
-		call Multiply
-		ld a, 5
-		ldh [hDivisor], a
-		ld b, 4
-		call Divide                ; base now in hQuotient+2:3
-
-		; Keep base in HL for the rest
-		ldh a, [hQuotient + 2]
-		ld l, a
-		ldh a, [hQuotient + 3]
-		ld h, a                    ; HL = base
-
-	; --- Build Q = floor(((2L + 10) << 8) / (L + Lp + 10)) ---
-		; A_num = 2L + 10  (8-bit)
-		ld a, [wEnemyMonLevel]     ; L
-		add a, a
-		add a, 10
-		ld d, a                    ; D = A_num
-
-		; B_den = L + Lp + 10  (8-bit)   (don’t clobber HL: push/pop it)
-		push hl
-		push bc
-		ld hl, MON_LEVEL
-		add hl, bc                 ; bc points at current party mon
-		ld a, [hl]                 ; Lp
-		ld b, a
-		pop bc
-		pop hl
-		ld a, [wEnemyMonLevel]     ; L
-		add a, b
-		add a, 10
-		ld e, a                    ; E = B_den
-
-		; Q16 = (A_num << 8) / B_den  → cap to 0..255 and store in C
-		ld a, d
-		ldh [hDividend + 0], a     ; high byte = A_num
-		xor a
-		ldh [hDividend + 1], a     ; low  byte = 0
-		ldh [hDividend + 2], a
-		ldh [hDividend + 3], a
-		ld a, e
-		ldh [hDivisor], a
-		ld b, 2                    ; 16-bit dividend
-		call Divide
-		; Cap to 255 if quotient overflowed 8 bits
-		ldh a, [hQuotient + 2]     ; high byte of quotient
-		and a
-		jr z, .q_low_ok
-		ld a, $FF
-		jr .q_got
-	.q_low_ok
-		ldh a, [hQuotient + 3]     ; low byte of quotient
-	.q_got
-		ld c, a                    ; C = Q (0..255)
-
-	; --- scaled = base + floor(base * Q / 256) ---
-		; delta = floor(base * Q / 256), multiplicand = 0:HL
-		xor a
-		ldh [hMultiplicand + 0], a
-		ld a, h
-		ldh [hMultiplicand + 1], a
-		ld a, l
-		ldh [hMultiplicand + 2], a
-		ld a, c                    ; Q
-		ldh [hMultiplier], a
-		call Multiply
-		; delta = product >> 8  (take high two bytes)
-		ldh a, [hProduct + 2]
-		ld e, a
-		ldh a, [hProduct + 3]
-		ld d, a
-
-		add hl, de                 ; HL = base + delta
-
-		; Write back as “base EXP” for the later boost chain
-		ld a, l
-		ldh [hQuotient + 2], a
-		ld a, h
-		ldh [hQuotient + 3], a
-		jr .AfterBaseCalc
-
-.VanillaExpCalc
-	; original (b*L)/7 path, unchanged
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
@@ -7246,8 +7193,6 @@ GiveExperiencePoints:
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
-
-.AfterBaseCalc
 ; Boost Experience for traded Pokemon
 	pop bc
 	ld hl, MON_OT_ID
@@ -7981,10 +7926,45 @@ GoodComeBackText:
 	text_far _GoodComeBackText
 	text_end
 
+TextJump_ComeBack: ; unreferenced
+	ld hl, ComeBackText
+	ret
 
 ComeBackText:
 	text_far _ComeBackText
 	text_end
+
+HandleSafariAngerEatingStatus: ; unreferenced
+	ld hl, wSafariMonEating
+	ld a, [hl]
+	and a
+	jr z, .angry
+	dec [hl]
+	ld hl, BattleText_WildMonIsEating
+	jr .finish
+
+.angry
+	dec hl
+	assert wSafariMonEating - 1 == wSafariMonAngerCount
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ld hl, BattleText_WildMonIsAngry
+	jr nz, .finish
+	push hl
+	ld a, [wEnemyMonSpecies]
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, [wBaseCatchRate]
+	ld [wEnemyMonCatchRate], a
+	pop hl
+
+.finish
+	push hl
+	call SafeLoadTempTilemapToTilemap
+	pop hl
+	jp StdBattleTextbox
 
 FillInExpBar:
 	push hl
@@ -8212,6 +8192,9 @@ StartBattle:
 	scf
 	ret
 
+CallDoBattle: ; unreferenced
+	call DoBattle
+	ret
 
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
@@ -8382,6 +8365,57 @@ InitEnemyWildmon:
 	hlcoord 12, 0
 	lb bc, 7, 7
 	predef PlaceGraphic
+	ret
+
+FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
+	ld hl, wEnemyMonMoves
+	ld de, wListMoves_MoveIndicesBuffer
+	ld b, NUM_MOVES
+.loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	and a
+	jr z, .clearpp
+
+	push bc
+	push hl
+
+	push hl
+	dec a
+	ld hl, Moves + MOVE_PP
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	pop hl
+
+	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
+	add hl, bc
+	ld [hl], a
+
+	pop hl
+	pop bc
+
+	dec b
+	jr nz, .loop
+	ret
+
+.clear
+	xor a
+	ld [hli], a
+
+.clearpp
+	push bc
+	push hl
+	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
+	add hl, bc
+	xor a
+	ld [hl], a
+	pop hl
+	pop bc
+	dec b
+	jr nz, .clear
 	ret
 
 ExitBattle:
