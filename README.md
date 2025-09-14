@@ -1,6 +1,8 @@
-# Pokémon Crystal [![Build Status][ci-badge]][ci]
+# Pokémon Crystal Challenge Run and Backporting Base[![Build Status][ci-badge]][ci]
 
-This is a disassembly of Pokémon Crystal.
+This is a fork of a disassembly of Pokémon Crystal by Pret.
+
+It can be used alongside the Python Scripts included to quickly backport Pokémon into Pokémon Crystal, as well as having several quality of life updates.
 
 It builds the following ROMs:
 
@@ -16,6 +18,7 @@ To set up the repository, see [INSTALL.md](INSTALL.md).
 
 ## See also
 
+- [**Challenge Patch Page**]([https://](https://trainersquidgy.com/wiki/Crystal_Challenge_Patch)
 - [**FAQ**](FAQ.md)
 - [**Documentation**][docs]
 - [**Wiki**][wiki] (includes [tutorials][tutorials])
