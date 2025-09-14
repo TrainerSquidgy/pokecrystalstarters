@@ -3367,3 +3367,43 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SneaselSEvosAttacks:
+	db EVOLVE_HELD_NITE, EVO_STONE, WEAVILE
+	db EVOLVE_ITEM, EVO_STONE, WEAVILE
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, TAUNT
+	db 8, QUICK_ATTACK
+	db 10, SCREECH
+	db 14, FAINT_ATTACK
+	db 21, FURY_SWIPES
+	db 24, AGILITY
+	db 28, ICY_WIND
+	db 35, SLASH
+	db 38, BEAT_UP
+	db 42, METAL_CLAW
+	db 49, ICE_SHARD
+	db 0
+
+WeavileEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, ASSURANCE
+	db 1, EMBARGO
+	db 1, REVENGE
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, TAUNT
+	db 1, QUICK_ATTACK
+	db 8, QUICK_ATTACK
+	db 10, SCREECH
+	db 14, FAINT_ATTACK
+	db 21, FURY_SWIPES
+	db 24, NASTY_PLOT
+	db 28, ICY_WIND
+	db 35, NIGHT_SLASH
+	db 38, BEAT_UP
+	db 42, METAL_CLAW
+	db 49, DARK_PULSE
+	db 0

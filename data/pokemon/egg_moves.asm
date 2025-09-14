@@ -804,5 +804,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+SneaselSEggMoves:
+WeavileEggMoves:
 NoEggMoves:
 	db -1 ; end

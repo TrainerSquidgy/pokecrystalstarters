@@ -909,6 +909,8 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+SneaselSRelearnedEggMoves:
+WeavileRelearnedEggMoves:
 NoRelearnedEggMoves:
 	db 0
 	db 0
