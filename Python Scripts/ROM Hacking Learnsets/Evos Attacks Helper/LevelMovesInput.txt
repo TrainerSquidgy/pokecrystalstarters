@@ -1,14 +1,16 @@
-Pokémon: Lechonk
+Pokémon: Aggron
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: Harden
+1: Mud_Slap
+1: Headbutt
+4: Harden
+7: Mud_Slap
+10: Headbutt
+13: Metal Claw
+17: Iron Defense
+21: Roar
+25: Take Down
+29: Iron Tail
+37: Protect
+50: Metal Sound
+63: Double_Edge

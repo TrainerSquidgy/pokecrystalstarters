@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Aggron
+1: Tackle
+1: Harden
+1: Mud_Slap
+1: Headbutt
+4: Harden
+7: Mud_Slap
+10: Headbutt
+13: Metal Claw
+17: Iron Defense
+21: Roar
+25: Take Down
+29: Iron Tail
+37: Protect
+50: Metal Sound
+63: Double_Edge

@@ -252,5 +252,7 @@ NewPokedexOrder:
 	db HO_OH
 	db MEWTWO
 	db MEW
-	db CELEBI
+	db ARON
+	db LAIRON
+	db AGGRON
 	assert_table_length NUM_POKEMON

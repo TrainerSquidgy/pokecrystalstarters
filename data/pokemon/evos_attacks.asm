@@ -3367,3 +3367,59 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+AronEvosAttacks:
+	db EVOLVE_LEVEL, 32, LAIRON
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 4, HARDEN
+	db 7, MUD_SLAP
+	db 10, HEADBUTT
+	db 13, METAL_CLAW
+	db 17, IRON_DEFENSE
+	db 21, ROAR
+	db 25, TAKE_DOWN
+	db 29, IRON_TAIL
+	db 34, PROTECT
+	db 39, METAL_SOUND
+	db 44, DOUBLE_EDGE
+	db 0
+	
+LaironEvosAttacks:
+	db EVOLVE_LEVEL, 42, AGGRON
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, HARDEN
+	db 1, MUD_SLAP
+	db 1, HEADBUTT
+	db 4, HARDEN
+	db 7, MUD_SLAP
+	db 10, HEADBUTT
+	db 13, METAL_CLAW
+	db 17, IRON_DEFENSE
+	db 21, ROAR
+	db 25, TAKE_DOWN
+	db 29, IRON_TAIL
+	db 37, PROTECT
+	db 45, METAL_SOUND
+	db 53, DOUBLE_EDGE
+	db 0
+
+AggronEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, HARDEN
+	db 1, MUD_SLAP
+	db 1, HEADBUTT
+	db 4, HARDEN
+	db 7, MUD_SLAP
+	db 10, HEADBUTT
+	db 13, METAL_CLAW
+	db 17, IRON_DEFENSE
+	db 21, ROAR
+	db 25, TAKE_DOWN
+	db 29, IRON_TAIL
+	db 37, PROTECT
+	db 50, METAL_SOUND
+	db 63, DOUBLE_EDGE
+	db 0

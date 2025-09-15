@@ -710,14 +710,12 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+AronFrontpic: INCBIN "gfx/pokemon/aron/front.animated.2bpp.lz"
+AronBackpic: INCBIN "gfx/pokemon/aron/back.2bpp.lz"
+LaironFrontpic: INCBIN "gfx/pokemon/lairon/front.animated.2bpp.lz"
+LaironBackpic: INCBIN "gfx/pokemon/lairon/back.2bpp.lz"
+AggronBackpic: INCBIN "gfx/pokemon/aggron/back.2bpp.lz"
+AggronFrontpic: INCBIN "gfx/pokemon/aggron/front.animated.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 

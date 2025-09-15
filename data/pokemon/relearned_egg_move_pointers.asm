@@ -250,5 +250,7 @@ RelearnedEggMovePointers::
 	dw LarvitarRelearnedEggMoves
 	dw NoRelearnedEggMoves
 	dw NoRelearnedEggMoves
-	dw NoRelearnedEggMoves ; Celebi
+	dw AronRelearnedEggMoves
+	dw LaironRelearnedEggMoves
+	dw AggronRelearnedEggMoves
 	assert_table_length NUM_POKEMON

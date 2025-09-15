@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+AggronEvosAttacks:
 	db 0 ; No More Evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, HARDEN
+	db 1, MUD_SLAP
+	db 1, HEADBUTT
+	db 4, HARDEN
+	db 7, MUD_SLAP
+	db 10, HEADBUTT
+	db 13, METAL_CLAW
+	db 17, IRON_DEFENSE
+	db 21, ROAR
+	db 25, TAKE_DOWN
+	db 29, IRON_TAIL
+	db 37, PROTECT
+	db 50, METAL_SOUND
+	db 63, DOUBLE_EDGE
 	db 0

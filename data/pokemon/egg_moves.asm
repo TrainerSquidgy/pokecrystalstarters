@@ -805,5 +805,8 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+LaironEggMoves:
+AggronEggMoves:
+AronEggMoves:
 NoEggMoves:
 	db -1 ; end
