@@ -252,16 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw BubbleDescription
+	dw CosmicPowerDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+CosmicPowerDescription:
+	db   "Raises DEFENSE"
+	next "and SPCL.DEF.@"
+	
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
