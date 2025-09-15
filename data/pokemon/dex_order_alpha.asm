@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db BALTOY
+	db CLAYDOL
 	assert_table_length NUM_POKEMON

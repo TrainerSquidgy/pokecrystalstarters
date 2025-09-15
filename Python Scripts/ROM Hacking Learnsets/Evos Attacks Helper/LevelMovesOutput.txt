@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+ClaydolEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, TELEPORT
+	db 1, CONFUSION
+	db 1, HARDEN
+	db 1, RAPID_SPIN
+	db 3, HARDEN
+	db 5, RAPID_SPIN
+	db 7, MUD_SLAP
+	db 11, PSYBEAM
+	db 15, ROCK_TOMB
+	db 19, SELFDESTRUCT
+	db 25, ANCIENTPOWER
+	db 31, SANDSTORM
+	db 36, HYPER_BEAM
+	db 42, COSMIC_POWER
+	db 55, EXPLOSION
 	db 0

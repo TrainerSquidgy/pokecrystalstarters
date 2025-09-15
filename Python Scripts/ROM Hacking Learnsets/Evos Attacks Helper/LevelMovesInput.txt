@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Claydol
+1: Teleport
+1: Confusion
+1: Harden
+1: Rapid Spin
+3: Harden
+5: Rapid Spin
+7: Mud_Slap
+11: Psybeam
+15: Rock Tomb
+19: Selfdestruct
+25: AncientPower
+31: Sandstorm
+36: Hyper Beam
+42: Cosmic Power
+55: Explosion

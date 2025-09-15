@@ -3367,3 +3367,38 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+BaltoyEvosAttacks:
+	db EVOLVE_LEVEL, 36, CLAYDOL
+	db 0 ; No More Evolutions
+	db 1, CONFUSION
+	db 3, HARDEN
+	db 5, RAPID_SPIN
+	db 7, MUD_SLAP
+	db 11, PSYBEAM
+	db 15, ROCK_TOMB
+	db 19, SELFDESTRUCT
+	db 25, ANCIENTPOWER
+	db 31, SANDSTORM
+	db 37, COSMIC_POWER
+	db 45, EXPLOSION
+	db 0
+	
+ClaydolEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TELEPORT
+	db 1, CONFUSION
+	db 1, HARDEN
+	db 1, RAPID_SPIN
+	db 3, HARDEN
+	db 5, RAPID_SPIN
+	db 7, MUD_SLAP
+	db 11, PSYBEAM
+	db 15, ROCK_TOMB
+	db 19, SELFDESTRUCT
+	db 25, ANCIENTPOWER
+	db 31, SANDSTORM
+	db 36, HYPER_BEAM
+	db 42, COSMIC_POWER
+	db 55, EXPLOSION
+	db 0
