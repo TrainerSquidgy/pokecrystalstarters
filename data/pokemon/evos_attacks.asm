@@ -3367,3 +3367,30 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+CombeeEvosAttacks:
+	db EVOLVE_LEVEL_FEMALE, 21, VESPIQUEN
+	db 0 ; No More Evolutions
+	db 1, SWEET_SCENT
+	db 1, GUST
+	db 0
+
+VespiquenEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, GUST
+	db 1, SWEET_SCENT
+	db 3, POISON_STING
+	db 7, CONFUSE_RAY
+	db 9, FURY_CUTTER
+	db 13, DEFEND_ORDER
+	db 15, PURSUIT
+	db 19, FURY_SWIPES
+	db 21, POWER_GEM
+	db 25, HEAL_ORDER
+	db 27, TOXIC
+	db 31, SLASH
+	db 33, CAPTIVATE
+	db 37, ATTACK_ORDER
+	db 39, SWAGGER
+	db 43, DESTINY_BOND
+	db 0

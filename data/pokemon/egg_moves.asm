@@ -805,5 +805,7 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+CombeeEggMoves:
+VespiquenEggMoves:
 NoEggMoves:
 	db -1 ; end

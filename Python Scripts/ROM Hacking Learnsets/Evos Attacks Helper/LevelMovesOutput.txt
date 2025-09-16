@@ -1,16 +1,19 @@
-LechonkEvosAttacks:
+VespiquenEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, GUST
+	db 1, SWEET_SCENT
+	db 3, POISON_STING
+	db 7, CONFUSE_RAY
+	db 9, FURY_CUTTER
+	db 13, DEFEND_ORDER
+	db 15, PURSUIT
+	db 19, FURY_SWIPES
+	db 21, POWER_GEM
+	db 25, HEAL_ORDER
+	db 27, TOXIC
+	db 31, SLASH
+	db 33, CAPTIVATE
+	db 37, ATTACK_ORDER
+	db 39, SWAGGER
+	db 43, DESTINY_BOND
 	db 0

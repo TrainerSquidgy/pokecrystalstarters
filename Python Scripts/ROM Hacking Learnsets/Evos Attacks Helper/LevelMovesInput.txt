@@ -1,14 +1,17 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Vespiquen
+1: Gust
+1: Sweet Scent
+3: Poison Sting
+7: Confuse Ray
+9: Fury Cutter
+13: Defend Order
+15: Pursuit
+19: Fury Swipes
+21: Power Gem
+25: Heal Order
+27: Toxic
+31: Slash
+33: Captivate
+37: Attack Order
+39: Swagger
+43: Destiny Bond
