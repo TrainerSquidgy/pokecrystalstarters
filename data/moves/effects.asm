@@ -2093,3 +2093,23 @@ Snow:
 	startweather
 	endmove
 	
+DefendOrder:
+	checkobedience
+	usedmovetext
+	doturn
+	defendorder
+	endmove
+	
+Captivate:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	captivate
+	attackdown2
+	lowersub
+	statdownanim
+	raisesub
+	statdownmessage
+	statdownfailtext
+	endmove
