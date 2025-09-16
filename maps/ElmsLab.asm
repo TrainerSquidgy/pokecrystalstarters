@@ -103,6 +103,7 @@ ElmsLabStarterChoice:
 	iffalse .NoHMFriends
 	loadmem wIlexForestEncounters, 0
 	loadmem wRoute34Encounters, 0
+	loadmem wRoute33Encounters, 0
 	loadmem wGuaranteedHMFriendCatch, 1
 	writetext ElmsLabText_AskAboutHMFriendsYes
 	sjump .DoneHMFriends
@@ -110,15 +111,40 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskAboutHMFriendsNo
 	loadmem wIlexForestEncounters, 3
 	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
+	writetext ElmsLabText_AskStream
+	yesorno
+	iffalse .nostream
+	loadmem wIsAStream, 1
+	writetext ElmsLabText_StreamYes
+	sjump .streamdone
+.nostream
+	loadmem wIsAStream, 0
+	writetext ElmsLabText_StreamNo
+.streamdone
+	promptbutton
 	closetext
 	turnobject PLAYER, DOWN
 .End
 	end
 	
+ElmsLabText_AskStream:
+	text "Is this a"
+	line "STREAMED run?"
+	done
+	
+ElmsLabText_StreamYes:
+	text "Streaming"
+	line "flag set."
+	done
 
+ElmsLabText_StreamNo:
+	text "Streaming"
+	line "flag unset."
+	done
 	
 ElmsLabText_InverseNo:
 	text "All type matchups"
@@ -701,8 +727,6 @@ BinSkipItemRandomizer:
 	ld a, $f9
 	call RandomRange
 	cp ITEM_FA
-	jr z, BinSkipItemRandomizer
-	cp ITEM_9B
 	jr z, BinSkipItemRandomizer
 	cp ITEM_A2
 	jr z, BinSkipItemRandomizer
@@ -2410,11 +2434,11 @@ ElmsLabText_AskAboutHMFriends:
 	done
 	
 ElmsLabText_AskAboutHMFriendsYes:
-	text "The first"
-	line "encounters will"
-	cont "be HM Friends"
-	cont "in ILEX FOREST"
-	cont "and ROUTE 34."
+	text "On ROUTES 33,"
+	line "34, and ILEX"
+	cont "FOREST, your"
+	cont "first encounters"
+	cont "will be fixed."
 	done
 	
 ElmsLabText_AskAboutHMFriendsNo:
