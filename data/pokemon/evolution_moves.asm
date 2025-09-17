@@ -4,6 +4,7 @@ EvolutionMoves::
 	db NO_MOVE      ; IVYSAUR    ; 02
 	db NO_MOVE      ; VENUSAUR   ; 03
 	db NO_MOVE      ; CHARMANDER ; 04
+	db NO_MOVE      ; CHARMANDER ; 04
 	db NO_MOVE      ; CHARMELEON ; 05
 	db NO_MOVE      ; CHARIZARD  ; 06
 	db NO_MOVE      ; SQUIRTLE   ; 07
