@@ -6969,8 +6969,8 @@ BattleCommand_NoRetreat:
 BattleCommand_CloseCombat:
 	call BattleCommand_SwitchTurn
     call ResetMiss
-    call BattleCommand_DefenseDown2
+    call BattleCommand_DefenseDown
     call BattleCommand_StatDownMessage
     call ResetMiss
-    call BattleCommand_SpecialDefenseDown2
+    call BattleCommand_SpecialDefenseDown
     jp BattleCommand_StatDownMessage
