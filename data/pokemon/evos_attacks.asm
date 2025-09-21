@@ -3381,4 +3381,5 @@ DarkraiEvosAttacks:
 	db 66, DARK_VOID
 	db 75, NASTY_PLOT
 	db 84, DREAM_EATER
+	db 93, DARK_PULSE
 	db 0
