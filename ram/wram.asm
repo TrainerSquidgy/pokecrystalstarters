@@ -3203,7 +3203,7 @@ wEnemyNumMoves:: db
 wEnemyUsedMoves::
 	ds NUM_MOVES
 	
-	ds 49
+	ds 48
 
 wEventFlags:: flag_array NUM_EVENTS
 
