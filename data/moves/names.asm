@@ -12,7 +12,7 @@ MoveNames::
 	li "SCRATCH"
 	li "VICEGRIP"
 	li "GUILLOTINE"
-	li "RAZOR WIND"
+	li "FIRE FANG"
 	li "SWORDS DANCE"
 	li "CUT"
 	li "GUST"
@@ -253,5 +253,5 @@ MoveNames::
 	li "BEAT UP"
 	li "HOWL"
 	li "ODOR SLEUTH"
-	li "DISCHARGE"
+	li "CHARGE"
 	assert_list_length NUM_ATTACKS

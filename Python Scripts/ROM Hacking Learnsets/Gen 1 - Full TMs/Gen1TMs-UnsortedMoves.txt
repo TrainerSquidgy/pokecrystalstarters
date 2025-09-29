@@ -1,146 +1,59 @@
-Bubble
-Thunder Wave
-Supersonic
-Flail
-Water Gun
-Spark
-Confuse Ray
-Take Down
-Hydro Pump
-Curse
-Toxic
-Zap Cannon
-Hidden Power
+Headbutt
+Magnet Rise
+Mud-Slap
+Signal Beam
 Snore
-Protect
-Rain Dance
-Endure
-Frustration
-Thunder
-Return
-Double Team
-Swagger
-Sleep Talk
-Rest
-Attract
-Surf
-Flash
-Whirlpool
-Waterfall
-Ice Beam
-Thunderbolt
-Double-Edge
-Endure
-Mimic
-Snore
-Substitute
-Swagger
-Sleep Talk
-Thunder Wave
-Water Pulse
+Swift
+Roar
 Toxic
-Hail
 Hidden Power
-Ice Beam
-Blizzard
+Hyper Beam
+Light Screen
 Protect
 Rain Dance
 Frustration
+Iron Tail
 Thunderbolt
 Thunder
 Return
 Double Team
 Shock Wave
+Flamethrower
 Facade
 Secret Power
 Rest
 Attract
-Surf
-Flash
-Waterfall
-Dive
-Bubble
-Thunder Wave
-Supersonic
-Flail
-Water Gun
-Spark
-Confuse Ray
-Take Down
-Hydro Pump
-Charge
-Bubble
-Thunder Wave
-Supersonic
-Supersonic
-Flail
-Water Gun
-Spark
-Confuse Ray
-Take Down
-Hydro Pump
-Curse
-Toxic
-Zap Cannon
-Hidden Power
-Snore
-Hyper Beam
-Protect
-Rain Dance
+Thief
+Overheat
+Charge Beam
 Endure
-Frustration
-Thunder
-Return
-Double Team
-Swagger
+Giga Impact
+Flash
+Thunder Wave
+Captivate
 Sleep Talk
-Rest
-Attract
-Surf
-Flash
-Whirlpool
-Waterfall
-Ice Beam
-Thunderbolt
-Bubble
-Thunder Wave
-Supersonic
-Supersonic
-Flail
-Water Gun
-Spark
-Confuse Ray
-Take Down
-Hydro Pump
-Charge
-Water Pulse
-Toxic
-Hail
-Hidden Power
-Ice Beam
-Blizzard
-Hyper Beam
-Protect
-Rain Dance
-Frustration
-Thunderbolt
-Thunder
-Return
-Double Team
-Shock Wave
-Facade
-Secret Power
-Rest
-Attract
-Surf
-Flash
-Waterfall
-Dive
-Double-Edge
-Endure
-Mimic
-Snore
+Natural Gift
+Swagger
 Substitute
-Swagger
-Sleep Talk
+Strength
+Fire Fang
+Tackle
 Thunder Wave
+Leer
+Howl
+Thunder Wave
+Leer
+Howl
+Quick Attack
+Spark
+Odor Sleuth
+Bite
+Thunder Fang
+Roar
+Discharge
+Charge
+Thunder
+Body Slam
+Double-Edge
+Mimic
+Refresh

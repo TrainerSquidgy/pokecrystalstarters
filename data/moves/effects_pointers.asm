@@ -162,4 +162,5 @@ MoveEffectsPointers:
 	dw Hail
 	dw Snow
 	dw ChargeMove
+	dw FireFang
 	assert_table_length NUM_MOVE_EFFECTS
