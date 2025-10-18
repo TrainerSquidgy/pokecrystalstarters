@@ -1201,9 +1201,19 @@ VitaminEffect:
 
 	add hl, bc
 	ld a, [hl]
+	ld b, a
+	ld a, [wVitaminLimitsDisabled]
+	and a
+	jr nz, .HigherLimit
+	ld a, b
 	cp 100
 	jr nc, NoEffectMessage
-
+	jr .CarryOn
+.HigherLimit
+	ld a, b
+	cp 244
+	jr nc, NoEffectMessage
+.CarryOn
 	add 10
 	ld [hl], a
 	call UpdateStatsAfterItem

@@ -3196,7 +3196,8 @@ wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
 wIsAStream:: db
-	ds 56
+wVitaminLimitsDisabled:: db
+	ds 55
 
 wEventFlags:: flag_array NUM_EVENTS
 
