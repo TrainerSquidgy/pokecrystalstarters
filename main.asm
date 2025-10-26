@@ -698,6 +698,7 @@ SECTION "Egg Move and Gen 1 Tutors", ROMX
 
 INCLUDE "data/pokemon/gen1_tmattacks.asm"
 INCLUDE "data/pokemon/relearned_egg_moves.asm"
+INCLUDE "data/pokemon/all_moves.asm"
 INCLUDE "engine/events/egg_move_relearner.asm"
 INCLUDE "engine/events/gen1tm_move_relearner.asm"
 INCLUDE "engine/events/move_relearner.asm"

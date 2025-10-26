@@ -1053,6 +1053,7 @@ wLinkReceivedMailEnd:: db
 SECTION UNION "Overworld Map", WRAM0
 
 ; mystery gift data
+wAllMovesData::
 wMysteryGiftStaging:: ds 80
 
 UNION

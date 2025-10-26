@@ -10,17 +10,10 @@
 	const EGGMOVERELEARNERTEXT_INTRONOLIMIT
 
 EggMoveRelearner:
-	ld a, [wTutorsLimited]
-	and a
-	jr nz, .skip_limit
-	ld a, [wEggMovesLeft]
+	ld a, [wGen1MovesLeft]
 	and a
 	jp z, .learned_enough	
-	ld a, EGGMOVERELEARNERTEXT_INTRO
-	jr .intro_merge
-.skip_limit
 	ld a, EGGMOVERELEARNERTEXT_INTRONOLIMIT
-.intro_merge
 	call PrintEggMoveRelearnerText
 	call YesNoBox
 	jp c, .cancel
@@ -95,7 +88,7 @@ EggMoveRelearner:
 GetRelearnableMoves:
 	; Get moves relearnable by CurPartyMon
 	; Returns z if no moves can be relearned.
-	ld hl, wd002
+	ld hl, wAllMovesData
 	xor a
 	ld [hli], a
 	ld [hl], $ff
@@ -112,27 +105,26 @@ GetRelearnableMoves:
 	ld [wCurPartyLevel], a
 
 	ld b, 0
-	ld de, wd002 + 1
-; based on GetEggMove in engine/pokemon/breeding.asm 
+	ld de, wAllMovesData + 1
 	ld a, [wCurPartySpecies]
 	dec a
 	push bc
 	ld b, 0
 	ld c, a
-	ld hl, RelearnedEggMovePointers
+	ld hl, AllMovesPointers2
 	add hl, bc
 	add hl, bc
-	ld a, BANK(RelearnedEggMovePointers)
+	ld a, BANK(AllMovesPointers2)
 	call GetFarWord
 .skip_evos
-	ld a, BANK(RelearnedEggMoves)
+	ld a, BANK(AllMoves2)
 	call GetFarByte
 	inc hl
 	and a
 	jr nz, .skip_evos
 
 .loop_moves
-	ld a, BANK(RelearnedEggMoves)
+	ld a, BANK(AllMoves2)
 	call GetFarByte
 	inc hl
 	and a
@@ -140,7 +132,7 @@ GetRelearnableMoves:
 	ld c, a
 	ld a, [wCurPartyLevel]
 	cp c
-	ld a, BANK(RelearnedEggMoves)
+	ld a, BANK(AllMoves2)
 	call GetFarByte
 	inc hl
 	jr c, .loop_moves
@@ -164,13 +156,13 @@ GetRelearnableMoves:
 	pop af
 	ld [wCurPartySpecies], a
 	ld a, b
-	ld [wd002], a
+	ld [wAllMovesData], a
 	and a
 	ret
 
 CheckAlreadyInList:
 	push hl
-	ld hl, wd002 + 1
+	ld hl, wAllMovesData + 1
 .loop
 	ld a, [hli]
 	inc a
@@ -212,8 +204,8 @@ CheckPokemonAlreadyKnowsMove:
 
 ChooseMoveToLearn:
 	; Open a full-screen scrolling menu
-	; Number of items stored in wd002
-	; List of items stored in wd002 + 1
+	; Number of items stored in wAllMovesData
+	; List of items stored in wAllMovesData + 1
 	; Print move names, PP, details, and descriptions
 	; Enable Up, Down, A, and B
 	; Up scrolls up
@@ -252,7 +244,7 @@ ChooseMoveToLearn:
 	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3 ; item format
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_NORMAL ; horizontal spacing
-	dba  wd002
+	dba  wAllMovesData
 	dba .PrintMoveName
 	dba .PrintDetails
 	dba .PrintMoveDesc
@@ -448,18 +440,6 @@ PrintEggMoveRelearnerText:
 	cont "from me."
 	done
 .IntroNoLimit
-	text "Hello! I am the"
-	line "EGG TUTOR."
-
-	para "I know all the"
-	line "EGG MOVES that"
-
-	para "a #MON can"
-	line "learn."
-
-	para "I can share that"
-	line "knowledge with"
-	cont "you right now."
-	
-	para "How about it?"
+	text "What move do you"
+	line "want to teach?"
 	done
