@@ -38,6 +38,9 @@ EcruteakGymMortyScript:
 	writetext Text_ReceivedFogBadge
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setflag ENGINE_FOGBADGE
 	readvar VAR_BADGES
 	scall EcruteakGymActivateRockets

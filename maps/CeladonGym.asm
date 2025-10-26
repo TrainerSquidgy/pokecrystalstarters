@@ -32,6 +32,9 @@ CeladonGymErikaScript:
 	writetext PlayerReceivedRainbowBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setflag ENGINE_RAINBOWBADGE
 .FightDone:
 	checkevent EVENT_GOT_TM19_GIGA_DRAIN

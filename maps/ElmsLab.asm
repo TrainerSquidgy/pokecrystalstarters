@@ -769,6 +769,22 @@ BinSkipRandomizer:
 	ret
 
 Gen1TMRelearnerScript:
+	loadmem wNumberOfPoints, 0
+	loadmem wLevelCap, 9
+	clearevent EVENT_RECEIVED_SCYTHE
+	clearevent EVENT_RECEIVED_AIR_BALLOON
+	clearevent EVENT_RECEIVED_RAFT
+	clearevent EVENT_RECEIVED_BURLY_MAN
+	clearevent EVENT_RECEIVED_LANTERN
+	clearevent EVENT_RECEIVED_BATH_PLUG
+	clearevent EVENT_RECEIVED_LADDER
+	clearevent EVENT_RECEIVED_FART_JAR
+	clearevent EVENT_RECEIVED_HONEY_JAR
+	clearevent EVENT_RECEIVED_TREE_SHAKER
+	clearevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
 	faceplayer
 	opentext
 	readmem wPartyMon1Species

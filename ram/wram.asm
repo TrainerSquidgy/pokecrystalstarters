@@ -3198,7 +3198,8 @@ wBinSkipPokemon:: db
 wBinSkipItem:: db
 wIsAStream:: db
 wVitaminLimitsDisabled:: db
-	ds 55
+wNumberOfPoints:: db
+	ds 54
 
 wEventFlags:: flag_array NUM_EVENTS
 

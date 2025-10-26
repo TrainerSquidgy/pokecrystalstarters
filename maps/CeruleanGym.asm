@@ -76,6 +76,9 @@ CeruleanGymMistyScript:
 	writetext ReceivedCascadeBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setflag ENGINE_CASCADEBADGE
 .FightDone:
 	writetext MistyFightDoneText

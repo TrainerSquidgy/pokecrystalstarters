@@ -62,6 +62,9 @@ WillScript_Battle:
 	refreshmap
 	closetext
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 44, .SkipLevelCap
 	loadmem wLevelCap, 44

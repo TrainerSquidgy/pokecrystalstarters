@@ -30,6 +30,9 @@ MahoganyGymPryceScript:
 	writetext Text_ReceivedGlacierBadge
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setflag ENGINE_GLACIERBADGE
 	readvar VAR_BADGES
 	scall MahoganyGymActivateRockets

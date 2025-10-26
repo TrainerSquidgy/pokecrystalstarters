@@ -32,6 +32,9 @@ SaffronGymSabrinaScript:
 	writetext ReceivedMarshBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setflag ENGINE_MARSHBADGE
 	writetext SabrinaMarshBadgeText
 	waitbutton

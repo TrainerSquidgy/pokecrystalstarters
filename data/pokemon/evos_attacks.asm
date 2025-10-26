@@ -3367,3 +3367,8 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SplashEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SPLASH
+	db 0 ; no more level-up moves

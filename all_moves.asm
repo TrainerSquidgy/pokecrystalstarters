@@ -17,14 +17,14 @@ BulbasaurAllMoves::
     db 1, GROWL
     db 1, GROWTH
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_SEED
     db 1, MUD_SLAP
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, RAZOR_LEAF
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -53,14 +53,14 @@ IvysaurAllMoves::
     db 1, GROWL
     db 1, GROWTH
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_SEED
     db 1, MUD_SLAP
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, RAZOR_LEAF
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -89,7 +89,7 @@ VenusaurAllMoves::
     db 1, GROWL
     db 1, GROWTH
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_SEED
     db 1, MUD_SLAP
@@ -97,7 +97,7 @@ VenusaurAllMoves::
     db 1, PROTECT
     db 1, RAZOR_LEAF
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
@@ -133,13 +133,13 @@ CharmanderAllMoves::
     db 1, FURY_CUTTER
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
     db 1, SCRATCH
@@ -175,13 +175,13 @@ CharmeleonAllMoves::
     db 1, FURY_CUTTER
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
     db 1, SCRATCH
@@ -219,14 +219,14 @@ CharizardAllMoves::
     db 1, FURY_CUTTER
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -259,7 +259,7 @@ SquirtleAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -270,7 +270,7 @@ SquirtleAllMoves::
     db 1, RAIN_DANCE
     db 1, RAPID_SPIN
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SKULL_BASH
@@ -302,7 +302,7 @@ WartortleAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -313,7 +313,7 @@ WartortleAllMoves::
     db 1, RAIN_DANCE
     db 1, RAPID_SPIN
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SKULL_BASH
@@ -346,7 +346,7 @@ BlastoiseAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -358,7 +358,7 @@ BlastoiseAllMoves::
     db 1, RAIN_DANCE
     db 1, RAPID_SPIN
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -399,7 +399,7 @@ ButterfreeAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, GUST
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, NIGHTMARE
     db 1, POISONPOWDER
@@ -407,7 +407,7 @@ ButterfreeAllMoves::
     db 1, PSYBEAM
     db 1, PSYCHIC_M
     db 1, REST
-
+    db 1, RETURN
     db 1, SAFEGUARD
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
@@ -447,14 +447,14 @@ BeedrillAllMoves::
     db 1, FURY_ATTACK
     db 1, FURY_CUTTER
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, PIN_MISSILE
     db 1, PROTECT
     db 1, PURSUIT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
     db 1, SNORE
@@ -477,13 +477,13 @@ PidgeyAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, GUST
-
+    db 1, HIDDEN_POWER
     db 1, MIRROR_MOVE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, SAND_ATTACK
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -509,13 +509,13 @@ PidgeottoAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, GUST
-
+    db 1, HIDDEN_POWER
     db 1, MIRROR_MOVE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, SAND_ATTACK
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -541,14 +541,14 @@ PidgeotAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, GUST
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, MIRROR_MOVE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, SAND_ATTACK
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -575,7 +575,7 @@ RattataAllMoves::
     db 1, FOCUS_ENERGY
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_FANG
     db 1, ICY_WIND
     db 1, IRON_TAIL
@@ -584,7 +584,7 @@ RattataAllMoves::
     db 1, PURSUIT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
@@ -612,7 +612,7 @@ RaticateAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, HYPER_FANG
     db 1, ICE_BEAM
@@ -623,7 +623,7 @@ RaticateAllMoves::
     db 1, PURSUIT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
@@ -656,7 +656,7 @@ SpearowAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, LEER
     db 1, MIRROR_MOVE
     db 1, MUD_SLAP
@@ -664,7 +664,7 @@ SpearowAllMoves::
     db 1, PROTECT
     db 1, PURSUIT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STEEL_WING
@@ -688,7 +688,7 @@ FearowAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEER
     db 1, MIRROR_MOVE
@@ -697,7 +697,7 @@ FearowAllMoves::
     db 1, PROTECT
     db 1, PURSUIT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STEEL_WING
@@ -723,12 +723,12 @@ EkansAllMoves::
     db 1, GLARE
     db 1, HAZE
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, LEER
     db 1, POISON_STING
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -756,13 +756,13 @@ ArbokAllMoves::
     db 1, GLARE
     db 1, HAZE
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEER
     db 1, POISON_STING
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -789,7 +789,7 @@ PikachuAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LIGHT_SCREEN
     db 1, MUD_SLAP
@@ -797,7 +797,7 @@ PikachuAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLAM
     db 1, SLEEP_TALK
@@ -827,7 +827,7 @@ RaichuAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, MUD_SLAP
@@ -835,7 +835,7 @@ RaichuAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -868,13 +868,13 @@ SandshrewAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, POISON_STING
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -907,14 +907,14 @@ SandslashAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, POISON_STING
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -957,7 +957,7 @@ NidorinaAllMoves::
     db 1, FURY_SWIPES
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, IRON_TAIL
     db 1, MUD_SLAP
@@ -965,7 +965,7 @@ NidorinaAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SLEEP_TALK
@@ -1000,7 +1000,7 @@ NidoqueenAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -1010,7 +1010,7 @@ NidoqueenAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -1056,7 +1056,7 @@ NidorinoAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HORN_DRILL
     db 1, ICE_BEAM
@@ -1067,7 +1067,7 @@ NidorinoAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -1099,7 +1099,7 @@ NidokingAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -1111,7 +1111,7 @@ NidokingAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -1151,7 +1151,7 @@ ClefairyAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
@@ -1167,7 +1167,7 @@ ClefairyAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SHADOW_BALL
     db 1, SING
@@ -1202,7 +1202,7 @@ ClefableAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -1216,7 +1216,7 @@ ClefableAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SHADOW_BALL
     db 1, SING
@@ -1247,12 +1247,12 @@ VulpixAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
@@ -1278,13 +1278,13 @@ NinetalesAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
@@ -1316,7 +1316,7 @@ JigglypuffAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
     db 1, MUD_SLAP
@@ -1327,7 +1327,7 @@ JigglypuffAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SHADOW_BALL
     db 1, SING
@@ -1363,7 +1363,7 @@ WigglytuffAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -1374,7 +1374,7 @@ WigglytuffAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SHADOW_BALL
     db 1, SING
@@ -1403,12 +1403,12 @@ ZubatAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HAZE
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_LIFE
     db 1, MEAN_LOOK
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STEEL_WING
@@ -1433,13 +1433,13 @@ GolbatAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HAZE
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_LIFE
     db 1, MEAN_LOOK
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -1465,13 +1465,13 @@ OddishAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, MOONLIGHT
     db 1, PETAL_DANCE
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -1496,13 +1496,13 @@ GloomAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, MOONLIGHT
     db 1, PETAL_DANCE
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -1526,12 +1526,12 @@ VileplumeAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, PETAL_DANCE
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
     db 1, SNORE
@@ -1556,12 +1556,12 @@ ParasAllMoves::
     db 1, FURY_CUTTER
     db 1, GIGA_DRAIN
     db 1, GROWTH
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_LIFE
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SLASH
@@ -1591,13 +1591,13 @@ ParasectAllMoves::
     db 1, FURY_CUTTER
     db 1, GIGA_DRAIN
     db 1, GROWTH
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_LIFE
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SLASH
@@ -1625,14 +1625,14 @@ VenonatAllMoves::
     db 1, FORESIGHT
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_LIFE
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, PSYBEAM
     db 1, PSYCHIC_M
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -1662,7 +1662,7 @@ VenomothAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, GUST
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_LIFE
     db 1, POISONPOWDER
@@ -1670,7 +1670,7 @@ VenomothAllMoves::
     db 1, PSYBEAM
     db 1, PSYCHIC_M
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -1699,12 +1699,12 @@ DiglettAllMoves::
     db 1, FISSURE
     db 1, FRUSTRATION
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, MAGNITUDE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAND_ATTACK
     db 1, SCRATCH
@@ -1730,13 +1730,13 @@ DugtrioAllMoves::
     db 1, FISSURE
     db 1, FRUSTRATION
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, MAGNITUDE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAND_ATTACK
     db 1, SCRATCH
@@ -1766,7 +1766,7 @@ MeowthAllMoves::
     db 1, FURY_SWIPES
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICY_WIND
     db 1, IRON_TAIL
     db 1, MUD_SLAP
@@ -1775,7 +1775,7 @@ MeowthAllMoves::
     db 1, PROTECT
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, SCRATCH
     db 1, SCREECH
     db 1, SHADOW_BALL
@@ -1807,7 +1807,7 @@ PersianAllMoves::
     db 1, FURY_SWIPES
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, IRON_TAIL
@@ -1817,7 +1817,7 @@ PersianAllMoves::
     db 1, PROTECT
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SCRATCH
     db 1, SCREECH
@@ -1850,7 +1850,7 @@ PsyduckAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -1861,7 +1861,7 @@ PsyduckAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SCREECH
@@ -1893,7 +1893,7 @@ GolduckAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -1905,7 +1905,7 @@ GolduckAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SCREECH
@@ -1937,7 +1937,7 @@ MankeyAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
     db 1, KARATE_CHOP
@@ -1947,7 +1947,7 @@ MankeyAllMoves::
     db 1, PROTECT
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SCREECH
@@ -1982,7 +1982,7 @@ PrimeapeAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
@@ -1994,7 +1994,7 @@ PrimeapeAllMoves::
     db 1, PSYCH_UP
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SCREECH
@@ -2029,12 +2029,12 @@ GrowlitheAllMoves::
     db 1, FLAME_WHEEL
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LEER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
@@ -2060,13 +2060,13 @@ ArcanineAllMoves::
     db 1, FLAME_WHEEL
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LEER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
@@ -2092,7 +2092,7 @@ PoliwagAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPNOSIS
     db 1, ICE_BEAM
@@ -2101,7 +2101,7 @@ PoliwagAllMoves::
     db 1, PSYCHIC_M
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SURF
@@ -2129,7 +2129,7 @@ PoliwhirlAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPNOSIS
     db 1, ICE_BEAM
@@ -2140,7 +2140,7 @@ PoliwhirlAllMoves::
     db 1, PSYCHIC_M
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -2168,7 +2168,7 @@ PoliwrathAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, HYPNOSIS
     db 1, ICE_BEAM
@@ -2180,7 +2180,7 @@ PoliwrathAllMoves::
     db 1, PSYCHIC_M
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -2207,7 +2207,7 @@ AbraAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, NIGHTMARE
     db 1, PROTECT
@@ -2215,7 +2215,7 @@ AbraAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -2244,7 +2244,7 @@ KadabraAllMoves::
     db 1, FRUSTRATION
     db 1, FUTURE_SIGHT
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, KINESIS
     db 1, NIGHTMARE
@@ -2256,7 +2256,7 @@ KadabraAllMoves::
     db 1, RECOVER
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -2285,7 +2285,7 @@ AlakazamAllMoves::
     db 1, FRUSTRATION
     db 1, FUTURE_SIGHT
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, KINESIS
@@ -2298,7 +2298,7 @@ AlakazamAllMoves::
     db 1, RECOVER
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -2329,7 +2329,7 @@ MachopAllMoves::
     db 1, FORESIGHT
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, KARATE_CHOP
     db 1, LEER
@@ -2337,7 +2337,7 @@ MachopAllMoves::
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
     db 1, SEISMIC_TOSS
@@ -2371,7 +2371,7 @@ MachokeAllMoves::
     db 1, FORESIGHT
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, KARATE_CHOP
     db 1, LEER
@@ -2379,7 +2379,7 @@ MachokeAllMoves::
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
     db 1, SEISMIC_TOSS
@@ -2413,7 +2413,7 @@ MachampAllMoves::
     db 1, FORESIGHT
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, KARATE_CHOP
@@ -2422,7 +2422,7 @@ MachampAllMoves::
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
     db 1, SEISMIC_TOSS
@@ -2450,12 +2450,12 @@ BellsproutAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, GROWTH
-
+    db 1, HIDDEN_POWER
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, RAZOR_LEAF
     db 1, REST
-
+    db 1, RETURN
     db 1, SLAM
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
@@ -2483,12 +2483,12 @@ WeepinbellAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, GROWTH
-
+    db 1, HIDDEN_POWER
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, RAZOR_LEAF
     db 1, REST
-
+    db 1, RETURN
     db 1, SLAM
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
@@ -2514,12 +2514,12 @@ VictreebelAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAZOR_LEAF
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -2546,7 +2546,7 @@ TentacoolAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -2554,7 +2554,7 @@ TentacoolAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -2581,7 +2581,7 @@ TentacruelAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -2590,7 +2590,7 @@ TentacruelAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -2620,12 +2620,12 @@ GeodudeAllMoves::
     db 1, FRUSTRATION
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, MAGNITUDE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
     db 1, ROLLOUT
@@ -2657,12 +2657,12 @@ GravelerAllMoves::
     db 1, FRUSTRATION
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, MAGNITUDE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
     db 1, ROLLOUT
@@ -2695,13 +2695,13 @@ GolemAllMoves::
     db 1, FURY_CUTTER
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, MAGNITUDE
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
@@ -2731,11 +2731,11 @@ PonytaAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STOMP
@@ -2763,12 +2763,12 @@ RapidashAllMoves::
     db 1, FURY_ATTACK
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STOMP
@@ -2800,7 +2800,7 @@ SlowpokeAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, IRON_TAIL
@@ -2811,7 +2811,7 @@ SlowpokeAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -2847,7 +2847,7 @@ SlowbroAllMoves::
     db 1, FURY_CUTTER
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -2860,7 +2860,7 @@ SlowbroAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
@@ -2884,12 +2884,12 @@ MagnemiteAllMoves::
     db 1, ENDURE
     db 1, FLASH
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, LOCK_ON
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SCREECH
     db 1, SLEEP_TALK
@@ -2914,13 +2914,13 @@ MagnetonAllMoves::
     db 1, ENDURE
     db 1, FLASH
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LOCK_ON
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SCREECH
     db 1, SLEEP_TALK
@@ -3011,14 +3011,14 @@ DoduoAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, MUD_SLAP
     db 1, PECK
     db 1, PROTECT
     db 1, PURSUIT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STEEL_WING
@@ -3042,7 +3042,7 @@ DodrioAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, MUD_SLAP
     db 1, PECK
@@ -3050,7 +3050,7 @@ DodrioAllMoves::
     db 1, PURSUIT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STEEL_WING
@@ -3073,13 +3073,13 @@ SeelAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3102,14 +3102,14 @@ DewgongAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3136,7 +3136,7 @@ GrimerAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, MINIMIZE
     db 1, MUD_SLAP
@@ -3144,7 +3144,7 @@ GrimerAllMoves::
     db 1, POUND
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SLUDGE
@@ -3175,7 +3175,7 @@ MukAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, MINIMIZE
@@ -3184,7 +3184,7 @@ MukAllMoves::
     db 1, POUND
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SLUDGE
@@ -3210,14 +3210,14 @@ ShellderAllMoves::
     db 1, DOUBLE_TEAM
     db 1, ENDURE
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, LEER
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SUPERSONIC
@@ -3239,14 +3239,14 @@ CloysterAllMoves::
     db 1, DOUBLE_TEAM
     db 1, ENDURE
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SPIKES
@@ -3271,7 +3271,7 @@ GastlyAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPNOSIS
     db 1, LICK
     db 1, MEAN_LOOK
@@ -3282,7 +3282,7 @@ GastlyAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3307,7 +3307,7 @@ HaunterAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPNOSIS
     db 1, LICK
     db 1, MEAN_LOOK
@@ -3318,7 +3318,7 @@ HaunterAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3346,7 +3346,7 @@ GengarAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, HYPNOSIS
     db 1, ICE_PUNCH
@@ -3359,7 +3359,7 @@ GengarAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
@@ -3388,13 +3388,13 @@ OnixAllMoves::
     db 1, FRUSTRATION
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
@@ -3425,7 +3425,7 @@ DrowzeeAllMoves::
     db 1, FRUSTRATION
     db 1, FUTURE_SIGHT
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPNOSIS
     db 1, ICE_PUNCH
     db 1, MEDITATE
@@ -3437,7 +3437,7 @@ DrowzeeAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3463,7 +3463,7 @@ HypnoAllMoves::
     db 1, FRUSTRATION
     db 1, FUTURE_SIGHT
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, HYPNOSIS
     db 1, ICE_PUNCH
@@ -3476,7 +3476,7 @@ HypnoAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3501,7 +3501,7 @@ KrabbyAllMoves::
     db 1, FURY_CUTTER
     db 1, GUILLOTINE
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, LEER
@@ -3509,7 +3509,7 @@ KrabbyAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3537,7 +3537,7 @@ KinglerAllMoves::
     db 1, FURY_CUTTER
     db 1, GUILLOTINE
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -3546,7 +3546,7 @@ KinglerAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3569,13 +3569,13 @@ VoltorbAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, LIGHT_SCREEN
     db 1, MIRROR_COAT
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SCREECH
     db 1, SELFDESTRUCT
@@ -3600,14 +3600,14 @@ ElectrodeAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LIGHT_SCREEN
     db 1, MIRROR_COAT
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SCREECH
     db 1, SELFDESTRUCT
@@ -3635,7 +3635,7 @@ ExeggcuteAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPNOSIS
     db 1, LEECH_SEED
     db 1, NIGHTMARE
@@ -3645,7 +3645,7 @@ ExeggcuteAllMoves::
     db 1, PSYCH_UP
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
@@ -3674,7 +3674,7 @@ ExeggutorAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, HYPNOSIS
     db 1, NIGHTMARE
@@ -3682,7 +3682,7 @@ ExeggutorAllMoves::
     db 1, PSYCHIC_M
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -3718,7 +3718,7 @@ CuboneAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, IRON_TAIL
@@ -3727,7 +3727,7 @@ CuboneAllMoves::
     db 1, PROTECT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SANDSTORM
     db 1, SLEEP_TALK
@@ -3764,7 +3764,7 @@ MarowakAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -3774,7 +3774,7 @@ MarowakAllMoves::
     db 1, PROTECT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SANDSTORM
     db 1, SLEEP_TALK
@@ -3802,7 +3802,7 @@ HitmonleeAllMoves::
     db 1, FORESIGHT
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HI_JUMP_KICK
     db 1, JUMP_KICK
     db 1, MEDITATE
@@ -3811,7 +3811,7 @@ HitmonleeAllMoves::
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, REVERSAL
     db 1, ROCK_SMASH
     db 1, ROLLING_KICK
@@ -3839,7 +3839,7 @@ HitmonchanAllMoves::
     db 1, FIRE_PUNCH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, MACH_PUNCH
     db 1, MEGA_PUNCH
@@ -3847,7 +3847,7 @@ HitmonchanAllMoves::
     db 1, PROTECT
     db 1, PURSUIT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -3878,7 +3878,7 @@ LickitungAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -3891,7 +3891,7 @@ LickitungAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -3926,11 +3926,11 @@ KoffingAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HAZE
-
+    db 1, HIDDEN_POWER
     db 1, POISON_GAS
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SELFDESTRUCT
     db 1, SLEEP_TALK
@@ -3961,12 +3961,12 @@ WeezingAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HAZE
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, POISON_GAS
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SELFDESTRUCT
     db 1, SLEEP_TALK
@@ -3999,7 +3999,7 @@ RhyhornAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HORN_DRILL
     db 1, ICE_BEAM
@@ -4008,7 +4008,7 @@ RhyhornAllMoves::
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -4045,7 +4045,7 @@ RhydonAllMoves::
     db 1, FURY_ATTACK
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HORN_DRILL
     db 1, HYPER_BEAM
@@ -4055,7 +4055,7 @@ RhydonAllMoves::
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -4096,7 +4096,7 @@ ChanseyAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -4110,7 +4110,7 @@ ChanseyAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -4145,14 +4145,14 @@ TangelaAllMoves::
     db 1, GIGA_DRAIN
     db 1, GROWTH
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, MEGA_DRAIN
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, SLAM
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
@@ -4186,7 +4186,7 @@ KangaskhanAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -4199,7 +4199,7 @@ KangaskhanAllMoves::
     db 1, RAGE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, REVERSAL
     db 1, ROAR
     db 1, ROCK_SMASH
@@ -4231,7 +4231,7 @@ HorseaAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -4239,7 +4239,7 @@ HorseaAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SMOKESCREEN
     db 1, SNORE
@@ -4265,7 +4265,7 @@ SeadraAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -4274,7 +4274,7 @@ SeadraAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SMOKESCREEN
     db 1, SNORE
@@ -4299,7 +4299,7 @@ GoldeenAllMoves::
     db 1, FLAIL
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HORN_DRILL
     db 1, ICE_BEAM
@@ -4308,7 +4308,7 @@ GoldeenAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SUPERSONIC
@@ -4331,7 +4331,7 @@ SeakingAllMoves::
     db 1, FLAIL
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HORN_DRILL
     db 1, HYPER_BEAM
@@ -4341,7 +4341,7 @@ SeakingAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SUPERSONIC
@@ -4364,7 +4364,7 @@ StaryuAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -4377,7 +4377,7 @@ StaryuAllMoves::
     db 1, RAPID_SPIN
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SURF
@@ -4405,7 +4405,7 @@ StarmieAllMoves::
     db 1, ENDURE
     db 1, FLASH
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -4417,7 +4417,7 @@ StarmieAllMoves::
     db 1, RAPID_SPIN
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SURF
@@ -4524,14 +4524,14 @@ ScytherAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEER
     db 1, PROTECT
     db 1, PURSUIT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLASH
     db 1, SLEEP_TALK
@@ -4559,7 +4559,7 @@ JynxAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -4577,7 +4577,7 @@ JynxAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -4599,7 +4599,7 @@ ElectabuzzAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
@@ -4611,7 +4611,7 @@ ElectabuzzAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCREECH
     db 1, SLEEP_TALK
@@ -4642,7 +4642,7 @@ MagmarAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LEER
@@ -4650,7 +4650,7 @@ MagmarAllMoves::
     db 1, PROTECT
     db 1, PSYCHIC_M
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SMOG
@@ -4678,11 +4678,11 @@ PinsirAllMoves::
     db 1, GUILLOTINE
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SEISMIC_TOSS
     db 1, SLEEP_TALK
@@ -4709,7 +4709,7 @@ TaurosAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -4719,7 +4719,7 @@ TaurosAllMoves::
     db 1, PURSUIT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
     db 1, SLEEP_TALK
@@ -4759,7 +4759,7 @@ GyaradosAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -4768,7 +4768,7 @@ GyaradosAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -4801,7 +4801,7 @@ LaprasAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -4814,7 +4814,7 @@ LaprasAllMoves::
     db 1, PSYCHIC_M
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAFEGUARD
     db 1, SING
@@ -4848,14 +4848,14 @@ EeveeAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SAND_ATTACK
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
@@ -4883,7 +4883,7 @@ VaporeonAllMoves::
     db 1, FRUSTRATION
     db 1, HAZE
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -4894,7 +4894,7 @@ VaporeonAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SAND_ATTACK
     db 1, SHADOW_BALL
@@ -4924,7 +4924,7 @@ JolteonAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, MUD_SLAP
@@ -4933,7 +4933,7 @@ JolteonAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SAND_ATTACK
     db 1, SHADOW_BALL
@@ -4966,7 +4966,7 @@ FlareonAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LEER
@@ -4975,7 +4975,7 @@ FlareonAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SAND_ATTACK
     db 1, SHADOW_BALL
@@ -5003,7 +5003,7 @@ PorygonAllMoves::
     db 1, ENDURE
     db 1, FLASH
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -5017,7 +5017,7 @@ PorygonAllMoves::
     db 1, RAIN_DANCE
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, SHARPEN
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -5045,7 +5045,7 @@ OmanyteAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -5053,7 +5053,7 @@ OmanyteAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -5080,7 +5080,7 @@ OmastarAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -5089,7 +5089,7 @@ OmastarAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -5117,7 +5117,7 @@ KabutoAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, LEER
@@ -5125,7 +5125,7 @@ KabutoAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -5153,7 +5153,7 @@ KabutopsAllMoves::
     db 1, GIGA_DRAIN
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -5162,7 +5162,7 @@ KabutopsAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -5195,13 +5195,13 @@ AerodactylAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -5235,7 +5235,7 @@ SnorlaxAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -5246,7 +5246,7 @@ SnorlaxAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -5277,7 +5277,7 @@ ArticunoAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, GUST
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -5289,7 +5289,7 @@ ArticunoAllMoves::
     db 1, RAIN_DANCE
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -5313,7 +5313,7 @@ ZapdosAllMoves::
     db 1, FLASH
     db 1, FLY
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LIGHT_SCREEN
     db 1, MUD_SLAP
@@ -5321,7 +5321,7 @@ ZapdosAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -5352,13 +5352,13 @@ MoltresAllMoves::
     db 1, FLAMETHROWER
     db 1, FLY
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SAFEGUARD
@@ -5389,7 +5389,7 @@ DratiniAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -5399,7 +5399,7 @@ DratiniAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SAFEGUARD
     db 1, SLAM
     db 1, SLEEP_TALK
@@ -5432,7 +5432,7 @@ DragonairAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -5442,7 +5442,7 @@ DragonairAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SAFEGUARD
     db 1, SLAM
     db 1, SLEEP_TALK
@@ -5479,7 +5479,7 @@ DragoniteAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -5491,7 +5491,7 @@ DragoniteAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAFEGUARD
     db 1, SANDSTORM
@@ -5536,7 +5536,7 @@ MewtwoAllMoves::
     db 1, FRUSTRATION
     db 1, FUTURE_SIGHT
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -5551,7 +5551,7 @@ MewtwoAllMoves::
     db 1, RAIN_DANCE
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAFEGUARD
     db 1, SHADOW_BALL
@@ -5594,7 +5594,7 @@ MewAllMoves::
     db 1, FURY_CUTTER
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -5610,7 +5610,7 @@ MewAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -5655,7 +5655,7 @@ ChikoritaAllMoves::
     db 1, GIGA_DRAIN
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LIGHT_SCREEN
     db 1, MUD_SLAP
@@ -5664,7 +5664,7 @@ ChikoritaAllMoves::
     db 1, RAZOR_LEAF
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -5692,7 +5692,7 @@ BayleefAllMoves::
     db 1, GIGA_DRAIN
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LIGHT_SCREEN
     db 1, MUD_SLAP
@@ -5701,7 +5701,7 @@ BayleefAllMoves::
     db 1, RAZOR_LEAF
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
@@ -5732,7 +5732,7 @@ MeganiumAllMoves::
     db 1, GIGA_DRAIN
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LIGHT_SCREEN
@@ -5742,7 +5742,7 @@ MeganiumAllMoves::
     db 1, RAZOR_LEAF
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
@@ -5773,14 +5773,14 @@ CyndaquilAllMoves::
     db 1, FLAME_WHEEL
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LEER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLEEP_TALK
     db 1, SMOKESCREEN
@@ -5809,14 +5809,14 @@ QuilavaAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LEER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -5851,7 +5851,7 @@ TyphlosionAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LEER
@@ -5859,7 +5859,7 @@ TyphlosionAllMoves::
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -5889,7 +5889,7 @@ TotodileAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -5901,7 +5901,7 @@ TotodileAllMoves::
     db 1, RAGE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SCARY_FACE
     db 1, SCRATCH
     db 1, SCREECH
@@ -5930,7 +5930,7 @@ CroconawAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -5942,7 +5942,7 @@ CroconawAllMoves::
     db 1, RAGE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
@@ -5975,7 +5975,7 @@ FeraligatrAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -5988,7 +5988,7 @@ FeraligatrAllMoves::
     db 1, RAGE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
@@ -6022,14 +6022,14 @@ SentretAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SHADOW_BALL
     db 1, SLAM
@@ -6062,7 +6062,7 @@ FurretAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
@@ -6070,7 +6070,7 @@ FurretAllMoves::
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SCRATCH
     db 1, SHADOW_BALL
@@ -6101,7 +6101,7 @@ HoothootAllMoves::
     db 1, FORESIGHT
     db 1, FRUSTRATION
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, HYPNOSIS
     db 1, MUD_SLAP
     db 1, NIGHTMARE
@@ -6109,7 +6109,7 @@ HoothootAllMoves::
     db 1, PROTECT
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STEEL_WING
@@ -6136,7 +6136,7 @@ NoctowlAllMoves::
     db 1, FORESIGHT
     db 1, FRUSTRATION
     db 1, GROWL
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, HYPNOSIS
     db 1, MUD_SLAP
@@ -6145,7 +6145,7 @@ NoctowlAllMoves::
     db 1, PROTECT
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, STEEL_WING
@@ -6174,13 +6174,13 @@ LedybaAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, LIGHT_SCREEN
     db 1, PROTECT
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
@@ -6213,14 +6213,14 @@ LedianAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, LIGHT_SCREEN
     db 1, PROTECT
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SAFEGUARD
     db 1, SLEEP_TALK
@@ -6250,14 +6250,14 @@ SpinarakAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_SWIPES
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_LIFE
     db 1, NIGHT_SHADE
     db 1, POISON_STING
     db 1, PROTECT
     db 1, PSYCHIC_M
     db 1, REST
-
+    db 1, RETURN
     db 1, SCARY_FACE
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -6284,7 +6284,7 @@ AriadosAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_SWIPES
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_LIFE
     db 1, NIGHT_SHADE
@@ -6292,7 +6292,7 @@ AriadosAllMoves::
     db 1, PROTECT
     db 1, PSYCHIC_M
     db 1, REST
-
+    db 1, RETURN
     db 1, SCARY_FACE
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -6319,13 +6319,13 @@ CrobatAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HAZE
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_LIFE
     db 1, MEAN_LOOK
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -6350,13 +6350,13 @@ ChinchouAllMoves::
     db 1, FLAIL
     db 1, FLASH
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SPARK
@@ -6385,14 +6385,14 @@ LanturnAllMoves::
     db 1, FLAIL
     db 1, FLASH
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SPARK
@@ -6422,13 +6422,13 @@ PichuAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -6460,7 +6460,7 @@ CleffaAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICY_WIND
     db 1, IRON_TAIL
     db 1, MUD_SLAP
@@ -6471,7 +6471,7 @@ CleffaAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SHADOW_BALL
     db 1, SING
@@ -6500,7 +6500,7 @@ IgglybuffAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICY_WIND
     db 1, MUD_SLAP
     db 1, NIGHTMARE
@@ -6510,7 +6510,7 @@ IgglybuffAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SHADOW_BALL
     db 1, SING
@@ -6542,7 +6542,7 @@ TogepiAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, METRONOME
     db 1, MUD_SLAP
     db 1, PROTECT
@@ -6550,7 +6550,7 @@ TogepiAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SAFEGUARD
@@ -6585,7 +6585,7 @@ TogeticAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, METRONOME
     db 1, MUD_SLAP
@@ -6594,7 +6594,7 @@ TogeticAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SAFEGUARD
@@ -6624,7 +6624,7 @@ NatuAllMoves::
     db 1, FRUSTRATION
     db 1, FUTURE_SIGHT
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, LEER
     db 1, NIGHTMARE
     db 1, NIGHT_SHADE
@@ -6633,7 +6633,7 @@ NatuAllMoves::
     db 1, PSYCHIC_M
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SOLARBEAM
@@ -6659,7 +6659,7 @@ XatuAllMoves::
     db 1, FRUSTRATION
     db 1, FUTURE_SIGHT
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEER
     db 1, NIGHTMARE
@@ -6669,7 +6669,7 @@ XatuAllMoves::
     db 1, PSYCHIC_M
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SOLARBEAM
@@ -6693,13 +6693,13 @@ MareepAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LIGHT_SCREEN
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SWAGGER
@@ -6727,13 +6727,13 @@ FlaaffyAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LIGHT_SCREEN
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -6764,14 +6764,14 @@ AmpharosAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LIGHT_SCREEN
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -6799,12 +6799,12 @@ BellossomAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, PETAL_DANCE
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SOLARBEAM
@@ -6828,7 +6828,7 @@ MarillAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
     db 1, ICY_WIND
@@ -6837,7 +6837,7 @@ MarillAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -6865,7 +6865,7 @@ AzumarillAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -6875,7 +6875,7 @@ AzumarillAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SLEEP_TALK
@@ -6907,7 +6907,7 @@ SudowoodoAllMoves::
     db 1, FLAIL
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, LOW_KICK
     db 1, MIMIC
@@ -6915,7 +6915,7 @@ SudowoodoAllMoves::
     db 1, PROTECT
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SLIDE
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
@@ -6946,7 +6946,7 @@ PolitoedAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, HYPNOSIS
     db 1, ICE_BEAM
@@ -6958,7 +6958,7 @@ PolitoedAllMoves::
     db 1, PSYCHIC_M
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -6984,13 +6984,13 @@ HoppipAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_SEED
     db 1, MEGA_DRAIN
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -7018,13 +7018,13 @@ SkiploomAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, LEECH_SEED
     db 1, MEGA_DRAIN
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -7052,14 +7052,14 @@ JumpluffAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_SEED
     db 1, MEGA_DRAIN
     db 1, POISONPOWDER
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_POWDER
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -7093,14 +7093,14 @@ AipomAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, NIGHTMARE
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SAND_ATTACK
     db 1, SCRATCH
@@ -7133,11 +7133,11 @@ SunkernAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, GROWTH
-
+    db 1, HIDDEN_POWER
     db 1, MEGA_DRAIN
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
     db 1, SNORE
@@ -7161,14 +7161,14 @@ SunfloraAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, GROWTH
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, PETAL_DANCE
     db 1, POUND
     db 1, PROTECT
     db 1, RAZOR_LEAF
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
     db 1, SNORE
@@ -7191,11 +7191,11 @@ YanmaAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -7226,7 +7226,7 @@ WooperAllMoves::
     db 1, FRUSTRATION
     db 1, HAZE
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
     db 1, IRON_TAIL
@@ -7235,7 +7235,7 @@ WooperAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -7266,7 +7266,7 @@ QuagsireAllMoves::
     db 1, FRUSTRATION
     db 1, HAZE
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -7276,7 +7276,7 @@ QuagsireAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -7306,7 +7306,7 @@ EspeonAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, MORNING_SUN
@@ -7319,7 +7319,7 @@ EspeonAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SAND_ATTACK
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
@@ -7347,7 +7347,7 @@ UmbreonAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, MEAN_LOOK
@@ -7361,7 +7361,7 @@ UmbreonAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SAND_ATTACK
     db 1, SCREECH
     db 1, SHADOW_BALL
@@ -7388,7 +7388,7 @@ MurkrowAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, HAZE
-
+    db 1, HIDDEN_POWER
     db 1, ICY_WIND
     db 1, MEAN_LOOK
     db 1, MUD_SLAP
@@ -7399,7 +7399,7 @@ MurkrowAllMoves::
     db 1, PSYCH_UP
     db 1, PURSUIT
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -7431,7 +7431,7 @@ SlowkingAllMoves::
     db 1, FURY_CUTTER
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -7444,7 +7444,7 @@ SlowkingAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
@@ -7474,7 +7474,7 @@ MisdreavusAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, MEAN_LOOK
     db 1, NIGHTMARE
     db 1, PAIN_SPLIT
@@ -7486,7 +7486,7 @@ MisdreavusAllMoves::
     db 1, PSYWAVE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -7503,7 +7503,7 @@ MisdreavusAllMoves::
 
 UnownAllMoves::
     db 0
-
+    db 1, HIDDEN_POWER
     db 0
 
 WobbuffetAllMoves::
@@ -7529,7 +7529,7 @@ GirafarigAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, NIGHTMARE
@@ -7538,7 +7538,7 @@ GirafarigAllMoves::
     db 1, PSYCHIC_M
     db 1, PSYCH_UP
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SHADOW_BALL
     db 1, SLEEP_TALK
@@ -7569,11 +7569,11 @@ PinecoAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, PROTECT
     db 1, RAPID_SPIN
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SELFDESTRUCT
@@ -7603,12 +7603,12 @@ ForretressAllMoves::
     db 1, FRUSTRATION
     db 1, GIGA_DRAIN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAPID_SPIN
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -7639,7 +7639,7 @@ DunsparceAllMoves::
     db 1, FRUSTRATION
     db 1, GLARE
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, NIGHTMARE
@@ -7649,7 +7649,7 @@ DunsparceAllMoves::
     db 1, RAGE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SCREECH
@@ -7682,13 +7682,13 @@ GligarAllMoves::
     db 1, GUILLOTINE
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, POISON_STING
     db 1, PROTECT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SANDSTORM
     db 1, SAND_ATTACK
@@ -7721,14 +7721,14 @@ SteelixAllMoves::
     db 1, FRUSTRATION
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAGE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
@@ -7759,7 +7759,7 @@ SnubbullAllMoves::
     db 1, FIRE_PUNCH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, LICK
     db 1, MUD_SLAP
@@ -7767,7 +7767,7 @@ SnubbullAllMoves::
     db 1, RAGE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
@@ -7803,7 +7803,7 @@ GranbullAllMoves::
     db 1, FIRE_PUNCH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, LICK
@@ -7812,7 +7812,7 @@ GranbullAllMoves::
     db 1, RAGE
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SCARY_FACE
@@ -7845,7 +7845,7 @@ QwilfishAllMoves::
     db 1, FRUSTRATION
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -7855,7 +7855,7 @@ QwilfishAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROLLOUT
     db 1, SLEEP_TALK
     db 1, SLUDGE_BOMB
@@ -7886,7 +7886,7 @@ ScizorAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEER
     db 1, METAL_CLAW
@@ -7894,7 +7894,7 @@ ScizorAllMoves::
     db 1, PURSUIT
     db 1, QUICK_ATTACK
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SANDSTORM
     db 1, SLASH
@@ -7925,11 +7925,11 @@ ShuckleAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SAFEGUARD
@@ -7959,13 +7959,13 @@ HeracrossAllMoves::
     db 1, FURY_ATTACK
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, LEER
     db 1, MEGAHORN
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, REVERSAL
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
@@ -7999,7 +7999,7 @@ SneaselAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
     db 1, ICY_WIND
@@ -8013,7 +8013,7 @@ SneaselAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SCRATCH
     db 1, SCREECH
@@ -8046,14 +8046,14 @@ TeddiursaAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, LEER
     db 1, LICK
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -8089,7 +8089,7 @@ UrsaringAllMoves::
     db 1, FURY_CUTTER
     db 1, FURY_SWIPES
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_PUNCH
     db 1, LEER
@@ -8097,7 +8097,7 @@ UrsaringAllMoves::
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -8130,11 +8130,11 @@ SlugmaAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SLIDE
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
@@ -8162,12 +8162,12 @@ MagcargoAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HARDEN
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SLIDE
     db 1, ROCK_SMASH
     db 1, ROCK_THROW
@@ -8194,7 +8194,7 @@ SwinubAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, MIST
@@ -8203,7 +8203,7 @@ SwinubAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
@@ -8229,7 +8229,7 @@ PiloswineAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -8240,7 +8240,7 @@ PiloswineAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
@@ -8265,7 +8265,7 @@ CorsolaAllMoves::
     db 1, FRUSTRATION
     db 1, HARDEN
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, MIRROR_COAT
     db 1, MUD_SLAP
@@ -8274,7 +8274,7 @@ CorsolaAllMoves::
     db 1, RAIN_DANCE
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -8302,7 +8302,7 @@ RemoraidAllMoves::
     db 1, FLAMETHROWER
     db 1, FOCUS_ENERGY
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, LOCK_ON
@@ -8311,7 +8311,7 @@ RemoraidAllMoves::
     db 1, PSYBEAM
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SURF
@@ -8336,7 +8336,7 @@ OctilleryAllMoves::
     db 1, FLAMETHROWER
     db 1, FOCUS_ENERGY
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, MUD_SLAP
@@ -8345,7 +8345,7 @@ OctilleryAllMoves::
     db 1, PSYBEAM
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SURF
@@ -8368,7 +8368,7 @@ DelibirdAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, MUD_SLAP
@@ -8376,7 +8376,7 @@ DelibirdAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SWAGGER
@@ -8398,14 +8398,14 @@ MantineAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICY_WIND
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SUPERSONIC
@@ -8432,13 +8432,13 @@ SkarmoryAllMoves::
     db 1, FLY
     db 1, FRUSTRATION
     db 1, FURY_ATTACK
-
+    db 1, HIDDEN_POWER
     db 1, LEER
     db 1, MUD_SLAP
     db 1, PECK
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, SANDSTORM
     db 1, SAND_ATTACK
     db 1, SLEEP_TALK
@@ -8467,14 +8467,14 @@ HoundourAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LEER
     db 1, MUD_SLAP
     db 1, NIGHTMARE
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SHADOW_BALL
@@ -8506,7 +8506,7 @@ HoundoomAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LEER
@@ -8514,7 +8514,7 @@ HoundoomAllMoves::
     db 1, NIGHTMARE
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SHADOW_BALL
@@ -8543,7 +8543,7 @@ KingdraAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -8552,7 +8552,7 @@ KingdraAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SMOKESCREEN
     db 1, SNORE
@@ -8579,11 +8579,11 @@ PhanpyAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -8611,14 +8611,14 @@ DonphanAllMoves::
     db 1, FURY_ATTACK
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HORN_ATTACK
     db 1, HYPER_BEAM
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAPID_SPIN
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, ROLLOUT
@@ -8644,7 +8644,7 @@ Porygon2AllMoves::
     db 1, ENDURE
     db 1, FLASH
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -8658,7 +8658,7 @@ Porygon2AllMoves::
     db 1, RAIN_DANCE
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SNORE
     db 1, SUNNY_DAY
@@ -8686,7 +8686,7 @@ StantlerAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPNOSIS
     db 1, LEER
     db 1, MUD_SLAP
@@ -8696,7 +8696,7 @@ StantlerAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, SAND_ATTACK
     db 1, SLEEP_TALK
@@ -8725,11 +8725,11 @@ TyrogueAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -8755,14 +8755,14 @@ HitmontopAllMoves::
     db 1, FOCUS_ENERGY
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, PURSUIT
     db 1, QUICK_ATTACK
     db 1, RAPID_SPIN
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLING_KICK
     db 1, SLEEP_TALK
@@ -8787,7 +8787,7 @@ SmoochumAllMoves::
     db 1, DYNAMICPUNCH
     db 1, ENDURE
     db 1, FRUSTRATION
-
+    db 1, HIDDEN_POWER
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
     db 1, ICY_WIND
@@ -8803,7 +8803,7 @@ SmoochumAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, SING
     db 1, SLEEP_TALK
@@ -8827,7 +8827,7 @@ ElekidAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, ICE_PUNCH
     db 1, LEER
     db 1, LIGHT_SCREEN
@@ -8837,7 +8837,7 @@ ElekidAllMoves::
     db 1, QUICK_ATTACK
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, SCREECH
     db 1, SLEEP_TALK
     db 1, SNORE
@@ -8866,14 +8866,14 @@ MagbyAllMoves::
     db 1, FLAMETHROWER
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, IRON_TAIL
     db 1, LEER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, PSYCHIC_M
     db 1, REST
-
+    db 1, RETURN
     db 1, SLEEP_TALK
     db 1, SMOG
     db 1, SMOKESCREEN
@@ -8902,7 +8902,7 @@ MiltankAllMoves::
     db 1, GROWL
     db 1, HEADBUTT
     db 1, HEAL_BELL
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICE_PUNCH
@@ -8914,7 +8914,7 @@ MiltankAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -8954,7 +8954,7 @@ BlisseyAllMoves::
     db 1, FRUSTRATION
     db 1, GROWL
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, ICY_WIND
@@ -8966,7 +8966,7 @@ BlisseyAllMoves::
     db 1, PSYCHIC_M
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SMASH
     db 1, ROLLOUT
     db 1, SANDSTORM
@@ -8999,7 +8999,7 @@ RaikouAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LEER
@@ -9010,7 +9010,7 @@ RaikouAllMoves::
     db 1, RAIN_DANCE
     db 1, REFLECT
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -9044,7 +9044,7 @@ EnteiAllMoves::
     db 1, FLASH
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, IRON_TAIL
     db 1, LEER
@@ -9053,7 +9053,7 @@ EnteiAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -9083,7 +9083,7 @@ SuicuneAllMoves::
     db 1, FRUSTRATION
     db 1, GUST
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -9097,7 +9097,7 @@ SuicuneAllMoves::
     db 1, PSYCH_UP
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SANDSTORM
@@ -9125,14 +9125,14 @@ LarvitarAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SLIDE
     db 1, SANDSTORM
     db 1, SCARY_FACE
@@ -9158,14 +9158,14 @@ PupitarAllMoves::
     db 1, ENDURE
     db 1, FRUSTRATION
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEER
     db 1, MUD_SLAP
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROCK_SLIDE
     db 1, SANDSTORM
     db 1, SCARY_FACE
@@ -9198,7 +9198,7 @@ TyranitarAllMoves::
     db 1, FRUSTRATION
     db 1, FURY_CUTTER
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
     db 1, IRON_TAIL
@@ -9208,7 +9208,7 @@ TyranitarAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SLIDE
     db 1, ROCK_SMASH
@@ -9244,7 +9244,7 @@ LugiaAllMoves::
     db 1, GIGA_DRAIN
     db 1, GUST
     db 1, HEADBUTT
-
+    db 1, HIDDEN_POWER
     db 1, HYDRO_PUMP
     db 1, HYPER_BEAM
     db 1, ICE_BEAM
@@ -9258,7 +9258,7 @@ LugiaAllMoves::
     db 1, RAIN_DANCE
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, ROAR
     db 1, ROCK_SMASH
     db 1, SAFEGUARD
@@ -9359,7 +9359,7 @@ CelebiAllMoves::
     db 1, FUTURE_SIGHT
     db 1, GIGA_DRAIN
     db 1, HEAL_BELL
-
+    db 1, HIDDEN_POWER
     db 1, HYPER_BEAM
     db 1, LEECH_SEED
     db 1, MUD_SLAP
@@ -9371,7 +9371,7 @@ CelebiAllMoves::
     db 1, RAIN_DANCE
     db 1, RECOVER
     db 1, REST
-
+    db 1, RETURN
     db 1, SAFEGUARD
     db 1, SANDSTORM
     db 1, SHADOW_BALL

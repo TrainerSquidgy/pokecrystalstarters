@@ -62,6 +62,9 @@ BrunoScript_Battle:
 	refreshmap
 	closetext
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 47, .SkipLevelCap
 	loadmem wLevelCap, 47

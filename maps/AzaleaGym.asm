@@ -29,6 +29,9 @@ AzaleaGymBugsyScript:
 	writetext Text_ReceivedHiveBadge
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setflag ENGINE_HIVEBADGE
 	readvar VAR_BADGES
 	scall AzaleaGymActivateRockets

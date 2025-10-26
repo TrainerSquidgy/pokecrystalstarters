@@ -26,6 +26,9 @@ PewterGymBrockScript:
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setflag ENGINE_BOULDERBADGE
 	writetext BrockBoulderBadgeText
 	waitbutton

@@ -29,12 +29,16 @@ def extract_levelup_moves(path, mon):
     in_block = False
     moves = []
     for line in lines:
-        if start_pattern.match(line.strip()):
+        line = line.strip()
+        if start_pattern.match(line):
             in_block = True
-        elif in_block:
-            if "db 0" in line:
+            continue
+        if in_block:
+            # Stop at next label
+            if re.match(r"^\w+EvosAttacks:", line):
                 break
-            match = re.match(r"db\s+\d+,\s*(\w+)", line.strip())
+            # Match move line
+            match = re.match(r"db\s+\d+,\s*(\w+)", line)
             if match:
                 moves.append(match.group(1))
     return moves

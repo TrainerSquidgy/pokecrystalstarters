@@ -127,7 +127,6 @@ TeachTMHM:
 
 	ld a, c
 	and a
-	jr nz, .compatible
 	push de
 	ld de, SFX_WRONG
 	call PlaySFX
