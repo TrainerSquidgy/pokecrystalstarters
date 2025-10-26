@@ -50,6 +50,8 @@ ElmsLabMoveElmCallback:
 ElmsLabStarterChoice:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
+	checkevent EVENT_SUPERMON_CHALLENGE
+	iftrue .End
 	opentext
 ; Ask PLAYER if they want to set STARTERS
 	writetext ElmsLabChooseStartersAskText
@@ -796,6 +798,7 @@ Gen1TMRelearnerScript:
 .RelearnerMerge
 	waitbutton
 	closetext
+	reloadmap
 	end
 
 

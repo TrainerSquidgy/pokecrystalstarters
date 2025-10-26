@@ -161,6 +161,7 @@ DragonShrineTakeTestScript:
 	readmem wNumberOfPoints
 	addval 1
 	writemem wNumberOfPoints
+	loadmem wLevelCap, 42
 	setflag ENGINE_RISINGBADGE
 	playsound SFX_GET_BADGE
 	waitsfx

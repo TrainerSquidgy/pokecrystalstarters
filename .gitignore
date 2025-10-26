@@ -63,3 +63,4 @@ data/pokemon/Gen1MovePuller.py
 data/pokemon/relearned_egg_moves.md
 data/pokemon/relearned_egg_moves.txt
 *.txt
+all_moves.py

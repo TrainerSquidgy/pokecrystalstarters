@@ -10,7 +10,7 @@
 	const EGGMOVERELEARNERTEXT_INTRONOLIMIT
 
 EggMoveRelearner:
-	ld a, [wGen1MovesLeft]
+	ld a, [wEggMovesLeft]
 	and a
 	jp z, .learned_enough	
 	ld a, EGGMOVERELEARNERTEXT_INTRONOLIMIT

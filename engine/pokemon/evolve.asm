@@ -436,7 +436,7 @@ endr
 	xor a
 	ld [wMonType], a
 	call LearnEvolutionMove
-	call LearnLevelMoves
+	;call LearnLevelMoves
 	ld a, [wTempSpecies]
 	dec a
 	call SetSeenAndCaughtMon
