@@ -28,6 +28,7 @@ ViridianGymBlueScript:
 	readmem wNumberOfPoints
 	addval 1
 	writemem wNumberOfPoints
+	verbosegiveitem CANDY_JAR
 	readmem wLevelCap
 	ifgreater 81, .skipLevelCap
 	loadmem wLevelCap, 81
