@@ -803,21 +803,8 @@ Gen1TMRelearnerScript:
 
 
 ElmsLabWalkUpToElmScript:
-	loadmem wLevelCap, 100
-	setevent EVENT_RECEIVED_SCYTHE
-	setevent EVENT_RECEIVED_AIR_BALLOON
-	setevent EVENT_RECEIVED_RAFT
-	setevent EVENT_RECEIVED_BURLY_MAN
-	setevent EVENT_RECEIVED_LANTERN
-	setevent EVENT_RECEIVED_BATH_PLUG
-	setevent EVENT_RECEIVED_LADDER
-	setevent EVENT_RECEIVED_FART_JAR
-	setevent EVENT_RECEIVED_HONEY_JAR
-	setevent EVENT_RECEIVED_TREE_SHAKER
-	setevent EVENT_RECEIVED_BIG_HAMMER
-	setevent EVENT_RECEIVED_CANDY_JAR
-	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-
+	loadmem wLevelCap, 9
+	
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
