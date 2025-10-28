@@ -653,7 +653,7 @@ SlowpokeGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
-SlowbroGen1TMAttacks:
+SlowkingGen1TMAttacks:
 	db 0
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
