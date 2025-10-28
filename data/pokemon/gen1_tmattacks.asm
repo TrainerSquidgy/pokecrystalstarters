@@ -480,6 +480,18 @@ ScytherGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+ScizorGen1TMAttacks:
+	db 0
+	db 1, SWORDS_DANCE
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, MIMIC
+	db 1, BIDE
+	db 1, SKULL_BASH
+	db 1, SUBSTITUTE
+	db 0
+
 StaryuGen1TMAttacks:
 	db 0
 	db 1, TAKE_DOWN
@@ -577,6 +589,22 @@ OnixGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+SteelixGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, FISSURE
+	db 1, MIMIC
+	db 1, BIDE
+	db 1, SELFDESTRUCT
+	db 1, SKULL_BASH
+	db 1, EXPLOSION
+	db 1, ROCK_SLIDE
+	db 1, SUBSTITUTE
+	db 0
+
 FearowGen1TMAttacks:
 	db 0
 	db 1, RAZOR_WIND
@@ -605,6 +633,27 @@ PidgeyGen1TMAttacks:
 	db 0
 
 SlowpokeGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, BUBBLEBEAM
+	db 1, WATER_GUN
+	db 1, PAY_DAY
+	db 1, RAGE
+	db 1, FISSURE
+	db 1, TELEPORT
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, BIDE
+	db 1, SKULL_BASH
+	db 1, THUNDER_WAVE
+	db 1, PSYWAVE
+	db 1, TRI_ATTACK
+	db 1, SUBSTITUTE
+	db 0
+
+SlowbroGen1TMAttacks:
 	db 0
 	db 1, BODY_SLAM
 	db 1, TAKE_DOWN
@@ -669,6 +718,33 @@ GravelerGen1TMAttacks:
 	db 0
 
 ChanseyGen1TMAttacks:
+	db 0
+	db 1, MEGA_PUNCH
+	db 1, MEGA_KICK
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, BUBBLEBEAM
+	db 1, WATER_GUN
+	db 1, SUBMISSION
+	db 1, COUNTER
+	db 1, SEISMIC_TOSS
+	db 1, RAGE
+	db 1, TELEPORT
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, BIDE
+	db 1, METRONOME
+	db 1, EGG_BOMB
+	db 1, SKULL_BASH
+	db 1, SOFTBOILED
+	db 1, THUNDER_WAVE
+	db 1, PSYWAVE
+	db 1, TRI_ATTACK
+	db 1, SUBSTITUTE
+	db 0
+
+BlisseyGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
 	db 1, MEGA_KICK
@@ -1334,6 +1410,19 @@ SeadraGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+KingdraGen1TMAttacks:
+	db 0
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, BUBBLEBEAM
+	db 1, WATER_GUN
+	db 1, RAGE
+	db 1, MIMIC
+	db 1, BIDE
+	db 1, SKULL_BASH
+	db 1, SUBSTITUTE
+	db 0
+
 SandshrewGen1TMAttacks:
 	db 0
 	db 1, SWORDS_DANCE
@@ -1461,6 +1550,31 @@ EeveeGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+EspeonGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, BIDE
+	db 1, SKULL_BASH
+	db 1, SUBSTITUTE
+	db 0
+UmbreonGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, BIDE
+	db 1, SKULL_BASH
+	db 1, SUBSTITUTE
+	db 0
+
 FlareonGen1TMAttacks:
 	db 0
 	db 1, BODY_SLAM
@@ -1567,6 +1681,28 @@ ParasGen1TMAttacks:
 	db 0
 
 PoliwhirlGen1TMAttacks:
+	db 0
+	db 1, MEGA_PUNCH
+	db 1, MEGA_KICK
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, BUBBLEBEAM
+	db 1, WATER_GUN
+	db 1, SUBMISSION
+	db 1, COUNTER
+	db 1, SEISMIC_TOSS
+	db 1, RAGE
+	db 1, FISSURE
+	db 1, MIMIC
+	db 1, BIDE
+	db 1, METRONOME
+	db 1, SKULL_BASH
+	db 1, PSYWAVE
+	db 1, SUBSTITUTE
+	db 0
+
+PolitoedGen1TMAttacks:
 	db 0
 	db 1, MEGA_PUNCH
 	db 1, MEGA_KICK
@@ -1799,7 +1935,19 @@ HypnoGen1TMAttacks:
 	db 1, TRI_ATTACK
 	db 1, SUBSTITUTE
 	db 0
-
+CrobatGen1TMAttacks:
+	db 0
+	db 1, RAZOR_WIND
+	db 1, WHIRLWIND
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, MEGA_DRAIN
+	db 1, MIMIC
+	db 1, BIDE
+	db 1, SUBSTITUTE
+	db 0
+	
 GolbatGen1TMAttacks:
 	db 0
 	db 1, RAZOR_WIND
@@ -2297,6 +2445,22 @@ PorygonGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+Porygon2Gen1TMAttacks:
+	db 0
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, TELEPORT
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, BIDE
+	db 1, SKULL_BASH
+	db 1, THUNDER_WAVE
+	db 1, PSYWAVE
+	db 1, TRI_ATTACK
+	db 1, SUBSTITUTE
+	db 0
+
 AerodactylGen1TMAttacks:
 	db 0
 	db 1, RAZOR_WIND
@@ -2465,6 +2629,21 @@ VileplumeGen1TMAttacks:
 	db 1, BIDE
 	db 1, SUBSTITUTE
 	db 0
+
+BellossomGen1TMAttacks:
+	db 0
+	db 1, SWORDS_DANCE
+	db 1, BODY_SLAM
+	db 1, TAKE_DOWN
+	db 1, DOUBLE_EDGE
+	db 1, RAGE
+	db 1, MEGA_DRAIN
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, BIDE
+	db 1, SUBSTITUTE
+	db 0
+
 
 BellsproutGen1TMAttacks:
 	db 0

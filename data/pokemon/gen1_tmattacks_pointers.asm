@@ -170,6 +170,7 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw GolbatGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
@@ -182,9 +183,11 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw VileplumeGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw PoliwhirlGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
@@ -194,7 +197,10 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw EeveeGen1TMAttacks
+	dw EeveeGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw SlowbroGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
@@ -203,9 +209,11 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw OnixGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw ScytherGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
@@ -223,27 +231,19 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw SeadraGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw PorygonGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
+	dw HitmonleeGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks
+	dw ChanseyGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks

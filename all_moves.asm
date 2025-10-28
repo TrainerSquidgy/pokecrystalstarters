@@ -8680,11 +8680,19 @@ CrobatAllMoves::
     db 1, THIEF
     db 1, STEEL_WING
     db 1, FLY
+    db 1, RAZOR_WIND
+    db 1, WHIRLWIND
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, RAGE
+    db 1, MEGA_DRAIN
+    db 1, MIMIC
+    db 1, BIDE
+    db 1, SUBSTITUTE
     db 1, QUICK_ATTACK
     db 1, PURSUIT
     db 1, FAINT_ATTACK
     db 1, GUST
-    db 1, WHIRLWIND
     db 0
 
 ChinchouAllMoves::
@@ -9212,6 +9220,15 @@ BellossomAllMoves::
     db 1, CUT
     db 1, FLASH
     db 1, SWORDS_DANCE
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, RAGE
+    db 1, MEGA_DRAIN
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
+    db 1, SUBSTITUTE
     db 1, RAZOR_LEAF
     db 1, FLAIL
     db 1, SYNTHESIS
@@ -9389,9 +9406,25 @@ PolitoedAllMoves::
     db 1, WHIRLPOOL
     db 1, WATERFALL
     db 1, ICE_BEAM
+    db 1, MEGA_PUNCH
+    db 1, MEGA_KICK
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, BUBBLEBEAM
+    db 1, SUBMISSION
+    db 1, COUNTER
+    db 1, SEISMIC_TOSS
+    db 1, RAGE
+    db 1, FISSURE
+    db 1, MIMIC
+    db 1, BIDE
+    db 1, METRONOME
+    db 1, SKULL_BASH
+    db 1, PSYWAVE
+    db 1, SUBSTITUTE
     db 1, MIST
     db 1, SPLASH
-    db 1, BUBBLEBEAM
     db 1, HAZE
     db 1, MIND_READER
     db 0
@@ -9791,6 +9824,15 @@ EspeonAllMoves::
     db 1, NIGHTMARE
     db 1, CUT
     db 1, FLASH
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, RAGE
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, CHARM
     db 0
@@ -9836,6 +9878,15 @@ UmbreonAllMoves::
     db 1, NIGHTMARE
     db 1, CUT
     db 1, FLASH
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, RAGE
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, CHARM
     db 0
@@ -10240,7 +10291,17 @@ SteelixAllMoves::
     db 1, ATTRACT
     db 1, CUT
     db 1, STRENGTH
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, FISSURE
+    db 1, MIMIC
+    db 1, BIDE
+    db 1, SELFDESTRUCT
+    db 1, SKULL_BASH
+    db 1, EXPLOSION
     db 1, ROCK_SLIDE
+    db 1, SUBSTITUTE
     db 1, FLAIL
     db 0
 
@@ -10425,6 +10486,13 @@ ScizorAllMoves::
     db 1, FURY_CUTTER
     db 1, CUT
     db 1, STRENGTH
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, RAGE
+    db 1, MIMIC
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, SUBSTITUTE
     db 1, COUNTER
     db 1, SAFEGUARD
     db 1, BATON_PASS
@@ -11157,6 +11225,14 @@ KingdraAllMoves::
     db 1, WHIRLPOOL
     db 1, WATERFALL
     db 1, ICE_BEAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, BUBBLEBEAM
+    db 1, RAGE
+    db 1, MIMIC
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, AURORA_BEAM
     db 1, OCTAZOOKA
@@ -11278,6 +11354,17 @@ Porygon2AllMoves::
     db 1, FLASH
     db 1, THUNDERBOLT
     db 1, ICE_BEAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, RAGE
+    db 1, TELEPORT
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, THUNDER_WAVE
+    db 1, PSYWAVE
+    db 1, SUBSTITUTE
     db 0
 
 StantlerAllMoves::
@@ -11617,8 +11704,27 @@ BlisseyAllMoves::
     db 1, FLAMETHROWER
     db 1, THUNDERBOLT
     db 1, ICE_BEAM
-    db 1, PRESENT
+    db 1, MEGA_PUNCH
+    db 1, MEGA_KICK
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, BUBBLEBEAM
+    db 1, WATER_GUN
+    db 1, SUBMISSION
+    db 1, COUNTER
+    db 1, SEISMIC_TOSS
+    db 1, RAGE
+    db 1, TELEPORT
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
     db 1, METRONOME
+    db 1, SKULL_BASH
+    db 1, THUNDER_WAVE
+    db 1, PSYWAVE
+    db 1, TRI_ATTACK
+    db 1, SUBSTITUTE
+    db 1, PRESENT
     db 1, HEAL_BELL
     db 0
 
