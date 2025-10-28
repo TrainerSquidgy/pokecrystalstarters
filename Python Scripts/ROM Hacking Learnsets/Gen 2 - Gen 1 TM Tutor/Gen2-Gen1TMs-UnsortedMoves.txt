@@ -34,60 +34,42 @@ Double Team
 Shock Wave
 Flamethrower
 Fire Blast
-Rock Tomb
 Aerial Ace
 Facade
 Secret Power
 Rest
 Attract
 Thief
-Focus Blast
-False Swipe
-Fling
-Endure
-Embargo
-Shadow Claw
-Payback
-Swords Dance
-Captivate
-Rock Slide
-X-Scissor
-Sleep Talk
-Natural Gift
-Poison Jab
-Swagger
-Substitute
 Strength
 Rock Smash
-Rock Climb
-Endeavor
-Fire Punch
-Fury Cutter
-Headbutt
-Ice Punch
-Icy Wind
-Knock Off
-Last Resort
-Low Kick
-Mud-Slap
-Rollout
-Snore
-Swift
-ThunderPunch
 Body Slam
+Counter
 Defense Curl
 Double-Edge
 DynamicPunch
+Endure
+Fire Punch
+Fury Cutter
+Ice Punch
+Icy Wind
 Mega Kick
 Mega Punch
 Mimic
-Refresh
+Mud-Slap
+Rock Slide
+Rollout
 Seismic Toss
+Sleep Talk
+Snore
+Substitute
+Swagger
+Swift
+Swords Dance
+ThunderPunch
 Thunder Wave
-Zap Cannon
-COUNTER
-CURSE
-DOUBLE KICK
-FLAIL
-RAZOR WIND
-ROAR
+Counter
+Curse
+Double Kick
+Flail
+Razor Wind
+Roar

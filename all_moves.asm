@@ -9980,6 +9980,22 @@ SlowkingAllMoves::
     db 1, WHIRLPOOL
     db 1, FLAMETHROWER
     db 1, ICE_BEAM
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, BUBBLEBEAM
+    db 1, PAY_DAY
+    db 1, RAGE
+    db 1, FISSURE
+    db 1, TELEPORT
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, THUNDER_WAVE
+    db 1, PSYWAVE
+    db 1, TRI_ATTACK
+    db 1, SUBSTITUTE
     db 1, SAFEGUARD
     db 1, BELLY_DRUM
     db 1, FUTURE_SIGHT
@@ -12128,9 +12144,81 @@ CelebiAllMoves::
     db 1, REST
     db 1, NIGHTMARE
     db 1, FLASH
+    db 1, COUNTER
+    db 1, DOUBLE_KICK
+    db 1, FLAIL
+    db 1, RAZOR_WIND
+    db 1, ROAR
     db 0
 
 SplashAllMoves::
     db 0
     db 1, SPLASH
+    db 0
+
+ZangooseAllMoves::
+    db 0
+    db 1, SCRATCH
+    db 1, LEER
+    db 1, QUICK_ATTACK
+    db 1, SWORDS_DANCE
+    db 1, FURY_CUTTER
+    db 1, SLASH
+    db 1, PURSUIT
+    db 1, CRUSH_CLAW
+    db 1, TAUNT
+    db 1, DETECT
+    db 1, FALSE_SWIPE
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, ROLLOUT
+    db 1, ROAR
+    db 1, TOXIC
+    db 1, ZAP_CANNON
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, BLIZZARD
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, GIGA_DRAIN
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, SOLARBEAM
+    db 1, IRON_TAIL
+    db 1, THUNDER
+    db 1, RETURN
+    db 1, DIG
+    db 1, SHADOW_BALL
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, FIRE_BLAST
+    db 1, SWIFT
+    db 1, DEFENSE_CURL
+    db 1, THUNDERPUNCH
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THIEF
+    db 1, FIRE_PUNCH
+    db 1, STRENGTH
+    db 1, FLAMETHROWER
+    db 1, ICE_BEAM
+    db 1, THUNDERBOLT
+    db 1, MEGA_PUNCH
+    db 1, RAZOR_WIND
+    db 1, MEGA_KICK
+    db 1, BODY_SLAM
+    db 1, DOUBLE_EDGE
+    db 1, COUNTER
+    db 1, SEISMIC_TOSS
+    db 1, MIMIC
+    db 1, THUNDER_WAVE
+    db 1, ROCK_SLIDE
+    db 1, SUBSTITUTE
     db 0
