@@ -12,6 +12,7 @@ AlphabeticalPokedexOrder:
 	db ARIADOS
 	db ARTICUNO
 	db AZUMARILL
+	db BAGON
 	db BAYLEEF
 	db BEEDRILL
 	db BELLOSSOM
@@ -21,7 +22,6 @@ AlphabeticalPokedexOrder:
 	db BULBASAUR
 	db BUTTERFREE
 	db CATERPIE
-	db CELEBI
 	db CHANSEY
 	db CHARIZARD
 	db CHARMANDER
@@ -187,6 +187,7 @@ AlphabeticalPokedexOrder:
 	db REMORAID
 	db RHYDON
 	db RHYHORN
+	db SALAMENCE
 	db SANDSHREW
 	db SANDSLASH
 	db SCIZOR
@@ -195,6 +196,7 @@ AlphabeticalPokedexOrder:
 	db SEAKING
 	db SEEL
 	db SENTRET
+	db SHELGON
 	db SHELLDER
 	db SHUCKLE
 	db SKARMORY

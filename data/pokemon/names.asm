@@ -250,12 +250,12 @@ PokemonNames::
 	db "TYRANITAR@"
 	db "LUGIA@@@@@"
 	db "HO-OH@@@@@"
-	db "CELEBI@@@@"
+	db "BAGON@@@@@"
+	db "SHELGON@@@"
+	db "SALAMENCE@"
 	assert_table_length NUM_POKEMON
-	db "?????@@@@@"
 	db "EGG@@@@@@@"
 	assert_table_length EGG
-	db "?????@@@@@"
 	db "?????@@@@@"
 	db "?????@@@@@"
 	assert_table_length $100
