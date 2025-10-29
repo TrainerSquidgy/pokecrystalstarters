@@ -65,6 +65,9 @@ TrainerGruntM1:
 	clearevent EVENT_AZALEA_TOWN_SLOWPOKES
 	clearevent EVENT_KURTS_HOUSE_SLOWPOKE
 	clearevent EVENT_KURTS_HOUSE_KURT_1
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	special FadeOutToWhite
 	special HealParty
 	pause 15

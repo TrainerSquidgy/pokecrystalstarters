@@ -173,6 +173,9 @@ CherrygroveRivalSceneNorth:
 	writetext CherrygroveRivalText_YouWon
 	waitbutton
 	closetext
+	readmem wNumberOfPoints
+	addval 2
+	writemem wNumberOfPoints
 	sjump .FinishRival
 
 .AfterYourDefeat:

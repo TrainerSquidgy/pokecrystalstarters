@@ -63,7 +63,7 @@ BrunoScript_Battle:
 	closetext
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
 	readmem wNumberOfPoints
-	addval 1
+	addval 4
 	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 47, .SkipLevelCap

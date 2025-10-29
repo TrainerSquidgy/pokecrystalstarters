@@ -285,6 +285,9 @@ RocketBaseElectrodeScript:
 	opentext
 	writetext RocketBaseLanceElectrodeDoneText
 	promptbutton
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	verbosegiveitem HM_WHIRLPOOL
 	setevent EVENT_GOT_HM06_WHIRLPOOL
 	checkevent EVENT_RECEIVED_BATH_PLUG

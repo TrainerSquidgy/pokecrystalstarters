@@ -63,7 +63,7 @@ WillScript_Battle:
 	closetext
 	setevent EVENT_WILLS_ROOM_EXIT_OPEN
 	readmem wNumberOfPoints
-	addval 1
+	addval 4
 	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 44, .SkipLevelCap

@@ -105,6 +105,9 @@ DanceTheaterSurfGuy:
 .GetSurf:
 	writetext SurfGuyLikeADanceText
 	promptbutton
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	verbosegiveitem HM_SURF
 	setevent EVENT_GOT_HM03_SURF
 	checkevent EVENT_RECEIVED_RAFT

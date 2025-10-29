@@ -120,6 +120,9 @@ RadioTower5FRocketBossScript:
 	opentext
 	writetext RadioTower5FDirectorThankYouText
 	promptbutton
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	verbosegiveitem CLEAR_BELL
 	writetext RadioTower5FDirectorDescribeClearBellText
 	waitbutton

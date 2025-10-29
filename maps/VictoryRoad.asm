@@ -105,6 +105,9 @@ VictoryRoadRivalNext:
 	sjump .AfterBattle
 
 .AfterBattle:
+	readmem wNumberOfPoints
+	addval 2
+	writemem wNumberOfPoints
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext VictoryRoadRivalAfterText

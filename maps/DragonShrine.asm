@@ -159,7 +159,7 @@ DragonShrineTakeTestScript:
 	writetext DragonShrineHereRisingBadgeText
 	waitbutton
 	readmem wNumberOfPoints
-	addval 1
+	addval 3
 	writemem wNumberOfPoints
 	loadmem wLevelCap, 42
 	setflag ENGINE_RISINGBADGE

@@ -121,6 +121,9 @@ AzaleaTownRivalBattleScript:
 	setscene SCENE_AZALEATOWN_NOOP
 	waitsfx
 	playmapmusic
+	readmem wNumberOfPoints
+	addval 2
+	writemem wNumberOfPoints
 	end
 
 AzaleaTownRocket1Script:

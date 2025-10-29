@@ -27,7 +27,7 @@ VioletGymFalknerScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	readmem wNumberOfPoints
-	addval 1
+	addval 3
 	writemem wNumberOfPoints
 	setflag ENGINE_ZEPHYRBADGE
 	readvar VAR_BADGES

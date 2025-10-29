@@ -63,7 +63,7 @@ KarenScript_Battle:
 	closetext
 	setevent EVENT_KARENS_ROOM_EXIT_OPEN
 	readmem wNumberOfPoints
-	addval 1
+	addval 4
 	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 50, .SkipLevelCap
