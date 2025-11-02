@@ -3121,7 +3121,8 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 47
+	ds 46
+wPressBToRepel:: db
 wRareCandyRNG:: db
 wRareCandiesObtained:: db
 
