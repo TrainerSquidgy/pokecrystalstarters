@@ -587,6 +587,9 @@ MovementFunction_RandomSpinSlow:
 	ld hl, OBJECT_DIRECTION
 	add hl, bc
 	ld [hl], a
+	; reroll if facing the player
+    call FacingPlayerDistance
+    jr c, MovementFunction_RandomSpinSlow
 	jp RandomStepDuration_Slow
 
 MovementFunction_RandomSpinFast:
@@ -607,6 +610,9 @@ MovementFunction_RandomSpinFast:
 	xor %00001100
 .keep
 	ld [hl], a
+	; reroll if facing the player
+    call FacingPlayerDistance
+    jr c, MovementFunction_RandomSpinSlow
 	jp RandomStepDuration_Fast
 
 MovementFunction_Standing:

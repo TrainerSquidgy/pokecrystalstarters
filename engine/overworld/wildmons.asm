@@ -179,6 +179,14 @@ TryWildEncounter::
 	jr nc, .no_battle
 	call ChooseWildEncounter
 	jr nz, .no_battle
+	
+	
+	
+; Check for 'B' being held
+    ldh a, [hJoyDown]
+    bit B_BUTTON_F, a
+    jr nz, .no_battle
+    	
 	call CheckRepelEffect
 	jr nc, .no_battle
 	xor a
