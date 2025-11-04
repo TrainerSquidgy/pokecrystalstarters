@@ -114,7 +114,7 @@ AzaleaTownRivalBattleScript:
 	writetext AzaleaTownRivalAfterText
 	waitbutton
 	readmem wNumberOfPoints
-	addval 
+	addval 2
 	writemem wNumberOfPoints
 	closetext
 	turnobject PLAYER, LEFT
