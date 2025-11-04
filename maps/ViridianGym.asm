@@ -26,7 +26,7 @@ ViridianGymBlueScript:
 	waitsfx
 	setflag ENGINE_EARTHBADGE
 	readmem wNumberOfPoints
-	addval 1
+	addval 5
 	writemem wNumberOfPoints
 	verbosegiveitem CANDY_JAR
 	readmem wLevelCap

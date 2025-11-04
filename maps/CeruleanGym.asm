@@ -77,7 +77,7 @@ CeruleanGymMistyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	readmem wNumberOfPoints
-	addval 1
+	addval 3
 	writemem wNumberOfPoints
 	setflag ENGINE_CASCADEBADGE
 .FightDone:

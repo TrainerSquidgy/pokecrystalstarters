@@ -113,6 +113,9 @@ AzaleaTownRivalBattleScript:
 	opentext
 	writetext AzaleaTownRivalAfterText
 	waitbutton
+	readmem wNumberOfPoints
+	addval 
+	writemem wNumberOfPoints
 	closetext
 	turnobject PLAYER, LEFT
 	applymovement AZALEATOWN_RIVAL, AzaleaTownRivalBattleExitMovement

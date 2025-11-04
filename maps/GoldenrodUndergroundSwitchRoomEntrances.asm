@@ -220,6 +220,9 @@ UndergroundRivalBattleScript:
 	opentext
 	writetext UndergroundRivalAfterText
 	waitbutton
+	readmem wNumberOfPoints
+	addval 2
+	writemem wNumberOfPoints
 	closetext
 	end
 

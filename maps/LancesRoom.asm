@@ -72,7 +72,9 @@ LancesRoomLanceScript:
 	ifgreater 58, .SkipLevelCap
 	loadmem wLevelCap, 58
 .SkipLevelCap
-	
+	readmem wNumberOfPoints
+	addval 10
+	writemem wNumberOfPoints
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 0, $0b ; open door

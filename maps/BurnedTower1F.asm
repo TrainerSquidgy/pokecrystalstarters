@@ -131,6 +131,9 @@ BurnedTowerRivalBattleScript:
 	opentext
 	writetext BurnedTowerRival_AfterText2
 	waitbutton
+	readmem wNumberOfPoints
+	addval 2
+	writemem wNumberOfPoints
 	closetext
 	setevent EVENT_HOLE_IN_BURNED_TOWER
 	pause 15

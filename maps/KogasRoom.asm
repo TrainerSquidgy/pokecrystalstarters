@@ -56,6 +56,9 @@ KogaScript_Battle:
 	opentext
 	writetext KogaScript_KogaDefeatText
 	waitbutton
+	readmem wNumberOfPoints
+	addval 4
+	writemem wNumberOfPoints
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door

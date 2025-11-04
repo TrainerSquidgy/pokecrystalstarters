@@ -51,7 +51,7 @@ GoldenrodGymWhitneyScript:
 	checkevent EVENT_GOT_TM45_ATTRACT
 	iftrue .GotAttract
 	readmem wNumberOfPoints
-	addval 1
+	addval 3
 	writemem wNumberOfPoints
 	checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
