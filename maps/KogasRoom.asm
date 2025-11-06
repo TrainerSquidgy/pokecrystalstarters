@@ -64,9 +64,6 @@ KogaScript_Battle:
 	changeblock 4, 2, $16 ; open door
 	refreshmap
 	closetext
-	readmem wNumberOfPoints
-	addval 1
-	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 46, .SkipLevelCap
 	loadmem wLevelCap, 46

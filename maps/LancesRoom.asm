@@ -65,9 +65,6 @@ LancesRoomLanceScript:
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton
-	readmem wNumberOfPoints
-	addval 2
-	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 58, .SkipLevelCap
 	loadmem wLevelCap, 58
