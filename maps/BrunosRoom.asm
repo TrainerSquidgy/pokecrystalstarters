@@ -56,15 +56,15 @@ BrunoScript_Battle:
 	opentext
 	writetext BrunoScript_BrunoDefeatText
 	waitbutton
+	readmem wNumberOfPoints
+	addval 4
+	writemem wNumberOfPoints
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 2, $16 ; open door
 	refreshmap
 	closetext
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
-	readmem wNumberOfPoints
-	addval 1
-	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 47, .SkipLevelCap
 	loadmem wLevelCap, 47

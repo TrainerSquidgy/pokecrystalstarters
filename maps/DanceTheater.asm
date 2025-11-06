@@ -112,6 +112,9 @@ DanceTheaterSurfGuy:
 	verbosegiveitem RAFT
 	setevent EVENT_RECEIVED_RAFT
 .NoHMItem
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	writetext SurfGuySurfExplanationText
 	waitbutton
 	readmem wMegaEvolutionEnabled

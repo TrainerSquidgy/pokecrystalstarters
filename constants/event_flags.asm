@@ -284,7 +284,11 @@
 	const EVENT_HELPFUL_NPCS_DISABLED
 	const EVENT_STATIC_BOARDER_DOUGLAS
 	const EVENT_REGULAR_BOARDER_DOUGLAS
-; Unused: next 324 events
+	const EVENT_PROFS_REPEL
+	const EVENT_CANDY_JAR
+	const EVENT_10_CANDIES
+	const EVENT_HM_ITEMS
+; Unused: next 320 events
 
 	const_next 600
 ; Kurt Apricorn events
@@ -1476,7 +1480,7 @@
 	const EVENT_DARK_CAVE_VIOLET_ENTRANCE_DIRE_HIT
 	const EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 	const EVENT_SUPERMON_CHALLENGE
-; Unused: next 47 events
+; Unused: next 48 events
 
 	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

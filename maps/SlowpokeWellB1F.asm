@@ -66,6 +66,9 @@ TrainerGruntM1:
 	clearevent EVENT_KURTS_HOUSE_SLOWPOKE
 	clearevent EVENT_KURTS_HOUSE_KURT_1
 	special FadeOutToWhite
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	special HealParty
 	pause 15
 	warp KURTS_HOUSE, 3, 3

@@ -65,14 +65,13 @@ LancesRoomLanceScript:
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton
-	readmem wNumberOfPoints
-	addval 2
-	writemem wNumberOfPoints
 	readmem wLevelCap
 	ifgreater 58, .SkipLevelCap
 	loadmem wLevelCap, 58
 .SkipLevelCap
-	
+	readmem wNumberOfPoints
+	addval 10
+	writemem wNumberOfPoints
 	closetext
 	playsound SFX_ENTER_DOOR
 	changeblock 4, 0, $0b ; open door

@@ -35,7 +35,7 @@ DayCareMan:
 	ld hl, wDayCareMan
 	set DAYCAREMAN_HAS_MON_F, [hl]
 	call DayCare_DepositPokemonText
-	call DayCare_InitBreeding
+;	call DayCare_InitBreeding
 	ret
 
 .AskWithdrawMon:
@@ -73,7 +73,7 @@ DayCareLady:
 	ld hl, wDayCareLady
 	set DAYCARELADY_HAS_MON_F, [hl]
 	call DayCare_DepositPokemonText
-	call DayCare_InitBreeding
+;	call DayCare_InitBreeding
 	ret
 
 .AskWithdrawMon:
@@ -397,7 +397,7 @@ DayCareManOutside:
 	call DayCare_GiveEgg
 	ld hl, wDayCareMan
 	res DAYCAREMAN_HAS_EGG_F, [hl]
-	call DayCare_InitBreeding
+;	call DayCare_InitBreeding
 	ld hl, .ReceivedEggText
 	call PrintText
 	ld de, SFX_GET_EGG
