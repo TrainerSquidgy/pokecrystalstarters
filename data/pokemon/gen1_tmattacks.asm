@@ -2685,6 +2685,25 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
-NoGen1TMAttacks:
+AbqaGen1TMAttacks:
 	db 0
+	db 1, RAZOR_WIND  
+	db 1, SWORDS_DANCE 
+	db 1, WHIRLWIND  
+	db 1, BODY_SLAM    
+	db 1, DOUBLE_EDGE   
+	db 1, PAY_DAY      
+	db 1, COUNTER     
+	db 1, RAGE        
+	db 1, THUNDERBOLT  
+	db 1, BIDE          
+	db 1, FISSURE      
+	db 1, DOUBLE_TEAM  
+	db 1, REFLECT      
+	db 1, EGG_BOMB     
+	db 1, EXPLOSION 
+	db 1, SKULL_BASH   
+	db 1, THUNDER_WAVE 
+	db 1, SUBSTITUTE
+NoGen1TMAttacks:
 	db 0

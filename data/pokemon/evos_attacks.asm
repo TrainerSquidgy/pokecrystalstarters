@@ -3372,3 +3372,22 @@ SplashEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 0 ; no more level-up moves
+AbqaEvosAttacks:
+    db 0 ; no more evolutions
+    db 1,  LEECH_LIFE
+    db 1,  HI_JUMP_KICK
+    db 1,  PETAL_DANCE
+    db 1,  SMOG
+    db 12, DOUBLE_KICK
+    db 16, BUBBLEBEAM
+    db 25, CONFUSION
+    db 27, LICK
+    db 36, PIN_MISSILE
+    db 38, DOUBLE_KICK
+    db 40, DOUBLESLAP
+    db 48, POUND
+    db 61, HORN_DRILL
+    db 63, THRASH
+    db 84, LOW_KICK
+    db 95, THUNDER_WAVE
+    db 0; no more level up moves

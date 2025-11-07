@@ -1,16 +1,17 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Abqa
+1: Leech Life
+1: Hi Jump Kick
+1: Petal Dance
+1: Smog
+12: Double Kick
+16: BubbleBeam
+25: Confusion
+27: Lick
+36: Pin Missile
+38: Double Kick
+40: DoubleSlap
+48: Pound
+61: Horn Drill
+63: Thrash
+84: Low Kick
+95: Thunder Wave

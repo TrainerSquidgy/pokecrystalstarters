@@ -805,5 +805,13 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+AbqaEggMoves: 
+	db AMNESIA
+	db CONFUSION 
+	db DOUBLE_EDGE 
+	db GROWL
+	db PAY_DAY 
+	db REFLECT
 NoEggMoves:
 	db -1 ; end
+
