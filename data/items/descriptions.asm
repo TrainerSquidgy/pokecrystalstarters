@@ -155,7 +155,7 @@ ItemDescriptions:
 	dw BerserkGeneDesc
 	dw RareCandyDesc
 	dw EscapeRopeDesc
-	dw TeruSama20Desc
+	dw SunStoneDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc

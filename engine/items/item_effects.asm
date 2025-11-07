@@ -155,20 +155,20 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
 	dw BathPlugEffect      ; BATH_PLUG
-	dw LadderEffect        ; LadderEffect
+	dw LadderEffect        ; LADDER
 	dw EvoStoneEffect      ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
 	dw FartJarEffect       ; FART_JAR
 	dw NoEffect            ; LEFTOVERS
-	dw HoneyJarEffect            ; ITEM_93
-	dw TreeShakerEffect            ; ITEM_94
-	dw BigHammerEffect            ; ITEM_95
+	dw HoneyJarEffect      ; HONEY_JAR
+	dw TreeShakerEffect    ; TREE_SHAKER
+	dw BigHammerEffect     ; BIG_HAMMER
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw CandyJarEffect            ; CANDY_JAR
-	dw EscapeRopeEffectKey            ; ITEM_9A
-	dw NoEffect            ; ITEM_9B
+	dw CandyJarEffect      ; CANDY_JAR
+	dw EscapeRopeEffectKey ; ESCAPE_ROPE_KEY
+	dw NoEffect            ; EVO_STONE
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
@@ -254,6 +254,8 @@ PokeBallEffect:
 	cp ABRA
 	jp z, .catch_without_fail
 	cp PSYDUCK
+	jp z, .catch_without_fail
+	cp SPEAROW
 	jp z, .catch_without_fail
 	cp PARAS
 	jp z, .catch_without_fail	
@@ -1199,9 +1201,19 @@ VitaminEffect:
 
 	add hl, bc
 	ld a, [hl]
+	ld b, a
+	ld a, [wVitaminLimitsDisabled]
+	and a
+	jr nz, .HigherLimit
+	ld a, b
 	cp 100
 	jr nc, NoEffectMessage
-
+	jr .CarryOn
+.HigherLimit
+	ld a, b
+	cp 244
+	jr nc, NoEffectMessage
+.CarryOn
 	add 10
 	ld [hl], a
 	call UpdateStatsAfterItem
