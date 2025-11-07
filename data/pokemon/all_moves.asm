@@ -11419,3 +11419,51 @@ SplashAllMoves::
 NoAllMoves::
 	db 0
 	db 0
+	
+AbqaAllMoves::
+    db 0
+    db 1, LEECH_LIFE
+    db 1, HI_JUMP_KICK
+    db 1, PETAL_DANCE
+    db 1, SMOG
+    db 1, DOUBLE_KICK
+    db 1, BUBBLEBEAM
+    db 1, CONFUSION
+    db 1, LICK
+    db 1, PIN_MISSILE
+    db 1, DOUBLESLAP
+    db 1, POUND
+    db 1, HORN_DRILL
+    db 1, THRASH
+    db 1, LOW_KICK
+    db 1, THUNDER_WAVE
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, HIDDEN_POWER
+    db 1, SNORE
+    db 1, PROTECT
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THUNDERBOLT
+    db 1, RAZOR_WIND
+    db 1, SWORDS_DANCE
+    db 1, WHIRLWIND
+    db 1, BODY_SLAM
+    db 1, DOUBLE_EDGE
+    db 1, PAY_DAY
+    db 1, COUNTER
+    db 1, RAGE
+    db 1, BIDE
+    db 1, FISSURE
+    db 1, REFLECT
+    db 1, EGG_BOMB
+    db 1, EXPLOSION
+    db 1, SKULL_BASH
+    db 1, SUBSTITUTE
+    db 0
