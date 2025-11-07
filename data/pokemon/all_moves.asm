@@ -11419,3 +11419,154 @@ SplashAllMoves::
 NoAllMoves::
 	db 0
 	db 0
+	
+ElekidSAllMoves::
+    db 0
+    db 1, QUICK_ATTACK
+    db 1, LEER
+    db 1, THUNDERSHOCK
+    db 1, LOW_KICK
+    db 1, SWIFT
+    db 1, SHOCK_WAVE
+    db 1, LIGHT_SCREEN
+    db 1, THUNDERPUNCH
+    db 1, DISCHARGE
+    db 1, THUNDERBOLT
+    db 1, SCREECH
+    db 1, THUNDER
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, ZAP_CANNON
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SNORE
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
+    db 1, PSYCHIC_M
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THIEF
+    db 1, FIRE_PUNCH
+    db 1, FLASH
+    db 0
+
+ElectabuzzSAllMoves::
+    db 0
+    db 1, QUICK_ATTACK
+    db 1, LEER
+    db 1, THUNDERSHOCK
+    db 1, LOW_KICK
+    db 1, SWIFT
+    db 1, SHOCK_WAVE
+    db 1, LIGHT_SCREEN
+    db 1, THUNDERPUNCH
+    db 1, DISCHARGE
+    db 1, THUNDERBOLT
+    db 1, SCREECH
+    db 1, THUNDER
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, ZAP_CANNON
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SNORE
+    db 1, HYPER_BEAM
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, IRON_TAIL
+    db 1, RETURN
+    db 1, PSYCHIC_M
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THIEF
+    db 1, FIRE_PUNCH
+    db 1, STRENGTH
+    db 1, FLASH
+    db 1, MEGA_PUNCH
+    db 1, MEGA_KICK
+    db 1, BODY_SLAM
+    db 1, COUNTER
+    db 1, SEISMIC_TOSS
+    db 1, MIMIC
+    db 1, THUNDER_WAVE
+    db 1, SUBSTITUTE
+    db 1, BARRIER
+    db 1, CROSS_CHOP
+    db 1, KARATE_CHOP
+    db 1, MEDITATE
+    db 1, ROLLING_KICK
+    db 0
+
+ElectivireAllMoves::
+    db 0
+    db 1, FIRE_PUNCH
+    db 1, QUICK_ATTACK
+    db 1, LEER
+    db 1, THUNDERSHOCK
+    db 1, LOW_KICK
+    db 1, SWIFT
+    db 1, SHOCK_WAVE
+    db 1, LIGHT_SCREEN
+    db 1, THUNDERPUNCH
+    db 1, DISCHARGE
+    db 1, THUNDERBOLT
+    db 1, SCREECH
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, ZAP_CANNON
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SNORE
+    db 1, HYPER_BEAM
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, IRON_TAIL
+    db 1, THUNDER
+    db 1, EARTHQUAKE
+    db 1, RETURN
+    db 1, DIG
+    db 1, PSYCHIC_M
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THIEF
+    db 1, STRENGTH
+    db 1, FLASH
+    db 1, FLAMETHROWER
+    db 1, MEGA_PUNCH
+    db 1, MEGA_KICK
+    db 1, BODY_SLAM
+    db 1, COUNTER
+    db 1, SEISMIC_TOSS
+    db 1, MIMIC
+    db 1, THUNDER_WAVE
+    db 1, ROCK_SLIDE
+    db 1, SUBSTITUTE
+    db 0
