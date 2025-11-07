@@ -1709,6 +1709,7 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
+	db EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -3355,20 +3356,57 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
-	db 0 ; no more level-up moves
-
 SplashEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 0 ; no more level-up moves
+
+ElekidSEvosAttacks:
+	db EVOLVE_LEVEL, 30, ELECTABUZZS
+	db 0 ; No More Evolutions
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 7, THUNDERSHOCK
+	db 10, LOW_KICK
+	db 16, SWIFT
+	db 19, SHOCK_WAVE
+	db 25, LIGHT_SCREEN
+	db 28, THUNDERPUNCH
+	db 34, DISCHARGE
+	db 37, THUNDERBOLT
+	db 43, SCREECH
+	db 46, THUNDER
+	db 0
+	
+ElectabuzzSEvosAttacks:
+	db EVOLVE_ITEM, ELECTIRIZER, ELECTIVIRE
+	db 0 ; No More Evolutions
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 7, THUNDERSHOCK
+	db 10, LOW_KICK
+	db 16, SWIFT
+	db 19, SHOCK_WAVE
+	db 25, LIGHT_SCREEN
+	db 28, THUNDERPUNCH
+	db 37, DISCHARGE
+	db 43, THUNDERBOLT
+	db 52, SCREECH
+	db 58, THUNDER
+	db 0
+	
+ElectivireEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, FIRE_PUNCH
+	db 1, QUICK_ATTACK
+	db 1, LEER
+	db 7, THUNDERSHOCK
+	db 10, LOW_KICK
+	db 16, SWIFT
+	db 19, SHOCK_WAVE
+	db 25, LIGHT_SCREEN
+	db 28, THUNDERPUNCH
+	db 37, DISCHARGE
+	db 43, THUNDERBOLT
+	db 52, SCREECH
+	db 0

@@ -710,6 +710,12 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
+ElekidSFrontpic: INCBIN "gfx/pokemon/elekids/front.animated.2bpp.lz"
+ElekidSBackpic: INCBIN "gfx/pokemon/elekids/back.2bpp.lz"
+ElectabuzzSFrontpic: INCBIN "gfx/pokemon/electabuzzs/front.animated.2bpp.lz"
+ElectabuzzSBackpic: INCBIN "gfx/pokemon/electabuzzs/back.2bpp.lz"
+ElectivireBackpic: INCBIN "gfx/pokemon/electivire/back.2bpp.lz"
+ElectivireFrontpic: INCBIN "gfx/pokemon/electivire/front.animated.2bpp.lz"
 
 
 ; Seems to be an accidental copy of the previous bank

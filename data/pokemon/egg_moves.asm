@@ -805,5 +805,18 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+ElekidSEggMoves:
+ElectabuzzSEggMoves:
+ElectivireEggMoves:
+	db BARRIER
+	db CROSS_CHOP
+	db DYNAMICPUNCH
+	db FIRE_PUNCH
+	db ICE_PUNCH
+	db KARATE_CHOP
+	db MEDITATE
+	db ROLLING_KICK
+	db -1
+
 NoEggMoves:
 	db -1 ; end

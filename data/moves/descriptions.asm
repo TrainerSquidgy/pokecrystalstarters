@@ -252,18 +252,18 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw SwiftDescription
+	dw BodySlamDescription
+	dw HyperBeamDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
+MoveFFDescription:
 MoveFCDescription:
 MoveFDDescription:
 MoveFEDescription:
-MoveFFDescription:
 Move00Description:
 	db "?@"
 

@@ -2685,6 +2685,30 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+ElekidSGen1TMAttacks:
+ElectabuzzSGen1TMAttacks:
+	db 0
+	db 1, MEGA_PUNCH
+	db 1, MEGA_KICK
+	db 1, BODY_SLAM
+	db 1, COUNTER
+	db 1, SEISMIC_TOSS
+	db 1, MIMIC
+	db 1, THUNDER_WAVE
+	db 1, SUBSTITUTE
+	db 0
+ElectivireGen1TMAttacks:
+	db 0
+	db 1, MEGA_PUNCH
+	db 1, MEGA_KICK
+	db 1, BODY_SLAM
+	db 1, COUNTER
+	db 1, SEISMIC_TOSS
+	db 1, MIMIC
+	db 1, THUNDER_WAVE
+	db 1, ROCK_SLIDE
+	db 1, SUBSTITUTE
+	db 0
 NoGen1TMAttacks:
 	db 0
 	db 0
