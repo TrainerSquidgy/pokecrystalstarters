@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw HexDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw HeadbuttDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw CaptivateDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -220,8 +220,8 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
-	dw SacredFireDescription
+	dw SheerColdDescription
+	dw DazzleGleamDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -234,7 +234,7 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
-	dw MorningSunDescription
+	dw NastyPlotDescription
 	dw SynthesisDescription
 	dw MoonlightDescription
 	dw HiddenPowerDescription
@@ -252,17 +252,23 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw BabyDollEyesDescription
+	dw QuickAttackDescription
+	dw PaybackDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
+BabyDollEyesDescription:
+	db   "Lowers enemy ATK."
+	next "goes first.@"
+	
+
+PaybackDescription:
+	db   "Does more if"
+	next "user goes last.@"
+	
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -315,9 +321,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+SheerColdDescription:
+	db   "A one-hit KO,"
+	next "frozen attack.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -562,6 +568,10 @@ LeechSeedDescription:
 GrowthDescription:
 	db   "Raises the SPCL."
 	next "ATK rating.@"
+
+NastyPlotDescription:
+	db   "Sharply raises"
+	next "SPCL.ATK rating.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -835,9 +845,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -971,9 +978,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
+CaptivateDescription:
+	db   "Lowers enemy's"
+	next "SPCL.ATK.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1143,9 +1150,6 @@ SafeguardDescription:
 	db   "Prevents all"
 	next "status problems.@"
 
-PainSplitDescription:
-	db   "Adds user & foe's"
-	next "HPs. Shares total.@"
 
 SacredFireDescription:
 	db   "An attack that may"
@@ -1199,9 +1203,6 @@ VitalThrowDescription:
 	db   "A 2nd-strike move"
 	next "that never misses.@"
 
-MorningSunDescription:
-	db   "Restores HP"
-	next "(varies by time).@"
 
 SynthesisDescription:
 	db   "Restores HP"
@@ -1270,3 +1271,11 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+HexDescription:
+	db   "Doubles on"
+	next "target status.@"
+
+DazzleGleamDescription:
+	db   "Attacks with a"
+	next "beam of light.@"

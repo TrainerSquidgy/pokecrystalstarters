@@ -1,78 +1,326 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
+Scratch
+Focus Energy
+Poison Gas
+Screech
+Fury Swipes
+SmokeScreen
+Slash
+Toxic
+Night Slash
+Memento
 Explosion
-Calm Mind
+Roar
 Toxic
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
+Taunt
 Protect
-Safeguard
+Rain Dance
 Frustration
-SolarBeam
-Earthquake
+Iron Tail
 Return
-Psychic
+Dig
 Shadow Ball
 Double Team
-Reflect
 Flamethrower
-Sandstorm
+Sludge Bomb
 Fire Blast
-Rock Tomb
+Torment
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
+Thief
+Snatch
 Endure
-Will-O-Wisp
-Embargo
 Explosion
-Recycle
-Giga Impact
-Rock Polish
-Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
+Shadow Claw
+Payback
+Captivate
+Dark Pulse
 Sleep Talk
 Natural Gift
-Dream Eater
-Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Cut
+Defog
+Rock Smash
+Fury Cutter
+Headbutt
+Mud-Slap
 Snore
+Sucker Punch
 Swift
-Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
+Roar
+Toxic
+Sunny Day
+Taunt
+Protect
+Rain Dance
+Iron Tail
+Dig
+Shadow Ball
+Double Team
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
+Facade
+Rest
+Attract
+Thief
+Endure
+Nasty Plot
+Explosion
+Shadow Claw
+Payback
+Snarl
+Dark Pulse
+Sleep Talk
+Swagger
+Substitute
+Cut
+Defog
+Rock Smash
+Dig
+Screech
+Rest
+Thief
+Snore
+Protect
+Scary Face
+Attract
+Rain Dance
+Sunny Day
+Facade
+Swift
+Payback
+Assurance
+Shadow Claw
+Venoshock
+Round
+Hex
+Tail Slap
+Snarl
+Flamethrower
+Focus Energy
+Fire Blast
+Substitute
+Sludge Bomb
+Endure
+Sleep Talk
+Iron Tail
+Crunch
+Shadow Ball
+Taunt
+Dark Pulse
+Nasty Plot
+Foul Play
+Play Rough
+Venom Drench
+Throat Chop
+Dark Pulse
+Flamethrower
+Focus Energy
+Iron Tail
+Play Rough
+Poison Jab
+Rest
+Rock Smash
+Shadow Ball
+Shadow Claw
+Sludge Bomb
+Snarl
+Swift
+Captivate 
+Confide
+Cut
+Defog
+Double Team
+Flame Burst 
+Frustration 
+Fury Cutter
+Headbutt
+Hidden Power 
+Hone Claws
+Incinerate
+Mud-Slap
+Natural Gift 
+Punishment 
+Pursuit 
+Return 
+Roar
+Rock Smash
+Secret Power 
+Snatch 
+Swagger
+Torment
+Roar
+Toxic
+Hidden Power
+Sunny Day
+Taunt
+Hyper Beam
+Protect
+Rain Dance
+Frustration
+Iron Tail
+Return
+Dig
+Shadow Ball
+Double Team
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Snatch
+Endure
+Explosion
+Shadow Claw
+Payback
+Giga Impact
+Captivate
+Dark Pulse
+Sleep Talk
+Natural Gift
+Poison Jab
+Swagger
+Substitute
+Cut
+Strength
+Defog
+Rock Smash
+Fury Cutter
+Headbutt
+Mud-Slap
+Snore
+Sucker Punch
+Swift
+Tackle
+Acid Spray
+Poison Gas
+Venoshock
+Night Slash
+Poison Jab
+Flamethrower
 Double-Edge
-Mimic
-Selfdestruct
+Hyper Beam
+Giga Impact
+Fire Spin
+Dig
+Screech
+Rest
+Thief
+Snore
+Protect
+Scary Face
+Attract
+Rain Dance
+Sunny Day
+Facade
+Swift
+Payback
+Assurance
+Shadow Claw
+Venoshock
+Round
+Hex
+Tail Slap
+Snarl
+Flamethrower
+Focus Energy
+Fire Blast
+Substitute
+Sludge Bomb
+Endure
+Sleep Talk
+Iron Tail
+Crunch
+Shadow Ball
+Taunt
+Poison Jab
+Dark Pulse
+Nasty Plot
+Foul Play
+Play Rough
+Venom Drench
+Throat Chop
+Roar
+Toxic
+Sunny Day
+Taunt
+Hyper Beam
+Protect
+Rain Dance
+Iron Tail
+Dig
+Shadow Ball
+Double Team
+Flamethrower
+Sludge Bomb
+Fire Blast
+Torment
+Facade
+Rest
+Attract
+Thief
+Endure
+Nasty Plot
+Explosion
+Shadow Claw
+Payback
+Giga Impact
+Snarl
+Dark Pulse
+Sleep Talk
+Poison Jab
+Swagger
+Substitute
+Cut
+Strength
+Defog
+Rock Smash
+Dark Pulse
+Flamethrower
+Focus Energy
+Giga Impact
+Hyper Beam
+Iron Tail
+Play Rough
+Poison Jab
+Rest
+Rock Smash
+Shadow Ball
+Shadow Claw
+Sludge Bomb
+Snarl
+Swift
+Captivate 
+Confide
+Cut
+Defog
+Double Team
+Flame Burst 
+Frustration 
+Fury Cutter
+Headbutt
+Hidden Power 
+Hone Claws
+Incinerate
+Mud-Slap
+Natural Gift 
+Punishment 
+Pursuit 
+Return 
+Roar
+Rock Smash
+Secret Power 
+Snatch 
+Strength
+Swagger
+Torment

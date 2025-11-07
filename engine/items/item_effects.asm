@@ -155,20 +155,20 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY_JUICE
 	dw NoEffect            ; SCOPE_LENS
 	dw BathPlugEffect      ; BATH_PLUG
-	dw LadderEffect        ; LADDER
+	dw LadderEffect        ; LadderEffect
 	dw EvoStoneEffect      ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
 	dw FartJarEffect       ; FART_JAR
 	dw NoEffect            ; LEFTOVERS
-	dw HoneyJarEffect      ; HONEY_JAR
-	dw TreeShakerEffect    ; TREE_SHAKER
-	dw BigHammerEffect     ; BIG_HAMMER
+	dw HoneyJarEffect            ; ITEM_93
+	dw TreeShakerEffect            ; ITEM_94
+	dw BigHammerEffect            ; ITEM_95
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw CandyJarEffect      ; CANDY_JAR
-	dw EscapeRopeEffectKey ; ESCAPE_ROPE_KEY
-	dw NoEffect            ; EVO_STONE
+	dw CandyJarEffect            ; CANDY_JAR
+	dw EscapeRopeEffectKey            ; ITEM_9A
+	dw EvoStoneEffect            ; ITEM_9B
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
@@ -214,10 +214,17 @@ PokeBallEffect:
 	ld a, [wBattleMode]
 	dec a
 	jp nz, UseBallInTrainerBattle
-CannotUseBall:
-	jp WontHaveAnyEffect_NotUsedMessage
-	ret
 
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	jr nz, .room_in_party
+
+	ld a, BANK(sBoxCount)
+	call OpenSRAM
+	ld a, [sBoxCount]
+	cp MONS_PER_BOX
+	call CloseSRAM
+	jp z, Ball_BoxIsFullMessage
 
 .room_in_party
 ; BUG: Using a Park Ball in non-Contest battles has a corrupt animation (see docs/bugs_and_glitches.md)
@@ -1194,19 +1201,9 @@ VitaminEffect:
 
 	add hl, bc
 	ld a, [hl]
-	ld b, a
-	ld a, [wVitaminLimitsDisabled]
-	and a
-	jr nz, .HigherLimit
-	ld a, b
 	cp 100
 	jr nc, NoEffectMessage
-	jr .CarryOn
-.HigherLimit
-	ld a, b
-	cp 244
-	jr nc, NoEffectMessage
-.CarryOn
+
 	add 10
 	ld [hl], a
 	call UpdateStatsAfterItem
@@ -1395,6 +1392,7 @@ RareCandyEffect:
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
+	predef LearnLevelMoves
 
 	xor a
 	ld [wForceEvolution], a
@@ -2650,12 +2648,9 @@ UseBallInTrainerBattle:
 	predef PlayBattleAnim
 	ld hl, BallBlockedText
 	call PrintText
-	jp CannotUseBall
 	ld hl, BallDontBeAThiefText
 	call PrintText
 	jr UseDisposableItem
-
-
 
 WontHaveAnyEffect_NotUsedMessage:
 	ld hl, ItemWontHaveEffectText
@@ -3173,6 +3168,7 @@ CandyJarEffect:
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
+	predef LearnLevelMoves
 
 	xor a
 	ld [wForceEvolution], a

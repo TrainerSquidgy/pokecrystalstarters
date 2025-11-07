@@ -1,14 +1,19 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Vulpix-A
+1: Powder Snow
+4: Tail Whip
+7: Roar
+9: Baby-Doll Eyes
+10: Ice Shard
+12: Confuse Ray
+15: Icy Wind
+18: Payback
+20: Mist
+23: Feint Attack
+26: Hex
+28: Aurora Beam
+31: Extrasensory
+34: Safeguard
+36: Ice Beam
+39: Captivate
+42: Blizzard
+45: Sheer Cold

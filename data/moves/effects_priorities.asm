@@ -5,4 +5,5 @@ MoveEffectPriorities:
 	db EFFECT_FORCE_SWITCH, 0
 	db EFFECT_COUNTER,      0
 	db EFFECT_MIRROR_COAT,  0
+	db EFFECT_ATK_DOWN_PRIORITY, 2
 	db -1

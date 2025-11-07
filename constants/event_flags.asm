@@ -288,7 +288,7 @@
 	const EVENT_CANDY_JAR
 	const EVENT_10_CANDIES
 	const EVENT_HM_ITEMS
-; Unused: next 320 events
+	const EVENT_ARNIE_GAVE_ICE_STONE
 
 	const_next 600
 ; Kurt Apricorn events
