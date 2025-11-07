@@ -50,12 +50,12 @@
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const DIRE_HIT     ; 2c
-	const MEGA_RING    ; 2d
+	const MEGA_RING   ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const MEGA_STONE   ; 32
+	const MEGA_STONE      ; 32
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SPECIAL    ; 35
@@ -95,7 +95,7 @@
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
 	const BLU_APRICORN ; 59
-	const PROFS_REPEL  ; 5a
+	const PROFS_REPEL   ; 5a
 	const AMULET_COIN  ; 5b
 	const YLW_APRICORN ; 5c
 	const GRN_APRICORN ; 5d
@@ -125,7 +125,7 @@
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76
 	const FOCUS_BAND   ; 77
-	const AIR_BALLOON  ; 78
+	const AIR_BALLOON      ; 78
 	const ENERGYPOWDER ; 79
 	const ENERGY_ROOT  ; 7a
 	const HEAL_POWDER  ; 7b
@@ -140,8 +140,8 @@
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
-	const RAFT         ; 87
-	const BURLY_MAN    ; 88
+	const RAFT      ; 87
+	const BURLY_MAN      ; 88
 	const LANTERN      ; 89
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
@@ -150,17 +150,17 @@
 	const LADDER      ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
-	const FART_JAR     ; 91
+	const FART_JAR      ; 91
 	const LEFTOVERS    ; 92
-	const HONEY_JAR    ; 93
-	const TREE_SHAKER  ; 94
-	const BIG_HAMMER   ; 95
+	const HONEY_JAR      ; 93
+	const TREE_SHAKER      ; 94
+	const BIG_HAMMER      ; 95
 	const MYSTERYBERRY ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
-	const CANDY_JAR    ; 99
+	const CANDY_JAR      ; 99
 	const ESCAPE_ROPE_KEY      ; 9a
-	const EVO_STONE     ; 9b
+	const MAGMARIZER
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e
