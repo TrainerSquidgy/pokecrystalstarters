@@ -212,20 +212,11 @@ DragonShrineElder1Script:
 .GiveDratini:
 	writetext DragonShrineTakeThisDratiniText
 	waitbutton
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	writetext DragonShrinePlayerReceivedDratiniText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke DRATINI, 15
-	checkevent EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
-	special GiveDratini
 	setevent EVENT_GOT_DRATINI
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	writetext DragonShrineSymbolicDragonText
-	waitbutton
 	closetext
 	end
+
 
 .PartyFull:
 	writetext DragonShrinePartyFullText
@@ -507,10 +498,10 @@ DragonShrineTakeThisDratiniText:
 	para "I have something"
 	line "for you."
 
-	para "Take this DRATINI"
-	line "as proof that I"
+	para "Take this pat on"
+	line "the back as proof"
 
-	para "have recognized"
+	para "that I recognize"
 	line "your worth."
 	done
 

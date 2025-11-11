@@ -160,6 +160,10 @@ GoldenrodGameCornerTMVendorMenuHeader:
 GoldenrodGameCornerPrizeMonVendorScript:
 	faceplayer
 	opentext
+	writetext GoldenrodGameCornerPrizeVendorIntroText
+	waitbutton
+	checkitem COIN_CASE
+	iffalse GoldenrodGameCornerPrizeVendor_NoCoinCaseScript
 	checkevent EVENT_RECEIVED_FART_JAR
 	iftrue .NoHMItem
 	writetext GoldenrodGameCornerPrizeVendorIntroAbraText
@@ -167,74 +171,11 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	verbosegiveitem FART_JAR
 	setevent EVENT_RECEIVED_FART_JAR
 .NoHMItem
-	writetext GoldenrodGameCornerPrizeVendorIntroText
+	writetext GoldenrodGameCornerPrizeOutOfStock
 	waitbutton
-	checkitem COIN_CASE
-	iffalse GoldenrodGameCornerPrizeVendor_NoCoinCaseScript
-.loop
-	writetext GoldenrodGameCornerPrizeVendorWhichPrizeText
-	special DisplayCoinCaseBalance
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .Abra
-	ifequal 2, .Cubone
-	ifequal 3, .Wobbuffet
-	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+	closetext
+	end
 
-.Abra:
-	checkcoins GOLDENRODGAMECORNER_ABRA_COINS
-	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, ABRA
-	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
-	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
-	waitsfx
-	playsound SFX_TRANSACTION
-	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
-	waitbutton
-	setval ABRA
-	special GameCornerPrizeMonCheckDex
-	givepoke ABRA, 5
-	takecoins GOLDENRODGAMECORNER_ABRA_COINS
-	sjump .loop
-
-.Cubone:
-	checkcoins GOLDENRODGAMECORNER_CUBONE_COINS
-	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, CUBONE
-	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
-	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
-	waitsfx
-	playsound SFX_TRANSACTION
-	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
-	waitbutton
-	setval CUBONE
-	special GameCornerPrizeMonCheckDex
-	givepoke CUBONE, 15
-	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
-	sjump .loop
-
-.Wobbuffet:
-	checkcoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
-	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, WOBBUFFET
-	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
-	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
-	waitsfx
-	playsound SFX_TRANSACTION
-	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
-	waitbutton
-	setval WOBBUFFET
-	special GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 15
-	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
-	sjump .loop
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -326,11 +267,15 @@ GoldenrodGameCornerCardFlipMachineScript:
 	closetext
 	end
 	
+
+GoldenrodGameCornerPrizeOutOfStock:
+	text "#MON are"
+	line "currently out"
+	cont "of stock!"
+	done
+
 GoldenrodGameCornerPrizeVendorIntroAbraText:
-	text "Before I get into"
-	line "my usual spiel,"
-	
-	para "PLEASE take this"
+	text "PLEASE take this"
 	line "RENTAL ABRA off"
 	cont "our hands."
 	

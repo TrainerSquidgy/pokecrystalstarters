@@ -9,21 +9,8 @@ ManiasHouse_MapScripts:
 ManiaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
-	iftrue .default_postevent
-	checkevent EVENT_GOT_SHUCKIE
-	iftrue .alreadyhaveshuckie
 	writetext ManiaText_AskLookAfterShuckle
-	yesorno
-	iffalse .refusetotakeshuckie
-	special GiveShuckle
-	iffalse .partyfull
-	writetext ManiaText_TakeCareOfShuckle
-	promptbutton
-	waitsfx
-	writetext ManiaText_GotShuckle
-	playsound SFX_KEY_ITEM
-	waitsfx
+	waitbutton
 	closetext
 	setevent EVENT_GOT_SHUCKIE
 	end
@@ -111,15 +98,9 @@ ManiaText_AskLookAfterShuckle:
 	line "giving him my"
 	cont "prized #MON!"
 
-	para "I still have one"
-	line "left, but what if"
-	cont "he comes back?"
-
-	para "You look strong."
-	line "Could you look"
-
-	para "after my #MON"
-	line "for a while?"
+	para "Please leave,"
+	line "what if you two"
+	cont "are in cahoots?"
 	done
 
 ManiaText_TakeCareOfShuckle:

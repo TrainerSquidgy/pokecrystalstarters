@@ -129,15 +129,10 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	checkitem COIN_CASE
 	iffalse CeladonPrizeRoom_NoCoinCase
 .loop
-	writetext CeladonPrizeRoom_AskWhichPrizeText
-	special DisplayCoinCaseBalance
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .Pikachu
-	ifequal 2, .Porygon
-	ifequal 3, .Larvitar
-	sjump CeladonPrizeRoom_CancelPurchaseScript
+	writetext CeladonPrizeRoom_OutOfStockText
+	waitbutton
+	closetext
+	end
 
 .Pikachu:
 	checkcoins CELADONGAMECORNERPRIZEROOM_PIKACHU_COINS
@@ -272,6 +267,12 @@ CeladonPrizeRoom_ComeAgainText:
 CeladonPrizeRoom_NoCoinCaseText:
 	text "Oh? You don't have"
 	line "a COIN CASE."
+	done
+	
+CeladonPrizeRoom_OutOfStockText:
+	text "#MON are"
+	line "currently out"
+	cont "of stock!"
 	done
 
 CeladonGameCornerPrizeRoom_MapEvents:
