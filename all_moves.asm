@@ -9980,6 +9980,22 @@ SlowkingAllMoves::
     db 1, WHIRLPOOL
     db 1, FLAMETHROWER
     db 1, ICE_BEAM
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, BUBBLEBEAM
+    db 1, PAY_DAY
+    db 1, RAGE
+    db 1, FISSURE
+    db 1, TELEPORT
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, THUNDER_WAVE
+    db 1, PSYWAVE
+    db 1, TRI_ATTACK
+    db 1, SUBSTITUTE
     db 1, SAFEGUARD
     db 1, BELLY_DRUM
     db 1, FUTURE_SIGHT
@@ -12133,4 +12149,126 @@ CelebiAllMoves::
 SplashAllMoves::
     db 0
     db 1, SPLASH
+    db 0
+
+BagonAllMoves::
+    db 0
+    db 1, RAGE
+    db 1, BITE
+    db 1, LEER
+    db 1, HEADBUTT
+    db 1, FOCUS_ENERGY
+    db 1, EMBER
+    db 1, DRAGONBREATH
+    db 1, SCARY_FACE
+    db 1, CRUNCH
+    db 1, DRAGON_CLAW
+    db 1, DOUBLE_EDGE
+    db 1, CURSE
+    db 1, ROAR
+    db 1, TOXIC
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, FIRE_BLAST
+    db 1, REST
+    db 1, ATTRACT
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLAMETHROWER
+    db 0
+
+ShelgonAllMoves::
+    db 0
+    db 1, RAGE
+    db 1, BITE
+    db 1, LEER
+    db 1, HEADBUTT
+    db 1, FOCUS_ENERGY
+    db 1, EMBER
+    db 1, DRAGONBREATH
+    db 1, SCARY_FACE
+    db 1, CRUNCH
+    db 1, DRAGON_CLAW
+    db 1, DOUBLE_EDGE
+    db 1, CURSE
+    db 1, ROLLOUT
+    db 1, ROAR
+    db 1, TOXIC
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, FIRE_BLAST
+    db 1, REST
+    db 1, ATTRACT
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLAMETHROWER
+    db 0
+
+SalamenceAllMoves::
+    db 0
+    db 1, RAGE
+    db 1, BITE
+    db 1, LEER
+    db 1, HEADBUTT
+    db 1, FOCUS_ENERGY
+    db 1, EMBER
+    db 1, DRAGONBREATH
+    db 1, SCARY_FACE
+    db 1, FLY
+    db 1, CRUNCH
+    db 1, DRAGON_CLAW
+    db 1, DOUBLE_EDGE
+    db 1, CURSE
+    db 1, ROLLOUT
+    db 1, ROAR
+    db 1, TOXIC
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, HYPER_BEAM
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, IRON_TAIL
+    db 1, EARTHQUAKE
+    db 1, RETURN
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, FIRE_BLAST
+    db 1, SWIFT
+    db 1, REST
+    db 1, ATTRACT
+    db 1, STEEL_WING
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLAMETHROWER
     db 0

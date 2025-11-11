@@ -252,5 +252,7 @@ AllMovesPointers::
 	dw TyranitarAllMoves
 	dw LugiaAllMoves
 	dw HoOhAllMoves
-	dw CelebiAllMoves
+	dw SalamenceAllMoves
+	dw SalamenceAllMoves
+	dw SalamenceAllMoves
 	assert_table_length NUM_POKEMON
