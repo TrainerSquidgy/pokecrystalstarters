@@ -2076,16 +2076,16 @@ ElmsLabText_OptionsMoved:
 
 ElmsLabText_AskStream:
 	text "Is this a"
-	line "STREAMED run?"
+	line "TIMED RUN?"
 	done
 	
 ElmsLabText_StreamYes:
-	text "Streaming"
+	text "TIMED RUN"
 	line "flag set."
 	done
 
 ElmsLabText_StreamNo:
-	text "Streaming"
+	text "TIMED RUN"
 	line "flag unset."
 	done
 	
@@ -2623,7 +2623,10 @@ EggMoveRelearnerScript:
 
 Gen1TMRelearnerScript:
 	loadmem wNumberOfPoints, 0
+	readmem wIsAStream
+	ifequal 1, .NoCap
 	loadmem wLevelCap, 9
+.NoCap
 	clearevent EVENT_RECEIVED_SCYTHE
 	clearevent EVENT_RECEIVED_AIR_BALLOON
 	clearevent EVENT_RECEIVED_RAFT
