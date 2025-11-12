@@ -26,7 +26,7 @@ Red:
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	readmem wNumberOfPoints
-	addval 3
+	addval 10
 	writemem wNumberOfPoints
 	loadmem wLevelCap, 100
 	disappear SILVERCAVEROOM3_RED
