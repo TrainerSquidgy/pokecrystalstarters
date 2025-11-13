@@ -18,11 +18,14 @@ BulbasaurAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -66,11 +69,14 @@ IvysaurAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -115,12 +121,15 @@ VenusaurAllMoves::
     db 1, CURSE
     db 1, ROAR
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -165,12 +174,15 @@ CharmanderAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -224,12 +236,15 @@ CharmeleonAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -285,14 +300,17 @@ CharizardAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -352,11 +370,14 @@ SquirtleAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -412,11 +433,14 @@ WartortleAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -473,13 +497,16 @@ BlastoiseAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -541,6 +568,7 @@ ButterfreeAllMoves::
     db 1, SAFEGUARD
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -548,7 +576,9 @@ ButterfreeAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -593,6 +623,7 @@ BeedrillAllMoves::
     db 1, AGILITY
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -600,6 +631,8 @@ BeedrillAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -632,10 +665,13 @@ PidgeyAllMoves::
     db 1, MIRROR_MOVE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -673,10 +709,13 @@ PidgeottoAllMoves::
     db 1, MIRROR_MOVE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -714,11 +753,14 @@ PidgeotAllMoves::
     db 1, MIRROR_MOVE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -757,14 +799,17 @@ RattataAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -808,6 +853,7 @@ RaticateAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -815,8 +861,10 @@ RaticateAllMoves::
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -862,10 +910,13 @@ SpearowAllMoves::
     db 1, AGILITY
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -905,11 +956,14 @@ FearowAllMoves::
     db 1, AGILITY
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -950,12 +1004,15 @@ EkansAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -996,13 +1053,16 @@ ArbokAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1049,11 +1109,14 @@ PikachuAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -1097,13 +1160,16 @@ RaichuAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1154,12 +1220,15 @@ SandshrewAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -1208,13 +1277,16 @@ SandslashAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -1260,14 +1332,17 @@ NidoranFAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1309,14 +1384,17 @@ NidorinaAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1356,6 +1434,7 @@ NidoqueenAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -1364,9 +1443,11 @@ NidoqueenAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -1422,14 +1503,17 @@ NidoranMAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1471,14 +1555,17 @@ NidorinoAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1523,6 +1610,7 @@ NidokingAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -1531,9 +1619,11 @@ NidokingAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -1601,15 +1691,18 @@ ClefairyAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -1669,6 +1762,7 @@ ClefableAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -1676,9 +1770,11 @@ ClefableAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -1739,11 +1835,14 @@ VulpixAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1779,12 +1878,15 @@ NinetalesAllMoves::
     db 1, CURSE
     db 1, ROAR
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -1827,14 +1929,17 @@ JigglypuffAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -1890,6 +1995,7 @@ WigglytuffAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -1897,8 +2003,10 @@ WigglytuffAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -1955,11 +2063,14 @@ ZubatAllMoves::
     db 1, HAZE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -1996,12 +2107,15 @@ GolbatAllMoves::
     db 1, HAZE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -2038,12 +2152,15 @@ OddishAllMoves::
     db 1, PETAL_DANCE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -2078,12 +2195,15 @@ GloomAllMoves::
     db 1, PETAL_DANCE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -2114,13 +2234,16 @@ VileplumeAllMoves::
     db 1, PETAL_DANCE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -2157,12 +2280,15 @@ ParasAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -2207,13 +2333,16 @@ ParasectAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -2260,13 +2389,16 @@ VenonatAllMoves::
     db 1, PSYCHIC_M
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -2304,6 +2436,7 @@ VenomothAllMoves::
     db 1, PSYCHIC_M
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -2311,7 +2444,9 @@ VenomothAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -2350,10 +2485,13 @@ DiglettAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -2392,11 +2530,14 @@ DugtrioAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -2436,13 +2577,16 @@ MeowthAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -2489,14 +2633,17 @@ PersianAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -2542,13 +2689,16 @@ PsyduckAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -2604,6 +2754,7 @@ GolduckAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -2611,7 +2762,9 @@ GolduckAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -2671,12 +2824,15 @@ MankeyAllMoves::
     db 1, TOXIC
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -2733,13 +2889,16 @@ PrimeapeAllMoves::
     db 1, TOXIC
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -2790,12 +2949,15 @@ GrowlitheAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -2830,13 +2992,16 @@ ArcanineAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -2875,11 +3040,14 @@ PoliwagAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -2921,12 +3089,15 @@ PoliwhirlAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -2977,6 +3148,7 @@ PoliwrathAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -2984,7 +3156,9 @@ PoliwrathAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -3031,11 +3205,14 @@ AbraAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
@@ -3090,11 +3267,14 @@ KadabraAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
@@ -3148,12 +3328,15 @@ AlakazamAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
@@ -3207,11 +3390,14 @@ MachopAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -3264,11 +3450,14 @@ MachokeAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -3321,12 +3510,15 @@ MachampAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -3376,12 +3568,15 @@ BellsproutAllMoves::
     db 1, SLAM
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -3418,12 +3613,15 @@ WeepinbellAllMoves::
     db 1, SLAM
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -3454,13 +3652,16 @@ VictreebelAllMoves::
     db 1, RAZOR_LEAF
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -3497,6 +3698,7 @@ TentacoolAllMoves::
     db 1, HYDRO_PUMP
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
@@ -3504,6 +3706,8 @@ TentacoolAllMoves::
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -3545,6 +3749,7 @@ TentacruelAllMoves::
     db 1, HYDRO_PUMP
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -3553,6 +3758,8 @@ TentacruelAllMoves::
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -3597,10 +3804,13 @@ GeodudeAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -3645,10 +3855,13 @@ GravelerAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -3694,11 +3907,14 @@ GolemAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -3743,11 +3959,14 @@ PonytaAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -3787,12 +4006,15 @@ RapidashAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -3831,6 +4053,7 @@ SlowpokeAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -3838,8 +4061,10 @@ SlowpokeAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -3896,6 +4121,7 @@ SlowbroAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -3904,8 +4130,10 @@ SlowbroAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -3966,11 +4194,14 @@ MagnemiteAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4001,12 +4232,15 @@ MagnetonAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4038,11 +4272,14 @@ FarfetchDAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -4085,10 +4322,13 @@ DoduoAllMoves::
     db 1, AGILITY
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -4128,11 +4368,14 @@ DodrioAllMoves::
     db 1, AGILITY
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -4171,12 +4414,15 @@ SeelAllMoves::
     db 1, SAFEGUARD
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4214,6 +4460,7 @@ DewgongAllMoves::
     db 1, SAFEGUARD
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -4221,6 +4468,8 @@ DewgongAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4262,12 +4511,15 @@ GrimerAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -4309,13 +4561,16 @@ MukAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -4354,11 +4609,14 @@ ShellderAllMoves::
     db 1, ICE_BEAM
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4395,12 +4653,15 @@ CloysterAllMoves::
     db 1, SPIKE_CANNON
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4442,13 +4703,16 @@ GastlyAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
@@ -4485,13 +4749,16 @@ HaunterAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
@@ -4531,6 +4798,7 @@ GengarAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
@@ -4538,7 +4806,9 @@ GengarAllMoves::
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
@@ -4590,12 +4860,15 @@ OnixAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -4634,11 +4907,14 @@ DrowzeeAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -4690,12 +4966,15 @@ HypnoAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -4744,11 +5023,14 @@ KrabbyAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -4792,12 +5074,15 @@ KinglerAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -4843,11 +5128,14 @@ VoltorbAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4879,12 +5167,15 @@ ElectrodeAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -4917,11 +5208,14 @@ ExeggcuteAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -4963,13 +5257,16 @@ ExeggutorAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -5016,14 +5313,17 @@ CuboneAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -5080,6 +5380,7 @@ MarowakAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -5087,8 +5388,10 @@ MarowakAllMoves::
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -5146,9 +5449,12 @@ HitmonleeAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -5193,10 +5499,13 @@ HitmonchanAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -5240,6 +5549,7 @@ LickitungAllMoves::
     db 1, TOXIC
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -5248,9 +5558,11 @@ LickitungAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -5308,11 +5620,14 @@ KoffingAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -5348,12 +5663,15 @@ WeezingAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -5391,14 +5709,17 @@ RhyhornAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -5447,6 +5768,7 @@ RhydonAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -5454,8 +5776,10 @@ RhydonAllMoves::
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -5518,6 +5842,7 @@ ChanseyAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -5526,9 +5851,11 @@ ChanseyAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -5585,6 +5912,7 @@ TangelaAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -5592,7 +5920,9 @@ TangelaAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -5635,6 +5965,7 @@ KangaskhanAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -5642,9 +5973,11 @@ KangaskhanAllMoves::
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -5697,13 +6030,16 @@ HorseaAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -5742,6 +6078,7 @@ SeadraAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -5749,7 +6086,9 @@ SeadraAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -5789,12 +6128,15 @@ GoldeenAllMoves::
     db 1, AGILITY
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -5830,6 +6172,7 @@ SeakingAllMoves::
     db 1, AGILITY
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -5837,6 +6180,8 @@ SeakingAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -5875,13 +6220,16 @@ StaryuAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -5919,6 +6267,7 @@ StarmieAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -5926,7 +6275,9 @@ StarmieAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -5976,13 +6327,16 @@ MrMimeAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -6035,11 +6389,14 @@ ScytherAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, SWAGGER
     db 1, SLEEP_TALK
     db 1, SWIFT
@@ -6082,6 +6439,7 @@ JynxAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, HYPER_BEAM
@@ -6089,6 +6447,8 @@ JynxAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -6138,12 +6498,15 @@ ElectabuzzAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -6198,11 +6561,14 @@ MagmarAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -6250,11 +6616,14 @@ PinsirAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6291,6 +6660,7 @@ TaurosAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -6298,9 +6668,11 @@ TaurosAllMoves::
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6344,13 +6716,16 @@ GyaradosAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, DRAGONBREATH
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6396,15 +6771,18 @@ LaprasAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -6451,12 +6829,15 @@ EeveeAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -6494,6 +6875,7 @@ VaporeonAllMoves::
     db 1, CURSE
     db 1, ROAR
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -6502,7 +6884,9 @@ VaporeonAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -6547,13 +6931,16 @@ JolteonAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -6595,13 +6982,16 @@ FlareonAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -6640,6 +7030,7 @@ PorygonAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -6648,8 +7039,10 @@ PorygonAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -6690,11 +7083,14 @@ OmanyteAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6736,12 +7132,15 @@ OmastarAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6785,12 +7184,15 @@ KabutoAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6831,6 +7233,7 @@ KabutopsAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -6838,6 +7241,8 @@ KabutopsAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6887,13 +7292,16 @@ AerodactylAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -6938,15 +7346,18 @@ SnorlaxAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -7002,6 +7413,7 @@ ArticunoAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
@@ -7009,6 +7421,8 @@ ArticunoAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -7047,12 +7461,15 @@ ZapdosAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -7090,11 +7507,14 @@ MoltresAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -7133,15 +7553,18 @@ DratiniAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -7188,15 +7611,18 @@ DragonairAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -7247,15 +7673,18 @@ DragoniteAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -7317,6 +7746,7 @@ MewtwoAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -7325,9 +7755,11 @@ MewtwoAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -7387,6 +7819,7 @@ MewAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -7397,11 +7830,13 @@ MewAllMoves::
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -7469,6 +7904,7 @@ MewAllMoves::
     db 1, SUBSTITUTE
     db 0
 
+
 SECTION "All Moves B", ROMX
 INCLUDE "data/pokemon/all_moves_pointers_2.asm"
 AllMoves2::
@@ -7487,13 +7923,16 @@ ChikoritaAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -7527,13 +7966,16 @@ BayleefAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -7569,6 +8011,7 @@ MeganiumAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -7576,8 +8019,10 @@ MeganiumAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -7611,11 +8056,14 @@ CyndaquilAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -7650,11 +8098,14 @@ QuilavaAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -7692,13 +8143,16 @@ TyphlosionAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -7736,13 +8190,16 @@ TotodileAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -7780,13 +8237,16 @@ CroconawAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -7826,6 +8286,7 @@ FeraligatrAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -7833,8 +8294,10 @@ FeraligatrAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -7871,11 +8334,14 @@ SentretAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -7913,12 +8379,15 @@ FurretAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -7956,10 +8425,13 @@ HoothootAllMoves::
     db 1, DREAM_EATER
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -7994,11 +8466,14 @@ NoctowlAllMoves::
     db 1, DREAM_EATER
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -8037,13 +8512,16 @@ LedybaAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -8075,6 +8553,7 @@ LedianAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -8082,7 +8561,9 @@ LedianAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -8111,12 +8592,15 @@ SpinarakAllMoves::
     db 1, PSYCHIC_M
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -8147,13 +8631,16 @@ AriadosAllMoves::
     db 1, PSYCHIC_M
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DIG
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -8182,12 +8669,15 @@ CrobatAllMoves::
     db 1, HAZE
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8227,11 +8717,14 @@ ChinchouAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8260,12 +8753,15 @@ LanturnAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8292,12 +8788,15 @@ PichuAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -8329,14 +8828,17 @@ CleffaAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -8373,13 +8875,16 @@ IgglybuffAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -8415,12 +8920,15 @@ TogepiAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -8459,13 +8967,16 @@ TogeticAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -8501,12 +9012,15 @@ NatuAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8537,13 +9051,16 @@ XatuAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8576,11 +9093,14 @@ MareepAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8612,11 +9132,14 @@ FlaaffyAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8652,12 +9175,15 @@ AmpharosAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8685,12 +9211,15 @@ BellossomAllMoves::
     db 1, SOLARBEAM
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8727,12 +9256,15 @@ MarillAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -8770,13 +9302,16 @@ AzumarillAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, ICE_PUNCH
@@ -8816,11 +9351,14 @@ SudowoodoAllMoves::
     db 1, TOXIC
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -8850,6 +9388,7 @@ PolitoedAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -8857,7 +9396,9 @@ PolitoedAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -8911,13 +9452,16 @@ HoppipAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8949,13 +9493,16 @@ SkiploomAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -8987,6 +9534,7 @@ JumpluffAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -8994,7 +9542,9 @@ JumpluffAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9027,12 +9577,15 @@ AipomAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9070,11 +9623,14 @@ SunkernAllMoves::
     db 1, GIGA_DRAIN
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9096,12 +9652,15 @@ SunfloraAllMoves::
     db 1, SOLARBEAM
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9126,12 +9685,15 @@ YanmaAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, SWAGGER
     db 1, SLEEP_TALK
     db 1, SWIFT
@@ -9160,10 +9722,13 @@ WooperAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9200,11 +9765,14 @@ QuagsireAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9242,13 +9810,16 @@ EspeonAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9291,13 +9862,16 @@ UmbreonAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -9336,11 +9910,14 @@ MurkrowAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9379,6 +9956,7 @@ SlowkingAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -9387,8 +9965,10 @@ SlowkingAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -9408,6 +9988,22 @@ SlowkingAllMoves::
     db 1, WHIRLPOOL
     db 1, FLAMETHROWER
     db 1, ICE_BEAM
+    db 1, BODY_SLAM
+    db 1, TAKE_DOWN
+    db 1, DOUBLE_EDGE
+    db 1, BUBBLEBEAM
+    db 1, PAY_DAY
+    db 1, RAGE
+    db 1, FISSURE
+    db 1, TELEPORT
+    db 1, MIMIC
+    db 1, REFLECT
+    db 1, BIDE
+    db 1, SKULL_BASH
+    db 1, THUNDER_WAVE
+    db 1, PSYWAVE
+    db 1, TRI_ATTACK
+    db 1, SUBSTITUTE
     db 1, SAFEGUARD
     db 1, BELLY_DRUM
     db 1, FUTURE_SIGHT
@@ -9429,12 +10025,15 @@ MisdreavusAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, DOUBLE_TEAM
@@ -9455,6 +10054,7 @@ MisdreavusAllMoves::
 
 UnownAllMoves::
     db 0
+    db 1, HIDDEN_POWER
     db 0
 
 WobbuffetAllMoves::
@@ -9481,13 +10081,16 @@ GirafarigAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -9525,12 +10128,15 @@ PinecoAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9560,13 +10166,16 @@ ForretressAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9597,14 +10206,17 @@ DunsparceAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9638,11 +10250,14 @@ GligarAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9679,14 +10294,17 @@ SteelixAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9728,12 +10346,15 @@ SnubbullAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9776,13 +10397,16 @@ GranbullAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, THUNDER
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9823,12 +10447,15 @@ QwilfishAllMoves::
     db 1, CURSE
     db 1, ROLLOUT
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9863,11 +10490,14 @@ ScizorAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, SWAGGER
     db 1, SLEEP_TALK
     db 1, SANDSTORM
@@ -9909,11 +10539,14 @@ ShuckleAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -9943,10 +10576,13 @@ HeracrossAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -9980,13 +10616,16 @@ SneaselAllMoves::
     db 1, TOXIC
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -10033,10 +10672,13 @@ TeddiursaAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10079,11 +10721,14 @@ UrsaringAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10121,10 +10766,13 @@ SlugmaAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10150,12 +10798,15 @@ MagcargoAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10182,11 +10833,14 @@ SwinubAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10218,12 +10872,15 @@ PiloswineAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10255,12 +10912,15 @@ CorsolaAllMoves::
     db 1, ROLLOUT
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10293,10 +10953,13 @@ RemoraidAllMoves::
     db 1, HYPER_BEAM
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10328,10 +10991,13 @@ OctilleryAllMoves::
     db 1, HYPER_BEAM
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10355,12 +11021,15 @@ DelibirdAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10392,12 +11061,15 @@ MantineAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10426,10 +11098,13 @@ SkarmoryAllMoves::
     db 1, STEEL_WING
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10461,12 +11136,15 @@ HoundourAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10504,13 +11182,16 @@ HoundoomAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10547,6 +11228,7 @@ KingdraAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, BLIZZARD
     db 1, HYPER_BEAM
@@ -10554,7 +11236,9 @@ KingdraAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
     db 1, SLEEP_TALK
@@ -10596,10 +11280,13 @@ PhanpyAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10629,11 +11316,14 @@ DonphanAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10663,6 +11353,7 @@ Porygon2AllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -10671,8 +11362,10 @@ Porygon2AllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10712,12 +11405,15 @@ StantlerAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10750,10 +11446,13 @@ TyrogueAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
     db 1, SWAGGER
@@ -10785,10 +11484,13 @@ HitmontopAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10820,12 +11522,15 @@ SmoochumAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SWEET_SCENT
     db 1, SNORE
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10856,10 +11561,13 @@ ElekidAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, ZAP_CANNON
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10894,10 +11602,13 @@ MagbyAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10933,6 +11644,7 @@ MiltankAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -10942,9 +11654,11 @@ MiltankAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -10985,6 +11699,7 @@ BlisseyAllMoves::
     db 1, TOXIC
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -10993,8 +11708,10 @@ BlisseyAllMoves::
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, THUNDER
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -11052,13 +11769,16 @@ RaikouAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -11090,14 +11810,17 @@ EnteiAllMoves::
     db 1, TOXIC
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -11128,6 +11851,7 @@ SuicuneAllMoves::
     db 1, TOXIC
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -11135,7 +11859,9 @@ SuicuneAllMoves::
     db 1, ICY_WIND
     db 1, PROTECT
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -11167,11 +11893,14 @@ LarvitarAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -11202,11 +11931,14 @@ PupitarAllMoves::
     db 1, HEADBUTT
     db 1, CURSE
     db 1, TOXIC
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -11240,13 +11972,16 @@ TyranitarAllMoves::
     db 1, ROAR
     db 1, TOXIC
     db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
+    db 1, RETURN
     db 1, DIG
     db 1, MUD_SLAP
     db 1, DOUBLE_TEAM
@@ -11291,6 +12026,7 @@ LugiaAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SNORE
     db 1, BLIZZARD
@@ -11299,10 +12035,12 @@ LugiaAllMoves::
     db 1, PROTECT
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, IRON_TAIL
     db 1, DRAGONBREATH
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -11342,16 +12080,19 @@ HoOhAllMoves::
     db 1, ZAP_CANNON
     db 1, ROCK_SMASH
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SNORE
     db 1, HYPER_BEAM
     db 1, PROTECT
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
     db 1, DRAGONBREATH
     db 1, THUNDER
     db 1, EARTHQUAKE
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -11385,6 +12126,7 @@ CelebiAllMoves::
     db 1, CURSE
     db 1, TOXIC
     db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
     db 1, SUNNY_DAY
     db 1, SWEET_SCENT
     db 1, SNORE
@@ -11393,7 +12135,9 @@ CelebiAllMoves::
     db 1, RAIN_DANCE
     db 1, GIGA_DRAIN
     db 1, ENDURE
+    db 1, FRUSTRATION
     db 1, SOLARBEAM
+    db 1, RETURN
     db 1, PSYCHIC_M
     db 1, SHADOW_BALL
     db 1, MUD_SLAP
@@ -11409,6 +12153,7 @@ CelebiAllMoves::
     db 1, NIGHTMARE
     db 1, FLASH
     db 0
+
 
 SplashAllMoves::
     db 0

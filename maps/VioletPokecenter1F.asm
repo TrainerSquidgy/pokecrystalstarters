@@ -17,6 +17,7 @@ VioletPokecenter1F_ElmsAideScript:
 	faceplayer
 	opentext
 	writetext VioletPokecenterElmsAideFavorText
+	verbosegiveitem ESCAPE_ROPE_KEY
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	clearevent EVENT_ELMS_AIDE_IN_LAB
 	clearevent EVENT_TOGEPI_HATCHED
@@ -77,11 +78,11 @@ VioletPokecenterElmsAideFavorText:
 	para "PROF.ELM asked me"
 	line "to find you."
 
-	para "He has another"
-	line "favor to ask."
+	para "He has an item"
+	line "which will help."
 
-	para "Would you take the"
-	line "#MON EGG?"
+	para "Take this fancy"
+	line "ESCAPE ROPE!"
 	done
 
 VioletPokecenterElmsAideGiveEggText:
