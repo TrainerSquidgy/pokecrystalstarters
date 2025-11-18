@@ -2626,7 +2626,10 @@ Gen1TMRelearnerScript:
 	readmem wIsAStream
 	ifequal 1, .NoCap
 	loadmem wLevelCap, 9
+	sjump .events
 .NoCap
+	loadmem wLevelCap, 100
+.events
 	clearevent EVENT_RECEIVED_SCYTHE
 	clearevent EVENT_RECEIVED_AIR_BALLOON
 	clearevent EVENT_RECEIVED_RAFT
