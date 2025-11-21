@@ -526,6 +526,8 @@ CaterpieAllMoves::
 MetapodAllMoves::
     db 0
     db 1, HARDEN
+	db 1, TACKLE
+    db 1, STRING_SHOT
     db 0
 
 ButterfreeAllMoves::
@@ -569,6 +571,9 @@ ButterfreeAllMoves::
     db 1, BIDE
     db 1, PSYWAVE
     db 1, SUBSTITUTE
+	db 1, HARDEN
+	db 1, TACKLE
+    db 1, STRING_SHOT
     db 0
 
 WeedleAllMoves::
@@ -580,6 +585,8 @@ WeedleAllMoves::
 KakunaAllMoves::
     db 0
     db 1, HARDEN
+    db 1, POISON_STING
+    db 1, STRING_SHOT
     db 0
 
 BeedrillAllMoves::
@@ -618,6 +625,9 @@ BeedrillAllMoves::
     db 1, BIDE
     db 1, SKULL_BASH
     db 1, SUBSTITUTE
+	db 1, HARDEN
+    db 1, POISON_STING
+    db 1, STRING_SHOT
     db 0
 
 PidgeyAllMoves::
@@ -848,6 +858,7 @@ RaticateAllMoves::
     db 1, BITE
     db 1, COUNTER
     db 1, REVERSAL
+	db 1, FOCUS_ENERGY
     db 0
 
 SpearowAllMoves::
@@ -1083,6 +1094,8 @@ PikachuAllMoves::
     db 1, PRESENT
     db 1, ENCORE
     db 1, DOUBLESLAP
+	db 1, CHARM
+	db 1, SWEET_KISS
     db 0
 
 RaichuAllMoves::
@@ -1136,6 +1149,12 @@ RaichuAllMoves::
     db 1, PRESENT
     db 1, ENCORE
     db 1, DOUBLESLAP
+	db 1, CHARM
+	db 1, SWEET_KISS
+	db 1, GROWL
+	db 1, SLAM
+	db 1, AGILITY
+	db 1, LIGHT_SCREEN
     db 0
 
 SandshrewAllMoves::
@@ -1407,6 +1426,10 @@ NidoqueenAllMoves::
     db 1, SKULL_BASH
     db 1, ROCK_SLIDE
     db 1, SUBSTITUTE
+	db 1, GROWL
+	db 1, POISON_STING
+	db 1, BITE
+	db 1, FURY_SWIPES
     db 0
 
 NidoranMAllMoves::
@@ -1580,6 +1603,10 @@ NidokingAllMoves::
     db 1, CONFUSION
     db 1, AMNESIA
     db 1, BEAT_UP
+	db 1, LEER
+	db 1, FOCUS_ENERGY
+	db 1, FURY_ATTACK
+	db 1, HORN_DRILL
     db 0
 
 ClefairyAllMoves::
@@ -1654,6 +1681,9 @@ ClefairyAllMoves::
     db 1, AMNESIA
     db 1, BELLY_DRUM
     db 1, SPLASH
+	db 1, CHARM
+	db 1, SWEET_KISS
+	db 1, ICY_WIND
     db 0
 
 ClefableAllMoves::
@@ -1724,6 +1754,14 @@ ClefableAllMoves::
     db 1, AMNESIA
     db 1, BELLY_DRUM
     db 1, SPLASH
+	db 1, CHARM
+	db 1, SWEET_KISS
+	db 1, ICY_WIND
+	db 1, POUND
+	db 1, ENCORE
+	db 1, GROWL
+	db 1, MOONLIGHT
+	db 1, LIGHT_SCREEN
     db 0
 
 VulpixAllMoves::
@@ -1808,7 +1846,8 @@ NinetalesAllMoves::
     db 1, FLAIL
     db 1, SPITE
     db 1, DISABLE
-    db 0
+    db 1, TAIL_WHIP
+	db 0
 
 JigglypuffAllMoves::
     db 0
@@ -1875,6 +1914,9 @@ JigglypuffAllMoves::
     db 1, PERISH_SONG
     db 1, PRESENT
     db 1, FAINT_ATTACK
+	db 1, CHARM
+	db 1, SWEET_KISS
+	db 1, ICY_WIND
     db 0
 
 WigglytuffAllMoves::
@@ -1942,7 +1984,11 @@ WigglytuffAllMoves::
     db 1, PERISH_SONG
     db 1, PRESENT
     db 1, FAINT_ATTACK
-    db 0
+	db 1, CHARM
+	db 1, SWEET_KISS
+	db 1, ICY_WIND
+	db 1, POUND
+	db 0
 
 ZubatAllMoves::
     db 0
@@ -2142,6 +2188,10 @@ VileplumeAllMoves::
     db 1, RAZOR_LEAF
     db 1, FLAIL
     db 1, SYNTHESIS
+	db 1, POISONPOWDER
+	db 1, SLEEP_POWDER
+	db 1, ACID
+	db 1, MOONLIGHT
     db 0
 
 ParasAllMoves::
@@ -2860,6 +2910,9 @@ ArcanineAllMoves::
     db 1, CRUNCH
     db 1, THRASH
     db 1, FIRE_SPIN
+	db 1, BITE
+	db 1, EMBER
+	db 1, AGILITY
     db 0
 
 PoliwagAllMoves::
@@ -3020,6 +3073,9 @@ PoliwrathAllMoves::
     db 1, MIST
     db 1, SPLASH
     db 1, HAZE
+	db 1, BUBBLE
+	db 1, BELLY_DRUM
+	db 1, HYDRO_PUMP
     db 0
 
 AbraAllMoves::
@@ -3482,6 +3538,12 @@ VictreebelAllMoves::
     db 1, ENCORE
     db 1, SYNTHESIS
     db 1, LEECH_LIFE
+	db 1, GROWTH
+	db 1, WRAP
+	db 1, POISONPOWDER
+	db 1, STUN_SPORE
+	db 1, ACID
+	db 1, SLAM
     db 0
 
 TentacoolAllMoves::
@@ -4426,6 +4488,9 @@ CloysterAllMoves::
     db 1, BARRIER
     db 1, RAPID_SPIN
     db 1, SCREECH
+	db 1, TACKLE
+	db 1, LEER
+	db 1, CLAMP
     db 0
 
 GastlyAllMoves::
@@ -4997,7 +5062,11 @@ ExeggutorAllMoves::
     db 1, SYNTHESIS
     db 1, MOONLIGHT
     db 1, ANCIENTPOWER
-    db 0
+	db 1, LEECH_SEED
+	db 1, STUN_SPORE
+	db 1, POISONPOWDER
+	db 1, SLEEP_POWDER
+	db 0
 
 CuboneAllMoves::
     db 0
@@ -5174,6 +5243,7 @@ HitmonleeAllMoves::
     db 1, SUBSTITUTE
     db 1, RAPID_SPIN
     db 1, MACH_PUNCH
+	db 1, TACKLE
     db 0
 
 HitmonchanAllMoves::
@@ -5221,6 +5291,7 @@ HitmonchanAllMoves::
     db 1, RAPID_SPIN
     db 1, HI_JUMP_KICK
     db 1, MIND_READER
+	db 1, TACKLE
     db 0
 
 LickitungAllMoves::
@@ -5955,6 +6026,11 @@ StarmieAllMoves::
     db 1, PSYWAVE
     db 1, TRI_ATTACK
     db 1, SUBSTITUTE
+	db 1, HARDEN
+	db 1, WATER_GUN
+	db 1, MINIMIZE
+	db 1, LIGHT_SCREEN
+	db 1, HYDRO_PUMP
     db 0
 
 MrMimeAllMoves::
@@ -6120,6 +6196,9 @@ JynxAllMoves::
     db 1, PSYWAVE
     db 1, SUBSTITUTE
     db 1, MEDITATE
+	db 1, SWEET_KISS
+	db 1, CONFUSION
+	db 1, SING
     db 0
 
 ElectabuzzAllMoves::
@@ -6376,6 +6455,9 @@ GyaradosAllMoves::
     db 1, BIDE
     db 1, SKULL_BASH
     db 1, SUBSTITUTE
+    db 1, SPLASH
+    db 1, TACKLE
+    db 1, FLAIL
     db 0
 
 LaprasAllMoves::
@@ -6528,6 +6610,9 @@ VaporeonAllMoves::
     db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, CHARM
+	db 1, GROWL
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
     db 0
 
 JolteonAllMoves::
@@ -6576,6 +6661,9 @@ JolteonAllMoves::
     db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, CHARM
+	db 1, GROWL
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
     db 0
 
 FlareonAllMoves::
@@ -6623,6 +6711,9 @@ FlareonAllMoves::
     db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, CHARM
+	db 1, GROWL
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
     db 0
 
 PorygonAllMoves::
@@ -7941,6 +8032,7 @@ FurretAllMoves::
     db 1, SLASH
     db 1, FOCUS_ENERGY
     db 1, REVERSAL
+	db 1, TACKLE
     db 0
 
 HoothootAllMoves::
@@ -8711,6 +8803,10 @@ BellossomAllMoves::
     db 1, RAZOR_LEAF
     db 1, FLAIL
     db 1, SYNTHESIS
+	db 1, POISONPOWDER
+	db 1, SLEEP_POWDER
+	db 1, ACID
+	db 1, MOONLIGHT
     db 0
 
 MarillAllMoves::
@@ -8894,6 +8990,9 @@ PolitoedAllMoves::
     db 1, SPLASH
     db 1, HAZE
     db 1, MIND_READER
+	db 1, BUBBLE
+	db 1, BELLY_DRUM
+	db 1, HYDRO_PUMP
     db 0
 
 HoppipAllMoves::
@@ -9110,6 +9209,8 @@ SunfloraAllMoves::
     db 1, ATTRACT
     db 1, CUT
     db 1, FLASH
+	db 1, MEGA_DRAIN
+	db 1, SYNTHESIS
     db 0
 
 YanmaAllMoves::
@@ -9272,6 +9373,9 @@ EspeonAllMoves::
     db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, CHARM
+	db 1, GROWL
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
     db 0
 
 UmbreonAllMoves::
@@ -9323,6 +9427,9 @@ UmbreonAllMoves::
     db 1, SUBSTITUTE
     db 1, FLAIL
     db 1, CHARM
+	db 1, GROWL
+	db 1, BATON_PASS
+	db 1, TAKE_DOWN
     db 0
 
 MurkrowAllMoves::
@@ -9412,6 +9519,7 @@ SlowkingAllMoves::
     db 1, BELLY_DRUM
     db 1, FUTURE_SIGHT
     db 1, STOMP
+	db 1, AMNESIA
     db 0
 
 MisdreavusAllMoves::
@@ -9855,7 +9963,7 @@ ScizorAllMoves::
     db 1, PURSUIT
     db 1, FALSE_SWIPE
     db 1, AGILITY
-    db 1, METAL_CLAW
+	db 1, METAL_CLAW
     db 1, SLASH
     db 1, SWORDS_DANCE
     db 1, DOUBLE_TEAM
@@ -9893,6 +10001,7 @@ ScizorAllMoves::
     db 1, RAZOR_WIND
     db 1, REVERSAL
     db 1, LIGHT_SCREEN
+	db 1, WING_ATTACK
     db 0
 
 ShuckleAllMoves::
@@ -10238,6 +10347,7 @@ PiloswineAllMoves::
     db 1, BODY_SLAM
     db 1, ROCK_SLIDE
     db 1, ANCIENTPOWER
+	db 1, TACKLE
     db 0
 
 CorsolaAllMoves::
@@ -10347,6 +10457,7 @@ OctilleryAllMoves::
     db 1, SUPERSONIC
     db 1, HAZE
     db 1, SCREECH
+	db 1, LOCK_ON
     db 0
 
 DelibirdAllMoves::
@@ -10696,6 +10807,7 @@ Porygon2AllMoves::
     db 1, THUNDER_WAVE
     db 1, PSYWAVE
     db 1, SUBSTITUTE
+	db 1, SHARPEN
     db 0
 
 StantlerAllMoves::
@@ -11033,6 +11145,8 @@ BlisseyAllMoves::
     db 1, SUBSTITUTE
     db 1, PRESENT
     db 1, HEAL_BELL
+	db 1, PSYCH_UP
+	db 1, IRON_TAIL
     db 0
 
 RaikouAllMoves::
