@@ -11419,3 +11419,142 @@ SplashAllMoves::
 NoAllMoves::
 	db 0
 	db 0
+	
+SlakothAllMoves::
+    db 0
+    db 1, SCRATCH
+    db 1, YAWN
+    db 1, ENCORE
+    db 1, SLACK_OFF
+    db 1, FAINT_ATTACK
+    db 1, AMNESIA
+    db 1, COVET
+    db 1, COUNTER
+    db 1, FLAIL
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, ROCK_SMASH
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, BLIZZARD
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, SOLARBEAM
+    db 1, THUNDER
+    db 1, SHADOW_BALL
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, FIRE_BLAST
+    db 1, THUNDERPUNCH
+    db 1, REST
+    db 1, ATTRACT
+    db 1, FIRE_PUNCH
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLAMETHROWER
+    db 1, ICE_BEAM
+    db 1, THUNDERBOLT
+    db 0
+
+VigorothAllMoves::
+    db 0
+    db 1, SCRATCH
+    db 1, YAWN
+    db 1, ENCORE
+    db 1, SLACK_OFF
+    db 1, FURY_SWIPES
+    db 1, ENDURE
+    db 1, SLASH
+    db 1, COUNTER
+    db 1, DYNAMICPUNCH
+    db 1, REVERSAL
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, ROAR
+    db 1, TOXIC
+    db 1, ROCK_SMASH
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, BLIZZARD
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, FRUSTRATION
+    db 1, SOLARBEAM
+    db 1, THUNDER
+    db 1, EARTHQUAKE
+    db 1, SHADOW_BALL
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, FIRE_BLAST
+    db 1, THUNDERPUNCH
+    db 1, REST
+    db 1, ATTRACT
+    db 1, FIRE_PUNCH
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLAMETHROWER
+    db 1, ICE_BEAM
+    db 1, THUNDERBOLT
+    db 0
+
+SlakingAllMoves::
+    db 0
+    db 1, SCRATCH
+    db 1, YAWN
+    db 1, ENCORE
+    db 1, SLACK_OFF
+    db 1, FAINT_ATTACK
+    db 1, AMNESIA
+    db 1, COVET
+    db 1, SWAGGER
+    db 1, COUNTER
+    db 1, FLAIL
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, ROAR
+    db 1, TOXIC
+    db 1, ROCK_SMASH
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, BLIZZARD
+    db 1, HYPER_BEAM
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, SOLARBEAM
+    db 1, THUNDER
+    db 1, EARTHQUAKE
+    db 1, SHADOW_BALL
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SLEEP_TALK
+    db 1, FIRE_BLAST
+    db 1, THUNDERPUNCH
+    db 1, REST
+    db 1, ATTRACT
+    db 1, FIRE_PUNCH
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLAMETHROWER
+    db 1, ICE_BEAM
+    db 1, THUNDERBOLT
+    db 0
