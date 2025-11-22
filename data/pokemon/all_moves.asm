@@ -11533,3 +11533,100 @@ SplashAllMoves::
 NoAllMoves::
 	db 0
 	db 0
+	
+BeldumAllMoves::
+    db 0
+    db 1, TAKE_DOWN
+    db 0
+
+MetangAllMoves::
+    db 0
+    db 1, TAKE_DOWN
+    db 1, CONFUSION
+    db 1, METAL_CLAW
+    db 1, SCARY_FACE
+    db 1, PURSUIT
+    db 1, PSYCHIC_M
+    db 1, IRON_DEFENSE
+    db 1, METEOR_MASH
+    db 1, AGILITY
+    db 1, HYPER_BEAM
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, ROLLOUT
+    db 1, TOXIC
+    db 1, ZAP_CANNON
+    db 1, ROCK_SMASH
+    db 1, PSYCH_UP
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, EARTHQUAKE
+    db 1, SHADOW_BALL
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, SLUDGE_BOMB
+    db 1, SANDSTORM
+    db 1, SWIFT
+    db 1, DEFENSE_CURL
+    db 1, THUNDERPUNCH
+    db 1, REST
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLASH
+    db 0
+
+MetagrossAllMoves::
+    db 0
+    db 1, TAKE_DOWN
+    db 1, CONFUSION
+    db 1, METAL_CLAW
+    db 1, SCARY_FACE
+    db 1, PURSUIT
+    db 1, PSYCHIC_M
+    db 1, IRON_DEFENSE
+    db 1, METEOR_MASH
+    db 1, AGILITY
+    db 1, HYPER_BEAM
+    db 1, DYNAMICPUNCH
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, ROLLOUT
+    db 1, TOXIC
+    db 1, ZAP_CANNON
+    db 1, ROCK_SMASH
+    db 1, PSYCH_UP
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, EARTHQUAKE
+    db 1, SHADOW_BALL
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, ICE_PUNCH
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, SLUDGE_BOMB
+    db 1, SANDSTORM
+    db 1, SWIFT
+    db 1, DEFENSE_CURL
+    db 1, THUNDERPUNCH
+    db 1, REST
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLASH
+    db 0
