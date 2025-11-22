@@ -710,14 +710,12 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-
-
-; Seems to be an accidental copy of the previous bank
-
-
-
-; Sections "Pics 20" to "Pics 24" are not used for any graphics,
-; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
+MetangFrontpic: INCBIN "gfx/pokemon/metang/front.animated.2bpp.lz"
+MetangBackpic: INCBIN "gfx/pokemon/metang/back.2bpp.lz"
+MetagrossBackpic: INCBIN "gfx/pokemon/metagross/back.2bpp.lz"
+MetagrossFrontpic: INCBIN "gfx/pokemon/metagross/front.animated.2bpp.lz"
+BeldumFrontpic: INCBIN "gfx/pokemon/beldum/front.animated.2bpp.lz"
+BeldumBackpic: INCBIN "gfx/pokemon/beldum/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 

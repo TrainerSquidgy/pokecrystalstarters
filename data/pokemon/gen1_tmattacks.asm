@@ -2685,6 +2685,9 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+MetangGen1TMAttacks:
+MetagrossGen1TMAttacks:
+BeldumGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0

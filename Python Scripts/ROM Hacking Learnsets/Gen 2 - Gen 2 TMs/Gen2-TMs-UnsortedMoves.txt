@@ -1,78 +1,188 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
 Psywave
-Embargo
-Cosmic Power
+Reflect
+Rollout
+Snatch
+Hidden Power
+Light Screen
+Charm
+Recover
+Psyshock
+Endeavor
+Future Sight
+Pain Split
+Psychic
+Skill Swap
 Heal Block
-Rock Slide
-SolarBeam
-Explosion
+Wonder Room
+Psyshock
 Calm Mind
 Toxic
 Hidden Power
-Sunny Day
-Hyper Beam
 Light Screen
 Protect
+Rain Dance
+Telekinesis
 Safeguard
 Frustration
-SolarBeam
-Earthquake
+Thunder
 Return
 Psychic
 Shadow Ball
 Double Team
 Reflect
-Flamethrower
-Sandstorm
-Fire Blast
 Rock Tomb
 Facade
-Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
-Endure
-Will-O-Wisp
+Attract
+Round
+Energy Ball
 Embargo
 Explosion
-Recycle
-Giga Impact
-Rock Polish
 Flash
-Stone Edge
+Thunder Wave
 Gyro Ball
-Stealth Rock
 Psych Up
 Rock Slide
-Sleep Talk
-Natural Gift
 Dream Eater
-Grass Knot
 Swagger
 Substitute
+Flash Cannon
 Trick Room
-AncientPower
-Earth Power
+After You
+Endeavor
 Gravity
-Helping Hand
-Iron Defense
-Iron Head
 Magic Coat
 Pain Split
-Rollout
+Role Play
 Signal Beam
+Skill Swap
+Sleep Talk
+Snatch
 Snore
-Swift
+Trick
+Wonder Room
 Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+After You
+Confide
+Double Team
+Dream Eater
+Embargo
+Explosion
+Flash
+Frustration
+Gravity
+Heal Block
+Hidden Power
+Infestation
+Magic Coat
+Night Shade
+Psych Up
+Psywave
+Return
+Role Play
+Rollout
+Secret Power
+Shock Wave
+Signal Beam
+Snatch
+Swagger
+Telekinesis
+Toxic
+Thunder Wave
+Light Screen
+Reflect
+Safeguard
+Rest
+Rock Slide
+Snore
+Protect
+Charm
+Attract
+Rain Dance
+Facade
+Helping Hand
+Imprison
+Rock Tomb
+Power Swap
+Guard Swap
+Trick Room
+Wonder Room
+Round
+Psychic Terrain
+Thunder
+Psychic
+Substitute
+Psyshock
+Endure
+Sleep Talk
+Encore
+Shadow Ball
+Future Sight
+Trick
+Skill Swap
+Iron Defense
+Calm Mind
+Gyro Ball
+Energy Ball
+Zen Headbutt
+Flash Cannon
+Stored Power
+Ally Switch
+Charm
+Protect
+Psybeam
+Confuse Ray
+Facade
+Swift
+Rock Tomb
+Stored Power
+Night Shade
+Endure
+Sunny Day
+Rain Dance
+Psyshock
+Zen Headbutt
+Sleep Talk
+Reflect
+Light Screen
+Thunder Wave
+Rest
+Rock Slide
+Imprison
+Flash Cannon
+Skill Swap
+Substitute
+Iron Defense
+Trick
+Shadow Ball
+Energy Ball
+Psychic
+Encore
+Calm Mind
+Helping Hand
+Psychic Terrain
+Trick Room
+Thunder
+Tera Blast
+Gravity
+Gyro Ball
+Pain Split
+Psych Up
+Endeavor
+Future Sight
+Expanding Force
+Confusion
+Protect
+Recover
+Endeavor
+Psybeam
+Charm
+Psyshock
+Light Screen
+Reflect
+Ally Switch
+Pain Split
+Psychic
+Skill Swap
+Future Sight
+Wonder Room
