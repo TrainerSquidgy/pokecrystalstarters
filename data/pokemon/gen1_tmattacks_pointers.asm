@@ -252,5 +252,7 @@ Gen1TMAttacksPointers::
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
 	dw NoGen1TMAttacks
-	dw NoGen1TMAttacks ; Celebi
+	dw MagnemitesGen1TMAttacks
+	dw MagnetonsGen1TMAttacks
+	dw MagnezoneGen1TMAttacks
 	assert_table_length NUM_POKEMON

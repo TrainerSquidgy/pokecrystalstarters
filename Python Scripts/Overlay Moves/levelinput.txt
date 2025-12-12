@@ -1,16 +1,20 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Magnezone
+1: Mirror Coat
+1: Barrier
+1: Metal Sound
+1: Tackle
+1: ThunderShock
+1: Supersonic
+6: ThunderShock
+11: Supersonic
+14: SonicBoom
+17: Thunder Wave
+22: Spark
+27: Lock-On
+30: Magnet Bomb
+34: Screech
+40: Discharge
+46: Mirror Shot
+50: Magnet Rise
+54: Gyro Ball
+60: Zap Cannon

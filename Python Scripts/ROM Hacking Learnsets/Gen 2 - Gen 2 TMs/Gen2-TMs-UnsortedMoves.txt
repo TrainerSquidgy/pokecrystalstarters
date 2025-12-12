@@ -1,78 +1,170 @@
 Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
+Metal Sound
+ThunderShock
+Supersonic
+SonicBoom
+Thunder Wave
+Spark
+Lock-On
+Magnet Bomb
+Screech
+Discharge
+Mirror Shot
+Magnet Rise
+Gyro Ball
+Zap Cannon
+Toxic
+Hidden Power
+Sunny Day
+Light Screen
+Protect
+Rain Dance
+Frustration
+Thunderbolt
+Thunder
+Return
+Double Team
+Reflect
+Shock Wave
+Facade
+Secret Power
+Rest
+Charge Beam
+Endure
 Explosion
-Calm Mind
+Recycle
+Flash
+Thunder Wave
+Gyro Ball
+Psych Up
+Sleep Talk
+Natural Gift
+Swagger
+Substitute
+Flash Cannon
+Gravity
+Iron Defense
+Magic Coat
+Magnet Rise
+Rollout
+Signal Beam
+Snore
+Swift
+Double-Edge
+Mimic
+Tri Attack
+Tackle
+Metal Sound
+ThunderShock
+Supersonic
+ThunderShock
+Supersonic
+SonicBoom
+Thunder Wave
+Spark
+Lock-On
+Magnet Bomb
+Screech
+Discharge
+Mirror Shot
+Magnet Rise
+Gyro Ball
+Zap Cannon
 Toxic
 Hidden Power
 Sunny Day
 Hyper Beam
 Light Screen
 Protect
-Safeguard
+Rain Dance
 Frustration
-SolarBeam
-Earthquake
+Thunderbolt
+Thunder
 Return
-Psychic
-Shadow Ball
 Double Team
 Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
+Shock Wave
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
 Charge Beam
 Endure
-Will-O-Wisp
-Embargo
 Explosion
 Recycle
 Giga Impact
-Rock Polish
 Flash
-Stone Edge
+Thunder Wave
 Gyro Ball
-Stealth Rock
 Psych Up
-Rock Slide
 Sleep Talk
 Natural Gift
-Dream Eater
-Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
+Flash Cannon
 Gravity
-Helping Hand
 Iron Defense
-Iron Head
 Magic Coat
-Pain Split
+Magnet Rise
 Rollout
 Signal Beam
 Snore
 Swift
-Zen Headbutt
-Baton Pass
-Body Slam
-Defense Curl
-Double-Edge
-Mimic
-Selfdestruct
+Mirror Coat
+Barrier
+Metal Sound
+Tackle
+ThunderShock
+Supersonic
+ThunderShock
+Supersonic
+SonicBoom
+Thunder Wave
+Spark
+Lock-On
+Magnet Bomb
+Screech
+Discharge
+Mirror Shot
+Magnet Rise
+Gyro Ball
+Zap Cannon
+Toxic
+Hidden Power
+Sunny Day
+Hyper Beam
+Light Screen
+Protect
+Rain Dance
+Frustration
+Thunderbolt
+Thunder
+Return
+Double Team
+Reflect
+Shock Wave
+Facade
+Secret Power
+Rest
+Charge Beam
+Endure
+Explosion
+Recycle
+Giga Impact
+Flash
+Thunder Wave
+Gyro Ball
+Psych Up
+Sleep Talk
+Natural Gift
+Swagger
+Substitute
+Flash Cannon
+Gravity
+Iron Defense
+Iron Head
+Magic Coat
+Magnet Rise
+Rollout
+Signal Beam
+Snore
+Swift

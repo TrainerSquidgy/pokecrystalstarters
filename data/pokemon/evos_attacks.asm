@@ -1990,7 +1990,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -3343,7 +3343,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
+	db 1, FLAMETHROWER
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3372,3 +3372,70 @@ SplashEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 0 ; no more level-up moves
+
+MagnemitesEvosAttacks:
+	db EVOLVE_LEVEL, 30, MAGNETONS
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 1, METAL_SOUND
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 14, SONICBOOM
+	db 17, THUNDER_WAVE
+	db 22, SPARK
+	db 27, LOCK_ON
+	db 30, MAGNET_BOMB
+	db 33, SCREECH
+	db 38, DISCHARGE
+	db 43, MIRROR_SHOT
+	db 46, MAGNET_RISE
+	db 49, GYRO_BALL
+	db 54, ZAP_CANNON
+	db 0
+	
+MagnetonsEvosAttacks:
+	db EVOLVE_ITEM, THUNDERSTONE, MAGNEZONE
+	db EVOLVE_LOCATION, LANDMARK_LAKE_OF_RAGE, MAGNEZONE
+	db 0 ; No More Evolutions
+	db 1, TRI_ATTACK
+	db 1, TACKLE
+	db 1, METAL_SOUND
+	db 1, THUNDERSHOCK
+	db 1, SUPERSONIC
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 14, SONICBOOM
+	db 17, THUNDER_WAVE
+	db 22, SPARK
+	db 27, LOCK_ON
+	db 30, MAGNET_BOMB
+	db 34, SCREECH
+	db 40, DISCHARGE
+	db 46, MIRROR_SHOT
+	db 50, MAGNET_RISE
+	db 54, GYRO_BALL
+	db 60, ZAP_CANNON
+	db 0
+
+MagnezoneEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, MIRROR_COAT
+	db 1, BARRIER
+	db 1, METAL_SOUND
+	db 1, TACKLE
+	db 1, THUNDERSHOCK
+	db 1, SUPERSONIC
+	db 6, THUNDERSHOCK
+	db 11, SUPERSONIC
+	db 14, SONICBOOM
+	db 17, THUNDER_WAVE
+	db 22, SPARK
+	db 27, LOCK_ON
+	db 30, MAGNET_BOMB
+	db 34, SCREECH
+	db 40, DISCHARGE
+	db 46, MIRROR_SHOT
+	db 50, MAGNET_RISE
+	db 54, GYRO_BALL
+	db 60, ZAP_CANNON
+	db 0

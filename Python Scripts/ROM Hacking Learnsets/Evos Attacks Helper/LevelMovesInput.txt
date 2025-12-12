@@ -1,14 +1,20 @@
-Pokémon: Lechonk
+Pokémon: Magnezone
+1: Mirror Coat
+1: Barrier
+1: Metal Sound
 1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+1: ThunderShock
+1: Supersonic
+6: ThunderShock
+11: Supersonic
+14: SonicBoom
+17: Thunder Wave
+22: Spark
+27: Lock-On
+30: Magnet Bomb
+34: Screech
+40: Discharge
+46: Mirror Shot
+50: Magnet Rise
+54: Gyro Ball
+60: Zap Cannon
