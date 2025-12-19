@@ -166,9 +166,9 @@ ItemEffects:
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw CandyJarEffect      ; CANDY_JAR
-	dw EscapeRopeEffectKey ; ESCAPE_ROPE_KEY
-	dw NoEffect            ; EVO_STONE
+	dw CandyJarEffect            ; CANDY_JAR
+	dw EscapeRopeEffectKey            ; ITEM_9A
+	dw EvoStoneEffect            ; ITEM_9B
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL

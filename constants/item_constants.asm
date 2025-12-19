@@ -160,7 +160,7 @@
 	const BERSERK_GENE ; 98
 	const CANDY_JAR    ; 99
 	const ESCAPE_ROPE_KEY      ; 9a
-	const EVO_STONE     ; 9b
+	const ICE_STONE
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e
