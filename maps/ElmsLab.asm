@@ -761,28 +761,6 @@ ElmsLabText_AskTotodile:
 	line "TOTODILE?"
 	done
 
-BinSkipItemRandomizer:
-	ld a, $f9
-	call RandomRange
-	cp ITEM_FA
-	jr z, BinSkipItemRandomizer
-	cp ITEM_A2
-	jr z, BinSkipItemRandomizer
-	cp ITEM_AB
-	jr z, BinSkipItemRandomizer
-	cp ITEM_B0
-	jr z, BinSkipItemRandomizer
-	cp ITEM_B3
-	jr z, BinSkipItemRandomizer
-	cp ITEM_BE
-	jr z, BinSkipItemRandomizer
-	cp ITEM_C3
-	jr z, BinSkipItemRandomizer
-	cp ITEM_DC
-	jr z, BinSkipItemRandomizer
-	ld [wPartyMon1Item], a
-	ret
-
 ElmsLabRandomizer:
 	ld a, 250
 	call RandomRange
@@ -798,12 +776,6 @@ ElmsLabRandomizer:
 	ld [wElmPokemon3], a
 	ret
 	
-BinSkipRandomizer:
-	ld a, 250
-	call RandomRange
-	inc a
-	ld [wBinSkipPokemon], a
-	ret
 
 ElmsLabWalkUpToElmScript:
 	loadmem wLevelCap, 9
@@ -1454,7 +1426,6 @@ ElmsLabTrashcan:
 		
 .shortcut
 	waitbutton
-	callasm BinSkipRandomizer
 	givepoke MEWTWO, 100, MYSTERYBERRY
 	setflag ENGINE_MINERALBADGE
 	setflag ENGINE_HIVEBADGE
