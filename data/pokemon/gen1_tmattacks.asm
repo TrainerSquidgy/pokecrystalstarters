@@ -1915,7 +1915,6 @@ HypnoGen1TMAttacks:
 	db 0
 CrobatGen1TMAttacks:
 	db 0
-	db 1, RAZOR_WIND
 	db 1, WHIRLWIND
 	db 1, TAKE_DOWN
 	db 1, DOUBLE_EDGE

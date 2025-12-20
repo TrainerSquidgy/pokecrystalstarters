@@ -12144,6 +12144,24 @@ VulpixAAllMoves::
 
 NinetalesAAllMoves::
     db 0
+    db 1, POWDER_SNOW
+    db 1, TAIL_WHIP
+    db 1, ROAR
+    db 1, BABYDOLLEYES
+    db 1, ICE_SHARD
+    db 1, CONFUSE_RAY
+    db 1, ICY_WIND
+    db 1, PAYBACK
+    db 1, MIST
+    db 1, FAINT_ATTACK
+    db 1, HEX
+    db 1, AURORA_BEAM
+    db 1, EXTRASENSORY
+    db 1, SAFEGUARD
+    db 1, ICE_BEAM
+    db 1, CAPTIVATE
+    db 1, BLIZZARD
+    db 1, SHEER_COLD
     db 1, DAZZLE_GLEAM
     db 1, NASTY_PLOT
     db 1, ICE_BEAM
