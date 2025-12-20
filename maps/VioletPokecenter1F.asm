@@ -32,6 +32,14 @@ VioletPokecenter1F_ElmsAideScript:
 	clearevent EVENT_TOGEPI_HATCHED
 	setmapscene ROUTE_32, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
 	writetext VioletPokecenterElmsAideGiveEggText
+	checkevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	iffalse .done
+	writetext VioletPokecenterElmsAideEscapeRopeText
+	waitbutton
+	verbosegiveitem ESCAPE_ROPE_KEY
+	waitbutton
+	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+.done
 	waitbutton
 	closetext
 	readvar VAR_FACING
