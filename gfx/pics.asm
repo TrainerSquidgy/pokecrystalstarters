@@ -710,6 +710,8 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
+RudolphFrontpic:      INCBIN "gfx/pokemon/rudolph/front.animated.2bpp.lz"
+RudolphBackpic:       INCBIN "gfx/pokemon/rudolph/back.2bpp.lz"
 
 
 ; Seems to be an accidental copy of the previous bank

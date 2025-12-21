@@ -3124,6 +3124,7 @@ Porygon2EvosAttacks:
 	db 44, ZAP_CANNON
 	db 0 ; no more level-up moves
 
+RudolphEvosAttacks:
 StantlerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
