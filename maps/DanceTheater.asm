@@ -107,8 +107,20 @@ DanceTheaterSurfGuy:
 	promptbutton
 	verbosegiveitem HM_SURF
 	setevent EVENT_GOT_HM03_SURF
+	checkevent EVENT_RECEIVED_RAFT
+	iftrue .NoHMItem
+	verbosegiveitem RAFT
+	setevent EVENT_RECEIVED_RAFT
+.NoHMItem
 	writetext SurfGuySurfExplanationText
 	waitbutton
+	readmem wMegaEvolutionEnabled
+	ifequal 0, .SkipMega
+	verbosegiveitem MEGA_RING
+	loadmem wMegaEvolutionActive, 1
+	writetext SurfGuyMegaRingExplanationText
+	waitbutton
+.SkipMega
 	closetext
 	end
 
@@ -328,6 +340,20 @@ DanceTheaterGrannyText:
 	line "something, any-"
 	cont "thing is possible."
 	done
+
+SurfGuyMegaRingExplanationText:
+	text "I also want you"
+	line "to have this."
+	
+	para "I found it in"
+	line "the BURNED TOWER."
+	
+	para "It's a MEGA RING."
+	
+	para "I'm not sure of"
+	line "its use yet."
+	done
+
 
 DanceTheaterFancyPanelText:
 	text "It's a fancy panel"

@@ -3,6 +3,9 @@
 	const POKECENTER2F_BATTLE_RECEPTIONIST
 	const POKECENTER2F_TIME_CAPSULE_RECEPTIONIST
 	const POKECENTER2F_OFFICER
+	const POKECENTER2F_SUPER_NERD_1
+	const POKECENTER2F_SUPER_NERD_2
+	const POKECENTER2F_SCIENTIST
 
 Pokecenter2F_MapScripts:
 	def_scene_scripts
@@ -295,48 +298,63 @@ Script_TimeCapsuleClosed:
 	closetext
 	end
 
-LinkReceptionistScript_TimeCapsule:
-	checkevent EVENT_MET_BILL
-	iftrue Script_TimeCapsuleClosed
-	checkflag ENGINE_TIME_CAPSULE
-	iftrue Script_TimeCapsuleClosed
-	special SetBitsForTimeCapsuleRequest
+LinkReceptionistScript_WonderTrade:
 	faceplayer
 	opentext
-	writetext Text_TimeCapsuleReceptionistIntro
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iffalse .WonderTradeOffline
+	writetext WonderTradeInBetaText
 	yesorno
-	iffalse .Cancel
-	special CheckTimeCapsuleCompatibility
-	ifequal $1, .MonTooNew
-	ifequal $2, .MonMoveTooNew
-	ifequal $3, .MonHasMail
-	writetext Text_PleaseWait
-	special WaitForLinkedFriend
-	iffalse .FriendNotReady
-	writetext Text_MustSaveGame
-	yesorno
-	iffalse .DidNotSave
-	special TryQuickSave
-	iffalse .DidNotSave
-	writetext Text_PleaseWait
-	special CheckLinkTimeout_Receptionist
-	iffalse .LinkTimedOut
-	readmem wOtherPlayerLinkMode
-	iffalse .OK
-	special CheckBothSelectedSameRoom
-	writetext Text_IncompatibleRooms
-	special CloseLink
+	iffalse .Goodbye
+	writetext WonderTradeExplanationText
+	waitbutton
+	special WonderTrade
+.Goodbye
+	writetext WonderTradeGoodbyeText
+	waitbutton
 	closetext
 	end
 
-.OK:
-	special EnterTimeCapsule
-	writetext Text_PleaseComeIn
+.WonderTradeOffline:
+	writetext WonderTradeOfflineText
 	waitbutton
 	closetext
-	scall TimeCapsuleScript_CheckPlayerGender
-	warpcheck
 	end
+	
+WonderTradeExplanationText:
+	text "You can trade"
+	line "your #MON"
+	cont "for a random"
+	cont "#MON!"
+	done
+	
+WonderTradeInBetaText:
+	text "WONDER TRADE is"
+	line "still in its"
+	cont "experiment phase."
+	
+	para "You may encounter"
+	line "unexpected bugs."
+	
+	para "Do you wish to"
+	line "proceed?"
+	done
+	
+WonderTradeGoodbyeText:
+	text "Enjoy your new"
+	line "#MON!"
+	
+	para "We hope to see you"
+	line "again."
+	done
+
+WonderTradeOfflineText:
+	text "The system is"
+	line "currently down!"
+	
+	para "Please try back"
+	line "later."
+	done
 
 .FriendNotReady:
 	special WaitForOtherPlayerToExit
@@ -1035,6 +1053,100 @@ Gen1TMRelearnerScript:
 	closetext
 	end
 
+Pokecenter2FScientistScript:
+	faceplayer
+	opentext
+	writetext Pokecenter2FScientistAskTimeText
+	yesorno
+	iftrue .ChangeTime
+.No
+	writetext Pokecenter2FScientistTimeDeclineText
+	waitbutton
+	closetext
+	end
+	
+.ChangeTime
+	callasm .AsmTimeChangeReset
+	loadmem wStartDay, SUNDAY
+	loadmem wStartHour, 0
+	loadmem wStartMinute, 0
+	loadmem wStartSecond, 0
+	special SetDayOfWeek
+	writetext Pokecenter2FScientistTimeOfDayText
+	waitbutton
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal SET_MORN, .Morning
+	ifequal SET_DAY, .Day
+	ifequal SET_NITE, .Nite
+	sjump .No
+.TimeMerge
+	special FadeOutToBlack
+	pause 40
+	special FadeInFromBlack
+	writetext Pokecenter2FScientistTimeChangedText
+	waitbutton
+	closetext
+	end
+	
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "MORN@"
+	db "DAY@"
+	db "NITE@"
+	db "CANCEL@"
+
+.Morning
+	loadmem wStartHour, 4
+	sjump .TimeMerge
+.Day
+	loadmem wStartHour, 10
+	sjump .TimeMerge
+.Nite
+	loadmem wStartHour, 18
+	sjump .TimeMerge
+	
+.AsmTimeChangeReset
+	call ClearClock
+	ret
+
+Pokecenter2FScientistTimeDeclineText:
+	text "Come back if you"
+	line "want to adjust"
+	cont "the time!"
+	done
+
+Pokecenter2FScientistTempText:
+	text "I'm working on"
+	line "a machine to"
+	cont "change the time!"
+	done
+	
+Pokecenter2FScientistTimeOfDayText:
+	text "What is the"
+	line "time of day?"
+	done
+	
+Pokecenter2FScientistTimeChangedText:
+	text "The TIME and"
+	line "DAY have now"
+	cont "changed!"
+	done
+
+
+Pokecenter2FScientistAskTimeText:
+	text "Would you like to"
+	line "change the TIME"
+	cont "and DAY?"
+	done
 
 Pokecenter2F_MapEvents:
 	db 0, 0 ; filler
@@ -1055,7 +1167,8 @@ Pokecenter2F_MapEvents:
 	def_object_events
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
-	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_TimeCapsule, -1
-	object_event  1,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY
-	object_event  1,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EggMoveRelearnerScript, -1
-	object_event  0,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Gen1TMRelearnerScript, -1
+	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_WonderTrade, -1
+	object_event  6,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY
+	object_event  1,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EggMoveRelearnerScript, EVENT_HELPFUL_NPCS_DISABLED
+	object_event  0,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Gen1TMRelearnerScript, EVENT_HELPFUL_NPCS_DISABLED
+	object_event  6,  6, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Pokecenter2FScientistScript, EVENT_HELPFUL_NPCS_DISABLED

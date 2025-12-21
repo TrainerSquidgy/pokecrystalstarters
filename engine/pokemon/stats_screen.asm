@@ -428,6 +428,8 @@ StatsScreen_InitUpperHalf:
 	hlcoord 10, 0
 	call GetPokemonNumber
 	call PlaceString
+	hlcoord 4, 8
+	call PlaceString
 	hlcoord 14, 0
 	call PrintLevel
 	ld hl, .NicknamePointers

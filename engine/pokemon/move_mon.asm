@@ -205,96 +205,391 @@ endr
 	ld a, [wIsAStarter]
 	and a
 	jp z, .not_starter
+	
+	ld a, [wAlteredHiddenPowerDVs]
+	and a
+	jp z, .PerfectDVs
+	dec a
+	and a
+	jp z, .HiMiddleDVs
+	dec a
+	and a
+	jp z, .LoMiddleDVs
+	dec a
+	and a
+	jp z, .BottomDVs
+	jp .PerfectDVs
+	
+.BottomDVs
 	ld a, [wStarterDVSelection]
 	and a
-	jr z, .Dark
+	jp z, .DarkBottom
 	dec a
 	and a
-	jr z, .Dragon
+	jp z, .DragonBottom
 	dec a
 	and a
-	jr z, .Ice
+	jp z, .IceBottom
 	dec a
 	and a
-	jr z, .Psychic
+	jp z, .PsychicBottom
 	dec a
 	and a
-	jr z, .Electric
+	jp z, .ElectricBottom
 	dec a
 	and a
-	jr z, .Grass
+	jp z, .GrassBottom
 	dec a
 	and a
-	jr z, .Water
+	jp z, .WaterBottom
 	dec a
 	and a
-	jr z, .Fire
+	jp z, .FireBottom
 	dec a
 	and a
-	jr z, .Steel
+	jp z, .SteelBottom
 	dec a
 	and a
-	jr z, .Ghost
+	jp z, .GhostBottom
 	dec a
 	and a
-	jr z, .Bug
+	jp z, .BugBottom
 	dec a
 	and a
-	jr z, .Rock
+	jp z, .RockBottom
 	dec a
 	and a
-	jr z, .Ground
+	jp z, .GroundBottom
 	dec a
 	and a
-	jr z, .Poison
+	jp z, .PoisonBottom
 	dec a
 	and a
-	jr z, .Flying
+	jp z, .FlyingBottom
+	ld a, $0C
+	jp .second_starter_dv
+.DarkBottom
+	ld a, $3F
+	jp .second_starter_dv
+.DragonBottom
+	ld a, $3E
+	jp .second_starter_dv
+.IceBottom
+	ld a, $3D
+	jp .second_starter_dv
+.PsychicBottom
+	ld a, $3C
+	jp .second_starter_dv
+.ElectricBottom
+	ld a, $2F
+	jp .second_starter_dv
+.GrassBottom
+	ld a, $2E
+	jp .second_starter_dv
+.WaterBottom
+	ld a, $2D
+	jp .second_starter_dv
+.FireBottom
+	ld a, $2C
+	jp .second_starter_dv
+.SteelBottom
+	ld a, $1F
+	jp .second_starter_dv
+.GhostBottom
+	ld a, $1E
+	jp .second_starter_dv
+.BugBottom
+	ld a, $1D
+	jp .second_starter_dv
+.RockBottom
+	ld a, $1C
+	jp .second_starter_dv
+.GroundBottom
+	ld a, $0F
+	jp .second_starter_dv
+.PoisonBottom
+	ld a, $0E
+	jp .second_starter_dv
+.FlyingBottom
+	ld a, $0D
+	
+.LoMiddleDVs
+	ld a, [wStarterDVSelection]
+	and a
+	jp z, .DarkLoMiddle
+	dec a
+	and a
+	jp z, .DragonLoMiddle
+	dec a
+	and a
+	jp z, .IceLoMiddle
+	dec a
+	and a
+	jp z, .PsychicLoMiddle
+	dec a
+	and a
+	jp z, .ElectricLoMiddle
+	dec a
+	and a
+	jp z, .GrassLoMiddle
+	dec a
+	and a
+	jp z, .WaterLoMiddle
+	dec a
+	and a
+	jp z, .FireLoMiddle
+	dec a
+	and a
+	jp z, .SteelLoMiddle
+	dec a
+	and a
+	jp z, .GhostLoMiddle
+	dec a
+	and a
+	jp z, .BugLoMiddle
+	dec a
+	and a
+	jp z, .RockLoMiddle
+	dec a
+	and a
+	jp z, .GroundLoMiddle
+	dec a
+	and a
+	jp z, .PoisonLoMiddle
+	dec a
+	and a
+	jp z, .FlyingLoMiddle
+	ld a, $4C
+	jp .second_starter_dv
+.DarkLoMiddle
+	ld a, $7F
+	jp .second_starter_dv
+.DragonLoMiddle
+	ld a, $7E
+	jp .second_starter_dv
+.IceLoMiddle
+	ld a, $7D
+	jp .second_starter_dv
+.PsychicLoMiddle
+	ld a, $7C
+	jp .second_starter_dv
+.ElectricLoMiddle
+	ld a, $6F
+	jp .second_starter_dv
+.GrassLoMiddle
+	ld a, $6E
+	jp .second_starter_dv
+.WaterLoMiddle
+	ld a, $6D
+	jp .second_starter_dv
+.FireLoMiddle
+	ld a, $6C
+	jp .second_starter_dv
+.SteelLoMiddle
+	ld a, $5F
+	jp .second_starter_dv
+.GhostLoMiddle
+	ld a, $5E
+	jp .second_starter_dv
+.BugLoMiddle
+	ld a, $5D
+	jp .second_starter_dv
+.RockLoMiddle
+	ld a, $5C
+	jp .second_starter_dv
+.GroundLoMiddle
+	ld a, $4F
+	jp .second_starter_dv
+.PoisonLoMiddle
+	ld a, $4E
+	jp .second_starter_dv
+.FlyingLoMiddle
+	ld a, $4D
+
+.HiMiddleDVs
+	ld a, [wStarterDVSelection]
+	and a
+	jp z, .DarkHiMiddle
+	dec a
+	and a
+	jp z, .DragonHiMiddle
+	dec a
+	and a
+	jp z, .IceHiMiddle
+	dec a
+	and a
+	jp z, .PsychicHiMiddle
+	dec a
+	and a
+	jp z, .ElectricHiMiddle
+	dec a
+	and a
+	jp z, .GrassHiMiddle
+	dec a
+	and a
+	jp z, .WaterHiMiddle
+	dec a
+	and a
+	jp z, .FireHiMiddle
+	dec a
+	and a
+	jp z, .SteelHiMiddle
+	dec a
+	and a
+	jp z, .GhostHiMiddle
+	dec a
+	and a
+	jp z, .BugHiMiddle
+	dec a
+	and a
+	jp z, .RockHiMiddle
+	dec a
+	and a
+	jp z, .GroundHiMiddle
+	dec a
+	and a
+	jp z, .PoisonHiMiddle
+	dec a
+	and a
+	jp z, .FlyingHiMiddle
+	ld a, $8C
+	jp .second_starter_dv
+.DarkHiMiddle
+	ld a, $BF
+	jp .second_starter_dv
+.DragonHiMiddle
+	ld a, $BE
+	jp .second_starter_dv
+.IceHiMiddle
+	ld a, $BD
+	jp .second_starter_dv
+.PsychicHiMiddle
+	ld a, $BC
+	jp .second_starter_dv
+.ElectricHiMiddle
+	ld a, $AF
+	jp .second_starter_dv
+.GrassHiMiddle
+	ld a, $AE
+	jp .second_starter_dv
+.WaterHiMiddle
+	ld a, $AD
+	jp .second_starter_dv
+.FireHiMiddle
+	ld a, $AC
+	jp .second_starter_dv
+.SteelHiMiddle
+	ld a, $9F
+	jp .second_starter_dv
+.GhostHiMiddle
+	ld a, $9E
+	jp .second_starter_dv
+.BugHiMiddle
+	ld a, $9D
+	jp .second_starter_dv
+.RockHiMiddle
+	ld a, $9C
+	jp .second_starter_dv
+.GroundHiMiddle
+	ld a, $8F
+	jp .second_starter_dv
+.PoisonHiMiddle
+	ld a, $8E
+	jp .second_starter_dv
+.FlyingHiMiddle
+	ld a, $8D
+	
+.PerfectDVs
+	ld a, [wStarterDVSelection]
+	and a
+	jp z, .DarkPerfect
+	dec a
+	and a
+	jp z, .DragonPerfect
+	dec a
+	and a
+	jp z, .IcePerfect
+	dec a
+	and a
+	jp z, .PsychicPerfect
+	dec a
+	and a
+	jp z, .ElectricPerfect
+	dec a
+	and a
+	jp z, .GrassPerfect
+	dec a
+	and a
+	jp z, .WaterPerfect
+	dec a
+	and a
+	jp z, .FirePerfect
+	dec a
+	and a
+	jp z, .SteelPerfect
+	dec a
+	and a
+	jp z, .GhostPerfect
+	dec a
+	and a
+	jp z, .BugPerfect
+	dec a
+	and a
+	jp z, .RockPerfect
+	dec a
+	and a
+	jp z, .GroundPerfect
+	dec a
+	and a
+	jp z, .PoisonPerfect
+	dec a
+	and a
+	jp z, .FlyingPerfect
 	ld a, $CC
-	jr .second_starter_dv
-.Dark
+	jp .second_starter_dv
+.DarkPerfect
 	ld a, $FF
-	jr .second_starter_dv
-.Dragon
+	jp .second_starter_dv
+.DragonPerfect
 	ld a, $FE
-	jr .second_starter_dv
-.Ice
+	jp .second_starter_dv
+.IcePerfect
 	ld a, $FD
-	jr .second_starter_dv
-.Psychic
+	jp .second_starter_dv
+.PsychicPerfect
 	ld a, $FC
-	jr .second_starter_dv
-.Electric
+	jp .second_starter_dv
+.ElectricPerfect
 	ld a, $EF
-	jr .second_starter_dv
-.Grass
+	jp .second_starter_dv
+.GrassPerfect
 	ld a, $EE
-	jr .second_starter_dv
-.Water
+	jp .second_starter_dv
+.WaterPerfect
 	ld a, $ED
-	jr .second_starter_dv
-.Fire
+	jp .second_starter_dv
+.FirePerfect
 	ld a, $EC
-	jr .second_starter_dv
-.Steel
+	jp .second_starter_dv
+.SteelPerfect
 	ld a, $DF
-	jr .second_starter_dv
-.Ghost
+	jp .second_starter_dv
+.GhostPerfect
 	ld a, $DE
-	jr .second_starter_dv
-.Bug
+	jp .second_starter_dv
+.BugPerfect
 	ld a, $DD
-	jr .second_starter_dv
-.Rock
+	jp .second_starter_dv
+.RockPerfect
 	ld a, $DC
-	jr .second_starter_dv
-.Ground
+	jp .second_starter_dv
+.GroundPerfect
 	ld a, $CF
-	jr .second_starter_dv
-.Poison
+	jp .second_starter_dv
+.PoisonPerfect
 	ld a, $CE
-	jr .second_starter_dv
-.Flying	
+	jp .second_starter_dv
+.FlyingPerfect
 	ld a, $CD
 .second_starter_dv
 	ld b, a

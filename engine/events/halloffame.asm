@@ -480,6 +480,8 @@ DisplayHOFMon:
 	hlcoord 3, 13
 	call GetPokemonNumber
 	call PlaceString
+	hlcoord 4, 8
+	call PlaceString
 	call GetBasePokemonName
 	hlcoord 7, 13
 	call PlaceString

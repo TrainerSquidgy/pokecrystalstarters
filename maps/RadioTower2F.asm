@@ -709,6 +709,38 @@ RadioTower2FPokemonRadioSignText:
 	text "Anywhere, Anytime"
 	line "#MON Radio"
 	done
+	
+RadioTower2FResetBuena:
+	checkflag ENGINE_BUENAS_PASSWORD_2
+	iffalse .End
+	opentext
+	writetext RadioTower2FResetBuena_Ask
+	yesorno
+	iffalse .DontResetBuena
+	clearflag ENGINE_BUENAS_PASSWORD_2
+	writetext RadioTower2FResetBuena_Yes
+	sjump .Merge
+.DontResetBuena
+	writetext RadioTower2FResetBuena_No
+.Merge
+	waitbutton
+	closetext
+.End
+	end
+	
+RadioTower2FResetBuena_Ask:
+	text "Reset BUENA's"
+	line "PASSWORD?"
+	done
+	
+RadioTower2FResetBuena_Yes:
+	text "BUENA is"
+	line "reset."
+	done
+	
+RadioTower2FResetBuena_No:
+	text "Buena is"
+	line "not reset."
 
 RadioTower2F_MapEvents:
 	db 0, 0 ; filler
@@ -726,6 +758,7 @@ RadioTower2F_MapEvents:
 	bg_event 10,  1, BGEVENT_READ, RadioTower2FBookshelf
 	bg_event 11,  1, BGEVENT_READ, RadioTower2FBookshelf
 	bg_event 13,  0, BGEVENT_READ, RadioTower2FPokemonRadioSign
+	bg_event 15,  6, BGEVENT_READ, RadioTower2FResetBuena
 
 	def_object_events
 	object_event  6,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower2FSuperNerdScript, EVENT_GOLDENROD_CITY_CIVILIANS

@@ -160,6 +160,13 @@ GoldenrodGameCornerTMVendorMenuHeader:
 GoldenrodGameCornerPrizeMonVendorScript:
 	faceplayer
 	opentext
+	checkevent EVENT_RECEIVED_FART_JAR
+	iftrue .NoHMItem
+	writetext GoldenrodGameCornerPrizeVendorIntroAbraText
+	waitbutton
+	verbosegiveitem FART_JAR
+	setevent EVENT_RECEIVED_FART_JAR
+.NoHMItem
 	writetext GoldenrodGameCornerPrizeVendorIntroText
 	waitbutton
 	checkitem COIN_CASE
@@ -318,7 +325,38 @@ GoldenrodGameCornerCardFlipMachineScript:
 	special CardFlip
 	closetext
 	end
-
+	
+GoldenrodGameCornerPrizeVendorIntroAbraText:
+	text "Before I get into"
+	line "my usual spiel,"
+	
+	para "PLEASE take this"
+	line "RENTAL ABRA off"
+	cont "our hands."
+	
+	para "It will TELEPORT"
+	line "players just fine"
+	
+	para "but it refuses to"
+	line "even think about"
+	cont "battling."
+	
+	para "We spoke to the"
+	line "LEAGUE bosses and"
+	cont "they say it won't"
+	cont "count towards your"
+	cont "party of six."
+	done
+	
+GoldenrodGameCornerPrizeVendorIntroAbraTextDone:
+	text "Thank you!"
+	
+	para "We've been trying"
+	line "to move it on for"
+	cont "the past 7 weeks.@"
+	done
+	
+	
 GoldenrodGameCornerPrizeVendorIntroText:
 	text "Welcome!"
 

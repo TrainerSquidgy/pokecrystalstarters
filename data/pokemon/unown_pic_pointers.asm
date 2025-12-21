@@ -53,4 +53,28 @@ UnownPicPointers::
 	dba_pic UnownYBackpic
 	dba_pic UnownZFrontpic
 	dba_pic UnownZBackpic
-	assert_table_length NUM_UNOWN
+	dba_pic MegaVenusaurFrontpic
+	dba_pic MegaVenusaurBackpic
+	dba_pic MegaGengarFrontpic
+	dba_pic MegaGengarBackpic
+	dba_pic MegaPinsirFrontpic
+	dba_pic MegaPinsirBackpic
+	dba_pic MegaCharizardFrontpic
+	dba_pic MegaCharizardBackpic
+	dba_pic MegaBlastoiseFrontpic
+	dba_pic MegaBlastoiseBackpic
+	dba_pic MegaBeedrillFrontpic
+	dba_pic MegaBeedrillBackpic
+	dba_pic MegaAlakazamFrontpic
+	dba_pic MegaAlakazamBackpic
+	dba_pic MegaHeracrossFrontpic
+	dba_pic MegaHeracrossBackpic
+	dba_pic MegaAmpharosFrontpic
+	dba_pic MegaAmpharosBackpic
+	dba_pic MegaHoundoomFrontpic
+	dba_pic MegaHoundoomBackpic
+	dba_pic MegaAerodactylFrontpic
+	dba_pic MegaAerodactylBackpic
+	dba_pic MegaPidgeotFrontpic
+	dba_pic MegaPidgeotBackpic
+	assert_table_length NUM_UNOWN + 12

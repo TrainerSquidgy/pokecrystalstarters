@@ -474,9 +474,11 @@ Route34IlexForestSign: ; unreferenced
 	jumptext Route34IlexForestSignText
 
 Route34Sign:
+	loadmem wRoute34Encounters, 0
 	jumptext Route34SignText
 
 Route34TrainerTips:
+	loadmem wRoute34Encounters, 0
 	jumptext Route34TrainerTipsText
 
 DayCareSign:

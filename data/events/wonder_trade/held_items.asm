@@ -1,0 +1,18 @@
+WonderTradeHeldItems:
+	db 2,   LUCKY_EGG
+	db 2,   LEFTOVERS
+	db 2,   FOCUS_BAND
+	db 2,   RARE_CANDY
+	db 5,   QUICK_CLAW
+	db 5,   SCOPE_LENS
+	db 10,  MIRACLEBERRY
+	db 10,  GOLD_BERRY
+	db 10,  PSNCUREBERRY
+	db 10,  BURNT_BERRY
+	db 10,  ICE_BERRY
+	db 10,  PRZCUREBERRY
+	db 10,  MYSTERYBERRY
+	db 10,  MINT_BERRY
+	db 30,  BERRY
+	db 128, NO_ITEM
+	db -1
