@@ -11383,6 +11383,42 @@ Porygon2AllMoves::
     db 1, SUBSTITUTE
     db 0
 
+RudolphAllMoves::
+    db 0
+    db 1, HEADBUTT
+    db 1, CURSE
+    db 1, ROAR
+    db 1, TOXIC
+    db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, EARTHQUAKE
+    db 1, RETURN
+    db 1, PSYCHIC_M
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, SWIFT
+    db 1, DREAM_EATER
+    db 1, DETECT
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THIEF
+    db 1, NIGHTMARE
+    db 1, FLASH
+    db 1, REFLECT
+    db 1, SPITE
+    db 1, DISABLE
+    db 1, LIGHT_SCREEN
+    db 1, BITE
+    db 0
+
 StantlerAllMoves::
     db 0
     db 1, TACKLE
@@ -11419,16 +11455,15 @@ StantlerAllMoves::
     db 1, THIEF
     db 1, NIGHTMARE
     db 1, FLASH
-    db 1, REFLECT
-    db 1, SPITE
-    db 1, DISABLE
-    db 1, LIGHT_SCREEN
-    db 1, BITE
     db 0
 
 SmeargleAllMoves::
     db 0
     db 1, SKETCH
+    db 1, RAPID_SPIN
+    db 1, HI_JUMP_KICK
+    db 1, MACH_PUNCH
+    db 1, MIND_READER
     db 0
 
 TyrogueAllMoves::
@@ -11493,9 +11528,7 @@ HitmontopAllMoves::
     db 1, ATTRACT
     db 1, THIEF
     db 1, STRENGTH
-    db 1, HI_JUMP_KICK
-    db 1, MACH_PUNCH
-    db 1, MIND_READER
+    db 1, MEDITATE
     db 0
 
 SmoochumAllMoves::
@@ -11535,7 +11568,11 @@ SmoochumAllMoves::
     db 1, THIEF
     db 1, NIGHTMARE
     db 1, ICE_BEAM
+    db 1, KARATE_CHOP
+    db 1, BARRIER
+    db 1, ROLLING_KICK
     db 1, MEDITATE
+    db 1, CROSS_CHOP
     db 0
 
 ElekidAllMoves::
@@ -11573,9 +11610,8 @@ ElekidAllMoves::
     db 1, FIRE_PUNCH
     db 1, FLASH
     db 1, KARATE_CHOP
+    db 1, MEGA_PUNCH
     db 1, BARRIER
-    db 1, ROLLING_KICK
-    db 1, MEDITATE
     db 1, CROSS_CHOP
     db 0
 
@@ -11611,11 +11647,9 @@ MagbyAllMoves::
     db 1, REST
     db 1, ATTRACT
     db 1, THIEF
-    db 1, KARATE_CHOP
-    db 1, MEGA_PUNCH
-    db 1, BARRIER
-    db 1, SCREECH
-    db 1, CROSS_CHOP
+    db 1, PRESENT
+    db 1, REVERSAL
+    db 1, SEISMIC_TOSS
     db 0
 
 MiltankAllMoves::
@@ -11667,8 +11701,7 @@ MiltankAllMoves::
     db 1, THUNDERBOLT
     db 1, ICE_BEAM
     db 1, PRESENT
-    db 1, REVERSAL
-    db 1, SEISMIC_TOSS
+    db 1, METRONOME
     db 0
 
 BlisseyAllMoves::
@@ -11740,8 +11773,6 @@ BlisseyAllMoves::
     db 1, PSYWAVE
     db 1, TRI_ATTACK
     db 1, SUBSTITUTE
-    db 1, PRESENT
-    db 1, HEAL_BELL
     db 0
 
 RaikouAllMoves::
@@ -11868,6 +11899,11 @@ SuicuneAllMoves::
     db 1, WHIRLPOOL
     db 1, WATERFALL
     db 1, ICE_BEAM
+    db 1, PURSUIT
+    db 1, STOMP
+    db 1, OUTRAGE
+    db 1, FOCUS_ENERGY
+    db 1, ANCIENTPOWER
     db 0
 
 LarvitarAllMoves::
@@ -11992,11 +12028,6 @@ TyranitarAllMoves::
     db 1, FLAMETHROWER
     db 1, THUNDERBOLT
     db 1, ICE_BEAM
-    db 1, PURSUIT
-    db 1, STOMP
-    db 1, OUTRAGE
-    db 1, FOCUS_ENERGY
-    db 1, ANCIENTPOWER
     db 0
 
 LugiaAllMoves::
@@ -12144,6 +12175,11 @@ CelebiAllMoves::
     db 1, REST
     db 1, NIGHTMARE
     db 1, FLASH
+    db 1, REFLECT
+    db 1, SPITE
+    db 1, DISABLE
+    db 1, LIGHT_SCREEN
+    db 1, BITE
     db 0
 
 SplashAllMoves::
