@@ -125,6 +125,13 @@ VioletPokecenterElmsAideFavorText:
 	line "#MON EGG?"
 	done
 
+VioletPokecenterElmsAideEscapeRopeText:
+	text "Take this, too."
+	
+	para "It will help you"
+	line "on your journey."
+	done
+
 VioletPokecenterElmsAideGiveEggText:
 	text "We discovered that"
 	line "a #MON will not"
