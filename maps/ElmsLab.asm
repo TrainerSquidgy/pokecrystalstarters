@@ -169,9 +169,9 @@ ElmsLabWalkUpToElmScript:
 	
 ; PARTY SLOT 1
 	reanchormap
-	getmonname STRING_BUFFER_3, CROBAT
-	pokepic CROBAT
-	cry CROBAT
+	getmonname STRING_BUFFER_3, ESPEON
+	pokepic ESPEON
+	cry ESPEON
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -190,13 +190,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower1
 	loadmem wIsAStarter, 0
 .HandledHiddenPower1
-	givepoke CROBAT, 5, NO_ITEM ; PARTY SLOT 1
+	givepoke ESPEON, 5, NO_ITEM ; PARTY SLOT 1
 
 ; PARTY SLOT 2
 	reanchormap
-	getmonname STRING_BUFFER_3, ARIADOS
-	pokepic ARIADOS
-	cry ARIADOS
+	getmonname STRING_BUFFER_3, MR__MIME
+	pokepic MR__MIME
+	cry MR__MIME
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -215,13 +215,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower2
 	loadmem wIsAStarter, 0
 .HandledHiddenPower2
-	givepoke ARIADOS, 5, NO_ITEM ; PARTY SLOT 2
+	givepoke MR__MIME, 5, NO_ITEM ; PARTY SLOT 2
 
 ; PARTY SLOT 3
 	reanchormap
-	getmonname STRING_BUFFER_3, WEEZING
-	pokepic WEEZING
-	cry WEEZING
+	getmonname STRING_BUFFER_3, ALAKAZAM
+	pokepic ALAKAZAM
+	cry ALAKAZAM
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -240,59 +240,7 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower3
 	loadmem wIsAStarter, 0
 .HandledHiddenPower3
-	givepoke WEEZING, 5, BERRY ; PARTY SLOT 3
-
-; PARTY SLOT 4
-	reanchormap
-	getmonname STRING_BUFFER_3, WEEZING
-	pokepic WEEZING
-	cry WEEZING
-	waitbutton
-	closepokepic
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	opentext
-	writetext ElmsLabText_NextMon
-	promptbutton
-	loadmem wIsAStarter, 1
-	writetext ElmsLabText_AskAboutHiddenPower
-	yesorno
-	iffalse .NoHiddenPower4
-	special SetHiddenPower
-	writetext ElmsLabText_HiddenPowerUpdated
-	waitbutton
-	sjump .HandledHiddenPower4
-.NoHiddenPower4
-	loadmem wIsAStarter, 0
-.HandledHiddenPower4
-	givepoke WEEZING, 5, NO_ITEM ; PARTY SLOT 4
-	
-; PARTY SLOT 5
-	reanchormap
-	getmonname STRING_BUFFER_3, VENOMOTH
-	pokepic VENOMOTH
-	cry VENOMOTH
-	waitbutton
-	closepokepic
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	opentext
-	writetext ElmsLabText_NextMon
-	promptbutton
-	loadmem wIsAStarter, 1
-	writetext ElmsLabText_AskAboutHiddenPower
-	yesorno
-	iffalse .NoHiddenPower5
-	special SetHiddenPower
-	writetext ElmsLabText_HiddenPowerUpdated
-	waitbutton
-	sjump .HandledHiddenPower5
-.NoHiddenPower5
-	loadmem wIsAStarter, 0
-.HandledHiddenPower5
-	givepoke VENOMOTH, 5, NO_ITEM ; PARTY SLOT 5
-	
-; END OF LEADER'S PARTY
+	givepoke ALAKAZAM, 5, BERRY ; PARTY SLOT 3
 
 	iftrue .CandyJarDone
 	writetext ElmsLabText_LevelCap
