@@ -332,3 +332,9 @@ DEF NUM_UNOWN_PUZZLES EQU const_value
 	const SET_MORN  ; 1
 	const SET_DAY  ; 2
 	const SET_NITE ; 3
+	
+; Rival types
+	const_def 1
+	const RIVAL_FIRE
+	const RIVAL_WATER
+	const RIVAL_GRASS

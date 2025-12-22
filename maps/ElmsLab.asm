@@ -45,538 +45,72 @@ ElmsLabMoveElmCallback:
 .Skip:
 	endcallback
 
-; Sets STARTERS, HIDDEN POWER, and STREAMING FLAGS
 ElmsLabStarterChoice:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .End
-	opentext
-; Ask PLAYER if they want to set STARTERS
-	writetext ElmsLabChooseStartersAskText
+	iftrue .CandyJarDone
+	writetext ElmsLabText_LevelCap
 	yesorno
-	iffalse .NoStarter
-	writetext ElmsLabText_AskCyndaquil
-	yesorno
-	iffalse .NoCyndaquil
-	special SetStarter1
-	sjump .AskTotodile
-.NoCyndaquil
-	loadmem wElmPokemon1, 154
-.AskTotodile
-	writetext ElmsLabText_AskTotodile
-	yesorno
-	iffalse .NoTotodile
-	special SetStarter2
-	sjump .AskChikorita
-.NoTotodile
-	loadmem wElmPokemon2, 157
-.AskChikorita
-	writetext ElmsLabText_AskChikorita
-	yesorno
-	iffalse .NoChikorita
-	special SetStarter3
-	sjump .DoneStarters
-.NoChikorita
-	loadmem wElmPokemon3, 151
-.DoneStarters
-	special HandleStarterOffset
-; Check to set Hidden Power
-	writetext ElmsLabText_AskAboutHiddenPower
-	yesorno
-	iffalse .NoHiddenPower
-	special SetHiddenPower
-	writetext ElmsLabText_HiddenPowerUpdated
-	waitbutton
-	sjump .HandledHiddenPower
-.NoHiddenPower
-	loadmem wIsAStarter, 0
-.HandledHiddenPower
-	writetext ElmsLabChooseStartersYesText
-	waitbutton
-	sjump .Merge
-.NoStarter
-	writetext ElmsLabChooseStartersNoText
-.Merge
-	waitbutton
-	writetext ElmsLabText_AskAboutHMFriends
-	yesorno
-	iffalse .NoHMFriends
-	loadmem wIlexForestEncounters, 0
-	loadmem wRoute34Encounters, 0
-	loadmem wRoute33Encounters, 0
-	loadmem wGuaranteedHMFriendCatch, 1
-	writetext ElmsLabText_AskAboutHMFriendsYes
-	sjump .DoneHMFriends
-.NoHMFriends
-	writetext ElmsLabText_AskAboutHMFriendsNo
-	loadmem wIlexForestEncounters, 3
-	loadmem wRoute34Encounters, 3
-	loadmem wRoute33Encounters, 3
-	loadmem wGuaranteedHMFriendCatch, 0
-.DoneHMFriends
-	waitbutton
-	writetext ElmsLabText_AskStream
-	yesorno
-	iffalse .nostream
-	loadmem wIsAStream, 1
-	writetext ElmsLabText_StreamYes
-	sjump .streamdone
-.nostream
-	loadmem wIsAStream, 0
-	writetext ElmsLabText_StreamNo
-.streamdone
-	promptbutton
-	closetext
-	turnobject PLAYER, DOWN
-.End
-	end
-	
-
-
-; Options pertaining to the POKÉMON
-ElmsLab_ExtraPokemonOptions:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .EndNoOptions
-	opentext
-	writetext ElmsLabText_AskExtraOptionsForYourMon
-	yesorno
-	iffalse .EndOptions
-
-; Custom HIDDEN POWER DVs
-	writetext ElmsLabText_AlterHiddenPower
-	yesorno
-	iffalse .NoAltering
-	special SetHiddenPower
-	special AlteredHiddenPower
-	writetext ElmsLabText_AlteredHiddenPower
-	sjump .Merge
-.NoAltering
-	writetext ElmsLabText_NoAlteredHiddenPower
-.Merge
-	promptbutton
-	
-; Enable LEGENDS ARCEUS HIDDEN POWER
-	writetext ElmsLabText_PLAHiddenPowerAsk
-	yesorno 
-	iffalse .NoPLAHiddenPower
-	loadmem wWhichHiddenPower, 1
-	writetext ElmsLabText_PLAHiddenPowerYes
-	promptbutton
-.NoPLAHiddenPower
-
-; Enabling or disabling EVOLUTIONS.
-	writetext ElmsLabText_EvolutionsAsk
-	yesorno
-	iftrue .KeepEvolutions
-	loadmem wEvolutionsDisabled, 1
-	writetext ElmsLabText_EvolutionsNo
-	sjump .HandledEvolutions
-.KeepEvolutions
-	loadmem wEvolutionsDisabled, 0
-	writetext ElmsLabText_EvolutionsYes
-.HandledEvolutions
-	promptbutton
-	
-; Enabling or disabling ABILITIES.
-	writetext ElmsLabText_AbilitiesAsk
-	yesorno
-	iftrue .AbilitiesYes
-	loadmem wAbilitiesActivated, 0
-	writetext ElmsLabText_AbilitiesNo
-	sjump .NoAbilities
-.AbilitiesYes
-	loadmem wAbilitiesActivated, 1
-	writetext ElmsLabText_AbilitiesYes
-.NoAbilities
-	promptbutton
-
-; Enabling or disabling MEGA EVOLUTION.
-	writetext ElmsLabText_AskMegas
-	yesorno
-	iftrue .YesMegas
-	loadmem wMegaEvolutionEnabled, 0
-	writetext ElmsLabText_MegasNo
-	sjump .HandledMegas
-.YesMegas
-	loadmem wMegaEvolutionEnabled, 1
-	writetext ElmsLabText_MegasYes
-.HandledMegas
-	promptbutton
-	writetext ElmsLabText_PokemonOptionsDone
-	promptbutton
-.EndOptions
-	closetext
-	turnobject PLAYER, UP
-.EndNoOptions
-	end
-
-
-; Options pertaining to CORE BATTLE ELEMENTS
-ElmsLab_ExtraCoreGameplayOptions:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .EndNoOptions
-	opentext
-	writetext ElmsLabText_AskGamePlayChanges
-	yesorno
-	iffalse .EndOptions
-
-; LEVEL CAP
-	writetext ElmsLabtext_LevelCapAsk
-	yesorno
-	iffalse .NoLevelCap
+	iftrue .LevelCap
+	writetext ElmsLabText_LevelCapNo
+	loadmem wLevelCap, 100
+	sjump .LevelCapMerge
+.LevelCap
 	loadmem wLevelCap, 9
 	writetext ElmsLabText_LevelCapYes
-.NoLevelCap
-	writetext ElmsLabtext_LevelCapNo
-.LevelCapDone
-	promptbutton
-
-; RIVAL'S STARTER CHANGES
-	writetext ElmsLabText_AskRival
+.LevelCapMerge
+	waitbutton
+	checkevent EVENT_RECEIVED_CANDY_JAR
+	iftrue .CandyJarDone
+	; Ask PLAYER about CANDY JAR
+	writetext ElmsLabText_CandyJarText
 	yesorno
-	iffalse .NoRival
-	loadmem wRivalCarriesStarter, 1
-	writetext ElmsLabText_RivalChanges
-	sjump .StartersDone
-.NoRival
-	loadmem wRivalCarriesStarter, 0
-	writetext ElmsLabText_RivalStillSame
-.StartersDone
-	promptbutton
-	
-; INVERSE MATCHUPS
-	writetext ElmsLabText_InverseAsk
-	yesorno
-	iftrue .YesInverse
-	loadmem wInverseActivated, 0
-	writetext ElmsLabText_InverseNo
-	sjump .InverseDone
-.YesInverse
-	loadmem wInverseActivated, 1
-	writetext ElmsLabtext_InverseYes
-.InverseDone
-	promptbutton
-
-; METRONOME ONLY
-	writetext ElmsLabText_MetronomeOnlyAsk
-	yesorno
-	iftrue .YesMetronome
-	loadmem wMetronomeOnly, 0
-	writetext ElmsLabText_MetronomeOnlyNo
-	sjump .MetronomeDone
-.YesMetronome
-	loadmem wMetronomeOnly, 1
-	writetext ElmsLabText_MetronomeOnlyYes 
-.MetronomeDone
-	promptbutton
-	writetext ElmsLabText_BattleOptionsDone
-	promptbutton
-.EndOptions
-	closetext
-	turnobject PLAYER, UP
-.EndNoOptions
-	end
-
-
-; Options pertaining to HELPFUL ITEMS
-ElmsLab_ExtraQualityOfLifeItems:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .EndNoOptions
-	opentext
-	writetext ElmsLabText_AskHelpfulItems
-	yesorno
-	iffalse .EndOptions
-
-; RARE CANDY OPTIONS
-	checkevent EVENT_CANDY_JAR
-	iftrue .HMItems
-	writetext ElmsLabText_CandyJarAsk
-	yesorno 
-	iffalse .NoCandyjar
-	verbosegiveitem CANDY_JAR
-	setevent EVENT_CANDY_JAR
-	sjump .CandyEvents
-.NoCandyjar
-	writetext ElmsLabText_CandyJarNo
-	promptbutton
-	checkevent EVENT_10_CANDIES
-	iftrue .ProfsRepel
-	writetext ElmsLabText_RareCandiesAsk
-	yesorno
-	iffalse .HMItems
-	verbosegiveitem RARE_CANDY, 10
-	setevent EVENT_10_CANDIES
-.CandyEvents
-	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
-	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
-	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
-	setevent EVENT_VIOLET_CITY_RARE_CANDY
-	setevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
-	setevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
-	setevent EVENT_ROUTE_27_RARE_CANDY
-	setevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
-	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
-	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
-	writetext ElmsLabText_RareCandiesDone
-
-; HM ITEMS
-.HMItems
-	checkevent EVENT_HM_ITEMS
-	iftrue .ProfsRepel
-	promptbutton
-	writetext ElmsLabText_HMItemsAsk
-	yesorno
-	iffalse .ProfsRepel
-	setevent EVENT_HM_ITEMS
-	clearevent EVENT_RECEIVED_SCYTHE
-	clearevent EVENT_RECEIVED_AIR_BALLOON
-	clearevent EVENT_RECEIVED_RAFT
-	clearevent EVENT_RECEIVED_BURLY_MAN
-	clearevent EVENT_RECEIVED_LANTERN
-	clearevent EVENT_RECEIVED_BATH_PLUG
-	clearevent EVENT_RECEIVED_LADDER
-	clearevent EVENT_RECEIVED_FART_JAR
-	clearevent EVENT_RECEIVED_HONEY_JAR
-	clearevent EVENT_RECEIVED_TREE_SHAKER
-	clearevent EVENT_RECEIVED_BIG_HAMMER
-	clearevent EVENT_RECEIVED_CANDY_JAR
-	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
-	writetext ElmsLabText_HMItemsYes
-	
-; PROF'S REPEL	
-.ProfsRepel
-	promptbutton
-	checkevent EVENT_PROFS_REPEL
-	iftrue .EndOptions
-	writetext ElmsLabText_ProfessorsRepelAsk
-	yesorno
-	iftrue .YesProfsRepel
-	writetext ElmsLabText_ProfessorsRepelNo
-	promptbutton
-	sjump .RepelDone
-.YesProfsRepel
-	setevent EVENT_PROFS_REPEL
-	verbosegiveitem PROFS_REPEL
-	writetext ElmsLabText_ProfessorsRepelYes
-	promptbutton
-.RepelDone
-	writetext ElmsLabText_HelpfulItemsDone
-	promptbutton
-.EndOptions
-	closetext
-	turnobject PLAYER, UP
-.EndNoOptions
-	end
-
-; Options pertaining to extra QoL features
-ElmsLab_ExtraQualityOfLifeSettings:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .EndNoOptions
-	opentext
-	writetext ElmsLabText_ExtraQoLAsk
-	yesorno
-	iffalse .EndOptions
-
-; QUALITY OF LIFE NPCs	
-	writetext ElmsLabText_AskAboutHelpfulNPCs
-	yesorno
-	iftrue .AskTutorLimit
-	setevent EVENT_HELPFUL_NPCS_DISABLED
-	sjump .NoTutors
-.AskTutorLimit
-	writetext ElmsLabText_AskLimitTutors
-	yesorno
-	iffalse .NoLimit
-	loadmem wTutorsLimited, 0
-	writetext ElmsLabText_LimitTutorsYes
-	promptbutton
-	sjump .NoTutors
-.NoLimit
-	loadmem wTutorsLimited, 1
-	writetext ElmsLabText_LimitTutorsNo
-	promptbutton
-.NoTutors
-	
-; SPINNER BEHAVIOUR	
-	writetext ElmsLabText_SpinnersAtAllAsk
-	yesorno
-	iftrue .DisabledOrRotators
-.YesSpinners
-	clearevent EVENT_STATIC_BOARDER_DOUGLAS
-	setevent  EVENT_REGULAR_BOARDER_DOUGLAS
-	loadmem wSpinnersOff, 0
-	writetext ElmsLabText_SpinnersRotatorsNo
-	sjump .SpinnersDone
-.DisabledOrRotators
-	writetext ElmsLabText_SpinnersRotatorsAsk
-	yesorno
-	iffalse .SpinnersOffEntirely
-	setevent EVENT_STATIC_BOARDER_DOUGLAS
-	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
-	loadmem wSpinnersOff, 1
-	writetext ElmsLabText_SpinnersRotatorsYes
-	sjump .SpinnersDone
-.SpinnersOffEntirely
-	writetext ElmsLabText_SpinnersFaceAwayAsk
-	yesorno
-	iffalse .YesSpinners
-	loadmem wSpinnersOff, 2
-	writetext ElmsLabText_SpinnersFaceAwayYes	
-.SpinnersDone
-	promptbutton
-	
-; Disable Encounters with B
-;	writetext ElmsLabText_DisableEncountersWithBAsk
-;	yesorno
-;	iffalse .NoRepel
-;	loadmem wPressBToRepel, 1
-;	writetext ElmsLabText_DisableEncountersWithBYes
-;	promptbutton
-	sjump .EndOptions
-.NoRepel
-	loadmem wPressBToRepel, 0
-	writetext ElmsLabText_DisableEncountersWithBNo
-	promptbutton
-.EndOptions
-	writetext ElmsLabText_QoLExtrasDone
-	promptbutton
-	closetext
-	turnobject PLAYER, UP
-.EndNoOptions
-	end
-
-ElmsLab_ResetSettings:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .EndNoOptions
-	opentext
-	writetext ElmsLabText_ResetOptions
-	yesorno
-	iffalse .NoOptions
-	writetext ElmsLabText_AreYouSure
-	yesorno
-	iffalse .NoOptions
-	checkevent EVENT_CANDY_JAR
 	iffalse .NoCandyJar
-	takeitem CANDY_JAR
-	clearevent EVENT_CANDY_JAR
+	writetext ElmsLabText_CandyJarTextYes1
+	waitbutton
+	verbosegiveitem CANDY_JAR
+	setevent EVENT_RECEIVED_CANDY_JAR
+	writetext ElmsLabText_CandyJarTextYes2
+	waitbutton
+	sjump .CandyJarDone
 .NoCandyJar
-	checkevent EVENT_10_CANDIES
-	iffalse .NoCandies
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	takeitem RARE_CANDY
-	clearevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
-	clearevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
-	clearevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
-	clearevent EVENT_VIOLET_CITY_RARE_CANDY
-	clearevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
-	clearevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
-	clearevent EVENT_ROUTE_27_RARE_CANDY
-	clearevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
-	clearevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
-	clearevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	writetext ElmsLabText_CandyJarTextNo
+	waitbutton
+.CandyJarDone
 	
-.NoCandies
-	checkevent EVENT_PROFS_REPEL
-	iffalse .NoProfsRepel
-	takeitem PROFS_REPEL
-.NoProfsRepel
-	checkevent EVENT_HM_ITEMS
-	iffalse .NoHMItems
-	setevent EVENT_RECEIVED_SCYTHE
-	setevent EVENT_RECEIVED_AIR_BALLOON
-	setevent EVENT_RECEIVED_RAFT
-	setevent EVENT_RECEIVED_BURLY_MAN
-	setevent EVENT_RECEIVED_LANTERN
-	setevent EVENT_RECEIVED_BATH_PLUG
-	setevent EVENT_RECEIVED_LADDER
-	setevent EVENT_RECEIVED_FART_JAR
-	setevent EVENT_RECEIVED_HONEY_JAR
-	setevent EVENT_RECEIVED_TREE_SHAKER
-	setevent EVENT_RECEIVED_BIG_HAMMER
-	clearevent EVENT_RECEIVED_CANDY_JAR
-	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
-	clearevent EVENT_HM_ITEMS
-.NoHMItems
-	loadmem wLevelCap, 100
-	loadmem wElmPokemon1, 155
-	loadmem wElmPokemon2, 158
-	loadmem wElmPokemon3, 152
-	loadmem wIsAStarter, 0
-	loadmem wIlexForestEncounters, 3
-	loadmem wRoute34Encounters, 3
-	loadmem wRoute33Encounters, 3
-	loadmem wGuaranteedHMFriendCatch, 0
-	loadmem wIsAStream, 0
-	loadmem wEvolutionsDisabled, 0
-	loadmem wAbilitiesActivated, 0
-	loadmem wMegaEvolutionEnabled, 0
-	loadmem wRivalCarriesStarter, 0
-	loadmem wInverseActivated, 0
-	loadmem wMetronomeOnly, 0
-	loadmem wTutorsLimited, 0
-	loadmem wSpinnersOff, 0
-	loadmem wPressBToRepel, 0
-	loadmem wWhichHiddenPower, 0
-	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
-	setevent EVENT_STATIC_BOARDER_DOUGLAS
-	writetext ElmsLabText_ResetOptionsYes
-	sjump .EndOptions
-.NoOptions
-	writetext ElmsLabText_ResetOptionsNo
-.EndOptions
-	promptbutton
-	closetext
-.EndNoOptions
 	end
-
-
-ElmsLabRandomizer:
-	ld a, 250
-	call RandomRange
-	inc a
-	ld [wElmPokemon1], a
-	ld a, 250
-	call RandomRange
-	inc a
-	ld [wElmPokemon2], a
-	ld a, 250
-	call RandomRange
-	inc a
-	ld [wElmPokemon3], a
-	ret
 	
-BinSkipRandomizer:
-	ld a, 250
-	call RandomRange
-	inc a
-	ld [wBinSkipPokemon], a
-	ret
+ElmsLabText_AskNuzlockeType:
+	text "Want to restrict"
+	line "your catches?"
+	done
+
+ElmsLabText_AskNuzlockeTypeYes:
+	text "Your catches will"
+	line "be restricted."
+	done
+	
+ElmsLabText_AskNuzlockeTypeNo:
+	text "You may catch"
+	line "any #MON."
+	done
+
+ElmsLabText_AskNuzlocke:
+	text "Want to play on"
+	line "NUZLOCKE MODE?"
+	done
+	
+ElmsLabText_AskNuzlockeYes:
+	text "NUZLOCKE MODE"
+	line "is activated."
+	done
+	
+ElmsLabText_AskNuzlockeNo:
+	text "NUZLOCKE MODE"
+	line "is deactivated."
+	done
+
 
 ElmsLabWalkUpToElmScript:
-	loadmem wLevelCap, 100
-	setevent EVENT_RECEIVED_SCYTHE
-	setevent EVENT_RECEIVED_AIR_BALLOON
-	setevent EVENT_RECEIVED_RAFT
-	setevent EVENT_RECEIVED_BURLY_MAN
-	setevent EVENT_RECEIVED_LANTERN
-	setevent EVENT_RECEIVED_BATH_PLUG
-	setevent EVENT_RECEIVED_LADDER
-	setevent EVENT_RECEIVED_FART_JAR
-	setevent EVENT_RECEIVED_HONEY_JAR
-	setevent EVENT_RECEIVED_TREE_SHAKER
-	setevent EVENT_RECEIVED_BIG_HAMMER
-	setevent EVENT_RECEIVED_CANDY_JAR
-	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
@@ -586,7 +120,6 @@ ElmsLabWalkUpToElmScript:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
-	promptbutton
 	sjump .MustSayYes
 
 .ElmGetsEmail:
@@ -612,12 +145,289 @@ ElmsLabWalkUpToElmScript:
 	turnobject PLAYER, UP
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement2
 	turnobject PLAYER, RIGHT
+	applymovement PLAYER, ElmsLab_PlayerFollowsElmMovement
 	opentext
-	writetext ElmText_ChooseAPokemon
+	writetext ElmText_GetOldPartyBack
+	pause 10
+	promptbutton
+	
+	setevent EVENT_HM_ITEMS
+	clearevent EVENT_RECEIVED_SCYTHE
+	clearevent EVENT_RECEIVED_AIR_BALLOON
+	clearevent EVENT_RECEIVED_RAFT
+	clearevent EVENT_RECEIVED_BURLY_MAN
+	clearevent EVENT_RECEIVED_LANTERN
+	clearevent EVENT_RECEIVED_BATH_PLUG
+	clearevent EVENT_RECEIVED_LADDER
+	clearevent EVENT_RECEIVED_FART_JAR
+	clearevent EVENT_RECEIVED_HONEY_JAR
+	clearevent EVENT_RECEIVED_TREE_SHAKER
+	clearevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	
+; PARTY SLOT 1
+	reanchormap
+	getmonname STRING_BUFFER_3, STARTERMON1
+	pokepic STARTERMON1
+	cry STARTERMON1
 	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower1
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower1
+.NoHiddenPower1
+	loadmem wIsAStarter, 0
+.HandledHiddenPower1
+	givepoke STARTERMON1, 5, NO_ITEM ; PARTY SLOT 1
+
+; PARTY SLOT 2
+	reanchormap
+	getmonname STRING_BUFFER_3, STARTERMON2
+	pokepic STARTERMON2
+	cry STARTERMON2
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower2
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower2
+.NoHiddenPower2
+	loadmem wIsAStarter, 0
+.HandledHiddenPower2
+	givepoke STARTERMON2, 5, NO_ITEM ; PARTY SLOT 2
+
+; PARTY SLOT 3
+	reanchormap
+	getmonname STRING_BUFFER_3, STARTERMON3
+	pokepic STARTERMON3
+	cry STARTERMON3
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower3
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower3
+.NoHiddenPower3
+	loadmem wIsAStarter, 0
+.HandledHiddenPower3
+	givepoke STARTERMON3, 5, BERRY ; PARTY SLOT 3
+
+; PARTY SLOT 4
+	reanchormap
+	getmonname STRING_BUFFER_3, STARTERMON4
+	pokepic STARTERMON4
+	cry STARTERMON4
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower4
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower4
+.NoHiddenPower4
+	loadmem wIsAStarter, 0
+.HandledHiddenPower4
+	givepoke STARTERMON4, 5, NO_ITEM ; PARTY SLOT 4
+	
+; PARTY SLOT 5
+	reanchormap
+	getmonname STRING_BUFFER_3, STARTERMON5
+	pokepic STARTERMON5
+	cry STARTERMON5
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower5
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower5
+.NoHiddenPower5
+	loadmem wIsAStarter, 0
+.HandledHiddenPower5
+	givepoke STARTERMON5, 5, NO_ITEM ; PARTY SLOT 5
+	
+; PARTY SLOT 6
+	reanchormap
+	getmonname STRING_BUFFER_3, STARTERMON6
+	pokepic STARTERMON6
+	cry STARTERMON6
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower6
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower6
+.NoHiddenPower6
+	loadmem wIsAStarter, 0
+.HandledHiddenPower6
+	givepoke STARTERMON6, 5, NO_ITEM ; PARTY SLOT 6
+
+
+; END OF LEADER'S PARTY
+
+	iftrue .CandyJarDone
+	writetext ElmsLabText_LevelCap
+	yesorno
+	iftrue .LevelCap
+	writetext ElmsLabText_LevelCapNo
+	loadmem wLevelCap, 100
+	sjump .LevelCapMerge
+.LevelCap
+	loadmem wLevelCap, 9
+	writetext ElmsLabText_LevelCapYes
+.LevelCapMerge
+	waitbutton
+	checkevent EVENT_RECEIVED_CANDY_JAR
+	iftrue .CandyJarDone
+	; Ask PLAYER about CANDY JAR
+	writetext ElmsLabText_CandyJarText
+	yesorno
+	iffalse .NoCandyJar
+	writetext ElmsLabText_CandyJarTextYes1
+	waitbutton
+	verbosegiveitem CANDY_JAR
+	setevent EVENT_RECEIVED_CANDY_JAR
+	writetext ElmsLabText_CandyJarTextYes2
+	waitbutton
+	sjump .CandyJarDone
+.NoCandyJar
+	writetext ElmsLabText_CandyJarTextNo
+	waitbutton
+.CandyJarDone
+
 	setscene SCENE_ELMSLAB_CANT_LEAVE
-	closetext
-	end
+	
+; Set the RIVAL's type
+	writetext ElmsLabText_RivalType 
+	waitbutton
+.MenuLoop
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	ifequal RIVAL_WATER, .WaterRival
+	ifequal RIVAL_FIRE, .FireRival
+	ifequal RIVAL_GRASS, .GrassRival
+	writetext ElmsLabText_MenuLoop
+	sjump .MenuLoop
+	
+.WaterRival
+	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	sjump ElmDirectionsScript
+
+.FireRival
+	setevent EVENT_GOT_CHIKORITA_FROM_ELM
+	sjump ElmDirectionsScript
+	
+.GrassRival
+	setevent EVENT_GOT_TOTODILE_FROM_ELM
+	sjump ElmDirectionsScript
+
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 2
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "FIRE@"
+	db "WATER@"
+	db "GRASS@"
+	
+ElmsLabText_MenuLoop:
+	text "ELM: Please tell"
+	line "me which type"
+	cont "would be hardest."
+	done
+
+ElmsLabText_NextMon:
+	text "ELM: Here's your"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+
+ElmsLabText_RivalType:
+	text "Which of these"
+	line "TYPES would be"
+	
+	para "hardest for you"
+	line "to defeat?"
+	done
+
+ElmsLabText_AskAboutHiddenPower:
+	text "Want to set type"
+	line "for HIDDEN POWER"
+	
+	para "for your"
+	line "@"
+	text_ram wStringBuffer3
+	text "?"
+	done
+
+ElmsLabText_HiddenPowerUpdated:
+	text "HIDDEN POWER"
+	line "type updated."
+	done
+
+
 
 ProfElmScript:
 	faceplayer
@@ -688,158 +498,16 @@ LabTryToLeaveScript:
 	applymovement PLAYER, ElmsLab_CantLeaveMovement
 	end
 
-CyndaquilPokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue LookAtElmPokeBallScript
-	turnobject ELMSLAB_ELM, DOWN
-	readmem wElmPreview
-	ifequal 1, .DontPreview
-	reanchormap
-	getmonname STRING_BUFFER_3, CYNDAQUIL
-	pokepic CYNDAQUIL
-	cry CYNDAQUIL
-	waitbutton
-	closepokepic
-	opentext
-	writetext TakeCyndaquilText
-	yesorno
-	iffalse DidntChooseStarterScript
-.PreviewMerge
-	disappear ELMSLAB_POKE_BALL1
-	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
-	writetext ChoseStarterText
-	promptbutton
-	waitsfx
-	readmem wElmPreview
-	ifequal 1, .DontShowName
-	writetext ReceivedStarterText
-	sjump .NameMerge
-.DontShowName
-	writetext ReceivedStarterTextNoPreview
-.NameMerge
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	promptbutton
-	givepoke CYNDAQUIL, 5, BERRY
-	closetext
-	readvar VAR_FACING
-	ifequal RIGHT, ElmDirectionsScript
-	applymovement PLAYER, AfterCyndaquilMovement
-	sjump ElmDirectionsScript
-	
-.DontPreview
-	getmonname STRING_BUFFER_3, CYNDAQUIL
-	opentext
-	writetext ElmText_TakeThisMon
-	yesorno
-	iftrue .PreviewMerge
-	sjump DidntChooseStarterScript
-
-TotodilePokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue LookAtElmPokeBallScript
-	turnobject ELMSLAB_ELM, DOWN
-	readmem wElmPreview
-	ifequal 1, .DontPreview
-	reanchormap
-	getmonname STRING_BUFFER_3, TOTODILE
-	pokepic TOTODILE
-	cry TOTODILE
-	waitbutton
-	closepokepic
-	opentext
-	writetext TakeTotodileText
-	yesorno
-	iffalse DidntChooseStarterScript
-.PreviewMerge
-	disappear ELMSLAB_POKE_BALL2
-	setevent EVENT_GOT_TOTODILE_FROM_ELM
-	writetext ChoseStarterText
-	promptbutton
-	waitsfx
-	readmem wElmPreview
-	ifequal 1, .DontShowName
-	writetext ReceivedStarterText
-	sjump .NameMerge
-.DontShowName
-	writetext ReceivedStarterTextNoPreview
-.NameMerge
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	promptbutton
-	givepoke TOTODILE, 5, BERRY
-	closetext
-	applymovement PLAYER, AfterTotodileMovement
-	sjump ElmDirectionsScript
-	
-.DontPreview
-	getmonname STRING_BUFFER_3, TOTODILE
-	opentext
-	writetext ElmText_TakeThisMon
-	yesorno
-	iftrue .PreviewMerge
-	sjump DidntChooseStarterScript
-
-ChikoritaPokeBallScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue LookAtElmPokeBallScript
-	turnobject ELMSLAB_ELM, DOWN
-	readmem wElmPreview
-	ifequal 1, .DontPreview
-	reanchormap
-	getmonname STRING_BUFFER_3, CHIKORITA
-	pokepic CHIKORITA
-	cry CHIKORITA
-	waitbutton
-	closepokepic
-	opentext
-	writetext TakeChikoritaText
-	yesorno
-	iffalse DidntChooseStarterScript
-.PreviewMerge
-	disappear ELMSLAB_POKE_BALL3
-	setevent EVENT_GOT_CHIKORITA_FROM_ELM
-	writetext ChoseStarterText
-	promptbutton
-	waitsfx
-	readmem wElmPreview
-	ifequal 1, .DontShowName
-	writetext ReceivedStarterText
-	sjump .NameMerge
-.DontShowName
-	writetext ReceivedStarterTextNoPreview
-.NameMerge
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	promptbutton
-	givepoke CHIKORITA, 5, BERRY
-	closetext
-	applymovement PLAYER, AfterChikoritaMovement
-	sjump ElmDirectionsScript
-
-.DontPreview
-	getmonname STRING_BUFFER_3, CHIKORITA
-	opentext
-	writetext ElmText_TakeThisMon
-	yesorno
-	iftrue .PreviewMerge
-	sjump DidntChooseStarterScript
-	
-	
-ElmText_TakeThisMon:
-	text "So you like the"
-	line "look of this one?"
+ElmsLabText_FaceMoreOfThatType:
+	text "You may face more"
+	line "of that type of"
+	cont "#MON."
 	done
 
-DidntChooseStarterScript:
-	writetext DidntChooseStarterText
-	waitbutton
-	closetext
-	end
-
 ElmDirectionsScript:
-	turnobject PLAYER, UP
 	opentext
+	writetext ElmsLabText_FaceMoreOfThatType
+	promptbutton
 	writetext ElmDirectionsText1
 	waitbutton
 	closetext
@@ -860,8 +528,6 @@ ElmDirectionsScript:
 	writetext ElmDirectionsText3
 	waitbutton
 	closetext
-	loadmem wEggMovesLeft, 4
-	loadmem wGen1MovesLeft, 4
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
@@ -1071,6 +737,47 @@ AideScript_GivePotion:
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
 	end
+	
+ElmsLabText_CandyJarText:
+	text "Receive the"
+	line "CANDY JAR?"
+	done
+	
+ElmsLabText_CandyJarTextNo:
+	text "I'll hold onto"
+	line "this then."
+	done
+	
+ElmsLabText_CandyJarTextYes1:
+	text "There you go!"
+	line "It's yours."
+	done
+	
+ElmsLabText_CandyJarTextYes2:
+	text "It works like a"
+	line "RARE CANDY but"
+	cont "with unlimited"
+	cont "uses."
+	done
+
+
+
+ElmsLabText_LevelCap:
+	text "Play with a"
+	line "LEVEL CAP?"
+	done
+
+ElmsLabText_LevelCapNo:
+	text "LEVEL CAP"
+	line "removed."
+	done
+
+ElmsLabExtraOptions:
+	opentext
+	writetext ElmsLabText_OptionsMoved
+	waitbutton
+	closetext
+	end
 
 AideScript_WalkBalls1:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight1
@@ -1097,10 +804,6 @@ AideScript_GiveYouBalls:
 	promptbutton
 	itemnotify
 	closetext
-	readmem wLevelCap
-	ifgreater 9, .skipLevelCap
-	loadmem wLevelCap, 9
-.skipLevelCap
 	setscene SCENE_ELMSLAB_NOOP
 	end
 
@@ -1192,222 +895,10 @@ ElmsLabTravelTip4:
 	jumptext ElmsLabTravelTip4Text
 
 ElmsLabTrashcan:
-	opentext 
-	writetext ElmsLabTrashcanText
-	waitbutton
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .end
-	writetext ElmsLabShortcutText
-	yesorno
-	iftrue .shortcut
-	writetext ElmsLabNoShortcutText
-	waitbutton
-	getmonname STRING_BUFFER_3, VOLTORB
-	reanchormap
-	pokepic VOLTORB
-	cry VOLTORB
-	waitbutton
-	closepokepic
-	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
-	writetext ChoseStarterText2
-	promptbutton
-	waitsfx
-	opentext
-	writetext ReceivedStarterTextNoPreview
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	promptbutton
-	givepoke VOLTORB, 5, BERRY
-	closetext
-	applymovement PLAYER, AfterVoltorbMovement
-	sjump ElmDirectionsScript
-		
-.shortcut
-	waitbutton
-	callasm BinSkipRandomizer
-	givepoke MEWTWO, 100, MYSTERYBERRY
-	setflag ENGINE_MINERALBADGE
-	setflag ENGINE_HIVEBADGE
-	setflag ENGINE_PLAINBADGE
-	setflag ENGINE_ZEPHYRBADGE
-	setflag ENGINE_GLACIERBADGE
-	setflag ENGINE_RISINGBADGE
-	setflag ENGINE_STORMBADGE
-	setflag ENGINE_FOGBADGE
-	setevent EVENT_FOUGHT_SUDOWOODO
-	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
-	setevent EVENT_BEAT_FALKNER
-	setevent EVENT_BEAT_BUGSY
-	setevent EVENT_BEAT_WHITNEY
-	setevent EVENT_BEAT_MORTY
-	setevent EVENT_BEAT_CLAIR
-	setevent EVENT_BEAT_PRYCE
-	setevent EVENT_BEAT_JASMINE
-	setevent EVENT_BEAT_CHUCK
-	giveitem TM_DYNAMICPUNCH ; bf
-	giveitem TM_HEADBUTT     ; c0
-	giveitem TM_CURSE        ; c1
-	giveitem TM_ROLLOUT      ; c2
-	giveitem TM_ROAR         ; c4
-	giveitem TM_TOXIC        ; c5
-	giveitem TM_ZAP_CANNON   ; c6
-	giveitem TM_ROCK_SMASH   ; c7
-	giveitem TM_PSYCH_UP     ; c8
-	giveitem TM_HIDDEN_POWER ; c9
-	giveitem TM_SUNNY_DAY    ; ca
-	giveitem TM_SWEET_SCENT  ; cb
-	giveitem TM_SNORE        ; cc
-	giveitem TM_BLIZZARD     ; cd
-	giveitem TM_HYPER_BEAM   ; ce
-	giveitem TM_ICY_WIND     ; cf
-	giveitem TM_PROTECT      ; d0
-	giveitem TM_RAIN_DANCE   ; d1
-	giveitem TM_GIGA_DRAIN   ; d2
-	giveitem TM_ENDURE       ; d3
-	giveitem TM_FRUSTRATION  ; d4
-	giveitem TM_SOLARBEAM    ; d5
-	giveitem TM_IRON_TAIL    ; d6
-	giveitem TM_DRAGONBREATH ; d7
-	giveitem TM_THUNDER      ; d8
-	giveitem TM_EARTHQUAKE   ; d9
-	giveitem TM_RETURN       ; da
-	giveitem TM_DIG          ; db
-	giveitem TM_PSYCHIC_M    ; dd
-	giveitem TM_SHADOW_BALL  ; de
-	giveitem TM_MUD_SLAP     ; df
-	giveitem TM_DOUBLE_TEAM  ; e0
-	giveitem TM_ICE_PUNCH    ; e1
-	giveitem TM_SWAGGER      ; e2
-	giveitem TM_SLEEP_TALK   ; e3
-	giveitem TM_SLUDGE_BOMB  ; e4
-	giveitem TM_SANDSTORM    ; e5
-	giveitem TM_FIRE_BLAST   ; e6
-	giveitem TM_SWIFT        ; e7
-	giveitem TM_DEFENSE_CURL ; e8
-	giveitem TM_THUNDERPUNCH ; e9
-	giveitem TM_DREAM_EATER  ; ea
-	giveitem TM_DETECT       ; eb
-	giveitem TM_REST         ; ec
-	giveitem TM_ATTRACT      ; ed
-	giveitem TM_THIEF        ; ee
-	giveitem TM_STEEL_WING   ; ef
-	giveitem TM_FIRE_PUNCH   ; f0
-	giveitem TM_FURY_CUTTER  ; f1
-	giveitem TM_NIGHTMARE    ; f2
-	giveitem HM_CUT
-	giveitem HM_FLASH
-	giveitem HM_STRENGTH
-	giveitem HM_SURF
-	giveitem HM_FLY
-	giveitem HM_WHIRLPOOL
-	giveitem HM_WATERFALL
-	closetext
-	setevent EVENT_OPENED_MT_SILVER
-	clearevent EVENT_RED_IN_MT_SILVER
-	warp SILVER_CAVE_ROOM_3, 9, 11
-	end
-.end
-	closetext
-	end
+	jumptext ElmsLabTrashcanText
 
-ElmsLabNoShortcutText:
-	text "Okay, then. You"
-	line "asked for this..."
-	done
-	
-ElmsLabShortcutText:
-	text "Time to take"
-	line "a shortcut?"
-	done
-	
 ElmsLabPC:
 	jumptext ElmsLabPCText
-	
-ElmsLabRandomizeStarters:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .End
-	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
-	setevent EVENT_STATIC_BOARDER_DOUGLAS
-	opentext
-	writetext ElmsLab_RandomizeStartersAsk
-	yesorno
-	iffalse .NoRandom
-	callasm ElmsLabRandomizer
-	writetext ElmsLab_RandomizerYes
-	waitbutton
-	writetext ElmsLab_RandomizerHide
-	yesorno
-	iffalse .YesPreview
-	loadmem wElmPreview, 1
-	writetext ElmsLabText_PreviewDisabled
-	sjump .PreviewMerge
-.YesPreview
-	writetext ElmsLabText_PreviewEnabled
-.PreviewMerge
-	waitbutton
-	writetext ElmsLabText_AskAboutHiddenPower
-	yesorno
-	iffalse .NoHiddenPower
-	special SetHiddenPower
-	writetext ElmsLabText_HiddenPowerUpdated
-	waitbutton
-	sjump .HandledHiddenPower
-.NoHiddenPower
-	loadmem wIsAStarter, 0
-.HandledHiddenPower
-; Check to see if MON should Evolve
-	writetext ElmsLabText_EvolutionsAsk
-	yesorno
-	iftrue .KeepEvolutions
-	loadmem wEvolutionsDisabled, 1
-	writetext ElmsLabText_EvolutionsNo
-	waitbutton
-	sjump .HandledEvolutions
-.KeepEvolutions
-	loadmem wEvolutionsDisabled, 0
-	writetext ElmsLabText_EvolutionsYes
-	waitbutton
-.HandledEvolutions
-	writetext ElmsLabText_AskRival
-	yesorno
-	iffalse .NoRival
-	loadmem wRivalCarriesStarter, 1
-	writetext ElmsLabText_RivalChanges
-	waitbutton
-	sjump .StartersDone
-.NoRival
-	loadmem wRivalCarriesStarter, 0
-	writetext ElmsLabText_RivalStillSame
-	waitbutton
-.StartersDone
-	writetext ElmsLabChooseStartersYesText
-	sjump .Merge	
-.NoRandom
-	writetext ElmsLab_RandomizerNo
-	waitbutton
-.Merge
-	writetext ElmsLabText_AskAboutHMFriends
-	yesorno
-	iffalse .NoHMFriends
-	loadmem wIlexForestEncounters, 0
-	loadmem wRoute34Encounters, 0
-	loadmem wGuaranteedHMFriendCatch, 1
-	writetext ElmsLabText_AskAboutHMFriendsYes
-	sjump .DoneHMFriends
-.NoHMFriends
-	writetext ElmsLabText_AskAboutHMFriendsNo
-	loadmem wIlexForestEncounters, 3
-	loadmem wRoute34Encounters, 3
-	loadmem wGuaranteedHMFriendCatch, 0
-.DoneHMFriends
-	waitbutton
-	closetext
-	turnobject PLAYER, UP
-.End
-	end
-
-
-	
 
 ElmsLabTrashcan2: ; unreferenced
 	jumpstd TrashCanScript
@@ -1509,6 +1000,11 @@ ElmsLab_ElmToDefaultPositionMovement2:
 	turn_head DOWN
 	step_end
 
+ElmsLab_PlayerFollowsElmMovement:
+	step RIGHT
+	step UP
+	step_end
+
 AfterCyndaquilMovement:
 	step LEFT
 	step UP
@@ -1522,8 +1018,6 @@ AfterTotodileMovement:
 	turn_head UP
 	step_end
 
-AfterVoltorbMovement:
-	step LEFT
 AfterChikoritaMovement:
 	step LEFT
 	step LEFT
@@ -1536,9 +1030,30 @@ ElmText_Intro:
 	text "ELM: <PLAY_G>!"
 	line "There you are!"
 
-	para "I needed to ask"
-	line "you a favor."
-
+	para "The #MON"
+	line "LEAGUE has a very"
+	
+	para "special challenge"
+	line "for you."
+	
+	para "You have been"
+	line "selected to trial"
+	
+	para "a GYM LEADER's"
+	line "team."
+	
+	para "The LEAGUE wants"
+	line "a novice trainer"
+	
+	para "to test their own"
+	line "abilities with a"
+	
+	para "team a GYM LEADER"
+	line "finds strong."
+	
+	para "As for me? I'm"
+	line "PROFESSOR ELM."
+	
 	para "I'm conducting new"
 	line "#MON research"
 
@@ -1547,8 +1062,11 @@ ElmText_Intro:
 
 	para "could help me with"
 	line "it, <PLAY_G>."
+	
+	para "I know you are"
+	line "on a task,"
 
-	para "You see…"
+	para "but, you see…"
 
 	para "I'm writing a"
 	line "paper that I want"
@@ -1565,10 +1083,10 @@ ElmText_Intro:
 	para "So!"
 
 	para "I'd like you to"
-	line "raise a #MON"
+	line "raise a copy of"
 
-	para "that I recently"
-	line "caught."
+	para "the GYM TEAM"
+	line "from LEVEL 5."
 	done
 
 ElmText_Accepted:
@@ -1640,18 +1158,9 @@ ElmText_MissionFromMrPokemon:
 	line "go in our place?"
 	done
 
-ElmText_ChooseAPokemon:
-	text "I want you to"
-	line "raise one of the"
-
-	para "#MON contained"
-	line "in these BALLS."
-
-	para "You'll be that"
-	line "#MON's first"
-	cont "partner, <PLAY_G>!"
-
-	para "Go on. Pick one!"
+ElmText_GetOldPartyBack:
+	text "Here is the"
+	line "LEADER'S PARTY."
 	done
 
 ElmText_LetYourMonBattleIt:
@@ -1659,6 +1168,29 @@ ElmText_LetYourMonBattleIt:
 	line "appears, let your"
 	cont "#MON battle it!"
 	done
+
+ElmsLabChooseStartersAskText:
+	text "Update STARTER"
+	line "#MON?"
+	done
+
+ElmsLabText_AskChikorita:
+	text "Want to change"
+	line "CHIKORITA?"
+	done
+	
+ElmsLabText_AskCyndaquil:
+	text "Want to change"
+	line "CYNDAQUIL?"
+	done
+
+ElmsLabText_AskTotodile:
+	text "Want to change"
+	line "TOTODILE?"
+	done
+
+
+
 
 LabWhereGoingText:
 	text "ELM: Wait! Where"
@@ -1700,17 +1232,16 @@ ChoseStarterText:
 	cont "#MON too!"
 	done
 
-ChoseStarterText2:
-	text "ELM: Oh, oh no."
-	line "That's not a"
-	cont "good #MON!"
-	done
-
 ReceivedStarterText:
 	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer3
 	text "!"
+	done
+
+ReceivedStarterTextNoPreview:
+	text "<PLAYER> received"
+	line "a #MON."
 	done
 
 ElmDirectionsText1:
@@ -2177,20 +1708,411 @@ ElmsLabTrashcanText:
 	line "the snack PROF.ELM"
 	cont "ate is in there…"
 	done
-
-ElmsLabPCText:
-	text "OBSERVATIONS ON"
-	line "#MON EVOLUTION"
-
-	para "…It says on the"
-	line "screen…"
-	done
-
-ElmsLabExtraOptions:
+	
+; Options pertaining to the POKÉMON
+ElmsLab_ExtraPokemonOptions:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
 	opentext
-	writetext ElmsLabText_OptionsMoved
-	waitbutton
+	writetext ElmsLabText_AskExtraOptionsForYourMon
+	yesorno
+	iffalse .EndOptions
+
+; Custom HIDDEN POWER DVs
+	writetext ElmsLabText_AlterHiddenPower
+	yesorno
+	iffalse .NoAltering
+	special SetHiddenPower
+	special AlteredHiddenPower
+	writetext ElmsLabText_AlteredHiddenPower
+	sjump .Merge
+.NoAltering
+	writetext ElmsLabText_NoAlteredHiddenPower
+.Merge
+	promptbutton
+	
+; Enable LEGENDS ARCEUS HIDDEN POWER
+	writetext ElmsLabText_PLAHiddenPowerAsk
+	yesorno 
+	iffalse .NoPLAHiddenPower
+	loadmem wWhichHiddenPower, 1
+	writetext ElmsLabText_PLAHiddenPowerYes
+	promptbutton
+.NoPLAHiddenPower
+
+; Enabling or disabling EVOLUTIONS.
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	sjump .HandledEvolutions
+.KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
+	writetext ElmsLabText_EvolutionsYes
+.HandledEvolutions
+	promptbutton
+	
+; Enabling or disabling ABILITIES.
+	writetext ElmsLabText_AbilitiesAsk
+	yesorno
+	iftrue .AbilitiesYes
+	loadmem wAbilitiesActivated, 0
+	writetext ElmsLabText_AbilitiesNo
+	sjump .NoAbilities
+.AbilitiesYes
+	loadmem wAbilitiesActivated, 1
+	writetext ElmsLabText_AbilitiesYes
+.NoAbilities
+	promptbutton
+
+; Enabling or disabling MEGA EVOLUTION.
+	writetext ElmsLabText_AskMegas
+	yesorno
+	iftrue .YesMegas
+	loadmem wMegaEvolutionEnabled, 0
+	writetext ElmsLabText_MegasNo
+	sjump .HandledMegas
+.YesMegas
+	loadmem wMegaEvolutionEnabled, 1
+	writetext ElmsLabText_MegasYes
+.HandledMegas
+	promptbutton
+	writetext ElmsLabText_PokemonOptionsDone
+	promptbutton
+.EndOptions
 	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+
+; Options pertaining to CORE BATTLE ELEMENTS
+ElmsLab_ExtraCoreGameplayOptions:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
+	writetext ElmsLabText_AskGamePlayChanges
+	yesorno
+	iffalse .EndOptions
+
+; LEVEL CAP
+	writetext ElmsLabtext_LevelCapAsk
+	yesorno
+	iffalse .NoLevelCap
+	loadmem wLevelCap, 9
+	writetext ElmsLabText_LevelCapYes
+.NoLevelCap
+	writetext ElmsLabtext_LevelCapNo
+.LevelCapDone
+	promptbutton
+
+; RIVAL'S STARTER CHANGES
+	writetext ElmsLabText_AskRival
+	yesorno
+	iffalse .NoRival
+	loadmem wRivalCarriesStarter, 1
+	writetext ElmsLabText_RivalChanges
+	sjump .StartersDone
+.NoRival
+	loadmem wRivalCarriesStarter, 0
+	writetext ElmsLabText_RivalStillSame
+.StartersDone
+	promptbutton
+	
+; INVERSE MATCHUPS
+	writetext ElmsLabText_InverseAsk
+	yesorno
+	iftrue .YesInverse
+	loadmem wInverseActivated, 0
+	writetext ElmsLabText_InverseNo
+	sjump .InverseDone
+.YesInverse
+	loadmem wInverseActivated, 1
+	writetext ElmsLabtext_InverseYes
+.InverseDone
+	promptbutton
+
+; METRONOME ONLY
+	writetext ElmsLabText_MetronomeOnlyAsk
+	yesorno
+	iftrue .YesMetronome
+	loadmem wMetronomeOnly, 0
+	writetext ElmsLabText_MetronomeOnlyNo
+	sjump .MetronomeDone
+.YesMetronome
+	loadmem wMetronomeOnly, 1
+	writetext ElmsLabText_MetronomeOnlyYes 
+.MetronomeDone
+	promptbutton
+	writetext ElmsLabText_BattleOptionsDone
+	promptbutton
+.EndOptions
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+
+; Options pertaining to HELPFUL ITEMS
+ElmsLab_ExtraQualityOfLifeItems:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
+	writetext ElmsLabText_AskHelpfulItems
+	yesorno
+	iffalse .EndOptions
+
+; RARE CANDY OPTIONS
+	checkevent EVENT_CANDY_JAR
+	iftrue .HMItems
+	writetext ElmsLabText_CandyJarAsk
+	yesorno 
+	iffalse .NoCandyjar
+	verbosegiveitem CANDY_JAR
+	setevent EVENT_CANDY_JAR
+	sjump .CandyEvents
+.NoCandyjar
+	writetext ElmsLabText_CandyJarNo
+	promptbutton
+	checkevent EVENT_10_CANDIES
+	iftrue .ProfsRepel
+	writetext ElmsLabText_RareCandiesAsk
+	yesorno
+	iffalse .HMItems
+	verbosegiveitem RARE_CANDY, 10
+	setevent EVENT_10_CANDIES
+.CandyEvents
+	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
+	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
+	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
+	setevent EVENT_VIOLET_CITY_RARE_CANDY
+	setevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
+	setevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
+	setevent EVENT_ROUTE_27_RARE_CANDY
+	setevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
+	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
+	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	writetext ElmsLabText_RareCandiesDone
+
+; HM ITEMS
+.HMItems
+	checkevent EVENT_HM_ITEMS
+	iftrue .ProfsRepel
+	promptbutton
+	writetext ElmsLabText_HMItemsAsk
+	yesorno
+	iffalse .ProfsRepel
+	setevent EVENT_HM_ITEMS
+	clearevent EVENT_RECEIVED_SCYTHE
+	clearevent EVENT_RECEIVED_AIR_BALLOON
+	clearevent EVENT_RECEIVED_RAFT
+	clearevent EVENT_RECEIVED_BURLY_MAN
+	clearevent EVENT_RECEIVED_LANTERN
+	clearevent EVENT_RECEIVED_BATH_PLUG
+	clearevent EVENT_RECEIVED_LADDER
+	clearevent EVENT_RECEIVED_FART_JAR
+	clearevent EVENT_RECEIVED_HONEY_JAR
+	clearevent EVENT_RECEIVED_TREE_SHAKER
+	clearevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	writetext ElmsLabText_HMItemsYes
+	
+; PROF'S REPEL	
+.ProfsRepel
+	promptbutton
+	checkevent EVENT_PROFS_REPEL
+	iftrue .EndOptions
+	writetext ElmsLabText_ProfessorsRepelAsk
+	yesorno
+	iftrue .YesProfsRepel
+	writetext ElmsLabText_ProfessorsRepelNo
+	promptbutton
+	sjump .RepelDone
+.YesProfsRepel
+	setevent EVENT_PROFS_REPEL
+	verbosegiveitem PROFS_REPEL
+	writetext ElmsLabText_ProfessorsRepelYes
+	promptbutton
+.RepelDone
+	writetext ElmsLabText_HelpfulItemsDone
+	promptbutton
+.EndOptions
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+; Options pertaining to extra QoL features
+ElmsLab_ExtraQualityOfLifeSettings:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
+	writetext ElmsLabText_ExtraQoLAsk
+	yesorno
+	iffalse .EndOptions
+
+; QUALITY OF LIFE NPCs	
+	writetext ElmsLabText_AskAboutHelpfulNPCs
+	yesorno
+	iftrue .AskTutorLimit
+	setevent EVENT_HELPFUL_NPCS_DISABLED
+	sjump .NoTutors
+.AskTutorLimit
+	writetext ElmsLabText_AskLimitTutors
+	yesorno
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	promptbutton
+	sjump .NoTutors
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+	promptbutton
+.NoTutors
+	
+; SPINNER BEHAVIOUR	
+	writetext ElmsLabText_SpinnersAtAllAsk
+	yesorno
+	iftrue .DisabledOrRotators
+.YesSpinners
+	clearevent EVENT_STATIC_BOARDER_DOUGLAS
+	setevent  EVENT_REGULAR_BOARDER_DOUGLAS
+	loadmem wSpinnersOff, 0
+	writetext ElmsLabText_SpinnersRotatorsNo
+	sjump .SpinnersDone
+.DisabledOrRotators
+	writetext ElmsLabText_SpinnersRotatorsAsk
+	yesorno
+	iffalse .SpinnersOffEntirely
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	loadmem wSpinnersOff, 1
+	writetext ElmsLabText_SpinnersRotatorsYes
+	sjump .SpinnersDone
+.SpinnersOffEntirely
+	writetext ElmsLabText_SpinnersFaceAwayAsk
+	yesorno
+	iffalse .YesSpinners
+	loadmem wSpinnersOff, 2
+	writetext ElmsLabText_SpinnersFaceAwayYes	
+.SpinnersDone
+	promptbutton
+	
+; Disable Encounters with B
+;	writetext ElmsLabText_DisableEncountersWithBAsk
+;	yesorno
+;	iffalse .NoRepel
+;	loadmem wPressBToRepel, 1
+;	writetext ElmsLabText_DisableEncountersWithBYes
+;	promptbutton
+	sjump .EndOptions
+.NoRepel
+	loadmem wPressBToRepel, 0
+	writetext ElmsLabText_DisableEncountersWithBNo
+	promptbutton
+.EndOptions
+	writetext ElmsLabText_QoLExtrasDone
+	promptbutton
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+ElmsLab_ResetSettings:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
+	writetext ElmsLabText_ResetOptions
+	yesorno
+	iffalse .NoOptions
+	writetext ElmsLabText_AreYouSure
+	yesorno
+	iffalse .NoOptions
+	checkevent EVENT_CANDY_JAR
+	iffalse .NoCandyJar
+	takeitem CANDY_JAR
+	clearevent EVENT_CANDY_JAR
+.NoCandyJar
+	checkevent EVENT_10_CANDIES
+	iffalse .NoCandies
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	clearevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
+	clearevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
+	clearevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
+	clearevent EVENT_VIOLET_CITY_RARE_CANDY
+	clearevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
+	clearevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
+	clearevent EVENT_ROUTE_27_RARE_CANDY
+	clearevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
+	clearevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
+	clearevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	
+.NoCandies
+	checkevent EVENT_PROFS_REPEL
+	iffalse .NoProfsRepel
+	takeitem PROFS_REPEL
+.NoProfsRepel
+	checkevent EVENT_HM_ITEMS
+	iffalse .NoHMItems
+	setevent EVENT_RECEIVED_SCYTHE
+	setevent EVENT_RECEIVED_AIR_BALLOON
+	setevent EVENT_RECEIVED_RAFT
+	setevent EVENT_RECEIVED_BURLY_MAN
+	setevent EVENT_RECEIVED_LANTERN
+	setevent EVENT_RECEIVED_BATH_PLUG
+	setevent EVENT_RECEIVED_LADDER
+	setevent EVENT_RECEIVED_FART_JAR
+	setevent EVENT_RECEIVED_HONEY_JAR
+	setevent EVENT_RECEIVED_TREE_SHAKER
+	setevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	clearevent EVENT_HM_ITEMS
+.NoHMItems
+	loadmem wLevelCap, 100
+	loadmem wElmPokemon1, 155
+	loadmem wElmPokemon2, 158
+	loadmem wElmPokemon3, 152
+	loadmem wIsAStarter, 0
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+	loadmem wIsAStream, 0
+	loadmem wEvolutionsDisabled, 0
+	loadmem wAbilitiesActivated, 0
+	loadmem wMegaEvolutionEnabled, 0
+	loadmem wRivalCarriesStarter, 0
+	loadmem wInverseActivated, 0
+	loadmem wMetronomeOnly, 0
+	loadmem wTutorsLimited, 0
+	loadmem wSpinnersOff, 0
+	loadmem wPressBToRepel, 0
+	loadmem wWhichHiddenPower, 0
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
+	writetext ElmsLabText_ResetOptionsYes
+	sjump .EndOptions
+.NoOptions
+	writetext ElmsLabText_ResetOptionsNo
+.EndOptions
+	promptbutton
+	closetext
+.EndNoOptions
 	end
 	
 ElmsLabText_OptionsMoved:
@@ -2619,27 +2541,6 @@ ElmsLabText_RivalStillSame:
 	line "stay unchanged."
 	done
 	
-ElmsLabText_AskAboutHiddenPower:
-	text "Want to set type"
-	line "for HIDDEN POWER?"
-	done
-	
-ElmsLabText_HiddenPowerUpdated:
-	text "HIDDEN POWER"
-	line "type updated."
-	done
-	
-ReceivedStarterTextNoPreview:
-	text "<PLAYER> received"
-	line "a #MON."
-	done
-
-
-ElmsLabChooseStartersAskText:
-	text "Update STARTER"
-	line "#MON?"
-	done
-	
 ElmsLabChooseStartersYesText:
 	text "STARTERS updated."
 	line "Have fun...."
@@ -2648,21 +2549,6 @@ ElmsLabChooseStartersYesText:
 ElmsLabChooseStartersNoText:
 	text "Starters remain"
 	line "same as before."
-	done
-	
-ElmsLabText_AskChikorita:
-	text "Want to change"
-	line "CHIKORITA?"
-	done
-	
-ElmsLabText_AskCyndaquil:
-	text "Want to change"
-	line "CYNDAQUIL?"
-	done
-
-ElmsLabText_AskTotodile:
-	text "Want to change"
-	line "TOTODILE?"
 	done
 	
 ElmsLabText_PreviewEnabled:
@@ -2743,6 +2629,13 @@ ElmsLabText_ResetOptionsNo:
 	cont "EXTRA OPTIONS."
 	done
 
+ElmsLabPCText:
+	text "OBSERVATIONS ON"
+	line "#MON EVOLUTION"
+
+	para "…It says on the"
+	line "screen…"
+	done
 
 ElmsLab_MapEvents:
 	db 0, 0 ; filler
@@ -2778,7 +2671,6 @@ ElmsLab_MapEvents:
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
-	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
 	bg_event  1,  2, BGEVENT_READ, ElmsLabExtraOptions
 	bg_event  0,  2, BGEVENT_READ, ElmsLab_ResetSettings
@@ -2786,11 +2678,11 @@ ElmsLab_MapEvents:
 	bg_event  7,  6, BGEVENT_READ, ElmsLab_ExtraQualityOfLifeItems
 	bg_event  8,  6, BGEVENT_READ, ElmsLab_ExtraQualityOfLifeSettings
 	bg_event  9,  6, BGEVENT_READ, ElmsLab_ExtraCoreGameplayOptions
-	
+
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
-	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
-	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LookAtElmPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
+	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LookAtElmPokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LookAtElmPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
