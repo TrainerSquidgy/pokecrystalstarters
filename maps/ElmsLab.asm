@@ -169,9 +169,9 @@ ElmsLabWalkUpToElmScript:
 	
 ; PARTY SLOT 1
 	reanchormap
-	getmonname STRING_BUFFER_3, ESPEON
-	pokepic ESPEON
-	cry ESPEON
+	getmonname STRING_BUFFER_3, MAGCARGO
+	pokepic MAGCARGO
+	cry MAGCARGO
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -190,13 +190,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower1
 	loadmem wIsAStarter, 0
 .HandledHiddenPower1
-	givepoke ESPEON, 5, NO_ITEM ; PARTY SLOT 1
+	givepoke MAGCARGO, 5, NO_ITEM ; PARTY SLOT 1
 
 ; PARTY SLOT 2
 	reanchormap
-	getmonname STRING_BUFFER_3, MR__MIME
-	pokepic MR__MIME
-	cry MR__MIME
+	getmonname STRING_BUFFER_3, MAGMAR
+	pokepic MAGMAR
+	cry MAGMAR
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -215,13 +215,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower2
 	loadmem wIsAStarter, 0
 .HandledHiddenPower2
-	givepoke MR__MIME, 5, NO_ITEM ; PARTY SLOT 2
+	givepoke MAGMAR, 5, NO_ITEM ; PARTY SLOT 2
 
 ; PARTY SLOT 3
 	reanchormap
-	getmonname STRING_BUFFER_3, ALAKAZAM
-	pokepic ALAKAZAM
-	cry ALAKAZAM
+	getmonname STRING_BUFFER_3, RAPIDASH
+	pokepic RAPIDASH
+	cry RAPIDASH
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -240,7 +240,9 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower3
 	loadmem wIsAStarter, 0
 .HandledHiddenPower3
-	givepoke ALAKAZAM, 5, BERRY ; PARTY SLOT 3
+	givepoke RAPIDASH, 5, BERRY ; PARTY SLOT 3
+
+; END OF LEADER'S PARTY
 
 	iftrue .CandyJarDone
 	writetext ElmsLabText_LevelCap
