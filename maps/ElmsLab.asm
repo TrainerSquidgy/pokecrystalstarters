@@ -169,9 +169,9 @@ ElmsLabWalkUpToElmScript:
 	
 ; PARTY SLOT 1
 	reanchormap
-	getmonname STRING_BUFFER_3, STARTERMON1
-	pokepic STARTERMON1
-	cry STARTERMON1
+	getmonname STRING_BUFFER_3, GRAVELER
+	pokepic GRAVELER
+	cry GRAVELER
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -190,13 +190,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower1
 	loadmem wIsAStarter, 0
 .HandledHiddenPower1
-	givepoke STARTERMON1, 5, NO_ITEM ; PARTY SLOT 1
+	givepoke GRAVELER, 5, NO_ITEM ; PARTY SLOT 1
 
 ; PARTY SLOT 2
 	reanchormap
-	getmonname STRING_BUFFER_3, STARTERMON2
-	pokepic STARTERMON2
-	cry STARTERMON2
+	getmonname STRING_BUFFER_3, ONIX
+	pokepic ONIX
+	cry ONIX
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -215,13 +215,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower2
 	loadmem wIsAStarter, 0
 .HandledHiddenPower2
-	givepoke STARTERMON2, 5, NO_ITEM ; PARTY SLOT 2
+	givepoke ONIX, 5, NO_ITEM ; PARTY SLOT 2
 
 ; PARTY SLOT 3
 	reanchormap
-	getmonname STRING_BUFFER_3, STARTERMON3
-	pokepic STARTERMON3
-	cry STARTERMON3
+	getmonname STRING_BUFFER_3, RHYHORN
+	pokepic RHYHORN
+	cry RHYHORN
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -240,13 +240,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower3
 	loadmem wIsAStarter, 0
 .HandledHiddenPower3
-	givepoke STARTERMON3, 5, BERRY ; PARTY SLOT 3
+	givepoke RHYHORN, 5, BERRY ; PARTY SLOT 3
 
 ; PARTY SLOT 4
 	reanchormap
-	getmonname STRING_BUFFER_3, STARTERMON4
-	pokepic STARTERMON4
-	cry STARTERMON4
+	getmonname STRING_BUFFER_3, KABUTOPS
+	pokepic KABUTOPS
+	cry KABUTOPS
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -265,13 +265,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower4
 	loadmem wIsAStarter, 0
 .HandledHiddenPower4
-	givepoke STARTERMON4, 5, NO_ITEM ; PARTY SLOT 4
+	givepoke KABUTOPS, 5, NO_ITEM ; PARTY SLOT 4
 	
 ; PARTY SLOT 5
 	reanchormap
-	getmonname STRING_BUFFER_3, STARTERMON5
-	pokepic STARTERMON5
-	cry STARTERMON5
+	getmonname STRING_BUFFER_3, OMASTAR
+	pokepic OMASTAR
+	cry OMASTAR
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -290,34 +290,8 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower5
 	loadmem wIsAStarter, 0
 .HandledHiddenPower5
-	givepoke STARTERMON5, 5, NO_ITEM ; PARTY SLOT 5
+	givepoke OMASTAR, 5, NO_ITEM ; PARTY SLOT 5
 	
-; PARTY SLOT 6
-	reanchormap
-	getmonname STRING_BUFFER_3, STARTERMON6
-	pokepic STARTERMON6
-	cry STARTERMON6
-	waitbutton
-	closepokepic
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	opentext
-	writetext ElmsLabText_NextMon
-	promptbutton
-	loadmem wIsAStarter, 1
-	writetext ElmsLabText_AskAboutHiddenPower
-	yesorno
-	iffalse .NoHiddenPower6
-	special SetHiddenPower
-	writetext ElmsLabText_HiddenPowerUpdated
-	waitbutton
-	sjump .HandledHiddenPower6
-.NoHiddenPower6
-	loadmem wIsAStarter, 0
-.HandledHiddenPower6
-	givepoke STARTERMON6, 5, NO_ITEM ; PARTY SLOT 6
-
-
 ; END OF LEADER'S PARTY
 
 	iftrue .CandyJarDone
