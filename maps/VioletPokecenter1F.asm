@@ -16,30 +16,16 @@ VioletPokecenterNurse:
 VioletPokecenter1F_ElmsAideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE
-	iftrue .SecondTimeAsking
+	checkevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	iftrue .SkipEscapeRope
 	writetext VioletPokecenterElmsAideFavorText
-.AskTakeEgg:
-	yesorno
-	iffalse .RefusedEgg
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	giveegg TOGEPI, EGG_LEVEL
-	getstring STRING_BUFFER_4, .eggname
-	scall .AideGivesEgg
+	verbosegiveitem ESCAPE_ROPE_KEY
+	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+.SkipEscapeRope
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	clearevent EVENT_ELMS_AIDE_IN_LAB
 	clearevent EVENT_TOGEPI_HATCHED
 	setmapscene ROUTE_32, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
-	writetext VioletPokecenterElmsAideGiveEggText
-	checkevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-	iffalse .done
-	writetext VioletPokecenterElmsAideEscapeRopeText
-	waitbutton
-	verbosegiveitem ESCAPE_ROPE_KEY
-	waitbutton
-	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-.done
 	waitbutton
 	closetext
 	readvar VAR_FACING
@@ -51,6 +37,7 @@ VioletPokecenter1F_ElmsAideScript:
 	waitsfx
 	end
 
+
 .AideWalksAroundPlayer:
 	applymovement VIOLETPOKECENTER1F_ELMS_AIDE, MovementData_AideWalksLeftToExitPokecenter
 	turnobject PLAYER, DOWN
@@ -60,29 +47,6 @@ VioletPokecenter1F_ElmsAideScript:
 	waitsfx
 	end
 
-.eggname
-	db "EGG@"
-
-.AideGivesEgg:
-	jumpstd ReceiveTogepiEggScript
-	end
-
-.PartyFull:
-	writetext VioletCityElmsAideFullPartyText
-	waitbutton
-	closetext
-	end
-
-.RefusedEgg:
-	writetext VioletPokecenterElmsAideRefuseText
-	waitbutton
-	closetext
-	setevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE
-	end
-
-.SecondTimeAsking:
-	writetext VioletPokecenterElmsAideAskEggText
-	sjump .AskTakeEgg
 
 VioletPokecenter1FGameboyKidScript:
 	jumptextfaceplayer VioletPokecenter1FGameboyKidText
@@ -118,18 +82,11 @@ VioletPokecenterElmsAideFavorText:
 	para "PROF.ELM asked me"
 	line "to find you."
 
-	para "He has another"
-	line "favor to ask."
+	para "He has an item"
+	line "which will help."
 
-	para "Would you take the"
-	line "#MON EGG?"
-	done
-
-VioletPokecenterElmsAideEscapeRopeText:
-	text "Take this, too."
-	
-	para "It will help you"
-	line "on your journey."
+	para "Take this fancy"
+	line "ESCAPE ROPE!"
 	done
 
 VioletPokecenterElmsAideGiveEggText:
