@@ -169,9 +169,9 @@ ElmsLabWalkUpToElmScript:
 	
 ; PARTY SLOT 1
 	reanchormap
-	getmonname STRING_BUFFER_3, GRAVELER
-	pokepic GRAVELER
-	cry GRAVELER
+	getmonname STRING_BUFFER_3, GOLDUCK
+	pokepic GOLDUCK
+	cry GOLDUCK
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -190,13 +190,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower1
 	loadmem wIsAStarter, 0
 .HandledHiddenPower1
-	givepoke GRAVELER, 5, NO_ITEM ; PARTY SLOT 1
+	givepoke GOLDUCK, 5, NO_ITEM ; PARTY SLOT 1
 
 ; PARTY SLOT 2
 	reanchormap
-	getmonname STRING_BUFFER_3, ONIX
-	pokepic ONIX
-	cry ONIX
+	getmonname STRING_BUFFER_3, QUAGSIRE
+	pokepic QUAGSIRE
+	cry QUAGSIRE
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -215,13 +215,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower2
 	loadmem wIsAStarter, 0
 .HandledHiddenPower2
-	givepoke ONIX, 5, NO_ITEM ; PARTY SLOT 2
+	givepoke QUAGSIRE, 5, NO_ITEM ; PARTY SLOT 2
 
 ; PARTY SLOT 3
 	reanchormap
-	getmonname STRING_BUFFER_3, RHYHORN
-	pokepic RHYHORN
-	cry RHYHORN
+	getmonname STRING_BUFFER_3, LAPRAS
+	pokepic LAPRAS
+	cry LAPRAS
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -240,13 +240,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower3
 	loadmem wIsAStarter, 0
 .HandledHiddenPower3
-	givepoke RHYHORN, 5, BERRY ; PARTY SLOT 3
+	givepoke LAPRAS, 5, BERRY ; PARTY SLOT 3
 
 ; PARTY SLOT 4
 	reanchormap
-	getmonname STRING_BUFFER_3, KABUTOPS
-	pokepic KABUTOPS
-	cry KABUTOPS
+	getmonname STRING_BUFFER_3, STARMIE
+	pokepic STARMIE
+	cry STARMIE
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -265,33 +265,9 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower4
 	loadmem wIsAStarter, 0
 .HandledHiddenPower4
-	givepoke KABUTOPS, 5, NO_ITEM ; PARTY SLOT 4
-	
-; PARTY SLOT 5
-	reanchormap
-	getmonname STRING_BUFFER_3, OMASTAR
-	pokepic OMASTAR
-	cry OMASTAR
-	waitbutton
-	closepokepic
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	opentext
-	writetext ElmsLabText_NextMon
-	promptbutton
-	loadmem wIsAStarter, 1
-	writetext ElmsLabText_AskAboutHiddenPower
-	yesorno
-	iffalse .NoHiddenPower5
-	special SetHiddenPower
-	writetext ElmsLabText_HiddenPowerUpdated
-	waitbutton
-	sjump .HandledHiddenPower5
-.NoHiddenPower5
-	loadmem wIsAStarter, 0
-.HandledHiddenPower5
-	givepoke OMASTAR, 5, NO_ITEM ; PARTY SLOT 5
-	
+	givepoke STARMIE, 5, NO_ITEM ; PARTY SLOT 4
+
+
 ; END OF LEADER'S PARTY
 
 	iftrue .CandyJarDone
