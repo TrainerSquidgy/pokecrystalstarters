@@ -169,9 +169,9 @@ ElmsLabWalkUpToElmScript:
 	
 ; PARTY SLOT 1
 	reanchormap
-	getmonname STRING_BUFFER_3, RAICHU
-	pokepic RAICHU
-	cry RAICHU
+	getmonname STRING_BUFFER_3, CROBAT
+	pokepic CROBAT
+	cry CROBAT
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -190,13 +190,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower1
 	loadmem wIsAStarter, 0
 .HandledHiddenPower1
-	givepoke RAICHU, 5, NO_ITEM ; PARTY SLOT 1
+	givepoke CROBAT, 5, NO_ITEM ; PARTY SLOT 1
 
 ; PARTY SLOT 2
 	reanchormap
-	getmonname STRING_BUFFER_3, MAGNETON
-	pokepic MAGNETON
-	cry MAGNETON
+	getmonname STRING_BUFFER_3, ARIADOS
+	pokepic ARIADOS
+	cry ARIADOS
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -215,13 +215,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower2
 	loadmem wIsAStarter, 0
 .HandledHiddenPower2
-	givepoke MAGNETON, 5, NO_ITEM ; PARTY SLOT 2
+	givepoke ARIADOS, 5, NO_ITEM ; PARTY SLOT 2
 
 ; PARTY SLOT 3
 	reanchormap
-	getmonname STRING_BUFFER_3, ELECTRODE
-	pokepic ELECTRODE
-	cry ELECTRODE
+	getmonname STRING_BUFFER_3, WEEZING
+	pokepic WEEZING
+	cry WEEZING
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -240,13 +240,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower3
 	loadmem wIsAStarter, 0
 .HandledHiddenPower3
-	givepoke ELECTRODE, 5, BERRY ; PARTY SLOT 3
+	givepoke WEEZING, 5, BERRY ; PARTY SLOT 3
 
 ; PARTY SLOT 4
 	reanchormap
-	getmonname STRING_BUFFER_3, ELECTRODE
-	pokepic ELECTRODE
-	cry ELECTRODE
+	getmonname STRING_BUFFER_3, WEEZING
+	pokepic WEEZING
+	cry WEEZING
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -265,13 +265,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower4
 	loadmem wIsAStarter, 0
 .HandledHiddenPower4
-	givepoke ELECTRODE, 5, NO_ITEM ; PARTY SLOT 4
+	givepoke WEEZING, 5, NO_ITEM ; PARTY SLOT 4
 	
 ; PARTY SLOT 5
 	reanchormap
-	getmonname STRING_BUFFER_3, ELECTABUZZ
-	pokepic ELECTABUZZ
-	cry ELECTABUZZ
+	getmonname STRING_BUFFER_3, VENOMOTH
+	pokepic VENOMOTH
+	cry VENOMOTH
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -290,10 +290,8 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower5
 	loadmem wIsAStarter, 0
 .HandledHiddenPower5
-	givepoke ELECTABUZZ, 5, NO_ITEM ; PARTY SLOT 5
-
-
-
+	givepoke VENOMOTH, 5, NO_ITEM ; PARTY SLOT 5
+	
 ; END OF LEADER'S PARTY
 
 	iftrue .CandyJarDone
