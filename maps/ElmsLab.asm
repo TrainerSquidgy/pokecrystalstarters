@@ -169,9 +169,9 @@ ElmsLabWalkUpToElmScript:
 	
 ; PARTY SLOT 1
 	reanchormap
-	getmonname STRING_BUFFER_3, MAGCARGO
-	pokepic MAGCARGO
-	cry MAGCARGO
+	getmonname STRING_BUFFER_3, PIDGEOT
+	pokepic PIDGEOT
+	cry PIDGEOT
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -190,13 +190,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower1
 	loadmem wIsAStarter, 0
 .HandledHiddenPower1
-	givepoke MAGCARGO, 5, NO_ITEM ; PARTY SLOT 1
+	givepoke PIDGEOT, 5, NO_ITEM ; PARTY SLOT 1
 
 ; PARTY SLOT 2
 	reanchormap
-	getmonname STRING_BUFFER_3, MAGMAR
-	pokepic MAGMAR
-	cry MAGMAR
+	getmonname STRING_BUFFER_3, RHYDON
+	pokepic RHYDON
+	cry RHYDON
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -215,13 +215,13 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower2
 	loadmem wIsAStarter, 0
 .HandledHiddenPower2
-	givepoke MAGMAR, 5, NO_ITEM ; PARTY SLOT 2
+	givepoke RHYDON, 5, NO_ITEM ; PARTY SLOT 2
 
 ; PARTY SLOT 3
 	reanchormap
-	getmonname STRING_BUFFER_3, RAPIDASH
-	pokepic RAPIDASH
-	cry RAPIDASH
+	getmonname STRING_BUFFER_3, ALAKAZAM
+	pokepic ALAKAZAM
+	cry ALAKAZAM
 	waitbutton
 	closepokepic
 	playsound SFX_CAUGHT_MON
@@ -240,7 +240,83 @@ ElmsLabWalkUpToElmScript:
 .NoHiddenPower3
 	loadmem wIsAStarter, 0
 .HandledHiddenPower3
-	givepoke RAPIDASH, 5, BERRY ; PARTY SLOT 3
+	givepoke ALAKAZAM, 5, BERRY ; PARTY SLOT 3
+
+; PARTY SLOT 4
+	reanchormap
+	getmonname STRING_BUFFER_3, GYARADOS
+	pokepic GYARADOS
+	cry GYARADOS
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower4
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower4
+.NoHiddenPower4
+	loadmem wIsAStarter, 0
+.HandledHiddenPower4
+	givepoke GYARADOS, 5, NO_ITEM ; PARTY SLOT 4
+	
+; PARTY SLOT 5
+	reanchormap
+	getmonname STRING_BUFFER_3, EXEGGUTOR
+	pokepic EXEGGUTOR
+	cry EXEGGUTOR
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower5
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower5
+.NoHiddenPower5
+	loadmem wIsAStarter, 0
+.HandledHiddenPower5
+	givepoke EXEGGUTOR, 5, NO_ITEM ; PARTY SLOT 5
+	
+; PARTY SLOT 6
+	reanchormap
+	getmonname STRING_BUFFER_3, ARCANINE
+	pokepic ARCANINE
+	cry ARCANINE
+	waitbutton
+	closepokepic
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	opentext
+	writetext ElmsLabText_NextMon
+	promptbutton
+	loadmem wIsAStarter, 1
+	writetext ElmsLabText_AskAboutHiddenPower
+	yesorno
+	iffalse .NoHiddenPower6
+	special SetHiddenPower
+	writetext ElmsLabText_HiddenPowerUpdated
+	waitbutton
+	sjump .HandledHiddenPower6
+.NoHiddenPower6
+	loadmem wIsAStarter, 0
+.HandledHiddenPower6
+	givepoke ARCANINE, 5, NO_ITEM ; PARTY SLOT 6
+
 
 ; END OF LEADER'S PARTY
 
