@@ -118,11 +118,11 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskStream
 	yesorno
 	iffalse .nostream
-	loadmem wIsAStream, 1
+	loadmem wLevelCap, 9
 	writetext ElmsLabText_StreamYes
 	sjump .streamdone
 .nostream
-	loadmem wIsAStream, 0
+	loadmem wLevelCap, 100
 	writetext ElmsLabText_StreamNo
 .streamdone
 	promptbutton
@@ -394,7 +394,6 @@ ElmsLab_ResetSettings:
 	iffalse .NoProfsRepel
 	takeitem PROFS_REPEL
 .NoProfsRepel
-	loadmem wLevelCap, 9
 	loadmem wElmPokemon1, 155
 	loadmem wElmPokemon2, 158
 	loadmem wElmPokemon3, 152
@@ -446,7 +445,6 @@ BinSkipRandomizer:
 	ret
 
 ElmsLabWalkUpToElmScript:
-	loadmem wLevelCap, 9
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
@@ -967,10 +965,6 @@ AideScript_GiveYouBalls:
 	promptbutton
 	itemnotify
 	closetext
-	readmem wLevelCap
-	ifgreater 9, .skipLevelCap
-	loadmem wLevelCap, 9
-.skipLevelCap
 	setscene SCENE_ELMSLAB_NOOP
 	end
 
@@ -2075,18 +2069,18 @@ ElmsLabText_OptionsMoved:
 	done
 
 ElmsLabText_AskStream:
-	text "Is this a"
-	line "TIMED RUN?"
+	text "Play with a"
+	line "LEVEL CAP?"
 	done
 	
 ElmsLabText_StreamYes:
-	text "TIMED RUN"
-	line "flag set."
+	text "LEVEL CAP"
+	line "set."
 	done
 
 ElmsLabText_StreamNo:
-	text "TIMED RUN"
-	line "flag unset."
+	text "LEVEL CAP"
+	line "removed."
 	done
 	
 ElmsLabText_InverseNo:
@@ -2623,13 +2617,6 @@ EggMoveRelearnerScript:
 
 Gen1TMRelearnerScript:
 	loadmem wNumberOfPoints, 0
-	readmem wIsAStream
-	ifequal 1, .NoCap
-	loadmem wLevelCap, 9
-	sjump .events
-.NoCap
-	loadmem wLevelCap, 100
-.events
 	clearevent EVENT_RECEIVED_SCYTHE
 	clearevent EVENT_RECEIVED_AIR_BALLOON
 	clearevent EVENT_RECEIVED_RAFT
