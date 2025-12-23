@@ -161,4 +161,7 @@ MoveEffectsPointers:
 	dw Blizzard
 	dw Hail
 	dw Snow
+	dw AttackDown
+	dw Payback
+	dw Hex
 	assert_table_length NUM_MOVE_EFFECTS

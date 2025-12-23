@@ -1990,7 +1990,7 @@ MoltresEvosAttacks:
 	db 37, ENDURE
 	db 49, FLAMETHROWER
 	db 61, SAFEGUARD
-	db 73, SKY_ATTACK
+	db 73, WING_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2663,7 +2663,7 @@ EspeonEvosAttacks:
 	db 36, PSYBEAM
 	db 42, PSYCH_UP
 	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
+	db 52, RECOVER
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -2677,7 +2677,7 @@ UmbreonEvosAttacks:
 	db 36, FAINT_ATTACK
 	db 42, MEAN_LOOK
 	db 47, SCREECH
-	db 52, MOONLIGHT
+	db 52, RECOVER
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -2711,7 +2711,7 @@ MisdreavusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
-	db 36, PAIN_SPLIT
+	db 36, HEX
 	db 46, PERISH_SONG
 	db 0 ; no more level-up moves
 
@@ -3329,7 +3329,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, AEROBLAST
+	db 1, WING_ATTACK
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3343,7 +3343,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
+	db 1, FLAMETHROWER
 	db 11, SAFEGUARD
 	db 22, GUST
 	db 33, RECOVER
@@ -3368,7 +3368,35 @@ CelebiEvosAttacks:
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
 
-SplashEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, SPLASH
-	db 0 ; no more level-up moves
+VulpixAEvosAttacks:
+	db EVOLVE_ITEM, ICE_STONE, NINETALESA
+	db 0 ; No More Evolutions
+	db 1, POWDER_SNOW
+	db 4, TAIL_WHIP
+	db 7, ROAR
+	db 9, BABYDOLLEYES
+	db 10, ICE_SHARD
+	db 12, CONFUSE_RAY
+	db 15, ICY_WIND
+	db 18, PAYBACK
+	db 20, MIST
+	db 23, FAINT_ATTACK
+	db 26, HEX
+	db 28, AURORA_BEAM
+	db 31, EXTRASENSORY
+	db 34, SAFEGUARD
+	db 36, ICE_BEAM
+	db 39, CAPTIVATE
+	db 42, BLIZZARD
+	db 45, SHEER_COLD
+	db 0
+	
+NinetalesAEvosAttacks:
+	db 0
+	db 1, DAZZLE_GLEAM
+	db 1, NASTY_PLOT
+	db 1, ICE_BEAM
+	db 1, ICE_SHARD
+	db 1, CONFUSE_RAY
+	db 1, SAFEGUARD
+	db 0
