@@ -1,78 +1,190 @@
-Tackle
+Bide
 Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
+Growth
+Nature Power
+Synthesis
+Sunny Day
 Explosion
-Calm Mind
 Toxic
+Bullet Seed
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
 Protect
-Safeguard
+Giga Drain
 Frustration
 SolarBeam
-Earthquake
 Return
-Psychic
+Dig
 Shadow Ball
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
+Energy Ball
 Endure
-Will-O-Wisp
-Embargo
 Explosion
-Recycle
-Giga Impact
-Rock Polish
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
+Swords Dance
+Captivate
 Sleep Talk
 Natural Gift
-Dream Eater
 Grass Knot
 Swagger
 Substitute
-Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
-Pain Split
+Rock Smash
+Headbutt
 Rollout
-Signal Beam
+Seed Bomb
 Snore
-Swift
-Zen Headbutt
-Baton Pass
+Spite
+Synthesis
+Worry Seed
 Body Slam
 Defense Curl
 Double-Edge
 Mimic
+Refresh
+Selfdestruct
+Pound
+Harden
+Growth
+Nature Power
+Fake Out
+Torment
+Faint Attack
+Razor Wind
+Swagger
+Extrasensory
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Giga Drain
+Frustration
+SolarBeam
+Return
+Dig
+Shadow Ball
+Brick Break
+Double Team
+Rock Tomb
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Energy Ball
+Fling
+Endure
+Embargo
+Explosion
+Payback
+Flash
+Swords Dance
+Psych Up
+Captivate
+Dark Pulse
+Rock Slide
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Substitute
+Cut
+Strength
+Rock Smash
+Fury Cutter
+Headbutt
+Low Kick
+Mud-Slap
+Rollout
+Seed Bomb
+Snore
+Spite
+Swift
+Synthesis
+Worry Seed
+Body Slam
+Defense Curl
+Double-Edge
+Mega Kick
+Mimic
+Refresh
+Selfdestruct
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Giga Drain
+Frustration
+SolarBeam
+Return
+Dig
+Shadow Ball
+Brick Break
+Double Team
+Rock Tomb
+Aerial Ace
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Focus Blast
+Energy Ball
+Fling
+Endure
+Silver Wind
+Embargo
+Explosion
+Payback
+Giga Impact
+Flash
+Swords Dance
+Psych Up
+Captivate
+Dark Pulse
+Rock Slide
+X-Scissor
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Substitute
+Cut
+Strength
+Defog
+Rock Smash
+Air Cutter
+Bounce
+Fury Cutter
+Headbutt
+Icy Wind
+Knock Off
+Low Kick
+Mud-Slap
+Ominous Wind
+Rollout
+Seed Bomb
+Snore
+Spite
+Sucker Punch
+Swift
+Synthesis
+Tailwind
+Twister
+Worry Seed
+Body Slam
+Defense Curl
+Double-Edge
+Mega Kick
+Mimic
+Refresh
 Selfdestruct

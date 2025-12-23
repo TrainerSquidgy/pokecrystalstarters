@@ -5583,6 +5583,20 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TORMENT, a
+	jr z, .not_torment
+	ld a, [wMenuCursorY]
+	ld hl, wEnemyMonMoves
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld a, [hl]
+	ld b, a
+	ld a, [wLastPlayerCounterMove]
+	cp b
+	jr z, .tormented
+.not_torment
 	ld a, [wUnusedPlayerLockedMove]
 	and a
 	jr nz, .skip2
@@ -5597,6 +5611,10 @@ MoveSelectionScreen:
 	ld [wCurPlayerMove], a
 	xor a
 	ret
+
+.tormented	
+	ld hl, BattleText_TheMoveCantBeSelected
+	jr .place_textbox_start_over
 
 .move_disabled
 	ld hl, BattleText_TheMoveIsDisabled

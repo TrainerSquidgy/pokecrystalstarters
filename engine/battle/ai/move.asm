@@ -26,7 +26,7 @@ AIChooseMove:
 ; Don't pick disabled moves.
 	ld a, [wEnemyDisabledMove]
 	and a
-	jr z, .CheckPP
+	jr z, .CheckTorment
 
 	ld hl, wEnemyMonMoves
 	ld c, 0
@@ -41,6 +41,37 @@ AIChooseMove:
 	ld b, 0
 	add hl, bc
 	ld [hl], 80
+.CheckTorment
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_TORMENT, a
+	jr z, .CheckPP
+
+	ld hl, wEnemyMonMoves
+	ld c, 0
+.CheckTormentMove:
+	ld a, c
+	cp 4
+	jr z, .CheckPP
+	ld a, [hli]
+	and a
+	jr z, .CheckPP
+	ld b, a
+	ld a, [wLastEnemyCounterMove]
+	inc c
+	cp b
+	jr nz, .CheckTormentMove
+
+.ScoreTormentMove:
+	push hl
+	ld hl, wEnemyAIMoveScores
+	ld b, 0
+	dec c
+	add hl, bc
+	inc c
+	ld [hl], 80
+	pop hl
+	inc c
+	jr .CheckTormentMove
 
 ; Don't pick moves with 0 PP.
 .CheckPP:

@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw StompDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,10 +252,10 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw NaturePowerDescription
+	dw FakeOutDescription
+	dw TormentDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -835,9 +835,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -1270,3 +1267,16 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+
+NaturePowerDescription:
+	db   "Changes with"
+	next "the environment.@"
+
+FakeOutDescription:
+	db   "Only works 1st"
+	next "turn. Flinches.@"
+	
+TormentDescription:
+	db   "Foes can't use the"
+	next "same move again.@"

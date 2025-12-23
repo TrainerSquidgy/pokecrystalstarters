@@ -1149,3 +1149,22 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+NaturePowerTurnedIntoText:
+	text "NATURE POWER"
+	line "turned into"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+	
+TormentText:
+	text "<TARGET>"
+	line "was subjected to"
+	cont "TORMENT!"
+	prompt
+
+BattleText_TheMoveCantBeSelected:
+	text "The move can't be"
+	line "selected!"
+	prompt
