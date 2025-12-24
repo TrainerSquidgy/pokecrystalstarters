@@ -3355,15 +3355,37 @@ HoOhEvosAttacks:
 	db 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, LEECH_SEED
-	db 1, CONFUSION
-	db 1, RECOVER
-	db 1, HEAL_BELL
-	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
-	db 0 ; no more level-up moves
+SeedotEvosAttacks:
+	db EVOLVE_LEVEL, 14, NUZLEAF
+	db 0 ; No More Evolutions
+	db 1, BIDE
+	db 3, HARDEN
+	db 7, GROWTH
+	db 13, NATURE_POWER
+	db 21, SYNTHESIS
+	db 31, SUNNY_DAY
+	db 43, EXPLOSION
+	db 0
+	
+NuzleafEvosAttacks:
+	db EVOLVE_ITEM, LEAF_STONE, SHIFTRY
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 3, HARDEN
+	db 7, GROWTH
+	db 13, NATURE_POWER
+	db 19, FAKE_OUT
+	db 25, TORMENT
+	db 31, FAINT_ATTACK
+	db 37, RAZOR_WIND
+	db 43, SWAGGER
+	db 49, EXTRASENSORY
+	db 0
+	
+ShiftryEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 1, HARDEN
+	db 1, GROWTH
+	db 1, NATURE_POWER
+	db 0

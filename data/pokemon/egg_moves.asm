@@ -805,5 +805,14 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+NuzleafEggMoves:
+ShiftryEggMoves:
+SeedotEggMoves:
+	db AMNESIA
+	db FALSE_SWIPE
+	db LEECH_SEED
+	db QUICK_ATTACK
+	db RAZOR_WIND
+	db TAKE_DOWN
 NoEggMoves:
 	db -1 ; end

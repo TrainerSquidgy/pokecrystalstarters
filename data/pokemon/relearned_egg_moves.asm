@@ -910,6 +910,17 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+NuzleafRelearnedEggMoves:
+ShiftryRelearnedEggMoves:
+SeedotRelearnedEggMoves:
+	db 0
+	db 1, AMNESIA
+	db 1, FALSE_SWIPE
+	db 1, LEECH_SEED
+	db 1, QUICK_ATTACK
+	db 1, RAZOR_WIND
+	db 1, TAKE_DOWN
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0
