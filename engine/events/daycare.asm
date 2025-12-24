@@ -594,13 +594,25 @@ DayCare_InitBreeding:
 ; Nidoran♀ can give birth to either gender of Nidoran
 	ld a, [wCurPartySpecies]
 	cp NIDORAN_F
-	jr nz, .GotEggSpecies
+	jr nz, .NotNidoran
 	call Random
 	cp 50 percent + 1
 	ld a, NIDORAN_F
-	jr c, .GotEggSpecies
+	jr c, .Done
 	ld a, NIDORAN_M
-.GotEggSpecies:
+	jr .Done
+.NotNidoran:
+	cp VOLBEAT
+	jr z, .VolbeatIllumise
+	cp ILLUMISE
+	jr nz, .Done
+.VolbeatIllumise	
+	call Random
+	cp 50 percent + 1
+	ld a, VOLBEAT
+	jr c, .Done
+	ld a, ILLUMISE
+.Done
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
 	ld [wEggMonSpecies], a
