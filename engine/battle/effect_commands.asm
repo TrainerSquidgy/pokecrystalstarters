@@ -1089,7 +1089,6 @@ BattleCommand_DoTurn:
 
 .continuousmoves
 	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1932,9 +1931,6 @@ BattleCommand_LowerSub:
 	call GetBattleVar
 	cp EFFECT_RAZOR_WIND
 	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
-	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
@@ -5645,10 +5641,6 @@ BattleCommand_Charge:
 
 	cp SKULL_BASH
 	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
 	jr z, .done
 
 	cp FLY

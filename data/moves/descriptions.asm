@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw HyperVoiceDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -253,9 +253,9 @@ MoveDescriptions::
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw UproarDescription
+	dw StompDescription
+	dw MeditateDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFFDescription
-	dw MoveFFDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -832,9 +832,6 @@ LovelyKissDescription:
 	db   "May cause the foe"
 	next "to fall asleep.@"
 
-SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -1271,3 +1268,7 @@ BeatUpDescription:
 UproarDescription:
 	db   "Rampage attack."
 	next "Everyone wakes.@"
+	
+HyperVoiceDescription:
+	db "Attacks with a"
+	next "loud scream.@"

@@ -142,7 +142,7 @@ MoveNames::
 	li "BARRAGE"
 	li "LEECH LIFE"
 	li "LOVELY KISS"
-	li "SKY ATTACK"
+	li "HYPER VOICE"
 	li "TRANSFORM"
 	li "BUBBLE"
 	li "DIZZY PUNCH"
@@ -252,4 +252,6 @@ MoveNames::
 	li "WHIRLPOOL"
 	li "BEAT UP"
 	li "UPROAR"
+	li "ASTONISH"
+	li "HOWL"
 	assert_list_length NUM_ATTACKS
