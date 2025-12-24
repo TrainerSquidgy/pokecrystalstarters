@@ -1149,3 +1149,9 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+WishCameTrueText:
+	text "<TARGET>'s"
+	line "WISH came true."
+	prompt
+	

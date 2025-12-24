@@ -2093,3 +2093,28 @@ Snow:
 	startweather
 	endmove
 	
+Wish:
+	checkobedience
+	usedmovetext
+	doturn
+	wish
+	endmove
+	
+Flatter:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	switchturn
+	specialattackup2
+	switchturn
+	lowersub
+	statupanim
+	raisesub
+	failuretext
+	switchturn
+	statupmessage
+	switchturn
+	confusetarget
+	endmove
+

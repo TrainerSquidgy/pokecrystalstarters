@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw FlatterDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw ThiefDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -252,10 +252,10 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw TailGlowDescription
+	dw PsybeamDescription
+	dw RecoverDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -799,6 +799,10 @@ AmnesiaDescription:
 	db   "Sharply raises the"
 	next "user's SPCL.DEF.@"
 
+TailGlowDescription:
+	db   "Sharply raises the"
+	next "user's SPCL.ATK.@"
+
 KinesisDescription:
 	db   "Reduces the foe's"
 	next "accuracy.@"
@@ -1094,6 +1098,10 @@ FalseSwipeDescription:
 SwaggerDescription:
 	db   "Causes confusion"
 	next "and raises ATTACK.@"
+
+FlatterDescription:
+	db   "Causes confusion"
+	next "and ups SPCL.ATK.@"
 
 MilkDrinkDescription:
 	db   "Restores HP by 1/2"
