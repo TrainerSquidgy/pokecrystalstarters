@@ -107,6 +107,11 @@ DanceTheaterSurfGuy:
 	promptbutton
 	verbosegiveitem HM_SURF
 	setevent EVENT_GOT_HM03_SURF
+	checkevent EVENT_RECEIVED_RAFT
+	iftrue .NoHMItem
+	verbosegiveitem RAFT
+	setevent EVENT_RECEIVED_RAFT
+.NoHMItem
 	writetext SurfGuySurfExplanationText
 	waitbutton
 	readmem wMegaEvolutionEnabled

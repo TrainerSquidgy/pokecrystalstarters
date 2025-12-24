@@ -179,6 +179,14 @@ TryWildEncounter::
 	jr nc, .no_battle
 	call ChooseWildEncounter
 	jr nz, .no_battle
+	
+	
+	
+; Check for 'B' being held
+    ldh a, [hJoyDown]
+    bit B_BUTTON_F, a
+    jr nz, .no_battle
+    	
 	call CheckRepelEffect
 	jr nc, .no_battle
 	xor a
@@ -347,6 +355,8 @@ ChooseWildEncounter:
 	call GetWorldMapLocation
 	cp LANDMARK_ILEX_FOREST
 	jr z, .ilexforest
+	cp LANDMARK_ROUTE_33
+	jr z, .route33
 	cp LANDMARK_ROUTE_34
 	jr nz, .startwildbattle
 	ld a, [wRoute34Encounters]
@@ -359,25 +369,36 @@ ChooseWildEncounter:
 	ld a, ABRA
 	ld [wTempWildMonSpecies], a
 	jr .startwildbattle
+.route33
+	ld a, [wRoute33Encounters]
+	and a
+	jr nz, .startwildbattle
+	inc a
+	ld [wRoute33Encounters], a
+	ld a, 6
+	ld [wCurPartyLevel], a
+	ld a, SPEAROW
+	ld [wTempWildMonSpecies], a
+	jr .startwildbattle
 .ilexforest
 	ld a, [wIlexForestEncounters]
 	cp 1
-	jr nz, .paras
-	inc a
-	ld [wIlexForestEncounters], a
-	ld a, 7
-	ld [wCurPartyLevel], a
-	ld a, PSYDUCK
-	ld [wTempWildMonSpecies], a
-	jr .startwildbattle
-.paras
-	and a
-	jr nz, .startwildbattle
+	jr nz, .psyduck
 	inc a
 	ld [wIlexForestEncounters], a
 	ld a, 6
 	ld [wCurPartyLevel], a
 	ld a, PARAS
+	ld [wTempWildMonSpecies], a
+	jr .startwildbattle
+.psyduck
+	and a
+	jr nz, .startwildbattle
+	inc a
+	ld [wIlexForestEncounters], a
+	ld a, 7
+	ld [wCurPartyLevel], a
+	ld a, PSYDUCK
 	ld [wTempWildMonSpecies], a	
 .startwildbattle
 	;call ScaleWildEncounters
