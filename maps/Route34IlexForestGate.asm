@@ -52,6 +52,11 @@ Route34IlexForestGateTeacherScript:
 	promptbutton
 	verbosegiveitem TM_SWEET_SCENT
 	iffalse .NoRoom
+	checkevent EVENT_RECEIVED_HONEY_JAR
+	iftrue .NoHMItem
+	verbosegiveitem HONEY_JAR
+	setevent EVENT_RECEIVED_HONEY_JAR
+.NoHMItem
 	setevent EVENT_GOT_TM12_SWEET_SCENT
 .GotSweetScent:
 	writetext Route34IlexForestGateTeacher_GotSweetScent

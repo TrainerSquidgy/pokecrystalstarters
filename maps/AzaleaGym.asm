@@ -46,6 +46,10 @@ AzaleaGymBugsyScript:
 	setevent EVENT_GOT_TM49_FURY_CUTTER
 	writetext BugsyText_FuryCutterSpeech
 	waitbutton
+	readmem wLevelCap
+	ifgreater 20, .skipLevelCap
+	loadmem wLevelCap, 20
+.skipLevelCap
 	closetext
 	end
 
