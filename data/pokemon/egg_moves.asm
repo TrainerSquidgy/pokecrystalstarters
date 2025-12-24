@@ -805,5 +805,10 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+VolbeatEggMoves:
+IllumiseEggMoves:
+	db BATON_PASS
+	db GROWTH
+	db ENCORE
 NoEggMoves:
 	db -1 ; end

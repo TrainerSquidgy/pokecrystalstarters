@@ -253,4 +253,6 @@ AlphabeticalPokedexOrder:
 	db YANMA
 	db ZAPDOS
 	db ZUBAT
+	db VOLBEAT
+	db ILLUMISE
 	assert_table_length NUM_POKEMON

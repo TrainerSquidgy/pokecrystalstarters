@@ -3367,3 +3367,29 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+VolbeatEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 5, CONFUSE_RAY
+	db 9, DOUBLE_TEAM
+	db 13, MOONLIGHT
+	db 17, QUICK_ATTACK
+	db 21, TAIL_GLOW
+	db 25, SIGNAL_BEAM
+	db 29, PROTECT
+	db 37, DOUBLE_EDGE
+	db 0
+	
+IllumiseEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, TACKLE
+	db 5, SWEET_SCENT
+	db 9, CHARM
+	db 13, MOONLIGHT
+	db 17, QUICK_ATTACK
+	db 21, WISH
+	db 25, ENCORE
+	db 29, FLATTER
+	db 37, COVET
+	db 0

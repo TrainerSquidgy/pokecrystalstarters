@@ -2506,6 +2506,19 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+VolbeatGen1TMAttacks:
+IllumiseGen1TMAttacks:
+	db 0
+	db 1, MEGA_PUNCH
+	db 1, MEGA_KICK
+	db 1, BODY_SLAM
+	db 1, DOUBLE_EDGE
+	db 1, COUNTER
+	db 1, SEISMIC_TOSS
+	db 1, MIMIC
+	db 1, SUBSTITUTE
+	db 0
+	
 NoGen1TMAttacks:
 	db 0
 	db 0

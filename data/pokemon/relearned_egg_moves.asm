@@ -910,6 +910,13 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+VolbeatRelearnedEggMoves:
+IllumiseRelearnedEggMoves:
+	db 0
+	db 1, BATON_PASS
+	db 1, GROWTH
+	db 1, ENCORE
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0
