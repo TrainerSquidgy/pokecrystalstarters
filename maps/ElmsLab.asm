@@ -45,7 +45,7 @@ ElmsLabMoveElmCallback:
 .Skip:
 	endcallback
 
-
+; Sets STARTERS, HIDDEN POWER, and STREAMING FLAGS
 ElmsLabStarterChoice:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .End
@@ -90,7 +90,6 @@ ElmsLabStarterChoice:
 .NoHiddenPower
 	loadmem wIsAStarter, 0
 .HandledHiddenPower
-; Check to see if MON should Evolve
 	writetext ElmsLabChooseStartersYesText
 	waitbutton
 	sjump .Merge
@@ -103,6 +102,7 @@ ElmsLabStarterChoice:
 	iffalse .NoHMFriends
 	loadmem wIlexForestEncounters, 0
 	loadmem wRoute34Encounters, 0
+	loadmem wRoute33Encounters, 0
 	loadmem wGuaranteedHMFriendCatch, 1
 	writetext ElmsLabText_AskAboutHMFriendsYes
 	sjump .DoneHMFriends
@@ -110,52 +110,38 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskAboutHMFriendsNo
 	loadmem wIlexForestEncounters, 3
 	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
+	writetext ElmsLabText_AskStream
+	yesorno
+	iffalse .nostream
+	loadmem wIsAStream, 1
+	writetext ElmsLabText_StreamYes
+	sjump .streamdone
+.nostream
+	loadmem wIsAStream, 0
+	writetext ElmsLabText_StreamNo
+.streamdone
+	promptbutton
 	closetext
 	turnobject PLAYER, DOWN
 .End
 	end
 	
 
-	
-ElmsLabText_InverseNo:
-	text "All type matchups"
-	line "remain normal."
-	done
 
-ElmsLabText_InverseAsk:
-	text "Do you want to"
-	line "use INVERSE"
-	cont "type matchups?"
-	done
-
-ElmsLabtext_InverseYes:
-	text "All matchups"
-	line "are INVERTED."
-	done
-
-ElmsLabExtraOptions:
+; Options pertaining to the POKÉMON
+ElmsLab_ExtraPokemonOptions:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .EndNoOptions
 	opentext
-	writetext ElmsLabText_ExtraOptionsGlobalAsk
-	yesorno
-	iffalse .EndOptions
 	writetext ElmsLabText_AskExtraOptionsForYourMon
 	yesorno
-	iffalse .ExtraMonOptionsDone
-.ExtraOptionsMon ; Extra Options for your Pokémon 
-	writetext ElmsLabText_PLAHiddenPowerAsk
-	yesorno
-	iffalse .NoPLA
-	loadmem wWhichHiddenPower, 1
-	writetext ElmsLabText_PLAHiddenPowerYes
-	waitbutton
-	writetext ElmsLabText_PLAHiddenPowerWarning
-	promptbutton
-.NoPLA
+	iffalse .EndOptions
+
+; Custom HIDDEN POWER DVs
 	writetext ElmsLabText_AlterHiddenPower
 	yesorno
 	iffalse .NoAltering
@@ -167,6 +153,30 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_NoAlteredHiddenPower
 .Merge
 	promptbutton
+	
+; Enable LEGENDS ARCEUS HIDDEN POWER
+	writetext ElmsLabText_PLAHiddenPowerAsk
+	yesorno 
+	iffalse .NoPLAHiddenPower
+	loadmem wWhichHiddenPower, 1
+	writetext ElmsLabText_PLAHiddenPowerYes
+	promptbutton
+.NoPLAHiddenPower
+
+; Enabling or disabling EVOLUTIONS.
+	writetext ElmsLabText_EvolutionsAsk
+	yesorno
+	iftrue .KeepEvolutions
+	loadmem wEvolutionsDisabled, 1
+	writetext ElmsLabText_EvolutionsNo
+	sjump .HandledEvolutions
+.KeepEvolutions
+	loadmem wEvolutionsDisabled, 0
+	writetext ElmsLabText_EvolutionsYes
+.HandledEvolutions
+	promptbutton
+	
+; Enabling or disabling ABILITIES.
 	writetext ElmsLabText_AbilitiesAsk
 	yesorno
 	iftrue .AbilitiesYes
@@ -178,18 +188,8 @@ ElmsLabExtraOptions:
 	writetext ElmsLabText_AbilitiesYes
 .NoAbilities
 	promptbutton
-	writetext ElmsLabText_EvolutionsAsk
-	yesorno
-	iftrue .KeepEvolutions
-	loadmem wEvolutionsDisabled, 1
-	writetext ElmsLabText_EvolutionsNo
-	waitbutton
-	sjump .HandledEvolutions
-.KeepEvolutions
-	loadmem wEvolutionsDisabled, 0
-	writetext ElmsLabText_EvolutionsYes
-	waitbutton
-.HandledEvolutions
+
+; Enabling or disabling MEGA EVOLUTION.
 	writetext ElmsLabText_AskMegas
 	yesorno
 	iftrue .YesMegas
@@ -200,12 +200,26 @@ ElmsLabExtraOptions:
 	loadmem wMegaEvolutionEnabled, 1
 	writetext ElmsLabText_MegasYes
 .HandledMegas
-.ExtraMonOptionsDone
 	promptbutton
-; GamePlay Changes for your Pokémon	
+	writetext ElmsLabText_PokemonOptionsDone
+	promptbutton
+.EndOptions
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+
+; Options pertaining to CORE BATTLE ELEMENTS
+ElmsLab_ExtraCoreGameplayOptions:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
 	writetext ElmsLabText_AskGamePlayChanges
 	yesorno
-	iffalse .GameplayDone
+	iffalse .EndOptions
+
+; LEVEL CAP
 	writetext ElmsLabtext_LevelCapAsk
 	yesorno
 	iffalse .NoLevelCap
@@ -215,18 +229,21 @@ ElmsLabExtraOptions:
 	writetext ElmsLabtext_LevelCapNo
 .LevelCapDone
 	promptbutton
+
+; RIVAL'S STARTER CHANGES
 	writetext ElmsLabText_AskRival
 	yesorno
 	iffalse .NoRival
 	loadmem wRivalCarriesStarter, 1
 	writetext ElmsLabText_RivalChanges
-	waitbutton
 	sjump .StartersDone
 .NoRival
 	loadmem wRivalCarriesStarter, 0
 	writetext ElmsLabText_RivalStillSame
-	waitbutton
 .StartersDone
+	promptbutton
+	
+; INVERSE MATCHUPS
 	writetext ElmsLabText_InverseAsk
 	yesorno
 	iftrue .YesInverse
@@ -237,7 +254,9 @@ ElmsLabExtraOptions:
 	loadmem wInverseActivated, 1
 	writetext ElmsLabtext_InverseYes
 .InverseDone
-	waitbutton	
+	promptbutton
+
+; METRONOME ONLY
 	writetext ElmsLabText_MetronomeOnlyAsk
 	yesorno
 	iftrue .YesMetronome
@@ -248,35 +267,66 @@ ElmsLabExtraOptions:
 	loadmem wMetronomeOnly, 1
 	writetext ElmsLabText_MetronomeOnlyYes 
 .MetronomeDone
-	waitbutton
-.GameplayDone
-	; Overworld and NPC Changes
-	writetext ElmsLabText_AskAboutHelpfulNPCs
-	yesorno
-	iftrue .AskTutorLimit
-	setevent EVENT_HELPFUL_NPCS_DISABLED
-	sjump .NoTutors
-.AskTutorLimit
-	writetext ElmsLabText_AskLimitTutors
-	yesorno
-	iffalse .NoLimit
-	loadmem wTutorsLimited, 0
-	writetext ElmsLabText_LimitTutorsYes
-	sjump .NoTutors
-.NoLimit
-	loadmem wTutorsLimited, 1
-	writetext ElmsLabText_LimitTutorsNo
-	waitbutton
-.NoTutors
+	promptbutton
+	writetext ElmsLabText_BattleOptionsDone
+	promptbutton
+.EndOptions
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+
+; Options pertaining to HELPFUL ITEMS
+ElmsLab_ExtraQualityOfLifeItems:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
 	writetext ElmsLabText_AskHelpfulItems
 	yesorno
-	iffalse .Spinners
+	iffalse .EndOptions
 
-.AskHelpfulItems
-	waitbutton
+; RARE CANDY OPTIONS
+	checkevent EVENT_CANDY_JAR
+	iftrue .HMItems
+	writetext ElmsLabText_CandyJarAsk
+	yesorno 
+	iffalse .NoCandyjar
+	verbosegiveitem CANDY_JAR
+	setevent EVENT_CANDY_JAR
+	sjump .CandyEvents
+.NoCandyjar
+	writetext ElmsLabText_CandyJarNo
+	promptbutton
+	checkevent EVENT_10_CANDIES
+	iftrue .ProfsRepel
+	writetext ElmsLabText_RareCandiesAsk
+	yesorno
+	iffalse .HMItems
+	verbosegiveitem RARE_CANDY, 10
+	setevent EVENT_10_CANDIES
+.CandyEvents
+	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
+	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
+	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
+	setevent EVENT_VIOLET_CITY_RARE_CANDY
+	setevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
+	setevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
+	setevent EVENT_ROUTE_27_RARE_CANDY
+	setevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
+	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
+	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	writetext ElmsLabText_RareCandiesDone
+
+; HM ITEMS
+.HMItems
+	checkevent EVENT_HM_ITEMS
+	iftrue .ProfsRepel
+	promptbutton
 	writetext ElmsLabText_HMItemsAsk
 	yesorno
-	iffalse .Spinners
+	iffalse .ProfsRepel
+	setevent EVENT_HM_ITEMS
 	clearevent EVENT_RECEIVED_SCYTHE
 	clearevent EVENT_RECEIVED_AIR_BALLOON
 	clearevent EVENT_RECEIVED_RAFT
@@ -292,434 +342,202 @@ ElmsLabExtraOptions:
 	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
 	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
 	writetext ElmsLabText_HMItemsYes
-	waitbutton
-	waitbutton
+	
+; PROF'S REPEL	
+.ProfsRepel
+	promptbutton
+	checkevent EVENT_PROFS_REPEL
+	iftrue .EndOptions
 	writetext ElmsLabText_ProfessorsRepelAsk
 	yesorno
 	iftrue .YesProfsRepel
 	writetext ElmsLabText_ProfessorsRepelNo
-	sjump .ProfsRepelDone
+	promptbutton
+	sjump .RepelDone
 .YesProfsRepel
+	setevent EVENT_PROFS_REPEL
 	verbosegiveitem PROFS_REPEL
 	writetext ElmsLabText_ProfessorsRepelYes
-.ProfsRepelDone
-	waitbutton
-	writetext ElmsLabText_CandyJarAsk
-	yesorno 
-	iffalse .NoCandyjar
-	verbosegiveitem CANDY_JAR
-	sjump .CandyEvents
-.NoCandyjar
-	writetext ElmsLabText_CandyJarNo
-	waitbutton
-	writetext ElmsLabText_RareCandiesAsk
+	promptbutton
+.RepelDone
+	writetext ElmsLabText_HelpfulItemsDone
+	promptbutton
+.EndOptions
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+; Options pertaining to extra QoL features
+ElmsLab_ExtraQualityOfLifeSettings:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
+	writetext ElmsLabText_ExtraQoLAsk
 	yesorno
-	iffalse .Spinners
-	verbosegiveitem RARE_CANDY, 10
-.CandyEvents
-	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
-	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
-	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
-	setevent EVENT_VIOLET_CITY_RARE_CANDY
-	setevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
-	setevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
-	setevent EVENT_ROUTE_27_RARE_CANDY
-	setevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
-	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
-	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
-	writetext ElmsLabText_RareCandiesDone
-.Spinners
-	writetext ElmsLabText_SpinnersAsk
+	iffalse .EndOptions
+
+; QUALITY OF LIFE NPCs	
+	writetext ElmsLabText_AskAboutHelpfulNPCs
 	yesorno
-	iftrue .YesSpinners
+	iftrue .AskTutorLimit
+	setevent EVENT_HELPFUL_NPCS_DISABLED
+	sjump .NoTutors
+.AskTutorLimit
+	writetext ElmsLabText_AskLimitTutors
+	yesorno
+	iffalse .NoLimit
+	loadmem wTutorsLimited, 0
+	writetext ElmsLabText_LimitTutorsYes
+	promptbutton
+	sjump .NoTutors
+.NoLimit
+	loadmem wTutorsLimited, 1
+	writetext ElmsLabText_LimitTutorsNo
+	promptbutton
+.NoTutors
+	
+; SPINNER BEHAVIOUR	
+	writetext ElmsLabText_SpinnersAtAllAsk
+	yesorno
+	iftrue .DisabledOrRotators
+.YesSpinners
+	clearevent EVENT_STATIC_BOARDER_DOUGLAS
+	setevent  EVENT_REGULAR_BOARDER_DOUGLAS
+	loadmem wSpinnersOff, 0
+	writetext ElmsLabText_SpinnersRotatorsNo
+	sjump .SpinnersDone
+.DisabledOrRotators
+	writetext ElmsLabText_SpinnersRotatorsAsk
+	yesorno
+	iffalse .SpinnersOffEntirely
+	setevent EVENT_STATIC_BOARDER_DOUGLAS
+	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
+	loadmem wSpinnersOff, 1
+	writetext ElmsLabText_SpinnersRotatorsYes
+	sjump .SpinnersDone
+.SpinnersOffEntirely
+	writetext ElmsLabText_SpinnersFaceAwayAsk
+	yesorno
+	iffalse .YesSpinners
+	loadmem wSpinnersOff, 2
+	writetext ElmsLabText_SpinnersFaceAwayYes	
+.SpinnersDone
+	promptbutton
+	
+; Disable Encounters with B
+;	writetext ElmsLabText_DisableEncountersWithBAsk
+;	yesorno
+;	iffalse .NoRepel
+;	loadmem wPressBToRepel, 1
+;	writetext ElmsLabText_DisableEncountersWithBYes
+;	promptbutton
+	sjump .EndOptions
+.NoRepel
+	loadmem wPressBToRepel, 0
+	writetext ElmsLabText_DisableEncountersWithBNo
+	promptbutton
+.EndOptions
+	writetext ElmsLabText_QoLExtrasDone
+	promptbutton
+	closetext
+	turnobject PLAYER, UP
+.EndNoOptions
+	end
+
+ElmsLab_ResetSettings:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .EndNoOptions
+	opentext
+	writetext ElmsLabText_ResetOptions
+	yesorno
+	iffalse .NoOptions
+	writetext ElmsLabText_AreYouSure
+	yesorno
+	iffalse .NoOptions
+	checkevent EVENT_CANDY_JAR
+	iffalse .NoCandyJar
+	takeitem CANDY_JAR
+	clearevent EVENT_CANDY_JAR
+.NoCandyJar
+	checkevent EVENT_10_CANDIES
+	iffalse .NoCandies
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	takeitem RARE_CANDY
+	clearevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
+	clearevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
+	clearevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
+	clearevent EVENT_VIOLET_CITY_RARE_CANDY
+	clearevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
+	clearevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
+	clearevent EVENT_ROUTE_27_RARE_CANDY
+	clearevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
+	clearevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
+	clearevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
+	
+.NoCandies
+	checkevent EVENT_PROFS_REPEL
+	iffalse .NoProfsRepel
+	takeitem PROFS_REPEL
+.NoProfsRepel
+	checkevent EVENT_HM_ITEMS
+	iffalse .NoHMItems
+	setevent EVENT_RECEIVED_SCYTHE
+	setevent EVENT_RECEIVED_AIR_BALLOON
+	setevent EVENT_RECEIVED_RAFT
+	setevent EVENT_RECEIVED_BURLY_MAN
+	setevent EVENT_RECEIVED_LANTERN
+	setevent EVENT_RECEIVED_BATH_PLUG
+	setevent EVENT_RECEIVED_LADDER
+	setevent EVENT_RECEIVED_FART_JAR
+	setevent EVENT_RECEIVED_HONEY_JAR
+	setevent EVENT_RECEIVED_TREE_SHAKER
+	setevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	clearevent EVENT_HM_ITEMS
+.NoHMItems
+	loadmem wLevelCap, 100
+	loadmem wElmPokemon1, 155
+	loadmem wElmPokemon2, 158
+	loadmem wElmPokemon3, 152
+	loadmem wIsAStarter, 0
+	loadmem wIlexForestEncounters, 3
+	loadmem wRoute34Encounters, 3
+	loadmem wRoute33Encounters, 3
+	loadmem wGuaranteedHMFriendCatch, 0
+	loadmem wIsAStream, 0
+	loadmem wEvolutionsDisabled, 0
+	loadmem wAbilitiesActivated, 0
+	loadmem wMegaEvolutionEnabled, 0
+	loadmem wRivalCarriesStarter, 0
+	loadmem wInverseActivated, 0
+	loadmem wMetronomeOnly, 0
+	loadmem wTutorsLimited, 0
+	loadmem wSpinnersOff, 0
+	loadmem wPressBToRepel, 0
+	loadmem wWhichHiddenPower, 0
 	clearevent EVENT_REGULAR_BOARDER_DOUGLAS
 	setevent EVENT_STATIC_BOARDER_DOUGLAS
-	loadmem wSpinnersOff, 0
-	writetext ElmsLabText_SpinnersNo
-	sjump .SpinnersDone
-.YesSpinners
-	setevent EVENT_REGULAR_BOARDER_DOUGLAS
-	clearevent EVENT_STATIC_BOARDER_DOUGLAS
-	loadmem wSpinnersOff, 1
-	writetext ElmsLabText_SpinnersYes
-.SpinnersDone
-	waitbutton
-	writetext ElmsLabText_OptionsDone
-	turnobject PLAYER, RIGHT
+	writetext ElmsLabText_ResetOptionsYes
+	sjump .EndOptions
+.NoOptions
+	writetext ElmsLabText_ResetOptionsNo
 .EndOptions
 	promptbutton
 	closetext
 .EndNoOptions
 	end
-	
-ElmsLabText_AskHelpfulItems:
-	text "Modify some ITEMS"
-	line "and add extra"
-	cont "helpful items?"
-	done
 
-ElmsLabText_AskAboutHelpfulNPCs:
-	text "Add helpful NPCs"
-	line "to the top floor"
-	cont "all #MON"
-	cont "CENTERS and a"
-	
-	para "MOVE REMINDER"
-	line "in BLACKTHORN"
-	cont "CITY?"
-	done
-	
-ElmsLabText_RareCandiesDone:
-	text "All the 10 RARE"
-	line "CANDIES have been"
-	cont "given to you."
-	done
-	
-ElmsLabText_CandyJarAsk:
-	text "Want to take a"
-	line "CANDY JAR for"
-	cont "your journey?"
-	done
-	
-ElmsLabText_CandyJarNo:
-	text "I'll hold on to"
-	line "this then."
-	done
-	
-ElmsLabText_RareCandiesAsk:
-	text "Want all 10 RARE"
-	line "CANDIES straight"
-	cont "away?"
-	done
-	
-ElmsLabText_AskGamePlayChanges:
-	text "Make changes to"
-	line "core GAME PLAY?"
-	done
-	
-ElmsLabText_OptionsDone:
-	text "All options have"
-	line "now been set."
-	done
-
-ElmsLabText_ExtraOptionsGlobalAsk:
-	text "You are about to"
-	line "be asked to set"
-	cont "EXTRA OPTIONS for"
-	cont "your challenge."
-	
-	para "Declining here"
-	line "will leave this"
-	cont "whole menu."
-	
-	para "Set EXTRA OPTIONS"
-	line "for your game?"
-	done
-	
-ElmsLabText_AskExtraOptionsForYourMon:
-	text "Set EXTRA OPTIONS"
-	line "for your #MON?"
-	done
-
-ElmsLabText_ProfessorsRepelAsk:
-	text "Borrow the"
-	line "PROF'S REPEL?"
-	done
-	
-ElmsLabText_HMItemsAsk:
-	text "Play with ITEMS"
-	line "that act like"
-	cont "HM Moves?"
-	done
-	
-ElmsLabText_HMItemsYes:
-	text "Throughout your"
-	line "adventure, you"
-	cont "will obtain the"
-	cont "HM ITEMS."
-	done
-	
-ElmsLabtext_LevelCapAsk:
-	text "Play with a"
-	line "hard-coded"
-	cont "LEVEL CAP?"
-	done
-
-ElmsLabText_LevelCapYes:
-	text "You will stop"
-	line "gaining EXP."
-	cont "once you reach"
-	cont "the next key"
-	cont "trainer's level."
-	done
-	
-ElmsLabtext_LevelCapNo:
-	text "Your #MON"
-	line "will gain EXP."
-	cont "as normal."
-	done
-	
-ElmsLabText_MetronomeOnlyAsk:
-	text "Play on METRONOME"
-	line "-only mode?"
-	done
-	
-ElmsLabText_MetronomeOnlyYes:
-	text "Good luck."
-	line "You'll need it."
-	done
-	
-ElmsLabText_MetronomeOnlyNo:
-	text "You're still able"
-	line "to pick moves."
-	done
-
-ElmsLabText_ProfessorsRepelYes:
-	text "Turn it on in"
-	line "the KEY ITEMS"
-	
-	para "and WILD #MON"
-	line "will not appear."
-	done
-	
-ElmsLabText_ProfessorsRepelNo:
-	text "We'll keep hold"
-	line "of this then!"
-	done
-
-ElmsLabText_SpinnersAsk:
-	text "Turn all SPINNERS"
-	line "into ROTATORS?"
-	done
-	
-ElmsLabText_SpinnersYes:
-	text "All map objects"
-	line "with random spin,"
-	
-	para "now rotate in a"
-	line "predictable way."
-	done
-	
-ElmsLabText_SpinnersNo:
-	text "All map objects"
-	line "with random spin,"
-	
-	para "will continue"
-	line "to spin randomly."
-	done 
-	
-ElmsLabText_AskMegas:
-	text "Do you want to"
-	line "be able to"
-	cont "MEGA EVOLVE?"
-	done
-	
-ElmsLabText_MegasNo:
-	text "No #MON will"
-	line "MEGA EVOLVE."
-	done
-	
-ElmsLabText_MegasYes:
-	text "If your #MON"
-	line "can MEGA EVOLVE,"
-	
-	para "it will be able"
-	line "to as the story"
-	cont "progresses."
-	done
-
-
-ElmsLabText_PLAHiddenPowerAsk:
-	text "Want to play with"
-	line "LEGENDS ARCEUS"
-	cont "HIDDEN POWER?"
-	done
-	
-ElmsLabText_PLAHiddenPowerYes:
-	text "HIDDEN POWER will"
-	line "be 50 power and"
-	cont "always choose"
-	cont "the best matchup."
-	done
-
-ElmsLabText_PLAHiddenPowerWarning:
-	text "You will now be"
-	line "asked about in-"
-	cont "depth altering."
-	
-	para "This will only"
-	line "affect your DVs."
-	done
-
-ElmsLabText_AskLimitTutors:
-	text "Do you want a"
-	line "limit on the"
-	cont "amount of times"
-	cont "you can use the"
-	cont "new TUTORS?"
-	done
-	
-ElmsLabText_LimitTutorsYes:
-	text "You can only use"
-	line "one new TUTOR a"
-	cont "maximum of four"
-	cont "times and you"
-	cont "can only pick"
-	cont "one TUTOR."
-	done
-
-ElmsLabText_LimitTutorsNo:
-	text "You may use both"
-	line "TUTORS unlimited"
-	cont "times."
-	done
-
-ElmsLabText_AskExtraOptions:
-	text "Set EXTRA OPTIONS"
-	line "for your game?"
-	done
-
-ElmsLabText_NoExtraOptions:
-	text "No extra changes"
-	line "have been made."
-	done
-
-ElmsLabText_AbilitiesAsk:
-	text "Do you want your"
-	line "#MON to have"
-	cont "an ABILITY if one"
-	cont "is coded for it?"
-	done
-
-ElmsLabText_AbilitiesNo:
-	text "Your #MON will"
-	line "not have any"
-	cont "extra ABILITY."
-	done
-
-ElmsLabText_AbilitiesYes:
-	text "If your #MON"
-	line "has an ability"
-	cont "coded in, it will"
-	cont "be activated."
-	done 
-
-ElmsLabText_AlterHiddenPower:
-	text "Want to modify"
-	line "HIDDEN POWER?"
-	done
-
-ElmsLabText_NoAlteredHiddenPower:
-	text "HIDDEN POWER"
-	line "stays the same."
-	done
-
-ElmsLabText_AlteredHiddenPower:
-	text "HIDDEN POWER"
-	line "is modified."
-	done
-	
-ElmsLabText_EvolutionsYes:
-	text "Evolutions are"
-	line "still enabled."
-	done
-	
-ElmsLabText_EvolutionsNo:
-	text "Your #MON"
-	line "will not evolve."
-	done
-	
-ElmsLabText_EvolutionsAsk:
-	text "Should your"
-	line "#MON evolve?"
-	done
-	
-ElmsLabText_AskRival:
-	text "Do you want the"
-	line "RIVAL's starter"
-	cont "to change too?"
-	done
-	
-ElmsLabText_RivalChanges:
-	text "The RIVAL's"
-	line "#MON will"
-	cont "be updated."
-	done
-
-ElmsLabText_RivalStillSame:
-	text "The RIVAL will"
-	line "stay unchanged."
-	done
-	
-ElmsLabText_AskAboutHiddenPower:
-	text "Want to set type"
-	line "for HIDDEN POWER?"
-	done
-	
-ElmsLabText_HiddenPowerUpdated:
-	text "HIDDEN POWER"
-	line "type updated."
-	done
-	
-ReceivedStarterTextNoPreview:
-	text "<PLAYER> received"
-	line "a #MON."
-	done
-
-
-ElmsLabChooseStartersAskText:
-	text "Update STARTER"
-	line "#MON?"
-	done
-	
-ElmsLabChooseStartersYesText:
-	text "STARTERS updated."
-	line "Have fun...."
-	done
-	
-ElmsLabChooseStartersNoText:
-	text "Starters remain"
-	line "same as before."
-	done
-	
-ElmsLabText_AskChikorita:
-	text "Want to change"
-	line "CHIKORITA?"
-	done
-	
-ElmsLabText_AskCyndaquil:
-	text "Want to change"
-	line "CYNDAQUIL?"
-	done
-
-ElmsLabText_AskTotodile:
-	text "Want to change"
-	line "TOTODILE?"
-	done
-
-BinSkipItemRandomizer:
-	ld a, $f9
-	call RandomRange
-	cp ITEM_FA
-	jr z, BinSkipItemRandomizer
-	cp ITEM_9B
-	jr z, BinSkipItemRandomizer
-	cp ITEM_A2
-	jr z, BinSkipItemRandomizer
-	cp ITEM_AB
-	jr z, BinSkipItemRandomizer
-	cp ITEM_B0
-	jr z, BinSkipItemRandomizer
-	cp ITEM_B3
-	jr z, BinSkipItemRandomizer
-	cp ITEM_BE
-	jr z, BinSkipItemRandomizer
-	cp ITEM_C3
-	jr z, BinSkipItemRandomizer
-	cp ITEM_DC
-	jr z, BinSkipItemRandomizer
-	ld [wPartyMon1Item], a
-	ret
 
 ElmsLabRandomizer:
 	ld a, 250
@@ -1483,7 +1301,6 @@ ElmsLabTrashcan:
 	giveitem HM_FLY
 	giveitem HM_WHIRLPOOL
 	giveitem HM_WATERFALL
-	callasm BinSkipItemRandomizer
 	closetext
 	setevent EVENT_OPENED_MT_SILVER
 	clearevent EVENT_RED_IN_MT_SILVER
@@ -1588,39 +1405,8 @@ ElmsLabRandomizeStarters:
 	turnobject PLAYER, UP
 .End
 	end
-ElmsLabText_PreviewEnabled:
-	text "You will still"
-	line "see what you"
-	cont "can receive."
-	done
-	
-ElmsLabText_PreviewDisabled:
-	text "You will not"
-	line "be able to see"
-	cont "what you get."
-	done
-	
-ElmsLab_RandomizerHide:
-	text "Do you want to"
-	line "hide what is"
-	cont "in each ball?"
-	done
-	
-ElmsLab_RandomizeStartersAsk:
-	text "Do you want"
-	line "to randomize"
-	cont "your starters?"
-	done
-	
-ElmsLab_RandomizerNo:
-	text "Starters are"
-	line "kept unchanged."
-	done
-	
-ElmsLab_RandomizerYes:
-	text "Starters are"
-	line "now randomized."
-	done
+
+
 	
 
 ElmsLabTrashcan2: ; unreferenced
@@ -2400,6 +2186,519 @@ ElmsLabPCText:
 	line "screen…"
 	done
 
+ElmsLabExtraOptions:
+	opentext
+	writetext ElmsLabText_OptionsMoved
+	waitbutton
+	closetext
+	end
+	
+ElmsLabText_OptionsMoved:
+	text "EXTRA OPTIONS are"
+	line "moved to the"
+	
+	para "BOOKSHELVES below"
+	line "the STARTERS and"
+	
+	para "split into"
+	line "small categories."
+	done
+
+ElmsLabText_AskStream:
+	text "Is this a"
+	line "STREAMED run?"
+	done
+	
+ElmsLabText_StreamYes:
+	text "Streaming"
+	line "flag set."
+	done
+
+ElmsLabText_StreamNo:
+	text "Streaming"
+	line "flag unset."
+	done
+	
+ElmsLabText_InverseNo:
+	text "All type matchups"
+	line "remain normal."
+	done
+
+ElmsLabText_InverseAsk:
+	text "Do you want to"
+	line "use INVERSE"
+	cont "type matchups?"
+	done
+
+ElmsLabtext_InverseYes:
+	text "All matchups"
+	line "are INVERTED."
+	done
+	
+ElmsLabText_DisableEncountersWithBAsk:
+	text "Disable WILD"
+	line "ENCOUNTERS by"
+	cont "holding B?"
+	done
+	
+ElmsLabText_DisableEncountersWithBYes:
+	text "Holding B will"
+	line "prevent WILDS."
+	done 
+		
+ElmsLabText_DisableEncountersWithBNo:
+	text "Encounters will"
+	line "act as normal."
+	done
+
+ElmsLabText_PokemonOptionsDone:
+	text "All #MON"
+	line "options set."
+	done
+
+ElmsLabText_BattleOptionsDone:
+	text "All BATTLE"
+	line "options set."
+	done
+
+ElmsLabText_HelpfulItemsDone:
+	text "All HELPFUL"
+	line "ITEMS set."
+	done
+	
+ElmsLabText_QoLExtrasDone:
+	text "All EXTRA"
+	line "OPTIONS set."
+	done
+
+
+	
+ElmsLabText_SpinnersFaceAwayAsk:
+	text "Make all SPINNERS"
+	line "turn away?"
+	done
+	
+ElmsLabText_SpinnersFaceAwayYes:
+	text "SPINNERS will"
+	line "never face you."
+	done
+	
+ElmsLabText_ExtraQoLAsk:
+	text "Enable any of"
+	line "these EXTRAS?"
+	
+	para "EGG and RBY MOVE"
+	line "TUTORS, or change"
+	cont "SPINNER movement?"
+	done
+	
+ElmsLabText_AskHelpfulItems:
+	text "Receive any of"
+	line "the following"
+	cont "helpful items?"
+	
+	para "CANDY JAR, 10"
+	line "RARE CANDIES,"
+	
+	para "HM Items, or"
+	line "PROF'S REPEL?"
+	done
+
+ElmsLabText_AskAboutHelpfulNPCs:
+	text "Add TUTORS and a"
+	line "TIME MODIFIER to"
+	cont "all #MON"
+	cont "CENTERS alongside"
+	
+	para "a MOVE REMINDER"
+	line "in BLACKTHORN"
+	cont "CITY?"
+	done
+	
+ElmsLabText_RareCandiesDone:
+	text "All the 10 RARE"
+	line "CANDIES have been"
+	cont "given to you."
+	done
+	
+ElmsLabText_CandyJarAsk:
+	text "Want to take a"
+	line "CANDY JAR for"
+	cont "your journey?"
+	done
+	
+ElmsLabText_CandyJarNo:
+	text "I'll hold on to"
+	line "this then."
+	done
+	
+ElmsLabText_RareCandiesAsk:
+	text "Want all 10 RARE"
+	line "CANDIES straight"
+	cont "away?"
+	done
+	
+ElmsLabText_AskGamePlayChanges:
+	text "Make changes to"
+	line "BATTLE game-play?"
+	
+	para "This includes a"
+	line "LEVEL CAP,"
+	
+	para "changing the"
+	line "RIVAL'S STARTER,"
+	
+	para "LEGENDS ARCEUS"
+	line "HIDDEN POWER,"
+	
+	para "INVERSE BATTLES,"
+	line "and METRONOME"
+	cont "ONLY mode."
+	done
+	
+ElmsLabText_OptionsDone:
+	text "All options have"
+	line "now been set."
+	done
+
+ElmsLabText_ExtraOptionsGlobalAsk:
+	text "You are about to"
+	line "be asked to set"
+	cont "EXTRA OPTIONS for"
+	cont "your challenge."
+	
+	para "Declining here"
+	line "will leave this"
+	cont "whole menu."
+	
+	para "Set EXTRA OPTIONS"
+	line "for your game?"
+	done
+	
+ElmsLabText_AskExtraOptionsForYourMon:
+	text "Modify your DVs,"
+	line "stop evolutions,"
+	
+	para "enable ABILITIES,"
+	line "or MEGAS?"
+	done
+
+ElmsLabText_ProfessorsRepelAsk:
+	text "Borrow the"
+	line "PROF'S REPEL?"
+	done
+	
+ElmsLabText_HMItemsAsk:
+	text "Play with ITEMS"
+	line "that act like"
+	cont "HM Moves?"
+	done
+	
+ElmsLabText_HMItemsYes:
+	text "Throughout your"
+	line "adventure, you"
+	cont "will obtain the"
+	cont "HM ITEMS."
+	done
+	
+ElmsLabtext_LevelCapAsk:
+	text "Play with a"
+	line "hard-coded"
+	cont "LEVEL CAP?"
+	done
+
+ElmsLabText_LevelCapYes:
+	text "You will stop"
+	line "gaining EXP."
+	cont "once you reach"
+	cont "the next key"
+	cont "trainer's level."
+	done
+	
+ElmsLabtext_LevelCapNo:
+	text "Your #MON"
+	line "will gain EXP."
+	cont "as normal."
+	done
+	
+ElmsLabText_MetronomeOnlyAsk:
+	text "Play on METRONOME"
+	line "-only mode?"
+	done
+	
+ElmsLabText_MetronomeOnlyYes:
+	text "Good luck."
+	line "You'll need it."
+	done
+	
+ElmsLabText_MetronomeOnlyNo:
+	text "You're still able"
+	line "to pick moves."
+	done
+
+ElmsLabText_ProfessorsRepelYes:
+	text "Turn it on in"
+	line "the KEY ITEMS"
+	
+	para "and WILD #MON"
+	line "will not appear."
+	done
+	
+ElmsLabText_ProfessorsRepelNo:
+	text "We'll keep hold"
+	line "of this then!"
+	done
+
+ElmsLabText_SpinnersAtAllAsk:
+	text "Modify SPINNER"
+	line "MOVEMENT?"
+	done
+	
+ElmsLabText_SpinnersAtAllNo:
+	text "SPINNERS are"
+	line "still enabled."
+
+ElmsLabText_SpinnersRotatorsAsk:
+	text "Turn all SPINNERS"
+	line "into ROTATORS?"
+	done
+	
+ElmsLabText_SpinnersRotatorsYes:
+	text "All map objects"
+	line "with random spin,"
+	
+	para "now rotate in a"
+	line "predictable way."
+	done
+	
+ElmsLabText_SpinnersRotatorsNo:
+	text "All map objects"
+	line "with random spin,"
+	
+	para "will continue"
+	line "to spin randomly."
+	done 
+	
+ElmsLabText_AskMegas:
+	text "Do you want to"
+	line "be able to"
+	cont "MEGA EVOLVE?"
+	done
+	
+ElmsLabText_MegasNo:
+	text "No #MON will"
+	line "MEGA EVOLVE."
+	done
+	
+ElmsLabText_MegasYes:
+	text "If your #MON"
+	line "can MEGA EVOLVE,"
+	
+	para "it will be able"
+	line "to as the story"
+	cont "progresses."
+	done
+
+
+ElmsLabText_PLAHiddenPowerAsk:
+	text "Want to play with"
+	line "LEGENDS ARCEUS"
+	cont "HIDDEN POWER?"
+	done
+	
+ElmsLabText_PLAHiddenPowerYes:
+	text "HIDDEN POWER will"
+	line "be 50 power and"
+	cont "always choose"
+	cont "the best matchup."
+	done
+
+ElmsLabText_PLAHiddenPowerWarning:
+	text "You will now be"
+	line "asked about in-"
+	cont "depth altering."
+	
+	para "This will only"
+	line "affect your DVs."
+	done
+
+ElmsLabText_AskLimitTutors:
+	text "Limit the TUTORS"
+	line "to FOUR uses?"
+	done
+	
+ElmsLabText_LimitTutorsYes:
+	text "You can only use"
+	line "one new TUTOR a"
+	cont "maximum of four"
+	cont "times and you"
+	cont "can only pick"
+	cont "one TUTOR."
+	done
+
+ElmsLabText_LimitTutorsNo:
+	text "You may use both"
+	line "TUTORS unlimited"
+	cont "times."
+	done
+
+ElmsLabText_AskExtraOptions:
+	text "Set EXTRA OPTIONS"
+	line "for your game?"
+	done
+
+ElmsLabText_NoExtraOptions:
+	text "No extra changes"
+	line "have been made."
+	done
+
+ElmsLabText_AbilitiesAsk:
+	text "Do you want your"
+	line "#MON to have"
+	cont "an ABILITY if one"
+	cont "is coded for it?"
+	done
+
+ElmsLabText_AbilitiesNo:
+	text "Your #MON will"
+	line "not have any"
+	cont "extra ABILITY."
+	done
+
+ElmsLabText_AbilitiesYes:
+	text "If your #MON"
+	line "has an ability"
+	cont "coded in, it will"
+	cont "be activated."
+	done 
+
+ElmsLabText_AlterHiddenPower:
+	text "Want to modify"
+	line "HIDDEN POWER?"
+	done
+
+ElmsLabText_NoAlteredHiddenPower:
+	text "HIDDEN POWER"
+	line "stays the same."
+	done
+
+ElmsLabText_AlteredHiddenPower:
+	text "HIDDEN POWER"
+	line "is modified."
+	done
+	
+ElmsLabText_EvolutionsYes:
+	text "Evolutions are"
+	line "still enabled."
+	done
+	
+ElmsLabText_EvolutionsNo:
+	text "Your #MON"
+	line "will not evolve."
+	done
+	
+ElmsLabText_EvolutionsAsk:
+	text "Should your"
+	line "#MON evolve?"
+	done
+	
+ElmsLabText_AskRival:
+	text "Do you want the"
+	line "RIVAL's starter"
+	cont "to change too?"
+	done
+	
+ElmsLabText_RivalChanges:
+	text "The RIVAL's"
+	line "#MON will"
+	cont "be updated."
+	done
+
+ElmsLabText_RivalStillSame:
+	text "The RIVAL will"
+	line "stay unchanged."
+	done
+	
+ElmsLabText_AskAboutHiddenPower:
+	text "Want to set type"
+	line "for HIDDEN POWER?"
+	done
+	
+ElmsLabText_HiddenPowerUpdated:
+	text "HIDDEN POWER"
+	line "type updated."
+	done
+	
+ReceivedStarterTextNoPreview:
+	text "<PLAYER> received"
+	line "a #MON."
+	done
+
+
+ElmsLabChooseStartersAskText:
+	text "Update STARTER"
+	line "#MON?"
+	done
+	
+ElmsLabChooseStartersYesText:
+	text "STARTERS updated."
+	line "Have fun...."
+	done
+	
+ElmsLabChooseStartersNoText:
+	text "Starters remain"
+	line "same as before."
+	done
+	
+ElmsLabText_AskChikorita:
+	text "Want to change"
+	line "CHIKORITA?"
+	done
+	
+ElmsLabText_AskCyndaquil:
+	text "Want to change"
+	line "CYNDAQUIL?"
+	done
+
+ElmsLabText_AskTotodile:
+	text "Want to change"
+	line "TOTODILE?"
+	done
+	
+ElmsLabText_PreviewEnabled:
+	text "You will still"
+	line "see what you"
+	cont "can receive."
+	done
+	
+ElmsLabText_PreviewDisabled:
+	text "You will not"
+	line "be able to see"
+	cont "what you get."
+	done
+	
+ElmsLab_RandomizerHide:
+	text "Do you want to"
+	line "hide what is"
+	cont "in each ball?"
+	done
+	
+ElmsLab_RandomizeStartersAsk:
+	text "Do you want"
+	line "to randomize"
+	cont "your starters?"
+	done
+	
+ElmsLab_RandomizerNo:
+	text "Starters are"
+	line "kept unchanged."
+	done
+	
+ElmsLab_RandomizerYes:
+	text "Starters are"
+	line "now randomized."
+	done
+	
 ElmsLabText_AskAboutHMFriends:
 	text "Do you want"
 	line "the HM Friends"
@@ -2410,11 +2709,11 @@ ElmsLabText_AskAboutHMFriends:
 	done
 	
 ElmsLabText_AskAboutHMFriendsYes:
-	text "The first"
-	line "encounters will"
-	cont "be HM Friends"
-	cont "in ILEX FOREST"
-	cont "and ROUTE 34."
+	text "On ROUTES 33,"
+	line "34, and ILEX"
+	cont "FOREST, your"
+	cont "first encounters"
+	cont "will be fixed."
 	done
 	
 ElmsLabText_AskAboutHMFriendsNo:
@@ -2423,6 +2722,26 @@ ElmsLabText_AskAboutHMFriendsNo:
 	cont "encounters."
 	done
 	
+ElmsLabText_ResetOptions:
+	text "Reset ALL OPTIONS"
+	line "and revert to"
+	cont "vanilla gameplay?"
+	done
+	
+ElmsLabText_AreYouSure:
+	text "Are you sure?"
+	done
+	
+ElmsLabText_ResetOptionsYes:
+	text "All EXTRA OPTIONS"
+	line "are reset."
+	done
+
+ElmsLabText_ResetOptionsNo:
+	text "No changes have"
+	line "been made to"
+	cont "EXTRA OPTIONS."
+	done
 
 
 ElmsLab_MapEvents:
@@ -2462,6 +2781,11 @@ ElmsLab_MapEvents:
 	bg_event  2,  5, BGEVENT_DOWN, ElmsLabRandomizeStarters
 	bg_event  3,  1, BGEVENT_READ, ElmsLabStarterChoice
 	bg_event  1,  2, BGEVENT_READ, ElmsLabExtraOptions
+	bg_event  0,  2, BGEVENT_READ, ElmsLab_ResetSettings
+	bg_event  6,  6, BGEVENT_READ, ElmsLab_ExtraPokemonOptions
+	bg_event  7,  6, BGEVENT_READ, ElmsLab_ExtraQualityOfLifeItems
+	bg_event  8,  6, BGEVENT_READ, ElmsLab_ExtraQualityOfLifeSettings
+	bg_event  9,  6, BGEVENT_READ, ElmsLab_ExtraCoreGameplayOptions
 	
 	def_object_events
 	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1

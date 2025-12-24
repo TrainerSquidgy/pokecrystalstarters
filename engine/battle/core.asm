@@ -7858,7 +7858,6 @@ ComeBackText:
 	text_far _ComeBackText
 	text_end
 
-
 FillInExpBar:
 	push hl
 	call CalcExpBar
