@@ -16,7 +16,21 @@ GoldenrodDeptStore3FClerkScript:
 	end
 
 GoldenrodDeptStore3FSuperNerdScript:
-	jumptextfaceplayer GoldenrodDeptStore3FSuperNerdText
+	faceplayer
+	opentext
+	writetext GoldenrodDeptStore3FSuperNerdIntroText
+	yesorno
+	iftrue .TurnOffLimits
+	loadmem wVitaminLimitsDisabled, 0
+	writetext GoldenrodDeptStore3FSuperNerdLimitsOnText
+	sjump .SuperNerdOutro
+.TurnOffLimits
+	loadmem wVitaminLimitsDisabled, 1
+	writetext GoldenrodDeptStore3FSuperNerdLimitsOffText	
+.SuperNerdOutro
+	waitbutton
+	closetext
+	end
 
 GoldenrodDeptStore3FRockerScript:
 	jumptextfaceplayer GoldenrodDeptStore3FRockerText
@@ -27,14 +41,28 @@ GoldenrodDeptStore3FDirectory:
 GoldenrodDeptStore3FElevatorButton:
 	jumpstd ElevatorButtonScript
 
-GoldenrodDeptStore3FSuperNerdText:
-	text "I, I, I'm really"
-	line "impatient!"
+GoldenrodDeptStore3FSuperNerdIntroText:
+	text "Pssst..."
+	line "Wanna use even"
+	cont "more VITAMINS?"
 
-	para "I use X SPEED in"
-	line "battle to speed up"
-	cont "my #MON."
+	para "I have a hack!"
 	done
+	
+GoldenrodDeptStore3FSuperNerdLimitsOnText:
+	text "Too bad..."
+	line "Come back if you"
+	cont "change your mind."
+	done
+	
+GoldenrodDeptStore3FSuperNerdLimitsOffText:
+	text "Excellent!"
+	
+	para "You can now use"
+	line "more VITAMINS!"
+	done
+	
+
 
 GoldenrodDeptStore3FRockerText:
 	text "Hey! When you bat-"
