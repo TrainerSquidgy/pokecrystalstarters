@@ -64,6 +64,10 @@ DragonsDenB1F_ClairScene:
 	setevent EVENT_GOT_TM24_DRAGONBREATH
 	writetext ClairText_DescribeDragonbreathDragonDen
 	promptbutton
+	readmem wLevelCap
+	ifgreater 35, .skipLevelCap
+	loadmem wLevelCap, 35
+.skipLevelCap
 	writetext ClairText_WhatsTheMatterDragonDen
 	waitbutton
 	closetext

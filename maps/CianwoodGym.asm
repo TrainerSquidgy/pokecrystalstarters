@@ -52,6 +52,10 @@ CianwoodGymChuckScript:
 .FightDone:
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iftrue .AlreadyGotTM
+	readmem wLevelCap
+	ifgreater 31, .skipLevelCap
+	loadmem wLevelCap, 31
+.skipLevelCap
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
 	setevent EVENT_BEAT_BLACKBELT_LAO
 	setevent EVENT_BEAT_BLACKBELT_NOB
