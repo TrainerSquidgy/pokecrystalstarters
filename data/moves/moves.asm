@@ -265,4 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
+	move STOCKPILE,    EFFECT_STOCKPILE,           0, NORMAL,       100, 10,   0
+	move SPIT_UP,      EFFECT_SPIT_UP,             1, NORMAL,       100, 10,   0
+	move SWALLOW,      EFFECT_SWALLOW,             0, NORMAL,       100, 10,   0
 	assert_table_length NUM_ATTACKS

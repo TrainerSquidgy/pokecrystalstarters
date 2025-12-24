@@ -6912,3 +6912,153 @@ BattleCommand_AddDamage:
 	
 	
 
+BattleCommand_Stockpile:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_stockpile_count
+	ld a, [wPlayerStockpile]
+	cp 3
+	jr z, .failed
+	inc a
+	ld [wPlayerStockpile], a
+	jr .done
+.enemy_stockpile_count
+	ld a, [wEnemyStockpile]
+	cp 3
+	jr z, .failed
+	inc a
+	ld [wEnemyStockpile], a
+.done
+	ld [wTextDecimalByte], a
+	ld hl, StockpileCountText
+	jp StdBattleTextbox
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+BattleCommand_Swallow:
+	ld de, wBattleMonHP
+	ld hl, wBattleMonMaxHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld de, wEnemyMonHP
+	ld hl, wEnemyMonMaxHP
+.got_hp
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld b, a
+	push hl
+	push de
+	push bc
+	ld c, 2
+	call CompareBytes
+	pop bc
+	pop de
+	pop hl
+	jp z, .hp_full
+	
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_stockpile_count
+	ld a, [wPlayerStockpile]
+	and a
+	jr z, .failed
+	dec a
+	jr z, .one
+	dec a
+	jr z, .two
+	jr .three
+.enemy_stockpile_count
+	ld a, [wEnemyStockpile]
+	and a
+	jr z, .failed
+	dec a
+	jr z, .one
+	dec a
+	jr z, .two	
+.three
+	ld hl, GetMaxHP
+	call CallBattleCore
+	jr .restore
+.two
+	ld hl, GetHalfMaxHP
+	call CallBattleCore
+	jr .restore
+.one
+	ld hl, GetQuarterMaxHP
+	call CallBattleCore
+.restore
+	call AnimateCurrentMove
+	call BattleCommand_SwitchTurn
+	ld hl, RestoreHP
+	call CallBattleCore
+	call BattleCommand_SwitchTurn
+	call UpdateUserInParty
+	call RefreshBattleHuds
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_stockpile_reset
+	xor a
+	ld [wPlayerStockpile], a 
+	jr .textbox
+.enemy_stockpile_reset
+	xor a
+	ld [wEnemyStockpile], a 
+.textbox
+	ld hl, RegainedHealthText
+	jp StdBattleTextbox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+.hp_full
+	call AnimateFailedMove
+	ld hl, HPIsFullText
+	call StdBattleTextbox
+	jp EndMoveEffect
+
+BattleCommand_SpitUp:
+	ld hl, wPlayerStockpile
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_spit_up
+	ld hl, wEnemyStockpile
+.player_spit_up
+	ld a, [hl]
+	and a
+	jr z, .failed
+	dec a
+	and a
+	jr z, .one
+	dec a
+	and a
+	jr z, .two
+;three
+	ld d, 150
+	jr .damagedone
+.two
+	ld d, 100
+	jr .damagedone
+.one
+	ld d, 50
+.damagedone
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_spit_up_reset
+	xor a
+	ld [wEnemyStockpile], a
+	ret
+.player_spit_up_reset
+	xor a
+	ld [wPlayerStockpile], a
+	ret
+
+.failed	
+	ld a, 1
+	ld [wAttackMissed], a
+	call AnimateFailedMove
+	jp PrintButItFailed
+	

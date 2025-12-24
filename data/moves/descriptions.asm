@@ -252,10 +252,10 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw StockpileDescription
+	dw SpitUpDescription
+	dw SwallowDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -266,6 +266,18 @@ MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
+
+StockpileDescription:
+	db   "Charges up power"
+	next "up to 3 turns.@"
+	
+SwallowDescription:
+	db   "Uses stockpile"
+	next "to boost HP.@"
+	
+SpitUpDescription:
+	db   "Uses stockpile"
+	next "to attack enemy.@"
 
 PoundDescription:
 	db   "Pounds with fore-"
