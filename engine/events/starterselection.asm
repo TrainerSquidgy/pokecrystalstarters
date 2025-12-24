@@ -877,7 +877,7 @@ PokemonStrings:
 .Tyranitar	db "TYRANITAR@@"
 .Lugia		db "LUGIA@@@@@@"
 .Hooh		db "HO-OH@@@@@@"
-.Celebi		db "CELEBI@@@@@"
+.Celebi		db "SEEDOT@@@@@"
 .Nuzleaf	db "NUZLEAF@@@@"
 .Shiftry	db "SHIFTRY@@@@"
 ;PYTHONBUFFER4
