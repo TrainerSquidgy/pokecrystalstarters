@@ -3367,3 +3367,57 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+WhismurEvosAttacks:
+	db EVOLVE_LEVEL, 20, LOUDRED
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 5, UPROAR
+	db 11, ASTONISH
+	db 15, HOWL
+	db 21, SUPERSONIC
+	db 25, STOMP
+	db 31, SCREECH
+	db 35, ROAR
+	db 41, REST
+	db 41, SLEEP_TALK
+	db 45, HYPER_VOICE
+	db 0
+	
+LoudredEvosAttacks:
+	db EVOLVE_LEVEL, 40, EXPLOUD
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 1, UPROAR
+	db 1, ASTONISH
+	db 1, HOWL
+	db 5, UPROAR
+	db 11, ASTONISH
+	db 15, HOWL
+	db 23, SUPERSONIC
+	db 29, STOMP
+	db 37, SCREECH
+	db 43, ROAR
+	db 51, REST
+	db 51, SLEEP_TALK
+	db 57, HYPER_VOICE
+	db 0
+	
+ExploudEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 1, UPROAR
+	db 1, ASTONISH
+	db 1, HOWL
+	db 5, UPROAR
+	db 11, ASTONISH
+	db 15, HOWL
+	db 23, SUPERSONIC
+	db 29, STOMP
+	db 37, SCREECH
+	db 40, HYPER_BEAM
+	db 45, ROAR
+	db 55, REST
+	db 55, SLEEP_TALK
+	db 63, HYPER_VOICE
+	db 0

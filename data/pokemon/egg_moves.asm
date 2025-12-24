@@ -805,5 +805,13 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+LoudredEggMoves:
+ExploudEggMoves:
+WhismurEggMoves:
+	db SNORE
+	db SWAGGER
+	db TAKE_DOWN
+	db-1
+
 NoEggMoves:
 	db -1 ; end

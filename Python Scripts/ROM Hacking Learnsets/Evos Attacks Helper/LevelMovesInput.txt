@@ -1,14 +1,16 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Exploud
+1: Pound
+1: Uproar
+1: Astonish
+1: Howl
+5: Uproar
+11: Astonish
+15: Howl
+23: Supersonic
+29: Stomp
+37: Screech
+40: Hyper Beam
+45: Roar
+55: Rest
+55: Sleep Talk
+63: Hyper Voice

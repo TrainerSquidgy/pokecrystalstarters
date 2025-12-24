@@ -1,16 +1,18 @@
-LechonkEvosAttacks:
+ExploudEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, POUND
+	db 1, UPROAR
+	db 1, ASTONISH
+	db 1, HOWL
+	db 5, UPROAR
+	db 11, ASTONISH
+	db 15, HOWL
+	db 23, SUPERSONIC
+	db 29, STOMP
+	db 37, SCREECH
+	db 40, HYPER_BEAM
+	db 45, ROAR
+	db 55, REST
+	db 55, SLEEP_TALK
+	db 63, HYPER_VOICE
 	db 0

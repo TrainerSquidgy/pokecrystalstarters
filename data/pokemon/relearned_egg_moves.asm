@@ -910,6 +910,15 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+LoudredRelearnedEggMoves:
+ExploudRelearnedEggMoves:
+WhismurRelearnedEggMoves:
+	db 0
+	db 1, SNORE
+	db 1, SWAGGER
+	db 1, TAKE_DOWN
+	db 0
+	
 NoRelearnedEggMoves:
 	db 0
 	db 0
