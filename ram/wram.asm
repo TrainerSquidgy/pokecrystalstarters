@@ -3200,7 +3200,7 @@ wPlayerTauntCount:: db
 wEnemyTauntCount:: db
 wIsAStream:: db
 wVitaminLimitsDisabled:: db
-	ds 54
+	ds 53
 
 
 wEventFlags:: flag_array NUM_EVENTS
