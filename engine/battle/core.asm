@@ -285,6 +285,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
+	call HandleIngrain
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
