@@ -2125,3 +2125,10 @@ Swallow:
 	doturn
 	swallow
 	endmove
+
+Ingrain:
+	checkobedience
+	usedmovetext
+	doturn
+	ingrain
+	endmove

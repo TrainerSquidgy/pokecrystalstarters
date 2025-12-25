@@ -1156,3 +1156,14 @@ StockpileCountText:
 	text_decimal wTextDecimalByte, 1, 1
 	text "!"
 	prompt
+	
+PlantedRootsText:
+	text "<USER>"
+	line "planted roots."
+	prompt
+	
+AbsorbedNutrientsText:
+	text "<TARGET>"
+	line "absorbed nutrients"
+	cont "with its roots!"
+	prompt

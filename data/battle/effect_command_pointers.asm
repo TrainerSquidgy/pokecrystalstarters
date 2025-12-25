@@ -181,4 +181,5 @@ BattleCommandPointers:
 	dw BattleCommand_Stockpile
 	dw BattleCommand_SpitUp
 	dw BattleCommand_Swallow
+	dw BattleCommand_Ingrain
 	assert_table_length NUM_EFFECT_COMMANDS
