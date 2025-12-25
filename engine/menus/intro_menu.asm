@@ -838,7 +838,7 @@ NamePlayer:
 .Chris:
 	db "SQUIDGY@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "SNOWY@@@@@@"
 
 GSShowPlayerNamingChoices: ; unreferenced
 	call LoadMenuHeader
