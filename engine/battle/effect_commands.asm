@@ -1082,6 +1082,7 @@ BattleCommand_DoTurn:
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
+	db EFFECT_BOUNCE
 	db EFFECT_ROLLOUT
 	db EFFECT_BIDE
 	db EFFECT_RAMPAGE
@@ -1927,6 +1928,8 @@ BattleCommand_LowerSub:
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
+	jr z, .charge_turn
+	cp EFFECT_BOUNCE
 	jr z, .charge_turn
 
 .already_charged
@@ -5555,6 +5558,8 @@ BattleCommand_Charge:
 	ld b, a
 	cp FLY
 	jr z, .set_flying
+	cp BOUNCE
+	jr z, .set_flying
 	cp DIG
 	jr nz, .dont_set_digging
 	set SUBSTATUS_UNDERGROUND, [hl]
@@ -5610,6 +5615,10 @@ BattleCommand_Charge:
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
+	
+	cp FLY
+	ld hl, .BattleBounceText
+	jr z, .done
 
 	cp DIG
 	ld hl, .BattleDugText
@@ -5635,6 +5644,10 @@ BattleCommand_Charge:
 
 .BattleFlewText:
 	text_far _BattleFlewText
+	text_end
+
+.BattleBounceText:
+	text_far _BattleBounceText
 	text_end
 
 .BattleDugText:
@@ -6911,4 +6924,65 @@ BattleCommand_AddDamage:
     ret
 	
 	
+BattleCommand_MagicCoat:
+	call CheckOpponentWentFirst
+	jr nz, .fail
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_MAGIC_COAT, [hl]
+	call AnimateCurrentMove
+	ld hl, MagicCoatText
+	jp StdBattleTextbox
 
+.fail
+	call AnimateFailedMove
+	jp PrintButItFailed
+
+
+BattleCommand_CheckMagicCoat:
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	bit SUBSTATUS_MAGIC_COAT, [hl]
+	ret z
+	res SUBSTATUS_MAGIC_COAT, [hl]
+
+	ld hl, BouncedBackText
+	push hl
+
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+
+; display bounce back/snatch text
+	pop hl
+	call StdBattleTextbox
+
+; backup and replace enemy move
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld a, [hl]
+	push af
+	push hl
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld b, a
+	call BattleCommand_SwitchTurn
+	pop hl
+	ld [hl], b
+	push hl
+
+	farcall UpdateMoveData
+	farcall ResetTurn
+
+; restore old move
+	pop hl
+	pop af
+	ld [hl], a
+	farcall UpdateMoveData
+
+	call BattleCommand_SwitchTurn
+
+	ret

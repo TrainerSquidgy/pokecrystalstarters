@@ -252,10 +252,10 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw FlyDescription
+	dw MagicCoatDescription
+	dw ForesightDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -342,6 +342,10 @@ WhirlwindDescription:
 FlyDescription:
 	db   "1st turn: Fly"
 	next "2nd turn: Attack@"
+	
+MagicCoatDescription:
+	db   "Reflects status"
+	next "moves back.@"
 
 BindDescription:
 	db   "Binds the target"

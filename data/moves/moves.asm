@@ -265,4 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
+	move BOUNCE,       EFFECT_BOUNCE,             85, FLYING,        85,  5,  30
+	move MAGIC_COAT,   EFFECT_MAGIC_COAT,		   0, PSYCHIC_TYPE, 100, 15,   0
+	move ODOR_SLEUTH,  EFFECT_FORESIGHT,           0, NORMAL,       100, 40,   0
 	assert_table_length NUM_ATTACKS

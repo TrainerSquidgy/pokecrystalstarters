@@ -28,6 +28,7 @@ DoSleep:
 	doturn
 	checkhit
 	checksafeguard
+	checkmagiccoat
 	sleeptarget
 	endmove
 
@@ -359,6 +360,7 @@ AttackDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	attackdown
 	lowersub
 	statdownanim
@@ -372,6 +374,7 @@ DefenseDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	defensedown
 	lowersub
 	statdownanim
@@ -385,6 +388,7 @@ SpeedDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	speeddown
 	lowersub
 	statdownanim
@@ -398,6 +402,7 @@ SpecialAttackDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	specialattackdown
 	lowersub
 	statdownanim
@@ -411,6 +416,7 @@ SpecialDefenseDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	specialdefensedown
 	lowersub
 	statdownanim
@@ -424,6 +430,7 @@ AccuracyDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	accuracydown
 	lowersub
 	statdownanim
@@ -437,6 +444,7 @@ EvasionDown:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	evasiondown
 	lowersub
 	statdownanim
@@ -449,6 +457,7 @@ AttackDown2:
 	checkobedience
 	usedmovetext
 	doturn
+	checkmagiccoat
 	checkhit
 	attackdown2
 	lowersub
@@ -463,6 +472,7 @@ DefenseDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	defensedown2
 	lowersub
 	statdownanim
@@ -476,6 +486,7 @@ SpeedDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	speeddown2
 	lowersub
 	statdownanim
@@ -489,6 +500,7 @@ SpecialAttackDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	specialattackdown2
 	lowersub
 	statdownanim
@@ -502,6 +514,7 @@ SpecialDefenseDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	specialdefensedown2
 	lowersub
 	statdownanim
@@ -515,6 +528,7 @@ AccuracyDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	accuracydown2
 	lowersub
 	statdownanim
@@ -528,6 +542,7 @@ EvasionDown2:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	evasiondown2
 	lowersub
 	statdownanim
@@ -970,6 +985,7 @@ DoConfuse:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	checksafeguard
 	confuse
 	endmove
@@ -1054,6 +1070,7 @@ DoParalyze:
 	doturn
 	stab
 	checkhit
+	checkmagiccoat
 	checksafeguard
 	paralyze
 	endmove
@@ -1151,6 +1168,7 @@ LeechSeed:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	leechseed
 	endmove
 
@@ -1454,6 +1472,7 @@ MeanLook:
 	checkobedience
 	usedmovetext
 	doturn
+	checkmagiccoat
 	arenatrap
 	endmove
 
@@ -1563,6 +1582,7 @@ Swagger:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	switchturn
 	attackup2
 	switchturn
@@ -1602,6 +1622,7 @@ Attract:
 	usedmovetext
 	doturn
 	checkhit
+	checkmagiccoat
 	attract
 	endmove
 
@@ -2093,3 +2114,34 @@ Snow:
 	startweather
 	endmove
 	
+Bounce:
+	checkcharge
+	checkobedience
+	doturn
+	charge
+	usedmovetext
+	critical
+	damagestats
+	damagecalc
+	effectchance
+	stab
+	damagevariation
+	checkhit
+	moveanimnosub
+	raisesub
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	paralyzetarget
+	kingsrock
+	endmove	
+
+MagicCoat:
+	checkobedience
+	usedmovetext
+	doturn
+	magiccoat
+	endmove
