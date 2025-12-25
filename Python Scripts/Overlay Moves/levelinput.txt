@@ -1,16 +1,14 @@
-Pokémon: Sableye
+Pokémon: Armaldo
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+1: Harden
+1: Mud Sport
+1: Water Gun
+7: Harden
+13: Mud Sport
+19: Water Gun
+25: Metal Claw
+31: Protect
+37: AncientPower
+46: Fury Cutter
+55: Slash
+64: Rock Blast
