@@ -1,16 +1,15 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Grumpig
+1: Splash
+1: Psywave
+1: Odor Sleuth
+1: Psybeam
+7: Psywave
+10: Odor Sleuth
+16: Psybeam
+19: Psych Up
+25: Confuse Ray
+28: Magic Coat
+37: Psychic
+43: Rest
+43: Snore
+55: Bounce

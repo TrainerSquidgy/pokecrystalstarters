@@ -805,5 +805,11 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+SpoinkEggMoves:
+GrumpigEggMoves:
+	db SUBSTITUTE
+	db FUTURE_SIGHT
+	db -1
+	
 NoEggMoves:
 	db -1 ; end

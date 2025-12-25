@@ -910,6 +910,13 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+SpoinkRelearnedEggMoves:
+GrumpigRelearnedEggMoves:
+	db 0
+	db 1, FUTURE_SIGHT
+	db 1, SUBSTITUTE
+	db 0
+
 NoRelearnedEggMoves:
 	db 0
 	db 0

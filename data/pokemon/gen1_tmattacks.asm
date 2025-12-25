@@ -2506,6 +2506,32 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+SpoinkGen1TMAttacks:
+	db 0
+	db 1, BODY_SLAM
+	db 1, DOUBLE_EDGE
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, THUNDER_WAVE
+	db 1, PSYWAVE
+	db 1, SUBSTITUTE
+	db 0
+
+GrumpigGen1TMAttacks:
+	db 0
+	db 1, MEGA_PUNCH
+	db 1, MEGA_KICK
+	db 1, BODY_SLAM
+	db 1, DOUBLE_EDGE
+	db 1, COUNTER
+	db 1, SEISMIC_TOSS
+	db 1, MIMIC
+	db 1, REFLECT
+	db 1, THUNDER_WAVE
+	db 1, PSYWAVE
+	db 1, SUBSTITUTE
+	db 0
+
 NoGen1TMAttacks:
 	db 0
 	db 0

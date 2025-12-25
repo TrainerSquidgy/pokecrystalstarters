@@ -347,7 +347,9 @@ CantMove:
 	call GetBattleVar
 	cp FLY
 	jr z, .fly_dig
-
+	cp BOUNCE
+	jr z, .fly_dig
+	
 	cp DIG
 	ret nz
 
@@ -2020,6 +2022,8 @@ BattleCommand_MoveAnimNoSub:
 	call GetBattleVar
 	cp FLY
 	jr z, .clear_sprite
+	cp BOUNCE
+	jr z, .clear_sprite
 	cp DIG
 	ret nz
 .clear_sprite
@@ -2110,6 +2114,8 @@ BattleCommand_FailureText:
 	call GetBattleVarAddr
 
 	cp FLY
+	jr z, .fly_dig
+	cp BOUNCE
 	jr z, .fly_dig
 	cp DIG
 	jr z, .fly_dig
@@ -5543,6 +5549,8 @@ BattleCommand_Charge:
 	call GetBattleVar
 	cp FLY
 	jr z, .flying
+	cp BOUNCE
+	jr z, .flying
 	cp DIG
 	jr z, .flying
 	call BattleCommand_RaiseSub
@@ -5616,7 +5624,7 @@ BattleCommand_Charge:
 	ld hl, .BattleFlewText
 	jr z, .done
 	
-	cp FLY
+	cp BOUNCE
 	ld hl, .BattleBounceText
 	jr z, .done
 

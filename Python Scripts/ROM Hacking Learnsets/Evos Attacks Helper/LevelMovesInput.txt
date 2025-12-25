@@ -1,14 +1,15 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Grumpig
+1: Splash
+1: Psywave
+1: Odor Sleuth
+1: Psybeam
+7: Psywave
+10: Odor Sleuth
+16: Psybeam
+19: Psych Up
+25: Confuse Ray
+28: Magic Coat
+37: Psychic_M
+43: Rest
+43: Snore
+55: Bounce

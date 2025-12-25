@@ -1,16 +1,17 @@
-LechonkEvosAttacks:
+GrumpigEvosAttacks:
 	db 0 ; No More Evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 5, DISARMING_VOICE
-	db 8, ECHOED_VOICE
-	db 12, MUD_SHOT
-	db 15, COVET
-	db 17, DIG
-	db 21, HEADBUTT
-	db 24, YAWN
-	db 27, TAKE_DOWN
-	db 30, WORK_UP
-	db 32, UPROAR
-	db 35, DOUBLE-EDGE
+	db 1, SPLASH
+	db 1, PSYWAVE
+	db 1, ODOR_SLEUTH
+	db 1, PSYBEAM
+	db 7, PSYWAVE
+	db 10, ODOR_SLEUTH
+	db 16, PSYBEAM
+	db 19, PSYCH_UP
+	db 25, CONFUSE_RAY
+	db 28, MAGIC_COAT
+	db 37, PSYCHIC_M
+	db 43, REST
+	db 43, SNORE
+	db 55, BOUNCE
 	db 0

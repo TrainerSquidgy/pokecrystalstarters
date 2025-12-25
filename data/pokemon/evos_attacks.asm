@@ -3367,3 +3367,37 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+SpoinkEvosAttacks:
+	db EVOLVE_LEVEL, 32, GRUMPIG
+	db 0 ; No More Evolutions
+	db 1, SPLASH
+	db 7, PSYWAVE
+	db 10, ODOR_SLEUTH
+	db 16, PSYBEAM
+	db 19, PSYCH_UP
+	db 25, CONFUSE_RAY
+	db 28, MAGIC_COAT
+	db 34, PSYCHIC_M
+	db 37, REST
+	db 37, SNORE
+	db 43, BOUNCE
+	db 0
+	
+GrumpigEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SPLASH
+	db 1, PSYWAVE
+	db 1, ODOR_SLEUTH
+	db 1, PSYBEAM
+	db 7, PSYWAVE
+	db 10, ODOR_SLEUTH
+	db 16, PSYBEAM
+	db 19, PSYCH_UP
+	db 25, CONFUSE_RAY
+	db 28, MAGIC_COAT
+	db 37, PSYCHIC_M
+	db 43, REST
+	db 43, SNORE
+	db 55, BOUNCE
+	db 0
