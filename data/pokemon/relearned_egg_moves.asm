@@ -910,6 +910,14 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+AnorithRelearnedEggMoves:
+ArmaldoRelearnedEggMoves:
+	db 0
+	db 1, RAPID_SPIN
+	db 1, ROCK_SLIDE
+	db 1, SWORDS_DANCE
+	db 0
+
 NoRelearnedEggMoves:
 	db 0
 	db 0

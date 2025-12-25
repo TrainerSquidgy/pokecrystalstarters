@@ -1,4 +1,8 @@
-Pokémon: Lechonk
-Bide
-Body Slam
-Take Down
+Pokémon: Anorith
+SWORDS_DANCE
+BODY_SLAM
+DOUBLE_EDGE
+WATER_GUN
+MIMIC
+ROCK_SLIDE
+SUBSTITUTE

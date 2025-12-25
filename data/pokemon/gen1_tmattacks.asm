@@ -2506,6 +2506,18 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+AnorithGen1TMAttacks:
+ArmaldoGen1TMAttacks:
+	db 0
+	db 1, SWORDS_DANCE
+	db 1, BODY_SLAM
+	db 1, DOUBLE_EDGE
+	db 1, WATER_GUN
+	db 1, MIMIC
+	db 1, ROCK_SLIDE
+	db 1, SUBSTITUTE
+	db 0
+
 NoGen1TMAttacks:
 	db 0
 	db 0

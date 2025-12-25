@@ -3367,3 +3367,35 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+AnorithEvosAttacks:
+	db EVOLVE_LEVEL, 40, ARMALDO
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 7, HARDEN
+	db 13, MUD_SPORT
+	db 19, WATER_GUN
+	db 25, METAL_CLAW
+	db 31, PROTECT
+	db 37, ANCIENTPOWER
+	db 43, FURY_CUTTER
+	db 49, SLASH
+	db 55, ROCK_BLAST
+	db 0
+	
+ArmaldoEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, SCRATCH
+	db 1, HARDEN
+	db 1, MUD_SPORT
+	db 1, WATER_GUN
+	db 7, HARDEN
+	db 13, MUD_SPORT
+	db 19, WATER_GUN
+	db 25, METAL_CLAW
+	db 31, PROTECT
+	db 37, ANCIENTPOWER
+	db 46, FURY_CUTTER
+	db 55, SLASH
+	db 64, ROCK_BLAST
+	db 0

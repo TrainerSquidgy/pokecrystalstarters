@@ -1,5 +1,9 @@
-LechonkEggMoves:
-	db BIDE
+AnorithEggMoves:
+	db SWORDS_DANCE
 	db BODY_SLAM
-	db TAKE_DOWN
+	db DOUBLE_EDGE
+	db WATER_GUN
+	db MIMIC
+	db ROCK_SLIDE
+	db SUBSTITUTE
 	db -1

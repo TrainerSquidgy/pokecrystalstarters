@@ -805,5 +805,12 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+AnorithEggMoves:
+ArmaldoEggMoves:
+	db RAPID_SPIN
+	db ROCK_SLIDE
+	db SWORDS_DANCE
+	db -1
+
 NoEggMoves:
 	db -1 ; end
