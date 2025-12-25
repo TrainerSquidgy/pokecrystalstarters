@@ -1,90 +1,46 @@
-Calm Mind
-Toxic
-Hidden Power
-Ice Beam
-Hyper Beam
-Light Screen
-Protect
-Rain Dance
-Safeguard
-Frustration
-Earthquake
-Return
-Psychic
-Shadow Ball
-Double Team
-Reflect
-Sandstorm
-Rock Tomb
-Facade
-Secret Power
-Rest
-Skill Swap
-Flash
-Body Slam
-Defense Curl
-Double-Edge
-Dream Eater
-Endure
-Explosion
-Mimic
+Splash
+Psywave
+Odor Sleuth
+Psybeam
 Psych Up
-Rock Slide
-Rollout
-Selfdestruct
-Sleep Talk
-Snore
-Substitute
-Swagger
-Swift
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Head
+Confuse Ray
 Magic Coat
-Pain Split
-Rollout
-Signal Beam
+Psychic
+Rest
 Snore
-Swift
-Zen Headbutt
+Bounce
 Calm Mind
 Toxic
 Hidden Power
-Ice Beam
-Blizzard
-Hyper Beam
+Sunny Day
+Taunt
 Light Screen
 Protect
 Rain Dance
-Safeguard
 Frustration
-Earthquake
+Iron Tail
 Return
 Psychic
 Shadow Ball
 Double Team
 Reflect
-Sandstorm
-Rock Tomb
+Shock Wave
+Torment
 Facade
 Secret Power
 Rest
+Attract
+Thief
 Skill Swap
+Snatch
 Charge Beam
 Endure
-Embargo
-Explosion
+Payback
 Recycle
-Giga Impact
-Rock Polish
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
+Thunder Wave
 Psych Up
-Rock Slide
+Captivate
 Sleep Talk
 Natural Gift
 Dream Eater
@@ -92,156 +48,141 @@ Grass Knot
 Swagger
 Substitute
 Trick Room
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Psychic
-Future Sight
-Explosion
-Moonblast
-Moonlight
-Tackle
-Harden
-Confusion
-Rock Throw
-Hypnosis
-Rock Polish
-Rock Slide
-Psyshock
-Cosmic Power
-Psychic
-Stone Edge
-Future Sight
-Magic Room
-Explosion
-Hyper Beam
-Giga Impact
-Light Screen
-Reflect
-Safeguard
-Self-Destruct
-Rest
-Rock Slide
-Snore
-Protect
+Bounce
+Headbutt
+Heal Bell
 Icy Wind
-Sandstorm
-Rain Dance
-Hail
-Facade
+Magic Coat
+Role Play
+Signal Beam
+Snore
 Swift
-Helping Hand
-Weather Ball
-Rock Tomb
-Sand Tomb
-Rock Blast
-Power Swap
-Trick Room
-Magic Room
-Round
-Acrobatics
-Bulldoze
-Psychic Terrain
-Stomping Tantrum
-Body Slam
-Ice Beam
-Blizzard
-Earthquake
-Psychic
-Substitute
-Psyshock
-Endure
-Sleep Talk
-Baton Pass
-Shadow Ball
-Future Sight
-Skill Swap
-Cosmic Power
-Calm Mind
-Gyro Ball
-Power Gem
-Earth Power
-Nasty Plot
+Trick
 Zen Headbutt
-Iron Head
-Stone Edge
-Stealth Rock
-Grass Knot
-Stored Power
-Ally Switch
+Body Slam
+Double-Edge
+Mimic
+Uproar
+Splash
+Psywave
+Odor Sleuth
+Psybeam
+Psywave
+Odor Sleuth
+Psybeam
+Psych Up
+Confuse Ray
+Magic Coat
+Psychic
+Rest
+Snore
+Bounce
+Focus Punch
 Calm Mind
-Hail
-Ice Beam
-Blizzard
+Toxic
+Hidden Power
+Sunny Day
+Taunt
 Hyper Beam
 Light Screen
 Protect
 Rain Dance
-Safeguard
-Earthquake
+Frustration
+Iron Tail
+Return
 Psychic
 Shadow Ball
 Double Team
 Reflect
-Sandstorm
-Rock Tomb
+Shock Wave
+Torment
 Facade
+Secret Power
 Rest
+Attract
+Thief
 Skill Swap
-Charge Beam
-Endure
-Nasty Plot
-Explosion
-Recycle
-Giga Impact
-Rock Polish
+Snatch
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
-Psych Up
-Rock Slide
-Sleep Talk
-Bulldoze
-Dream Eater
-Grass Knot
-Swagger
-Substitute
-Trick Room
-Ancient Power
-Baton Pass
-Charge Beam
-Confide
-Defense Curl
-Double Team
+Body Slam
+Counter
 Double-Edge
 Dream Eater
-Embargo 
-Flash 
-Frustration 
-Gravity
-Heal Block 
-Hidden Power 
-Laser Focus
-Magic Coat
+DynamicPunch
+Endure
+Fire Punch
+Ice Punch
+Icy Wind
+Mega Kick
+Mega Punch
 Mimic
-Natural Gift 
-Pain Split
+Mud-Slap
 Psych Up
-Psywave 
-Recycle
-Return 
-Rollout
-Secret Power 
-Signal Beam 
-Smack Down
+Seismic Toss
+Sleep Talk
+Snore
+Substitute
 Swagger
-Telekinesis 
+Swift
+ThunderPunch
+Bounce
+Fire Punch
+Headbutt
+Heal Bell
+Ice Punch
+Icy Wind
+Magic Coat
+Mud-Slap
+Role Play
+Signal Beam
+Snore
+Swift
+ThunderPunch
+Trick
+Zen Headbutt
+Focus Punch
+Calm Mind
 Toxic
+Hidden Power
+Sunny Day
+Taunt
+Hyper Beam
+Light Screen
+Protect
+Rain Dance
+Frustration
+Iron Tail
+Return
+Psychic
+Shadow Ball
+Brick Break
+Double Team
+Reflect
+Shock Wave
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Skill Swap
+Snatch
+Focus Blast
+Energy Ball
+Fling
+Charge Beam
+Endure
+Drain Punch
+Payback
+Recycle
+Giga Impact
+Flash
+Thunder Wave
+Psych Up
+Captivate
+Sleep Talk
+Natural Gift
+Dream Eater
+Grass Knot
+Swagger
+Substitute
