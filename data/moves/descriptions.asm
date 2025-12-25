@@ -252,16 +252,19 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw MudSportDescription
+	dw RockBlastDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+MudSportDescription:
+	db   "Weakens ELECTRIC"
+	next "type moves.@"
+
+
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -277,6 +280,10 @@ KarateChopDescription:
 
 DoubleslapDescription:
 	db   "Repeatedly slaps"
+	next "2-5 times.@"
+
+RockBlastDescription:
+	db   "Repeatedly hits"
 	next "2-5 times.@"
 
 CometPunchDescription:

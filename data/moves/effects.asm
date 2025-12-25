@@ -2093,3 +2093,9 @@ Snow:
 	startweather
 	endmove
 	
+MudSport:
+	checkobedience
+	usedmovetext
+	doturn
+	mudsport
+	endmove
