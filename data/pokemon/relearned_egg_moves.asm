@@ -910,6 +910,15 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+LileepRelearnedEggMoves:
+CradilyRelearnedEggMoves:
+	db 0
+	db 1, BARRIER
+	db 1, MIRROR_COAT
+	db 1, RECOVER
+	db 1, ROCK_SLIDE
+	db 0
+
 NoRelearnedEggMoves:
 	db 0
 	db 0

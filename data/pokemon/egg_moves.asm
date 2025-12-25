@@ -805,5 +805,13 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+LileepEggMoves:
+CradilyEggMoves:
+	db BARRIER
+	db MIRROR_COAT
+	db RECOVER
+	db ROCK_SLIDE
+	db -1
+	
 NoEggMoves:
 	db -1 ; end

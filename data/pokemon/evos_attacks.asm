@@ -3367,3 +3367,35 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+LileepEvosAttacks:
+	db EVOLVE_LEVEL, 40, CRADILY
+	db 0 ; No More Evolutions
+	db 1, ASTONISH
+	db 8, CONSTRICT
+	db 15, ACID
+	db 22, INGRAIN
+	db 29, CONFUSE_RAY
+	db 36, AMNESIA
+	db 43, ANCIENTPOWER
+	db 50, STOCKPILE
+	db 50, SWALLOW
+	db 50, SPIT_UP
+	db 0
+	
+CradilyEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, ASTONISH
+	db 1, CONSTRICT
+	db 1, ACID
+	db 1, INGRAIN
+	db 8, CONSTRICT
+	db 13, ACID
+	db 20, INGRAIN
+	db 25, CONFUSE_RAY
+	db 32, AMNESIA
+	db 39, ANCIENTPOWER
+	db 48, STOCKPILE
+	db 55, SWALLOW
+	db 64, SPIT_UP
+	db 0

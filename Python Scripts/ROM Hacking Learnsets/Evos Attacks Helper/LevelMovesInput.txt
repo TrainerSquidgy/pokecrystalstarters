@@ -1,14 +1,14 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Cradily
+1: Astonish
+1: Constrict
+1: Acid
+1: Ingrain
+8: Constrict
+13: Acid
+20: Ingrain
+25: Confuse Ray
+32: Amnesia
+39: AncientPower
+48: Stockpile
+55: Swallow
+64: Spit Up

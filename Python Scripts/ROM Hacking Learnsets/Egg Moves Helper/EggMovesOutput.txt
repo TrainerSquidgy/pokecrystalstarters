@@ -1,5 +1,8 @@
 LechonkEggMoves:
-	db BIDE
+	db SWORDS_DANCE
 	db BODY_SLAM
-	db TAKE_DOWN
+	db DOUBLE_EDGE
+	db MIMIC
+	db ROCK_SLIDE
+	db SUBSTITUTE
 	db -1
