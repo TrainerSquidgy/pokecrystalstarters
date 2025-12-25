@@ -164,4 +164,5 @@ MoveEffectsPointers:
 	dw Stockpile
 	dw SpitUp
 	dw Swallow
+	dw Yawn
 	assert_table_length NUM_MOVE_EFFECTS

@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw YawnDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -266,6 +266,10 @@ MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
+
+YawnDescription:
+	db   "Sends enemy to"
+	next "SLP next turn.@"
 
 StockpileDescription:
 	db   "Charges up power"

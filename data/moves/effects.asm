@@ -2125,3 +2125,12 @@ Swallow:
 	doturn
 	swallow
 	endmove
+
+Yawn:
+	checkobedience
+	usedmovetext
+	doturn
+	yawn
+	endmove
+
+	

@@ -1156,3 +1156,10 @@ StockpileCountText:
 	text_decimal wTextDecimalByte, 1, 1
 	text "!"
 	prompt
+	
+MadeTargetDrowzy:
+	text "<USER>"
+	line "made"
+	cont "<TARGET>"
+	cont "drowzy!"
+	prompt

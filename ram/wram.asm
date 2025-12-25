@@ -3200,7 +3200,9 @@ wIsAStream:: db
 wVitaminLimitsDisabled:: db
 wPlayerStockpile:: db
 wEnemyStockpile:: db
-	ds 53
+wPlayerYawning:: db
+wEnemyYawning:: db
+	ds 51
 
 wEventFlags:: flag_array NUM_EVENTS
 

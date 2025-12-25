@@ -1,16 +1,16 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Swalot
+1: Pound
+1: Yawn
+1: Poison Gas
+1: Sludge
+6: Yawn
+9: Poison Gas
+14: Sludge
+17: Amnesia
+23: Encore
+26 Body Slam
+31 Toxic
+40 Stockpile
+40 Spit Up
+40 Swallow
+48 Sludge Bomb
