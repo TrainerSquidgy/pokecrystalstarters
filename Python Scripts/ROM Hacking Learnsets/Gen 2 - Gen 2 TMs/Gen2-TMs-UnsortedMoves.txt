@@ -1,78 +1,171 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
+Knock Off
+Screech
+Night Shade
+Curse
+Spite
+Will-O-Wisp
+Faint Attack
+Shadow Ball
+Snatch
+Grudge
 Calm Mind
 Toxic
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
+Taunt
 Protect
-Safeguard
+Rain Dance
 Frustration
-SolarBeam
-Earthquake
+Thunderbolt
+Thunder
 Return
 Psychic
 Shadow Ball
 Double Team
-Reflect
-Flamethrower
-Sandstorm
-Fire Blast
-Rock Tomb
+Shock Wave
+Torment
 Facade
 Secret Power
 Rest
+Attract
+Thief
 Skill Swap
-Overheat
+Snatch
 Charge Beam
 Endure
 Will-O-Wisp
 Embargo
-Explosion
-Recycle
-Giga Impact
-Rock Polish
+Payback
 Flash
-Stone Edge
-Gyro Ball
-Stealth Rock
+Thunder Wave
 Psych Up
-Rock Slide
+Captivate
+Dark Pulse
 Sleep Talk
 Natural Gift
 Dream Eater
-Grass Knot
 Swagger
 Substitute
 Trick Room
-AncientPower
-Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
+Headbutt
+Icy Wind
+Knock Off
 Magic Coat
+Ominous Wind
 Pain Split
-Rollout
-Signal Beam
-Snore
-Swift
-Zen Headbutt
-Baton Pass
+Role Play
+Spite
+Sucker Punch
+Trick
 Body Slam
-Defense Curl
 Double-Edge
 Mimic
-Selfdestruct
+Nightmare
+Snore
+Knock Off
+Screech
+Night Shade
+Curse
+Screech
+Night Shade
+Curse
+Spite
+Will-O-Wisp
+Faint Attack
+Shadow Ball
+Snatch
+Grudge
+Calm Mind
+Toxic
+Hidden Power
+Sunny Day
+Taunt
+Hyper Beam
+Protect
+Rain Dance
+Frustration
+Thunderbolt
+Thunder
+Return
+Psychic
+Shadow Ball
+Double Team
+Shock Wave
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Skill Swap
+Snatch
+Flash
+Body Slam
+Double-Edge
+Dream Eater
+Endure
+Icy Wind
+Metronome
+Mimic
+Mud-Slap
+Nightmare
+Psych Up
+Sleep Talk
+Snore
+Substitute
+Swagger
+Thunder Wave
+Headbutt
+Icy Wind
+Knock Off
+Magic Coat
+Mud-Slap
+Ominous Wind
+Pain Split
+Role Play
+Spite
+Sucker Punch
+Trick
+Calm Mind
+Toxic
+Hidden Power
+Sunny Day
+Taunt
+Hyper Beam
+Protect
+Rain Dance
+Frustration
+Thunderbolt
+Thunder
+Return
+Psychic
+Shadow Ball
+Double Team
+Shock Wave
+Torment
+Facade
+Secret Power
+Rest
+Attract
+Thief
+Skill Swap
+Snatch
+Fling
+Charge Beam
+Endure
+Will-O-Wisp
+Embargo
+Shadow Claw
+Payback
+Giga Impact
+Flash
+Thunder Wave
+Psych Up
+Captivate
+Dark Pulse
+Sleep Talk
+Natural Gift
+Dream Eater
+Swagger
+Substitute
+Trick Room

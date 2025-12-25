@@ -26,7 +26,7 @@ Moves:
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,       100, 35,   0
 	move VICEGRIP,     EFFECT_NORMAL_HIT,         55, NORMAL,       100, 30,   0
 	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,        30,  5,   0
-	move RAZOR_WIND,   EFFECT_RAZOR_WIND,         80, NORMAL,        75, 10,   0
+	move GRUDGE,       EFFECT_GRUDGE,              0, GHOST,          0,  5,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,       100, 30,   0
 	move CUT,          EFFECT_NORMAL_HIT,         50, NORMAL,        95, 30,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,       100, 35,   0
@@ -265,4 +265,7 @@ Moves:
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,     100, 15,  50
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        15, WATER,         70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,         100, 10,   0
+	move KNOCK_OFF,    EFFECT_KNOCK_OFF,          20, DARK,         100, 20,   0
+	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,          75, 10,   0
+	move SNATCH,       EFFECT_SNATCH,              0, DARK,         100, 10,   0
 	assert_table_length NUM_ATTACKS

@@ -15,7 +15,7 @@ BulbasaurRelearnedEggMoves:
 	db 1, LIGHT_SCREEN
 	db 1, SKULL_BASH
 	db 1, SAFEGUARD
-	db 1, RAZOR_WIND
+	
 	db 1, PETAL_DANCE
 	db 0
 
@@ -436,7 +436,7 @@ ScytherRelearnedEggMoves:
 	db 1, COUNTER
 	db 1, SAFEGUARD
 	db 1, BATON_PASS
-	db 1, RAZOR_WIND
+	
 	db 1, REVERSAL
 	db 1, LIGHT_SCREEN
 	db 0
@@ -523,7 +523,7 @@ TotodileRelearnedEggMoves:
 	db 1, THRASH
 	db 1, HYDRO_PUMP
 	db 1, ANCIENTPOWER
-	db 1, RAZOR_WIND
+	
 	db 1, ROCK_SLIDE
 	db 0
 
@@ -723,7 +723,7 @@ GligarRelearnedEggMoves:
 	db 0
 	db 1, METAL_CLAW
 	db 1, WING_ATTACK
-	db 1, RAZOR_WIND
+	
 	db 1, COUNTER
 	db 0
 

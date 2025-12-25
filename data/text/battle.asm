@@ -709,6 +709,11 @@ AlreadyPoisonedText:
 	line "already poisoned!"
 	prompt
 
+AlreadyBurntText:
+	text "<TARGET>'s"
+	line "already burned!"
+	prompt
+
 SuckedHealthText:
 	text "Sucked health from"
 	line "<TARGET>!"
@@ -1148,4 +1153,37 @@ ItStartedToSnowText:
 MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
+	prompt
+	
+GrudgeEffectText:
+	text "<USER>"
+	line "wants its opponent"
+	cont "to bear a grudge!"
+	prompt
+	
+ReducedPPToZeroText:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "reduced to 0!"
+	prompt
+
+KnockOffText:
+	text "<TARGET>'s"
+	line "@"
+	text_ram wStringBuffer1
+	text " was"
+	cont "knocked off!"
+
+WaitForOpponentMoveText:
+	text "<USER>"
+	line "waits for"
+	cont "<TARGET> to"
+	cont "make a move!"
+	prompt
+
+UserSnatchedOpponentMove:
+	text "<USER>"
+	line "snatched the move!"
 	prompt
