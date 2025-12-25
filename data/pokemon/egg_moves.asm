@@ -805,5 +805,17 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+GulpinEggMoves:
+SwalotEggMoves:
+	db FIRE_PUNCH
+	db HEADBUTT
+	db ICE_PUNCH
+	db MUD_SLAP
+	db PAIN_SPLIT
+	db ROLLOUT
+	db SNORE
+	db THUNDERPUNCH
+	db -1
+
 NoEggMoves:
 	db -1 ; end

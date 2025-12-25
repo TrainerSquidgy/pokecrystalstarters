@@ -3367,3 +3367,38 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+GulpinEvosAttacks:
+	db EVOLVE_LEVEL, 26, SWALOT
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 6, YAWN
+	db 9, POISON_GAS
+	db 14, SLUDGE
+	db 17, AMNESIA
+	db 23, ENCORE
+	db 28, TOXIC
+	db 34, STOCKPILE
+	db 34, SPIT_UP
+	db 34, SWALLOW
+	db 39, SLUDGE_BOMB
+	db 0
+	
+SwalotEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, POUND
+	db 1, YAWN
+	db 1, POISON_GAS
+	db 1, SLUDGE
+	db 6, YAWN
+	db 9, POISON_GAS
+	db 14, SLUDGE
+	db 17, AMNESIA
+	db 23, ENCORE
+	db 26, BODY_SLAM
+	db 31, TOXIC
+	db 40, STOCKPILE
+	db 40, SPIT_UP
+	db 40, SWALLOW
+	db 48, SLUDGE_BOMB
+	db 0

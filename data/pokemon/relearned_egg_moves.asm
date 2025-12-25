@@ -910,6 +910,18 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+GulpinRelearnedEggMoves:
+SwalotRelearnedEggMoves:
+	db 0
+	db 1, FIRE_PUNCH
+	db 1, HEADBUTT
+	db 1, ICE_PUNCH
+	db 1, MUD_SLAP
+	db 1, PAIN_SPLIT
+	db 1, ROLLOUT
+	db 1, SNORE
+	db 1, THUNDERPUNCH
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0
