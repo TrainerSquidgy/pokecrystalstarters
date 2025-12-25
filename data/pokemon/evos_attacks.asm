@@ -3367,3 +3367,35 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+ShuppetEvosAttacks:
+	db EVOLVE_LEVEL, 37, BANETTE
+	db 0 ; No More Evolutions
+	db 1, KNOCK_OFF
+	db 8, SCREECH
+	db 13, NIGHT_SHADE
+	db 20, CURSE
+	db 25, SPITE
+	db 32, WILL_O_WISP
+	db 37, FAINT_ATTACK
+	db 44, SHADOW_BALL
+	db 49, SNATCH
+	db 56, GRUDGE
+	db 0
+
+BanetteEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, KNOCK_OFF
+	db 1, SCREECH
+	db 1, NIGHT_SHADE
+	db 1, CURSE
+	db 8, SCREECH
+	db 13, NIGHT_SHADE
+	db 20, CURSE
+	db 25, SPITE
+	db 32, WILL_O_WISP
+	db 39, FAINT_ATTACK
+	db 48, SHADOW_BALL
+	db 55, SNATCH
+	db 64, GRUDGE
+	db 0

@@ -805,5 +805,13 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+ShuppetEggMoves:
+BanetteEggMoves:
+	db DISABLE
+	db DESTINY_BOND
+	db FORESIGHT
+	db -1
+	
+	
 NoEggMoves:
 	db -1 ; end

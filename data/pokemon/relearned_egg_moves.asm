@@ -910,6 +910,13 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+ShuppetRelearnedEggMoves:
+BanetteRelearnedEggMoves:
+	db 0
+	db 1, DISABLE
+	db 1, DESTINY_BOND
+	db 1, FORESIGHT
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0
