@@ -1,78 +1,119 @@
-Tackle
-Harden
-Confusion
-Rock Throw
-Fire Spin
-Rock Polish
-Psywave
-Embargo
-Cosmic Power
-Heal Block
-Rock Slide
-SolarBeam
-Explosion
-Calm Mind
+Astonish
+Constrict
+Acid
+Ingrain
+Confuse Ray
+Amnesia
+AncientPower
+Stockpile
+Swallow
+Spit Up
 Toxic
+Bullet Seed
 Hidden Power
 Sunny Day
-Hyper Beam
-Light Screen
 Protect
-Safeguard
+Giga Drain
 Frustration
 SolarBeam
-Earthquake
 Return
-Psychic
-Shadow Ball
 Double Team
-Reflect
-Flamethrower
+Sludge Bomb
 Sandstorm
-Fire Blast
 Rock Tomb
 Facade
 Secret Power
 Rest
-Skill Swap
-Overheat
-Charge Beam
+Attract
+Energy Ball
 Endure
-Will-O-Wisp
-Embargo
-Explosion
-Recycle
+Rock Polish
+Flash
+Swords Dance
+Stealth Rock
+Captivate
+Rock Slide
+Sleep Talk
+Natural Gift
+Grass Knot
+Swagger
+Substitute
+AncientPower
+Earth Power
+Gastro Acid
+Mud-Slap
+Pain Split
+Seed Bomb
+Snore
+String Shot
+Synthesis
+Worry Seed
+Body Slam
+Double-Edge
+Mimic
+Psych Up
+Astonish
+Constrict
+Acid
+Ingrain
+Constrict
+Acid
+Ingrain
+Confuse Ray
+Amnesia
+AncientPower
+Stockpile
+Swallow
+Spit Up
+Toxic
+Bullet Seed
+Hidden Power
+Sunny Day
+Hyper Beam
+Protect
+Giga Drain
+Frustration
+SolarBeam
+Earthquake
+Return
+Double Team
+Sludge Bomb
+Sandstorm
+Rock Tomb
+Facade
+Secret Power
+Rest
+Attract
+Energy Ball
+Endure
 Giga Impact
 Rock Polish
 Flash
 Stone Edge
-Gyro Ball
+Swords Dance
 Stealth Rock
-Psych Up
+Captivate
 Rock Slide
 Sleep Talk
 Natural Gift
-Dream Eater
 Grass Knot
 Swagger
 Substitute
-Trick Room
+Strength
+Rock Smash
 AncientPower
+Block
 Earth Power
-Gravity
-Helping Hand
-Iron Defense
-Iron Head
-Magic Coat
+Gastro Acid
+Headbutt
+Mud-Slap
 Pain Split
-Rollout
-Signal Beam
+Seed Bomb
 Snore
-Swift
-Zen Headbutt
-Baton Pass
+String Shot
+Synthesis
+Worry Seed
 Body Slam
-Defense Curl
 Double-Edge
 Mimic
-Selfdestruct
+Psych Up
