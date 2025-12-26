@@ -1,4 +1,5 @@
 Pokémon: Lechonk
-Bide
-Body Slam
-Take Down
+SWORDS_DANCE
+TAKE_DOWN
+COUNTER
+SUBSTITUTE

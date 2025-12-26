@@ -2506,6 +2506,14 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+OgerponGen1TMAttacks:
+	db 0
+	db 1, SWORDS_DANCE
+	db 1, TAKE_DOWN
+	db 1, COUNTER
+	db 1, SUBSTITUTE
+	db 0
+
 NoGen1TMAttacks:
 	db 0
 	db 0

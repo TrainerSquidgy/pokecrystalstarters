@@ -1,14 +1,18 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Ogerpon
+1: Double Kick
+1: Counter
+1: Horn Leech
+1: Vine Whip
+1: Leech Seed
+1: Quick Attack
+6: Focus Energy
+12: Growth
+18: Slam
+24: Low Sweep
+30: Ivy Cudgel
+36: Throat Chop
+42: Synthesis
+48: Spiky Shield
+54: Power Whip
+60: Superpower
+66: Wood Hammer

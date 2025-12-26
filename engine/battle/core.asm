@@ -4157,7 +4157,7 @@ endr
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
 	ld a, [wBattleMonSpecies]
-	cp TOTODILE
+	cp OGERPON
 	ret nz
 
 ; OGERPON TYPE ITEMS

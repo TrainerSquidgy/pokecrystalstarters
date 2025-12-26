@@ -6912,7 +6912,7 @@ BattleCommand_AddDamage:
 	
 BattleCommand_IvyCudgel:
 	ld a, [wBattleMonSpecies]
-	cp TOTODILE
+	cp OGERPON
 	ret nz
 	
 	ld a, [wBattleMonItem]

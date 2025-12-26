@@ -3367,3 +3367,24 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+OgerponEvosAttacks:
+	db 0 ; No More Evolutions
+	db 1, DOUBLE_KICK
+	db 1, COUNTER
+	db 1, HORN_LEECH
+	db 1, VINE_WHIP
+	db 1, LEECH_SEED
+	db 1, QUICK_ATTACK
+	db 6, FOCUS_ENERGY
+	db 12, GROWTH
+	db 18, SLAM
+	db 24, LOW_SWEEP
+	db 30, IVY_CUDGEL
+	db 36, THROAT_CHOP
+	db 42, SYNTHESIS
+	db 48, SPIKY_SHIELD
+	db 54, POWER_WHIP
+	db 60, SUPERPOWER
+	db 66, WOOD_HAMMER
+	db 0
