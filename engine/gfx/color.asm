@@ -665,19 +665,29 @@ GetBattlemonBackpicPalettePointer:
 	farcall GetPartyMonDVs
 	ld c, l
 	ld b, h
-	ld a, [wSetMegaEvolutionPicture]
-	and a
-	jr z, .not_mega
 	ld a, [wTempBattleMonSpecies]
-	cp CHARIZARD
-	jr z, .charizard
-	jr .not_mega
-.charizard
-	ld a, GOLBAT
-	jr .mega
-.not_mega
-	ld a, [wTempBattleMonSpecies]
-.mega
+	cp OGERPON
+	jr nz, .not_ogerpon
+	ld a, [wBattleMonItem]
+	cp SPRING_MASK
+	jr z, .spring
+	cp FLAME_MASK
+	jr z, .flame
+	cp STONE_MASK
+	jr z, .stone
+	jr .not_ogerpon
+
+
+.spring
+	ld a, POLIWHIRL
+	jr .not_ogerpon
+
+.flame
+	ld a, CHARMELEON
+	jr .not_ogerpon
+.stone
+	ld a, GEODUDE	
+.not_ogerpon
 	call GetPlayerOrMonPalettePointer
 	pop de
 	ret
