@@ -3120,7 +3120,8 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 47
+	ds 46
+wPressBToRepel:: db
 wRareCandyRNG:: db
 wRareCandiesObtained:: db
 
@@ -3196,9 +3197,9 @@ wMetronomeOnly:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
 wIsAStream:: db
+wVitaminLimitsDisabled:: db
 wPsyshieldCount::   db ; unreferenced
-
-	ds 55
+	ds 54
 
 wEventFlags:: flag_array NUM_EVENTS
 
