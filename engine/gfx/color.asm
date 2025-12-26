@@ -675,6 +675,7 @@ GetBattlemonBackpicPalettePointer:
 	jr z, .flame
 	cp STONE_MASK
 	jr z, .stone
+	ld a, OGERPON
 	jr .not_ogerpon
 
 

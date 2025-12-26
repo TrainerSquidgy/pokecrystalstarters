@@ -6922,7 +6922,7 @@ BattleCommand_IvyCudgel:
 	jr .override_type
 	
 .fire
-	cp SPRING_MASK ; FLAME_MASK
+	cp FLAME_MASK ; FLAME_MASK
 	jr nz, .rock
 	ld a, FIRE
 	jr .override_type
