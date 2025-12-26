@@ -975,6 +975,9 @@ EndOpponentProtectEndureDestinyBond:
 	call GetBattleVarAddr
 	res SUBSTATUS_PROTECT, [hl]
 	res SUBSTATUS_ENDURE, [hl]
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVarAddr
+	res SUBSTATUS_SPIKY_SHIELD, [hl]
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	res SUBSTATUS_DESTINY_BOND, [hl]
@@ -4160,19 +4163,19 @@ endr
 ; OGERPON TYPE ITEMS
 
 	ld a, [wBattleMonItem]
-	cp BERRY ; SPRING_MASK
+	cp SPRING_MASK ; SPRING_MASK
 	jr nz, .fire
 	ld a, WATER
 	jr .override_type
 	
 .fire
-	cp BERRY ; FLAME_MASK
+	cp FLAME_MASK ; FLAME_MASK
 	jr nz, .rock
 	ld a, FIRE
 	jr .override_type
 	
 .rock
-	cp BERRY ; STONE_MASK
+	cp STONE_MASK ; STONE_MASK
 	ret nz
 	ld a, ROCK
 	

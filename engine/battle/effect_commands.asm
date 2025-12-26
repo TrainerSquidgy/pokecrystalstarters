@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +423,7 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1077,8 +1073,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
@@ -1667,7 +1661,22 @@ BattleCommand_CheckHit:
 ; 'protecting itself!'
 	ld hl, ProtectingItselfText
 	call StdBattleTextbox
+	
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SPIKY_SHIELD, a
+	jr z, .not_spiky_shield
+	
+	ld c, 80
+	call DelayFrames
+	
+	farcall GetEighthMaxHP
+	farcall SubtractHPFromTarget
+	
+	ld hl, TookDamageText
+	call StdBattleTextbox
 
+.not_spiky_shield
 	ld c, 40
 	call DelayFrames
 
@@ -1918,10 +1927,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
 	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
@@ -5591,10 +5596,7 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -5603,10 +5605,7 @@ BattleCommand_Charge:
 	ld hl, .BattleLoweredHeadText
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6911,4 +6910,50 @@ BattleCommand_AddDamage:
     ret
 	
 	
+BattleCommand_IvyCudgel:
+	ld a, [wBattleMonSpecies]
+	cp TOTODILE
+	ret nz
+	
+	ld a, [wBattleMonItem]
+	cp SPRING_MASK ; SPRING_MASK
+	jr nz, .fire
+	ld a, WATER
+	jr .override_type
+	
+.fire
+	cp SPRING_MASK ; FLAME_MASK
+	jr nz, .rock
+	ld a, FIRE
+	jr .override_type
+	
+.rock
+	cp STONE_MASK ; STONE_MASK
+	ret nz
+	ld a, ROCK
+	
+.override_type
+	
+	push af
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	pop af
+	ld [hl], a
+	ret
 
+BattleCommand_SpikyShield:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_SPIKY_SHIELD, [hl]
+	ret
+	
+BattleCommand_Superpower:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	call BattleCommand_SwitchTurn
+	call BattleCommand_AttackDown
+	call BattleCommand_StatDownMessage
+	call BattleCommand_DefenseDown
+	call BattleCommand_StatDownMessage
+	jp BattleCommand_SwitchTurn

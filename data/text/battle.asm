@@ -1149,3 +1149,8 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+	
+TookDamageText:
+	text "<USER>"
+	line "took damage."
+	prompt

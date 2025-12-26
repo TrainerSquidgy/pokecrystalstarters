@@ -40,6 +40,11 @@ VioletPokecenter1F_ElmsAideScript:
 	waitbutton
 	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
 .done
+	writetext VioletPokecenterElmsAideMasksText
+	waitbutton
+	verbosegiveitem SPRING_MASK
+	verbosegiveitem FLAME_MASK
+	verbosegiveitem STONE_MASK
 	waitbutton
 	closetext
 	readvar VAR_FACING
@@ -123,6 +128,11 @@ VioletPokecenterElmsAideFavorText:
 
 	para "Would you take the"
 	line "#MON EGG?"
+	done
+
+VioletPokecenterElmsAideMasksText:
+	text "Your OGERPON will"
+	line "love these MASKS!"
 	done
 
 VioletPokecenterElmsAideEscapeRopeText:

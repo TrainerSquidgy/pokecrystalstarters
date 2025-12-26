@@ -162,7 +162,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw TeruSama21Desc
+	dw MaskDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -171,12 +171,12 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama22Desc
+	dw MaskDesc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
-	dw TeruSama23Desc
+	dw MaskDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
 	dw TeruSama24Desc
@@ -288,6 +288,10 @@ BicycleDesc:
 
 MoonStoneDesc:
 	db   "Evolves certain"
+	next "kinds of #MON.@"
+
+MaskDesc:
+	db   "Loved by certain"
 	next "kinds of #MON.@"
 
 AntidoteDesc:
