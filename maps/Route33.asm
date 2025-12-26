@@ -137,6 +137,7 @@ TrainerHikerAnthony:
 	end
 
 Route33Sign:
+	loadmem wRoute33Encounters, 0
 	jumptext Route33SignText
 
 Route33FruitTree:

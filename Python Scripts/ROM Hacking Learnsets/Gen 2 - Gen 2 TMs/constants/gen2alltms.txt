@@ -29,7 +29,8 @@
 26 - Earthquake
 27 - Return
 28 - Dig
-29 - Psychic_M
+29 - Psychic
+29 - PsychicM
 30 - Shadow Ball
 31 - Mud-Slap
 31 - Mud Slap
