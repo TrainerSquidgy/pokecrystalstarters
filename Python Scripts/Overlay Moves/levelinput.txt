@@ -1,16 +1,18 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Ogerpon
+1: Double Kick
+1: Counter
+1: Horn Leech
+1: Vine Whip
+1: Leech Seed
+1: Quick Attack
+6: Focus Energy
+12: Growth
+18: Slam
+24: Low Sweep
+30: Ivy Cudgel
+36: Throat Chop
+42: Synthesis
+48: Spiky Shield
+54: Power Whip
+60: Superpower
+66: Wood Hammer
