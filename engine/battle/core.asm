@@ -4153,8 +4153,33 @@ endr
 	ld [wPlayerTurnsTaken], a
 	ld hl, wEnemySubStatus5
 	res SUBSTATUS_CANT_RUN, [hl]
-	ret
+	ld a, [wBattleMonSpecies]
+	cp TOTODILE
+	ret nz
 
+; OGERPON TYPE ITEMS
+
+	ld a, [wBattleMonItem]
+	cp BERRY ; SPRING_MASK
+	jr nz, .fire
+	ld a, WATER
+	jr .override_type
+	
+.fire
+	cp BERRY ; FLAME_MASK
+	jr nz, .rock
+	ld a, FIRE
+	jr .override_type
+	
+.rock
+	cp BERRY ; STONE_MASK
+	ret nz
+	ld a, ROCK
+	
+.override_type
+	ld [wBattleMonType2], a
+	ret
+	
 BreakAttraction:
 	ld hl, wPlayerSubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
