@@ -1,16 +1,19 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Swanna
+1: Water Gun
+1: Water Sport
+1: Defog
+1: Wing Attack
+3: Water Sport
+6: Defog
+9: Wing Attack
+13: Water Pulse
+15: Aerial Ace
+19: BubbleBeam
+21: FeatherDance
+24: Aqua Ring
+27: Air Slash
+30: Roost
+34: Rain Dance
+40: Tailwind
+47: Brave Bird
+55: Hurricane
