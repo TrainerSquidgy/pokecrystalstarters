@@ -910,6 +910,12 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+DucklettRelearnedEggMoves:
+SwannaRelearnedEggMoves:
+	db 0
+	db 1, GUST
+	db 1, STEEL_WING
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0

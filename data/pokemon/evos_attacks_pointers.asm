@@ -253,4 +253,6 @@ EvosAttacksPointers::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+	dw DucklettEvosAttacks
+	dw SwannaEvosAttacks
 	assert_table_length NUM_POKEMON

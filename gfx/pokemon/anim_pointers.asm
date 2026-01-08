@@ -251,4 +251,6 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
+	dw DucklettAnimation
+	dw SwannaAnimation
 	assert_table_length NUM_POKEMON

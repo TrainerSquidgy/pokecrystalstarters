@@ -805,5 +805,11 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db -1 ; end
 
+DucklettEggMoves:
+SwannaEggMoves:
+	db GUST
+	db STEEL_WING
+	db -1
+
 NoEggMoves:
 	db -1 ; end
