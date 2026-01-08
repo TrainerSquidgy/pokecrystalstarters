@@ -13,6 +13,12 @@ BattleCommand_Teleport:
 	call GetBattleVar
 	bit SUBSTATUS_CANT_RUN, a
 	jr nz, .failed
+	
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVar
+	bit SUBSTATUS_AQUA_RING, a
+	jr nz, .failed
+	
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy_turn

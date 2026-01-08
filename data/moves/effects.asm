@@ -2092,4 +2092,32 @@ Snow:
 	doturn
 	startweather
 	endmove
+
+WaterSport:
+	checkobedience
+	usedmovetext
+	doturn
+	watersport
+	endmove
 	
+AquaRing:
+	checkobedience
+	usedmovetext
+	doturn
+	aquaring
+	endmove
+	
+Roost:
+	checkobedience
+	usedmovetext
+	doturn
+	roost
+	heal
+	endmove
+
+Tailwind:
+	checkobedience
+	usedmovetext
+	doturn
+	tailwind
+	endmove

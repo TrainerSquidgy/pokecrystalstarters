@@ -177,6 +177,10 @@ DEF ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP_MASK
 ; wPlayerSubStatus2 or wEnemySubStatus2 bit flags
 	const_def
 	const SUBSTATUS_CURLED
+	const SUBSTATUS_WATER_SPORT
+	const SUBSTATUS_AQUA_RING
+	const SUBSTATUS_ROOST_TYPE1
+	const SUBSTATUS_ROOST_TYPE2
 
 ; wPlayerSubStatus3 or wEnemySubStatus3 bit flags
 	const_def

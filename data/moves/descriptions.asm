@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw SwiftDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -25,7 +25,7 @@ MoveDescriptions::
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
-	dw MegaKickDescription
+	dw ConfusionDescription
 	dw JumpKickDescription
 	dw RollingKickDescription
 	dw SandAttackDescription
@@ -130,7 +130,7 @@ MoveDescriptions::
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
-	dw SkullBashDescription
+	dw TakeDownDescription
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
@@ -143,7 +143,7 @@ MoveDescriptions::
 	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
-	dw SkyAttackDescription
+	dw CharmDescription
 	dw TransformDescription
 	dw BubbleDescription
 	dw DizzyPunchDescription
@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
-	dw AeroblastDescription
+	dw AquaRingDescription
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
@@ -220,8 +220,8 @@ MoveDescriptions::
 	dw PresentDescription
 	dw FrustrationDescription
 	dw SafeguardDescription
-	dw PainSplitDescription
-	dw SacredFireDescription
+	dw TailwindDescription
+	dw HeadbuttDescription
 	dw MagnitudeDescription
 	dw DynamicpunchDescription
 	dw MegahornDescription
@@ -234,7 +234,7 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
-	dw MorningSunDescription
+	dw RoostDescription
 	dw SynthesisDescription
 	dw MoonlightDescription
 	dw HiddenPowerDescription
@@ -252,16 +252,33 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw WaterSportDescription
+	dw SweetScentDescription
+	dw ConfusionDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
+TailwindDescription:
+	db   "Doubles SPEED"
+	next "for 4 turns.@"
+
+RoostDescription:
+	db   "Heals HP but"
+	next "lose FLYING-type.@"
+	
+
+WaterSportDescription:
+	db   "Halves FIRE until"
+	next "user switches.@"
+	
+	
+AquaRingDescription:
+	db	 "Restores HP each"
+	next "turn.@"
+	
+	
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -315,9 +332,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -363,9 +377,6 @@ DoubleKickDescription:
 	db   "A double kicking"
 	next "attack.@"
 
-MegaKickDescription:
-	db   "A powerful kicking"
-	next "attack.@"
 
 JumpKickDescription:
 	db   "May miss, damaging"
@@ -783,10 +794,6 @@ SwiftDescription:
 	db   "An attack that"
 	next "never misses.@"
 
-SkullBashDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 SpikeCannonDescription:
 	db   "Fires spikes to"
 	next "hit 2-5 times.@"
@@ -971,9 +978,6 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1143,13 +1147,7 @@ SafeguardDescription:
 	db   "Prevents all"
 	next "status problems.@"
 
-PainSplitDescription:
-	db   "Adds user & foe's"
-	next "HPs. Shares total.@"
 
-SacredFireDescription:
-	db   "An attack that may"
-	next "inflict a burn.@"
 
 MagnitudeDescription:
 	db   "A ground attack"
@@ -1199,9 +1197,6 @@ VitalThrowDescription:
 	db   "A 2nd-strike move"
 	next "that never misses.@"
 
-MorningSunDescription:
-	db   "Restores HP"
-	next "(varies by time).@"
 
 SynthesisDescription:
 	db   "Restores HP"
@@ -1270,3 +1265,4 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+

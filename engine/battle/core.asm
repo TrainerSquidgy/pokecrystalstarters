@@ -285,6 +285,9 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
+	call HandleTailwind
+	call HandleAquaRing
+	call HandleTypeChangingEffects
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -531,13 +534,10 @@ DetermineMoveOrder:
 	jr .speed_check
 
 .speed_check
-	ld de, wBattleMonSpeed
-	ld hl, wEnemyMonSpeed
-	ld c, 2
-	call CompareBytes
+	call CompareBattleMonSpeeds
 	jr z, .speed_tie
-	jp nc, .player_first
-	jp .enemy_first
+	jr nc, .player_first
+	jr .enemy_first
 
 .speed_tie
 	ldh a, [hSerialConnectionStatus]
@@ -772,6 +772,10 @@ TryEnemyFlee:
 	ld a, [wEnemyMonStatus]
 	and 1 << FRZ | SLP_MASK
 	jr nz, .Stay
+	
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_AQUA_RING, a
+	ret nz
 
 	ld a, [wTempEnemyMonSpecies]
 	ld de, 1
@@ -1274,6 +1278,89 @@ SwitchTurnCore:
 	ldh a, [hBattleTurn]
 	xor 1
 	ldh [hBattleTurn], a
+	ret
+
+HandleAquaRing:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+; Player first
+	call SetPlayerTurn
+	ld hl, wPlayerSubStatus2
+	call .do_it
+
+	call SetEnemyTurn
+	ld hl, wEnemySubStatus2
+	jr .do_it
+
+.DoEnemyFirst:
+	call SetEnemyTurn
+	ld hl, wEnemySubStatus2
+	call .do_it
+	call SetPlayerTurn
+	ld hl, wPlayerSubStatus2
+.do_it
+	bit SUBSTATUS_AQUA_RING, [hl]
+	ret z
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+; Don't restore if we're already at max HP
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetSixteenthMaxHP
+	call SwitchTurnCore
+	call RestoreHP
+	ld hl, VeilOfWaterRestoredText
+	jp StdBattleTextbox
+
+HandleTypeChangingEffects:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+	call SetPlayerTurn
+	ld de, wBattleMonType1
+	call .do_it
+	call SetEnemyTurn
+	ld de, wEnemyMonType1
+	jr .do_it
+
+.DoEnemyFirst:
+	call SetEnemyTurn
+	ld de, wEnemyMonType1
+	call .do_it
+	call SetPlayerTurn
+	ld de, wBattleMonType1
+
+.do_it
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_ROOST_TYPE1, [hl]
+	jr z, .type_2
+	ld a, FLYING
+	ld [de], a
+	res SUBSTATUS_ROOST_TYPE1, [hl]
+.type_2
+	bit SUBSTATUS_ROOST_TYPE2, [hl]
+	ret z
+	inc de
+	ld a, FLYING
+	ld [de], a
+	res SUBSTATUS_ROOST_TYPE2, [hl]
 	ret
 
 HandleLeftovers:
@@ -1953,25 +2040,6 @@ GetMaxHP:
 	ld a, [hl]
 	ld [wHPBuffer1], a
 	ld c, a
-	ret
-
-GetHalfHP: ; unreferenced
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wHPBuffer1 + 1], a
-	ld a, [hl]
-	ld [wHPBuffer1], a
 	ret
 
 CheckUserHasEnoughHP:
@@ -3752,6 +3820,10 @@ TryToRunAwayFromBattle:
 	bit SUBSTATUS_CANT_RUN, a
 	jp nz, .cant_escape
 
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_AQUA_RING, a
+	jp nz, .cant_escape
+	
 	ld a, [wPlayerWrapCount]
 	and a
 	jp nz, .cant_escape
@@ -5247,6 +5319,9 @@ TryPlayerSwitch:
 	jr nz, .trapped
 	ld a, [wEnemySubStatus5]
 	bit SUBSTATUS_CANT_RUN, a
+	jr nz, .trapped
+	ld a, [wPlayerSubStatus2]
+	bit SUBSTATUS_AQUA_RING, a
 	jr z, .try_switch
 
 .trapped
@@ -6600,17 +6675,6 @@ CheckUnownLetter:
 
 INCLUDE "data/wild/unlocked_unowns.asm"
 
-SwapBattlerLevels: ; unreferenced
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
-
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
 	ld [wTempEnemyMonSpecies], a
@@ -6962,20 +7026,6 @@ _LoadBattleFontsHPBar:
 _LoadHPBar:
 	callfar LoadHPBar
 	ret
-
-LoadHPExpBarGFX: ; unreferenced
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
 
 EmptyBattleTextbox:
 	ld hl, .empty
@@ -7926,9 +7976,6 @@ GoodComeBackText:
 	text_far _GoodComeBackText
 	text_end
 
-TextJump_ComeBack: ; unreferenced
-	ld hl, ComeBackText
-	ret
 
 ComeBackText:
 	text_far _ComeBackText
@@ -8160,9 +8207,6 @@ StartBattle:
 	scf
 	ret
 
-CallDoBattle: ; unreferenced
-	call DoBattle
-	ret
 
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
@@ -8335,56 +8379,6 @@ InitEnemyWildmon:
 	predef PlaceGraphic
 	ret
 
-FillEnemyMovesFromMoveIndicesBuffer: ; unreferenced
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	dec a
-	ld hl, Moves + MOVE_PP
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
-
-.clear
-	xor a
-	ld [hli], a
-
-.clearpp
-	push bc
-	push hl
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	xor a
-	ld [hl], a
-	pop hl
-	pop bc
-	dec b
-	jr nz, .clear
-	ret
 
 ExitBattle:
 	call .HandleEndOfBattle
@@ -9279,3 +9273,48 @@ BattleStartMessage:
 	farcall Mobile_PrintOpponentBattleMessage
 
 	ret
+
+CompareBattleMonSpeeds:
+	call GetActualSpeedValue
+	call GetTailwindTimer
+	and a
+	ret z
+.DoubleSpeed:
+	sla e
+	rl d
+	ret
+
+GetActualSpeedValue:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wBattleMonSpeed
+	jr z, .get_speed_value
+	ld hl, wEnemyMonSpeed
+.get_speed_value
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+	ret
+
+GetTailwindTimer:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wPlayerTailwindTimer]
+	ret z
+	ld a, [wEnemyTailwindTimer]
+	ret
+
+HandleTailwind:
+	call SetPlayerTurn
+	ld hl, wPlayerTailwindTimer
+	call .CheckTimer
+	call SetEnemyTurn
+	ld hl, wEnemyTailwindTimer
+.CheckTimer:
+	ld a, [hl]
+	and a
+	ret z
+	dec [hl]
+	ret nz
+	ld hl, TailwindPeteredOutText
+	jp StdBattleTextbox

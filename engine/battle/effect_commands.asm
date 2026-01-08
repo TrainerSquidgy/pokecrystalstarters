@@ -198,9 +198,7 @@ BattleCommand_CheckTurn:
 	ld a, [wCurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 
@@ -425,9 +423,7 @@ CheckEnemyTurn:
 	ld a, [wCurEnemyMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
-	cp SACRED_FIRE
-	jr z, .not_frozen
-
+	
 	ld hl, FrozenSolidText
 	call StdBattleTextbox
 	call CantMove
@@ -1077,9 +1073,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
-	db EFFECT_SKY_ATTACK
-	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
@@ -1578,9 +1571,6 @@ BattleCommand_CheckHit:
 	call .ThunderRain
 	ret z
 	
-	call .BlizzardSnow
-	ret z
-
 	call .XAccuracy
 	ret nz
 
@@ -1762,23 +1752,12 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_THUNDER
+	jr z, .thunder
+	cp EFFECT_HURRICANE
 	ret nz
-
+.thunder
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
-	ret
-
-.BlizzardSnow:
-; Return z if the current move always hits in rain, and it is raining.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BLIZZARD
-	ret nz
-
-	ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret z
-	cp WEATHER_HAIL
 	ret
 
 .XAccuracy:
@@ -1918,12 +1897,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
-	cp EFFECT_SKY_ATTACK
-	jr z, .charge_turn
-	cp EFFECT_SKULL_BASH
-	jr z, .charge_turn
 	cp EFFECT_SOLARBEAM
 	jr z, .charge_turn
 	cp EFFECT_FLY
@@ -2582,8 +2555,6 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	
-	call SnowDefenseBoost
-
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -2827,8 +2798,6 @@ EnemyAttackDamage:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
-
-	call SnowDefenseBoost
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
@@ -5581,9 +5550,6 @@ BattleCommand_Charge:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_SKULL_BASH
-	ld b, endturn_command
-	jp z, SkipToBattleCommand
 	jp EndMoveEffect
 
 .UsedText:
@@ -5591,22 +5557,12 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
 
-	cp SKULL_BASH
-	ld hl, .BattleLoweredHeadText
-	jr z, .done
-
-	cp SKY_ATTACK
-	ld hl, .BattleGlowingText
-	jr z, .done
-
+	
 	cp FLY
 	ld hl, .BattleFlewText
 	jr z, .done
@@ -6811,32 +6767,6 @@ _CheckBattleScene:
 	ret
 
 
-SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-		ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-	ret
-	
 BattleCommand_StartWeather:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -6909,6 +6839,107 @@ BattleCommand_AddDamage:
 	pop hl
 	pop af
     ret
-	
-	
 
+
+BattleCommand_WaterSport:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	jp z, .set_water_sport
+	call AnimateFailedMove
+	jp PrintButItFailed
+.set_water_sport
+	set SUBSTATUS_WATER_SPORT, [hl]
+	call AnimateCurrentMove
+	ld hl, WaterSportText
+	jp StdBattleTextbox
+
+CheckWaterSport:
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	cp FIRE
+	ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerSubStatus2
+	jr z, .go
+	ld hl, wEnemySubStatus2
+.go
+	bit SUBSTATUS_WATER_SPORT, [hl]
+	ret z
+	rrc d
+	ret
+	
+BattleCommand_AquaRing:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	bit SUBSTATUS_AQUA_RING, [hl]
+	jr nz, .failed
+	set SUBSTATUS_AQUA_RING, [hl]
+	call AnimateCurrentMove
+	ld hl, SurroundedByWaterText
+	jp StdBattleTextbox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
+BattleCommand_Roost:
+; roost
+
+  ld de, wBattleMonType1
+  ldh a, [hBattleTurn]
+  and a
+  jr z, .go
+  ld de, wEnemyMonType1
+
+.go
+
+; The user loses its Flying-type.
+; Note: there are no pure Flying-types in this generation, so we can simply
+;   replace the Flying-type temporarily with its secondary type.
+; Store substatus flags to tell which type got replaced.
+
+
+  ld a, BATTLE_VARS_SUBSTATUS2
+  call GetBattleVarAddr
+
+	ld a, [de]
+	cp FLYING
+	jr z, .replace_type1
+	inc de
+	ld a, [de]
+	cp FLYING
+  ret nz
+
+; .replace_type2
+
+  set SUBSTATUS_ROOST_TYPE2, [hl]
+  ld h, d
+  ld l, e
+  dec hl
+  ld a, [hl]
+  ld [de], a
+  ret
+
+.replace_type1
+
+  set SUBSTATUS_ROOST_TYPE1, [hl]
+  ld h, d
+  ld l, e
+  inc hl
+  ld a, [hl]
+  ld [de], a
+  ret
+  
+BattleCommand_Tailwind:
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerTailwindTimer
+	jr z, .got_timer
+	ld hl, wEnemyTailwindTimer
+.got_timer
+	ld [hl], 4
+	call AnimateCurrentMove
+	ld hl, TailwindBlewText
+	jp StdBattleTextbox

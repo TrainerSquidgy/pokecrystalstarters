@@ -3198,7 +3198,9 @@ wBinSkipPokemon:: db
 wBinSkipItem:: db
 wIsAStream:: db
 wVitaminLimitsDisabled:: db
-	ds 55
+wPlayerTailwindTimer:: db	 
+wEnemyTailwindTimer:: db	
+	ds 53
 
 wEventFlags:: flag_array NUM_EVENTS
 

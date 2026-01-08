@@ -1149,3 +1149,34 @@ MegaEvolvedText:
 	text "<USER>"
 	line "MEGA EVOLVED!"
 	prompt
+
+WaterSportText:
+	text "Fire's power was"
+	line "weakened!"
+	prompt
+	
+
+SurroundedByWaterText:
+	text "<USER>"
+	line "surrounds itself"
+	cont "with water!"
+	prompt
+
+VeilOfWaterRestoredText:
+	text "A veil of water"
+	line "restored"
+	cont "<TARGET>'s"
+	cont "HP!"
+	prompt
+
+TailwindBlewText:
+	text "The tailwind blew"
+	line "from behind"
+	cont "<USER>!"
+	prompt
+
+TailwindPeteredOutText:
+	text "<USER>'s"
+	line "tailwind petered"
+	cont "out."
+	prompt
