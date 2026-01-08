@@ -9275,10 +9275,32 @@ BattleStartMessage:
 	ret
 
 CompareBattleMonSpeeds:
-	call GetActualSpeedValue
+	; --- Player effective speed -> DE ---
+	call SetPlayerTurn
+	call GetActualSpeedValue      ; DE = player speed
 	call GetTailwindTimer
 	and a
-	ret z
+	call nz, .DoubleSpeed
+	push de
+
+	; --- Enemy effective speed -> DE, then copy to BC ---
+	call SetEnemyTurn
+	call GetActualSpeedValue      ; DE = enemy speed
+	call GetTailwindTimer
+	and a
+	call nz, .DoubleSpeed
+	ld b, d
+	ld c, e
+
+	; --- Compare player (DE from stack) vs enemy (BC) ---
+	pop de
+	ld a, d
+	cp b
+	ret nz
+	ld a, e
+	cp c
+	ret
+
 .DoubleSpeed:
 	sla e
 	rl d
@@ -9303,6 +9325,7 @@ GetTailwindTimer:
 	ret z
 	ld a, [wEnemyTailwindTimer]
 	ret
+
 
 HandleTailwind:
 	call SetPlayerTurn
