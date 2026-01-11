@@ -3367,3 +3367,14 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+LickitungyEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, WRAP
+	db 7, SUPERSONIC
+	db 7, STOMP
+	db 15, DISABLE
+	db 23, DEFENSE_CURL
+	db 31, SLAM
+	db 39, SCREECH
+	db 0 ; no more level-up moves
