@@ -7,12 +7,20 @@
 	const EGGMOVERELEARNERTEXT_NOTAPOKEMON
 	const EGGMOVERELEARNERTEXT_LEARNEDTOOMANY
 	const EGGMOVERELEARNERTEXT_NOMOVESTOLEARN
+	const EGGMOVERELEARNERTEXT_INTRONOLIMIT
 
 EggMoveRelearner:
+	ld a, [wTutorsLimited]
+	and a
+	jr nz, .skip_limit
 	ld a, [wEggMovesLeft]
 	and a
 	jp z, .learned_enough	
 	ld a, EGGMOVERELEARNERTEXT_INTRO
+	jr .intro_merge
+.skip_limit
+	ld a, EGGMOVERELEARNERTEXT_INTRONOLIMIT
+.intro_merge
 	call PrintEggMoveRelearnerText
 	call YesNoBox
 	jp c, .cancel
@@ -384,6 +392,7 @@ PrintEggMoveRelearnerText:
 	dw .NotMon
 	dw .LearnedTooMany
 	dw .NoMovesToLearn
+	dw .IntroNoLimit
 
 .Intro
 	text "Hello! I am the"
@@ -437,4 +446,20 @@ PrintEggMoveRelearnerText:
 	text "This #MON can't"
 	line "learn any moves"
 	cont "from me."
+	done
+.IntroNoLimit
+	text "Hello! I am the"
+	line "EGG TUTOR."
+
+	para "I know all the"
+	line "EGG MOVES that"
+
+	para "a #MON can"
+	line "learn."
+
+	para "I can share that"
+	line "knowledge with"
+	cont "you right now."
+	
+	para "How about it?"
 	done

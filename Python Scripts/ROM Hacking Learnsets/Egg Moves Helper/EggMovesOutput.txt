@@ -1,0 +1,5 @@
+LechonkEggMoves:
+	db BIDE
+	db BODY_SLAM
+	db TAKE_DOWN
+	db -1

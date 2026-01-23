@@ -289,6 +289,12 @@ PlayerEvents:
 	ret
 
 CheckTrainerEvent:
+	ld hl, OBJECT_MOVEMENT_TYPE
+	ld a, [hl]
+	cp SPRITEMOVEDATA_SPINRANDOM_FAST
+	jr z, .nope
+	cp SPRITEMOVEDATA_SPINRANDOM_SLOW
+	jr z, .nope
 	nop
 	nop
 	call CheckTrainerBattle

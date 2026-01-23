@@ -578,15 +578,25 @@ MovementFunction_RandomWalkXY:
 	jp _RandomWalkContinue
 
 MovementFunction_RandomSpinSlow:
+	ld a, [wSpinnersOff]
+	and a
+	jp nz, MovementFunction_SpinCounterclockwise
 	call Random
 	ldh a, [hRandomAdd]
 	and %00001100
 	ld hl, OBJECT_DIRECTION
 	add hl, bc
 	ld [hl], a
+	; reroll if facing the player
+    call FacingPlayerDistance
+    jr c, MovementFunction_RandomSpinSlow
 	jp RandomStepDuration_Slow
 
 MovementFunction_RandomSpinFast:
+	ld a, [wSpinnersOff]
+	and a
+	jp nz, MovementFunction_SpinClockwise
+
 	ld hl, OBJECT_DIRECTION
 	add hl, bc
 	ld a, [hl]
@@ -600,6 +610,9 @@ MovementFunction_RandomSpinFast:
 	xor %00001100
 .keep
 	ld [hl], a
+	; reroll if facing the player
+    call FacingPlayerDistance
+    jr c, MovementFunction_RandomSpinSlow
 	jp RandomStepDuration_Fast
 
 MovementFunction_Standing:
@@ -3042,3 +3055,6 @@ InitSprites:
 	dw wObject10Struct
 	dw wObject11Struct
 	dw wObject12Struct
+
+
+

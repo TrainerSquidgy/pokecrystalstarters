@@ -58,6 +58,10 @@ Option:
 	farcall _Option
 	ret
 
+ExtraOption:
+	farcall _ExtraOption
+	ret
+
 NewGame:
 	xor a
 	ld [wDebugFlags], a
@@ -204,7 +208,42 @@ _ResetWRAM:
 	ld [wElmPokemon3], a
 	ld [wIlexForestEncounters], a
 	ld [wRoute34Encounters], a
-	
+	ld [wTestingRamSlot1], a	
+	ld [wTempCompSpecies], a
+	ld [wTempCompEvoLevel], a
+	ld [wTempOrigSpecies], a
+	ld [wTempOrigLevel], a
+	ld [wRivalEeveelution], a
+	ld [wRivalTyrogueEvolution], a
+	ld [wRival5050], a
+	ld [wRivalCarriesStarter], a
+	ld [wIsAStarter], a
+	ld [wStarterDVSelection], a
+	ld [wEvolutionsDisabled], a
+	ld [wGen1MovesLeft], a
+	ld [wEggMovesLeft], a
+	ld [wGuaranteedHMFriendCatch], a
+	ld [wElmPreview], a
+	ld [wAlteredHiddenPowerDVs], a
+	ld [wInverseActivated], a
+	ld [wAbilitiesActivated], a
+	ld [wTutorsLimited], a
+	ld [wHiddenPowerLoop], a
+	ld [wHiddenPowerType], a
+	ld [wTempHiddenPowerType], a
+	ld [wTempHiddenPowerPower], a
+	ld [wWhichHiddenPower], a
+	ld [wMegaEvolutionActive], a
+	ld [wAlreadyMegaEvolved], a
+	ld [wMegaPicture], a
+	ld [wSetMegaEvolutionPicture], a
+	ld [wMegaEvolutionEnabled], a
+	ld [wSpinnersOff], a
+	ld [wMegaXorY], a
+	ld [wMetronomeOnly], a
+	ld [wBinSkipPokemon], a
+	ld [wBinSkipItem], a
+	ld [wRareCandiesObtained], a
 	ld [wJohtoBadges], a
 	ld [wKantoBadges], a
 
@@ -799,7 +838,7 @@ NamePlayer:
 .Chris:
 	db "SQUIDGY@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "SNOWY@@@@@@"
 
 GSShowPlayerNamingChoices: ; unreferenced
 	call LoadMenuHeader
