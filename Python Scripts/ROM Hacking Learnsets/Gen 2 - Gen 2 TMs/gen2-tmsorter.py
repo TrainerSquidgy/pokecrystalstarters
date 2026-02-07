@@ -9,8 +9,8 @@ with open("Gen2-TMs-UnsortedMoves.txt", "r") as file:
 # Replace "Focus Punch" with "DynamicPunch" if present in input_moves
 input_moves = [move.replace("focus punch", "dynamicpunch") for move in input_moves]
 
-input_moves = [move.replace("psychic", "psychic_m") for move in input_moves]
-
+input_moves = [move.replace("psychic_m", "psychic") for move in input_moves]
+input_moves = [move.replace("_", " ") for move in input_moves]
 input_moves = [move.replace("solar beam", "solarbeam") for move in input_moves]
 input_moves = [move.replace("dragon breath", "dragonbreath") for move in input_moves]
 input_moves = [move.replace("thunder punch", "thunderpunch") for move in input_moves]
@@ -32,7 +32,7 @@ valid_moves = [move for move in unique_valid_moves if move in predefined_moves]
 sorted_valid_moves = [move for move in predefined_moves if move in valid_moves]
 
 # Replace spaces and hyphens with underscores in the sorted_valid_moves list
-sorted_valid_moves = [move.replace(" ", "_").replace("-", "_") for move in sorted_valid_moves]
+sorted_valid_moves = [move.replace(" ", "_").replace("-", "_").replace("psychic", "psychic_m") for move in sorted_valid_moves]
 
 # Write the sorted valid moves to a file named "FilteredMoves.txt"
 with open("Gen2-TMs-FilteredMoves.txt", "w") as output_file:
