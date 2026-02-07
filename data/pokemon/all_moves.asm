@@ -11533,3 +11533,35 @@ SplashAllMoves::
 NoAllMoves::
 	db 0
 	db 0
+	
+LuvdiscAllMoves::
+    db 0
+    db 1, TACKLE
+    db 1, CHARM
+    db 1, WATER_GUN
+    db 1, AGILITY
+    db 1, TAKE_DOWN
+    db 1, ATTRACT
+    db 1, SWEET_KISS
+    db 1, FLAIL
+    db 1, SAFEGUARD
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, PSYCH_UP
+    db 1, SNORE
+    db 1, BLIZZARD
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, SWIFT
+    db 1, REST
+    db 1, SURF
+    db 1, WHIRLPOOL
+    db 1, WATERFALL
+    db 1, ICE_BEAM
+    db 0

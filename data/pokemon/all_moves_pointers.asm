@@ -253,4 +253,5 @@ AllMovesPointers::
 	dw LugiaAllMoves
 	dw HoOhAllMoves
 	dw CelebiAllMoves
+	dw LuvdiscAllMoves
 	assert_table_length NUM_POKEMON
