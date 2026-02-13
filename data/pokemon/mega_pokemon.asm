@@ -89,6 +89,7 @@ MegaPokemonList:
 	db HERACROSS
 	db HOUNDOOM
 	db TYRANITAR
+	db ABSOL
 	db -1
 
 GetMegaEvolutionStats:
@@ -131,6 +132,8 @@ GetMegaEvolutionStats:
 	jp z, .Houndoom
 	cp TYRANITAR
 	jp z, .Tyranitar
+	cp ABSOL
+	jp z, .Absol
 	ret
 
 .Venusaur
@@ -516,6 +519,24 @@ GetMegaEvolutionStats:
 	ld a, 120
 	ld [wBaseSpecialDefense], a
 	ld a, ROCK
+	ld [wBaseType1], a
+	ld a, DARK
+	ld [wBaseType2], a
+	ret
+.Absol
+	ld a, 65
+	ld [wBaseHP], a
+	ld a, 150
+	ld [wBaseAttack], a
+	ld a, 60
+	ld [wBaseDefense], a
+	ld a, 115
+	ld [wBaseSpeed], a
+	ld a, 115
+	ld [wBaseSpecialAttack], a
+	ld a, 60
+	ld [wBaseSpecialDefense], a
+	ld a, DARK
 	ld [wBaseType1], a
 	ld a, DARK
 	ld [wBaseType2], a

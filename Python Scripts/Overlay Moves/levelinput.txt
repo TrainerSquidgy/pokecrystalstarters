@@ -1,16 +1,12 @@
-Pokémon: Sableye
+Pokémon: Absol
 1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+5: Leer
+9: Taunt
+13: Quick Attack
+17: Razor Wind
+21: Bite
+26: Swords Dance
+31: Double Team
+36: Slash
+41: Future Sight
+46: Perish Song

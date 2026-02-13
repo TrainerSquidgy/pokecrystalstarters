@@ -3200,7 +3200,9 @@ wBinSkipItem:: db
 wIsAStream:: db
 wVitaminLimitsDisabled:: db
 wNumberOfPoints:: db
-	ds 54
+wPlayerTauntCount:: db
+wEnemyTauntCount:: db
+	ds 53
 
 wEventFlags:: flag_array NUM_EVENTS
 

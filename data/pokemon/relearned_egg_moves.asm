@@ -910,6 +910,14 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+AbsolRelearnedEggMoves:
+	db 0
+	db 1, BATON_PASS
+	db 1, CURSE
+	db 1, COUNTER
+	db 1, FAINT_ATTACK
+	db 1, SUBSTITUTE
+	db 0
 NoRelearnedEggMoves:
 	db 0
 	db 0
