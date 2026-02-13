@@ -3202,7 +3202,7 @@ wVitaminLimitsDisabled:: db
 wNumberOfPoints:: db
 wPlayerTauntCount:: db
 wEnemyTauntCount:: db
-	ds 53
+	ds 52
 
 wEventFlags:: flag_array NUM_EVENTS
 

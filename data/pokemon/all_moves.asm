@@ -12161,6 +12161,57 @@ SplashAllMoves::
     db 0
 
 
+AbsolAllMoves::
+	db 1, SCRATCH
+	db 1, LEER
+	db 1, TAUNT
+	db 1, QUICK_ATTACK
+	db 1, RAZOR_WIND
+	db 1, BITE
+	db 1, SWORDS_DANCE
+	db 1, DOUBLE_TEAM
+	db 1, SLASH
+	db 1, FUTURE_SIGHT
+    db 1,HEADBUTT
+	db 1, CURSE
+	db 1, TOXIC
+	db 1, ROCK_SMASH
+	db 1, PSYCH_UP
+	db 1, HIDDEN_POWER
+	db 1, SUNNY_DAY
+	db 1, SNORE
+	db 1, BLIZZARD
+	db 1, HYPER_BEAM
+	db 1, ICY_WIND
+	db 1, PROTECT
+	db 1, RAIN_DANCE
+	db 1, ENDURE
+	db 1, FRUSTRATION
+	db 1, IRON_TAIL
+	db 1, THUNDER
+	db 1, RETURN
+	db 1, SHADOW_BALL
+	db 1, MUD_SLAP
+	db 1, DOUBLE_TEAM
+	db 1, SWAGGER
+	db 1, SLEEP_TALK
+	db 1, SANDSTORM
+	db 1, FIRE_BLAST
+	db 1, SWIFT
+	db 1, DREAM_EATER
+	db 1, REST
+	db 1, ATTRACT
+	db 1, THIEF
+	db 1, FURY_CUTTER
+	db 1, NIGHTMARE
+	db 1, CUT
+	db 1, STRENGTH
+	db 1, FLASH
+	db 1, FLAMETHROWER
+	db 1, ICE_BEAM
+	db 1, THUNDERBOLT
+	db 0
+
 NoAllMoves::
 	db 0
 	db 0
