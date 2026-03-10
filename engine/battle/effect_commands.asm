@@ -1077,7 +1077,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1578,8 +1577,7 @@ BattleCommand_CheckHit:
 	call .ThunderRain
 	ret z
 	
-	call .BlizzardSnow
-	ret z
+	
 
 	call .XAccuracy
 	ret nz
@@ -1768,18 +1766,6 @@ BattleCommand_CheckHit:
 	cp WEATHER_RAIN
 	ret
 
-.BlizzardSnow:
-; Return z if the current move always hits in rain, and it is raining.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BLIZZARD
-	ret nz
-
-	ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret z
-	cp WEATHER_HAIL
-	ret
 
 .XAccuracy:
 	ld a, BATTLE_VARS_SUBSTATUS4
@@ -1918,8 +1904,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -2431,6 +2415,12 @@ BattleCommand_CheckFaint:
 
 	jr .finish
 
+.grudge
+	call BattleCommand_SwitchTurn
+	call GrudgeReducePP
+	call BattleCommand_SwitchTurn
+	jr .finish
+
 .no_dbond
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -2582,7 +2572,7 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	
-	call SnowDefenseBoost
+	
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
@@ -2828,7 +2818,8 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
-	call SnowDefenseBoost
+	
+	
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
@@ -5591,10 +5582,7 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
-
+	
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
 	jr z, .done
@@ -6266,6 +6254,11 @@ PrintParalyze:
 	ld hl, ParalyzedText
 	jp StdBattleTextbox
 
+PrintBurn:
+; 'paralyzed! maybe it can't attack!'
+	ld hl, ParalyzedText
+	jp StdBattleTextbox
+
 CheckSubstituteOpp:
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVar
@@ -6811,32 +6804,6 @@ _CheckBattleScene:
 	ret
 
 
-SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-		ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
-
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-	ret
-	
 BattleCommand_StartWeather:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
@@ -6910,5 +6877,323 @@ BattleCommand_AddDamage:
 	pop af
     ret
 	
-	
 
+BattleCommand_Grudge:
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_GRUDGE, [hl]
+	call AnimateCurrentMove
+	ld hl, GrudgeEffectText
+	jp StdBattleTextbox
+
+
+GrudgeReducePP:
+; Delete all PP of the move that made the user of Grudge faint.
+	ld bc, PARTYMON_STRUCT_LENGTH ; ????
+	ld hl, wEnemyMonMoves
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_moves
+	ld hl, wBattleMonMoves
+.got_moves
+	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
+	call GetBattleVar
+	and a
+	ret z
+	ld b, a
+	cp STRUGGLE
+	ret z
+	ld c, -1
+.loop
+	inc c
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld [wNamedObjectIndex], a
+	dec hl
+	ld b, 0
+	push bc
+	ld c, wBattleMonPP - wBattleMonMoves
+	add hl, bc
+	pop bc
+	ld a, [hl]
+	and PP_MASK
+	ret z
+	push bc
+	call GetMoveName
+	; lose 2-5 PP
+	ld a, 60
+	ld b, a
+	ld a, [hl]
+	and PP_MASK
+	cp b
+	jr nc, .deplete_pp
+	ld b, a
+.deplete_pp
+	ld a, [hl]
+	sub b
+	ld [hl], a
+	push af
+	ld a, MON_PP
+	call OpponentPartyAttr
+	ld d, b
+	pop af
+	pop bc
+	add hl, bc
+	ld e, a
+	ld a, BATTLE_VARS_SUBSTATUS5_OPP
+	call GetBattleVar
+	bit SUBSTATUS_TRANSFORMED, a
+	jr nz, .transformed
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .not_wildmon
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .not_wildmon
+	ld hl, wWildMonPP
+	add hl, bc
+.not_wildmon
+	ld [hl], e
+.transformed
+	ld hl, ReducedPPToZeroText
+	jp StdBattleTextbox	
+
+BattleCommand_KnockOff:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
+
+; The enemy needs to have an item to knockoff.
+
+	call .enemyitem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal mail.
+
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	ret c
+
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+
+	ld a, [wLinkMode]
+	and a
+	jr z, .stealenemyitem
+
+	ld a, [wBattleMode]
+	dec a
+	ret z
+
+.stealenemyitem
+	call .enemyitem
+	xor a
+	ld [hl], a
+	ld [de], a
+
+	jr .knock
+
+.enemy
+
+
+; The player must have an item to steal.
+
+	call .playeritem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal mail!
+
+	ld [wNamedObjectIndex], a
+	ld d, a
+	farcall ItemIsMail
+	ret c
+
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+
+; If the enemy steals your item,
+; it's gone for good if you don't get it back.
+
+	call .playeritem
+	xor a
+	ld [hl], a
+	ld [de], a
+
+.knock
+	call GetItemName
+	ld hl, KnockOffText
+	jp StdBattleTextbox
+
+.playeritem
+	ld a, MON_ITEM
+	call BattlePartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wBattleMonItem
+	ret
+
+.enemyitem
+	ld a, MON_ITEM
+	call OTPartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonItem
+	ret
+	
+BattleCommand_Snatch:
+	call CheckOpponentWentFirst
+	jr nz, .failed
+
+	; Since Snatch is reset on turn start, we know the move will work here.
+	ld a, BATTLE_VARS_SUBSTATUS2
+	call GetBattleVarAddr
+	set SUBSTATUS_SNATCH, [hl]
+
+	call AnimateCurrentMove
+	ld hl, WaitForOpponentMoveText
+	jp StdBattleTextbox
+.failed
+	call AnimateFailedMove
+	call TryPrintButItFailed
+	jp EndMoveEffect
+
+BattleCommand_CheckSnatch:
+	; Check if opponent is snatching this move.
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_SNATCH, a
+	ret z
+
+	; Opponent is stealing it. Copy move structure over.
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	push af
+	call BattleCommand_SwitchTurn
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVarAddr
+	ld b, [hl]
+	pop af
+	ld [hl], a
+	push hl
+	push bc
+
+	; Now print the snatch message.
+	call CheckBattleScene
+	sbc a
+	inc a
+	ld [wBattleAnimParam], a
+	ld de, ANIM_ENEMY_DAMAGE
+	call PlayFXAnimID
+	ld hl, UserSnatchedOpponentMove
+	call StdBattleTextbox
+
+	; Invert who went first
+	ld a, [wEnemyGoesFirst]
+	xor 1
+	ld [wEnemyGoesFirst], a
+
+	call UpdateMoveData
+
+	; ResetTurn assumes we've already done this when appropriate. However,
+	; since we actually called this move for the opponent, we need to fix
+	; that up here.
+	call BattleCommand_LowerSub
+	call ResetTurn
+
+	; Restore old data
+	ld a, [wEnemyGoesFirst]
+	xor 1
+	ld [wEnemyGoesFirst], a
+
+	pop bc
+	pop hl
+	ld [hl], b
+	call UpdateMoveData
+	jp BattleCommand_SwitchTurn
+	
+	
+BattleCommand_Burn:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit BRN, a
+	jr nz, .burnt
+	ld a, [wTypeModifier]
+	and $7f
+	jr z, .didnt_affect
+	call GetOpponentItem
+	ld a, b
+	cp HELD_PREVENT_BURN
+	jr nz, .no_item_protection
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	call AnimateFailedMove
+	ld hl, ProtectedByText
+	jp StdBattleTextbox
+
+.no_item_protection
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .dont_sample_failure
+
+	ld a, [wLinkMode]
+	and a
+	jr nz, .dont_sample_failure
+
+	ld a, [wInBattleTowerBattle]
+	and a
+	jr nz, .dont_sample_failure
+
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	jr nz, .dont_sample_failure
+
+	call BattleRandom
+	cp 25 percent + 1 ; 25% chance AI fails
+	jr c, .failed
+
+.dont_sample_failure
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	call CheckSubstituteOpp
+	jr nz, .failed
+	ld c, 30
+	call DelayFrames
+	call AnimateCurrentMove
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set BRN, [hl]
+	call UpdateOpponentInParty
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+	call UpdateBattleHuds
+	call PrintBurn
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore
+
+.burnt
+	call AnimateFailedMove
+	ld hl, AlreadyBurntText
+	jp StdBattleTextbox
+
+.failed
+	jp PrintDidntAffect2
+
+.didnt_affect
+	call AnimateFailedMove
+	jp PrintDoesntAffect

@@ -1,16 +1,14 @@
-Pokémon: Sableye
-1: Scratch
-1: Leer
-5: Foresight
-9: Night Shade
-13: Astonish
-17: Fury Swipes
-21: Fake Out
-25: Detect
-29: Faint Attack
-33: Knock Off
-37: Confuse Ray
-41: Shadow Ball
-45: Mean Look
- 
- 
+Pokémon: Banette
+1: Knock Off
+1: Screech
+1: Night Shade
+1: Curse
+8: Screech
+13: Night Shade
+20: Curse
+25: Spite
+32: Will-O-Wisp
+39: Faint Attack
+48: Shadow Ball
+55: Snatch
+64: Grudge

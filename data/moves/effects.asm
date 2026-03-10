@@ -2093,3 +2093,47 @@ Snow:
 	startweather
 	endmove
 	
+Snatch:
+	checkobedience
+	usedmovetext
+	doturn
+	snatch
+	endmove
+
+Grudge:
+	checkobedience
+	usedmovetext
+	doturn
+	grudge
+	endmove
+	
+KnockOff:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	knockoff
+	buildopponentrage
+	kingsrock
+	endmove
+	
+DoBurn:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	stab
+	checksafeguard
+	burn
+	endmove

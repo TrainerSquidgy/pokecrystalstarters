@@ -1,14 +1,14 @@
-Pokémon: Lechonk
-1: Tackle
-1: Tail Whip
-5: Disarming Voice
-8: Echoed Voice
-12: Mud Shot
-15: Covet
-17: Dig
-21: Headbutt
-24: Yawn
-27: Take Down
-30: Work Up
-32: Uproar
-35: Double-Edge
+Pokémon: Banette
+1: Knock Off
+1: Screech
+1: Night Shade
+1: Curse
+8: Screech
+13: Night Shade
+20: Curse
+25: Spite
+32: Will_O_Wisp
+39: Faint Attack
+48: Shadow Ball
+55: Snatch
+64: Grudge
