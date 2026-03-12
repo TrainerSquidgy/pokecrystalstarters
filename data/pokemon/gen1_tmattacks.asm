@@ -2685,6 +2685,8 @@ VictreebelGen1TMAttacks:
 	db 1, SUBSTITUTE
 	db 0
 
+ShroomishGen1TMAttacks:
+BreloomGen1TMAttacks:
 NoGen1TMAttacks:
 	db 0
 	db 0

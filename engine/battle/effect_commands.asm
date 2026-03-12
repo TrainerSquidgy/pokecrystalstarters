@@ -1578,6 +1578,9 @@ BattleCommand_CheckHit:
 	call .ThunderRain
 	ret z
 	
+	call .SkyUppercutFlying
+	ret z
+	
 	call .BlizzardSnow
 	ret z
 
@@ -1766,6 +1769,12 @@ BattleCommand_CheckHit:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
+	ret
+
+.SkyUppercutFlying
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_FLYING, a
 	ret
 
 .BlizzardSnow:
