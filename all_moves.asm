@@ -45,7 +45,6 @@ BulbasaurAllMoves::
     db 1, LIGHT_SCREEN
     db 1, SKULL_BASH
     db 1, SAFEGUARD
-    db 1, RAZOR_WIND
     db 1, PETAL_DANCE
     db 0
 
@@ -96,7 +95,6 @@ IvysaurAllMoves::
     db 1, LIGHT_SCREEN
     db 1, SKULL_BASH
     db 1, SAFEGUARD
-    db 1, RAZOR_WIND
     db 1, PETAL_DANCE
     db 0
 
@@ -149,7 +147,6 @@ VenusaurAllMoves::
     db 1, LIGHT_SCREEN
     db 1, SKULL_BASH
     db 1, SAFEGUARD
-    db 1, RAZOR_WIND
     db 1, PETAL_DANCE
     db 0
 
@@ -584,7 +581,6 @@ ButterfreeAllMoves::
     db 1, ATTRACT
     db 1, NIGHTMARE
     db 1, FLASH
-    db 1, RAZOR_WIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
     db 1, RAGE
@@ -679,7 +675,6 @@ PidgeyAllMoves::
     db 1, THIEF
     db 1, STEEL_WING
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
     db 1, RAGE
@@ -723,7 +718,6 @@ PidgeottoAllMoves::
     db 1, THIEF
     db 1, STEEL_WING
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
     db 1, RAGE
@@ -768,7 +762,6 @@ PidgeotAllMoves::
     db 1, THIEF
     db 1, STEEL_WING
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
     db 1, RAGE
@@ -924,7 +917,6 @@ SpearowAllMoves::
     db 1, THIEF
     db 1, STEEL_WING
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -971,7 +963,6 @@ FearowAllMoves::
     db 1, THIEF
     db 1, STEEL_WING
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -2076,7 +2067,6 @@ ZubatAllMoves::
     db 1, ATTRACT
     db 1, THIEF
     db 1, STEEL_WING
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -2121,7 +2111,6 @@ GolbatAllMoves::
     db 1, ATTRACT
     db 1, THIEF
     db 1, STEEL_WING
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -2452,7 +2441,6 @@ VenomothAllMoves::
     db 1, ATTRACT
     db 1, THIEF
     db 1, FLASH
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -4288,7 +4276,6 @@ FarfetchDAllMoves::
     db 1, STEEL_WING
     db 1, CUT
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, BODY_SLAM
     db 1, TAKE_DOWN
@@ -6413,7 +6400,6 @@ ScytherAllMoves::
     db 1, COUNTER
     db 1, SAFEGUARD
     db 1, BATON_PASS
-    db 1, RAZOR_WIND
     db 1, REVERSAL
     db 1, LIGHT_SCREEN
     db 0
@@ -7251,7 +7237,6 @@ KabutopsAllMoves::
     db 1, SURF
     db 1, WHIRLPOOL
     db 1, ICE_BEAM
-    db 1, RAZOR_WIND
     db 1, SWORDS_DANCE
     db 1, MEGA_KICK
     db 1, BODY_SLAM
@@ -7310,7 +7295,6 @@ AerodactylAllMoves::
     db 1, STEEL_WING
     db 1, FLY
     db 1, FLAMETHROWER
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, DOUBLE_EDGE
     db 1, RAGE
@@ -7429,7 +7413,6 @@ ArticunoAllMoves::
     db 1, REST
     db 1, STEEL_WING
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -7477,7 +7460,6 @@ ZapdosAllMoves::
     db 1, FLY
     db 1, FLASH
     db 1, THUNDERBOLT
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -7522,7 +7504,6 @@ MoltresAllMoves::
     db 1, REST
     db 1, STEEL_WING
     db 1, FLY
-    db 1, RAZOR_WIND
     db 1, WHIRLWIND
     db 1, TAKE_DOWN
     db 1, DOUBLE_EDGE
@@ -7704,7 +7685,6 @@ DragoniteAllMoves::
     db 1, FLAMETHROWER
     db 1, THUNDERBOLT
     db 1, ICE_BEAM
-    db 1, RAZOR_WIND
     db 1, HORN_DRILL
     db 1, BODY_SLAM
     db 1, TAKE_DOWN
@@ -7865,7 +7845,6 @@ MewAllMoves::
     db 1, FLAMETHROWER
     db 1, THUNDERBOLT
     db 1, ICE_BEAM
-    db 1, RAZOR_WIND
     db 1, SWORDS_DANCE
     db 1, WHIRLWIND
     db 1, MEGA_KICK
@@ -8208,7 +8187,6 @@ TotodileAllMoves::
     db 1, CRUNCH
     db 1, THRASH
     db 1, ANCIENTPOWER
-    db 1, RAZOR_WIND
     db 1, ROCK_SLIDE
     db 0
 
@@ -8257,7 +8235,6 @@ CroconawAllMoves::
     db 1, CRUNCH
     db 1, THRASH
     db 1, ANCIENTPOWER
-    db 1, RAZOR_WIND
     db 1, ROCK_SLIDE
     db 0
 
@@ -8308,7 +8285,6 @@ FeraligatrAllMoves::
     db 1, CRUNCH
     db 1, THRASH
     db 1, ANCIENTPOWER
-    db 1, RAZOR_WIND
     db 1, ROCK_SLIDE
     db 0
 
@@ -10265,7 +10241,6 @@ GligarAllMoves::
     db 1, STRENGTH
     db 1, METAL_CLAW
     db 1, WING_ATTACK
-    db 1, RAZOR_WIND
     db 1, COUNTER
     db 0
 
@@ -10512,7 +10487,6 @@ ScizorAllMoves::
     db 1, COUNTER
     db 1, SAFEGUARD
     db 1, BATON_PASS
-    db 1, RAZOR_WIND
     db 1, REVERSAL
     db 1, LIGHT_SCREEN
     db 0
@@ -12149,4 +12123,96 @@ CelebiAllMoves::
 SplashAllMoves::
     db 0
     db 1, SPLASH
+    db 1, DISABLE
+    db 1, DESTINY_BOND
+    db 1, FORESIGHT
+    db 0
+
+ShuppetAllMoves::
+    db 0
+    db 1, KNOCK_OFF
+    db 1, SCREECH
+    db 1, NIGHT_SHADE
+    db 1, CURSE
+    db 1, SPITE
+    db 1, WILL_O_WISP
+    db 1, FAINT_ATTACK
+    db 1, SHADOW_BALL
+    db 1, SNATCH
+    db 1, GRUDGE
+    db 1, HEADBUTT
+    db 1, TOXIC
+    db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, THUNDER
+    db 1, RETURN
+    db 1, PSYCHIC_M
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, DREAM_EATER
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THIEF
+    db 1, NIGHTMARE
+    db 1, FLASH
+    db 1, THUNDERBOLT
+    db 1, BODY_SLAM
+    db 1, DOUBLE_EDGE
+    db 1, MIMIC
+    db 1, THUNDER_WAVE
+    db 1, SUBSTITUTE
+    db 0
+
+BanetteAllMoves::
+    db 0
+    db 1, KNOCK_OFF
+    db 1, SCREECH
+    db 1, NIGHT_SHADE
+    db 1, CURSE
+    db 1, SPITE
+    db 1, WILL_O_WISP
+    db 1, FAINT_ATTACK
+    db 1, SHADOW_BALL
+    db 1, SNATCH
+    db 1, GRUDGE
+    db 1, HEADBUTT
+    db 1, TOXIC
+    db 1, PSYCH_UP
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, HYPER_BEAM
+    db 1, ICY_WIND
+    db 1, PROTECT
+    db 1, RAIN_DANCE
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, THUNDER
+    db 1, RETURN
+    db 1, PSYCHIC_M
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, DREAM_EATER
+    db 1, REST
+    db 1, ATTRACT
+    db 1, THIEF
+    db 1, NIGHTMARE
+    db 1, FLASH
+    db 1, THUNDERBOLT
+    db 1, BODY_SLAM
+    db 1, DOUBLE_EDGE
+    db 1, MIMIC
+    db 1, METRONOME
+    db 1, THUNDER_WAVE
+    db 1, SUBSTITUTE
     db 0
