@@ -64,3 +64,16 @@
 58 - Flamethrower
 59 - Ice Beam
 60 - Thunderbolt
+61 - Body Slam
+62 - Counter
+63 - Double-Edge
+64 - Explosion
+65 - Mega Kick
+66 - Mega Punch
+67 - Mimic
+68 - Rock Slide
+69 - Seismic Toss
+70 - Softboiled
+71 - Substitute
+72 - Swords Dance
+73 - Thunder Wave

@@ -115,16 +115,7 @@ ElmsLabStarterChoice:
 	loadmem wGuaranteedHMFriendCatch, 0
 .DoneHMFriends
 	waitbutton
-	writetext ElmsLabText_AskStream
-	yesorno
-	iffalse .nostream
-	loadmem wLevelCap, 9
-	writetext ElmsLabText_StreamYes
-	sjump .streamdone
-.nostream
 	loadmem wLevelCap, 100
-	writetext ElmsLabText_StreamNo
-.streamdone
 	promptbutton
 	closetext
 	turnobject PLAYER, DOWN
