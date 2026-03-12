@@ -12164,3 +12164,75 @@ SplashAllMoves::
 NoAllMoves::
 	db 0
 	db 0
+	
+ShroomishAllMoves::
+    db 0
+    db 1, ABSORB
+    db 1, TACKLE
+    db 1, STUN_SPORE
+    db 1, LEECH_SEED
+    db 1, MEGA_DRAIN
+    db 1, HEADBUTT
+    db 1, POISONPOWDER
+    db 1, GROWTH
+    db 1, GIGA_DRAIN
+    db 1, SPORE
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, PROTECT
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, SOLARBEAM
+    db 1, RETURN
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, SLUDGE_BOMB
+    db 1, REST
+    db 1, ATTRACT
+    db 1, FLASH
+    db 0
+
+BreloomAllMoves::
+    db 0
+    db 1, ABSORB
+    db 1, TACKLE
+    db 1, STUN_SPORE
+    db 1, LEECH_SEED
+    db 1, MEGA_DRAIN
+    db 1, HEADBUTT
+    db 1, MACH_PUNCH
+    db 1, COUNTER
+    db 1, SKY_UPPERCUT
+    db 1, MIND_READER
+    db 1, DYNAMICPUNCH
+    db 1, CURSE
+    db 1, TOXIC
+    db 1, ROCK_SMASH
+    db 1, HIDDEN_POWER
+    db 1, SUNNY_DAY
+    db 1, SNORE
+    db 1, HYPER_BEAM
+    db 1, PROTECT
+    db 1, GIGA_DRAIN
+    db 1, ENDURE
+    db 1, FRUSTRATION
+    db 1, SOLARBEAM
+    db 1, IRON_TAIL
+    db 1, RETURN
+    db 1, MUD_SLAP
+    db 1, DOUBLE_TEAM
+    db 1, SWAGGER
+    db 1, SLEEP_TALK
+    db 1, SLUDGE_BOMB
+    db 1, THUNDERPUNCH
+    db 1, REST
+    db 1, ATTRACT
+    db 1, FURY_CUTTER
+    db 1, CUT
+    db 1, STRENGTH
+    db 1, FLASH
+    db 0
