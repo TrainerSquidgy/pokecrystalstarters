@@ -154,8 +154,8 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
             delete_line(file_path, '	dba_pic CelebiBackpic')
 
         elif file_path == "gfx/pics.asm":
-            append_line_below(file_path, 'SECTION "Pics 20", ROMX', f'{pokemon_name}Backpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/back.2bpp.lz"\n')
-            append_line_below(file_path, 'SECTION "Pics 20", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n')
+            append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Backpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/back.2bpp.lz"\n')
+            append_line_below(file_path, 'SECTION "Pics 19", ROMX', f'{pokemon_name}Frontpic: INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.animated.2bpp.lz"\n')
 
         elif file_path == "data/pokemon/palettes.asm":
             append_line_above(file_path, 'INCBIN "gfx/pokemon/celebi/front.gbcpal", middle_colors', f'INCBIN "gfx/pokemon/{pokemon_name.lower()}/front.gbcpal", middle_colors\nINCLUDE "gfx/pokemon/{pokemon_name.lower()}/shiny.pal"\n')
@@ -231,13 +231,6 @@ def modify_files(file_paths, pokemon_name):  # Renamed 'name' to 'pokemon_name' 
         elif file_path == "data/pokemon/gen1_tmattacks.asm":
             append_line_above(file_path, 'NoGen1TMAttacks:', f'{pokemon_name}Gen1TMAttacks:\n')
 
-        elif file_path == "engine/events/starterselection.asm":
-            append_line_above(file_path, '	dw .Celebi', f'	dw .{pokemon_name}\n')
-            delete_line(file_path, '	dw .Celebi')
-            append_line_above(file_path, '.Celebi	db "CELEBI@@@@@"', f'.{pokemon_name}	db "{padded_name.upper()}@"\n')
-            delete_line(file_path, '.Celebi	db "CELEBI@@@@@"')
-            delete_line_above(file_path, ';PYTHONBUFFER1')
-            append_line_above(file_path, ';PYTHONBUFFER1', f'	ld a, {pokemon_name.upper()}"\n')
             
         
 # Get the Pokémon name from the input file

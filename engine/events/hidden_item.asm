@@ -16,6 +16,7 @@ HiddenItemScript::
 	waitbutton
 
 .finish
+	callasm .CheckRareCandy
 	closetext
 	end
 
@@ -27,6 +28,15 @@ HiddenItemScript::
 	text_far _ButNoSpaceText
 	text_end
 
+.CheckRareCandy:
+	ld a, [wCurItem]
+	cp RARE_CANDY
+	ret nz
+	ld a, [wRareCandiesObtained]
+	inc a
+	ld [wRareCandiesObtained], a
+	ret
+
 SetMemEvent:
 	ld hl, wHiddenItemEvent
 	ld a, [hli]
@@ -35,3 +45,5 @@ SetMemEvent:
 	ld b, SET_FLAG
 	call EventFlagAction
 	ret
+
+

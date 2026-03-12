@@ -414,6 +414,12 @@ Script_pokepic:
 	jr nz, .ok
 	ld a, [wScriptVar]
 .ok
+	cp MEWTWO
+	jr nz, .cyndaquil
+	ld a, [wBinSkipPokemon]
+	and a
+	jr nz, .not_starter
+.cyndaquil
 	cp CYNDAQUIL
 	jr nz, .totodile
 	ld a, [wElmPokemon1]
@@ -807,6 +813,13 @@ Script_warpsound:
 
 Script_cry:
 	call GetScriptByte
+	
+	cp MEWTWO
+	jr nz, .cyndaquil
+	ld a, [wBinSkipPokemon]
+	and a
+	jr nz, .not_starter
+.cyndaquil
 	cp CYNDAQUIL
 	jr nz, .totodile
 	ld a, [wElmPokemon1]
@@ -833,6 +846,14 @@ Script_cry:
 	ld a, [wScriptVar]
 	pop af
 	and a
+	
+	cp MEWTWO
+	jr nz, .cyndaquil2
+	ld a, [wBinSkipPokemon]
+	and a
+	jr nz, .not_starter
+.cyndaquil2
+
 	cp CYNDAQUIL
 	jr nz, .totodile2
 	ld a, [wElmPokemon1]
@@ -1987,6 +2008,14 @@ Script_checkphonecall:
 
 Script_givepoke:
 	call GetScriptByte
+	
+	cp MEWTWO
+	jr nz, .cyndaquil
+	ld a, [wBinSkipPokemon]
+	and a
+	jr nz, .not_starter
+.cyndaquil
+	
 	cp CYNDAQUIL
 	jr nz, .totodile
 	ld a, [wElmPokemon1]

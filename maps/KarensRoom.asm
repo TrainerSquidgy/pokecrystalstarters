@@ -62,6 +62,10 @@ KarenScript_Battle:
 	refreshmap
 	closetext
 	setevent EVENT_KARENS_ROOM_EXIT_OPEN
+	readmem wLevelCap
+	ifgreater 50, .SkipLevelCap
+	loadmem wLevelCap, 50
+.SkipLevelCap
 	waitsfx
 	end
 
