@@ -711,6 +711,13 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 
+BagonFrontpic:      INCBIN "gfx/pokemon/bagon/front.animated.2bpp.lz"
+BagonBackpic:       INCBIN "gfx/pokemon/bagon/back.2bpp.lz"
+ShelgonFrontpic:      INCBIN "gfx/pokemon/shelgon/front.animated.2bpp.lz"
+ShelgonBackpic:       INCBIN "gfx/pokemon/shelgon/back.2bpp.lz"
+SalamenceFrontpic:      INCBIN "gfx/pokemon/salamence/front.animated.2bpp.lz"
+SalamenceBackpic:       INCBIN "gfx/pokemon/salamence/back.2bpp.lz"
+
 
 ; Seems to be an accidental copy of the previous bank
 
