@@ -6,24 +6,38 @@ PSYCH_UP
 HIDDEN_POWER
 SUNNY_DAY
 SNORE
+<<<<<<< Updated upstream
 HYPER_BEAM
+=======
+ICY_WIND
+>>>>>>> Stashed changes
 PROTECT
 ENDURE
 FRUSTRATION
+<<<<<<< Updated upstream
 SOLARBEAM
 EARTHQUAKE
+=======
+>>>>>>> Stashed changes
 RETURN
 PSYCHIC_M
 SHADOW_BALL
 DOUBLE_TEAM
 SWAGGER
 SLEEP_TALK
+<<<<<<< Updated upstream
 SANDSTORM
 FIRE_BLAST
 SWIFT
+=======
+>>>>>>> Stashed changes
 DEFENSE_CURL
 DREAM_EATER
 REST
 ATTRACT
+<<<<<<< Updated upstream
+=======
+NIGHTMARE
+>>>>>>> Stashed changes
 FLASH
 FLAMETHROWER

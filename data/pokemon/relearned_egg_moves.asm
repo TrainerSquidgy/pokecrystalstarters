@@ -543,7 +543,7 @@ HoothootRelearnedEggMoves:
 	db 1, FAINT_ATTACK
 	db 1, WING_ATTACK
 	db 1, WHIRLWIND
-	db 1, SKY_ATTACK
+
 	db 0
 
 LedybaRelearnedEggMoves:
@@ -684,7 +684,7 @@ MurkrowRelearnedEggMoves:
 	db 1, QUICK_ATTACK
 	db 1, MIRROR_MOVE
 	db 1, WING_ATTACK
-	db 1, SKY_ATTACK
+
 	db 0
 
 MisdreavusRelearnedEggMoves:
@@ -832,7 +832,7 @@ SkarmoryRelearnedEggMoves:
 	db 1, DRILL_PECK
 	db 1, PURSUIT
 	db 1, WHIRLWIND
-	db 1, SKY_ATTACK
+
 	db 0
 
 HoundourRelearnedEggMoves:
@@ -910,6 +910,15 @@ LarvitarRelearnedEggMoves:
 	db 1, ANCIENTPOWER
 	db 0
 
+LoudredRelearnedEggMoves:
+ExploudRelearnedEggMoves:
+WhismurRelearnedEggMoves:
+	db 0
+	db 1, SNORE
+	db 1, SWAGGER
+	db 1, TAKE_DOWN
+	db 0
+	
 NoRelearnedEggMoves:
 	db 0
 	db 0

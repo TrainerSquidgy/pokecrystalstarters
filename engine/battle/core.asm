@@ -595,6 +595,10 @@ CheckPlayerLockedIn:
 	ld hl, wPlayerSubStatus1
 	bit SUBSTATUS_ROLLOUT, [hl]
 	jp nz, .quit
+	
+	ld hl, wPlayerSubStatus4
+	bit SUBSTATUS_UPROAR, [hl]
+	jp nz, .quit
 
 	and a
 	ret
@@ -5898,6 +5902,9 @@ ParseEnemyAction:
 	ld a, [wEnemySubStatus3]
 	and 1 << SUBSTATUS_CHARGED | 1 << SUBSTATUS_RAMPAGE | 1 << SUBSTATUS_BIDE
 	jp nz, .skip_load
+	ld a, [wEnemySubStatus4]
+	bit SUBSTATUS_UPROAR, a
+	jp nz, .skip_load
 
 	ld hl, wEnemySubStatus5
 	bit SUBSTATUS_ENCORED, [hl]
@@ -6036,7 +6043,7 @@ ResetVarsForSubstatusRage:
 
 CheckEnemyLockedIn:
 	ld a, [wEnemySubStatus4]
-	and 1 << SUBSTATUS_RECHARGE
+	and 1 << SUBSTATUS_RECHARGE | 1 << SUBSTATUS_UPROAR
 	ret nz
 
 	ld hl, wEnemySubStatus3
