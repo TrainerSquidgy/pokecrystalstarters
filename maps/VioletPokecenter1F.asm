@@ -33,7 +33,7 @@ VioletPokecenter1F_ElmsAideScript:
 	setmapscene ROUTE_32, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
 	writetext VioletPokecenterElmsAideGiveEggText
 	checkevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-	iffalse .done
+	iftrue .done
 	writetext VioletPokecenterElmsAideEscapeRopeText
 	waitbutton
 	verbosegiveitem ESCAPE_ROPE_KEY
