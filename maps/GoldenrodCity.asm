@@ -32,14 +32,6 @@ GoldenrodCityFlypointAndFloriaCallback:
 	endcallback
 
 GoldenrodCityMoveTutorCallback:
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .MoveTutorDone
-	checkitem COIN_CASE
-	iffalse .MoveTutorDisappear
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .MoveTutorAppear
-	ifequal SATURDAY, .MoveTutorAppear
-.MoveTutorDisappear:
 	disappear GOLDENRODCITY_MOVETUTOR
 	endcallback
 

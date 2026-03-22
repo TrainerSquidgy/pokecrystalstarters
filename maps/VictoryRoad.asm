@@ -107,6 +107,9 @@ VictoryRoadRivalNext:
 .AfterBattle:
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
+	readmem wNumberOfPoints
+	addval 2
+	writemem wNumberOfPoints
 	writetext VictoryRoadRivalAfterText
 	waitbutton
 	closetext

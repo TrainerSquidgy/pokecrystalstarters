@@ -193,16 +193,6 @@ Route31MailRecipientScript:
 	end
 
 .TryGiveKenya:
-	writetext Text_Route31SleepyManGotMail
-	promptbutton
-	checkpokemail ReceivedSpearowMailText
-	ifequal POKEMAIL_WRONG_MAIL, .WrongMail
-	ifequal POKEMAIL_REFUSED, .Refused
-	ifequal POKEMAIL_NO_MAIL, .NoMail
-	ifequal POKEMAIL_LAST_MON, .LastMon
-	; POKEMAIL_CORRECT
-	writetext Text_Route31HandOverMailMon
-	promptbutton
 	writetext Text_Route31ReadingMail
 	promptbutton
 	setevent EVENT_GAVE_KENYA
@@ -333,9 +323,6 @@ Text_Route31ReadingMail:
 
 	para "That's good to"
 	line "know."
-
-	para "Thanks for bring-"
-	line "ing this to me."
 
 	para "My friend's a good"
 	line "guy, and you're"

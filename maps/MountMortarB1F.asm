@@ -29,15 +29,6 @@ MountMortarB1FKiyoScript:
 	setevent EVENT_BEAT_BLACKBELT_KIYO
 	opentext
 .BeatKiyo:
-	writetext MountMortarB1FTyrogueRewardText
-	promptbutton
-	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	writetext MountMortarB1FReceiveMonText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke TYROGUE, 10
 	setevent EVENT_GOT_TYROGUE_FROM_KIYO
 .GotTyrogue:
 	writetext MountMortarB1FKiyoGotTyrogueText
@@ -114,12 +105,6 @@ MountMortarB1FReceiveMonText:
 	done
 
 MountMortarB1FKiyoGotTyrogueText:
-	text "TYROGUE is a"
-	line "fighting-type."
-
-	para "It evolves into a"
-	line "tougher #MON."
-
 	para "Keep up the hard"
 	line "work. I'll keep"
 	cont "training too."

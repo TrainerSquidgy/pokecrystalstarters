@@ -23,22 +23,7 @@ DayCareEggCheckCallback:
 DayCareManScript_Inside:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_ODD_EGG
-	iftrue .AlreadyHaveOddEgg
-	writetext DayCareManText_GiveOddEgg
-	promptbutton
-	closetext
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	special GiveOddEgg
-	opentext
-	writetext DayCareText_GotOddEgg
-	playsound SFX_KEY_ITEM
-	waitsfx
-	writetext DayCareText_DescribeOddEgg
-	waitbutton
-	closetext
-	setevent EVENT_GOT_ODD_EGG
+	sjump .AlreadyHaveOddEgg
 	end
 
 .PartyFull:

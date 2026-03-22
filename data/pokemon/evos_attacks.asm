@@ -3411,3 +3411,7 @@ SlakingEvosAttacks:
 	db 37, COUNTER
 	db 43, FLAIL
 	db 0 ; no more level-up moves
+SplashEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, SPLASH
+	db 0 ; no more level-up moves

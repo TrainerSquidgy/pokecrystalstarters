@@ -16,17 +16,8 @@ VioletPokecenterNurse:
 VioletPokecenter1F_ElmsAideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE
-	iftrue .SecondTimeAsking
 	writetext VioletPokecenterElmsAideFavorText
-.AskTakeEgg:
-	yesorno
-	iffalse .RefusedEgg
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	giveegg TOGEPI, EGG_LEVEL
-	getstring STRING_BUFFER_4, .eggname
-	scall .AideGivesEgg
+	verbosegiveitem ESCAPE_ROPE_KEY
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	clearevent EVENT_ELMS_AIDE_IN_LAB
 	clearevent EVENT_TOGEPI_HATCHED
@@ -51,6 +42,7 @@ VioletPokecenter1F_ElmsAideScript:
 	waitsfx
 	end
 
+
 .AideWalksAroundPlayer:
 	applymovement VIOLETPOKECENTER1F_ELMS_AIDE, MovementData_AideWalksLeftToExitPokecenter
 	turnobject PLAYER, DOWN
@@ -60,29 +52,6 @@ VioletPokecenter1F_ElmsAideScript:
 	waitsfx
 	end
 
-.eggname
-	db "EGG@"
-
-.AideGivesEgg:
-	jumpstd ReceiveTogepiEggScript
-	end
-
-.PartyFull:
-	writetext VioletCityElmsAideFullPartyText
-	waitbutton
-	closetext
-	end
-
-.RefusedEgg:
-	writetext VioletPokecenterElmsAideRefuseText
-	waitbutton
-	closetext
-	setevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE
-	end
-
-.SecondTimeAsking:
-	writetext VioletPokecenterElmsAideAskEggText
-	sjump .AskTakeEgg
 
 VioletPokecenter1FGameboyKidScript:
 	jumptextfaceplayer VioletPokecenter1FGameboyKidText
@@ -118,11 +87,11 @@ VioletPokecenterElmsAideFavorText:
 	para "PROF.ELM asked me"
 	line "to find you."
 
-	para "He has another"
-	line "favor to ask."
+	para "He has an item"
+	line "which will help."
 
-	para "Would you take the"
-	line "#MON EGG?"
+	para "Take this fancy"
+	line "ESCAPE ROPE!"
 	done
 
 VioletPokecenterElmsAideEscapeRopeText:

@@ -25,6 +25,10 @@ ViridianGymBlueScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_EARTHBADGE
+	readmem wNumberOfPoints
+	addval 5
+	writemem wNumberOfPoints
+	verbosegiveitem CANDY_JAR
 	readmem wLevelCap
 	ifgreater 81, .skipLevelCap
 	loadmem wLevelCap, 81

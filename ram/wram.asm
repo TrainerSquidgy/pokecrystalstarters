@@ -1053,6 +1053,7 @@ wLinkReceivedMailEnd:: db
 SECTION UNION "Overworld Map", WRAM0
 
 ; mystery gift data
+wAllMovesData::
 wMysteryGiftStaging:: ds 80
 
 UNION
@@ -3198,9 +3199,11 @@ wBinSkipPokemon:: db
 wBinSkipItem:: db
 wIsAStream:: db
 wVitaminLimitsDisabled:: db
+wNumberOfPoints:: db
 wPlayerYawning:: db
 wEnemyYawning:: db
-	ds 53
+	ds 52
+
 
 wEventFlags:: flag_array NUM_EVENTS
 

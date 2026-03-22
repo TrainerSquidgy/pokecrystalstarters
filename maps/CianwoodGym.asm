@@ -46,6 +46,9 @@ CianwoodGymChuckScript:
 	writetext GetStormBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 3
+	writemem wNumberOfPoints
 	setflag ENGINE_STORMBADGE
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets

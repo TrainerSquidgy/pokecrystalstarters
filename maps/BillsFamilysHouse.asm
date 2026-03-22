@@ -11,39 +11,6 @@ BillsFamilysHouse_MapScripts:
 BillScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_EEVEE
-	iftrue .GotEevee
-	writetext BillTakeThisEeveeText
-	yesorno
-	iffalse .Refused
-	writetext BillImCountingOnYouText
-	promptbutton
-	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	writetext ReceivedEeveeText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke EEVEE, 20
-	setevent EVENT_GOT_EEVEE
-	writetext BillEeveeMayEvolveText
-	waitbutton
-	closetext
-	end
-
-.NoRoom:
-	writetext BillPartyFullText
-	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext BillNoEeveeText
-	waitbutton
-	closetext
-	end
-
-.GotEevee:
 	writetext BillPopWontWorkText
 	waitbutton
 	closetext

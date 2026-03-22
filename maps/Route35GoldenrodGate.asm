@@ -23,13 +23,6 @@ RandyScript:
 	writetext Route35GoldenrodGateRandyThanksText
 	promptbutton
 	waitsfx
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .partyfull
-	writetext Route35GoldenrodGatePlayerReceivedAMonWithMailText
-	playsound SFX_KEY_ITEM
-	waitsfx
-	givepoke SPEAROW, 10, NO_ITEM, GiftSpearowName, GiftSpearowOTName
-	givepokemail GiftSpearowMail
 	setevent EVENT_GOT_KENYA
 .alreadyhavekenya
 	writetext Route35GoldenrodGateRandyWeirdTreeBlockingRoadText
@@ -99,9 +92,9 @@ Route35GoldenrodGateRandyAskTakeThisMonToMyFriendText:
 	line "Can you do a guy"
 	cont "a favor?"
 
-	para "Can you take this"
-	line "#MON with MAIL"
-	cont "to my friend?"
+	para "Can you tell my"
+	line "friend that he"
+	cont "needs a LANTERN?"
 
 	para "He's on ROUTE 31."
 	done

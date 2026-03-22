@@ -214,17 +214,10 @@ PokeBallEffect:
 	ld a, [wBattleMode]
 	dec a
 	jp nz, UseBallInTrainerBattle
+CannotUseBall:
+	jp WontHaveAnyEffect_NotUsedMessage
+	ret
 
-	ld a, [wPartyCount]
-	cp PARTY_LENGTH
-	jr nz, .room_in_party
-
-	ld a, BANK(sBoxCount)
-	call OpenSRAM
-	ld a, [sBoxCount]
-	cp MONS_PER_BOX
-	call CloseSRAM
-	jp z, Ball_BoxIsFullMessage
 
 .room_in_party
 ; BUG: Using a Park Ball in non-Contest battles has a corrupt animation (see docs/bugs_and_glitches.md)
@@ -1402,7 +1395,6 @@ RareCandyEffect:
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
-	predef LearnLevelMoves
 
 	xor a
 	ld [wForceEvolution], a
@@ -2658,9 +2650,12 @@ UseBallInTrainerBattle:
 	predef PlayBattleAnim
 	ld hl, BallBlockedText
 	call PrintText
+	jp CannotUseBall
 	ld hl, BallDontBeAThiefText
 	call PrintText
 	jr UseDisposableItem
+
+
 
 WontHaveAnyEffect_NotUsedMessage:
 	ld hl, ItemWontHaveEffectText
@@ -3178,7 +3173,6 @@ CandyJarEffect:
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
-	predef LearnLevelMoves
 
 	xor a
 	ld [wForceEvolution], a

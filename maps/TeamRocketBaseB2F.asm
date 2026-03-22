@@ -292,6 +292,9 @@ RocketBaseElectrodeScript:
 	verbosegiveitem BATH_PLUG
 	setevent EVENT_RECEIVED_BATH_PLUG
 .NoHMItem
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	writetext RocketBaseLanceWhirlpoolText
 	waitbutton
 	closetext

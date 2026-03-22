@@ -7450,7 +7450,7 @@ GiveExperiencePoints:
 	ld a, b
 	ld [wCurPartyLevel], a
 	push bc
-	predef LearnLevelMoves
+	;predef LearnLevelMoves
 	pop bc
 	ld a, b
 	cp c

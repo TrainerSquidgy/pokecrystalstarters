@@ -182,6 +182,9 @@ CherrygroveRivalSceneNorth:
 	waitbutton
 	closetext
 .FinishRival:
+	readmem wNumberOfPoints
+	addval 2
+	writemem wNumberOfPoints
 	playsound SFX_TACKLE
 	applymovement PLAYER, CherrygroveCity_RivalPushesYouOutOfTheWay
 	turnobject PLAYER, LEFT

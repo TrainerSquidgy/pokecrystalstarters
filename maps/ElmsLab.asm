@@ -5,6 +5,7 @@
 	const ELMSLAB_POKE_BALL2
 	const ELMSLAB_POKE_BALL3
 	const ELMSLAB_OFFICER
+	const ELMSLAB_SCIENTIST
 
 ElmsLab_MapScripts:
 	def_scene_scripts
@@ -117,11 +118,11 @@ ElmsLabStarterChoice:
 	writetext ElmsLabText_AskStream
 	yesorno
 	iffalse .nostream
-	loadmem wIsAStream, 1
+	loadmem wLevelCap, 9
 	writetext ElmsLabText_StreamYes
 	sjump .streamdone
 .nostream
-	loadmem wIsAStream, 0
+	loadmem wLevelCap, 100
 	writetext ElmsLabText_StreamNo
 .streamdone
 	promptbutton
@@ -218,18 +219,6 @@ ElmsLab_ExtraCoreGameplayOptions:
 	writetext ElmsLabText_AskGamePlayChanges
 	yesorno
 	iffalse .EndOptions
-
-; LEVEL CAP
-	writetext ElmsLabtext_LevelCapAsk
-	yesorno
-	iffalse .NoLevelCap
-	loadmem wLevelCap, 9
-	writetext ElmsLabText_LevelCapYes
-.NoLevelCap
-	writetext ElmsLabtext_LevelCapNo
-.LevelCapDone
-	promptbutton
-
 ; RIVAL'S STARTER CHANGES
 	writetext ElmsLabText_AskRival
 	yesorno
@@ -242,7 +231,6 @@ ElmsLab_ExtraCoreGameplayOptions:
 	writetext ElmsLabText_RivalStillSame
 .StartersDone
 	promptbutton
-	
 ; INVERSE MATCHUPS
 	writetext ElmsLabText_InverseAsk
 	yesorno
@@ -255,7 +243,6 @@ ElmsLab_ExtraCoreGameplayOptions:
 	writetext ElmsLabtext_InverseYes
 .InverseDone
 	promptbutton
-
 ; METRONOME ONLY
 	writetext ElmsLabText_MetronomeOnlyAsk
 	yesorno
@@ -285,67 +272,6 @@ ElmsLab_ExtraQualityOfLifeItems:
 	writetext ElmsLabText_AskHelpfulItems
 	yesorno
 	iffalse .EndOptions
-
-; RARE CANDY OPTIONS
-	checkevent EVENT_CANDY_JAR
-	iftrue .HMItems
-	writetext ElmsLabText_CandyJarAsk
-	yesorno 
-	iffalse .NoCandyjar
-	verbosegiveitem CANDY_JAR
-	setevent EVENT_CANDY_JAR
-	sjump .CandyEvents
-.NoCandyjar
-	writetext ElmsLabText_CandyJarNo
-	promptbutton
-	checkevent EVENT_10_CANDIES
-	iftrue .ProfsRepel
-	writetext ElmsLabText_RareCandiesAsk
-	yesorno
-	iffalse .HMItems
-	verbosegiveitem RARE_CANDY, 10
-	setevent EVENT_10_CANDIES
-.CandyEvents
-	setevent EVENT_ROUTE_34_HIDDEN_RARE_CANDY
-	setevent EVENT_ROUTE_28_HIDDEN_RARE_CANDY
-	setevent EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
-	setevent EVENT_VIOLET_CITY_RARE_CANDY
-	setevent EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
-	setevent EVENT_OLIVINE_LIGHTHOUSE_5F_RARE_CANDY
-	setevent EVENT_ROUTE_27_RARE_CANDY
-	setevent EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
-	setevent EVENT_WHIRL_ISLAND_B1F_HIDDEN_RARE_CANDY
-	setevent EVENT_LISTENED_TO_FAN_CLUB_PRESIDENT
-	writetext ElmsLabText_RareCandiesDone
-
-; HM ITEMS
-.HMItems
-	checkevent EVENT_HM_ITEMS
-	iftrue .ProfsRepel
-	promptbutton
-	writetext ElmsLabText_HMItemsAsk
-	yesorno
-	iffalse .ProfsRepel
-	setevent EVENT_HM_ITEMS
-	clearevent EVENT_RECEIVED_SCYTHE
-	clearevent EVENT_RECEIVED_AIR_BALLOON
-	clearevent EVENT_RECEIVED_RAFT
-	clearevent EVENT_RECEIVED_BURLY_MAN
-	clearevent EVENT_RECEIVED_LANTERN
-	clearevent EVENT_RECEIVED_BATH_PLUG
-	clearevent EVENT_RECEIVED_LADDER
-	clearevent EVENT_RECEIVED_FART_JAR
-	clearevent EVENT_RECEIVED_HONEY_JAR
-	clearevent EVENT_RECEIVED_TREE_SHAKER
-	clearevent EVENT_RECEIVED_BIG_HAMMER
-	clearevent EVENT_RECEIVED_CANDY_JAR
-	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
-	writetext ElmsLabText_HMItemsYes
-	
-; PROF'S REPEL	
-.ProfsRepel
-	promptbutton
 	checkevent EVENT_PROFS_REPEL
 	iftrue .EndOptions
 	writetext ElmsLabText_ProfessorsRepelAsk
@@ -378,26 +304,6 @@ ElmsLab_ExtraQualityOfLifeSettings:
 	iffalse .EndOptions
 
 ; QUALITY OF LIFE NPCs	
-	writetext ElmsLabText_AskAboutHelpfulNPCs
-	yesorno
-	iftrue .AskTutorLimit
-	setevent EVENT_HELPFUL_NPCS_DISABLED
-	sjump .NoTutors
-.AskTutorLimit
-	writetext ElmsLabText_AskLimitTutors
-	yesorno
-	iffalse .NoLimit
-	loadmem wTutorsLimited, 0
-	writetext ElmsLabText_LimitTutorsYes
-	promptbutton
-	sjump .NoTutors
-.NoLimit
-	loadmem wTutorsLimited, 1
-	writetext ElmsLabText_LimitTutorsNo
-	promptbutton
-.NoTutors
-	
-; SPINNER BEHAVIOUR	
 	writetext ElmsLabText_SpinnersAtAllAsk
 	yesorno
 	iftrue .DisabledOrRotators
@@ -426,12 +332,12 @@ ElmsLab_ExtraQualityOfLifeSettings:
 	promptbutton
 	
 ; Disable Encounters with B
-;	writetext ElmsLabText_DisableEncountersWithBAsk
-;	yesorno
-;	iffalse .NoRepel
-;	loadmem wPressBToRepel, 1
-;	writetext ElmsLabText_DisableEncountersWithBYes
-;	promptbutton
+	writetext ElmsLabText_DisableEncountersWithBAsk
+	yesorno
+	iffalse .NoRepel
+	loadmem wPressBToRepel, 1
+	writetext ElmsLabText_DisableEncountersWithBYes
+	promptbutton
 	sjump .EndOptions
 .NoRepel
 	loadmem wPressBToRepel, 0
@@ -488,33 +394,10 @@ ElmsLab_ResetSettings:
 	iffalse .NoProfsRepel
 	takeitem PROFS_REPEL
 .NoProfsRepel
-	checkevent EVENT_HM_ITEMS
-	iffalse .NoHMItems
-	setevent EVENT_RECEIVED_SCYTHE
-	setevent EVENT_RECEIVED_AIR_BALLOON
-	setevent EVENT_RECEIVED_RAFT
-	setevent EVENT_RECEIVED_BURLY_MAN
-	setevent EVENT_RECEIVED_LANTERN
-	setevent EVENT_RECEIVED_BATH_PLUG
-	setevent EVENT_RECEIVED_LADDER
-	setevent EVENT_RECEIVED_FART_JAR
-	setevent EVENT_RECEIVED_HONEY_JAR
-	setevent EVENT_RECEIVED_TREE_SHAKER
-	setevent EVENT_RECEIVED_BIG_HAMMER
-	clearevent EVENT_RECEIVED_CANDY_JAR
-	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
-	clearevent EVENT_HM_ITEMS
-.NoHMItems
-	loadmem wLevelCap, 100
 	loadmem wElmPokemon1, 155
 	loadmem wElmPokemon2, 158
 	loadmem wElmPokemon3, 152
 	loadmem wIsAStarter, 0
-	loadmem wIlexForestEncounters, 3
-	loadmem wRoute34Encounters, 3
-	loadmem wRoute33Encounters, 3
-	loadmem wGuaranteedHMFriendCatch, 0
 	loadmem wIsAStream, 0
 	loadmem wEvolutionsDisabled, 0
 	loadmem wAbilitiesActivated, 0
@@ -562,21 +445,6 @@ BinSkipRandomizer:
 	ret
 
 ElmsLabWalkUpToElmScript:
-	loadmem wLevelCap, 100
-	setevent EVENT_RECEIVED_SCYTHE
-	setevent EVENT_RECEIVED_AIR_BALLOON
-	setevent EVENT_RECEIVED_RAFT
-	setevent EVENT_RECEIVED_BURLY_MAN
-	setevent EVENT_RECEIVED_LANTERN
-	setevent EVENT_RECEIVED_BATH_PLUG
-	setevent EVENT_RECEIVED_LADDER
-	setevent EVENT_RECEIVED_FART_JAR
-	setevent EVENT_RECEIVED_HONEY_JAR
-	setevent EVENT_RECEIVED_TREE_SHAKER
-	setevent EVENT_RECEIVED_BIG_HAMMER
-	setevent EVENT_RECEIVED_CANDY_JAR
-	setevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
-
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	turnobject ELMSLAB_ELM, RIGHT
@@ -1097,10 +965,6 @@ AideScript_GiveYouBalls:
 	promptbutton
 	itemnotify
 	closetext
-	readmem wLevelCap
-	ifgreater 9, .skipLevelCap
-	loadmem wLevelCap, 9
-.skipLevelCap
 	setscene SCENE_ELMSLAB_NOOP
 	end
 
@@ -2205,18 +2069,18 @@ ElmsLabText_OptionsMoved:
 	done
 
 ElmsLabText_AskStream:
-	text "Is this a"
-	line "STREAMED run?"
+	text "Play with a"
+	line "LEVEL CAP?"
 	done
 	
 ElmsLabText_StreamYes:
-	text "Streaming"
-	line "flag set."
+	text "LEVEL CAP"
+	line "set."
 	done
 
 ElmsLabText_StreamNo:
-	text "Streaming"
-	line "flag unset."
+	text "LEVEL CAP"
+	line "removed."
 	done
 	
 ElmsLabText_InverseNo:
@@ -2743,6 +2607,46 @@ ElmsLabText_ResetOptionsNo:
 	cont "EXTRA OPTIONS."
 	done
 
+EggMoveRelearnerScript:
+	faceplayer
+	opentext
+	special EggMoveRelearner
+	waitbutton
+	closetext
+	end
+
+Gen1TMRelearnerScript:
+	loadmem wNumberOfPoints, 0
+	clearevent EVENT_RECEIVED_SCYTHE
+	clearevent EVENT_RECEIVED_AIR_BALLOON
+	clearevent EVENT_RECEIVED_RAFT
+	clearevent EVENT_RECEIVED_BURLY_MAN
+	clearevent EVENT_RECEIVED_LANTERN
+	clearevent EVENT_RECEIVED_BATH_PLUG
+	clearevent EVENT_RECEIVED_LADDER
+	clearevent EVENT_RECEIVED_FART_JAR
+	clearevent EVENT_RECEIVED_HONEY_JAR
+	clearevent EVENT_RECEIVED_TREE_SHAKER
+	clearevent EVENT_RECEIVED_BIG_HAMMER
+	clearevent EVENT_RECEIVED_CANDY_JAR
+	clearevent EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE_KEY
+	setevent   EVENT_SPROUT_TOWER_3F_ESCAPE_ROPE
+	faceplayer
+	opentext
+	readmem wPartyMon1Species
+	ifgreater 150, .Gen2Mon
+	special Gen1TMRelearner
+	sjump .RelearnerMerge
+.Gen2Mon
+	special EggMoveRelearner
+.RelearnerMerge
+	waitbutton
+	closetext
+	reloadmap
+	end
+
+
+
 
 ElmsLab_MapEvents:
 	db 0, 0 ; filler
@@ -2794,3 +2698,4 @@ ElmsLab_MapEvents:
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
 	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
+	object_event  5,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Gen1TMRelearnerScript, -1

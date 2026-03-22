@@ -30,6 +30,9 @@ VermilionGymSurgeScript:
 	writetext ReceivedThunderBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
+	readmem wNumberOfPoints
+	addval 3
+	writemem wNumberOfPoints
 	setflag ENGINE_THUNDERBADGE
 	writetext LtSurgeThunderBadgeText
 	waitbutton

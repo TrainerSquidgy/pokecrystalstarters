@@ -124,6 +124,9 @@ RadioTower5FRocketBossScript:
 	writetext RadioTower5FDirectorDescribeClearBellText
 	waitbutton
 	closetext
+	readmem wNumberOfPoints
+	addval 1
+	writemem wNumberOfPoints
 	setscene SCENE_RADIOTOWER5F_NOOP
 	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_ECRUTEAKTINTOWERENTRANCE_SAGE_BLOCKS
 	setevent EVENT_GOT_CLEAR_BELL
