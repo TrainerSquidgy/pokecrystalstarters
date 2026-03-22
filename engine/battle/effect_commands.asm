@@ -1578,7 +1578,7 @@ BattleCommand_CheckHit:
 	call .ThunderRain
 	ret z
 	
-	call .BlizzardSnow
+	call .BlizzardHail
 	ret z
 
 	call .XAccuracy
@@ -1768,8 +1768,8 @@ BattleCommand_CheckHit:
 	cp WEATHER_RAIN
 	ret
 
-.BlizzardSnow:
-; Return z if the current move always hits in rain, and it is raining.
+.BlizzardHail:
+; Return z if the current move always hits in hail, and it is hailing.
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_BLIZZARD
@@ -2582,8 +2582,7 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	
-	call SnowDefenseBoost
-
+	
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -2828,8 +2827,7 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 
-	call SnowDefenseBoost
-
+	
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
 	jr z, .physicalcrit
@@ -6811,31 +6809,10 @@ _CheckBattleScene:
 	ret
 
 
-SnowDefenseBoost: 
-; Raise Defense by 50% if there's Snow and the opponent
-; is Ice-type.
-		ld a, [wBattleWeather]
-	cp WEATHER_SNOW
-	ret nz
+BattleCommand_StartHail:
+	call AnimateFailedMove
+	jp PrintButItFailed
 
-; Then, check the opponent's types.
-	push bc
-	push de
-	ld b, ICE
-	call CheckIfTargetIsSomeType
-	pop de
-	pop bc
-	ret nz
-
-; Start boost
-	ld h, b
-	ld l, c
-	srl b
-	rr c
-	add hl, bc
-	ld b, h
-	ld c, l
-	ret
 	
 BattleCommand_StartWeather:
 	ld a, BATTLE_VARS_MOVE_EFFECT

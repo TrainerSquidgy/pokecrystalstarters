@@ -252,17 +252,14 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw RolloutDescription
+	dw SheerColdDescription
+	dw HailDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 	db "?@"
@@ -622,6 +619,10 @@ RockThrowDescription:
 EarthquakeDescription:
 	db   "Tough but useless"
 	next "vs. flying foes.@"
+
+SheerColdDescription:
+	db   "An ice-type,"
+	next "one-hit KO attack.@"
 
 FissureDescription:
 	db   "A ground-type,"
@@ -1067,6 +1068,7 @@ OutrageDescription:
 	db   "Works 2-3 turns"
 	next "and confuses user.@"
 
+HailDescription:
 SandstormDescription:
 	db   "Inflicts damage"
 	next "every turn.@"

@@ -21,7 +21,6 @@ AlphabeticalPokedexOrder:
 	db BULBASAUR
 	db BUTTERFREE
 	db CATERPIE
-	db CELEBI
 	db CHANSEY
 	db CHARIZARD
 	db CHARMANDER
@@ -193,6 +192,7 @@ AlphabeticalPokedexOrder:
 	db SCYTHER
 	db SEADRA
 	db SEAKING
+	db SEALEO
 	db SEEL
 	db SENTRET
 	db SHELLDER
@@ -209,6 +209,7 @@ AlphabeticalPokedexOrder:
 	db SNORLAX
 	db SNUBBULL
 	db SPEAROW
+	db SPHEAL
 	db SPINARAK
 	db SQUIRTLE
 	db STANTLER
@@ -242,6 +243,7 @@ AlphabeticalPokedexOrder:
 	db VILEPLUME
 	db VOLTORB
 	db VULPIX
+	db WALREIN
 	db WARTORTLE
 	db WEEDLE
 	db WEEPINBELL

@@ -1690,7 +1690,6 @@ HandleWeather:
 	ld hl, wWeatherCount
 	dec [hl]
 	jr nz, .continues
-	
 ; ended
 	ld hl, .WeatherEndedMessages
 	call .PrintWeatherMessage
