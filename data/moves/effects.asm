@@ -2092,4 +2092,10 @@ Snow:
 	doturn
 	startweather
 	endmove
-	
+
+Yawn:
+	checkobedience
+	usedmovetext
+	doturn
+	yawn
+	endmove
