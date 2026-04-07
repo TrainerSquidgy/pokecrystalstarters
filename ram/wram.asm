@@ -3120,7 +3120,8 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 47
+	ds 46
+wPressBToRepel:: db
 wRareCandyRNG:: db
 wRareCandiesObtained:: db
 
@@ -3157,6 +3158,7 @@ wElmPokemon1::      db
 wElmPokemon2::      db
 wElmPokemon3::      db
 wIlexForestEncounters:: db
+wRoute33Encounters:: db
 wRoute34Encounters:: db
 wTestingRamSlot1:: db	
 wTempCompSpecies:: db
@@ -3196,9 +3198,11 @@ wPlayerYawning:: db
 wEnemyYawning:: db
 wBinSkipPokemon:: db
 wBinSkipItem:: db
+wIsAStream:: db
+wVitaminLimitsDisabled:: db
 wSpindaForm:: db
 wSpindaSavedForm:: db
-	ds 54
+	ds 52
 
 wEventFlags:: flag_array NUM_EVENTS
 
