@@ -89,6 +89,8 @@ MegaPokemonList:
 	db HERACROSS
 	db HOUNDOOM
 	db TYRANITAR
+	; CUSTOM MEGAS
+	db SUNFLORA
 	db -1
 
 GetMegaEvolutionStats:
@@ -131,6 +133,8 @@ GetMegaEvolutionStats:
 	jp z, .Houndoom
 	cp TYRANITAR
 	jp z, .Tyranitar
+	cp SUNFLORA
+	jp z, .Sunflora
 	ret
 
 .Venusaur
@@ -518,5 +522,24 @@ GetMegaEvolutionStats:
 	ld a, ROCK
 	ld [wBaseType1], a
 	ld a, DARK
+	ld [wBaseType2], a
+	ret
+	
+.Sunflora
+	ld a, 75
+	ld [wBaseHP], a
+	ld a, 85
+	ld [wBaseAttack], a
+	ld a, 90
+	ld [wBaseDefense], a
+	ld a, 95
+	ld [wBaseSpeed], a
+	ld a, 125
+	ld [wBaseSpecialAttack], a
+	ld a, 110
+	ld [wBaseSpecialDefense], a
+	ld a, GRASS
+	ld [wBaseType1], a
+	ld a, FIRE
 	ld [wBaseType2], a
 	ret
